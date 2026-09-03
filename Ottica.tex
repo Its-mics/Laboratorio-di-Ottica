@@ -1,226 +1,259 @@
 \documentclass[openany,a4paper,12pt]{book}
 
+% --- Lingua e Font ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} 
 \usepackage[italian]{babel}
+\usepackage{lmodern} % Font più nitido in PDF rispetto al default
+\usepackage{microtype} % Migliora spaziature e sillabazione
 
-% --- Matematica e Fisica  ---
-\usepackage{amsmath}
-\usepackage{amsthm} 
-\usepackage{physics}
-\usepackage{amssymb}
-\let\div\relax
-\usepackage{mathabx}
-\providecommand{\mathscr}[1]{\mathcal{#1}}
+% --- Colori (Definiti prima per usarli ovunque) ---
+\usepackage[x11names, dvipsnames]{xcolor}
+\definecolor{PoliBlue}{RGB}{0, 45, 114} % Blu accademico elegante
+\definecolor{OpticRed}{RGB}{200, 10, 30} % Rosso "laser" per i link
+\definecolor{ForestGreen}{RGB}{34, 139, 34}
+\definecolor{CodeBack}{RGB}{245, 245, 245}
+\definecolor{BoxGray}{RGB}{248, 249, 250}
+
+% --- Matematica e Fisica ---
 \usepackage{amsmath, amssymb, amsfonts, amsthm}
-
 \usepackage{mathtools, cancel, bm}
-\usepackage[output-decimal-marker={,}]{siunitx}
+
+% Non usare physics insieme a siunitx: i due pacchetti definiscono entrambi \qty e generano conflitti.
+% Per le unità di misura usa solo siunitx.
+\usepackage{siunitx}
+\sisetup{
+    output-decimal-marker={,},
+    separate-uncertainty=true, % Per scrivere (10,5 ± 0,1) m
+    per-mode=symbol, % Scrive m/s invece di m s^{-1}
+    inter-unit-product = \ensuremath{{}\cdot{}} % Punto tra le unità
+}
 
 % --- Formattazione Testo e Layout ---
 \usepackage{ragged2e}
 \usepackage{quoting}
-\usepackage{sectsty}
-\usepackage{booktabs}
+\usepackage{booktabs} % Per tabelle professionali
 \usepackage{enumitem}
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage[a4paper, margin=2.5cm]{geometry} 
+\usepackage{array, tabularx}
+\usepackage[a4paper, margin=2.5cm, headheight=15pt]{geometry} 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.75em}
-\sectionfont{\Large\bfseries}
-\subsectionfont{\large\bfseries}
 
-% ---  Grafica, Colori e TikZ  ---
+% --- Titoli di Sezione (Stile Libro Universitario Moderno) ---
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{PoliBlue}}{\filleft\Huge\thechapter}{2ex}
+  {\titlerule\vspace{2ex}\Huge\filleft}
+  [\vspace{2ex}\titlerule]
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{PoliBlue}}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{PoliBlue}}{\thesubsection}{1em}{}
+
+% --- Grafica, TikZ e Plot ---
 \usepackage{graphicx}
 \usepackage{float} 
-\usepackage{xcolor}
 \usepackage{circuitikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\usepackage{mdframed}
-% Needed for subfigure environments used later
-\usepackage{subcaption}
+\usepackage{subcaption} 
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{positioning, arrows.meta, angles, quotes, trees, patterns, calc}
+
 \pgfplotsset{
     standard/.style={
         axis lines=middle,
-        xlabel={$t$},
-        ylabel={$y$},
+        xlabel={$t$}, ylabel={$y$},
         grid=both,
-        grid style={line width=.1pt, draw=gray!10},
-        major grid style={line width=.2pt, draw=gray!20},
+        grid style={line width=.1pt, draw=gray!20},
+        major grid style={line width=.2pt, draw=gray!40},
         samples=100,
-        domain=0:5,
         enlargelimits=true,
-        title style={font=\bfseries, yshift=5pt},
         label style={font=\small},
         tick label style={font=\tiny}
     }
 }
 
-\usepackage{tikz}
-\newcommand{\circnum}[1]{
-  \begin{tikzpicture}[baseline=(char.base)]
-    \node[shape=circle,draw,inner sep=1.2pt] (char) {\small #1};
-  \end{tikzpicture}%
-}
-
-\tikzset{standard/.style={/pgfplots/standard}}
-\usepackage{tikz}
-\usepackage{tikz-3dplot}
-\usetikzlibrary{positioning}
-\usetikzlibrary{arrows.meta, angles, quotes, trees, patterns}
+% --- Box ed Evidenziazioni (Tcolorbox) ---
 \usepackage[most]{tcolorbox}
 
-\definecolor{RoyalBlue}{RGB}{0, 83, 155}
-\definecolor{ForestGreen}{RGB}{34, 139, 34}
-\definecolor{CodeBack}{RGB}{245, 245, 245}
-
-% --- Configurazione LISTINGS ---
-\usepackage{listings}
-\lstdefinestyle{notebook}{
-    backgroundcolor=\color{CodeBack},   
-    commentstyle=\color{ForestGreen}\itshape,
-    keywordstyle=\color{RoyalBlue}\bfseries,
-    numberstyle=\tiny\color{gray},
-    stringstyle=\color{red!70!black},
-    basicstyle=\ttfamily\small,
-    breakatwhitespace=false, breaklines=true, captionpos=b, keepspaces=true,                 
-    numbers=left, numbersep=5pt, showspaces=false, showstringspaces=false,
-    frame=l, framesep=5pt, rulecolor=\color{RoyalBlue},
-    language=Python, morekeywords={as, np, plt}
+% Stile per le Note (si spezzano se a fine pagina)
+\newtcolorbox{nota}[1][]{
+  enhanced, breakable,
+  left=1em, right=1em, top=1ex, bottom=1ex,
+  colback=BoxGray, colframe=gray!50,
+  borderline west={3pt}{0pt}{gray},
+  fontupper=\itshape,
+  title={\textbf{Nota}}, coltitle=black, attach title to upper={\quad},
+  #1
 }
-% Configurazione base per il codice Python con supporto per le lettere accentate
-% Configurazione base per il codice Python con supporto per accenti e simboli speciali
+
+% Stile per le Definizioni
+\newtcolorbox{definizione}[1][]{
+  enhanced, breakable,
+  left=1em, right=1em, top=1ex, bottom=1ex,
+  colback=PoliBlue!5, colframe=PoliBlue!80,
+  borderline west={3pt}{0pt}{PoliBlue},
+  title={\textbf{Definizione}}, coltitle=PoliBlue!80!black, attach title to upper={\quad},
+  #1
+}
+
+% Stile per i Teoremi/Formule importanti
+\newtcbtheorem[no counter]{teorema}{Teorema}%
+{enhanced, breakable, colback=OpticRed!5, colframe=OpticRed, fonttitle=\bfseries}{th}
+
+% --- Configurazione LISTINGS (Python per Analisi Dati) ---
+\usepackage{listings}
 \lstset{
     language=Python,
-    extendedchars=true,
-    literate=
-        {à}{{\`a}}1
-        {è}{{\`e}}1
-        {é}{{\'e}}1
-        {ì}{{\`i}}1
-        {ò}{{\`o}}1
-        {ù}{{\`u}}1
-        {À}{{\`A}}1
-        {È}{{\`E}}1
-        {É}{{\'E}}1
-        {Ì}{{\`I}}1
-        {Ò}{{\`O}}1
-        {Ù}{{\`U}}1
-        {±}{{$\pm$}}1, % <--- AGGIUNTO IL SIMBOLO PIU' O MENO QUI
+    backgroundcolor=\color{CodeBack},
     basicstyle=\ttfamily\small,
-    keywordstyle=\color{blue}\bfseries,
-    stringstyle=\color{red},
-    commentstyle=\color{green!60!black},
-    %numbers=left,
-    %numberstyle=\tiny,
-    %stepnumber=1,
-    %numbersep=5pt,
-    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{PoliBlue}\bfseries,
+    stringstyle=\color{OpticRed},
+    commentstyle=\color{ForestGreen}\itshape,
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=10pt,
+    frame=leftline,
+    framerule=2pt,
+    rulecolor=\color{PoliBlue!50},
     showspaces=false,
     showstringspaces=false,
-    showtabs=false,
-    frame=single,
-    tabsize=4,
-    captionpos=b,
     breaklines=true,
     breakatwhitespace=false,
-    columns=fullflexible, % <-- FONDAMENTALE PER LA COPIA
+    columns=fullflexible, % Permette un copia-incolla perfetto dal PDF
     keepspaces=true,
-}
-\usepackage[colorlinks=true, linkcolor=black]{hyperref} 
-
-\newtcolorbox{nota}{
-  blanker,
-  before skip=1em,
-  after skip=1em,
-  left=1em,
-  borderline west={1pt}{0pt}{black},
-  fontupper=\itshape,
-  before upper={\noindent\textbf{Nota}:\quad}
+    literate={à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1 {±}{{$\pm$}}1
 }
 
-
-\newtcolorbox{definizione}{
-  blanker,
-  before skip=1em,
-  after skip=1em,
-  left=1em,
-  borderline west={2pt}{0pt}{black},
-  fontupper=\normalfont,
-  before upper={\noindent\textbf{Definizione}:\quad}
-}
-
-
-\newtheorem*{example}{Esempio}
-\newtheorem{theorem}{Teorema}
-\newtheorem*{theorem*}{Teorema}
-\newtheorem{esempio}{Esempio}
-
-\theoremstyle{remark}
-\newtheorem{osservazione}{\textbf{\color{ForestGreen}Osservazione}}
-
-% --- Configurazione Intestazioni  ---
+% --- Intestazioni e Piè di Pagina ---
 \usepackage{fancyhdr}
-\setlength{\headheight}{14.5pt}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-\renewcommand{\thesection}{\arabic{section}}
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
-\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
-\renewcommand{\sectionmark}[1]{\markright{#1}}
-\fancyhead[LE,RO]{\small\textit{\nouppercase{\rightmark}}}
-\fancyfoot[LE,RO]{\small\textbf{\thepage}}
-\fancyfoot[RE,LO]{\footnotesize\color{gray} Appunti di Ottica}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE]{\small\textbf{\nouppercase{\leftmark}}} % Capitolo a sx (pagine pari)
+\fancyhead[RO]{\small\textbf{\nouppercase{\rightmark}}} % Sezione a dx (pagine dispari)
+\fancyfoot[C]{\small\textbf{\thepage}}
 
 \fancypagestyle{plain}{%
     \fancyhf{}%
     \renewcommand{\headrulewidth}{0pt}%
-    \renewcommand{\footrulewidth}{0.4pt}%
-    \fancyfoot[LE,RO]{\small\textbf{\thepage}}%
-    \fancyfoot[RE,LO]{\footnotesize\color{gray} Appunti di Ottica}%
+    \fancyfoot[C]{\small\textbf{\thepage}}%
 }
 
+% --- Link e Indici (DEVE ESSERE L'ULTIMO PACCHETTO) ---
+\usepackage{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=PoliBlue, 
+    urlcolor=OpticRed,
+    citecolor=ForestGreen,
+    pdftitle={Appunti di Ottica},
+    pdfauthor={Mirolo, Brusini, Tedeschini, Stroili}
+}
 
-
-
-
-
-\title{\textbf{\Huge Appunti di Ottica}}
-\author{\textsc{Mirolo Manuele / Alessio Brusini / Michele Tedeschini / Emanuele Stroili}}
-\date{a.a. 2025/26}
-
-% --------------------------------------------------
-
+% ==================================================
+% INIZIO DOCUMENTO
+% ==================================================
 \begin{document}
-\pagestyle{empty}
 
-\maketitle
+% --- FRONTESPIZIO CUSTOM ---
+\begin{titlepage}
+    \centering
+    
+    % Spazio iniziale dal margine superiore
+    \vspace*{3cm}
+    
+
+    \vspace{0.8cm}
+    
+    % Titolo Principale
+    {\Huge \bfseries \textcolor{PoliBlue}{Appunti del Laboratorio di Ottica} \par}
+    
+    \vspace{0.6cm}
+    
+    % Spazio centrale
+    \vspace{3.5cm}
+    
+    \vspace{1.5cm}
+    
+    % Tabella autori con spazio aggiuntivo tra le colonne e le righe
+    {
+    \large
+    \renewcommand{\arraystretch}{1.5} % Aumenta lo spazio verticale tra i nomi
+    \begin{tabular}{c @{\hspace{2.5cm}} c} % @{\hspace{...}} allontana le due colonne
+         \textbf{Mirolo Manuele} & \textbf{Alessio Brusini} \\
+         \textbf{Michele Tedeschini} & \textbf{Emanuele Stroili}
+    \end{tabular}
+    \par
+    }
+    
+    % \vfill spinge tutto quello che c'è sotto verso il fondo della pagina
+    \vfill
+    
+    % Anno Accademico a fondo pagina
+    {\large Anno Accademico 2026/2027 \par}
+    
+    % Piccolo spazio finale per non attaccarlo troppo al bordo del foglio
+    \vspace*{1.5cm}
+\end{titlepage}
 
 \justifying
 
+\frontmatter % Numerazione romana per indici
 \tableofcontents
 
-\newpage
-\pagenumbering{arabic}
-\setcounter{page}{1}
+\mainmatter % Numerazione araba per i capitoli
 \pagestyle{fancy}
 
+\chapter{Introduzione all'Ottica}
+Benvenuti nel laboratorio di ottica. In questo capitolo mostriamo le funzionalità del template.
 
-Ciao
+\section{Esempi di Formattazione}
 
+Un esperimento tipico richiede la misura della lunghezza d'onda di un laser He-Ne. Secondo i nostri dati, il valore misurato è $\lambda = \qty{632.8 \pm 0.1}{\nano\metre}$. 
 
+Per scrivere un'espressione con parentesi in modo standard, si può usare:
+\begin{equation}
+    f(x) = \sin\left(\frac{2\pi}{\lambda} x\right)
+\end{equation}
 
+\begin{definizione}
+L'ottica geometrica è l'approssimazione in cui la lunghezza d'onda della luce è considerata molto minore delle dimensioni degli oggetti con cui interagisce ($\lambda \to 0$).
+\end{definizione}
 
+\begin{nota}
+Ricordarsi di allineare sempre gli specchi dell'interferometro di Michelson prima di iniziare la presa dati!
+\end{nota}
 
+\begin{teorema}{Legge di Snell}{snell}
+Dati due mezzi con indici di rifrazione $n_1$ e $n_2$, l'angolo di incidenza $\theta_1$ e l'angolo di rifrazione $\theta_2$ sono legati da:
+\begin{equation}
+    n_1 \sin\theta_1 = n_2 \sin\theta_2
+\end{equation}
+\end{teorema}
 
+\subsection{Analisi Dati}
+Ecco un esempio di script per il fit dei dati d'interferenza:
 
+\begin{lstlisting}
+import numpy as np
+import matplotlib.pyplot as plt
 
+# Dati dell'esperimento di diffrazione
+posizioni = np.array([0.1, 0.2, 0.3]) # ± 0.01 mm
+intensita = np.array([100, 50, 20])
 
-
-
+plt.plot(posizioni, intensita, 'ro-')
+plt.title("Figura di diffrazione")
+plt.xlabel("Posizione [mm]")
+plt.ylabel("Intensità [u.a.]")
+plt.grid(True)
+plt.show()
+\end{lstlisting}
 
 \end{document}
