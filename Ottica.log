@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  3 SEP 2026 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  3 SEP 2026 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1398,7 +1398,12 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 202.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Overfull \hbox (108.4973pt too wide) in paragraph at lines 202--202
+ [][] 
+ []
+
+[1
 
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./Ottica.toc)
@@ -1429,7 +1434,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  103i,12n,108p,781b,1069s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on Ottica.pdf (3 pages, 64069 bytes).
+Output written on Ottica.pdf (3 pages, 64823 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
