@@ -1,1 +1,0 @@
-# Laboratorio-di-Ottica
