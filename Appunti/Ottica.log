@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  3 SEP 2026 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  22 SEP 2026 18:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Ottica.tex
-(/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Ottica.tex
+**/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex
+(/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2026/texmf-dist/tex/latex/base/book.cls
@@ -1132,16 +1132,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Capitolo 1.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.243 \begin{lstlisting}
-                         [1
-
-{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 243.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 241.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1149,14 +1141,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 244.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 242.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.246 posizioni 
+                = np.array([0.1, 0.2, 0.3]) # ± 0.01 mm [1
+
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 248.
+(Font)              <10.95> on input line 246.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.259 \end{document}
+l.257 \end{document}
                      [2] (./Ottica.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1165,14 +1165,14 @@ L3 programming layer <2026-01-19>
  ) 
 Here is how much of TeX's memory you used:
  68627 strings out of 467525
- 1726912 string characters out of 5418983
- 2687920 words of memory out of 5000000
+ 1726936 string characters out of 5418983
+ 2676921 words of memory out of 5000000
  96572 multiletter control sequences out of 15000+600000
  730689 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,12n,108p,1057b,1363s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,12n,108p,1065b,2720s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Ottica.pdf (6 pages, 243483 bytes).
+Output written on Ottica.pdf (6 pages, 241697 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1788447097.06097 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Ottica.tex" "Ottica.pdf" "Ottica" 1788447098.08091 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Ottica.tex" 1788447096.96366 8014 ba23b935e12613aa88e89754de2a100d ""
+["pdflatex"] 1790093207.28655 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1790093208.36443 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1790093207.1984 7841 7cdc64024241054d0c7342e707a865a9 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -329,9 +329,9 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1788443625 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1788443550 3636777 f03ef9da5e1eb17495f4663aaf7533af ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "Ottica.aux" 1788447098.00727 1685 54630cca56f9ad3974523a180548b3e4 "pdflatex"
-  "Ottica.tex" 1788447096.96366 8014 ba23b935e12613aa88e89754de2a100d ""
-  "Ottica.toc" 1788447098.00806 304 b75266af3022a9f7395a4eb6b6748345 "pdflatex"
+  "Ottica.aux" 1790093208.28655 1685 141fb4f02d276a2dc53e0e7c17b8bb35 "pdflatex"
+  "Ottica.tex" 1790093207.1984 7841 7cdc64024241054d0c7342e707a865a9 ""
+  "Ottica.toc" 1790093208.28727 304 fa57723021f17cbcf5b3422bb5751d3a "pdflatex"
   (generated)
   "Ottica.aux"
   "Ottica.log"
