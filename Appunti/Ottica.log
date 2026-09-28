@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  28 SEP 2026 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  28 SEP 2026 14:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -401,6 +401,8 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen258
 \Gm@layoutvoffset=\dimen259
 \Gm@dimlist=\toks36
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box68
@@ -959,14 +961,31 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip96
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bookmark.sty
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+Package cleveref Info: `listings' support loaded on input line 3131.
+)
+==> First Aid for cleveref.sty applied!
+(/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count398
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 157.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 162.
+Package hyperref Info: Option `colorlinks' set `true' on input line 159.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 164.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -975,33 +994,33 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (./Ottica.aux)
 \openout1 = `Ottica.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Info: Redefining \it@ocap on input line 162.
-LaTeX Info: Redefining \it@ccap on input line 162.
-LaTeX Info: Redefining \microtypecontext on input line 162.
-Package microtype Info: Applying patch `item' on input line 162.
-Package microtype Info: Applying patch `toc' on input line 162.
-Package microtype Info: Applying patch `eqnum' on input line 162.
-Package microtype Info: Applying patch `footnote' on input line 162.
-Package microtype Info: Applying patch `verbatim' on input line 162.
-LaTeX Info: Redefining \microtypesetup on input line 162.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Info: Redefining \it@ocap on input line 164.
+LaTeX Info: Redefining \it@ccap on input line 164.
+LaTeX Info: Redefining \microtypecontext on input line 164.
+Package microtype Info: Applying patch `item' on input line 164.
+Package microtype Info: Applying patch `toc' on input line 164.
+Package microtype Info: Applying patch `eqnum' on input line 164.
+Package microtype Info: Applying patch `footnote' on input line 164.
+Package microtype Info: Applying patch `verbatim' on input line 164.
+LaTeX Info: Redefining \microtypesetup on input line 164.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1029,11 +1048,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 \everyMPtoPDFconversion=\toks61
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 162.
+Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 164.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1076,36 +1101,36 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count406
-Package hyperref Info: Link coloring ON on input line 162.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 188.
+Package hyperref Info: Link coloring ON on input line 164.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 190.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 188.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 190.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 188.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 190.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 188.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 190.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 188.
+(Font)              <14.4> on input line 190.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 188.
+(Font)              <10> on input line 190.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 188.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 188.
+(Font)              <7> on input line 190.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 190.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 188.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 190.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1116,6 +1141,8 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2
 
 ] (./Ottica.toc
+Package cleveref Info: loaded `italian' language definitions on input line 1.
+Package cleveref Info: loaded `italian' language definitions on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1128,54 +1155,87 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  [1
 
-] [2
+]
+Package cleveref Info: loaded `italian' language definitions on input line 212.
+ [2
 
 ]
 Capitolo 1.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 241.
-(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.248 ...e: Analisi Dati con Python (Facoltativo)}
+                                                   [1
+
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 250.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 263.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 242.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.246 posizioni 
-                = np.array([0.1, 0.2, 0.3]) # ± 0.01 mm [1
-
-{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 246.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 264.
+Package cleveref Info: loaded `italian' language definitions on input line 295.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.268 \end{document}
-                     [2] (./Ottica.aux)
+l.295 m.
+        migrad() # Algoritmo di minimizzazione [2]
+Package cleveref Info: loaded `italian' language definitions on input line 339.
+ [3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 378.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package cleveref Info: loaded `italian' language definitions on input line 390.
+ [4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+Package cleveref Info: loaded `italian' language definitions on input line 430.
+ [5]
+Overfull \hbox (4.37428pt too wide) in paragraph at lines 451--452
+\T1/lmr/m/n/12 (-20) Nel ca-so di mi-su-re $\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 x; y\OT1/lmr/m/n/12 (-20) )$ \T1/lmr/m/n/12 (-20) con in-cer-tez-ze su en-tram-bi gli as-si, si uti-liz-za la clas-se \T1/lmtt/m/n/12 TGraphErrors\T1/lmr/m/n/12 (-20) .
+ []
+
+Package cleveref Info: loaded `italian' language definitions on input line 475.
+[6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `italian' language definitions on input line 526.
+ [7]
+Package cleveref Info: loaded `italian' language definitions on input line 533.
+ [8] (./Ottica.aux
+Package cleveref Info: loaded `italian' language definitions on input line 8.
+Package cleveref Info: loaded `italian' language definitions on input line 9.
+)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 68629 strings out of 467525
- 1726952 string characters out of 5418983
- 2677921 words of memory out of 5000000
- 96573 multiletter control sequences out of 15000+600000
- 730689 words of font info for 175 fonts, out of 8000000 for 9000
+ 70839 strings out of 467525
+ 1773856 string characters out of 5418983
+ 3099479 words of memory out of 5000000
+ 98534 multiletter control sequences out of 15000+600000
+ 723893 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,12n,108p,1065b,2720s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Ottica.pdf (6 pages, 243123 bytes).
+ 103i,13n,108p,1065b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Ottica.pdf (12 pages, 329527 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 57533 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 490 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 241 named destinations out of 1000 (max. 500000)
+ 55477 words of extra memory for PDF output out of 61914 (max. 10000000)
 

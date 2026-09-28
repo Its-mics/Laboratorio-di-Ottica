@@ -38,6 +38,7 @@
 \usepackage[a4paper, margin=2.5cm, headheight=15pt]{geometry} 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.75em}
+\usepackage{placeins}
 
 % --- Titoli di Sezione (Stile Libro Universitario Moderno) ---
 \usepackage{titlesec}
@@ -146,6 +147,7 @@
 
 % --- Link e Indici (DEVE ESSERE L'ULTIMO PACCHETTO) ---
 \usepackage{hyperref}
+\usepackage[italian]{cleveref}
 \usepackage{bookmark}
 \hypersetup{
     colorlinks=true,
@@ -235,30 +237,293 @@ Dati due mezzi con indici di rifrazione $n_1$ e $n_2$, l'angolo di incidenza $\t
 \end{equation}
 \end{teorema}
 
-\subsection{Analisi Dati}
-Ecco un esempio di script per il fit dei dati d'interferenza:
-
-\begin{lstlisting}
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Dati dell'esperimento di diffrazione
-posizioni = np.array([0.1, 0.2, 0.3]) # ± 0.01 mm
-intensita = np.array([100, 50, 20])
-
-plt.plot(posizioni, intensita, 'ro-')
-plt.title("Figura di diffrazione")
-plt.xlabel("Posizione [mm]")
-plt.ylabel("Intensità [u.a.]")
-plt.grid(True)
-plt.show()
-\end{lstlisting}
 
 \section{Info}
 
 8 esperienze
 relazioni d'esame entro 1 settimana prima dell'appello (le prime relazioni andranno spedite entro 1 settimana)
 max gruppo da 5 persone (5 gruppi per giorno). 
+1 solo set di relazioni per gruppo
+
+\section*{Introduzione: Analisi Dati con Python (Facoltativo)}
+
+In questo capitolo vengono introdotti gli strumenti software per l'analisi statistica dei dati sperimentali. Il framework di riferimento è \textbf{Python}, in particolare utilizzando la libreria \texttt{iminuit} per l'ottimizzazione dei parametri tramite il metodo dei minimi quadrati ($\chi^2$).
+
+\subsection*{Fit di un Istogramma con una Gaussiana}
+
+Il primo esempio mostra come generare un set di dati distribuiti secondo una normale (Gaussiana), riempirne un istogramma e successivamente effettuare un fit per estrarre i parametri della distribuzione. 
+
+La funzione Gaussiana utilizzata per il fit è definita come:
+\begin{equation}
+    f(x; C, \mu, \sigma) = C \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2\right)
+\end{equation}
+
+Di seguito il codice completo:
+
+\begin{lstlisting}[caption={Generazione e fit di un istogramma Gaussiano}]
+import numpy as np
+import matplotlib.pyplot as plt
+from iminuit import Minuit
+
+# 1. Generazione dati fittizi (Gaussiana con mu=-5.5, sigma=0.5)
+with open('datpy.txt','w') as file:
+  for i in range(1000):
+    g = np.random.normal(-5.5, 0.5)
+    file.write('%s\n' % (g))
+
+# 2. Lettura dati e creazione istogramma
+dati = np.loadtxt("datpy.txt")
+x = dati
+
+plt.figure()
+counts, bins, _ = plt.hist(x, range=(-10,0), bins=50, alpha=0.6)
+
+# 3. Definizione del modello e del Chi Quadrato
+def gauss(x, par0, par1, par2):
+    return par0 * np.exp(-0.5 * np.power((x - par1) / par2, 2.0))
+
+def chi2(par0, par1, par2):
+    mask = counts > 0 # Evita la divisione per zero nei bin vuoti
+    # x dei bin valutato nel punto medio
+    x_mid = (bins[:-1] + bins[1:])[mask] / 2
+    y_teo = gauss(x_mid, par0, par1, par2)
+    err_y = np.sqrt(counts[mask])
+    return np.sum(((counts[mask] - y_teo) / err_y)**2)
+
+# 4. Minimizzazione con Minuit
+m = Minuit(chi2, par0=1.0, par1=0.0, par2=1.0)
+m.migrad() # Algoritmo di minimizzazione
+m.hesse()  # Calcolo della matrice di covarianza
+m.minos()  # Stima asimmetrica degli errori (opzionale)
+
+# Estrazione dei parametri
+Constant_fit = m.values["par0"]
+Mean_fit = m.values["par1"]
+Sigma_fit = m.values["par2"]
+
+# [...] (Codice per il plot omesso per brevità)
+plt.show()
+\end{lstlisting}
+
+\subsection*{Fit non lineare, errori su ambo gli assi e Analisi dei Residui}
+Questo secondo script simula un decadimento esponenziale $y = A e^{-x/B}$ ed esegue un'analisi completa in tre fasi:
+\begin{enumerate}
+    \item \textbf{Fit del modello:} Esegue la minimizzazione considerando la varianza efficace.
+    \item \textbf{Distribuzione dei residui:} Verifica che i residui normalizzati, definiti come $r_i = \frac{y_i - f(x_i)}{\sigma_{eff, i}}$, seguano una distribuzione Normale standard $N(0,1)$.
+    \item \textbf{Andamento dei residui:} Esegue un fit lineare ($y = P_0 + P_1 x$) sul grafico dei residui in funzione di $x$. Se il modello iniziale è corretto, non ci dovrebbero essere trend sistematici (ci si aspetta $P_0 \simeq 0, P_1 \simeq 0$).
+\end{enumerate}
+
+\begin{lstlisting}[caption={Fit esponenziale con varianza efficace e studio dei residui}]
+import numpy as np
+import matplotlib.pyplot as plt
+from iminuit import Minuit
+
+# --- 1. LETTURA DATI ---
+dati = np.loadtxt("datpy.txt")
+x = dati[:,0]
+y = dati[:,1]
+ex = dati[:,2]
+ey = dati[:,3]
+
+# --- 2. FIT ESPONENZIALE (METODO VARIANZA EFFICACE) ---
+def fitfunc(x, par0, par1):
+    return par0 * np.exp(-x / par1)
+
+def fitfuncprime(x, par0, par1):
+    dx = 1e-6
+    # Derivata numerica
+    return (fitfunc(x+dx/2, par0, par1) - fitfunc(x-dx/2, par0, par1))/dx
+
+def chi2_eff(par0, par1):
+    # Propagazione dell'errore di x su y tramite derivata
+    sigma_eff = np.sqrt(ey**2 + (ex * fitfuncprime(x, par0, par1))**2)
+    return np.sum(((y - fitfunc(x, par0, par1)) / sigma_eff)**2)
+
+m1 = Minuit(chi2_eff, par0=1.0, par1=1.0)
+m1.migrad()
+A_fit, B_fit = m1.values["par0"], m1.values["par1"]
+
+# --- 3. ANALISI DISTRIBUZIONE DEI RESIDUI ---
+y_res = y - fitfunc(x, A_fit, B_fit)
+ey_eff = np.sqrt(ey**2 + (ex * fitfuncprime(x, A_fit, B_fit))**2)
+
+counts, bins, _ = plt.hist(y_res / ey_eff, range=(-10,10), bins=20)
+
+def gauss(x, par0, par1, par2):
+    return par0 * np.exp(-0.5 * np.power((x - par1) / par2, 2.0))
+
+def chi2_res(par0, par1, par2):
+    mask = counts>0
+    x_mid = (bins[:-1] + bins[1:])[mask]/2
+    return np.sum(((counts[mask] - gauss(x_mid, par0, par1, par2)) / np.sqrt(counts[mask]))**2)
+
+m2 = Minuit(chi2_res, par0=1.0, par1=0.0, par2=1.0)
+m2.migrad()
+
+# --- 4. RICERCA TREND SISTEMATICI SUI RESIDUI ---
+def retta(x, par0, par1):
+    return par0 + par1 * x
+
+def chi2_trend(par0, par1):
+    return np.sum(((y_res - retta(x, par0, par1)) / ey_eff)**2)
+
+m3 = Minuit(chi2_trend, par0=0.0, par1=0.0)
+m3.migrad()
+\end{lstlisting}
+
+\subsection*{Il Framework ROOT}
+
+ROOT può essere utilizzato in due modi, entrambi illustrati di seguito:
+\begin{itemize}
+    \item Tramite \textbf{Macro C++} (file \texttt{.C}), che vengono compilate o interpretate nativamente.
+    \item Tramite \textbf{PyROOT} (file \texttt{.py}), un \textit{wrapper} che permette di usare le classi C++ di ROOT all'interno di uno script Python.
+\end{itemize}
+
+\begin{definizione}[title=Oggetti fondamentali in ROOT]
+Nella sintassi di ROOT, ogni oggetto inizia tipicamente per \texttt{T}:
+\begin{itemize}
+    \item \texttt{TCanvas}: Dove vengono disegnati i grafici.
+    \item \texttt{TH1F}: Istogramma monodimensionale (1D) con frequenze in formato \textit{float}.
+    \item \texttt{TGraphErrors}: Grafico a dispersione per coppie di dati $(x,y)$ con rispettivi errori $(\sigma_x, \sigma_y)$.
+    \item \texttt{TF1}: Funzione matematica 1D, utilizzata per eseguire i fit.
+\end{itemize}
+\end{definizione}
+
+\subsection*{Fit Base: Istogramma e Gaussiana (Macro C++)}
+
+Questo esempio mostra come leggere una colonna di dati, riempire un istogramma \texttt{TH1F} e fittarlo con una funzione di Gauss. In ROOT, funzioni comuni come la Gaussiana sono già predefinite nella libreria matematica \texttt{TMath}. 
+Di seguito è riportato il codice in C++ (\texttt{fit.C}):
+
+\begin{lstlisting}[language=C++, caption={Macro C++ per fit Gaussiano con ROOT}]
+#include "TMath.h"
+#include "TF1.h"
+#include "TH1F.h"
+#include "TCanvas.h"
+#include <fstream>
+
+// Definizione della funzione di fit
+double fitfunc(double* x, double* p) {
+   double norm = p[0];
+   double mean = p[1];
+   double sigma = p[2];
+   return norm * TMath::Gaus(x[0], mean, sigma);
+}
+
+void fit() {
+   const int mpt = 9999;
+   float x1[mpt];
+   int npt = 0;
+
+   // 1. Lettura dati da file
+   std::ifstream in("dat.txt");
+   while (in.good()) {
+      in >> x1[npt];
+      if (!in.good()) break;
+      npt++;
+   }
+   in.close();
+
+   // 2. Creazione Canvas e Istogramma
+   TCanvas* c1 = new TCanvas("c1", "c1", 0, 0, 500, 500);
+   TH1F* h1 = new TH1F("h1", "h1", 100, -10.0, 25.0);
+
+   for (int i = 0; i < npt; i++) {
+     h1->Fill(x1[i]);
+   }
+
+   // 3. Definizione TF1 e Fit
+   TF1* f1 = new TF1("f1", fitfunc, -100.00, 100.0, 3);
+   f1->SetParameters(7.100, -5.100, 0.100);
+   f1->SetParNames("A", "B", "C");
+
+   gStyle->SetOptStat(kFALSE);
+   gStyle->SetOptFit(kTRUE); // Mostra il box con i risultati del fit
+
+   c1->cd();
+   h1->Fit("f1");
+   f1->SetLineColor(kRed);
+   f1->Draw("same"); // Disegna la funzione sopra l'istogramma
+}
+\end{lstlisting}
+
+\subsection*{Fit Avanzato: TGraphErrors e Residui (PyROOT)}
+
+Nel caso di misure $(x,y)$ con incertezze su entrambi gli assi, si utilizza la classe \texttt{TGraphErrors}. Questo script mostra l'implementazione in \textbf{PyROOT}. 
+
+Lo script esegue il fit dei dati, calcola gli errori efficaci, costruisce l'istogramma dei residui e verifica l'assenza di trend sistematici tramite un fit lineare (polinomio di grado 1: \texttt{pol1}):
+
+\begin{lstlisting}[language=Python, caption={Fit con Varianza Efficace e Residui tramite PyROOT}]
+import ROOT
+import array
+
+# 1. Definizione della funzione (Esponenziale)
+def fitfunc(x, p):
+  return p[0] * ROOT.TMath.Exp(-x[0] / p[1])
+
+# Inizializzazione array tipizzati (necessari per interfacciarsi col C++ di ROOT)
+x1, x2, x3, x4 = array.array('f'), array.array('f'), array.array('f'), array.array('f')
+
+# [ ... Lettura file datpy.txt omessa per brevità ... ]
+
+npt = len(x1)
+
+# 2. Creazione Graph e Fit Principale
+c1 = ROOT.TCanvas('c1', 'Fit Esponenziale', 0, 0, 500, 500)
+gr = ROOT.TGraphErrors(npt, x1, x2, x3, x4)
+
+f1 = ROOT.TF1('f1', fitfunc, 0.00, 10.00, 2)
+f1.SetParameters(0.0, 1.0)
+f1.SetParNames('A', 'B')
+
+ROOT.gStyle.SetOptFit(ROOT.kTRUE)
+
+c1.cd()
+gr.Fit(f1) # ROOT si occupa della minimizzazione
+gr.SetLineColor(ROOT.kBlue)
+gr.Draw('AP') # A=Assi, P=Punti
+f1.SetLineColor(ROOT.kRed)
+f1.Draw('same')
+
+# 3. Analisi dei Residui Normalizzati (con errore efficace calcolato da ROOT)
+x4b = array.array('f') # conterra' gli errori efficaci calcolati
+
+for i in range(npt):
+  # Varianza efficace usando f1.Derivative()
+  var_eff = x4[i]**2 + (x3[i]*f1.Derivative(x1[i]))**2
+  x4b.append(ROOT.TMath.Sqrt(var_eff))
+
+h1 = ROOT.TH1F('h1', 'Distribuzione Residui', 20, -10.0, 10.0)
+
+for i in range(npt):
+  resid = (x2[i] - f1.Eval(x1[i])) / x4b[i]
+  h1.Fill(resid)
+
+# Fit dei residui con Gaussiana
+c2 = ROOT.TCanvas('c2', 'Residui', 600, 0, 500, 500)
+fgaus = ROOT.TF1('fgaus', 'gaus', -2.0, 2.0)
+fgaus.SetParameters(3.0, 0.0, 1.0)
+c2.cd()
+h1.Fit(fgaus)
+
+# 4. Trend dei residui vs x
+y2 = array.array('f')
+for i in range(npt):
+  y2.append(x2[i] - f1.Eval(x1[i]))
+
+c3 = ROOT.TCanvas('c3', 'Trend Residui', 300, 300, 500, 500)
+gr1 = ROOT.TGraphErrors(npt, x1, y2, 0, x4b) # X ha errore 0 qui per il plot
+g1 = ROOT.TF1('g1', 'pol1', 0.00, 10.00) # Fit lineare
+
+c3.cd()
+gr1.Fit(g1)
+gr1.Draw('AP')
+g1.Draw('same')
+
+# Salvataggio su file
+c1.SaveAs('c1.png')
+c2.SaveAs('c2.png')
+c3.SaveAs('c3.png')
+\end{lstlisting}
 
 
 
