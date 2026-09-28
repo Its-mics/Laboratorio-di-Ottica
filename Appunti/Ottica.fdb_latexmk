@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1790597630.41473 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1790597631.6641 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1790597630.3327 17382 fc3467ba9efebfc311816baf1626a302 ""
+["pdflatex"] 1790598894.09199 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1790598895.41856 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1790598892.63299 19582 c9333d7e49b0de00f80d0a047025955a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -55,9 +55,11 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb" 1255129361 112766 bdd4fa8b13a0d7dd137624085bd31d40 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb" 1254269338 23055 2e5b42921de910eaa97b85df04ca4891 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb" 1254269338 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb" 1254269338 30696 2654571912f9cd384da9f7cb8a60c568 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb" 1254269338 31113 04b711c9a4c7f8cb4ed784c6fc4cc1c5 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb" 1254269338 30635 833ec815d446ec453a4913fc26d24cbc ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb" 1255129361 119235 f35b44530a1d90eb90fe15d9cba67ea0 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb" 1255129361 113634 f99c44d58bae0863375faf0e1d74d612 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb" 1255129361 123394 d390152bb30feeb496aaaa93299ee9ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb" 1255129361 122174 a7a08406857c9530a0320a2517f60370 ""
@@ -339,9 +341,13 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1788443625 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1788443550 3636777 f03ef9da5e1eb17495f4663aaf7533af ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "Ottica.aux" 1790597631.5749 2317 bb7394bdaf374ac17714f2fea221585a "pdflatex"
-  "Ottica.tex" 1790597630.3327 17382 fc3467ba9efebfc311816baf1626a302 ""
-  "Ottica.toc" 1790597631.58605 286 ab1c95a514a18c04b183df92dbddc75d "pdflatex"
+  "Immagini/fit3 iminuit immmagine 1.png" 1790598520.01313 22429 ce1e883de45409f2157efb1ebfae66cc ""
+  "Immagini/fit3 iminuit immmagine 2.png" 1790598520.01001 28194 01f69ed9ce175584be62a092d77f7e7b ""
+  "Immagini/fit3 iminuit immmagine 3.png" 1790598520.00773 19037 66200aec00100d3a3541a7b590d6883d ""
+  "Immagini/fit_iminuit immagine.png" 1790598520.01552 30612 7f0606ceab6311696b3eeb005ba2e105 ""
+  "Ottica.aux" 1790598895.32418 5373 32478037614488020b29570de1306f64 "pdflatex"
+  "Ottica.tex" 1790598892.63299 19582 c9333d7e49b0de00f80d0a047025955a ""
+  "Ottica.toc" 1790598895.33521 286 ab1c95a514a18c04b183df92dbddc75d "pdflatex"
   (generated)
   "Ottica.aux"
   "Ottica.log"

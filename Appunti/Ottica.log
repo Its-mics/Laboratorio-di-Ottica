@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  28 SEP 2026 14:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  28 SEP 2026 14:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1187,34 +1187,58 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
                    \relax 
 l.295 m.
         migrad() # Algoritmo di minimizzazione [2]
-Package cleveref Info: loaded `italian' language definitions on input line 339.
- [3]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 378.
+<Immagini/fit_iminuit immagine.png, id=121, 412.6617pt x 328.8285pt>
+File: Immagini/fit_iminuit immagine.png Graphic file (type png)
+<use Immagini/fit_iminuit immagine.png>
+Package pdftex.def Info: Immagini/fit_iminuit immagine.png  used on input line 312.
+(pdftex.def)             Requested size: 318.66948pt x 253.93127pt.
+Package cleveref Info: loaded `italian' language definitions on input line 324.
+ [3 <./Immagini/fit_iminuit immagine.png>]
+Package cleveref Info: loaded `italian' language definitions on input line 373.
+ [4]
+<Immagini/fit3 iminuit immmagine 1.png, id=200, 401.8212pt x 328.8285pt>
+File: Immagini/fit3 iminuit immmagine 1.png Graphic file (type png)
+<use Immagini/fit3 iminuit immmagine 1.png>
+Package pdftex.def Info: Immagini/fit3 iminuit immmagine 1.png  used on input line 393.
+(pdftex.def)             Requested size: 227.62206pt x 186.27515pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 394.
+<Immagini/fit3 iminuit immmagine 2.png, id=201, 400.3758pt x 328.8285pt>
+File: Immagini/fit3 iminuit immmagine 2.png Graphic file (type png)
+<use Immagini/fit3 iminuit immmagine 2.png>
+Package pdftex.def Info: Immagini/fit3 iminuit immmagine 2.png  used on input line 403.
+(pdftex.def)             Requested size: 218.51521pt x 179.47139pt.
+<Immagini/fit3 iminuit immmagine 3.png, id=202, 417.7206pt x 328.8285pt>
+File: Immagini/fit3 iminuit immmagine 3.png Graphic file (type png)
+<use Immagini/fit3 iminuit immmagine 3.png>
+Package pdftex.def Info: Immagini/fit3 iminuit immmagine 3.png  used on input line 410.
+(pdftex.def)             Requested size: 218.51521pt x 172.01036pt.
+Package cleveref Info: loaded `italian' language definitions on input line 421.
+ [5 <./Immagini/fit3 iminuit immmagine 1.png> <./Immagini/fit3 iminuit immmagine 2.png> <./Immagini/fit3 iminuit immmagine 3.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 425.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package cleveref Info: loaded `italian' language definitions on input line 390.
- [4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Package cleveref Info: loaded `italian' language definitions on input line 430.
- [5]
-Overfull \hbox (4.37428pt too wide) in paragraph at lines 451--452
+Package cleveref Info: loaded `italian' language definitions on input line 467.
+ [6{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Overfull \hbox (4.37428pt too wide) in paragraph at lines 498--499
 \T1/lmr/m/n/12 (-20) Nel ca-so di mi-su-re $\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 x; y\OT1/lmr/m/n/12 (-20) )$ \T1/lmr/m/n/12 (-20) con in-cer-tez-ze su en-tram-bi gli as-si, si uti-liz-za la clas-se \T1/lmtt/m/n/12 TGraphErrors\T1/lmr/m/n/12 (-20) .
  []
 
-Package cleveref Info: loaded `italian' language definitions on input line 475.
-[6]
+Package cleveref Info: loaded `italian' language definitions on input line 513.
+[7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 526.
- [7]
-Package cleveref Info: loaded `italian' language definitions on input line 533.
- [8] (./Ottica.aux
+Package cleveref Info: loaded `italian' language definitions on input line 562.
+ [8]
+Package cleveref Info: loaded `italian' language definitions on input line 580.
+ [9] (./Ottica.aux
 Package cleveref Info: loaded `italian' language definitions on input line 8.
 Package cleveref Info: loaded `italian' language definitions on input line 9.
 )
@@ -1224,18 +1248,18 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 70839 strings out of 467525
- 1773856 string characters out of 5418983
- 3099479 words of memory out of 5000000
- 98534 multiletter control sequences out of 15000+600000
- 723893 words of font info for 173 fonts, out of 8000000 for 9000
+ 70942 strings out of 467525
+ 1776442 string characters out of 5418983
+ 3123863 words of memory out of 5000000
+ 98614 multiletter control sequences out of 15000+600000
+ 732387 words of font info for 191 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,13n,108p,1065b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Ottica.pdf (12 pages, 329527 bytes).
+ 103i,13n,108p,1065b,2800s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Ottica.pdf (13 pages, 442985 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
- 241 named destinations out of 1000 (max. 500000)
- 55477 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 426 compressed objects within 5 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 59593 words of extra memory for PDF output out of 61914 (max. 10000000)
 

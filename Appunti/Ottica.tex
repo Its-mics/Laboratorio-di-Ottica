@@ -305,6 +305,16 @@ Sigma_fit = m.values["par2"]
 plt.show()
 \end{lstlisting}
 
+\vspace{0.5cm}
+
+\begin{figure}[H] % [H] forza l'immagine esattamente qui
+    \centering
+    \includegraphics[width=0.7\textwidth]{Immagini/fit_iminuit immagine.png} % Assicurati che il nome file sia corretto
+    \caption{Fit di un set di dati generati casualmente secondo una distribuzione Normale ($\mu = -5.5, \sigma = 0.5$). La curva rossa rappresenta la funzione di fit ottimizzata tramite minimizzazione del $\chi^2$. Il box in alto a destra, generato da \texttt{iminuit}, riporta i parametri estratti e i relativi errori.}
+    \label{fig:gauss_base}
+\end{figure}
+
+
 \subsection*{Fit non lineare, errori su ambo gli assi e Analisi dei Residui}
 Questo secondo script simula un decadimento esponenziale $y = A e^{-x/B}$ ed esegue un'analisi completa in tre fasi:
 \begin{enumerate}
@@ -370,6 +380,43 @@ def chi2_trend(par0, par1):
 m3 = Minuit(chi2_trend, par0=0.0, par1=0.0)
 m3.migrad()
 \end{lstlisting}
+
+
+\vspace{1cm}
+
+\begin{figure}[H]
+    \centering
+    
+    % --- PRIMA RIGA: Grafico Principale ---
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Immagini/fit3 iminuit immmagine 1.png} % Grafico Y vs X
+        \caption{Fit del modello esponenziale. Gli errori sulle $y$ includono la varianza efficace derivata dall'incertezza sulle $x$.}
+        \label{fig:fit_main}
+    \end{subfigure}
+    
+    \vspace{0.8cm} % Spazio verticale tra la prima riga e i grafici sotto
+    
+    % --- SECONDA RIGA: Grafici di diagnostica affiancati ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Immagini/fit3 iminuit immmagine 2.png} % Istogramma Residui
+        \caption{Distribuzione dei residui normalizzati. Il fit Gaussiano conferma che $r_i \sim N(0,1)$, indicando una corretta stima degli errori.}
+        \label{fig:fit_hist_res}
+    \end{subfigure}
+    \hfill % Spinge le due immagini ai lati opposti per affiancarle
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Immagini/fit3 iminuit immmagine 3.png} % Residui vs X
+        \caption{Andamento dei residui in funzione di $x$. Il fit lineare non mostra pendenze significative ($P_1 \simeq 0$), escludendo errori sistematici di modello.}
+        \label{fig:fit_trend_res}
+    \end{subfigure}
+    
+    % Didascalia generale di tutta la figura
+    \caption{Analisi completa del fit non lineare ($y = A e^{-x/B}$) con l'utilizzo della varianza efficace e studio dei residui.}
+    \label{fig:analisi_completa_iminuit}
+\end{figure}
+
 
 \subsection*{Il Framework ROOT}
 
