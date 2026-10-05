@@ -572,9 +572,146 @@ c2.SaveAs('c2.png')
 c3.SaveAs('c3.png')
 \end{lstlisting}
 
+Libro consigliato: Fowles, Introduction to modern optics, Dover
+
+\section{Equazioni di Maxwell}
+
+Rircordiamo le 4 equazioni di Maxwell: \begin{align} \nabla E = \rho /\varepsilon \\ \nabla \times B = \mu \vec{J} \\ \nabla \cdot B = 0 \\ \nabla \times E = \frac{\partial B}{\partial t} \end{align}
+e l'equazioni di continuità: \begin{equation} \nabla \cdot \vec{J} = - \frac{\partial \rho}{\partial t } \end{equation}, senza dimenticare la legge di forza \begin{equation} \vec{F}= q (E - \vec{v} \times B) \end{equation}
+\section{Introduction}
+In generale le \textit{equazioni d'onda } possono essere riscritte:
+\begin{equation}
+\nabla^2 V(\vec{r}, t) = \frac{1}{c^2}\frac{\partial^2V}{\partial t^2}
+\end{equation}
+La cui soluzione si trova utilizzando la trasformata di fourier
+\begin{equation}
+V(\vec r, t ) =\int dw A(w) 
+\end{equation}
+Con soluzione $V(\vec r) = A(\vec r) exp (-ik_0 S(\vec r))$
+dove $k_0 S(\vec r) = cost $ e S è la \textit{funzione iconale}
+Se $A(\vec r)$ cambia in modo molto lento (posso sviluppare in serie) $A(\vec r) = A (\vec r_0)$
+e in generale, con stessa ipotesi di priam su S: $S(\vec r) \simeq S(\vec r_0) \cdot (\vec r -\vec r_0)$
+definisco $\vec k = k_0 \nabla S(\vec{r_0}) = \vec k (\vec r_0) \arrow k(\vec r) = k_0 |\nabla S| = k_0 n(\vec r)$
+dove n è \textit{l'indice di rifrazione}.
+In sostanza abbiamo approsimato le superfici d'onda di egual fase in $\vec r_0$ come dei piani. Se esse sono ravvicinate allora $n$ cambia molto rapidamente
+
+Definiamo la quantità
+\begin{equation}
+L=\int_\gamma n(\vec r) ds = \int_\gamma |\nabla S|ds \leq \int_\gamma^' |\nabla S|ds
+\end{equation}
+e la chiamiamo \textit{cammino ottico}. Minimizzando questa quatità troviamo il percorso attuato dalla nostra onda. Riscrivendo:
+\begin{equation}
+    \delta L = \int_\gamma^' n(\vec r) ds =0
+\end{equation}
+tale principio è detto \textit{Principio di Fermat}.
+
+\section{Trasporto di energia e impulso delle onde EM}
+Considero un volume V con allinterno un numero di particelle, definisco u la densità di energia EM, $\vec S$ IL FLUSSO DI EENERGIA USCENTE DAL VOLUME V
+Allora:
+\begin{equation}
+    \delta E = - \partial_t \int_V u dV = \int_A \vec S dA \delta t - \int_V \frac{\delta L}{\delta t}dV \delta t 
+\end{equation}
+dove la seconda eguaglianza ha inserito il lavoro fatto sulle cariche:
+\begin{equation}
+\frac{\Delta L}{\Delta T} = \vec E \cdot \vec S
+\end{equation}
+da cui 
+\begin{equation}
+    -\partial_t \int u dV = \int_ A \vec S d\vec A + \int_V \vec E \cdot \vec J = \int_V (\nabla S - EJ) dV
+\end{equation}
+dove si è  utilizzato il teorema della divergenza
+ma questo vale per ogni valore, da cui l'\textit{equazione di continuità per l'energia}
+\begin{equation}
+\partial_t u = \nabla J + E J
+\end{equation}
+Riscrvo il termine $EJ$:
+\[
+EJ= \frac{E \nabla \times B }{\mu_0}- \varepsilon_0 E \delta_t E = -\frac{\nabla \times (E \cdot B}{\mu_0} + \frac{B (\nabla \times E}{\mu_0} - \frac{\varepsilon_0 \partial_t E}{2}
+\]
+dove si è utilizzato il fatto che $\partial t$
+Allora possiamo riscrivere:
+\begin{align}
+    u = \frac{\varepsilon_0}{2}|E|^2 + \frac{1}{2\mu_0}|B| \\
+    S
+\end{align}
+  e definisco l'irradianza 
+  \begin{equation}
+      I = <|S|> = \frac{<|E|^2>}{\mu_0 c}
+  \end{equation}
+\section{Verifica legge dell'irradianza per una sorgente puntiforme}
+Abbiamo una sorgente puntiforme che emette luce (ed energia), consideriamo una superfice $S_1$ ad una distanza $r_1$, 
+calcoliamo l'energia che attraversa questa superfice tramite l'angolo solito $\delta \omega$, similmente per una superfice $S_2$
+Perm la conservazioen dell'energia:
+\[
+I_1 S_1 \delta t = I_2 S_2 \delta t \rightarrow I_1/I_2 = S_2/S_1 = r_2 ^2 /r_1 ^2 \righarrow I(r) = I_0 = (r_0 ^2 / r_^2)
+\]
+Vi sarà un binario di 2m graduato con tacche di 1mm, ad una estermità vi è un supporto con appogiata una lampadina alimentata da un alimentatore
+un secondo suporto avanti al prima (sul binario) con sopra un fotodiodo collegato ad un Voltmetro (su scala a corrente continua)
+
+Misureremo la tensione del fotodiodo, e riportiamo in un grafico in funzione di r la tensione misurata, dovremmo ottenere un'iperbole del tipo $1/r^2$ 
+Con unità di isura mm.
+\begin{itemize}
+    \item misura di r: essendo che il fotodiodo non è esattamente sulla tacca del supporto (e nemmeno la lampadina), non posso fare la differenza
+    detto x l'asse del binario, e mettendo a contatto  il fotodiodo con la lampadina ($x_0$), allora 
+    \[
+    r = (x-x_0)+ D/2 + 1mm
+    \]
+    dove D è ildiamtro della lampdin a(la sorgente è dentro la lampida9 e il millimetro perchè il fotodiodo è dentro
+    \item errore su r
+    \[
+    r= \sigma_x^2  + \sigma_D^2 + \sigma_{1mm}^2
+    \]
+    che sono errori correlati, ma tali errori hanno l'effetto di traslazione, tutta la scala si sposta rigidamente, ignorno tutti gli erorri a parte quelli indipendeti da una misura all'altra ovvero $\sigma_x$
+
+    L'errore per la scala millimetrata è il più grande fra la larghezza della tacca e del supporto, in quanto sto allineando il supoorto con la tacca,
+    la misura della tacca intiutivamente è $0.2mm$ (quante tacche ci stanno fra ogni spazio fra le tacche? 5)
+
+    \item Non mandare in saturazione il fotodiodo (che non va dopo 8-9V), posso abbassare l'intensità, ma non c'è la luce di fondo, stesso ragionamento se è troppo alto, perdo la parte inziale del binario (curva piatta all'inizio), per intensità più piccole per 2/3 del binario avrò la luce (perdo all'inzio + dopo un po va a 0 il voltaggio)
+
+    \item Altre fonti di luce portano non a 0 il fotodiodo, non posso misurare semplicemnte a luce spenta, perchè ne cambio l'intensità (non ottengo mai la stessa luce), poi c'è anche da considerare effetti di riflessione (la luce rimbalza e entra da noi), questi non hanno andamento $1/r^2$. Non posso coprire la lampadina, ma metto un bastoncino con sopra un ramino
+    e blocca la luce che va dalla lampadina al fotodiodo:
+    \[
+    V(r) = V(x) - V_p
+    \]
+    La cosa va ripetuta ogni volta perchè cambiano le condizioni ambientali
+    Ma dove metto il ramino ? In mezzo, troppo vicino blocca il riflesso, troppo vicno al fotodiodo blocca tutta la luce, ma quando sta in fondo il fotodiodo, faccio 3 misure e poi faccio la media 
+    \item Come non mandare in saturazione il fotodiodo, lo copro tutto lasciando solo $1mm^2$ libero, posso andare molto vicino alla lampadina, senza andare in saturazione
+\end{itemize}
+\subsection{analisi dati}
+Abbiamo errori su r e sulle nostre tensione (tensione di fondo e misurate), 
+inseriamo in un grafico i dati e troviamo una curva che non va a 0 e non va ad adesarsi all'asse y, la funzioe di fit sarà f(r)=A/(r-B)^2 + C A normalizzazioone e C evetntuali correzzioni
+con risultato A +- err A ,.. 
+alcuni valori:
+l'erroesu C deve essere confrontabile con gli altri errori
+C deve essere compatibile con 0
+B dovrebb eessere compatibile con 0, ma qui entra in gioco anche + sigma_x_0 e erorre su 1mm e errore su D/2, quegli errori influiscono solo su B (trasalazio e rigida delle nostr misure, sul grafico B è la differenza fra 0 e asintoto vericale)
+un altro fit
+f(r) ?= A/(x-B)^D + C
+aspetto anche che D =2
+mettiamo come dati inziale valori attesi 
+
+\subsection{Come fare le misure}
+all'inizio conviene fare molte misure (50), perchè l'errore $\chi^2 = \sum (y-f(x))/ \sigma_y^2 + \sigma_x^2f'(x)^2$ nella prima regione f' è molto grande, dopo il ginocchio ci allarghiamo  
+e dopo ogni 5cm
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La soluzione più generale alle \textit{equazioni d'onda } è data da $E=E_0exp(-i(wt-\vec{k}\vec{r}))$
 \end{document}
