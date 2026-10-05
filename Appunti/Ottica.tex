@@ -426,7 +426,7 @@ ROOT può essere utilizzato in due modi, entrambi illustrati di seguito:
     \item Tramite \textbf{PyROOT} (file \texttt{.py}), un \textit{wrapper} che permette di usare le classi C++ di ROOT all'interno di uno script Python.
 \end{itemize}
 
-\begin{definizione}[title=Oggetti fondamentali in ROOT]
+\begin{definizione}[title={Oggetti fondamentali in ROOT}]
 Nella sintassi di ROOT, ogni oggetto inizia tipicamente per \texttt{T}:
 \begin{itemize}
     \item \texttt{TCanvas}: Dove vengono disegnati i grafici.
@@ -572,172 +572,391 @@ c2.SaveAs('c2.png')
 c3.SaveAs('c3.png')
 \end{lstlisting}
 
-Libro consigliato: Fowles, Introduction to modern optics, Dover
 
-\section{Equazioni di Maxwell}
 
-Rircordiamo le 4 equazioni di Maxwell: \begin{align} \nabla E = \rho /\varepsilon \\ \nabla \times B = \mu \vec{J} \\ \nabla \cdot B = 0 \\ \nabla \times E = \frac{\partial B}{\partial t} \end{align}
-e l'equazione di continuità:
-\begin{equation}
-\nabla \cdot \mathbf{J} = -\frac{\partial \rho}{\partial t}
-\end{equation}
-senza dimenticare la legge di forza
-\begin{equation}
-\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
-\end{equation}
-\section{Introduction}
-In generale le \textit{equazioni d'onda} possono essere riscritte:
-\begin{equation}
-\nabla^2 V(\vec{r}, t) = \frac{1}{c^2}\frac{\partial^2 V}{\partial t^2}
-\end{equation}
-La cui soluzione si trova utilizzando la trasformata di Fourier:
-\begin{equation}
-V(\vec r, t) = \int d\omega\, A(\omega)
-\end{equation}
-Con soluzione $V(\vec r) = A(\vec r) \exp(-ik_0 S(\vec r))$
-dove $k_0 S(\vec r) = \text{cost}$ e $S$ è la \textit{funzione iconale}.
-Se $A(\vec r)$ cambia in modo molto lento (posso sviluppare in serie), allora $A(\vec r) = A(\vec r_0)$.
-In generale, con le stesse ipotesi su $S$:
-\[
-S(\vec r) \simeq S(\vec r_0) + \nabla S(\vec r_0)\cdot (\vec r-\vec r_0)
-\]
-definisco
-\[
-\vec{k} = k_0 \nabla S(\vec{r_0}) = \vec{k}(\vec r_0)
-\quad\Rightarrow\quad
-k(\vec r) = k_0 |\nabla S| = k_0 n(\vec r)
-\]
-dove $n$ è \textit{l'indice di rifrazione}.
-In sostanza abbiamo approssimato le superfici d'onda di egual fase in $\vec r_0$ come dei piani. Se esse sono ravvicinate allora $n$ cambia molto rapidamente.
 
-Definiamo la quantità
-\begin{equation}
-L=\int_{\gamma} n(\vec r)\,ds = \int_{\gamma} |\nabla S|\,ds \leq \int_{\gamma'} |\nabla S|\,ds
-\end{equation}
-e la chiamiamo \textit{cammino ottico}. Minimizzando questa quantità troviamo il percorso attuato dalla nostra onda. Riscrivendo:
-\begin{equation}
-\delta L = \int_{\gamma'} n(\vec r)\,ds = 0
-\end{equation}
-tale principio è detto \textit{Principio di Fermat}.
 
-\section{Trasporto di energia e impulso delle onde EM}
-Considero un volume $V$ con all'interno un numero di particelle; definisco $u$ la densità di energia EM e $\vec S$ il flusso di energia uscente dal volume $V$.
-Allora:
-\begin{equation}
-\delta E = -\partial_t \int_V u\,dV = \int_A \vec S\cdot d\vec A\,\delta t - \int_V \frac{\delta L}{\delta t}\,dV\,\delta t
-\end{equation}
-dove la seconda uguaglianza ha inserito il lavoro fatto sulle cariche:
-\begin{equation}
-\frac{\Delta L}{\Delta T} = \vec E \cdot \vec S
-\end{equation}
-da cui
-\begin{equation}
--\partial_t \int_V u\,dV = \int_A \vec S\cdot d\vec A + \int_V \vec E\cdot\vec J\,dV
-\end{equation}
-dove si è utilizzato il teorema della divergenza.
-Ma questo vale per ogni volume, da cui l'\textit{equazione di continuità per l'energia}
-\begin{equation}
-\partial_t u = -\nabla\cdot\vec S + \vec E\cdot\vec J
-\end{equation}
-Riscrivo il termine $\vec E\cdot\vec J$:
-\[
-\vec E\cdot\vec J
-= \frac{1}{\mu_0}\mathbf E\cdot(\nabla\times\mathbf B)
-- \varepsilon_0 \mathbf E\cdot \frac{\partial \mathbf E}{\partial t}
-= -\frac{1}{\mu_0}\nabla\cdot(\mathbf E\times\mathbf B)
-+ \frac{1}{\mu_0}\mathbf B\cdot(\nabla\times\mathbf E)
-- \frac{\partial}{\partial t}\left(\frac{\varepsilon_0}{2}|\mathbf E|^2\right)
-\]
-Allora possiamo riscrivere:
+
+
+\section*{Richiamo sulle equazioni di Maxwell}
+In \textbf{presenza di sorgenti}, le equazioni di Maxwell assumono la forma:
 \begin{align}
-    u &= \frac{\varepsilon_0}{2}|\mathbf E|^2 + \frac{1}{2\mu_0}|\mathbf B|^2, \\
-    \vec S &= \frac{1}{\mu_0}\mathbf E\times\mathbf B
+    \nabla \cdot \vec{E}(\vec{r},t) &= \frac{\rho}{\varepsilon} & \nabla \times \vec{E}(\vec{r},t) &= - \partial_t \vec{B}(\vec{r},t) \\
+    \nabla \cdot \vec{B}(\vec{r},t) &= 0 & \nabla \times \vec{B}(\vec{r},t) &= \mu \left\{ \vec{J}(\vec{r},t) + \varepsilon \partial_t \vec{E}(\vec{r},t) \right\}
 \end{align}
-e definisco l'irradianza
+Inoltre sono importanti da ricordare le seguenti relazioni:
+\begin{align}
+    \nabla \cdot \vec{J}(\vec{r},t) &= -\partial_t \rho \quad \text{(Equazione di continuità)} \\
+    \vec{F} &= q(\vec{E} + \vec{v} \times \vec{B}) \quad \text{(Forza di Lorentz)}
+\end{align}
+In presenza di un materiale dielettrico:
 \begin{equation}
-I = \langle |\mathbf S| \rangle = \frac{\langle |\mathbf E|^2 \rangle}{\mu_0 c}
+    \vec{D} = \varepsilon_0 \varepsilon_r \vec{E} \qquad \vec{B} = \mu_0 \mu_r \vec{H}
 \end{equation}
-\section{Verifica legge dell'irradianza per una sorgente puntiforme}
-Abbiamo una sorgente puntiforme che emette luce (ed energia), consideriamo una superfice $S_1$ ad una distanza $r_1$, 
-calcoliamo l'energia che attraversa questa superfice tramite l'angolo solito $\delta \omega$, similmente per una superfice $S_2$
-Per la conservazione dell'energia:
-\[
-I_1 S_1\,\delta t = I_2 S_2\,\delta t
-\quad\Rightarrow\quad
-\frac{I_1}{I_2} = \frac{S_2}{S_1} = \frac{r_2^2}{r_1^2}
-\quad\Rightarrow\quad
-I(r) = I_0\left(\frac{r_0}{r}\right)^2
-\]
-Vi sarà un binario di 2m graduato con tacche di 1mm, ad una estermità vi è un supporto con appogiata una lampadina alimentata da un alimentatore
-un secondo suporto avanti al prima (sul binario) con sopra un fotodiodo collegato ad un Voltmetro (su scala a corrente continua)
 
-Misureremo la tensione del fotodiodo, e riportiamo in un grafico in funzione di r la tensione misurata, dovremmo ottenere un'iperbole del tipo $1/r^2$ 
-Con unità di isura mm.
+Se invece siamo in \textbf{assenza di sorgenti} ($\rho = 0$, $\vec{J} = 0$), le equazioni diventano:
+\begin{align}
+    \nabla \cdot \vec{E}(\vec{r},t) &= 0 & \nabla \times \vec{E}(\vec{r},t) &= - \partial_t \vec{B} \\
+    \nabla \cdot \vec{B}(\vec{r},t) &= 0 & \nabla \times \vec{B}(\vec{r},t) &= \mu \varepsilon \partial_t \vec{E}
+\end{align}
+Possiamo ricavare l'equazione delle onde applicando il rotore alla terza equazione:
+\begin{equation}
+    \nabla \times (\nabla \times \vec{E}) = -\nabla^2 \vec{E} + \nabla(\cancelto{0}{\nabla \cdot \vec{E}}) = -\partial_t (\nabla \times \vec{B})
+\end{equation}
+Sostituendo il rotore di $\vec{B}$, otteniamo:
+\begin{equation}
+    \nabla^2 \vec{E} = \varepsilon_0 \mu_0 \partial_t^2 \vec{E}
+\end{equation}
+Eseguendo lo stesso procedimento per il campo magnetico si ottiene un risultato analogo:
+\begin{equation}
+    \begin{cases}
+        \nabla^2 \vec{E} = \varepsilon_0 \mu_0 \partial_t^2 \vec{E} \\
+        \nabla^2 \vec{B} = \varepsilon_0 \mu_0 \partial_t^2 \vec{B}
+    \end{cases}
+\end{equation}
+
+\section{Onde elettromagnetiche e approssimazione Iconale}
+La soluzione all'equazione d'onda per campi monocromatici è data da:
+\begin{align}
+    \vec{E}(\vec{r}, t) &= \vec{E}_0 e^{i(\vec{k} \cdot \vec{r} - \omega t)} \\
+    \vec{B}(\vec{r}, t) &= \frac{\vec{E}_0}{c} e^{i(\vec{k} \cdot \vec{r} - \omega t)}
+\end{align}
+dove $\vec{k}$ è il vettore d'onda. Dalle equazioni di Maxwell è possibile ricavare inoltre le seguenti relazioni di ortogonalità:
+\begin{equation}
+    \vec{k} \cdot \vec{E}_0 = 0, \qquad \vec{k} \cdot \vec{B}_0 = 0, \qquad \vec{k} \times \vec{E}_0 = \omega \vec{B}_0
+\end{equation}
+Ottengo dunque $6$ equazioni scalari, ciascuna della forma generale:
+\begin{equation}
+    \nabla^2 v(\vec{r}, t) = \frac{1}{c^2} \partial_t^2 v(\vec{r}, t)
+\end{equation}
+la cui soluzione generale (tramite sovrapposizione) è:
+\begin{equation}
+    v(\vec{r}, t) = \int A(\omega) e^{i\omega t} v_0 e^{i \vec{k} \cdot \vec{r}} d\omega
+\end{equation}
+In questo modo la soluzione generale può essere espressa come un'onda con ampiezza dipendente dalla posizione e fase dipendente dalla posizione:
+\begin{equation}
+    v(\vec{r}, t) = A(\vec{r}) e^{-i k_0 S(\vec{r})}
+\end{equation}
+dove $k_0$ e $k_0 S(\vec{r}) = \text{costante}$ (superfici d'onda). Se supponiamo che l'ampiezza vari lentamente, possiamo sviluppare la funzione iconale $S$ in serie di Taylor nell'intorno di un punto $\vec{r}_0$:
+\begin{align}
+    A(\vec{r}) &\approx A(\vec{r}_0) \\
+    S(\vec{r}, t) &\approx S(\vec{r}_0) + \nabla S(\vec{r}_0) \cdot (\vec{r} - \vec{r}_0)
+\end{align}
+Sviluppo in serie (Funzione iconale per approssimare le superfici d'onda come piani ortogonali alla direzione di propagazione):
+\begin{equation}
+    v(\vec{r}) \simeq A(\vec{r}_0) \exp{-i k_0 S(\vec{r}_0) - i k_0 \nabla S(\vec{r}_0) \cdot (\vec{r} - \vec{r}_0)}
+\end{equation}
+Definisco il vettore d'onda locale e l'indice di rifrazione $n(\vec{r})$:
+\begin{equation}
+    \vec{k}(\vec{r}) = k_0 \nabla S(\vec{r}) \quad e \quad n(\vec{r}) = |\nabla S(\vec{r})|
+\end{equation}
+Da cui il modulo del vettore d'onda: $k(\vec{r}) = |\vec{k}(\vec{r})| = k_0 |\nabla S(\vec{r})| = k_0 n(\vec{r})$.
+
+\subsection{Principio di Fermat e Cammino Ottico}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale=1.1]
+        \providecolor{PoliBlue}{RGB}{0, 60, 125}
+        \providecolor{OpticRed}{RGB}{190, 30, 45}
+
+        % Superfici d'onda (discendenti da sinistra a destra)
+        \draw[thick, gray!70] plot[smooth] coordinates
+            {(0.8,-0.5) (3,-1) (5.3,-2.1) (6.8,-3.4) (8.2,-4.2)};
+        \draw[thick, gray!70] plot[smooth] coordinates
+            {(0.6,-1.3) (2.6,-1.8) (4.8,-3) (6.2,-4.1) (7.7,-4.8)};
+        \draw[thick, gray!70] plot[smooth] coordinates
+            {(0.4,-2.3) (2.2,-2.6) (3.2,-3.2) (5,-4.3) (6.4,-5.1) (7.4,-5.5)};
+
+        % Etichetta in basso a destra
+        \node[anchor=west] at (4.6,-6.0) {Superfici d'onda};
+
+        % Punti A (fronte inferiore) e B (fronte superiore)
+        \coordinate (A) at (3.2,-3.2);
+        \coordinate (B) at (5.3,-2.1);
+
+        % Cammini ondulati gamma_1 e gamma_2
+        \draw[thick, PoliBlue, ->] plot[smooth] coordinates
+            {(A) (3.55,-2.85) (3.85,-2.35) (4.35,-2.2) (4.8,-2.35) (5.05,-2.2) (B)};
+        \draw[thick, OpticRed, ->] plot[smooth] coordinates
+            {(A) (3.7,-3.3) (4.15,-3.0) (4.45,-3.1) (4.75,-2.75) (5.0,-2.35) (B)};
+
+        \node[PoliBlue] at (3.95,-1.85) {$\gamma_1$};
+        \node[OpticRed] at (5.2,-3.1) {$\gamma_2$};
+
+        % Gradiente di S in A, ortogonale al fronte d'onda
+        \draw[->, thick] (A) -- ++(0.35,0.65);
+        \node[left] at (3.2,-2.65) {$\vec{\nabla}S$};
+
+        % Punti
+        \fill (A) circle (2pt) node[below left] {$A$};
+        \fill (B) circle (2pt) node[above right] {$B$};
+    \end{tikzpicture}
+    \caption{Propagazione tra superfici d'onda e percorsi alternativi.}
+\end{figure}
+
+Definisco \textit{cammino ottico} $l$ la seguente grandezza:
+\begin{equation}
+    l = \int_\gamma |\nabla S(\vec{r})| ds
+\end{equation}
+Vale la seguente disuguaglianza: il percorso più breve è quello a pendenza massima (ortogonale alle superfici d'onda), ovvero lungo le linee di flusso del gradiente:
+\begin{equation}
+    \int_\gamma |\nabla S(\vec{r})| ds \le \int_{\gamma'} |\nabla S(\vec{r})| ds
+\end{equation}
+
+\begin{definizione}[title={Principio di Fermat}]
+Definita la variazione di una funzione $\delta l$, il Principio di Fermat afferma che la luce segue un percorso per il quale il cammino ottico è stazionario:
+\begin{equation}
+    \delta l = \delta \int_\gamma |n(\vec{r})| ds = 0
+\end{equation}
+\end{definizione}
+
+\section*{Trasporto di energia}
+Consideriamo un volume $V$ contenente delle cariche in movimento. 
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale=1.2]
+        \providecolor{PoliBlue}{RGB}{0, 60, 125}
+        \providecolor{OpticRed}{RGB}{190, 30, 45}
+
+        % Volume a patata
+        \draw[thick, fill=PoliBlue!8] plot[smooth cycle] coordinates
+            {(0.25,2.5) (1,3) (2,2.9) (3,2.5) (3.9,2.1) (3.5,1.5)
+             (3,0.9) (2.7,0.25) (1,0.25) (0.25,0.9) (0.1,1.7)};
+        \node at (-0.2,3.3) {\large $V$};
+
+        % Origine
+        \coordinate (O) at (2.8,0);
+        \fill (O) circle (1.5pt) node[below right] {$O$};
+
+        % Elemento di volume dv (cubetto)
+        \coordinate (C) at (1.75,1.7);
+        \begin{scope}[shift={(1.6,1.55)}]
+            \filldraw[thick, fill=gray!15] (0,0) rectangle (0.25,0.25);          % fronte
+            \filldraw[thick, fill=gray!40] (0.25,0) -- (0.4,0.1) -- (0.4,0.35)
+                                           -- (0.25,0.25) -- cycle;               % lato
+            \filldraw[thick, fill=gray!25] (0,0.25) -- (0.15,0.35) -- (0.4,0.35)
+                                           -- (0.25,0.25) -- cycle;               % sopra
+        \end{scope}
+        \node at (1.1,2.25) {$dv$};
+
+        % Vettori posizione
+        \draw[->, thick, PoliBlue] (O) -- (1.85,1.5) node[pos=0.5, left=2pt] {$\vec{r}$};
+        \draw[->, thick, OpticRed] (O) -- (3.6,3.3) node[pos=0.55, right=2pt] {$\vec{r}\,'$};
+    \end{tikzpicture}
+    \caption{Elemento di volume $dv$ all'interno del volume $V$.}
+\end{figure}
+
+Siano:
 \begin{itemize}
-    \item misura di r: essendo che il fotodiodo non è esattamente sulla tacca del supporto (e nemmeno la lampadina), non posso fare la differenza
-    detto x l'asse del binario, e mettendo a contatto  il fotodiodo con la lampadina ($x_0$), allora 
-    \[
-    r = (x-x_0)+ D/2 + 1mm
-    \]
-    dove D è ildiamtro della lampdin a(la sorgente è dentro la lampida9 e il millimetro perchè il fotodiodo è dentro
-    \item errore su r
-    \[
-    r= \sigma_x^2  + \sigma_D^2 + \sigma_{1mm}^2
-    \]
-    che sono errori correlati, ma tali errori hanno l'effetto di traslazione, tutta la scala si sposta rigidamente, ignorno tutti gli erorri a parte quelli indipendeti da una misura all'altra ovvero $\sigma_x$
-
-    L'errore per la scala millimetrata è il più grande fra la larghezza della tacca e del supporto, in quanto sto allineando il supoorto con la tacca,
-    la misura della tacca intiutivamente è $0.2mm$ (quante tacche ci stanno fra ogni spazio fra le tacche? 5)
-
-    \item Non mandare in saturazione il fotodiodo (che non va dopo 8-9V), posso abbassare l'intensità, ma non c'è la luce di fondo, stesso ragionamento se è troppo alto, perdo la parte inziale del binario (curva piatta all'inizio), per intensità più piccole per 2/3 del binario avrò la luce (perdo all'inzio + dopo un po va a 0 il voltaggio)
-
-    \item Altre fonti di luce portano non a 0 il fotodiodo, non posso misurare semplicemnte a luce spenta, perchè ne cambio l'intensità (non ottengo mai la stessa luce), poi c'è anche da considerare effetti di riflessione (la luce rimbalza e entra da noi), questi non hanno andamento $1/r^2$. Non posso coprire la lampadina, ma metto un bastoncino con sopra un ramino
-    e blocca la luce che va dalla lampadina al fotodiodo:
-    \[
-    V(r) = V(x) - V_p
-    \]
-    La cosa va ripetuta ogni volta perchè cambiano le condizioni ambientali
-    Ma dove metto il ramino ? In mezzo, troppo vicino blocca il riflesso, troppo vicno al fotodiodo blocca tutta la luce, ma quando sta in fondo il fotodiodo, faccio 3 misure e poi faccio la media 
-    \item Come non mandare in saturazione il fotodiodo, lo copro tutto lasciando solo $1mm^2$ libero, posso andare molto vicino alla lampadina, senza andare in saturazione
+    \item $u$: densità di energia elettromagnetica.
+    \item $\vec{S}$: densità di flusso di energia (Vettore di Poynting).
 \end{itemize}
-\subsection{Analisi dati}
-Abbiamo errori su $r$ e sulle nostre tensioni (tensione di fondo e misurate).
-Inseriamo i dati in un grafico e troviamo una curva che non va a 0 e non si adatta bene all'asse $y$; la funzione di fit sarà
-\[ f(r) = \frac{A}{(r-B)^2} + C \]
-con eventuali correzioni di normalizzazione. In particolare, $A$ è il parametro di ampiezza, $B$ è uno shift della posizione e $C$ rappresenta un offset.
 
-I valori ottenuti devono essere confrontati con gli errori sperimentali: $C$ deve essere confrontabile con gli altri errori e compatibile con 0; $B$ dovrebbe essere compatibile con 0, ma qui entrano in gioco anche $\sigma_{x_0}$, l'errore su $1\,\mathrm{mm}$ e l'errore su $D/2$. Questi errori influiscono solo su $B$, cioè sulla traslazione rigida delle nostre misure; sul grafico, $B$ è la differenza fra 0 e l'asintoto verticale.
+Posso definire la variazione di energia elettromagnetica interna al volume come:
+\begin{equation}
+    \Delta E = \partial_t \left\{ \int_V u \, dV \right\} \Delta t
+\end{equation}
+In presenza di un lavoro esterno, la variazione di energia è data da:
+\begin{equation}
+    \Delta E = \partial_t \left\{ \oint_{\partial V} \vec{S} \cdot \hat{n} \, dA \right\} \Delta t + \left\{ \int_V \frac{\Delta L}{\Delta t} dV \right\} \Delta t
+\end{equation}
+dove il termine di lavoro meccanico sulle cariche è dato dalla forza di Lorentz:
+\begin{equation}
+    \frac{\Delta L}{\Delta t} = \vec{F} \cdot \vec{v} = \vec{E} \cdot \vec{J}(\vec{r}, t)
+\end{equation}
 
-Un altro possibile fit è
-\[ f(r) = \frac{A}{(x-B)^D} + C \]
-con la richiesta che $D=2$.
-Mettiamo come dati iniziali i valori attesi.
+La variazione di energia elettromagnetica nel volume, unita al bilancio dei flussi e del lavoro sulle cariche, ci dà:
+\begin{equation}
+    -\partial_t \int_V u \, dV = \int_A \vec{S} \cdot \hat{n} \, dA + \int_V \vec{E} \cdot \vec{J} \, dV
+\end{equation}
+Applicando il teorema della divergenza al primo termine sul lato destro:
+\begin{equation}
+    -\partial_t \int_V u \, dV = \int_V \nabla \cdot \vec{S} \, dV + \int_V \vec{E} \cdot \vec{J} \, dV \quad \implies \quad - \partial_t u - \nabla \cdot \vec{S} = \vec{E} \cdot \vec{J}
+\end{equation}
+Riscriviamo il termine $\vec{E} \cdot \vec{J}$ utilizzando la 4ª equazione di Maxwell:
+\begin{equation}
+    \vec{E} \cdot \vec{J} = \vec{E} \cdot \left( \frac{\nabla \times \vec{B}}{\mu_0} - \varepsilon_0 \partial_t \vec{E} \right) = \frac{\vec{E} \cdot (\nabla \times \vec{B})}{\mu_0} - \frac{\varepsilon_0}{2} \partial_t E^2
+\end{equation}
 
-\subsection{Come fare le misure}
-All'inizio conviene fare molte misure (circa 50), perché l'errore
-\[
-\chi^2 = \sum \frac{(y-f(x))^2}{\sigma_y^2 + \sigma_x^2 f'(x)^2}
-\]
-è particolarmente grande nella prima regione, dove $f'(x)$ è molto grande; dopo il ginocchio possiamo allargare lo step di misura e ripetere la procedura ogni 5 cm.
+Sfruttando l'identità vettoriale $\nabla \cdot (\vec{E} \times \vec{B}) = \vec{B} \cdot (\nabla \times \vec{E}) - \vec{E} \cdot (\nabla \times \vec{B})$, otteniamo:
+\begin{equation}
+    \vec{E} \cdot \vec{J} = - \frac{\nabla \cdot (\vec{E} \times \vec{B})}{\mu_0} + \frac{\vec{B} \cdot (\nabla \times \vec{E})}{\mu_0} - \frac{\varepsilon_0}{2} \partial_t E^2
+\end{equation}
+Sostituendo $\nabla \times \vec{E} = -\partial_t \vec{B}$ dal 3° postulato di Maxwell:
+\begin{equation}
+    \vec{E} \cdot \vec{J} = - \frac{\nabla \cdot (\vec{E} \times \vec{B})}{\mu_0} - \frac{1}{2\mu_0} \partial_t B^2 - \frac{\varepsilon_0}{2} \partial_t E^2
+\end{equation}
+Definendo il \textbf{Vettore di Poynting} come $\vec{S} = \frac{1}{\mu_0} (\vec{E} \times \vec{B})$ e la densità di energia $u_{em}$, la relazione diventa il teorema di Poynting:
+\begin{equation}
+    \vec{E} \cdot \vec{J} = - \nabla \cdot \vec{S} - \partial_t u_{em}
+\end{equation}
+Definiamo infine l'\textbf{Irradianza} di un'onda come la media temporale del modulo del vettore di Poynting:
+\begin{equation}
+    I = \langle |\vec{S}| \rangle = \frac{1}{\mu_0} \langle |\vec{E} \times \vec{B}| \rangle = \frac{1}{\mu_0 c} \langle |E|^2 \rangle
+\end{equation}
+Se considero un'onda piana monocromatica:
+\begin{equation}
+    I = \frac{\varepsilon_0 c}{2} |E|^2
+\end{equation}
+
+\section{Irradianza di una sorgente puntiforme}
+
+\textbf{Obiettivo}: Realizzare un apparato assimilabile ad una sorgente puntiforme per verificare la legge dell'irradianza per tale sorgente.
+
+\subsection{Modello Teorico}
+Consideriamo l'energia che attraversa due porzioni di superfici sferiche $S_1$ e $S_2$ a distanze $r_1$ e $r_2$. Per la conservazione dell'energia nell'intervallo $\Delta t$:
+\begin{equation}
+    I_1 S_1 \Delta t = I_2 S_2 \Delta t \quad \implies \quad \frac{I_1}{I_2} = \frac{S_2}{S_1}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[dashed, gray] (0,0) -- (6, 2.5);
+        \draw[dashed, gray] (0,0) -- (6, -2.5);
+        \draw[dashed, gray] (0,0) -- (6, 0); 
+        \filldraw[OpticRed] (0,0) circle (3pt) node[left, black, xshift=-5pt] {Sorgente};
+        \draw[thick, fill=PoliBlue!20, opacity=0.8] (2.5, -1) rectangle (3.2, 1);
+        \node[above] at (2.85, 1) {$S_1$};
+        \draw[<->, thick] (0, -0.2) -- (2.85, -0.2) node[midway, below] {$r_1$};
+        \draw[thick, fill=PoliBlue!20, opacity=0.8] (4.5, -1.8) rectangle (5.2, 1.8);
+        \node[above] at (4.85, 1.8) {$S_2$};
+        \draw[<->, thick] (0, -0.6) -- (4.85, -0.6) node[midway, below] {$r_2$};
+    \end{tikzpicture}
+\end{figure}
+
+Siccome gli angoli solidi sono uguali, vale la relazione $S_i = \Delta\Omega \cdot r_i^2$. Otteniamo quindi:
+\begin{equation}
+    \frac{I_1}{I_2} = \frac{r_1^2}{r_2^2} \quad \longrightarrow \quad I(r) = I_1 \left(\frac{r_1}{r}\right)^2
+\end{equation}
+
+\subsection{Set-up Sperimentale}
+L'apparato per la misura prevede una scala graduata su cui allineare un fotodiodo collegato ad un voltmetro. L'andamento atteso per la tensione letta è $V \sim 1/r^2$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[line width=3pt, gray] (0,0) -- (10,0);
+        \foreach \x in {0,1,...,10} \draw[thick] (\x,0) -- (\x,-0.2);
+        \node[right] at (10,0) {\large $x$ [mm]};
+        \draw[thick, fill=gray!30] (1,0) rectangle (1.5, 1.5);
+        \filldraw[yellow!50, draw=orange, thick] (1.25, 1.8) circle (0.4);
+        \node[above] at (1.25, 2.3) {Lampadina};
+        \draw[thick, fill=gray!30] (7,0) rectangle (7.5, 1.5);
+        \draw[thick, fill=black] (6.9, 1.2) rectangle (7, 1.4);
+        \node[above] at (7.25, 1.6) {Fotodiodo};
+        \draw[thick, PoliBlue] (7.25, 0.75) to[out=0, in=180] (8.5, 1.2);
+        \draw[thick, fill=white] (9, 1.2) circle (0.5) node {\textbf{V}};
+    \end{tikzpicture}
+\end{figure}
+
+Per misurare la distanza $r$, mettiamo a contatto il fotodiodo con la lampadina alla posizione $x_0$. La distanza reale sarà corretta per il diametro della lampadina $D$ e la posizione del sensore:
+\begin{equation}
+    r = (x - x_0) + \frac{D}{2} + \qty{1}{\milli\metre}
+\end{equation}
+L'errore associato a tale misura non è puramente casuale. Possiamo stimare l'errore sistematico di traslazione come $(\sigma_{x_0} + \sigma_{D/2} + \sigma_{1\text{mm}})$. Ignoriamo in prima approssimazione questi ultimi tre errori, poiché causano solo uno "shift" rigido della scala.
+L'errore casuale dominante $\sigma_x$ è dato dalla larghezza della tacca sulla scala graduata (allineamento visivo). Possiamo stimarlo tramite una distribuzione uniforme rettangolare:
+\begin{equation}
+    \sigma_x \simeq \frac{0,2}{\sqrt{3}} \text{ mm}
+\end{equation}
+L'incertezza sulle ordinate (Voltaggio) è data invece dalla somma quadratica dell'errore di lettura del multimetro e dell'incertezza sulla fluttuazione di fondo: $\sigma_V = \sqrt{\sigma_{lett}^2 + \sigma_{fondo}^2}$.
+
+\begin{nota}
+\begin{itemize}
+    \item \textbf{Saturazione:} Per modulare l'intensità della lampadina, NON devo portare a saturazione il fotodiodo. In prossimità della sorgente l'intensità è molto alta.
+    \item \textbf{Luce Ambientale:} Per valutare la luce di fondo, si inserisce un piccolo ostacolo opaco tra la lampadina e il fotodiodo. Tale misurazione \textbf{deve essere fatta per ogni misura} (posizione per posizione), per capire le esatte condizioni di scattering ambientale.
+    \item \textbf{Densità di misure:} Conviene intensificare la presa dati all'inizio della scala millimetrata (es. 20, 30, 50 misure ravvicinate), perché quelle posizioni sono molto più sensibili all'errore sui parametri di fit per via dell'alta pendenza del grafico.
+\end{itemize}
+\end{nota}
+
+\subsection{Analisi Dati}
+La funzione di fit dovrà avere una forma del tipo:
+\begin{equation}
+    f(r) = \frac{A}{(r-B)^2} + C
+\end{equation}
+con $A, B, C$ parametri da stimare.
+In particolare: $A \ne 0$, $B \simeq \sigma_B$ (compatibile con 0), e $C \pm \sigma_C$.
+Per verificare la compatibilità del parametro $B$ con $0$ (o col valore atteso), è necessario tenere conto degli errori sistematici tralasciati all'inizio: $\sigma_{x_0}, \sigma_{D/2}$.
+
+Si eseguirà quindi un test del $\chi^2$.
+Come prova ulteriore della dipendenza $1/r^2$, è possibile eseguire un \textbf{secondo Fit}, usando come parametri iniziali $A, B, C$ quelli ottenuti nel primo, e aggiungendo un parametro esponente $D$:
+\begin{equation}
+    f_2(r) = \frac{A}{(r-B)^D} + C
+\end{equation}
+
+\subsection{Grafici Diagnostici Finali}
+Per un'analisi completa e corretta, la relazione di laboratorio dovrà presentare \textbf{tre grafici}:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle, width=7cm, height=5cm,
+            xlabel={$r$}, ylabel={$V$},
+            xmin=-0.5, xmax=6, ymin=-0.5, ymax=6,
+            xtick=\empty, ytick=\empty
+        ]
+        \addplot[domain=1.2:5.5, samples=100, thick, PoliBlue] {3/(x-1)^2 + 1};
+        \draw[dashed, red, thick] (0, 1) -- (5.5, 1) node[right, black] {$C$};
+        \draw[dashed, red, thick] (1, 0) -- (1, 5.5) node[above, black] {$B$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Curva di tensione e Asintoti.}
+\end{figure}
+
+\vspace{0.5cm}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \draw[->] (-2.5,0) -- (2.5,0) node[right] {Residui};
+            \draw[->] (0,0) -- (0,3) node[above] {Conteggi};
+            \draw[thick, PoliBlue, domain=-2:2, samples=50] plot (\x, {2.5*exp(-1.5*\x*\x)});
+            \draw (0,0) rectangle (0.4, 2.2); \draw (-0.4,0) rectangle (0, 2.2);
+            \draw (0.4,0) rectangle (0.8, 1.4); \draw (-0.8,0) rectangle (-0.4, 1.4);
+            \draw (0.8,0) rectangle (1.2, 0.5); \draw (-1.2,0) rectangle (-0.8, 0.5);
+        \end{tikzpicture}
+        \caption{Istogramma dei Residui.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            % Asse X fittizio
+            \draw[->] (0, 0) -- (4, 0) node[right] {};
+            \draw[->] (0, -2) -- (0, 2) node[above] {Misura};
+            
+            \draw[dashed, gray] (0,0.5) -- (4,0.5) node[right] {Atteso};
+            
+            % Punto 1
+            \filldraw (1, 0.6) circle (2pt);
+            \draw[thick] (1, 0.2) -- (1, 1.0);
+            \draw[thick] (0.8, 0.2) -- (1.2, 0.2);
+            \draw[thick] (0.8, 1.0) -- (1.2, 1.0);
+            
+            % Punto 2
+            \filldraw (2, 0.3) circle (2pt);
+            \draw[thick] (2, -0.2) -- (2, 0.8);
+            \draw[thick] (1.8, -0.2) -- (2.2, -0.2);
+            \draw[thick] (1.8, 0.8) -- (2.2, 0.8);
+            
+            % Punto 3
+            \filldraw (3, 0.8) circle (2pt);
+            \draw[thick] (3, 0.3) -- (3, 1.3);
+            \draw[thick] (2.8, 0.3) -- (3.2, 0.3);
+            \draw[thick] (2.8, 1.3) -- (3.2, 1.3);
+            
+        \end{tikzpicture}
+        \caption{Compatibilità Misure.}
+    \end{subfigure}
+    \caption{Diagnostica statistica post-fit.}
+\end{figure}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-La soluzione più generale alle \textit{equazioni d'onda } è data da $E=E_0exp(-i(wt-\vec{k}\vec{r}))$
 \end{document}

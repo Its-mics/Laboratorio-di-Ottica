@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1791203823.33309 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1791203824.74029 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1791203821.74978 27862 4ebeabe683d3781b76014ea700b321c5 ""
+["pdflatex"] 1791209572.11041 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1791209573.68867 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1791209570.23472 38525 5c25b9cbf98b52b8fb2572d578f04f69 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -52,6 +52,7 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm" 1254269338 11852 5a9022f105fd1ee2797df861e79ae9a0 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm" 1254269338 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm" 1254269338 1596 1d4548788e389ded56d0b01b28377882 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1248133631 11493 4f5ed183a47d3197cf8cd322325db6de ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb" 1255129361 121021 1bf809ce4a594679006bd72263eba59b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb" 1255129361 112766 bdd4fa8b13a0d7dd137624085bd31d40 ""
@@ -347,9 +348,9 @@
   "Immagini/fit3 iminuit immmagine 2.png" 1790598520.01001 28194 01f69ed9ce175584be62a092d77f7e7b ""
   "Immagini/fit3 iminuit immmagine 3.png" 1790598520.00773 19037 66200aec00100d3a3541a7b590d6883d ""
   "Immagini/fit_iminuit immagine.png" 1790598520.01552 30612 7f0606ceab6311696b3eeb005ba2e105 ""
-  "Ottica.aux" 1791203824.6428 8426 dc41147322f2d71943096764ff30031c "pdflatex"
-  "Ottica.tex" 1791203821.74978 27862 4ebeabe683d3781b76014ea700b321c5 ""
-  "Ottica.toc" 1791203824.65474 835 b1b3a27882a179a38152e64de82fc820 "pdflatex"
+  "Ottica.aux" 1791209573.59117 9629 9bbaca5ad98014ddf459acdc0f6adaf0 "pdflatex"
+  "Ottica.tex" 1791209570.23472 38525 5c25b9cbf98b52b8fb2572d578f04f69 ""
+  "Ottica.toc" 1791209573.60268 956 89b4d7aca8fc86f4fe49baf2e092f604 "pdflatex"
   (generated)
   "Ottica.aux"
   "Ottica.log"
