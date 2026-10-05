@@ -1,3 +1,4 @@
 {
-  "latex-workshop.latex.autoBuild.run": "onFileChange"
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "python-envs.defaultEnvManager": "ms-python.python:system"
 }
