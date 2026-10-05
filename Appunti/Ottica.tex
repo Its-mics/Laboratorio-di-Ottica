@@ -801,6 +801,8 @@ Se considero un'onda piana monocromatica:
     I = \frac{\varepsilon_0 c}{2} |E|^2
 \end{equation}
 
+
+
 \section{Irradianza di una sorgente puntiforme}
 
 \textbf{Obiettivo}: Realizzare un apparato assimilabile ad una sorgente puntiforme per verificare la legge dell'irradianza per tale sorgente.
@@ -832,8 +834,8 @@ Siccome gli angoli solidi sono uguali, vale la relazione $S_i = \Delta\Omega \cd
     \frac{I_1}{I_2} = \frac{r_1^2}{r_2^2} \quad \longrightarrow \quad I(r) = I_1 \left(\frac{r_1}{r}\right)^2
 \end{equation}
 
-\subsection{Set-up Sperimentale}
-L'apparato per la misura prevede una scala graduata su cui allineare un fotodiodo collegato ad un voltmetro. L'andamento atteso per la tensione letta è $V \sim 1/r^2$.
+\subsection{Set-up Sperimentale e Procedura}
+L'apparato per la misura prevede un banco ottico graduato (circa \qty{2000}{\milli\metre}) su cui allineare un fotodiodo (con circuito amplificatore montato su supporto mobile) e una lampadina sferica (diametro $D \simeq \qty{40}{\milli\metre}$ misurabile con calibro). Il fotodiodo è collegato ad un voltmetro. L'andamento atteso per la tensione letta è $V \sim 1/r^2$.
 
 \begin{figure}[H]
     \centering
@@ -852,39 +854,43 @@ L'apparato per la misura prevede una scala graduata su cui allineare un fotodiod
     \end{tikzpicture}
 \end{figure}
 
-Per misurare la distanza $r$, mettiamo a contatto il fotodiodo con la lampadina alla posizione $x_0$. La distanza reale sarà corretta per il diametro della lampadina $D$ e la posizione del sensore:
+Per misurare la distanza effettiva $r$, si pone inizialmente a contatto il fotodiodo con la lampadina alla posizione $x_0$. La distanza reale per un generico punto $x$ del binario sarà corretta per il diametro della lampadina $D$ e la posizione del sensore (stimata a \qty{1}{\milli\metre} di profondità):
 \begin{equation}
-    r = (x - x_0) + \frac{D}{2} + \qty{1}{\milli\metre}
+    r_i = (x_i - x_0) + \frac{D}{2} + \qty{1}{\milli\metre}
 \end{equation}
-L'errore associato a tale misura non è puramente casuale. Possiamo stimare l'errore sistematico di traslazione come $(\sigma_{x_0} + \sigma_{D/2} + \sigma_{1\text{mm}})$. Ignoriamo in prima approssimazione questi ultimi tre errori, poiché causano solo uno "shift" rigido della scala.
-L'errore casuale dominante $\sigma_x$ è dato dalla larghezza della tacca sulla scala graduata (allineamento visivo). Possiamo stimarlo tramite una distribuzione uniforme rettangolare:
+(È fondamentale in fase di allineamento che il filamento e la finestra del fotodiodo siano esattamente alla stessa quota per evitare dislivelli, ovvero $h=0$).
+
+L'errore associato a tale misura spaziale non è puramente casuale. Possiamo stimare l'errore sistematico di traslazione come $(\sigma_{x_0} + \sigma_{D/2} + \sigma_{1\text{mm}})$. Ignoriamo in prima approssimazione per il fit questi ultimi errori, poiché causano solo uno "shift" rigido della scala.
+L'errore casuale dominante $\sigma_x$ è dato dalla larghezza della tacca sulla scala graduata (allineamento visivo dell'indice col carrello). Possiamo stimarlo tramite una distribuzione uniforme rettangolare (es. larghezza indice \qty{0.2}{\milli\metre}):
 \begin{equation}
-    \sigma_x \simeq \frac{0,2}{\sqrt{3}} \text{ mm}
+    \sigma_x \simeq \frac{0,2}{\sqrt{12}} \text{ mm}
 \end{equation}
 L'incertezza sulle ordinate (Voltaggio) è data invece dalla somma quadratica dell'errore di lettura del multimetro e dell'incertezza sulla fluttuazione di fondo: $\sigma_V = \sqrt{\sigma_{lett}^2 + \sigma_{fondo}^2}$.
 
 \begin{nota}
 \begin{itemize}
-    \item \textbf{Saturazione:} Per modulare l'intensità della lampadina, NON devo portare a saturazione il fotodiodo. In prossimità della sorgente l'intensità è molto alta.
-    \item \textbf{Luce Ambientale:} Per valutare la luce di fondo, si inserisce un piccolo ostacolo opaco tra la lampadina e il fotodiodo. Tale misurazione \textbf{deve essere fatta per ogni misura} (posizione per posizione), per capire le esatte condizioni di scattering ambientale.
-    \item \textbf{Densità di misure:} Conviene intensificare la presa dati all'inizio della scala millimetrata (es. 20, 30, 50 misure ravvicinate), perché quelle posizioni sono molto più sensibili all'errore sui parametri di fit per via dell'alta pendenza del grafico.
+    \item \textbf{Saturazione e Mascheratura:} Si applica del nastro adesivo nero sul fotodiodo lasciando solo una piccola fessura centrale per ridurne l'area attiva. Bisogna regolare la tensione dell'alimentatore per trovare il giusto compromesso affinché il voltmetro \textit{non vada a fondo scala} (saturazione) a circa 3-5 cm dalla lampadina, mantenendo però un segnale netto a grandi distanze. \textbf{Regolata la tensione, non va più toccata né spenta la lampadina.}
+    \item \textbf{Luce Ambientale (Segnale Netto):} Il segnale reale va calcolato come $V_i = V_{R,i} - V_{F,i}$. Si legge prima la tensione a luce diretta ($V_R$), poi si inserisce rapidamente un oscuratore ("monetina") per schermare solo il fascio diretto e si legge il fondo ($V_F$). \textbf{Non cambiare mai scala sul voltmetro} durante questa coppia di letture.
+    \item \textbf{Campionamento Disomogeneo:} A brevi distanze (3-15 cm) si prendono molti punti ravvicinati (passi da 2-5 mm) per campionare l'alta pendenza; a medie e grandi distanze si allarga il passo a 5-10 cm verso fine binario.
 \end{itemize}
 \end{nota}
 
-\subsection{Analisi Dati}
-La funzione di fit dovrà avere una forma del tipo:
+\subsection{Analisi Dati e Preparazione per ROOT}
+
+\textbf{ATTENZIONE agli Errori nel Fit:} Per eseguire il fit (es. in ROOT), si assegna ai punti \textbf{solo} l'incertezza sulla coordinata $x_i$ (ovvero $\sigma_x$) e l'errore di lettura del voltmetro su $V_i$. \textbf{NON propagare subito $x_0$ e $D$} nei punti sperimentali, altrimenti si introdurrebbero false correlazioni che sballerebbero i risultati.
+
+La funzione di \textbf{Fit 1} dovrà avere una forma del tipo:
 \begin{equation}
-    f(r) = \frac{A}{(r-B)^2} + C
+    f(x) = \frac{A}{(x-B)^2} + C
 \end{equation}
 con $A, B, C$ parametri da stimare.
-In particolare: $A \ne 0$, $B \simeq \sigma_B$ (compatibile con 0), e $C \pm \sigma_C$.
-Per verificare la compatibilità del parametro $B$ con $0$ (o col valore atteso), è necessario tenere conto degli errori sistematici tralasciati all'inizio: $\sigma_{x_0}, \sigma_{D/2}$.
+In particolare: $A \ne 0$. Il parametro $B$ stima lo shift spaziale residuo: a fit concluso, per verificare che sia compatibile con 0, dovremo confrontarlo \textbf{considerando finalmente gli errori comuni} $\sigma_{x_0}$ e $\sigma_{D/2}$. Anche l'offset di tensione $C$ deve risultare compatibile con 0 ($C \pm \sigma_C \simeq 0$).
 
-Si eseguirà quindi un test del $\chi^2$.
-Come prova ulteriore della dipendenza $1/r^2$, è possibile eseguire un \textbf{secondo Fit}, usando come parametri iniziali $A, B, C$ quelli ottenuti nel primo, e aggiungendo un parametro esponente $D$:
+Come prova ulteriore della dipendenza $1/r^2$, è richiesto eseguire un \textbf{Fit 2}, usando come parametri iniziali $A, B, C$ quelli ottenuti nel primo, e aggiungendo il parametro esponente $D$:
 \begin{equation}
-    f_2(r) = \frac{A}{(r-B)^D} + C
+    f_2(x) = \frac{A}{(x-B)^D} + C
 \end{equation}
+verificando che l'esponente stimato sia compatibile con 2.
 
 \subsection{Grafici Diagnostici Finali}
 Per un'analisi completa e corretta, la relazione di laboratorio dovrà presentare \textbf{tre grafici}:
@@ -955,8 +961,5 @@ Per un'analisi completa e corretta, la relazione di laboratorio dovrà presentar
     \end{subfigure}
     \caption{Diagnostica statistica post-fit.}
 \end{figure}
-
-
-
 
 \end{document}
