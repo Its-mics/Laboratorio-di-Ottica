@@ -863,7 +863,7 @@ Per misurare la distanza effettiva $r$, si pone inizialmente a contatto il fotod
 L'errore associato a tale misura spaziale non è puramente casuale. Possiamo stimare l'errore sistematico di traslazione come $(\sigma_{x_0} + \sigma_{D/2} + \sigma_{1\text{mm}})$. Ignoriamo in prima approssimazione per il fit questi ultimi errori, poiché causano solo uno "shift" rigido della scala.
 L'errore casuale dominante $\sigma_x$ è dato dalla larghezza della tacca sulla scala graduata (allineamento visivo dell'indice col carrello). Possiamo stimarlo tramite una distribuzione uniforme rettangolare (es. larghezza indice \qty{0.2}{\milli\metre}):
 \begin{equation}
-    \sigma_x \simeq \frac{0,2}{\sqrt{12}} \text{ mm}
+    \sigma_x \simeq \frac{0,2}{\sqrt{3}} \text{ mm}
 \end{equation}
 L'incertezza sulle ordinate (Voltaggio) è data invece dalla somma quadratica dell'errore di lettura del multimetro e dell'incertezza sulla fluttuazione di fondo: $\sigma_V = \sqrt{\sigma_{lett}^2 + \sigma_{fondo}^2}$.
 
