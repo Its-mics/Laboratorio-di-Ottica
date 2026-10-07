@@ -863,14 +863,14 @@ Per misurare la distanza effettiva $r$, si pone inizialmente a contatto il fotod
 L'errore associato a tale misura spaziale non è puramente casuale. Possiamo stimare l'errore sistematico di traslazione come $(\sigma_{x_0} + \sigma_{D/2} + \sigma_{1\text{mm}})$. Ignoriamo in prima approssimazione per il fit questi ultimi errori, poiché causano solo uno "shift" rigido della scala.
 L'errore casuale dominante $\sigma_x$ è dato dalla larghezza della tacca sulla scala graduata (allineamento visivo dell'indice col carrello). Possiamo stimare la deviazione standard tramite una distribuzione uniforme (es. larghezza indice \qty{0.2}{\milli\metre}):
 \begin{equation}
-    \sigma_x \simeq \frac{0,2}{\sqrt{3}} \text{ mm}
+    \sigma_x \simeq \frac{0{,}2}{\sqrt{3}} \text{ mm}
 \end{equation}
 L'incertezza sulle ordinate (Voltaggio) è data invece dalla somma quadratica dell'errore di lettura del multimetro e dell'incertezza sulla fluttuazione di fondo: $\sigma_V = \sqrt{\sigma_{lett}^2 + \sigma_{fondo}^2}$.
 
 \begin{nota}
 \begin{itemize}
     \item \textbf{Saturazione e Mascheratura:} Si applica del nastro adesivo nero sul fotodiodo lasciando solo una piccola fessura centrale per ridurne l'area attiva. Bisogna regolare la tensione dell'alimentatore per trovare il giusto compromesso affinché il voltmetro \textit{non vada a fondo scala} (saturazione) a circa 3-5 cm dalla lampadina, mantenendo però un segnale netto a grandi distanze. \textbf{Regolata la tensione, non va più toccata né spenta la lampadina.}
-    \item \textbf{Luce Ambientale (Segnale Netto):} Il segnale reale va calcolato come $V_i = V_{R,i} - V_{F,i}$. Si legge prima la tensione a luce diretta ($V_R$), poi si inserisce rapidamente un oscuratore ("monetina") per schermare solo il fascio diretto e si legge il fondo ($V_F$). \textbf{Non cambiare mai scala sul voltmetro} durante questa coppia di letture. La monetina dovrebbe essere inserita inzialmente a metà tra fotodiodo e lampadina, successivamente spostando il fotodiodo si dovranno provare diverse posizioni prendendo il voltaggio di fondo in quest'ultime (es: 3 Voltaggi di fondo) per poi fare una media. Per trovare l'errore dovrò fare la semidifferenza tra la più grande e più piccola diviso $\sqrt{3}$, se il fondo avrà lo stesso valore allora l'errorre sarà la precisione della misura sul voltmetro.
+    \item \textbf{Luce Ambientale (Segnale Netto):} Il segnale reale va calcolato come $V_i = V_{R,i} - V_{F,i}$. Si legge prima la tensione a luce diretta ($V_R$), poi si inserisce rapidamente un oscuratore ("monetina") per schermare solo il fascio diretto e si legge il fondo ($V_F$). \textbf{Non cambiare mai scala sul voltmetro} durante questa coppia di letture. La monetina dovrebbe essere inserita inizialmente a metà tra fotodiodo e lampadina; successivamente, spostando il fotodiodo, si dovranno provare diverse posizioni annotando la tensione di fondo in queste ultime (es. 3 misure di fondo) per poi farne una media. Per calcolare l'errore si dovrà fare la semidifferenza tra il valore massimo e il minimo divisa per $\sqrt{3}$; se le misure di fondo avranno sempre lo stesso valore, l'errore corrisponderà alla sensibilità (precisione) del voltmetro.
     \item \textbf{Campionamento Disomogeneo:} A brevi distanze (3-15 cm) si prendono molti punti ravvicinati (passi da 2-5 mm) per campionare l'alta pendenza; a medie e grandi distanze si allarga il passo a 5-10 cm verso fine binario.
 \end{itemize}
 \end{nota}
@@ -885,9 +885,11 @@ La funzione di \textbf{Fit 1} dovrà avere una forma del tipo:
 \end{equation}
 con $A, B, C$ parametri da stimare.
 In particolare: $A \ne 0$. Il parametro $B$ stima lo shift spaziale residuo: a fit concluso, per verificare che sia compatibile con 0, dovremo confrontarlo \textbf{considerando finalmente gli errori comuni} $\sigma_{x_0}$ e $\sigma_{D/2}$. Anche l'offset di tensione $C$ deve risultare compatibile con 0 ($C \pm \sigma_C \simeq 0$).
-Se le misure saranno state prese abbastanza bene, l'errore su C dovrebbe essere confrontabile con gli errori di shift ($\sigma_V = \sqrt{\sigma_{lett}^2 + \sigma_{fondo}^2}$, in realtà dovrebbe essere un pò più piccolo) e $ C \pm 2\sigma_C$ dovrebbe essere compatibile con $0$.
-Anche B dovrebbe essere compatibile con $0$, qui però con $B \pm \sigma_{B} \pm \sigma_{x_0} \pm \sigma_{D/2} \pm \sigma_{1\text{mm}}$
-Il parametro A ci dice quanto è alta la curva (da trovare).
+
+Se le misure saranno state prese abbastanza bene, l'errore su C dovrebbe essere confrontabile con gli errori della tensione ($\sigma_V = \sqrt{\sigma_{lett}^2 + \sigma_{fondo}^2}$, anche se in realtà dovrebbe essere un po' più piccolo) e il valore $C \pm 2\sigma_C$ dovrebbe risultare compatibile con $0$.
+Anche il parametro B dovrebbe essere compatibile con $0$, ma in questo caso la compatibilità andrà verificata tenendo conto della stima $B \pm \sigma_{B} \pm \sigma_{x_0} \pm \sigma_{D/2} \pm \sigma_{1\text{mm}}$.
+Il parametro A, invece, rappresenta un fattore di scala che ci indica l'ampiezza (altezza) della curva da determinare.
+
 Come prova ulteriore della dipendenza $1/r^2$, è richiesto eseguire un \textbf{Fit 2}, usando come parametri iniziali $A, B, C$ quelli ottenuti nel primo, e aggiungendo il parametro esponente $D$:
 \begin{equation}
     f_2(x) = \frac{A}{(x-B)^D} + C
