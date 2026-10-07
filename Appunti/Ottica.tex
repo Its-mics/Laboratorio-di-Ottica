@@ -885,12 +885,15 @@ La funzione di \textbf{Fit 1} dovrà avere una forma del tipo:
 \end{equation}
 con $A, B, C$ parametri da stimare.
 In particolare: $A \ne 0$. Il parametro $B$ stima lo shift spaziale residuo: a fit concluso, per verificare che sia compatibile con 0, dovremo confrontarlo \textbf{considerando finalmente gli errori comuni} $\sigma_{x_0}$ e $\sigma_{D/2}$. Anche l'offset di tensione $C$ deve risultare compatibile con 0 ($C \pm \sigma_C \simeq 0$).
-
+Se le misure saranno state prese abbastanza bene, l'errore su C dovrebbe essere confrontabile con gli errori di shift ($\sigma_V = \sqrt{\sigma_{lett}^2 + \sigma_{fondo}^2}$, in realtà dovrebbe essere un pò più piccolo) e $ C \pm 2\sigma_C$ dovrebbe essere compatibile con $0$.
+Anche B dovrebbe essere compatibile con $0$, qui però con $B \pm \sigma_{B} \pm \sigma_{x_0} \pm \sigma_{D/2} \pm \sigma_{1\text{mm}}$
+Il parametro A ci dice quanto è alta la curva (da trovare).
 Come prova ulteriore della dipendenza $1/r^2$, è richiesto eseguire un \textbf{Fit 2}, usando come parametri iniziali $A, B, C$ quelli ottenuti nel primo, e aggiungendo il parametro esponente $D$:
 \begin{equation}
     f_2(x) = \frac{A}{(x-B)^D} + C
 \end{equation}
 verificando che l'esponente stimato sia compatibile con 2.
+
 
 \subsection{Grafici Diagnostici Finali}
 Per un'analisi completa e corretta, la relazione di laboratorio dovrà presentare \textbf{tre grafici}:
