@@ -1,0 +1,77 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=2cm, bottom=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{sectsty}
+\usepackage{ragged2e}
+\usepackage{circuitikz}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz-3dplot}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{siunitx}
+% \usepackage{booktabs}
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}  %per rendere l'indice genrale "interattivo"
+\usepackage{enumitem}  %distanza degli itemize
+\setlist[itemize]{itemsep=4pt, parsep=1pt}
+\newtcolorbox{nota}{
+  blanker,
+  before skip=1em,
+  after skip=1em,
+  left=1em,
+  borderline west={1pt}{0pt}{black},
+  fontupper=\itshape,
+  before upper={\noindent\textbf{Nota}:\quad}
+}
+
+
+
+\begin{document}
+\justifying
+	\title{\textbf{Verifica della legge dell'irradianza per una sorgente luminosa puntiforme}}
+	\author{Brusini Alessio \hspace{0.7cm} Tedeschini Michele \hspace{0.7cm} Mirolo Manuele \hspace{0.7cm} Stroili Emanuele}
+	\date{09 Ottobre 2026}
+	\maketitle
+	\newgeometry{left=3cm, right=3cm, top=4cm, bottom=4cm}
+	\onecolumn
+	\tableofcontents
+\vspace{3cm}
+	\begin{abstract}
+		\centering
+		\large
+    L'esperimento consiste nell'ottenere la curva della tensione, misurata da un voltmetro a sua volta collegato 
+    ad un fotodiodo, in funzione della distanza del fotodiodo rispetto alla sorgente: una lampadina. 
+       
+	\end{abstract}
+
+	\newpage
+\restoregeometry
+\twocolumn
+
+
+\section{legge teorica da verificare}
+Data una sorgente di onde elettromagnetiche e date due superfici $S_{1}$ e $S_{2}$ poste ad un certa distanza l'una dall'altra e applicando
+la legge di conservazione dell'energia si ottine la seguente relazione:
+\begin{equation}
+    \frac{I_1}{I_2} = \frac{r_1^2}{r_2^2} \quad \longrightarrow \quad I(r) = I_1 \left(\frac{r_1}{r}\right)^2
+\end{equation}
+Dove $r_{1}$,$r$ sono le distanze delle superici $S_{1}$ e $S_{2}$ dalla sorgenete.
+
+
+\section{Apparato sperimentale}
+\section{Grafici}
+\section{Conclusione}
+\end{document}
