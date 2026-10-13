@@ -974,15 +974,15 @@ Ricordiamo il principio di Fermat
     \delta P = \delta \int_\gamma n(\vec r) ds = 0 
 \end{equation}
 da cui si ricava la nota \textit{legge di riflessione}.
-Consideriamo un fenomeno di riflessione, prendiamo una superficie riflettente, abbiamo un mezzo con indice di rifrazione $n$, una sorgente A con un altezza $h1$ rispetto al piano, il raggio di luce incide con un angolo $\theta_1$ rispetto alla normale della superficie e se ne va con un angolo $\theta_2$, arrivando in un punto B con altezza $h2$. considero il punto A proiettato sul piano come origine (0), il punto x sarà dove incide e il punto d è la proiezione sul piano di B. il cammino ottico è dove
+Consideriamo un fenomeno di riflessione, prendiamo una superficie riflettente, abbiamo un mezzo con indice di rifrazione $n$, una sorgente A con un altezza $h1$ rispetto al piano, il raggio di luce incide con un angolo $\theta_1$ rispetto alla normale della superficie e se ne va con un angolo $\theta_2$, arrivando in un punto B con altezza $h2$. Considero il punto A proiettato sul piano come origine (0), il punto x sarà dove incide e il punto D è la proiezione sul piano di B. il cammino ottico è dove
 è contenuto con indice di rifrazione n il cammino ottico varrà:
 
 \begin{equation}
-    l = n \sqrt{h_x ^2 +x^2}+ n \sqrt{h_x^2 + (D-x)^2} 
+    l = n \sqrt{h_1 ^2 +x^2}+ n \sqrt{h_2^2 + (D-x)^2} 
 \end{equation}
 e derivando 
 \begin{equation}
-    \frac{\partial l}{\partial x } =0 \rightarrow n[\frac{x}{\sqrt{h_x^2 + x^2}}+\frac{x}{\sqrt{h_x^2 + (D-x)^2}} ] = n[sin \theta_i - \sin \theta_r] = 0 
+    \frac{\partial l}{\partial x } =0 \rightarrow n[\frac{x}{\sqrt{h_1^2 + x^2}}-\frac{D-x}{\sqrt{h_2^2 + (D-x)^2}} ] = n[sin \theta_i - \sin \theta_r] = 0 
 \end{equation}
 questo implica:
 $$
@@ -1019,10 +1019,10 @@ $$
 
 % Angoli
 \draw[blue!65!black, thick] (1,0.7) arc (90:141:0.7);
-\node[blue!65!black] at (0.6, 1.1) {$\theta_1$};
+\node[blue!65!black] at (0.6, 1.1) {$\theta_i$};
 
 \draw[blue!65!black, thick] (1,0.7) arc (90:37:0.7);
-\node[blue!65!black] at (1.5, 1.0) {$\theta_2$};
+\node[blue!65!black] at (1.5, 1.0) {$\theta_r$};
 
 \end{tikzpicture}
 \caption{Riflessione di un raggio luminoso. Il cammino ottico da $A$ a $B$ viene minimizzato rispetto al punto di incidenza $x$.}
