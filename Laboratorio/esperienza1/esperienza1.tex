@@ -62,14 +62,14 @@
 \twocolumn
 
 
-\section{legge teorica da verificare}
+\section{Introduzione }
 Data una sorgente di onde elettromagnetiche e date due superfici $S_{1}$ e $S_{2}$ poste ad un certa distanza l'una dall'altra e applicando
 la legge di conservazione dell'energia si ottiene la seguente relazione:
 \begin{equation}
     \frac{I_1}{I_2} = \frac{r_1^2}{r_2^2} \quad \longrightarrow \quad I(r) = I_1 \left(\frac{r_1}{r}\right)^2
 \end{equation}
 Dove $r_{1}$,$r$ sono le distanze delle superici $S_{1}$ e $S_{2}$ dalla sorgente.
-Ci aspettiamo quindi che il voltaggio misurato nel diodio segua lo stesso andamento dell'riradianza dovuta alla presenza della lampadina.
+Ci aspettiamo quindi che il voltaggio misurato nel diodio segua lo stesso andamento dell'irradianza dovuta alla presenza della lampadina.
 
 \section{Apparato sperimentale}
 L'apparato spremintale utilizzato consiste in una scala millimetrata di lunghezza due metri, di un fotodiodo che fungerà da fotorivelatore, di un voltmetro 
@@ -101,109 +101,154 @@ Dove:
 	\item $x_0$ è la posizione inziale del fotodiodo 
 	\item D è il diametro della lampadina
 \end{itemize}
-\section{Grafici}
-L'analisi dei dati consiste nell'ottenre tre grafici, il primo che mette in relazione la dipendenza del voltaggio nel fotodiodo in funzione della distanza che esso ha rispetto alla lampadina,
-il secondo è un istrogramma della differenza tra il valore teorico del voltaggio e il valore sperimentale che a otteniamo (chiameremo questa differenza resiuo) e infine il terzo che mette in evdienza il 
-valore di questa differenza in funzione della distanza $r_i$. La funzione che descrive l'andamento teroico  del voltaggio (funzione di fit) avrà un forma del tipo:
+\section{Analisi dati}
+L'analisi dei dati consiste nell'ottenere tre grafici, il primo che mette in relazione la dipendenza del voltaggio nel fotodiodo in funzione della distanza che esso ha rispetto alla lampadina,
+il secondo è un istrogramma della differenza tra il valore teorico del voltaggio e il valore sperimentale che a otteniamo (chiameremo questa differenza residuo) e infine il terzo che mette in evdienza il 
+valore di questa differenza in funzione della distanza $r$. La funzione che descrive l'andamento teroico  del voltaggio (funzione di fit) avrà un forma del tipo:
 \begin{equation}
     f(x) = \frac{A}{(x-B)^D} + C
 \end{equation}
-Dove A,B,C sono parametri da stimare. Il set di dati sarà compatibile con il modello teorico se i parametri A,B,C sono compatibili con 1 entro 3$\sigma$ mentre D dovrebbe rislutare compatibile con 2. Per il secondo grafico ci aspettimao che la deviazione standard sia compatibile con 1 e che il valore dis apsettazione dei residui sia 0.
+Dove A,B,C sono parametri da stimare. 
+Per verificare la bontà del modello teorico, si studia la compatibilità dei parametri B e C con 0 e quella di D con 2. 
 
+Inoltre, ci si aspetta che la gaussiana che approssima la distribuzione dei residui normalizzati nell'istogramma, dovrebbe riportare valori di $A$ e $\sigma$ compatibili con 1 e di $\mu$ con 0.
 
-\subsection{Analisi Dati con errore come semidispersione}
+Infine, ci si attende che la retta che approssima l'andamento dei residui sia tale che $m$ e $q$ siano compatibili con 0.
 
- \subsubsection{Fit con D DA stimare}
+Ricordiamo che 2 valori $x_i$, $x_0$ si dicono compatibili se $\left|x_i - x_0\right| < 0$
+\section{Grafici ricavati}
+Prima di mostrare i grafici ricavati, una precisazione. Nel corso della misura ci si è accorti che il metodo con cui si stava rivelando il voltaggio di fondo non era corretto. Infatti, raggiunto il valore di $r=$ ($r_{change}$) il valore di $V_{fondo}$ era calcolato come la media fra 3 misure, contraddistinte ognuna dalla posizione dell'apparato per la schermatura della luce della lampadina.
+Quest'ultimo però era tenuto troppo vicino al fotodiodo, schermando quindi anche la luce proveniente dal riflesso del tavolo, che invece deve essere considerata come parti di $V_{fondo}$.
+Per osservare questo fenomeno basti guardare il primo valore di $V_{fondo}$ nella tabella \ref{tab:misure} ($V_{fondo}_1$) che risulta essere molto basso rispetto agli altri.
+
+Per questo motivo, si è deciso di svolgere due analisi dati, la prima considerando $V = V_{voltimetro} - \bar{V}_{fondo}$, dove $\bar{V}_{fondo}$ è la media dei valori di $V_{fondo}$ (per le misure iniziali, naturalmente, $\bar{V}_{fondo}=V_{fondo}_1$) e con errore su $V_{fondo}$: $\sigma_{V_{fondo}} = \frac{1}{\sqrt{3}}\frac{V__{fondo}_{max}-V__{fondo}_{min}}{2}$
+(dove la semidispersione è stata calcolata solo per le misure dopo $r_{change}$, prima $\sigma_{V_{fondo}}=\frac{\text{sensibilità del voltmetro}}{\sqrt{3}}$). 
+La seconda analisi dati invece considera $V = V_{voltimetro} - V_{fondo}$, con $V_{fondo}$ il valore della misura compiuta al centro fra le 3 svolte dopo $r_{change}$ (cioè $V_{fondo}_2$). Ovviamente, per le misure prima di $r_{change}$, $V_{fondo}=V_{fondo}_1$
+In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} = \frac{\text{sensibilità del voltmetro}}{\sqrt{3}}$.
+
+\subsection{Grafici ottenuti con semidispersione come errore}
+ \subsubsection{Fit con D da stimare}
 
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf}
-    \caption{1 fit con D=2}
+    \caption{fit dei dati con D=2 utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
 
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf}
-    \caption{istgramma dei residui con D=2}
+    \caption{istogramma dei residui con D=2 utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}S
    \end{figure}
 
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf}
-    \caption{istogramma dei residui con D=2}
+    \caption{andamento dei residui con D=2 utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
 
-\subsubsection{Fit con D da stimare}
+\subsubsection{Fit con D = 2}
 
     \begin{figure}[H]
       \centering
       \includegraphics[width=1.1\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf}
-      \caption{istgramma dei residui con D=2}
+      \caption{fit dei dati con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
        \label{fig:mia_foto}
     \end{figure}
+
+    \begin{table}
+      \begin{tabular}
+        parametro & 2$\sigma$ & compatibilità \\
+        A &  & \\
+        B &  & \\
+        C &  &
+      \end{tabular}
+    \end{table}
 
 	\begin{figure}[H]
      \centering
      \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf}
-     \caption{istgramma dei residui con D=2}
-     \label{fig:mia_foto}
+     \caption{istogramma dei residui con D=2 utilizzando la semidispersione come errore su $V_{fondo}$}
+     \label{fig:hist2}
     \end{figure}
+
+     \begin{table}
+      \begin{tabular}
+        parametro & 2$\sigma$ & compatibilità \\
+        A & & \\
+        $\mu$ &  & \\
+        $\sigma$ &  & 
+      \end{tabular}
+    \end{table}
 
   \begin{figure}[H]
     \centering
 	\includegraphics[width=1.1\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf}
-    \caption{istgramma dei residui con D=2}
+    \caption{andamento dei residui con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
 
+    begin{table}
+      \begin{tabular}
+        parametro & 2$\sigma$ & compatibilità \\
+        m &  % \\
+        q &  &
+      \end{tabular}
+    \end{table}
+
+
   \subsection{Analisi dati con errore la sensibilità del voltmetro}
-  \subsubsection{Fit con D=2}
+  \subsubsection{Fit con D da stimare}
     
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf}
-    \caption{istgramma dei residui con D=2}
+    \caption{fit dei dati con D da stimare utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
 
     \begin{figure}[H]
     \centering
     \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf}
-    \caption{istgramma dei residui con D=2}
+    \caption{istogramma dei residui con D da stimare utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
 
      \begin{figure}[H]
     \centering
     \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf}
-    \caption{istgramma dei residui con D=2}
+    \caption{andamento dei residui con D da stimare utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
 
-  \subsubsection{Fit con D da stimare}
+  \subsubsection{Fit con D = 2}
 
    \begin{figure}[H]
     \centering
     \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/senzaD/FIT1.pdf}
-    \caption{istgramma dei residui con D=2}
+    \caption{fit dei dati con D=2 utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}s
   \end{figure}
  
    \begin{figure}[H]
     \centering
     \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf}
-    \caption{istgramma dei residui con D=2}
-    \label{fig:mia_foto}s
+    \caption{istogramma dei residui con D=2 utilizzando la sensibilià come errore su $V_{fondo}$}
+    \label{fig:hist}
   \end{figure}
+
+Confrontando questo istogramma con quello di figura \ref{fig:hist2} si potrebbe affermare che il secondo metodo utilizzato porti ad una dispersione dei residui minore (essendo che $\hat \sigma$ è minore in questo secondo caso).
+Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in quanto, per il primo metodo risulta $\sigma_v_1=$, mentre per il secondo $\sigma_v_2$.
 
    \begin{figure}[H]
     \centering
     \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf}
-    \caption{istgramma dei residui con D=2}
+    \caption{andamento dei residui con D=2 utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
    \end{figure}
+
 \section{Conclusione}
 \end{document} 
