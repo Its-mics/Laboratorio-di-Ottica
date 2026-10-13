@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  13 OCT 2026 16:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  13 OCT 2026 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1311,7 +1311,7 @@ Package rerunfilecheck Info: File `esperienza1.out' has not changed.
 Here is how much of TeX's memory you used:
  48684 strings out of 478287
  1150691 string characters out of 5849289
- 1684315 words of memory out of 5000000
+ 1685315 words of memory out of 5000000
  66253 multiletter control sequences out of 15000+600000
  481166 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1330,7 +1330,7 @@ r/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super
 /sfrm1200.pfb>
-Output written on esperienza1.pdf (6 pages, 453887 bytes).
+Output written on esperienza1.pdf (6 pages, 454172 bytes).
 PDF statistics:
  944 PDF objects out of 1000 (max. 8388607)
  346 compressed objects within 4 object streams
