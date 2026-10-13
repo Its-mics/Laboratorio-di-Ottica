@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  13 OCT 2026 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  13 OCT 2026 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1140,25 +1140,25 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2
 
-]
-No file Ottica.toc.
+] (./Ottica.toc
+Package cleveref Info: loaded `italian' language definitions on input line 1.
+Package cleveref Info: loaded `italian' language definitions on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 4.
+)
 \tf@toc=\write4
 \openout4 = `Ottica.toc'.
 
-[1
+ [1
 
-]
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
 Package cleveref Info: loaded `italian' language definitions on input line 212.
- [2
-
-]
+ [2]
 Capitolo 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 219.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 219.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 219.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1166,7 +1166,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 l.248 ...e: Analisi Dati con Python (Facoltativo)}
                                                    [1
 
-{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 250.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1185,7 +1186,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
                    \relax 
 l.295 m.
         migrad() # Algoritmo di minimizzazione [2]
-<Immagini/fit_iminuit immagine.png, id=118, 412.6617pt x 328.8285pt>
+<Immagini/fit_iminuit immagine.png, id=161, 412.6617pt x 328.8285pt>
 File: Immagini/fit_iminuit immagine.png Graphic file (type png)
 <use Immagini/fit_iminuit immagine.png>
 Package pdftex.def Info: Immagini/fit_iminuit immagine.png  used on input line 312.
@@ -1194,19 +1195,19 @@ Package cleveref Info: loaded `italian' language definitions on input line 324.
  [3 <./Immagini/fit_iminuit immagine.png>]
 Package cleveref Info: loaded `italian' language definitions on input line 373.
  [4]
-<Immagini/fit3 iminuit immmagine 1.png, id=197, 401.8212pt x 328.8285pt>
+<Immagini/fit3 iminuit immmagine 1.png, id=240, 401.8212pt x 328.8285pt>
 File: Immagini/fit3 iminuit immmagine 1.png Graphic file (type png)
 <use Immagini/fit3 iminuit immmagine 1.png>
 Package pdftex.def Info: Immagini/fit3 iminuit immmagine 1.png  used on input line 393.
 (pdftex.def)             Requested size: 227.62206pt x 186.27515pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 394.
-<Immagini/fit3 iminuit immmagine 2.png, id=198, 400.3758pt x 328.8285pt>
+<Immagini/fit3 iminuit immmagine 2.png, id=241, 400.3758pt x 328.8285pt>
 File: Immagini/fit3 iminuit immmagine 2.png Graphic file (type png)
 <use Immagini/fit3 iminuit immmagine 2.png>
 Package pdftex.def Info: Immagini/fit3 iminuit immmagine 2.png  used on input line 403.
 (pdftex.def)             Requested size: 218.51521pt x 179.47139pt.
-<Immagini/fit3 iminuit immmagine 3.png, id=199, 417.7206pt x 328.8285pt>
+<Immagini/fit3 iminuit immmagine 3.png, id=242, 417.7206pt x 328.8285pt>
 File: Immagini/fit3 iminuit immmagine 3.png Graphic file (type png)
 <use Immagini/fit3 iminuit immmagine 3.png>
 Package pdftex.def Info: Immagini/fit3 iminuit immmagine 3.png  used on input line 410.
@@ -1253,106 +1254,61 @@ Package cleveref Info: loaded `italian' language definitions on input line 918.
  [15]
 Package cleveref Info: loaded `italian' language definitions on input line 990.
  [16]
-/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex:1040: Missing $ inserted.
-<inserted text> 
-                $
-l.1040 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex:1040: Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.1040 
-       
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex:1041: Missing $ inserted.
-<inserted text> 
-                $
-l.1041     n_
-             1 \sin \theta_i = n_2 \sin \theta_t
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex:1042: You can't use `\eqno' in math mode.
-\veqno ->\@kernel@eqno 
-                       \aftergroup \ignorespaces 
-l.1042 \end{equation}
-                     
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex:1042: Missing $ inserted.
-<inserted text> 
-                $
-l.1042 \end{equation}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-Package cleveref Info: loaded `italian' language definitions on input line 1099.
-[17]
-Package cleveref Info: loaded `italian' language definitions on input line 1199.
+Package cleveref Info: loaded `italian' language definitions on input line 1097.
+ [17]
+Package cleveref Info: loaded `italian' language definitions on input line 1197.
  [18]
-Overfull \hbox (67.54895pt too wide) detected at line 1207
+Overfull \hbox (67.54895pt too wide) detected at line 1205
 [][][][]\OML/lmm/m/it/12 l[] \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 l[] \OT1/lmr/m/n/12 = 0 = \OML/lmm/m/it/12 n[]\OT1/lmr/m/n/12 (^^A[] + []) \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 n[]\OT1/lmr/m/n/12 (^^A[] + ^^A[]) + \OML/lmm/m/it/12 n[]\OT1/lmr/m/n/12 (^^A[] + []) = (\OML/lmm/m/it/12 n[] \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 n[]\OT1/lmr/m/n/12 )(^^A[] + ^^A[]) + \OML/lmm/m/it/12 n[]\OT1/lmr/m/n/12 ([] + [])
  []
 
 
 Underfull \vbox (badness 1565) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 1264.
+Package cleveref Info: loaded `italian' language definitions on input line 1262.
  [19]
 Missing character: There is no ` in font nullfont!
 Missing character: There is no ` in font nullfont!
 Missing character: There is no ` in font nullfont!
-Package cleveref Info: loaded `italian' language definitions on input line 1482.
+Package cleveref Info: loaded `italian' language definitions on input line 1480.
 [20]
-Package cleveref Info: loaded `italian' language definitions on input line 1513.
+Package cleveref Info: loaded `italian' language definitions on input line 1511.
  [21]
-Package cleveref Info: loaded `italian' language definitions on input line 1671.
+Package cleveref Info: loaded `italian' language definitions on input line 1669.
  [22]
-Package cleveref Info: loaded `italian' language definitions on input line 1833.
+Package cleveref Info: loaded `italian' language definitions on input line 1831.
  [23]
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 1917.
+Package cleveref Info: loaded `italian' language definitions on input line 1915.
  [24]
-Package cleveref Info: loaded `italian' language definitions on input line 1976.
+Package cleveref Info: loaded `italian' language definitions on input line 1974.
  [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2070.
+(hyperref)                removing `math shift' on input line 2068.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2070.
+(hyperref)                removing `math shift' on input line 2068.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2070.
+(hyperref)                removing `math shift' on input line 2068.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2070.
+(hyperref)                removing `math shift' on input line 2068.
 
-Package cleveref Info: loaded `italian' language definitions on input line 2072.
+Package cleveref Info: loaded `italian' language definitions on input line 2070.
 [26]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2120.
-Package cleveref Info: loaded `italian' language definitions on input line 2167.
+(Font)              <5> on input line 2118.
+Package cleveref Info: loaded `italian' language definitions on input line 2165.
  [27]
-Package cleveref Info: loaded `italian' language definitions on input line 2192.
+Package cleveref Info: loaded `italian' language definitions on input line 2190.
  [28]
-Package cleveref Info: loaded `italian' language definitions on input line 2208.
+Package cleveref Info: loaded `italian' language definitions on input line 2206.
  [29] (./Ottica.aux
 Package cleveref Info: loaded `italian' language definitions on input line 8.
 Package cleveref Info: loaded `italian' language definitions on input line 9.
@@ -1361,24 +1317,20 @@ Package cleveref Info: loaded `italian' language definitions on input line 9.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 72452 strings out of 467525
- 1807886 string characters out of 5418983
- 3122016 words of memory out of 5000000
- 99877 multiletter control sequences out of 15000+600000
+ 72455 strings out of 467525
+ 1807931 string characters out of 5418983
+ 3126154 words of memory out of 5000000
+ 99878 multiletter control sequences out of 15000+600000
  751267 words of font info for 256 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,13n,108p,1065b,2800s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Ottica.pdf (33 pages, 592380 bytes).
+Output written on Ottica.pdf (33 pages, 594572 bytes).
 PDF statistics:
- 825 PDF objects out of 1000 (max. 8388607)
- 699 compressed objects within 7 object streams
+ 849 PDF objects out of 1000 (max. 8388607)
+ 722 compressed objects within 8 object streams
  374 named destinations out of 1000 (max. 500000)
  67951 words of extra memory for PDF output out of 74296 (max. 10000000)
 
