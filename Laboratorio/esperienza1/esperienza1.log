@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  14 OCT 2026 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  14 OCT 2026 17:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -795,24 +795,24 @@ LaTeX Warning: Label `fig:mia_foto' multiply defined.
 )
 \openout1 = `esperienza1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -837,7 +837,7 @@ LaTeX Font Info:    ... okay on input line 47.
 * \footskip=30.0pt
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
-* \columnsep=18.0pt
+* \columnsep=60.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
@@ -848,8 +848,8 @@ LaTeX Font Info:    ... okay on input line 47.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 47.
-LaTeX Info: Redefining \it@ccap on input line 47.
+LaTeX Info: Redefining \it@ocap on input line 44.
+LaTeX Info: Redefining \it@ccap on input line 44.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -887,8 +887,8 @@ Package siunitx Warning: Detected the "physics" package:
 (siunitx)                
 (siunitx)                to your preamble.
 
-Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 47.
-Package hyperref Info: Link coloring ON on input line 47.
+Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 44.
+Package hyperref Info: Link coloring ON on input line 44.
 (./esperienza1.out) (./esperienza1.out)
 \@outlinefile=\write4
 \openout4 = `esperienza1.out'.
@@ -919,7 +919,7 @@ Package hyperref Info: Link coloring ON on input line 47.
 * \footskip=30.0pt
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
-* \columnsep=18.0pt
+* \columnsep=60.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
@@ -938,15 +938,30 @@ Package hyperref Info: Link coloring ON on input line 47.
 
 
 ]
-Overfull \hbox (16.89752pt too wide) in paragraph at lines 97--98
+Overfull \hbox (37.89752pt too wide) in paragraph at lines 94--95
  [][] 
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 96--97
+\T1/cmr/m/n/10 L'effettiva di-stan-za del fo-to-dio-do ri-spet-to al-la
+ []
+
+
+Underfull \hbox (badness 4242) in paragraph at lines 120--121
+[]\T1/cmr/m/n/10 Ricordiamo che 2 va-lo-ri $\OML/cmm/m/it/10 x[]$\T1/cmr/m/n/10 , $\OML/cmm/m/it/10 x[]$ \T1/cmr/m/n/10 si di-co-no
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 126--130
+\T1/cmr/m/n/10 La se-con-da ana-li-si da-ti in-ve-ce con-si-de-ra $\OML/cmm/m/it/10 V \OT1/cmr/m/n/10 =
  []
 
 <Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf, id=123, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf>
-Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf  used on input line 139.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf  used on input line 136.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -954,33 +969,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (4.05305pt too wide) in paragraph at lines 146--156
+Overfull \hbox (25.05305pt too wide) in paragraph at lines 143--153
  [][] 
  []
 
 <Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf, id=142, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf>
-Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf  used on input line 162.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf  used on input line 159.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 <Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf, id=143, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf>
-Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf  used on input line 188.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf  used on input line 185.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
-Overfull \hbox (25.71443pt too wide) in paragraph at lines 196--204
+Overfull \hbox (46.71443pt too wide) in paragraph at lines 193--201
  [][] 
  []
 
 <Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf, id=144, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf>
-Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf  used on input line 215.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf  used on input line 212.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
+
+Overfull \hbox (17.27525pt too wide) in paragraph at lines 220--229
+ [][] 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -988,15 +1008,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf, id=378, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf>
-Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf  used on input line 238.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf  used on input line 235.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 <Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf, id=379, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf>
-Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf  used on input line 260.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf  used on input line 257.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
-Overfull \hbox (25.71443pt too wide) in paragraph at lines 267--275
+Overfull \hbox (46.71443pt too wide) in paragraph at lines 264--272
  [][] 
  []
 
@@ -1006,71 +1026,80 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf, id=380, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf>
-Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf  used on input line 285.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf  used on input line 282.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
-Overfull \hbox (24.23355pt too wide) in paragraph at lines 293--303
+Overfull \hbox (45.23355pt too wide) in paragraph at lines 290--300
  [][] 
  []
 
 <Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf, id=381, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf>
-Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf  used on input line 315.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf  used on input line 312.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (16.4446pt too wide) in paragraph at lines 321--329
+ [][] 
+ []
 
- [5 <./Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf> <./Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf> <./Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf>]
-<Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf, id=566, 462.52798pt x 346.89601pt>
+
+Underfull \vbox (badness 3579) has occurred while \output is active []
+
+ [5 <./Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf> <./Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf> <./Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf> <./Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf>]
+<Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf, id=629, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf>
-Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf  used on input line 340.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf  used on input line 337.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
-Overfull \hbox (17.93663pt too wide) in paragraph at lines 348--356
+Overfull \hbox (38.93663pt too wide) in paragraph at lines 345--353
  [][] 
  []
 
-<Analisi_dati/Analisi con sens/senzaD/FIT1.pdf, id=567, 462.52798pt x 346.89601pt>
+<Analisi_dati/Analisi con sens/senzaD/FIT1.pdf, id=630, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/senzaD/FIT1.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/senzaD/FIT1.pdf>
-Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/FIT1.pdf  used on input line 367.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/FIT1.pdf  used on input line 364.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (7.94278pt too wide) in paragraph at lines 374--383
+Overfull \hbox (28.94278pt too wide) in paragraph at lines 371--380
  [][] 
  []
 
-<Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf, id=568, 462.52798pt x 346.89601pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf, id=631, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf>
-Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf  used on input line 395.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
+Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf  used on input line 392.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
+
+Overfull \hbox (21.44461pt too wide) in paragraph at lines 401--409
+ [][] 
+ []
+
+<Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf, id=633, 462.52798pt x 346.89601pt>
+File: Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf Graphic file (type pdf)
+<use Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf>
+Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf  used on input line 418.
+(pdftex.def)             Requested size: 226.07481pt x 169.55707pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf> <./Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf> <./Analisi_dati/Analisi con sens/senzaD/FIT1.pdf> <./Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf>]
-<Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf, id=816, 462.52798pt x 346.89601pt>
-File: Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf Graphic file (type pdf)
-<use Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf>
-Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf  used on input line 425.
-(pdftex.def)             Requested size: 247.07481pt x 185.30963pt.
-
-Overfull \hbox (27.93666pt too wide) in paragraph at lines 434--442
+ [6 <./Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf> <./Analisi_dati/Analisi con sens/senzaD/FIT1.pdf> <./Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf>]
+Overfull \hbox (48.93666pt too wide) in paragraph at lines 427--435
  [][] 
  []
 
 
-Overfull \hbox (4.05305pt too wide) in paragraph at lines 470--481
+Overfull \hbox (25.05305pt too wide) in paragraph at lines 463--474
  [][] 
  []
 
 
-Underfull \vbox (badness 7012) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf>] [8
 
@@ -1089,13 +1118,13 @@ Package rerunfilecheck Info: File `esperienza1.out' has not changed.
 Here is how much of TeX's memory you used:
  54272 strings out of 467525
  1316329 string characters out of 5418983
- 2002508 words of memory out of 5000000
+ 2002563 words of memory out of 5000000
  82561 multiletter control sequences out of 15000+600000
  641162 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,11n,118p,513b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on esperienza1.pdf (8 pages, 510784 bytes).
+Output written on esperienza1.pdf (8 pages, 511038 bytes).
 PDF statistics:
  980 PDF objects out of 1000 (max. 8388607)
  397 compressed objects within 4 object streams
