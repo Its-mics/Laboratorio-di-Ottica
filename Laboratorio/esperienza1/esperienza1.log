@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  14 OCT 2026 12:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  14 OCT 2026 12:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -942,7 +942,7 @@ Overfull \hbox (12.89752pt too wide) in paragraph at lines 92--93
  [][] 
  []
 
-<Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf, id=114, 462.52798pt x 346.89601pt>
+<Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf, id=124, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf>
 Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf  used on input line 134.
@@ -958,7 +958,7 @@ Overfull \hbox (12.05305pt too wide) in paragraph at lines 141--151
  [][] 
  []
 
-<Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf, id=133, 462.52798pt x 346.89601pt>
+<Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf, id=143, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf>
 Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf  used on input line 157.
@@ -966,7 +966,7 @@ Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/Grafico_residui_
 
 Underfull \vbox (badness 4341) has occurred while \output is active []
 
-<Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf, id=134, 462.52798pt x 346.89601pt>
+<Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf, id=144, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf>
 Package pdftex.def Info: Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf  used on input line 183.
@@ -976,7 +976,7 @@ Overfull \hbox (33.71443pt too wide) in paragraph at lines 191--199
  [][] 
  []
 
-<Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf, id=135, 462.52798pt x 346.89601pt>
+<Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf, id=145, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf>
 Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf  used on input line 210.
@@ -994,7 +994,7 @@ Overfull \hbox (4.27525pt too wide) in paragraph at lines 218--227
  [][] 
  []
 
-<Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf, id=319, 462.52798pt x 346.89601pt>
+<Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf, id=329, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf>
 Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf  used on input line 233.
@@ -1002,7 +1002,7 @@ Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/Grafico_residu
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf, id=320, 462.52798pt x 346.89601pt>
+<Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf, id=330, 462.52798pt x 346.89601pt>
 File: Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf Graphic file (type pdf)
 <use Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf>
 Package pdftex.def Info: Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf  used on input line 255.
@@ -1017,7 +1017,7 @@ Overfull \hbox (33.71443pt too wide) in paragraph at lines 262--270
  [][] 
  []
 
-<Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf, id=321, 462.52798pt x 346.89601pt>
+<Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf, id=331, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf>
 Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf  used on input line 280.
@@ -1031,7 +1031,7 @@ Overfull \hbox (25.10901pt too wide) in paragraph at lines 280--281
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf> <./Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf> <./Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf>]
-<Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf, id=502, 462.52798pt x 346.89601pt>
+<Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf, id=512, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf>
 Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf  used on input line 287.
@@ -1041,7 +1041,7 @@ Overfull \hbox (25.10901pt too wide) in paragraph at lines 287--288
  [][] 
  []
 
-<Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf, id=503, 462.52798pt x 346.89601pt>
+<Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf, id=513, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf>
 Package pdftex.def Info: Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf  used on input line 294.
@@ -1054,7 +1054,7 @@ Overfull \hbox (25.10901pt too wide) in paragraph at lines 294--295
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<Analisi_dati/Analisi con sens/senzaD/FIT1.pdf, id=504, 462.52798pt x 346.89601pt>
+<Analisi_dati/Analisi con sens/senzaD/FIT1.pdf, id=514, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/senzaD/FIT1.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/senzaD/FIT1.pdf>
 Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/FIT1.pdf  used on input line 303.
@@ -1064,7 +1064,7 @@ Overfull \hbox (25.10901pt too wide) in paragraph at lines 303--304
  [][] 
  []
 
-<Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf, id=505, 462.52798pt x 346.89601pt>
+<Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf, id=515, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf>
 Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf  used on input line 310.
@@ -1078,7 +1078,7 @@ Overfull \hbox (25.10901pt too wide) in paragraph at lines 310--311
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6 <./Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf> <./Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf> <./Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf> <./Analisi_dati/Analisi con sens/senzaD/FIT1.pdf>]
-<Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf, id=739, 462.52798pt x 346.89601pt>
+<Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf, id=749, 462.52798pt x 346.89601pt>
 File: Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf Graphic file (type pdf)
 <use Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf>
 Package pdftex.def Info: Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf  used on input line 320.
@@ -1088,9 +1088,17 @@ Overfull \hbox (25.10901pt too wide) in paragraph at lines 320--321
  [][] 
  []
 
-[7
 
- <./Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf> <./Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf>] (./esperienza1.aux)
+Underfull \vbox (badness 1655) has occurred while \output is active []
+
+
+Overfull \hbox (12.05305pt too wide) in paragraph at lines 343--354
+ [][] 
+ []
+
+[7 <./Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf> <./Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf>] [8
+
+] (./esperienza1.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1100,21 +1108,21 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esperienza1.out' has not changed.
-(rerunfilecheck)             Checksum: D8E01EA363A96C5BD572BC368AFDCB90;1893.
+(rerunfilecheck)             Checksum: 4F4CA0DF1C2504A1C6E748E436ACCB34;2290.
  ) 
 Here is how much of TeX's memory you used:
- 54069 strings out of 467525
- 1313858 string characters out of 5418983
+ 54077 strings out of 467525
+ 1313948 string characters out of 5418983
  1997527 words of memory out of 5000000
- 82368 multiletter control sequences out of 15000+600000
+ 82371 multiletter control sequences out of 15000+600000
  641162 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,10n,118p,513b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,11n,118p,513b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on esperienza1.pdf (7 pages, 496728 bytes).
+Output written on esperienza1.pdf (8 pages, 509351 bytes).
 PDF statistics:
- 957 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
- 41 named destinations out of 1000 (max. 500000)
- 305 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 974 PDF objects out of 1000 (max. 8388607)
+ 391 compressed objects within 4 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 321 words of extra memory for PDF output out of 10000 (max. 10000000)
 

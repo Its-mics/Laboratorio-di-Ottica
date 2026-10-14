@@ -10,4 +10,6 @@
 \contentsline {subsection}{\numberline {4.2}Analisi dati con errore la sensibilità del voltmetro}{6}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Fit con D da stimare}{6}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}Fit con D = 2}{6}{subsubsection.4.2.2}%
-\contentsline {section}{\numberline {5}Conclusione}{7}{section.5}%
+\contentsline {section}{\numberline {5}Ipotesi di una seconda sorgente}{7}{section.5}%
+\contentsline {section}{\numberline {6}Confronto tra i due metodi}{7}{section.6}%
+\contentsline {section}{\numberline {7}Conclusione}{8}{section.7}%
