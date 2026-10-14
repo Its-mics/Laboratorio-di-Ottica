@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1791985252.30331 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1791985253.35504 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1791985251.17691 22558 b4a63884b94fc6c7bf2c568d0f1b7a74 ""
+["pdflatex"] 1791985694.2421 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1791985695.13046 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1791985694.06578 22566 4ef41d423ccef3734384f86dbad0c49f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -250,10 +250,10 @@
   "Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf" 1791971282.00795 28750 2e5ce5befb58cd5a4a2e86fbb95e36ff ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf" 1791971282.08905 27541 6c8eab03b27bc1cbd5a747b4689fdd6c ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf" 1791971282.04808 20986 aa35e13aa5e973142316ddf7ba6b59a8 ""
-  "esperienza1.aux" 1791985253.28346 10010 ba3b0120af3c07871b42dac1ffd541e4 "pdflatex"
-  "esperienza1.out" 1791985253.2845 2290 4f4ca0df1c2504a1c6e748e436accb34 "pdflatex"
-  "esperienza1.tex" 1791985251.17691 22558 b4a63884b94fc6c7bf2c568d0f1b7a74 ""
-  "esperienza1.toc" 1791985253.28467 1185 b2a4fde10a36da770087f45b0e1013a1 "pdflatex"
+  "esperienza1.aux" 1791985695.05585 10010 ba3b0120af3c07871b42dac1ffd541e4 "pdflatex"
+  "esperienza1.out" 1791985695.05681 2290 4f4ca0df1c2504a1c6e748e436accb34 "pdflatex"
+  "esperienza1.tex" 1791985694.06578 22566 4ef41d423ccef3734384f86dbad0c49f ""
+  "esperienza1.toc" 1791985695.05694 1185 b2a4fde10a36da770087f45b0e1013a1 "pdflatex"
   (generated)
   "esperienza1.aux"
   "esperienza1.log"
