@@ -77,7 +77,7 @@ Ci aspettiamo quindi che il voltaggio misurato nel diodo segua lo stesso andamen
 L'apparato sperimentale utilizzato è costituito da una scala millimetrata di 
 lunghezza due metri,
 di un fotodiodo che fungerà da fotorivelatore, di un voltmetro 
-per leggere il voltaggio nel fotodiodo, e di una lampadina,
+per leggere il voltaggio, e di una lampadina,
 la nostra sorgente luminosa, alimentata da un generatore di tensione.
 
 \begin{figure}[htbp]
@@ -107,28 +107,30 @@ Dove:
 	\item D è il diametro della lampadina
 \end{itemize}
 \section{Analisi dati}
-L'analisi dei dati consiste nell'ottenere tre grafici, il primo che mette in relazione la dipendenza del voltaggio in funzione della distanza che esso ha rispetto alla lampadina,
-il secondo è un istogramma della differenza tra il valore teorico del voltaggio e il valore sperimentale che otteniamo (chiameremo questa differenza residuo) e infine il terzo che mette in evidenza il 
-valore di questa differenza in funzione della distanza $r$. La funzione che descrive l'andamento teorico  del voltaggio (funzione di fit) avrà una forma del tipo:
+L'analisi dei dati consiste nell'ottenere tre grafici, il primo che mette in relazione la dipendenza del voltaggio misurato in funzione della distanza che esso ha rispetto alla lampadina,
+il secondo è un istogramma della differenza tra il valore teorico del voltaggio (calcolato dopo il fit) e il valore sperimentale che otteniamo (chiameremo questa differenza residuo), diviso per 
+l'errore sul voltaggio e infine il terzo che mette in evidenza il 
+valore di questa differenza in funzione della distanza $r$. La funzione che viene utilizzata per il fit è:
 \begin{equation}
     f(x) = \frac{A}{(x-B)^D} + C
 \end{equation}
 Dove A,B,C sono parametri da stimare. 
 Per verificare la bontà del modello teorico, si studia la compatibilità dei parametri B e C con 0 e quella di D con 2. 
 
-Inoltre, ci si aspetta che la gaussiana che approssima la distribuzione dei residui normalizzati nell'istogramma, dovrebbe riportare valori di $A$ e $\sigma$ compatibili con 1 e di $\mu$ con 0.
+Inoltre, ci si aspetta che la gaussiana che approssima la distribuzione dei residui normalizzati, dovrebbe riportare valori di $A$ e $\sigma$ compatibili con 1 e di $\mu$ con 0.
 
 Infine, ci si attende che la retta che approssima l'andamento dei residui sia tale che $m$ e $q$ siano compatibili con 0.
 
-Diremo che 2 valori $x_i$, $x_0$ si dicono compatibili se $\left|x_i - x_0\right| < 3*\sigma_x$
+Ricordiamo che 2 valori $x_i$, $x_0$ si dicono compatibili se $\left|x_i - x_0\right| < 3\sigma_x$.
 \section{Grafici ricavati}
-Prima di mostrare i grafici ricavati, una precisazione. Nel corso della misura ci si è accorti che il metodo con cui si stava rivelando il voltaggio di fondo non era corretto. Infatti, raggiunto il valore di $r= 596 mm$ ($r_{change}$) il valore di $V_{fondo}$ era calcolato come la media fra 3 misure, contraddistinte ognuna dalla posizione dell'apparato per la schermatura della luce della lampadina.
-Quest'ultimo, però, era tenuto troppo vicino al fotodiodo, schermando quindi anche la luce proveniente dal riflesso del tavolo, che invece deve essere considerata come parte di $V_{fondo}$.
+Prima di mostrare i grafici ricavati, una precisazione. Nel corso della misura ci si è accorti che il metodo con cui si stava rivelando il voltaggio di fondo non era corretto. Infatti, raggiunto il valore di $r= 596 mm$ ($r_{change}$) il valore di $V_{fondo}$ era calcolato come la media fra 3 misure,
+contraddistinte ognuna dalla posizione nella guida dell'apparato per la schermatura della luce della lampadina.
+Quest'ultimo però era tenuto troppo vicino al fotodiodo, schermando quindi anche la luce proveniente dal riflesso del tavolo, che invece deve essere considerata come parte di $V_{fondo}$.
 Per osservare questo fenomeno basti guardare il primo valore di $V_{fondo}$ nella tabella  ($V_{fondo}$) che risulta essere molto basso rispetto agli altri.
 
-\noindent Per questo motivo, si è deciso di svolgere due analisi dati, la prima considerando $V = V_{voltimetro} - \bar{V}_{fondo}$, dove $\bar{V}_{fondo}$ è la media dei valori di $V_{fondo}$ (per le misure iniziali, naturalmente, $\bar{V}_{fondo}=V_{fondo}$) e con errore su $V_{fondo}$: 
+\noindent Per questo motivo, si è deciso di svolgere due analisi dati, la prima considerando $V = V_{voltimetro} - \bar{V}_{fondo}$, dove $\bar{V}_{fondo}$ è la media dei valori di $V_{fondo}$ (per le misure iniziali, naturalmente, $\bar{V}_{fondo}=V_{fondo,1}$) e con errore su $V_{fondo}$
 \[
-\sigma_{V_{fondo}} = \frac{1}{\sqrt{3}}\frac{V_{fondo,max}-V_{fondo,min}}{2}
+\sigma_{V_{fondo}} = \frac{1}{\sqrt{3}}\frac{V_{fondo}-V_{fondo}}{2}
 \]
 (dove la semidispersione è stata calcolata solo per le misure dopo $r_{change}$, prima $\sigma_{V_{fondo}}=\frac{\text{sensibilità del voltmetro}}{\sqrt{3}}$). 
 La seconda analisi dati invece considera $V = V_{voltimetro} - V_{fondo}$, con $V_{fondo}$ il valore della misura compiuta al centro fra le 3 svolte dopo $r_{change}$ (cioè $V_{fondo,2}$). Ovviamente, per le misure prima di $r_{change}$, $V_{fondo}=V_{fondo,1}$
@@ -141,7 +143,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf}
     \caption{fit dei dati con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
-    \label{fig:mia_foto}
+    \label{fig1}
   \end{figure}
 
 \begin{table}[H]
@@ -150,13 +152,13 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
         \midrule
-        A & $(1.011 \pm 0.005)\times 10^{4}$ $V/mm^2$ & [-] \\
-        B & $4.848 \pm 0.073$ mm & [no] \\            % 66 sigma da 0
-        C & $(-4.05 \pm 0.41)\times 10^{-4}$ V & [no] \\   % 9.9 sigma da 0
+        A & $(1.011 \pm 0.005)\times 10^{4} W/mm^2$ & [-] \\
+        B & $4.848 \pm 0.073 mm$ & [no] \\            % 66 sigma da 0
+        C & $(-4.05 \pm 0.41)\times 10^{-4} V$ & [no] \\   % 9.9 sigma da 0
         D & $1.946 \pm 0.001$ & [no] \\                % 62 sigma da 2
         \bottomrule
     \end{tabular}
-    \caption{Parametri estratti dal fit (Figura 1).}
+    \caption{Parametri estratti dal fit di figura \ref{fig1}.}
     \label{tab:parametri_fig1}
 \end{table}
 
@@ -217,7 +219,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
       \centering
       \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf}
       \caption{fit dei dati con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
-       \label{fig:mia_foto}
+       \label{fig6}
     \end{figure}
 
 
@@ -227,12 +229,12 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
         \midrule
-        A & $(1.385 \pm 0.001)\times 10^{4}$ & [-] \\
+        A & $(1.385 \pm 0.001)\times 10^{4}$  $W/mm^2$ & [-] \\
         B & $1.804 \pm 0.034$ mm & [no] \\                    % 53 sigma da 0
         C & $(4.46 \pm 0.35)\times 10^{-4}$ V & [no] \\        % 12.6 sigma da 0
         \bottomrule
     \end{tabular}
-    \caption{Parametri estratti dal fit (Figura 4).}
+    \caption{Parametri estratti dal fit da \ref{fig6}.}
     \label{tab:parametri_fig4}
 \end{table}
 
@@ -262,7 +264,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
     \centering
 	\includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf}
     \caption{andamento dei residui con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
-    \label{fig:mia_foto}
+    \label{fig5}
   \end{figure}
 
 \begin{table}[H]
@@ -275,19 +277,19 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
         $m$ & $(1.223 \pm 0.072)\times10^{-3}$ V & [no] \\      % 17 sigma da 0
         \bottomrule
     \end{tabular}
-    \caption{media ed errore associato ai residui normalizzati (Figura 5).}
+    \caption{media ed errore associato ai residui normalizzati di figura \ref{fig5}}.
     \label{tab:parametri_fig1}
 \end{table}
 
 
-  \subsection{Analisi dati con errore la sensibilità del voltmetro}
+\subsection{Analisi dati con errore la sensibilità del voltmetro}
   \subsubsection{Fit con D da stimare}
     
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf}
     \caption{fit dei dati con D da stimare utilizzando la sensibilità come errore su $V_{fondo}$}
-    \label{fig:mia_foto}
+    \label{fig7}
   \end{figure}
 
 
@@ -297,13 +299,13 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
         \midrule
-        A & $(1.099\times10^{4} \pm 76.43)$ & [-] \\
+        A & $(1.099\times10^{4} \pm 76.43) W/mm^2$ & [-] \\
         B & $1.804 \pm 0245$ mm & [no] \\                    % 53 sigma da 0
         C & $(0.6006 \pm 1.089)\times10^{-4}$V & [si]\\
         D & $(1.96 \pm 1.2\times10^{-4})\times 10^{-4}$ V & [no] \\        % 12.6 sigma da 0
         \bottomrule
     \end{tabular}
-    \caption{Parametri estratti dal fit (Figura 7).}
+    \caption{Parametri estratti dal fit \ref{fig7}.}
     \label{tab:parametri_fig7}
 \end{table}
 
@@ -313,12 +315,12 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
 
 
-    \begin{figure}[H]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf}
     \caption{istogramma dei residui con D da stimare utilizzando la sensibilità come errore su $V_{fondo}$}
     \label{fig:mia_foto}
-  \end{figure}
+\end{figure}
 
 
 
@@ -338,12 +340,12 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
 
 
-     \begin{figure}[H]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf}
     \caption{andamento dei residui con D da stimare utilizzando la sensibilità come errore su $V_{fondo}$}
     \label{fig:mia_foto}
-  \end{figure}
+\end{figure}
 
 
 \begin{table}[H]
@@ -363,13 +365,12 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
 
 
-  \subsubsection{Fit con D = 2}
-
+\subsubsection{Fit con D = 2}
    \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/senzaD/FIT1.pdf}
     \caption{fit dei dati con D=2 utilizzando la sensibilità come errore su $V_{fondo}$}
-    \label{fig:mia_foto}s
+    \label{fig:mia_foto}
   \end{figure}
  
 \begin{table}[H]
@@ -378,7 +379,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
         \midrule
-        A & $(1.374\times10^{4} \pm 9.527)$ & [-] \\
+        A & $(1.374\times10^{4} \pm 9.527) W/mm^2$ & [-] \\
         B & $2.139 \pm 3.742\times10^{-2}$ mm & [no] \\                    % 53 sigma da 0
         C & $(1.869 \pm 0.0823)\times10^{-3}$V & [no]\\
         
@@ -393,12 +394,12 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
 
 
-   \begin{figure}[H]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf}
     \caption{istogramma dei residui con D=2 utilizzando la sensibilità come errore su $V_{fondo}$}
     \label{fig:hist}
-  \end{figure}
+\end{figure}
 
 
 
@@ -419,12 +420,12 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 Confrontando questo istogramma con quello di figura \ref{fig:hist2} si potrebbe affermare che il secondo metodo utilizzato porti ad una dispersione dei residui minore (essendo che $\hat \sigma$ è minore in questo secondo caso).
 Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in quanto, per il primo metodo (ovvero tramite la semidispersione) risulta $\sigma_{v1}= 1.208$, mentre per il secondo $\sigma_{v2} = 1.217$.
 
-   \begin{figure}[H]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf}
     \caption{andamento dei residui con D=2 utilizzando la sensibilità come errore su $V_{fondo}$}
-    \label{fig:mia_foto}
-   \end{figure}
+    \label{fig12}
+\end{figure}
 
 
 
@@ -438,13 +439,15 @@ Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in 
         $m$ & $(-0.1521\pm 1.6379)\times10^{-7}$ V & [no] \\    % 7.2 sigma da 1
         \bottomrule
     \end{tabular}
-    \caption{media ed errore associato ai residui normalizzati (Figura 12).}
+    \caption{media ed errore associato ai residui normalizzati \ref{fig12}.}
     \label{tab:parametri_fig12}
 \end{table}
 
-\subsection{Andamento della tensione di fondo}
+\subsection{Andamento del voltaggio di fondo}
 
-Per verificare se il voltaggio di fondo possa essere considerato costante, lo abbiamo rappresentato
+Per verificare che le deviazioni osservate nei fit non siano dovute a una variazione del voltaggio di fondo durante la presa dei dati (ad esempio
+per disturbi di luce ambientali improvvisi), in Fig. \ref{fig:vfondo}
+se il voltaggio di fondo possa essere considerato costante, lo abbiamo rappresentato
 in funzione della distanza $r$. Il grafico mostra che $V_{\text{fondo}}$ non è perfettamente
 costante e presenta variazioni più evidenti alle distanze minori. Questa verifica è importante
 perché una sottrazione basata su un unico valore medio potrebbe non descrivere allo stesso modo
@@ -453,9 +456,9 @@ le analisi ottenute con le diverse procedure di sottrazione del fondo.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\columnwidth]{Analisi_dati/Grafico_V_fondo_vs_r.png}
-    \caption{Tensione di fondo misurata in funzione della distanza $r$.}
-    \label{fig:vfondo_vs_r}
+    \includegraphics[width=1.0\columnwidth]{Analisi_dati/Grafico_V_fondo_vs_r.pdf}
+    \caption{Voltaggio di fondo $V_{fondo}$ in funzione della distanza $r$.}
+    \label{fig:vfondo}
 \end{figure}
 
 
