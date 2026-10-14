@@ -10,3 +10,17 @@
 \contentsline {subsection}{\numberline {1.4.2}Set-up Sperimentale e Procedura}{14}{subsection.1.4.2}%
 \contentsline {subsection}{\numberline {1.4.3}Analisi Dati e Preparazione per ROOT}{15}{subsection.1.4.3}%
 \contentsline {subsection}{\numberline {1.4.4}Grafici Diagnostici Finali}{16}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5}Legge di riflessione}{16}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Equazione delle lenti sottili}{18}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Approssimazioni}{19}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Casistiche e Applicazioni}{20}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}Sistemi di lenti e formalismo matriciale}{22}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Matrici dei componenti ottici fondamentali}{23}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Applicazioni del metodo matriciale}{25}{subsection.1.7.2}%
+\contentsline {subsubsection}{Sistema di due lenti separate da una distanza $d$}{25}{subsubsection*.21}%
+\contentsline {subsubsection}{Lente Spessa}{26}{subsubsection*.23}%
+\contentsline {section}{\numberline {1.8}Esperienza 2: Verifica della legge lenti sottili}{27}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Apparto sperimentale}{27}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Misura operativa delle distanze $p$ e $q$}{28}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Procedura di misura e gestione delle incertezze}{29}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Modello di fit e ricerca della focale}{30}{subsection.1.8.4}%

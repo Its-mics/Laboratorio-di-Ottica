@@ -967,6 +967,1248 @@ Per un'analisi completa e corretta, la relazione di laboratorio dovrà presentar
     \caption{Diagnostica statistica post-fit.}
 \end{figure}
 
+\section{Legge di riflessione}
+Ricordiamo il principio di Fermat, il quale stabilisce che la luce segue il percorso per cui la variazione del cammino ottico è nulla (cammino stazionario, tipicamente un minimo):
+\begin{equation}
+    \delta l = \delta \int_\gamma n(\vec r) ds = 0 
+\end{equation}
+Da questo principio è possibile ricavare la nota \textit{legge di riflessione}. 
+
+Consideriamo una superficie riflettente piana e un mezzo omogeneo con indice di rifrazione $n$. Sia $A$ una sorgente puntiforme posta a un'altezza $h_1$ rispetto al piano e $B$ il punto di arrivo, posto a un'altezza $h_2$. Fissando l'origine del sistema di riferimento sulla proiezione di $A$ sul piano, chiamiamo $x$ l'ascissa del punto in cui il raggio incide sulla superficie e $D$ la distanza orizzontale totale tra $A$ e $B$. 
+Il raggio incide con un angolo $\theta_i$ rispetto alla normale della superficie e viene riflesso con un angolo $\theta_r$.
+
+Il cammino ottico totale $l$ percorso dalla luce per andare da $A$ a $B$ è dato dalla somma dei due tratti rettilinei moltiplicati per l'indice di rifrazione $n$:
+\begin{equation}
+    l = n \sqrt{h_1^2 + x^2} + n \sqrt{h_2^2 + (D-x)^2} 
+\end{equation}
+Per il Principio di Fermat, imponiamo che la derivata del cammino ottico rispetto alla coordinata $x$ sia nulla:
+\begin{equation}
+    \frac{\partial l}{\partial x} = 0 \quad \implies \quad n \left[ \frac{x}{\sqrt{h_1^2 + x^2}} - \frac{D-x}{\sqrt{h_2^2 + (D-x)^2}} \right] = 0 
+\end{equation}
+Osservando la geometria del sistema, riconosciamo che i termini tra parentesi corrispondono esattamente ai seni degli angoli di incidenza e riflessione. Si ottiene quindi:
+\begin{equation}
+    n (\sin \theta_i - \sin \theta_r) = 0 \quad \implies \quad \theta_i = \theta_r
+\end{equation}
+ovvero l'angolo di incidenza è uguale all'angolo di riflessione.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, transform shape, >=stealth]
+
+% Superficie riflettente
+\draw[thick, black] (-3,0) -- (4,0);
+
+% Normale
+\draw[dashed, gray!80, thick] (1,-1.5) -- (1,2.5) node[above, text=black] {$n$};
+
+% Punti A, B e Origine (punto di incidenza)
+\coordinate (A) at (-1.5, 2);
+\coordinate (B) at (3, 1.5);
+\coordinate (O) at (1, 0); % Punto di incidenza x
+
+% Raggi
+\draw[thick, red!80!black, ->] (A) -- (O);
+\draw[thick, red!80!black, ->] (O) -- (B);
+
+% Punti e etichette A, B
+\filldraw[black] (A) circle (1pt) node[above left] {$A$};
+\filldraw[black] (B) circle (1pt) node[above right] {$B$};
+
+% Altezze h1, h2
+\draw[dashed, gray!80] (A) -- (-1.5,0) node[midway, left, text=black] {$h_1$};
+\draw[dashed, gray!80] (B) -- (3,0) node[midway, right, text=black] {$h_2$};
+
+% Angoli
+\draw[blue!65!black, thick] (1,0.7) arc (90:141:0.7);
+\node[blue!65!black] at (0.6, 1.1) {$\theta_i$};
+
+\draw[blue!65!black, thick] (1,0.7) arc (90:37:0.7);
+\node[blue!65!black] at (1.5, 1.0) {$\theta_r$};
+
+\end{tikzpicture}
+\caption{Riflessione di un raggio luminoso. Il cammino ottico da $A$ a $B$ viene minimizzato rispetto al punto di incidenza $x$.}
+\end{figure}
+
+Con un ragionamento del tutto analogo, applicato però a un fenomeno di \textbf{trasmissione} tra due mezzi trasparenti con indici di rifrazione diversi ($n_1$ e $n_2$), possiamo ricavare la \textit{legge di rifrazione (o Legge di Snell)}. In questo caso, il cammino ottico diventa:
+\begin{equation}
+    l = n_1 \sqrt{h_1^2 + x^2} + n_2 \sqrt{h_2^2 + (D-x)^2}
+\end{equation}
+Derivando e uguagliando a zero, otteniamo:
+\begin{equation}
+    \frac{\partial l}{\partial x} = 0  \quad \implies \quad n_1 \sin \theta_1 = n_2 \sin \theta_2
+\end{equation}
+
+Da questa relazione emerge un limite fisico interessante. Se la luce passa da un mezzo più denso a uno meno denso ($n_1 > n_2$), avremo che $\frac{n_1}{n_2} > 1$. Esisterà quindi un certo angolo di incidenza per cui la formula fornirebbe $\sin \theta_2 = \frac{n_1}{n_2} \sin \theta_1 > 1$, il che è matematicamente impossibile. 
+Ciò significa che per angoli di incidenza superiori a un certo valore critico, la luce non viene più trasmessa ma subisce una \textit{riflessione totale interna}. Questo \textbf{angolo limite} $\theta_c$ è definito dalla condizione $\sin \theta_2 = 1$ (angolo di uscita radente di $90^\circ$):
+\begin{equation}
+    \sin \theta_c = \frac{n_2}{n_1}
+\end{equation}
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, transform shape, >=stealth]
+
+% Interfaccia tra i due mezzi
+\draw[thick, black] (-3,0) -- (4,0);
+
+% Normale
+\draw[dashed, gray!80, thick] (1,-2.5) -- (1,2.5);
+\node at (1, 2.7) {$n_1$};
+\node at (1, -2.7) {$n_2$};
+
+% Punti A, B e Origine
+\coordinate (A) at (-1.5, 1.8);
+\coordinate (B) at (2.5, -2.0);
+\coordinate (O) at (1, 0);
+
+% Raggio incidente e rifratto
+\draw[thick, red!80!black, ->] (A) -- (O);
+\draw[thick, red!80!black, ->] (O) -- (B);
+
+% Raggio riflesso (per fedeltà al disegno a mano)
+\draw[thick, gray!60, ->] (O) -- (3, 1.5);
+
+% Punti e etichette A, B
+\filldraw[black] (A) circle (1pt) node[above left] {$A$};
+\filldraw[black] (B) circle (1pt) node[below right] {$B$};
+
+% Altezze h1, h2
+\draw[dashed, gray!80] (A) -- (-1.5,0) node[midway, left, text=black] {$h_1$};
+\draw[dashed, gray!80] (B) -- (2.5,0) node[midway, right, text=black] {$h_2$};
+
+% Angoli
+\draw[blue!65!black, thick] (1,0.6) arc (90:144:0.6);
+\node[blue!65!black] at (0.6, 0.9) {$\theta_1$};
+
+\draw[blue!65!black, thick] (1,-0.8) arc (270:307:0.8);
+\node[blue!65!black] at (1.4, -1.2) {$\theta_2$};
+
+\end{tikzpicture}
+\caption{Schema geometrico per la rifrazione (Legge di Snell). Il raggio passa da un mezzo con indice $n_1$ a uno con indice $n_2$.}
+\end{figure}
+
+
+\section{Equazione delle lenti sottili}
+
+Vogliamo ora modellare il comportamento di una lente sferica immersa in un mezzo omogeneo. Supponiamo che la lente abbia un indice di rifrazione $n_2$, raggi di curvatura $R_1$ e $R_2$ e sia immersa in un mezzo con indice $n_1$ (ad esempio aria, $n_{aria} = 1.0003$). 
+
+Sia $O$ una sorgente puntiforme posta sull'asse ottico. Un raggio di luce parte da $O$, entra nella lente nel punto $L_1$, esce nel punto $L_2$ e viene focalizzato in un punto immagine $I$, anch'esso sull'asse ottico. Siano $C_1$ e $C_2$ i vertici delle calotte sferiche della lente (i punti di intersezione con l'asse ottico). 
+Definiamo le seguenti grandezze geometriche:
+\begin{itemize}
+    \item $p$: distanza tra l'oggetto $O$ e la superficie frontale $C_1$.
+    \item $q$: distanza tra la superficie posteriore $C_2$ e l'immagine $I$.
+    \item $\Delta$: spessore della lente lungo l'asse ottico (distanza tra $C_1$ e $C_2$).
+    \item $\Delta_1, \Delta_2$: distanze orizzontali (profondità) tra i piani passanti per i vertici e i punti di incidenza $L_1, L_2$.
+    \item $h_1, h_2$: altezze (distanze dall'asse ottico) dei punti di incidenza $L_1$ e $L_2$.
+\end{itemize}
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Asse Ottico
+% ------------------------------------------------
+\draw[thick, gray!70, dashed] (-4.5,0) -- (6.5,0);
+
+% ------------------------------------------------
+% Superfici della lente (Archi)
+% ------------------------------------------------
+% Centro per la prima calotta a x = 3, raggio 3. Vertice C1 a (0,0)
+\draw[thick, black] (3,0) ++(145:3) arc (145:215:3); 
+% Centro per la seconda calotta a x = -0.5, raggio 3. Vertice C2 a (2.5,0)
+\draw[thick, black] (-0.5,0) ++(-35:3) arc (-35:35:3);
+
+% Vertici sull'asse
+\filldraw[black] (0,0) circle (1.5pt) node[below left] {$C_1$};
+\filldraw[black] (2.5,0) circle (1.5pt) node[below right] {$C_2$};
+
+% ------------------------------------------------
+% Punti O (Oggetto) e I (Immagine)
+% ------------------------------------------------
+\coordinate (O) at (-3.5, 0);
+\coordinate (I) at (5.5, 0);
+\filldraw[black] (O) circle (1.5pt) node[above left] {$O$};
+\filldraw[black] (I) circle (1.5pt) node[above right] {$I$};
+
+% ------------------------------------------------
+% Punti di incidenza sulla lente L1 e L2
+% ------------------------------------------------
+% Calcolo manuale di un punto sull'arco per far battere le linee
+\coordinate (L1) at (0.28, 1.26); % Punto sulla prima superficie
+\coordinate (L2) at (2.09, 1.50); % Punto sulla seconda superficie
+
+\filldraw[black] (L1) circle (1.2pt) node[above left] {$L_1$};
+\filldraw[black] (L2) circle (1.2pt) node[above right] {$L_2$};
+
+% ------------------------------------------------
+% Raggio Ottico fuori asse
+% ------------------------------------------------
+\draw[thick, red!80!black] (O) -- (L1);
+\draw[thick, red!80!black] (L1) -- (L2);
+\draw[thick, red!80!black] (L2) -- (I);
+
+% ------------------------------------------------
+% Altezze h1 e h2
+% ------------------------------------------------
+\draw[dashed, blue!65!black] (L1) -- (0.28, 0) node[midway, right] {$h_1$};
+\draw[dashed, blue!65!black] (L2) -- (2.09, 0) node[midway, left] {$h_2$};
+
+% ------------------------------------------------
+% Quote (p, \Delta, q)
+% ------------------------------------------------
+% Abbassiamo leggermente le quote per non sovrapporle all'asse
+\draw[<->, thick, gray!80!black] (-3.5, -0.6) -- (0, -0.6) node[midway, below] {$p$};
+\draw[<->, thick, gray!80!black] (0, -0.6) -- (2.5, -0.6) node[midway, below] {$\Delta$};
+\draw[<->, thick, gray!80!black] (2.5, -0.6) -- (5.5, -0.6) node[midway, below] {$q$};
+
+% Lineette verticali per le quote
+\draw[gray!60] (-3.5, -0.1) -- (-3.5, -0.8);
+\draw[gray!60] (0, -0.1) -- (0, -0.8);
+\draw[gray!60] (2.5, -0.1) -- (2.5, -0.8);
+\draw[gray!60] (5.5, -0.1) -- (5.5, -0.8);
+
+% ------------------------------------------------
+% Indici di Rifrazione e Raggi di curvatura
+% ------------------------------------------------
+\node at (-1.5, 1.8) {$n_1$};
+\node at (1.25, 1.6) {$n_2$};
+\node at (4.0, 1.8) {$n_1$};
+
+\node at (0.8, 2.0) {$R_1$};
+\node at (1.7, 2.2) {$R_2$};
+
+\end{tikzpicture}
+\caption{Il cammino ottico assiale deve coincidere con il cammino ottico del raggio generico rifratto affinché si formi un'immagine perfetta in $I$.}
+\label{fig:lente_spessa}
+\end{figure}
+
+Il principio alla base della formazione delle immagini (stigmatismo) impone che i fronti d'onda sferici emessi da $O$ debbano riconvergere, mantenendosi sferici, nel punto $I$. Affinché questo avvenga, tutti i possibili percorsi ottici tra $O$ e $I$ devono essere uguali, ovvero in fase tra loro. In particolare, il cammino ottico assiale (quello che attraversa il centro della lente) deve uguagliare il cammino del raggio marginale generico che incide ad altezza $h$:
+\begin{equation}
+    l_{O \to C_1 \to C_2 \to I} = l_{O \to L_1 \to L_2 \to I}
+\end{equation}
+
+\subsection{Approssimazioni}
+Per risolvere matematicamente il sistema, applichiamo due semplificazioni fondamentali:
+\begin{enumerate}
+    \item \textbf{Approssimazione dei raggi parassiali}: $p,q \gg h_1, h_2$. I raggi si mantengono molto vicini all'asse ottico.
+    \item \textbf{Approssimazione della lente sottile}: $p,q \gg R_1, R_2 \gg h_1, h_2$. Lo spessore della lente è trascurabile rispetto alle altre distanze in gioco. Di conseguenza, il raggio all'interno della lente non subisce deviazioni verticali significative, permettendoci di assumere $h_1 \simeq h_2 = h$.
+\end{enumerate}
+
+Scriviamo i due cammini ottici:
+\begin{align}
+     l_{\text{assiale}} &= n_1 p + n_2 (\Delta_1 + \Delta_2 + \Delta) + n_1 q \\
+     l_{\text{marginale}} &= n_1 \sqrt{(p+\Delta_1)^2 + h^2} + n_2 \Delta + n_1 \sqrt{(q+\Delta_2)^2 + h^2}
+\end{align}
+Essendo in regime parassiale, possiamo utilizzare l'espansione di Taylor per le radici $\sqrt{a^2 + b^2} \simeq a \left(1 + \frac{b^2}{2a^2}\right) = a + \frac{b^2}{2a}$ (valida per $b \ll a$). Sapendo inoltre che $h \ll p$ e $h \ll q$, possiamo approssimare $(p+\Delta_1) \simeq p$ al denominatore:
+\begin{equation}
+     l_{\text{marginale}} \simeq n_1 \left( (p+\Delta_1) + \frac{h^2}{2p} \right) + n_2 \Delta + n_1 \left( (q+\Delta_2) + \frac{h^2}{2q} \right)
+\end{equation}    
+Uguagliando i due percorsi ($l_{\text{assiale}} = l_{\text{marginale}}$), otteniamo:
+\begin{equation}
+     n_1 \left( \Delta_1 + \frac{h^2}{2p} \right) - n_2 (\Delta_1 + \Delta_2) + n_1 \left( \Delta_2 + \frac{h^2}{2q} \right) = 0
+\end{equation}
+Raccogliendo i termini, arriviamo all'espressione:
+\begin{equation}
+     n_1 \left( \frac{h^2}{2p} + \frac{h^2}{2q} \right) = (n_2 - n_1) (\Delta_1 + \Delta_2)
+     \label{eq:dimostrazione_lenti1}
+\end{equation}  
+
+Ora calcoliamo geometricamente i termini di spessore $\Delta_1$ e $\Delta_2$ delle calotte sferiche. Considerata una circonferenza di raggio $R$ tagliata a un'altezza $h$, la profondità della calotta (freccia) è $\Delta = R - \sqrt{R^2 - h^2}$. Sfruttando nuovamente Taylor per $h \ll R$:
+\begin{equation}
+    \Delta = R - R \sqrt{1 - \left(\frac{h}{R}\right)^2} \simeq R - R \left( 1 - \frac{h^2}{2R^2} \right) = \frac{h^2}{2R}
+\end{equation} 
+Sostituendo $\Delta_1 = \frac{h^2}{2R_1}$ e $\Delta_2 = \frac{h^2}{2R_2}$ nell'equazione \ref{eq:dimostrazione_lenti1} e semplificando per il termine comune $h^2/2$, otteniamo la celebre \textbf{Equazione dei costruttori di lenti}:
+\begin{equation}
+     \frac{1}{p} + \frac{1}{q} = \frac{n_2 - n_1}{n_1} \left( \frac{1}{R_1} + \frac{1}{R_2} \right)
+\end{equation}
+Questa equazione lega il comportamento ottico (coniugazione tra oggetto in $p$ e immagine in $q$) alle caratteristiche fisiche e costruttive della lente ($R_1, R_2, n_2$). 
+Se definiamo la \textit{lunghezza focale} $f$ del sistema come: 
+\begin{equation}
+    \frac{1}{f} = \frac{n_2 - n_1}{n_1}\left(\frac{1}{R_1} + \frac{1}{R_2}\right)
+\end{equation} 
+ritroviamo la fondamentale \textbf{Legge delle lenti sottili}:
+\begin{equation}
+    \frac{1}{p} + \frac{1}{q} =  \frac{1}{f}
+\end{equation}
+
+\subsection{Casistiche e Applicazioni}
+L'equazione delle lenti sottili ci permette di analizzare diverse configurazioni sperimentali notevoli:
+
+\begin{itemize}
+    \item \textbf{Sorgente all'infinito ($p \to \infty$)}: Se la sorgente luminosa è molto lontana dalla lente (es. luce stellare), i raggi incidenti arrivano in buona approssimazione paralleli. L'equazione restituisce $\frac{1}{\infty} + \frac{1}{q} = \frac{1}{f}$, da cui si ottiene $q = f$. L'immagine si forma esattamente sul piano focale.
+    
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, transform shape]
+    % Asse ottico
+    \draw[dashed, gray] (-3.5,0) -- (3.5,0) ;
+    
+    % Lente convergente biconvessa simmetrica e pulita
+    \draw[thick, blue!60!black, fill=blue!10, opacity=0.7] (0,-1.8) 
+        .. controls (0.6,-0.9) and (0.6,0.9) .. (0,1.8)
+        .. controls (-0.6,0.9) and (-0.6,-0.9) .. (0,-1.8);
+    \filldraw (0,0) circle (1.2pt); % Centro ottico
+    
+    % Raggi incidenti paralleli (p -> \infty)
+    \foreach \y in {-1.2, -0.6, 0.6, 1.2} {
+        \draw[red, thick, -stealth] (-3.0,\y) -- (0,\y);
+    }
+    
+    % Fuoco F (distanza q = f)
+    \coordinate (Fpos) at (2.2,0);
+    \filldraw (Fpos) circle (1.5pt);
+    
+    % Raggi rifratti che convergono nel fuoco
+    \draw[red, thick] (0,1.2) -- (2.2,0);
+    \draw[red, thick] (0,0.6) -- (2.2,0);
+    \draw[red, thick] (0,-0.6) -- (2.2,0);
+    \draw[red, thick] (0,-1.2) -- (2.2,0);
+    
+    % Linea di quota per la distanza focale f tra la lente e il punto focale
+    \draw[|<->|, >=latex, blue!50!black] (0,-2.2) -- (2.2,-2.2) node[midway, below] {$f$};
+    
+    \end{tikzpicture}
+    \caption{Raggi paralleli incidenti ($p \to \infty$) focalizzati a una distanza $q = f$ dalla lente.}
+    \label{fig:lente_fuoco}
+\end{figure} 
+  
+    \item \textbf{Espansore di fascio (Sorgente nel fuoco, $p = f$)}: Al contrario, posizionando una sorgente puntiforme sul fuoco della lente, i raggi emergenti saranno perfettamente paralleli ($q \to \infty$). Questo principio è ampiamente utilizzato in laboratorio, ad esempio per la manipolazione di fasci laser. Un fascio laser nativo è molto stretto e intenso (rischia di saturare i sensori, come il fotodiodo, e rende difficile l'allineamento). 
+    Per allargarlo trasformandolo in un fascio parallelo di grande diametro (senza perdere energia), si utilizza un sistema a due lenti confocali (chiamato espansore di fascio kepleriano). La prima lente $L_1$ fa convergere il fascio nel suo fuoco $f_1$; posizionando una seconda lente $L_2$ di focale maggiore a una distanza pari alla somma delle focali ($d = f_1 + f_2$), essa raccoglierà la luce dal fuoco comune, ricollimandola in un fascio parallelo molto più largo e meno abbagliante.
+    
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape]
+    % Asse ottico
+    \draw[dashed, gray] (-2.5,0) -- (5.5,0);
+    
+    % Lente 1 (più piccola) a x = 0
+    \draw[thick, blue!60!black, fill=blue!10, opacity=0.7] (0,-1.2) 
+        .. controls (0.4,-0.6) and (0.4,0.6) .. (0,1.2)
+        .. controls (-0.4,0.6) and (-0.4,-0.6) .. (0,-1.2);
+    \node[above] at (0,1.2) {$L_1$};
+    
+    % Lente 2 (più grande) a x = 3.5
+    \draw[thick, blue!60!black, fill=blue!10, opacity=0.7] (3.5,-2.2) 
+        .. controls (4.0,-1.1) and (4.0,1.1) .. (3.5,2.2)
+        .. controls (3.0,1.1) and (3.0,-1.1) .. (3.5,-2.2);
+    \node[above] at (3.5,2.2) {$L_2$};
+    
+    % Fuoco comune in mezzo a x = 1.5
+    \filldraw (1.5,0) circle (1.2pt);
+    
+    % Raggi laser in ingresso (stretti e paralleli)
+    \foreach \y in {-0.4, 0.4} {
+        \draw[red, thick, -stealth] (-2.0,\y) -- (0,\y);
+    }
+    
+    % Raggi tra L1, il fuoco e L2
+    \draw[red, thick] (0,0.4) -- (1.5,0) -- (3.5,1.4);
+    \draw[red, thick] (0,-0.4) -- (1.5,0) -- (3.5,-1.4);
+    
+    % Raggi in uscita da L2 (paralleli e più larghi)
+    \foreach \y in {-1.4, 1.4} {
+        \draw[red, thick, -stealth] (3.5,\y) -- (5.0,\y);
+    }
+    
+    % Linee di quota per le distanze focali f1 e f2
+    \draw[|<->|, >=latex, blue!50!black] (0,-1.6) -- (1.5,-1.6) node[midway, below] {$f_1$};
+    \draw[|<->|, >=latex, blue!50!black] (1.5,-1.6) -- (3.5,-1.6) node[midway, below] {$f_2$};
+    
+\end{tikzpicture}
+\caption{Configurazione a due lenti (espansore di fascio) per l'allargamento e la ricollimazione di un laser.}
+\label{fig:due_lenti_laser}
+\end{figure}
+
+    \item \textbf{Lenti divergenti ($f < 0$)}: Fino ad ora abbiamo considerato lenti \textit{convergenti} biconvesse, caratterizzate (secondo la convenzione dei segni standard) da un valore di focale $f > 0$. È possibile tuttavia realizzare lenti \textit{divergenti} aventi facce concave ($R_1, R_2 < 0$). Inserendo raggi di curvatura negativi nell'equazione dei costruttori di lenti, otteniamo una focale $f$ negativa.
+    
+    Fisicamente, una focale negativa implica che un fascio di luce parallelo incidente sulla lente, anziché concentrarsi, tenderà ad aprirsi allargandosi. In questo caso il fuoco è "virtuale": prolungando all'indietro i raggi uscenti divergenti, essi sembrano provenire da un punto situato *prima* della lente. 
+    
+    Un comportamento divergente (e quindi $f < 0$) si verifica matematicamente anche nel caso in cui una lente biconvessa (costruita con materiale a basso indice $n_2$) venga immersa in un mezzo otticamente più denso ($n_1 > n_2$). Il termine $(n_2 - n_1)$ diventerà negativo, trasformando la lente convergente in divergente (un classico esempio è una bolla d'aria all'interno dell'acqua).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape]
+    % Asse ottico
+    \draw[dashed, gray] (-3.5,0) -- (5.2,0);
+    
+    % Sorgente puntiforme a sinistra
+    \coordinate (S) at (-3.0,0);
+    \filldraw[black] (S) circle (1.5pt) node[above] {$S_1$};
+    
+    % Lente 1 (Divergente, biconcava) a x = 0
+    \draw[thick, blue!60!black, fill=blue!10, opacity=0.7] 
+        (0, 1.6) .. controls (-0.3, 0.8) and (-0.3, -0.8) .. (0, -1.6)
+        .. controls (0.3, -0.8) and (0.3, 0.8) .. cycle;
+    \node[above] at (0, 1.6) {$L_1$};
+    \filldraw (0,0) circle (1.2pt);
+
+    % Lente 2 (Divergente, biconcava) a x = 2.8
+    \draw[thick, blue!60!black, fill=blue!10, opacity=0.7] 
+        (2.8, 1.8) .. controls (2.5, 0.9) and (2.5, -0.9) .. (2.8, -1.8)
+        .. controls (3.1, -0.9) and (3.1, 0.9) .. cycle;
+    \node[above] at (2.8, 1.8) {$L_2$};
+    \filldraw (2.8,0) circle (1.2pt);
+
+    % Fascio di luce colorato (sfumatura rossa tra sorgente e L1)
+    \shade[top color=red!30, bottom color=red!30, middle color=red!15, opacity=0.4] 
+        (S) -- (0, 1.2) -- (0, -1.2) -- cycle;
+
+    % Raggi dalla sorgente S a L1
+    \foreach \y in {-1.2, -0.6, 0.6, 1.2} {
+        \draw[red, thick, -stealth] (S) -- (0,\y);
+    }
+    \draw[red, thick] (S) -- (0,0);
+
+    % Raggi tra L1 e L2 (divergono ulteriormente)
+    \draw[red, thick] (0, 1.2) -- (2.8, 1.8);
+    \draw[red, thick] (0, 0.6) -- (2.8, 0.9);
+    \draw[red, thick] (0, 0) -- (2.8, 0);
+    \draw[red, thick] (0, -0.6) -- (2.8, -0.9);
+    \draw[red, thick] (0, -1.2) -- (2.8, -1.8);
+
+    % Raggi in uscita da L2 (ancora più divergenti)
+    \draw[red, thick, -stealth] (2.8, 1.8) -- (4.6, 2.9);
+    \draw[red, thick, -stealth] (2.8, 0.9) -- (4.6, 1.45);
+    \draw[red, thick, -stealth] (2.8, 0) -- (4.6, 0);
+    \draw[red, thick, -stealth] (2.8, -0.9) -- (4.6, -1.45);
+    \draw[red, thick, -stealth] (2.8, -1.8) -- (4.6, -2.9);
+
+    % Indicazione della distanza focale f con linee tratteggiate e quota
+    \coordinate (F) at (-0.8, 0);
+    \filldraw[black] (F) circle (1.2pt);
+    \draw[dashed, blue!50!black, thin] (F) -- (-0.8, -1.4);
+    \draw[dashed, blue!50!black, thin] (0, 0) -- (0, -1.4);
+    \draw[|<->|, >=latex, blue!50!black] (-0.8, -1.2) -- (0, -1.2) node[midway, below] {$f$};
+
+\end{tikzpicture}
+\caption{Schema ottico con sorgente puntiforme e due lenti divergenti in sequenza.}
+\label{fig:due_lenti_divergenti_colorato}
+\end{figure}
+
+\end{itemize}
+
+\section{Sistemi di lenti e formalismo matriciale}
+
+Per analizzare sistemi ottici complessi composti da più elementi, risulta estremamente comodo utilizzare il \textit{metodo matriciale dei raggi parassiali}. In questo regime (raggi sufficientemente vicini all'asse ottico e con angoli di inclinazione piccoli), la trasformazione subita da un raggio luminoso può essere descritta in modo rigoroso attraverso l'algebra lineare.
+
+Consideriamo un raggio luminoso che entra nel sistema ottico ad una quota $y_1$ rispetto all'asse di simmetria e con un angolo $\theta_1$. Dopo aver attraversato il sistema, il raggio emergerà ad una quota $y_2$ e con un angolo $\theta_2$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Asse ottico e asse y
+% ------------------------------------------------
+\draw[thick, -stealth] (-3.4,0) -- (4.8,0)
+    node[right] {$z$};
+
+\draw[thick, -stealth] (0,-2.2) -- (0,3.0)
+    node[above] {$y$};
+
+% Asse ottico tratteggiato
+\draw[dashed, gray!70, thick] (-3.4,0) -- (4.8,0);
+
+% ------------------------------------------------
+% Corpo centrale
+% ------------------------------------------------
+\path[draw=blue!65!black, thick,
+      fill=blue!12, fill opacity=0.55]
+    (2.05,1.85)
+    .. controls (1.88,2.15) and (1.68,2.00) .. (1.78,1.70)
+    .. controls (1.88,1.48) and (1.98,1.38) .. (1.88,1.12)
+    .. controls (1.75,0.88) and (1.90,0.62) .. (1.84,0.28)
+    .. controls (1.78,0.08) and (1.76,-0.12) .. (1.72,-0.32)
+    .. controls (1.55,-0.68) and (1.76,-1.20) .. (2.18,-1.40)
+    .. controls (2.52,-1.58) and (2.93,-1.30) .. (3.18,-0.96)
+    .. controls (3.40,-0.67) and (3.48,-0.38) .. (3.34,-0.10)
+    .. controls (3.24,0.14) and (3.28,0.40) .. (3.43,0.68)
+    .. controls (3.60,0.92) and (3.72,1.12) .. (3.48,1.43)
+    .. controls (3.28,1.70) and (3.10,1.98) .. (2.82,1.90)
+    .. controls (2.60,1.84) and (2.52,1.58) .. (2.30,1.72)
+    .. controls (2.20,1.80) and (2.14,1.91) .. cycle;
+
+% ------------------------------------------------
+% Raggio incidente e raggio emergente
+% ------------------------------------------------
+\draw[red!80!black, very thick]
+    (-0.65,0.65) -- (3.48,2.12);
+
+\draw[red!80!black, very thick]
+    (3.43,1.12) -- (5.10,2.70);
+
+% ------------------------------------------------
+% Punti sull'asse ottico
+% ------------------------------------------------
+\filldraw[black] (1.84,0) circle (1.5pt);
+\filldraw[black] (3.43,0) circle (1.5pt);
+% ------------------------------------------------
+% Quote y_1 e y_2: coordinate coerenti con i raggi
+% ------------------------------------------------
+
+% Punto di riferimento per y_1: altezza del raggio incidente
+\coordinate (P1) at (1.84,1.70);
+
+% Punto di riferimento per y_2: altezza del raggio emergente
+\coordinate (P2) at (3.43,1.12);
+
+% Linee verticali delle quote
+\draw[dashed, blue!55, thick]
+    (1.84,0) -- (P1);
+
+\draw[dashed, blue!55, thick]
+    (3.43,0) -- (P2);
+
+% Linee orizzontali di riferimento
+\draw[dashed, gray!60]
+    (1.15,1.70) -- (2.55,1.70);
+
+\draw[dashed, gray!60]
+    (3.43,1.12) -- (4.85,1.12);
+
+% Etichette delle quote
+\node[blue!60!black] at (2.12,0.90) {$y_1$};
+\node[blue!60!black] at (3.88,0.60) {$y_2$};
+
+% ------------------------------------------------
+% Angoli rispetto all'orizzontale
+% ------------------------------------------------
+
+% theta_1: angolo del raggio incidente
+\draw[blue!65!black, thick]
+    (2.05,1.70) arc[
+        start angle=0,
+        end angle=19.6,
+        radius=0.35
+    ];
+
+\node[blue!60!black] at (2.43,1.88) {$\theta_1$};
+
+% theta_2: angolo del raggio emergente
+\draw[blue!65!black, thick]
+    (3.78,1.12) arc[
+        start angle=0,
+        end angle=43.5,
+        radius=0.35
+    ];
+
+\node[blue!60!black] at (4.08,1.43) {$\theta_2$};
+
+\end{tikzpicture}
+\caption{Schema del sistema ottico con raggi parassiali incidenti ed emergenti.}
+\label{fig:sistema_lenti}
+\end{figure}
+
+Il legame tra le coordinate di ingresso $(y_1, \theta_1)$ e quelle di uscita $(y_2, \theta_2)$ è dato da una combinazione lineare:
+\begin{equation}
+    \begin{cases}
+        y_2 = A y_1 + B \theta_1 \\
+        \theta_2 = C y_1 + D \theta_1
+    \end{cases}
+\end{equation}
+Questa relazione può essere riscritta in forma matriciale come:
+\begin{equation}
+\begin{pmatrix}
+y_2 \\
+\theta_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+A & B \\
+C & D
+\end{pmatrix}
+\begin{pmatrix}
+y_1 \\
+\theta_1
+\end{pmatrix}
+\end{equation}
+
+Inoltre, se introduciamo il \textit{raggio di curvatura del fronte d'onda} associato, definito in approssimazione parassiale come $R = \frac{y}{\theta}$, possiamo esprimere il raggio di curvatura in uscita in funzione di quello in ingresso:
+\begin{equation}
+    \begin{cases}
+        R_2 \theta_2 = A R_1 \theta_1 + B \theta_1 \\
+        \theta_2 = C R_1 \theta_1 + D \theta_1
+    \end{cases}
+\end{equation}
+Dividendo membro a membro, otteniamo la legge di trasformazione del raggio di curvatura da parte del sistema ottico:
+\begin{equation}
+    R_2 = \frac{A R_1 + B}{C R_1 + D}
+\end{equation}
+
+
+\subsection{Matrici dei componenti ottici fondamentali}
+Il vantaggio di questo formalismo è che ogni componente ottico basilare possiede una propria matrice caratteristica $M$. Analizziamo i casi principali.
+
+\begin{itemize}
+\item \textbf{Trasporto nello spazio libero}: Consideriamo la propagazione rettilinea della luce in un mezzo omogeneo per una distanza $d$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Asse di riferimento orizzontale
+% ------------------------------------------------
+\draw[thick, gray!70] (-2.5,0) -- (4.2,0);
+
+% ------------------------------------------------
+% Raggio in propagazione nello spazio libero
+% ------------------------------------------------
+\draw[red!75!black, very thick]
+    (-2.0,0.65) -- (3.7,3.35);
+
+% ------------------------------------------------
+% Quote y_1 e y_2
+% I segmenti verticali terminano sul raggio
+% ------------------------------------------------
+\coordinate (P1) at (-1.0,1.123);
+\coordinate (P2) at (2.5,2.781);
+
+\draw[blue!60!black, thick] (P1) -- (-1.0,0);
+\draw[blue!60!black, thick] (P2) -- (2.5,0);
+
+\node[blue!60!black] at (-1.45,0.55) {$y_1$};
+\node[blue!60!black] at (2.95,1.45) {$y_2$};
+
+% ------------------------------------------------
+% Distanza d sull'asse di base
+% ------------------------------------------------
+\node[below] at (0.75,-0.25) {$d$};
+
+% ------------------------------------------------
+% Riferimenti orizzontali per gli angoli
+% ------------------------------------------------
+\draw[gray!70, thick] (P1) -- (-0.15,1.123);
+\draw[gray!70, thick] (P2) -- (3.35,2.781);
+
+% ------------------------------------------------
+% Angolo theta_1
+% ------------------------------------------------
+\draw[blue!60!black, thick]
+    (-0.55,1.123) arc[
+        start angle=0,
+        end angle=25.3,
+        radius=0.45
+    ];
+
+\node[blue!60!black] at (-0.15,1.48) {$\theta_1$};
+
+% ------------------------------------------------
+% Angolo theta_2
+% ------------------------------------------------
+\draw[blue!60!black, thick]
+    (2.95,2.781) arc[
+        start angle=0,
+        end angle=25.3,
+        radius=0.45
+    ];
+
+\node[blue!60!black] at (3.35,3.15) {$\theta_2$};
+
+\end{tikzpicture}
+\caption{Trasporto di un raggio nello spazio libero per una distanza $d$.}
+\label{fig:trasporto_spazio_libero}
+\end{figure}
+Essendo la propagazione rettilinea, l'angolo non cambia ($\theta_2 = \theta_1$), mentre la quota varia in funzione della distanza e dell'angolo: $y_2 = y_1 + d \tan\theta_1$. Sfruttando l'approssimazione per piccoli angoli ($\tan\theta \simeq \theta$), si ha:
+\begin{equation}
+    \begin{cases}
+        y_2 = y_1 + d \theta_1 \\
+        \theta_2 = \theta_1
+    \end{cases}
+    \quad \implies \quad 
+    M = 
+    \begin{pmatrix}
+        1 & d \\ 
+        0 & 1 
+    \end{pmatrix}
+\end{equation}
+
+\item \textbf{Rifrazione attraverso un'interfaccia piana}:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Interfaccia piana
+% ------------------------------------------------
+\draw[thick, gray!60] (-3.0,0) -- (3.5,0);
+
+% Normale all'interfaccia
+\draw[dashed, blue!50, thick] (0,-2.0) -- (0,2.0);
+
+% ------------------------------------------------
+% Etichette dei mezzi
+% ------------------------------------------------
+\node at (-1.8,1.35) {$n_1$};
+\node at (1.8,1.35) {$n_2$};
+
+% ------------------------------------------------
+% Punto di incidenza
+% ------------------------------------------------
+\filldraw[black] (0,0) circle (1.7pt);
+
+% ------------------------------------------------
+% Raggio incidente
+% ------------------------------------------------
+\draw[red!80!black, very thick, -stealth]
+    (-1.8,-1.8) -- (0,0);
+
+% ------------------------------------------------
+% Raggio rifratto
+% ------------------------------------------------
+\draw[red!80!black, very thick, -stealth]
+    (0,0) -- (2.5,1.2);
+
+% ------------------------------------------------
+% Angolo theta_1
+% ------------------------------------------------
+\draw[blue!65!black, thick]
+    (0,-0.75) arc[
+        start angle=-90,
+        end angle=-135,
+        radius=0.75
+    ];
+
+\node[blue!65!black] at (-0.88,-0.83) {$\theta_1$};
+
+
+% ------------------------------------------------
+% Angolo theta_2: arco tra normale e raggio rifratto
+% ------------------------------------------------
+\draw[blue!65!black, thick]
+    (0,0) ++(0,0.75)
+    arc[start angle=90, end angle=25.64, radius=0.75];
+
+\node[blue!65!black] at (0.43,0.88) {$\theta_2$};
+
+\end{tikzpicture}
+\caption{Rifrazione di un raggio luminoso su un'interfaccia piana.}
+\label{fig:interfaccia_piana}
+\end{figure}
+In questo caso, poiché lo spessore dell'interfaccia è nullo, la quota del raggio non subisce variazioni ($y_1 = y_2$). L'angolo viene invece modificato secondo la Legge di Snell, che per angoli piccoli approssimiamo come $n_1 \theta_1 = n_2 \theta_2$:
+\begin{equation}
+    \begin{cases}
+        y_2 = y_1 \\
+        \theta_2 = \frac{n_1}{n_2} \theta_1
+    \end{cases}
+    \quad \implies \quad 
+    M = 
+    \begin{pmatrix}
+        1 & 0 \\ 
+        0 & \frac{n_1}{n_2} 
+    \end{pmatrix}
+\end{equation}
+
+\item \textbf{Rifrazione attraverso un'interfaccia sferica}: 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Assi e linee di riferimento
+% ------------------------------------------------
+% Asse ottico (linea continua in basso)
+\draw[thick, gray!70] (-3.5,-2.5) -- (3.5,-2.5);
+
+% Linea tratteggiata orizzontale (parallela all'asse ottico ad altezza y)
+\draw[dashed, gray!80, thick] (-3.5,0) -- (3.5,0);
+
+% ------------------------------------------------
+% Interfaccia sferica
+% ------------------------------------------------
+% Disegniamo un arco per simulare la superficie sferica.
+% Raggio R impostato in modo che la curvatura sia evidente.
+\draw[thick, black] (4,-3) ++(163:5) arc[start angle=163, end angle=122, radius=5];
+
+% Punto di incidenza sulla superficie
+\filldraw[black] (0,0) circle (1.5pt);
+
+% ------------------------------------------------
+% Normale alla superficie sferica (passa per il centro di curvatura)
+% ------------------------------------------------
+% L'angolo in approssimazione parassiale è y/R.
+\draw[thick, gray!60] (-2.2, 1.65) -- (2.2, -1.65);
+
+% ------------------------------------------------
+% Raggio ottico
+% ------------------------------------------------
+% Raggio incidente
+\draw[red!80!black, very thick] (-2.5, -1.2) -- (0,0);
+% Raggio emergente (rifratto)
+\draw[red!80!black, very thick] (0,0) -- (2.5, 1.4);
+
+% ------------------------------------------------
+% Angoli ed Etichette - LATO SINISTRO (1)
+% ------------------------------------------------
+% Angolo \theta_1 (tra asse tratteggiato e raggio incidente)
+\draw[blue!65!black, thick] (-1.2, 0) arc[start angle=180, end angle=205.6, radius=1.2];
+\node[blue!65!black] at (-1.55, -0.45) {$\theta_1$};
+
+% Angolo della normale y_1/R
+\draw[gray!80!black, thick] (-1.2, 0) arc[start angle=180, end angle=143, radius=1.2];
+\node[gray!80!black] at (-1.6, 0.6) {$\frac{y}{R}$};
+
+% ------------------------------------------------
+% Angoli ed Etichette - LATO DESTRO (2)
+% ------------------------------------------------
+% Angolo \theta_2 (tra asse tratteggiato e raggio emergente)
+\draw[blue!65!black, thick] (1.3, 0) arc[start angle=0, end angle=29.2, radius=1.3];
+\node[blue!65!black] at (1.65, 0.45) {$\theta_2$};
+
+% Angolo della normale y_2/R
+\draw[gray!80!black, thick] (1.3, 0) arc[start angle=0, end angle=-37, radius=1.3];
+\node[gray!80!black] at (1.7, -0.65) {$\frac{y}{R}$};
+
+\end{tikzpicture}
+\caption{Rifrazione di un raggio parassiale attraverso un'interfaccia sferica di raggio $R$.}
+\label{fig:interfaccia_sferica}
+\end{figure}
+La geometria del sistema impone che l'angolo di incidenza rispetto alla normale locale sia $\theta_{\text{inc}} = \theta_1 + \frac{y_1}{R}$, mentre l'angolo di rifrazione sia $\theta_{\text{rif}} = \theta_2 + \frac{y_1}{R}$. 
+Applicando la legge di Snell in approssimazione per angoli piccoli:
+\begin{equation}
+    n_1 \left( \theta_1 + \frac{y_1}{R} \right) = n_2 \left( \theta_2 + \frac{y_1}{R} \right)
+\end{equation}
+Esplicitando $\theta_2$, otteniamo:
+\begin{equation}
+    \theta_2 = - y_1 \frac{n_2 - n_1}{n_2 R} + \frac{n_1}{n_2} \theta_1
+\end{equation}
+Poiché l'interfaccia ha spessore nullo sull'asse, $y_2 = y_1$. La matrice associata è quindi: 
+\begin{equation}
+    M = 
+    \begin{pmatrix}
+        1 & 0 \\ 
+       -\frac{n_2 - n_1}{n_2 R} & \frac{n_1}{n_2} 
+    \end{pmatrix}
+\end{equation}
+Come verifica di coerenza, notiamo che mandando il raggio di curvatura all'infinito ($R \to \infty$), il termine in basso a sinistra si annulla e si ritrova esattamente la matrice dell'interfaccia piana.
+
+\item \textbf{Attraversamento di una Lente Sottile}: Consideriamo infine l'effetto globale di una lente sottile convergente.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Asse ottico
+% ------------------------------------------------
+\draw[thick, gray!70] (-4.5,0) -- (5.5,0);
+
+% ------------------------------------------------
+% Lente convergente (linea con frecce verso l'esterno)
+% ------------------------------------------------
+\draw[<->, thick] (0,-1.8) -- (0,2);
+% Punto centrale della lente
+\filldraw[black] (0,0) circle (1.5pt);
+
+% ------------------------------------------------
+% Punti sull'asse (Oggetto e Immagine)
+% ------------------------------------------------
+% Oggetto (sinistra) - distanza p
+\coordinate (Obj) at (-3.5,0);
+\filldraw[black] (Obj) circle (1.5pt);
+
+% Immagine (destra) - distanza q
+\coordinate (Img) at (4.5,0);
+\filldraw[black] (Img) circle (1.5pt);
+
+% ------------------------------------------------
+% Linea di riferimento orizzontale e quota y_1
+% ------------------------------------------------
+\coordinate (Y1) at (0,1.5);
+\draw[dashed, gray!80, thick] (-2.5,1.5) -- (2.5,1.5);
+
+% Etichetta y_1 (posizionata lungo la lente)
+\node[right] at (0.05, 0.75) {$y_1$};
+
+% ------------------------------------------------
+% Raggi luminosi (incidenti ed emergenti)
+% ------------------------------------------------
+\draw[red!80!black, very thick, dashed] (Obj) -- (Y1);
+\draw[red!80!black, very thick, dashed] (Y1) -- (Img);
+
+% ------------------------------------------------
+% Etichette distanze p e q
+% ------------------------------------------------
+\node[below] at (-1.75, -0.1) {$p$};
+\node[below] at (2.25, -0.1) {$q$};
+
+% ------------------------------------------------
+% Angoli \theta_1 e \theta_2 
+% ------------------------------------------------
+\fill[blue!65!black, opacity=0.15] (Y1) -- ++(180:0.9) arc[start angle=180, end angle=203.2, radius=0.9] -- cycle;
+\draw[blue!65!black, thick] (Y1) ++(180:0.9) arc[start angle=180, end angle=203.2, radius=0.9];
+\node[blue!65!black] at (-1.25, 1.25) {$\theta_1$};
+
+\fill[blue!65!black, opacity=0.15] (Y1) -- ++(0:0.9) arc[start angle=0, end angle=-18.4, radius=0.9] -- cycle;
+\draw[blue!65!black, thick] (Y1) ++(0:0.9) arc[start angle=0, end angle=-18.4, radius=0.9];
+\node[blue!65!black] at (1.25, 1.25) {$\theta_2$};
+
+\end{tikzpicture}
+\caption{Propagazione dei raggi parassiali attraverso una lente sottile convergente. Vengono evidenziate le distanze oggetto ($p$) e immagine ($q$).}
+\label{fig:lente_convergente}
+\end{figure}
+
+Dalla geometria del sistema, e ricordando che $\tan \theta \approx \theta$, possiamo legare gli angoli alle distanze dell'oggetto e dell'immagine. Ponendo attenzione ai segni (il raggio emerge inclinato verso il basso), si ha:
+\begin{equation}
+    \theta_1 \approx \frac{y_1}{p} \qquad \text{e} \qquad \theta_2 \approx - \frac{y_1}{q}
+\end{equation}
+Richiamando l'equazione delle lenti sottili $\left(\frac{1}{p} + \frac{1}{q} = \frac{1}{f}\right)$ e moltiplicando tutto per l'altezza $y_1$, otteniamo:
+\begin{equation}
+    \frac{y_1}{p} + \frac{y_1}{q} = \frac{y_1}{f} \quad \implies \quad \theta_1 - \theta_2 = \frac{y_1}{f}
+\end{equation}
+Essendo la lente "sottile", l'altezza di uscita è identica a quella di ingresso ($y_2 = y_1$). Il sistema di equazioni diventa quindi:
+\begin{equation}
+    \begin{cases}
+        y_2 = y_1 \\
+        \theta_2 = -\frac{1}{f} y_1 + \theta_1
+    \end{cases}
+\end{equation}
+Da cui si ricava la matrice di trasferimento della lente sottile:
+\begin{equation}
+    M = 
+    \begin{pmatrix}
+        1 & 0 \\ 
+       -\frac{1}{f} & 1
+    \end{pmatrix}
+\end{equation}
+
+\end{itemize}
+
+
+\subsection{Applicazioni del metodo matriciale}
+
+Il vero potere di questo metodo risiede nel fatto che un intero sistema ottico può essere descritto moltiplicando tra loro le matrici dei singoli componenti (da destra verso sinistra, seguendo il percorso della luce).
+
+\subsubsection{Sistema di due lenti separate da una distanza $d$}
+Vogliamo calcolare la lunghezza focale equivalente $f_{\text{tot}}$ di un sistema composto da due lenti sottili di focale $f_1$ ed $f_2$, poste a distanza $d$ lungo l'asse ottico:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Asse ottico
+% ------------------------------------------------
+\draw[thick, gray!70] (-3.5,0) -- (3.5,0);
+
+% ------------------------------------------------
+% Prima lente (f_1) a sinistra
+% ------------------------------------------------
+\coordinate (L1) at (-1.5, 0);
+\draw[<->, thick] (-1.5, -2) -- (-1.5, 2);
+\filldraw[black] (L1) circle (1.5pt);
+\node[above left, blue!65!black] at (-1.5, 2) {$f_1$};
+
+% ------------------------------------------------
+% Seconda lente (f_2) a destra
+% ------------------------------------------------
+\coordinate (L2) at (1.5, 0);
+\draw[<->, thick] (1.5, -2) -- (1.5, 2);
+\filldraw[black] (L2) circle (1.5pt);
+\node[above right, blue!65!black] at (1.5, 2) {$f_2$};
+
+% ------------------------------------------------
+% Indicatore della distanza 'd' tra le lenti
+% ------------------------------------------------
+\draw[dashed, gray!60] (-1.5, -0.2) -- (-1.5, -1.8);
+\draw[dashed, gray!60] (1.5, -0.2) -- (1.5, -1.8);
+
+\draw[<->, thick, blue!65!black] (-1.4, -1.5) -- (1.4, -1.5) 
+    node[midway, fill=white, inner sep=2pt] {$d$};
+
+\end{tikzpicture}
+\caption{Schematizzazione di un sistema composto da due lenti sottili convergenti separate da una distanza $d$.}
+\label{fig:due_lenti_distanza_d}
+\end{figure}
+
+Il percorso della luce si divide in tre fasi: l'attraversamento della prima lente, il trasporto nello spazio libero per una distanza $d$, e infine l'attraversamento della seconda lente. La matrice totale si calcola come $M_{\text{tot}} = M_{L2} \cdot M_{d} \cdot M_{L1}$:
+\begin{equation}
+M_{\text{tot}} = 
+\begin{pmatrix}
+    1 & 0 \\ 
+    -\frac{1}{f_2} & 1   
+\end{pmatrix}     
+\begin{pmatrix}
+    1 & d \\ 
+    0 & 1   
+\end{pmatrix}
+\begin{pmatrix}
+    1 & 0 \\ 
+    -\frac{1}{f_1} & 1   
+\end{pmatrix}
+\end{equation}
+Eseguendo il prodotto tra matrici otteniamo:
+\begin{equation}
+M_{\text{tot}} = 
+\begin{pmatrix}
+    1 - \frac{d}{f_1} & d \\[1ex]
+    -\frac{1}{f_1} - \frac{1}{f_2} + \frac{d}{f_1 f_2} & 1 - \frac{d}{f_2}   
+\end{pmatrix}   
+\end{equation}
+Analogamente a quanto visto per la matrice della lente sottile singola, l'elemento in basso a sinistra rappresenta la potenza ottica del sistema cambiato di segno ($-1/f_{\text{tot}}$). Da questo ricaviamo l'espressione generale:
+\begin{equation}
+    \frac{1}{f_{\text{tot}}} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 f_2}
+\end{equation}
+Se poniamo le lenti a contatto perfetto ($d=0$), il termine misto si annulla e ritroviamo la nota regola di addizione delle potenze ottiche $\left(\frac{1}{f_{\text{tot}}} = \frac{1}{f_1} + \frac{1}{f_2}\right)$.
+
+\subsubsection{Lente Spessa}
+Possiamo rimuovere l'ipotesi di lente sottile e calcolare la matrice completa per una lente avente uno spessore finito $d$, composta da un materiale con indice $n_2$ (con raggi di curvatura frontale $R_1$ e posteriore $R_2$), immersa in un mezzo esterno $n_1$. 
+
+In questo caso, il sistema è schematizzabile come la successione di un'interfaccia sferica (ingresso), un trasporto nel mezzo con indice $n_2$ per una distanza $d$, e una seconda interfaccia sferica (uscita):
+\begin{equation}
+    M_{\text{tot}} = M(R_2) \cdot M_d \cdot M(R_1)
+\end{equation}
+La matrice risultante assumerà la forma generale:
+\begin{equation}
+    M_{\text{tot}} = 
+    \begin{pmatrix}
+        1 - \frac{d_2}{f} & d \frac{n_1}{n_2} \\[1ex]
+        -\frac{1}{f} & 1 - \frac{d_1}{f}
+    \end{pmatrix}
+\end{equation}
+dove $d_1$ e $d_2$ indicano la posizione dei cosiddetti "piani principali" della lente rispetto ai suoi vertici fisici. La distanza focale effettiva $f$ della lente spessa (determinabile ricavando l'elemento in basso a sinistra della matrice) è data dall'\textit{Equazione di Gullstrand}:
+\begin{equation}
+    \frac{1}{f} = \frac{n_2 - n_1}{n_1} \left[ \frac{1}{R_1} - \frac{1}{R_2} + \frac{(n_2 - n_1) d}{n_2 R_1 R_2} \right]
+\end{equation}
+Questa espressione estende l'equazione dei costruttori di lenti aggiungendo un termine correttivo dipendente dallo spessore $d$. Se $d \to 0$, il termine correttivo scompare e si ritorna al caso della lente sottile.
+\section{Esperienza 2: Verifica della legge lenti sottili}
+devo verificare l'andamento: 
+\begin{equation}
+    \frac{1}{f} = \frac{1}{p} + \frac{1}{q}
+\end{equation}
+\subsection{Apparto sperimentale}
+Composto ddal solito binario graduato con supporto per la lampadina ed un primo supporto mobile con la lente, seguito da un altro con uno schermo (foglio di carta su supporto), dove verifichermemo la messa a fuoco. 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Banco ottico (binario)
+% ------------------------------------------------
+\draw[thick, gray!80] (0,0) -- (7,0);
+\draw[thick, gray!80] (0,-0.1) -- (7,-0.1); % Doppio tratto per dare l'idea del binario
+
+% ------------------------------------------------
+% Componenti (Lampadina, Lente, Schermo)
+% ------------------------------------------------
+% Lampadina
+\draw[thick, blue!65!black] (0.5, 0) -- (0.5, 1.5);
+\node[above] at (0.5, 1.5) {\footnotesize Lampadina};
+
+% Lente
+\draw[thick, blue!65!black] (3.5, 0) -- (3.5, 1.5);
+\node[above] at (3.5, 1.5) {\footnotesize Lente};
+
+% Schermo
+\draw[thick, blue!65!black] (6.5, 0) -- (6.5, 1.5);
+\node[above] at (6.5, 1.5) {\footnotesize Schermo};
+
+% ------------------------------------------------
+% Quote (distanze p e q)
+% ------------------------------------------------
+% Linee di richiamo verticali
+\draw[gray!70] (0.5, -0.2) -- (0.5, -0.6);
+\draw[gray!70] (3.5, -0.2) -- (3.5, -0.6);
+\draw[gray!70] (6.5, -0.2) -- (6.5, -0.6);
+
+% Quota p
+\draw[<->, thick] (0.5, -0.4) -- (3.5, -0.4) node[midway, below] {$p$};
+% Quota q
+\draw[<->, thick] (3.5, -0.4) -- (6.5, -0.4) node[midway, below] {$q$};
+
+\end{tikzpicture}
+\caption{Schema dell'apparato sperimentale sul banco ottico.}
+\label{fig:apparato_lenti}
+\end{figure}
+Definiamo la distanza sorgente-lente come $p$ e la distanza lente-schermo come $q$. 
+Noi vogliamo graficare $q$ in funzione di $p$. Dalla teoria ci aspettiamo un andamento iperbolico.
+Nel piano $(p, q)$ questa è un'iperbole equilatera traslata, in cui i valori della distanza focale $f$ corrispondono agli asintoti verticali e orizzontali (la curva è simmetrica rispetto alla bisettrice).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Assi cartesiani p e q
+% ------------------------------------------------
+\draw[->, thick] (-0.5, 0) -- (6, 0) node[below right] {$p$};
+\draw[->, thick] (0, -0.5) -- (0, 5) node[above left] {$q$};
+
+% ------------------------------------------------
+% Definizione della focale f per le proporzioni
+% ------------------------------------------------
+\def\f{1.2} % Distanza dell'asintoto dall'origine
+
+% ------------------------------------------------
+% Asintoti (f, f)
+% ------------------------------------------------
+% Asintoto verticale p = f
+\draw[densely dashed, gray!80!black, thick] (\f, -0.5) -- (\f, 4.8);
+\node[below] at (\f, 0) {$f$};
+
+% Asintoto orizzontale q = f
+\draw[densely dashed, gray!80!black, thick] (-0.5, \f) -- (5.5, \f);
+\node[left] at (0, \f) {$f$};
+
+% ------------------------------------------------
+% Curva dell'iperbole 
+% ------------------------------------------------
+% FONDAMENTALE: L'ambiente 'scope' con 'clip' impedisce al grafico
+% di esplodere fuori dai bordi quando p -> f e q -> infinito
+\begin{scope}
+    \clip (0, 0) rectangle (5.5, 4.8);
+    
+    % La funzione tracciata è matematicamente esatta: q = (p*f)/(p-f)
+    % Scritta nella forma equivalente: q = f + f^2 / (p-f) per stabilità di calcolo in TikZ
+    \draw[thick, blue!65!black, domain=1.22:5.5, samples=150] 
+        plot (\x, {\f + (\f*\f)/(\x - \f)});
+\end{scope}
+
+\end{tikzpicture}
+\caption{Andamento teorico atteso per i punti coniugati $p$ e $q$.}
+\label{fig:iperbole_pq}
+\end{figure}
+
+\subsection{Misura operativa delle distanze $p$ e $q$}
+Sul banco ottico leggiamo le coordinate spaziali dei supporti ($x$ per la lente, $y$ per lo schermo), che non corrispondono direttamente alle distanze ottiche $p$ e $q$ a causa degli ingombri fisici dei supporti stessi, i quali impediscono di far coincidere i centri ottici.
+
+Per ricavare $p$ utilizziamo una procedura di calibrazione con una barretta di lunghezza nota $L$ (misurata preventivamente con un calibro). Portando il supporto della lente a battuta contro la barretta (appoggiata al supporto della lampadina), leggiamo sul binario una coordinata di riferimento $x_0$ (posizione della lente). In questa configurazione, sappiamo che la distanza ottica reale tra lente e lampadina è pari alla lunghezza della barretta più la metà dello spessore del supporto della lente ($D/2$). Quando spostiamo la lente in una generica posizione $x$, la distanza oggetto $p$ sarà data da:
+\begin{equation}
+    p = (x - x_0) + L + \frac{D}{2}
+\end{equation}
+
+In modo analogo calibriamo $q$. Mantenendo la lente nella posizione $x_0$, interponiamo la barretta $L$ tra la lente e lo schermo. La coordinata letta per lo schermo sarà $y_0$ e in tale configurazione la distanza ottica è esattamente $L$. In una configurazione generica, allontanando lo schermo in $y$ si ha un contributo positivo $(y - y_0)>0$, mentre allontanando la lente in $x$ la distanza $q$ diminuisce, introducendo un contributo negativo $-(x - x_0)<0$. Complessivamente la distanza immagine $q$ è:
+\begin{equation}
+    q = (y - y_0) + L - (x - x_0)
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Binario e tacche
+% ------------------------------------------------
+\draw[->, thick, gray!80] (-1,0) -- (10.5,0) node[below] {Asse del binario (cm)};
+\foreach \x in {0,1,2,3,4,5,6,7,8,9,10} \draw[gray!80] (\x,0.1) -- (\x,-0.1);
+
+% ------------------------------------------------
+% 1. POSIZIONE FISSA: Lampada (Origine)
+% ------------------------------------------------
+\draw[thick, blue!65!black] (0, 0) -- (0, 2.5);
+\node[above] at (0, 2.5) {Lampada};
+\filldraw[black] (0,0) circle (1.5pt);
+
+% ================================================
+% FASE DI CALIBRAZIONE (Elementi tratteggiati/bassi)
+% ================================================
+% Definisco la lunghezza della barretta L e l'offset D/2
+\def\L{2.0}
+\def\Dmezzi{0.5}
+
+% Calcolo le coordinate di calibrazione x_0 e y_0
+% x_0 = L + D/2
+\pgfmathsetmacro{\xzero}{\L + \Dmezzi} 
+% y_0 è distante L da x_0 (y_0 = x_0 + L)
+\pgfmathsetmacro{\yzero}{\xzero + \L} 
+
+% --- Calibrazione di x_0 ---
+% Barretta L (Lampada -> D/2)
+\draw[thick, orange, rounded corners=1pt] (0, 0.3) rectangle (\L, 0.6);
+\node[orange!80!black] at (\L/2, 0.45) {$L$};
+
+% Spazio D/2
+\draw[<->, gray!80!black] (\L, 0.45) -- (\xzero, 0.45);
+\node[above, gray!80!black] at (\L + \Dmezzi/2, 0.45) {\footnotesize $\frac{D}{2}$};
+
+% Riferimento x_0
+\draw[dashed, blue!50, thick] (\xzero, 0) -- (\xzero, 1.2);
+\node[below, blue!70] at (\xzero, -0.2) {$x_0$};
+
+% --- Calibrazione di y_0 ---
+% Barretta L (x_0 -> y_0)
+\draw[thick, orange, rounded corners=1pt] (\xzero, 0.3) rectangle (\yzero, 0.6);
+\node[orange!80!black] at (\xzero + \L/2, 0.45) {$L$};
+
+% Riferimento y_0
+\draw[dashed, blue!50, thick] (\yzero, 0) -- (\yzero, 1.2);
+\node[below, blue!70] at (\yzero, -0.2) {$y_0$};
+
+
+% ================================================
+% FASE DI MISURA (Elementi continui/alti)
+% ================================================
+% Posizioni generiche x e y durante l'esperimento
+\def\xmis{5.5}
+\def\ymis{9.5}
+
+% Lente in posizione x
+\draw[thick, blue!65!black] (\xmis, 0) -- (\xmis, 2.5);
+\filldraw[black] (\xmis,0) circle (1.5pt);
+\node[below, font=\bfseries] at (\xmis, -0.2) {$x$};
+\node[above] at (\xmis, 2.5) {Lente};
+
+% Schermo in posizione y
+\draw[thick, blue!65!black] (\ymis, 0) -- (\ymis, 2.5);
+\filldraw[black] (\ymis,0) circle (1.5pt);
+\node[below, font=\bfseries] at (\ymis, -0.2) {$y$};
+\node[above] at (\ymis, 2.5) {Schermo};
+
+% --- Distanze Ottiche p e q ---
+\draw[<->, thick, red!80!black] (0, 1.8) -- (\xmis, 1.8) node[midway, fill=white, inner sep=2pt] {$p$};
+\draw[<->, thick, red!80!black] (\xmis, 1.8) -- (\ymis, 1.8) node[midway, fill=white, inner sep=2pt] {$q$};
+
+\end{tikzpicture}
+\caption{Schema per la determinazione di $p$ e $q$. In basso (arancione) è illustrata la fase di calibrazione con la barretta $L$ per trovare le coordinate di riposo $x_0$ e $y_0$. In alto (rosso) sono indicate le distanze ottiche $p$ e $q$ per posizioni generiche $x$ e $y$ dei supporti sul binario.}
+\label{fig:calibrazione_coordinate}
+\end{figure}
+
+\subsection{Procedura di misura e gestione delle incertezze}
+È fisicamente impossibile ottenere un'immagine se $p < f$, pertanto la presa dati deve iniziare per distanze maggiori della focale. Per trovare operativamente il punto di partenza, posizioniamo lo schermo alla distanza massima consentita dal binario e spostiamo la lente fino a trovare la prima messa a fuoco utile. All'inizio (lente vicina alla lampada) la curva teorica è molto ripida: procederemo quindi spostando la lente a passi piccoli (es. $1 \text{ mm}$). Avanzando lungo il binario, lo schermo camminerà verso di noi, finché non si supererà il punto simmetrico; da lì in poi $q$ resterà circa costante. 
+
+Il processo di messa a fuoco consiste nel cercare sul foglio l'immagine nitida e capovolta del filamento della lampadina. Operativamente, ad ogni step \textit{fissiamo la lente} allineandola accuratamente alla tacca del binario (rendendo l'errore su $x$ trascurabile, derivante solo dalla lettura e pari a $\sigma_x = \frac{0,2}{\sqrt{3}}$) e \textit{muoviamo lo schermo} ($y$) finché l'immagine appare a fuoco. 
+In questo modo, l'errore significativo risiede interamente sulla misura di $y$ (profondità di fuoco). Se adottassimo la strategia opposta (fissare lo schermo e muovere la lente per mettere a fuoco), commetteremmo un grave errore di analisi: un'incertezza su $x$ si propagherebbe sia su $p$ che su $q$ (a causa del segno $-$ nella formula di $q$), introducendo una forte anticorrelazione degli errori molto difficile da gestire. 
+
+L'incertezza $\sigma_y$ associata alla messa a fuoco non è costante durante l'esperienza. È determinata dall'intervallo spaziale all'interno del quale l'immagine appare soggettivamente nitida. Quando la lente è vicina alla lampadina e lo schermo è molto lontano, i raggi che convergono sullo schermo incidono con angoli molto piccoli (sono quasi paralleli); di conseguenza, anche spostando lo schermo di molto, la dimensione della macchia luminosa varia impercettibilmente, causando una $\sigma_y$ molto grande. Al contrario, nella configurazione quasi simmetrica (lente a metà strada), i raggi incidono con un angolo maggiore e il minimo spostamento dello schermo sfoca immediatamente l'immagine, rendendo la misura molto più precisa.
+
+\subsection{Modello di fit e ricerca della focale}
+Proprio a causa della complessa propagazione degli errori sistematici (su $x_0$, $L$, $y_0$, $D/2$), in fase preliminare trascuriamo questi ultimi ed eseguiamo il fit direttamente sulle coordinate di lettura $x$ e $y$. Riscriviamo l'equazione delle lenti sottili come:
+\begin{equation}
+    \frac{1}{x-A} + \frac{1}{y-B} = \frac{1}{C}
+\end{equation}
+Esplicitando l'equazione per $y$ otteniamo la funzione da utilizzare nel software di fit:
+\begin{equation}
+    y = B + \frac{C(x-A)}{(x-A) - C}
+\end{equation}
+Il significato fisico dei parametri stimati dal fit è il seguente:
+\begin{itemize}
+    \item $C$ rappresenta direttamente la lunghezza focale $f$ stimata dal sistema.
+    \item $A$ rappresenta lo spostamento del riferimento sulle ascisse. Ci aspettiamo che sia compatibile con zero (entro le incertezze).
+    \item $B$ rappresenta lo spostamento del riferimento sulle ordinate (dove dovrebbe trovarsi la divergenza asintotica). Anche in questo caso ci si aspetta la compatibilità con zero.
+\end{itemize}
+
+L'errore finale sulla distanza focale sarà semplicemente $\sigma_C$ restituito dal fit. Per verificare la compatibilità di $A$ e $B$ con zero, dovremo invece sommare all'errore statistico del fit gli errori sistematici della calibrazione precedentemente trascurati:
+\begin{align*}
+    \Delta A &= \sigma_A + \sigma_{x_0} + \sigma_{\frac{D}{2}} + \sigma_L \\
+    \Delta B &= \sigma_B + \sigma_{y_0} + \sigma_L
+\end{align*}
+(Notiamo che in $\Delta B$ è corretto trascurare l'errore di posizionamento su $x_0$).\
+
+
+
+
+
+
+
+
+
+
+
 
 
 
