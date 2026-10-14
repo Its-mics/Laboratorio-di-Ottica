@@ -67,8 +67,8 @@ INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/relsize/relsize.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/relsize/relsize.sty
-INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/sectsty/sectsty.sty
-INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/sectsty/sectsty.sty
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/circuitikz/circuitikz.sty

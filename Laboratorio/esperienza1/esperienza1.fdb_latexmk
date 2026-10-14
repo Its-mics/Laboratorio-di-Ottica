@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1791975425.24395 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1791975426.14028 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1791975424.70198 19104 c59838a38182a842824bed99347af8b9 ""
+["pdflatex"] 1791985252.30331 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1791985253.35504 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1791985251.17691 22558 b4a63884b94fc6c7bf2c568d0f1b7a74 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -205,7 +205,6 @@
   "/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty" 1576624809 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/relsize/relsize.sty" 1369619135 15542 c4cc3164fe24f2f2fbb06eb71b1da4c4 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1750533675 9684 a33a14b82ce60d6e77cb9be689d79ee6 ""
-  "/usr/local/texlive/2026/texmf-dist/tex/latex/sectsty/sectsty.sty" 1137110779 22423 d476012cd03f82f9475ad54ba6cd3267 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/siunitx/siunitx.sty" 1752176849 344221 f0c98c737eca26294f5039e8afde731f ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex" 1764362112 34681 5f7ded8db74e73427361503c88aa1d95 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex" 1764362112 9105 3c2de34ef77044dd7d6023f6a0cc7008 ""
@@ -227,6 +226,7 @@
   "/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty" 1691524336 2573 42712c9e0a2df004e43df5b3c95f0c1e ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty" 1691524336 1120 ba535da48caa03bf1fd3f03ea87779f8 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex" 1691524336 10931 717eb52299f416934beb8b2b7cd8cee6 ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty" 1736023606 48766 87a17a4ef312a39cd43896e34a679a56 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/titling/titling.sty" 1252107870 7358 95ac619994bd30d405a74f3eca431c84 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty" 1761946296 15651 9d7c62df82cb29a555c00550babfe364 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/tools/verbatim.sty" 1748806692 7532 26d26e9d8f2ca784270d5da8ec7d102b ""
@@ -250,10 +250,10 @@
   "Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf" 1791971282.00795 28750 2e5ce5befb58cd5a4a2e86fbb95e36ff ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf" 1791971282.08905 27541 6c8eab03b27bc1cbd5a747b4689fdd6c ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf" 1791971282.04808 20986 aa35e13aa5e973142316ddf7ba6b59a8 ""
-  "esperienza1.aux" 1791975426.06537 8293 1c47526ee4b81ef8adee1a9284ba1b37 "pdflatex"
-  "esperienza1.out" 1791975426.06618 2290 4f4ca0df1c2504a1c6e748e436accb34 "pdflatex"
-  "esperienza1.tex" 1791975424.70198 19104 c59838a38182a842824bed99347af8b9 ""
-  "esperienza1.toc" 1791975426.06632 1185 9b914c85fbd64a9bbb94eb0e29177832 "pdflatex"
+  "esperienza1.aux" 1791985253.28346 10010 ba3b0120af3c07871b42dac1ffd541e4 "pdflatex"
+  "esperienza1.out" 1791985253.2845 2290 4f4ca0df1c2504a1c6e748e436accb34 "pdflatex"
+  "esperienza1.tex" 1791985251.17691 22558 b4a63884b94fc6c7bf2c568d0f1b7a74 ""
+  "esperienza1.toc" 1791985253.28467 1185 b2a4fde10a36da770087f45b0e1013a1 "pdflatex"
   (generated)
   "esperienza1.aux"
   "esperienza1.log"

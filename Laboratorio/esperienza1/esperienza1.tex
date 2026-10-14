@@ -10,7 +10,7 @@
 \usepackage{float}
 \usepackage{relsize}
 \usepackage{amsmath}
-\usepackage{sectsty}
+\usepackage{titlesec}
 \usepackage{ragged2e}
 \usepackage{circuitikz}
 \usepackage{booktabs}
@@ -37,7 +37,12 @@
   before upper={\noindent\textbf{Nota}:\quad}
 }
 
-
+\setlength{\intextsep}{8pt} % per regolare la distanza grafico tabelle
+\setlength{\columnsep}{18pt}
+\setlength{\tabcolsep}{4pt}
+\titlespacing*{\section}{0pt}{2.5ex plus 0.5ex minus 0.2ex}{1.2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 0.4ex minus 0.2ex}{0.8ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 0.3ex minus 0.2ex}{0.6ex}
 
 \begin{document}
 \justifying
@@ -68,7 +73,7 @@ la legge di conservazione dell'energia si ottiene la seguente relazione:
 \begin{equation}
     \frac{I_1}{I_2} = \frac{r_1^2}{r_2^2} \quad \longrightarrow \quad I(r) = I_1 \left(\frac{r_1}{r}\right)^2
 \end{equation}
-Dove $r_{1}$,$r$ sono le distanze delle superici $S_{1}$ e $S_{2}$ dalla sorgente.
+Dove $r_{1}$,$r$ sono le distanze delle superfici $S_{1}$ e $S_{2}$ dalla sorgente.
 Ci aspettiamo quindi che il voltaggio misurato nel diodio segua lo stesso andamento dell'irradianza dovuta alla presenza della lampadina.
 
 \section{Apparato sperimentale}
@@ -207,7 +212,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
     \begin{figure}[H]
       \centering
-      \includegraphics[width=1.1\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf}
+      \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf}
       \caption{fit dei dati con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
        \label{fig:mia_foto}
     \end{figure}
@@ -252,7 +257,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
   \begin{figure}[H]
     \centering
-	\includegraphics[width=1.1\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf}
+	\includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf}
     \caption{andamento dei residui con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
@@ -277,7 +282,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
     
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf}
+    \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/FIT1_conD.pdf}
     \caption{fit dei dati con D da stimare utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
@@ -307,7 +312,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
     \begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf}
+    \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_residui_1_FIT_conD.pdf}
     \caption{istogramma dei residui con D da stimare utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
@@ -332,7 +337,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
      \begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf}
+    \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/conD/conD/Grafico_compatibilita_residui_conD.pdf}
     \caption{andamento dei residui con D da stimare utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
@@ -359,7 +364,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
    \begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/senzaD/FIT1.pdf}
+    \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/senzaD/FIT1.pdf}
     \caption{fit dei dati con D=2 utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}s
   \end{figure}
@@ -387,7 +392,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 
    \begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf}
+    \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf}
     \caption{istogramma dei residui con D=2 utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:hist}
   \end{figure}
@@ -417,7 +422,7 @@ Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in 
 
    \begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf}
+    \includegraphics[width=1.0\columnwidth]{Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf}
     \caption{andamento dei residui con D=2 utilizzando la sensibilià come errore su $V_{fondo}$}
     \label{fig:mia_foto}
    \end{figure}
