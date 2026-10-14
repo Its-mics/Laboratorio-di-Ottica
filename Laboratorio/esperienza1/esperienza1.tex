@@ -119,11 +119,11 @@ Ricordiamo che 2 valori $x_i$, $x_0$ si dicono compatibili se $\left|x_i - x_0\r
 \section{Grafici ricavati}
 Prima di mostrare i grafici ricavati, una precisazione. Nel corso della misura ci si è accorti che il metodo con cui si stava rivelando il voltaggio di fondo non era corretto. Infatti, raggiunto il valore di $r=$ ($r_{change}$) il valore di $V_{fondo}$ era calcolato come la media fra 3 misure, contraddistinte ognuna dalla posizione dell'apparato per la schermatura della luce della lampadina.
 Quest'ultimo però era tenuto troppo vicino al fotodiodo, schermando quindi anche la luce proveniente dal riflesso del tavolo, che invece deve essere considerata come parti di $V_{fondo}$.
-Per osservare questo fenomeno basti guardare il primo valore di $V_{fondo}$ nella tabella \ref{tab:misure} ($V_{fondo}_1$) che risulta essere molto basso rispetto agli altri.
+Per osservare questo fenomeno basti guardare il primo valore di $V_{fondo}$ nella tabella  ($V_{fondo}$) che risulta essere molto basso rispetto agli altri.
 
-Per questo motivo, si è deciso di svolgere due analisi dati, la prima considerando $V = V_{voltimetro} - \bar{V}_{fondo}$, dove $\bar{V}_{fondo}$ è la media dei valori di $V_{fondo}$ (per le misure iniziali, naturalmente, $\bar{V}_{fondo}=V_{fondo}_1$) e con errore su $V_{fondo}$: $\sigma_{V_{fondo}} = \frac{1}{\sqrt{3}}\frac{V__{fondo}_{max}-V__{fondo}_{min}}{2}$
+Per questo motivo, si è deciso di svolgere due analisi dati, la prima considerando $V = V_{voltimetro} - \bar{V}_{fondo}$, dove $\bar{V}_{fondo}$ è la media dei valori di $V_{fondo}$ (per le misure iniziali, naturalmente, $\bar{V}_{fondo}=V_{fondo}$) e con errore su $V_{fondo}$: $\sigma_{V_{fondo}} = \frac{1}{\sqrt{3}}\frac{V_{fondo}-V_{fondo}}{2}$
 (dove la semidispersione è stata calcolata solo per le misure dopo $r_{change}$, prima $\sigma_{V_{fondo}}=\frac{\text{sensibilità del voltmetro}}{\sqrt{3}}$). 
-La seconda analisi dati invece considera $V = V_{voltimetro} - V_{fondo}$, con $V_{fondo}$ il valore della misura compiuta al centro fra le 3 svolte dopo $r_{change}$ (cioè $V_{fondo}_2$). Ovviamente, per le misure prima di $r_{change}$, $V_{fondo}=V_{fondo}_1$
+La seconda analisi dati invece considera $V = V_{voltimetro} - V_{fondo}$, con $V_{fondo}$ il valore della misura compiuta al centro fra le 3 svolte dopo $r_{change}$ (cioè $V_{fondo}$). Ovviamente, per le misure prima di $r_{change}$, $V_{fondo}=V_{fondo}$
 In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} = \frac{\text{sensibilità del voltmetro}}{\sqrt{3}}$.
 
 \subsection{Grafici ottenuti con semidispersione come errore}
@@ -132,16 +132,51 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf}
-    \caption{fit dei dati con D=2 utilizzando la semidispersione come errore su $V_{fondo}$}
+    \caption{fit dei dati con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        A & $(1.011  \pm 0.0019)\times 10^4$ & [-] \\
+        B & $4.847 \pm 0.2$ mm                 & [no] \\
+        C & $(-4.045  \pm 0.384)\times 10^{4}$ V & [no] \\
+        D & $1.946 \pm 3.603 \times 10^{4}$             & [no] \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri estratti dal fit (Figura 1).}
+    \label{tab:parametri_fig1}
+\end{table}
 
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf}
-    \caption{istogramma dei residui con D=2 utilizzando la semidispersione come errore su $V_{fondo}$}
+    \caption{istogramma dei residui con D da stimare utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}S
    \end{figure}
+
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $\mu$ & $0,2836 \pm 0,852$ V & [si] \\
+        $\sigma$ & $1,407 \pm 0.062 $ V                 & [no] \\
+    
+        \bottomrule
+    \end{tabular}
+    \caption{media ed errore associato ai residui normalizzati (Figura 2).}
+    \label{tab:parametri_fig1}
+\end{table}
+
+
 
   \begin{figure}[H]
     \centering
@@ -149,6 +184,25 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
     \caption{andamento dei residui con D=2 utilizzando la semidispersione come errore su $V_{fondo}$}
     \label{fig:mia_foto}
   \end{figure}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $m$ & $(3.77 \pm 0.716)\times 10^{-4} $ V/mm & [si] \\
+        $q$ & $(-2.725 \pm 0.507)\times 10^{-7}$ V     & [si] \\        
+    
+        \bottomrule
+    \end{tabular}
+    \caption{valori di intercetta e coefficiente angolare del grafico compatibilità residui (Figura 3).}
+    \label{tab:parametri_fig1}
+\end{table}
+
+
+
 
 \subsubsection{Fit con D = 2}
 
@@ -159,14 +213,22 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
        \label{fig:mia_foto}
     \end{figure}
 
-    \begin{table}
-      \begin{tabular}
-        parametro & 2$\sigma$ & compatibilità \\
-        A &  & \\
-        B &  & \\
-        C &  &
-      \end{tabular}
-    \end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        A & $(1.385\times 10^4  \pm 5.743)$ & [-] \\
+        B & $1.804 \pm 0.1678  $ mm            & [no] \\
+        C & $(4.456  \pm 0.342)\times 10^{-4} $V & [no] \\
+        
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri estratti dal fit (Figura 4).}
+    \label{tab:parametri_fig4}
+\end{table}
 
 	\begin{figure}[H]
      \centering
@@ -175,14 +237,21 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
      \label{fig:hist2}
     \end{figure}
 
-     \begin{table}
-      \begin{tabular}
-        parametro & 2$\sigma$ & compatibilità \\
-        A & & \\
-        $\mu$ &  & \\
-        $\sigma$ &  & 
-      \end{tabular}
-    \end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $\mu$ & $0.601 \pm 0.156$ V & [no] \\
+        $\sigma$ & $1,969 \pm 0.135$  mm               & [no] \\
+    
+        \bottomrule
+    \end{tabular}
+    \caption{media ed errore associato ai residui normalizzati (Figura 5).}
+    \label{tab:parametri_fig1}
+\end{table}
+
 
   \begin{figure}[H]
     \centering
@@ -191,13 +260,20 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
     \label{fig:mia_foto}
   \end{figure}
 
-    begin{table}
-      \begin{tabular}
-        parametro & 2$\sigma$ & compatibilità \\
-        m &  % \\
-        q &  &
-      \end{tabular}
-    \end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $m$ & $(1.223 \pm 0.072)\times10^{-3}$ & [si] \\
+        $q$ & $(9.611 \pm 0.507)\times10^{-7} 0.1351$                 & [no] \\
+    
+        \bottomrule
+    \end{tabular}
+    \caption{media ed errore associato ai residui normalizzati (Figura 5).}
+    \label{tab:parametri_fig1}
+\end{table}
 
 
   \subsection{Analisi dati con errore la sensibilità del voltmetro}
@@ -241,7 +317,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
   \end{figure}
 
 Confrontando questo istogramma con quello di figura \ref{fig:hist2} si potrebbe affermare che il secondo metodo utilizzato porti ad una dispersione dei residui minore (essendo che $\hat \sigma$ è minore in questo secondo caso).
-Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in quanto, per il primo metodo risulta $\sigma_v_1=$, mentre per il secondo $\sigma_v_2$.
+Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in quanto, per il primo metodo risulta $\sigma_v=$, mentre per il secondo $\sigma_v$.
 
    \begin{figure}[H]
     \centering

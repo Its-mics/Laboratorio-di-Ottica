@@ -1,12 +1,13 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {section}{\numberline {1}legge teorica da verificare}{3}{section.1}%
+\contentsline {section}{\numberline {1}Introduzione }{3}{section.1}%
 \contentsline {section}{\numberline {2}Apparato sperimentale}{3}{section.2}%
-\contentsline {section}{\numberline {3}Grafici}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Analisi Dati con errore come semidispersione}{3}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Fit con D=2}{3}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Fit con D da stimare}{4}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Analisi dati con errore la sensibilità del voltmetro}{5}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Fit con D=2}{5}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Fit con D da stimare}{5}{subsubsection.3.2.2}%
-\contentsline {section}{\numberline {4}Conclusione}{6}{section.4}%
+\contentsline {section}{\numberline {3}Analisi dati}{3}{section.3}%
+\contentsline {section}{\numberline {4}Grafici ricavati}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Grafici ottenuti con semidispersione come errore}{4}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Fit con D da stimare}{4}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Fit con D = 2}{5}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Analisi dati con errore la sensibilità del voltmetro}{6}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Fit con D da stimare}{6}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Fit con D = 2}{6}{subsubsection.4.2.2}%
+\contentsline {section}{\numberline {5}Conclusione}{7}{section.5}%
