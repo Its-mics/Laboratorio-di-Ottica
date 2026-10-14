@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1791991967.83418 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1791991968.69478 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1791991967.68061 22358 40d39dc200a011a55bb21f18864459b7 ""
+["pdflatex"] 1792002591.12268 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1792002591.96966 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1791997491.84405 23249 7fdffcf02e05804893d42687db40e03d ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -244,16 +244,17 @@
   "Analisi_dati/Analisi con sens/senzaD/FIT1.pdf" 1791971599.71355 29028 d73aa56fc4dba224fe5913ed88093c4c ""
   "Analisi_dati/Analisi con sens/senzaD/Grafico_compatibilita_residui.pdf" 1791971599.80652 27505 748d9b038f242b91ba8f63f52a0e4433 ""
   "Analisi_dati/Analisi con sens/senzaD/Grafico_residui_1_FIT.pdf" 1791971599.76537 21390 a3d522e50345f2333572d2bde096d49c ""
+  "Analisi_dati/Grafico_V_fondo_vs_r.png" 1791997031.3679 13408 4649c28423cb29f2d061db55b085c326 ""
   "Analisi_dati/analisi con semidisp/conD/FIT1_conD.pdf" 1791971851.15105 29509 2a41761da8c0fe57d50e7291fa86b9b7 ""
   "Analisi_dati/analisi con semidisp/conD/Grafico_compatibilita_residui_conD.pdf" 1791971851.29424 27211 25b7e0f248b11535786b900701c69901 ""
   "Analisi_dati/analisi con semidisp/conD/Grafico_residui_1_FIT_conD.pdf" 1791971851.21959 21008 d8e38a35dc20edbfb124da1c93c1bfbd ""
   "Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf" 1791971282.00795 28750 2e5ce5befb58cd5a4a2e86fbb95e36ff ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf" 1791971282.08905 27541 6c8eab03b27bc1cbd5a747b4689fdd6c ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf" 1791971282.04808 20986 aa35e13aa5e973142316ddf7ba6b59a8 ""
-  "esperienza1.aux" 1791991968.62386 10022 37db4f6c20f2b5e2b3d1df8d0b638eac "pdflatex"
-  "esperienza1.out" 1791991968.62482 2290 4f4ca0df1c2504a1c6e748e436accb34 "pdflatex"
-  "esperienza1.tex" 1791991967.68061 22358 40d39dc200a011a55bb21f18864459b7 ""
-  "esperienza1.toc" 1791991968.62496 1185 b2a4fde10a36da770087f45b0e1013a1 "pdflatex"
+  "esperienza1.aux" 1792002591.89976 10457 137c07640c8018328cb29b2de2f2d296 "pdflatex"
+  "esperienza1.out" 1792002591.90072 2525 12c32d62c4de3ce023681ef0dbefe1c6 "pdflatex"
+  "esperienza1.tex" 1791997491.84405 23249 7fdffcf02e05804893d42687db40e03d ""
+  "esperienza1.toc" 1792002591.90087 1284 1804bacb57a757a82ba675cc2f157ff9 "pdflatex"
   (generated)
   "esperienza1.aux"
   "esperienza1.log"

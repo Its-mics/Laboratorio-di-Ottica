@@ -411,7 +411,7 @@ In questo caso l'errore su $V_{fondo}$ coincide sempre con $\sigma_{V_{fondo}} =
 \end{table}
 
 Confrontando questo istogramma con quello di figura \ref{fig:hist2} si potrebbe affermare che il secondo metodo utilizzato porti ad una dispersione dei residui minore (essendo che $\hat \sigma$ è minore in questo secondo caso).
-Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in quanto, per il primo metodo risulta $\sigma_v=$, mentre per il secondo $\sigma_v$.
+Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in quanto, per il primo metodo (ovvero tramite la semidispersione) risulta $\sigma_{v1}= 1.208$, mentre per il secondo $\sigma_{v2} = 1.217$.
 
    \begin{figure}[H]
     \centering
@@ -436,10 +436,21 @@ Ciò non è supportato dal calcolo della deviazione standard dei dati reali, in 
     \label{tab:parametri_fig12}
 \end{table}
 
+\subsection{Andamento della tensione di fondo}
 
+Per verificare se il voltaggio di fondo possa essere considerato costante, lo abbiamo rappresentato
+in funzione della distanza $r$. Il grafico mostra che $V_{\text{fondo}}$ non è perfettamente
+costante e presenta variazioni più evidenti alle distanze minori. Questa verifica è importante
+perché una sottrazione basata su un unico valore medio potrebbe non descrivere allo stesso modo
+tutte le misure e influenzare i residui e i parametri dei fit. Per questo abbiamo confrontato
+le analisi ottenute con le diverse procedure di sottrazione del fondo.
 
-
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{Analisi_dati/Grafico_V_fondo_vs_r.png}
+    \caption{Tensione di fondo misurata in funzione della distanza $r$.}
+    \label{fig:vfondo_vs_r}
+\end{figure}
 
 
 \section{Ipotesi di una seconda sorgente}
@@ -500,7 +511,7 @@ compromesse dallo schermo tenuto troppo vicino al fotodiodo, che oscurava anche 
 \noindent Va però detto che questo vantaggio dipende in parte dagli errori più grandi. Con $D$ libero
 $\chi^2/\mathrm{ndof}=0.72<1$: gli errori sono forse sovrastimati. Una $\hat\sigma$
 minore non significa quindi una minore dispersione dei dati. Per il primo metodo la deviazione
-standard dei residui è $\sigma_v=\ldots$ V, per il secondo $\sigma_v=\ldots$ V.
+standard dei residui è $\sigma_{v1}= 1.208$ V, per il secondo $\sigma_{v2} = 1.217$ V.
 Nessuno dei due metodi rende $B$ e $D$ compatibili con i valori attesi: la differenza tra i
 metodi non spiega quindi le deviazioni dal modello.
 
