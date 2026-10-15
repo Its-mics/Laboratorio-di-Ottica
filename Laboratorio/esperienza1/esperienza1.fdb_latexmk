@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792007560.57309 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1792007561.50096 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1792007560.36169 24208 c892b62bfad1648ea3496993b59badb0 ""
+["pdflatex"] 1792048443.24515 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" "esperienza1.pdf" "esperienza1" 1792048444.09313 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza1/esperienza1.tex" 1792048319.9828 24420 b3d9ac261eeae2f6d20e2f5b779a5453 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -10,7 +10,9 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1136768653 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm" 1136768653 3584 178baad7ffca7f5d3428a83bd7cc64c3 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm" 1136768653 3584 291a5713401683441e0a8c8f4417b17b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm0700.tfm" 1136768653 3584 cf973739aac7ab6247f9150296af7954 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm" 1136768653 3584 49064b465390a8e316a3c8417a050403 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm" 1136768653 3584 d3d8ac8b25ca19c0a40b86a5db1e8ccc ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
@@ -50,7 +52,9 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1215737283 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb" 1215737283 135942 859a90cad7494a1e79c94baf546d7de5 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb" 1215737283 139826 9213617a7cb78635fc326b859c0b2273 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb" 1215737283 162624 9dcc92cd3b1dfe2ecc80e6da7f2eb6bd ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb" 1215737283 154599 ded6d7c21788a8930eadc7fef7518942 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb" 1215737283 164227 3df942b4ff2124425d8fb1b6d3e01c7a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1215737283 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -262,10 +266,10 @@
   "Analisi_dati/analisi con semidisp/senzaD/FIT1.pdf" 1791971282.00795 28750 2e5ce5befb58cd5a4a2e86fbb95e36ff ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_compatibilita_residui.pdf" 1791971282.08905 27541 6c8eab03b27bc1cbd5a747b4689fdd6c ""
   "Analisi_dati/analisi con semidisp/senzaD/Grafico_residui_1_FIT.pdf" 1791971282.04808 20986 aa35e13aa5e973142316ddf7ba6b59a8 ""
-  "esperienza1.aux" 1792007561.42207 10576 f2b6fd3825d26c4b5fbcd905967d81a7 "pdflatex"
-  "esperienza1.out" 1792007561.42306 2584 73fea2b4a16352f0df0b9659ed76d06c "pdflatex"
-  "esperienza1.tex" 1792007560.36169 24208 c892b62bfad1648ea3496993b59badb0 ""
-  "esperienza1.toc" 1792007561.4232 1343 de5d555aaf590f72d4ee75fa2bc80733 "pdflatex"
+  "esperienza1.aux" 1792048444.01496 10673 a0cbe94a0ce89d17168348f5948f3742 "pdflatex"
+  "esperienza1.out" 1792048444.01603 2584 73fea2b4a16352f0df0b9659ed76d06c "pdflatex"
+  "esperienza1.tex" 1792048319.9828 24420 b3d9ac261eeae2f6d20e2f5b779a5453 ""
+  "esperienza1.toc" 1792048444.01617 1343 631d0bd6ce3bbc6e14a69b310eabe358 "pdflatex"
   (generated)
   "esperienza1.aux"
   "esperienza1.log"
