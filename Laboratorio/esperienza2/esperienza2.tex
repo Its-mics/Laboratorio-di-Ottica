@@ -1,0 +1,110 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=2cm, bottom=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{sectsty}
+\usepackage{ragged2e}
+\usepackage{circuitikz}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz-3dplot}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{siunitx}
+% \usepackage{booktabs}
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}  %per rendere l'indice genrale "interattivo"
+\usepackage{enumitem}  %distanza degli itemize
+\setlist[itemize]{itemsep=4pt, parsep=1pt}
+\newtcolorbox{nota}{
+  blanker,
+  before skip=1em,
+  after skip=1em,
+  left=1em,
+  borderline west={1pt}{0pt}{black},
+  fontupper=\itshape,
+  before upper={\noindent\textbf{Nota}:\quad}
+}
+
+
+
+\begin{document}
+\justifying
+	\title{\textbf{Misura della curva volt-amperometrica di una lampadina a filo di tungsteno}}
+	\author{Tedeschini Michele \hspace{0.7com} Mirolo Manuele \hspace{0.7cm} Stroili Emanuele}
+	\date{16 Ottobre 2026}
+	\maketitle
+	\newgeometry{left=3cm, right=3cm, top=4cm, bottom=4cm}
+	\onecolumn
+	\tableofcontents
+\vspace{3cm}
+	\begin{abstract}
+		\centering
+		\large
+    L'esperimento consiste nel verificare la legge delle lenti sottili, graficando la distanza tra lo schermo $q$, e la lente con la distanza tra la lente e la sorgenete $p$. 
+       
+	\end{abstract}
+
+	\newpage
+\restoregeometry
+\twocolumn
+
+
+
+\section{Legge fisica da verificare}
+\section{Apparato sperimentale}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, transform shape, >=stealth]
+
+% ------------------------------------------------
+% Banco ottico (binario)
+% ------------------------------------------------
+\draw[thick, gray!80] (0,0) -- (7,0);
+\draw[thick, gray!80] (0,-0.1) -- (7,-0.1); % Doppio tratto per dare l'idea del binario
+
+% ------------------------------------------------
+% Componenti (Lampadina, Lente, Schermo)
+% ------------------------------------------------
+% Lampadina
+\draw[thick, blue!65!black] (0.5, 0) -- (0.5, 1.5);
+\node[above] at (0.5, 1.5) {\footnotesize Lampadina};
+
+% Lente
+\draw[thick, blue!65!black] (3.5, 0) -- (3.5, 1.5);
+\node[above] at (3.5, 1.5) {\footnotesize Lente};
+
+% Schermo
+\draw[thick, blue!65!black] (6.5, 0) -- (6.5, 1.5);
+\node[above] at (6.5, 1.5) {\footnotesize Schermo};
+
+% ------------------------------------------------
+% Quote (distanze p e q)
+% ------------------------------------------------
+% Linee di richiamo verticali
+\draw[gray!70] (0.5, -0.2) -- (0.5, -0.6);
+\draw[gray!70] (3.5, -0.2) -- (3.5, -0.6);
+\draw[gray!70] (6.5, -0.2) -- (6.5, -0.6);
+
+% Quota p
+\draw[<->, thick] (0.5, -0.4) -- (3.5, -0.4) node[midway, below] {$p$};
+% Quota q
+\draw[<->, thick] (3.5, -0.4) -- (6.5, -0.4) node[midway, below] {$q$};
+
+\end{tikzpicture}
+\section{Analisi dati}
+\section{Conclusione}
+\section{Dati}
+
+\end{document}
