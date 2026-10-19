@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792436151.62691 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792436152.78685 0
+["pdflatex"] 1792437706.95462 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792437708.22106 0
   "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792436150.09647 33378 03a489c2eb10537ea2d646e4b876e917 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -263,15 +263,15 @@
   "Analisi dati/fit_line.png" 1792161156.82984 15513 559fa37cac58623c3e24978d318a6668 ""
   "Analisi dati/fit_root.png" 1792161156.83002 20005 3895afba3bb6ea725fae21083905985c ""
   "Analisi dati/hist.png" 1792161156.83018 18108 e9c56a19023c2935dac8aaf102624f7c ""
-  "esperienza2.aux" 1792436152.70805 7412 d495542962bdb9389622a49c6e875157 "pdflatex"
-  "esperienza2.out" 1792436152.70894 2092 ae49067691fe0e25d9f03f38bff34cc9 "pdflatex"
+  "esperienza2.aux" 1792437708.13269 7412 d495542962bdb9389622a49c6e875157 "pdflatex"
+  "esperienza2.out" 1792437708.13357 2092 ae49067691fe0e25d9f03f38bff34cc9 "pdflatex"
   "esperienza2.tex" 1792436150.09647 33378 03a489c2eb10537ea2d646e4b876e917 ""
-  "esperienza2.toc" 1792436152.70908 1173 d69740ea97e356e80a4b48bd5db85fd8 "pdflatex"
+  "esperienza2.toc" 1792437708.13371 1173 d69740ea97e356e80a4b48bd5db85fd8 "pdflatex"
   "fit_line.png" 1792435507.41927 20884 97a4191fa8d64d78c44f276d3a913411 ""
   "fit_root.png" 1792435506.64953 23817 d071e29aabd1b492dd6b5c94abb14c37 ""
   "fit_root_split.png" 1792435506.92731 20885 79a24d6bb3d96b7538281e6d66eddb9d ""
   "hist.png" 1792435507.16617 24305 d2e1b38d37e6fe69504deb6cecbe31ef ""
-  "prove/fit_line.png" 1792428301.00681 67571 47497a71ad800be18a38519f7be950d4 ""
+  "prove/fit_line.png" 1792437706.45142 17734 a6f280c855d8150332bc922181c00a6f ""
   (generated)
   "esperienza2.aux"
   "esperienza2.log"
