@@ -318,9 +318,10 @@ Il $\chi^2$ complessivo dei due fit è $4182.0$ con $107$ gradi di libertà ($\c
 
 
 
-\begin{table*}[h]
+\begin{table}[h]
     \centering
     \small
+    \resizebox{\columnwidth}{!}{%
     \begin{tabular}{lcc}
         \toprule
         & $p<400$ & $p>400$ \\
@@ -333,9 +334,10 @@ Il $\chi^2$ complessivo dei due fit è $4182.0$ con $107$ gradi di libertà ($\c
         dev.\ std.\ dei residui norm. & $4.5$ & $8.5$ \\
         \bottomrule
     \end{tabular}
+    }
     \caption{Analisi dei residui dei fit separati.}
     \label{tab:residui_split}
-\end{table*}
+\end{table}
 
 Le analisi dei residui (Tabella~\ref{tab:residui_split}) hanno un effetto discriminante limitato: nella regione $p>400$ mm l'istogramma contiene solo 37 misure e i parametri della gaussiana sono poco vincolati. Il valore di $\sigma$ ottenuto dal fit dell'istogramma per $p<400$ mm descrive inoltre solo il picco centrale: la deviazione standard dei residui normalizzati è $4.5$ ($8.5$ per $p>400$ mm), coerente con i $\chi^2/\mathrm{ndf}$ ottenuti.
  
@@ -364,6 +366,7 @@ Per capire quale grandezza possa essersi spostata, lo shift è stato applicato s
 \begin{table}[H]
     \centering
     \small
+    
     \begin{tabular}{lcc}
         \toprule
         \textbf{Ipotesi} & $\delta_\mathrm{min}$ [mm] & $\chi^2_\mathrm{min}$ \\
@@ -387,9 +390,11 @@ Esclusa la lente, l'anomalia deve essere imputabile allo spostamento della lampa
 Non potendo ricostruire a posteriori l'esatta cinematica dell'urto accidentale, si è optato per l'approccio empirico di applicare una traslazione $\Delta p = \Delta q \approx -4$ mm ai dati successivi alla discontinuità.
 La Tabella~\ref{tab:confronto_shift} confronta il fit unico con e senza lo shift $\delta=4$ mm.
  
-\begin{table*}[!t]
+\begin{table}[!t]
     \centering
     \small
+    \resizebox{\columnwidth}{!}{%
+
     \begin{tabular}{lcc}
         \toprule
         \textbf{Par.} & senza shift & $\delta=4$ mm \\
@@ -405,9 +410,10 @@ La Tabella~\ref{tab:confronto_shift} confronta il fit unico con e senza lo shift
         $q$ [mm]  & $0.465\pm0.044$ [no] & $0.359\pm0.044$ [no] \\
         \bottomrule
     \end{tabular}
+    }
     \caption{Fit unico senza e con lo shift. $A$ e $B$ sono confrontati con 0 includendo le incertezze su $L$, $D/2$ e $x_0$; $\mu,\sigma$ sono i parametri della gaussiana dei residui normalizzati, $m,q$ quelli della retta dei residui.}
     \label{tab:confronto_shift}
-\end{table*}
+\end{table}
  
 \begin{figure}[H]
     \centering
@@ -427,9 +433,11 @@ L'esperimento ha permesso di confermare qualitativamente la legge delle lenti so
 
 Tuttavia, da un punto di vista strettamente quantitativo, il modello ideale non descrive i dati in modo statisticamente perfetto: in tutte le configurazioni analizzate si ottiene un $\chi^2/\mathrm{ndf}\geq 20$ (Tabella~\ref{tab:riepilogo}) e i parametri $A$, $B$ e $C$ mostrano fluttuazioni significative cambiando il tipo di analisi.
 
-\begin{table*}[!t]
+\begin{table}[!t]
     \centering
     \small
+    \resizebox{\columnwidth}{!}{%
+
     \begin{tabular}{lcccc}
         \toprule
         \textbf{Analisi} & $\chi^2/\mathrm{ndf}$ & $C$ [mm] & $A$ [mm] & $B$ [mm] \\
@@ -442,9 +450,10 @@ Tuttavia, da un punto di vista strettamente quantitativo, il modello ideale non 
         separati, $\delta=4$ mm, $p>400$ & 59.3 & $203.15\pm0.19$ & $-8.46\pm0.55$ & $-6.05\pm0.28$ \\
         \bottomrule
     \end{tabular}
+    }
     \caption{Riepilogo delle analisi. Nei fit separati con shift, il taglio spaziale su $p$ è applicato \textit{dopo} la correzione dei dati.}
     \label{tab:riepilogo}
-\end{table*}
+\end{table}
 
 
 L'analisi rivela che l'incertezza sulla distanza focale $f$ è dominata dagli errori sistematici. L'errore puramente statistico restituito dai fit sull'intero set di dati è infatti irrisorio (inferiore a 0.1 mm), mentre i valori stimati per $C$ variano tra $196.9$ e $216.3$ mm a seconda del metodo utilizzato. 
