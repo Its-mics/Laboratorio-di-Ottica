@@ -70,7 +70,6 @@
 
 
 
-<<<<<<< HEAD
     \section{Legge fisica da verificare}
     Per una lente a cui si possono applicare l'apprssoimazione dei raggi parassiali e l'approsimazione delle lenti sottili, l'inverso della distanza focale è dato da:
     \[
@@ -273,8 +272,41 @@ per questo motivo abbiamo deciso di ovviare al problema come esposto in preceden
 
 
 
-    \subsection{doppio fit}
-    \subsection{$\chi^{2}$ con traslazione di 7mm ai dati dopo la discontinuità}
+    \subsection{Fit Separati}
+    Per verificare se il problema fosse circoscritto a un errore sistematico introdotto proprio in quel frangente, abbiamo diviso i dati in due regioni: $p < 400$ mm e $p > 400$ mm, eseguendo due fit indipendenti con la medesima funzione.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\columnwidth]{fit_root_split.png}
+    \caption{Fit separati per la zona prima (rosso) e dopo (verde) la discontinuità.}
+    \label{fig:fit_split}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Par.} & \textbf{Fit 1 ($p < 400$)} & \textbf{Fit 2 ($p > 400$)} \\
+        \midrule
+        A & $[Valore] \pm [Errore]$ & $[Valore] \pm [Errore]$ \\
+        B & $[Valore] \pm [Errore]$ & $[Valore] \pm [Errore]$ \\            
+        C & $[Valore] \pm [Errore]$ & $[Valore] \pm [Errore]$ \\ 
+        \midrule
+        $\chi^2$ & $[Chi2\_1] / [ndf\_1]$ & $[Chi2\_2] / [ndf\_2]$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Confronto dei parametri estratti dai due fit separati.}
+    \label{tab:parametri_split}
+\end{table}
+
+Osservando la Tabella \ref{tab:parametri_split}, notiamo che il parametro $C$ (la distanza focale $f$) risulta \textbf{compatibile} entro gli errori tra le due prese dati (differenza di circa $[X.X]$ sigma).
+Tuttavia, il parametro $A$ (l'offset su $p$) subisce una variazione significativa e non compatibile. Questo conferma l'ipotesi che, nel riposizionare l'apparato, lo zero del sistema di riferimento (la lampadina) sia stato accidentalmente urtato o spostato. La somma dei $\chi^2$ dei due fit separati è di circa $[Chi2\_Split]$, drasticamente inferiore a quello del fit unico, indicando che la frammentazione risolve il problema matematico.
+
+    \subsection{Correzione dello Shift Sistematico}
+    
+    
+    
+    
     Visto l'elevato valore del $chi^2$ ottenuto nel primo fit, si è analizzato più approfonditamente il grafico $p-q$ ottenuto dalle misure. 
     Si è notato che attorno alla misura 78 (vedere tabella REF TABELLA) la curva risulta avere un plateu orizzontale, per poi continuare l'andamento iperbolico. 
 
@@ -305,7 +337,6 @@ per questo motivo abbiamo deciso di ovviare al problema come esposto in preceden
     \section{Conclusione}
     
 \onecolumn
-=======
 \section{Legge fisica da verificare}
 Per una lente a cui si possono applicare l'apprissimazione dei raggi parassiali e l'approsimazione delle lenti sottili, l'inverso della distanza focale è dato da:
 \[
@@ -467,7 +498,6 @@ Qui di seguito verrano fatte due analisi dati: questa scelta è dovuta dal fatto
     \caption{andamento dei residui in funzione della distanza della lente dalla lampadina con  }
     \label{fig:residui-distanza-traslati}
    \end{figure}
->>>>>>> 82627f44d29cc8f51d0aff88f2f7adbb1374e899
 
 \section{Dati}
     
