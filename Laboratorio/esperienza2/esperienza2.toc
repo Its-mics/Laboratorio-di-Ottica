@@ -1,7 +1,10 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
+<<<<<<< HEAD
 \contentsline {section}{\numberline {1}Legge fisica da verificare}{3}{section.1}%
 \contentsline {section}{\numberline {2}Apparato sperimentale}{3}{section.2}%
 \contentsline {section}{\numberline {3}Analisi dati}{3}{section.3}%
 \contentsline {section}{\numberline {4}Conclusione}{3}{section.4}%
 \contentsline {section}{\numberline {5}Dati}{3}{section.5}%
+=======
+>>>>>>> 4dd625ce2cbfdb64a9186922f75b4e2357c9506c
