@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792423483.15553 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792423485.02962 2
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792423480.68227 9576 bdbfabd2b1f271b9214c853aa7df95b0 ""
+["pdflatex"] 1792425282.79987 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792425285.95766 2
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792425279.51881 9575 d9e61e427bed123436ee7de18cb9f774 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1136768653 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -255,10 +255,10 @@
   "Analisi dati/fit_root.png" 1792161156.83002 20005 3895afba3bb6ea725fae21083905985c ""
   "Analisi dati/hist.png" 1792161156.83018 18108 e9c56a19023c2935dac8aaf102624f7c ""
   "Analisi dati/prove/fit_line.png" 0 -1 0 ""
-  "esperienza2.aux" 1792423484.83168 2108 f58bec94c5154ac629664e78823d88a3 "pdflatex"
-  "esperienza2.out" 1792423484.83321 1187 94c065753230ffc172d09204867d6ba9 "pdflatex"
-  "esperienza2.tex" 1792423480.68227 9576 bdbfabd2b1f271b9214c853aa7df95b0 ""
-  "esperienza2.toc" 1792423484.83357 692 97eb4471319d8a849ad2563a4d532701 "pdflatex"
+  "esperienza2.aux" 1792425285.76332 2108 f58bec94c5154ac629664e78823d88a3 "pdflatex"
+  "esperienza2.out" 1792425285.76472 1187 94c065753230ffc172d09204867d6ba9 "pdflatex"
+  "esperienza2.tex" 1792425279.51881 9575 d9e61e427bed123436ee7de18cb9f774 ""
+  "esperienza2.toc" 1792425285.76511 692 97eb4471319d8a849ad2563a4d532701 "pdflatex"
   (generated)
   "esperienza2.aux"
   "esperienza2.log"
