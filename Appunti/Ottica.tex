@@ -2199,6 +2199,87 @@ L'errore finale sulla distanza focale sarà semplicemente $\sigma_C$ restituito 
 \end{align*}
 (Notiamo che in $\Delta B$ è corretto trascurare l'errore di posizionamento su $x_0$).\
 
+\section{Propagazione della luce in un dielettrico}
+\subsection{Modello di Lorentz per l'indice di rifrazione}
+Si applica nel caso di gas rarefatti, quando non ho interazione tra le molecole del gas. Se indico con $N$ la densità di carica ($q0 -e$), se sposto queste cariche di una distanza $\vec{r}$, allora creo una $\vec{P}= - N e \vec{r}$. 
+Se questo spostamento è dovuto ad un campo elettrico e lo spostamento è piccolo, allora posso scrivere che: $ \vec{F}= -e \vec{E} = k \vec{r}$, che mi porta a scrivere che: 
+\begin{equation}
+    \vec{P}= \frac{N e^2}{k} \vec{E}
+\end{equation}
+Nel caso il campo non sia statico allora introduco un termine dissipativo dovuto alla radiazione dei dipoli:
+\begin{equation}
+    m \frac{d^2\vec{r}}{dt^2} + m \gamma \frac{d \vec{r}}{dt} + k \vec{r} = -e \vec{E}
+\end{equation}
+Allora assumendo il campo $\vec{E}$ generato da un onda EM, allora avrò che $E \sim e^{- i \omega t}$
+\begin{equation}
+    P = \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma }
+\end{equation}
+con $\omega_0 = \sqrt{\frac{k}{m}}$
+
+È da inserire tutte le considerazini sulle equazioni di maxwell nei mezzi
+
+\begin{equation}
+    \nabla \times ( \nabla \times \mathbf{E}) + \frac{1}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2}= - \mu_0 \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \frac{\partial^2 \mathbf{E}}{\partial t^2} = - \Delta \mathbf{E}
+\end{equation}
+Ottengo:
+\begin{equation}
+    n^2 = 1 + \frac{N e^2}{\epsilon_0 m}\frac{1 }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma }
+\end{equation}
+dove n ha sia parte reale che immaginaria $ n = R(n) + i J (n)$, che mi porta ad avere un campo EM evanescente, collegato con la parte immaginaria. 
+
+Se ho più frequenze di risonanza, perchè ho diversi gruppi elettronici, allora introduco la sommatoria sulle varie componenti. 
+
+Nel caso in cui $\omega \rightarrow \lambda$ e $\gamma=0$, allora posso introdurre la Formula di Sellmeier:
+\begin{equation}
+    n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - {\lambda_0}^2}
+\end{equation}
+
+La polarizzazione totale è minore in quanto essendo che il campo di reazione è inverso a quello di polarizzazione nei mezzi densi, metre il modello di Lorentz funziona solo per gas rarefatti, quello di Sellmeier si adatta anche ai mezzi densi. 
+\section{Esperienza 3: Calcolo di n partendo dal modello di Sellmeier}
+Quello che andremmo a fare è calcolare la quantità:
+\begin{equation}
+    n = \sqrt{1 + \frac{A x^2}{x^2 - {B}^2}}
+\end{equation}
+Andremmo poi a confrotnare questo con una retta del tipo: $y = A + Bx$
+\subsection{Prisma \- angolo di deviazione minima}
+Considero un prisma e un fasci di luce che entra, chiamo $\delta$ l'angolo di deviazione del fascio. Posso definire $\delta$ come:
+\begin{equation}
+    \delta = ( \theta_1 - {\theta_1}') + ( \theta_2 - {\theta_2}') = \theta_1 + \theta_2 - \alpha
+\end{equation}
+
+Inoltre so anche che l'angolo del prisma è colelgato con delta con:
+\begin{equation}
+    \alpha = \pi - (\frac{\pi}{2} - {\theta_1}') - (\frac{\pi}{2} - {\theta_2}' )= {\theta_1}' - {\theta_2}' 
+\end{equation}
+
+Per trovare angolo minimo allora uso il fatto che quando sono li, non vedo differenza se cambio l'angolo in ingresso $\theta_1$, impongo la condizione:
+\begin{equation}
+    \frac{d \delta}{d \theta_1}= 1 + \frac{d \theta_2}{d \theta_2}= 0 
+\end{equation}
+Inoltre differenziando anche la formula per $\alpha$ e usando legge di rifrazione posso trovare che:
+\begin{equation}
+    \frac{\cos({\theta_2}')}{\cos({\theta_1}')}= \frac{\cos({\theta_2})}{\cos({\theta_1})}
+\end{equation}
+Alla fine posso trovare che:
+\begin{equation}
+    n' = n \frac{\sin(\frac{\delta_{\text{min}} + \alpha}{2})}{\sin(\frac{\alpha}{2})}
+\end{equation}
+
+\subsection{Il setup}
+Utilizzeremo una lampada al sodio (Na) con una lunghezza d'onda di emissione pari a: $ \lambda = 589 nm  \pm 1$
+Avremmo poi 13 filtri che coprono come $\lambda = 450 - 700 nm \pm 10 $ 
+
+Per essere significativi bisogna avere circa 13+1 punti, per ogni punto ripetere la misura 3 volte. Poi come errore uso che: $\sigma_{\delta}= \sigma_{\theta} \sqrt{2}$. Notiamo che bisogna stare subito attenti che le 3 misure siano compatibili. 
+
+Per i feat metto $A \simeq 1$ e $B \simeq 100$. 
+
+
+
+
+
+
+
+
 
 
 
