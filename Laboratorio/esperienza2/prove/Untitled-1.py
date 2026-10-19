@@ -33,6 +33,7 @@ q=np.delete(q, [76, 77, 78, 88] )
 err_q=np.delete(err_q, [76, 77, 78, 88] )
 err_p=np.delete(err_p, [76, 77, 78, 88] )
 
+
 #minimizzazzione con ROOT
 model_fit = ROOT.TF1('model', model, min(p), max(p), 3)
 model_fit.SetParameters(0.0, 0.0, 0.0)

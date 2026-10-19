@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792427705.39297 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792427706.61969 0
+["pdflatex"] 1792428301.46847 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792428302.79416 0
   "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792427658.6128 31721 517874350e0b657420c82bf2b91d62f6 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -263,14 +263,14 @@
   "Analisi dati/fit_line.png" 1792161156.82984 15513 559fa37cac58623c3e24978d318a6668 ""
   "Analisi dati/fit_root.png" 1792161156.83002 20005 3895afba3bb6ea725fae21083905985c ""
   "Analisi dati/hist.png" 1792161156.83018 18108 e9c56a19023c2935dac8aaf102624f7c ""
-  "esperienza2.aux" 1792427706.54076 6829 c84f6bb3673a9da908964f9d0b06d081 "pdflatex"
-  "esperienza2.out" 1792427706.54162 2203 ed046abcd888a2c08acb12241179bdec "pdflatex"
+  "esperienza2.aux" 1792428302.70666 6829 c84f6bb3673a9da908964f9d0b06d081 "pdflatex"
+  "esperienza2.out" 1792428302.70745 2203 ed046abcd888a2c08acb12241179bdec "pdflatex"
   "esperienza2.tex" 1792427658.6128 31721 517874350e0b657420c82bf2b91d62f6 ""
-  "esperienza2.toc" 1792427706.54178 1201 dc10095876384e13b5b143471faf5266 "pdflatex"
-  "fit_line.png" 1792427704.31037 20380 3f64b1cb3d5015feeebea3d438048f44 ""
-  "fit_root.png" 1792427703.53918 23806 70b015e9d0bb1d8700c147e113598d23 ""
-  "hist.png" 1792427704.05668 22624 a9bc13b023e3b23a5323e460fe870c84 ""
-  "prove/fit_line.png" 1792425290.77224 19026 05f137ff8acc796eaa0e5c55b4087e5f ""
+  "esperienza2.toc" 1792428302.70759 1201 dc10095876384e13b5b143471faf5266 "pdflatex"
+  "fit_line.png" 1792428098.02253 20380 3f64b1cb3d5015feeebea3d438048f44 ""
+  "fit_root.png" 1792428097.2452 23806 70b015e9d0bb1d8700c147e113598d23 ""
+  "hist.png" 1792428097.76975 22624 a9bc13b023e3b23a5323e460fe870c84 ""
+  "prove/fit_line.png" 1792428301.00681 67571 47497a71ad800be18a38519f7be950d4 ""
   (generated)
   "esperienza2.aux"
   "esperienza2.log"
