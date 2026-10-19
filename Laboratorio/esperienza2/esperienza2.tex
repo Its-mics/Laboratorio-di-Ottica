@@ -272,35 +272,41 @@ per questo motivo abbiamo deciso di ovviare al problema come esposto in preceden
 
 
 
-    \subsection{Fit Separati}
-    Per verificare se il problema fosse circoscritto a un errore sistematico introdotto proprio in quel frangente, abbiamo diviso i dati in due regioni: $p < 400$ mm e $p > 400$ mm, eseguendo due fit indipendenti con la medesima funzione.
+    \subsection{Fit separati}
+    \label{sec:split}
+    Nei residui del fit unico si osserva una discontinuità attorno a $p\simeq 400$ mm: tra la misura a $x=415$ mm ($p=396.5$ mm, $q=397$ mm) e quella a $x=420$ mm ($p=401.5$ mm, $q=400$ mm) la distanza $q$ \emph{aumenta} di 3 mm, mentre per $p$ crescente ci si aspetta una diminuzione di circa 5 mm.
+    Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono stati divisi in due insiemi, $p<400$ mm (76 punti) e $p>400$ mm (37 punti), e ciascuno p stato fittato in modod indipendente con la stessa funzione e lo stesso $\chi^2$ del fit unico. 
 
-\begin{figure}[H]
+  \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{fit_root_split.png}
     \caption{Fit separati per la zona prima (rosso) e dopo (verde) la discontinuità.}
     \label{fig:fit_split}
-\end{figure}
-
+   \end{figure}
+    
 \begin{table}[H]
     \centering
-    \begin{tabular}{lcc}
+    \small
+    \setlength{\tabcolsep}{2.5pt}
+    \begin{tabular}{lcccc}
         \toprule
-        \textbf{Par.} & \textbf{Fit 1 ($p < 400$)} & \textbf{Fit 2 ($p > 400$)} \\
+        \textbf{Par.} & $p<400$ & $p>400$ & $|\Delta|/\sigma$ & \textbf{Comp.} \\
         \midrule
-        A & $[Valore] \pm [Errore]$ & $[Valore] \pm [Errore]$ \\
-        B & $[Valore] \pm [Errore]$ & $[Valore] \pm [Errore]$ \\            
-        C & $[Valore] \pm [Errore]$ & $[Valore] \pm [Errore]$ \\ 
+        $A$ [mm] & $-15.3\pm1.1$   & $-8.67\pm0.55$ & 5.5  & [no] \\
+        $B$ [mm] & $-43.5\pm1.6$   & $-3.79\pm0.29$ & 24.2 & [no] \\
+        $C$ [mm] & $213.59\pm0.64$ & $204.44\pm0.20$ & 13.6 & [no] \\
         \midrule
-        $\chi^2$ & $[Chi2\_1] / [ndf\_1]$ & $[Chi2\_2] / [ndf\_2]$ \\
+        $\chi^2/\mathrm{ndf}$ & $1570.0/73$ & $2611.9/34$ & & \\
         \bottomrule
     \end{tabular}
-    \caption{Confronto dei parametri estratti dai due fit separati.}
+    \caption{Parametri dei due fit separati. $|\Delta|/\sigma$ è la differenza tra i due valori in unità della somma in quadratura dei loro errori.}
     \label{tab:parametri_split}
 \end{table}
 
-Osservando la Tabella \ref{tab:parametri_split}, notiamo che il parametro $C$ (la distanza focale $f$) risulta \textbf{compatibile} entro gli errori tra le due prese dati (differenza di circa $[X.X]$ sigma).
-Tuttavia, il parametro $A$ (l'offset su $p$) subisce una variazione significativa e non compatibile. Questo conferma l'ipotesi che, nel riposizionare l'apparato, lo zero del sistema di riferimento (la lampadina) sia stato accidentalmente urtato o spostato. La somma dei $\chi^2$ dei due fit separati è di circa $[Chi2\_Split]$, drasticamente inferiore a quello del fit unico, indicando che la frammentazione risolve il problema matematico.
+Il $\chi^2$ complessivo dei due fit è $4182.0$ con $107$ gradi di libertà ($\chi^2/\mathrm{ndf}=39.1$), contro $14473.8/110$ ($131.6$) del fit unico: la divisione riduce il $\chi^2$ di circa il 70\%, ma in entrambe le regioni il valore resta molto più grande di 1 ($21.5$ e $76.8$). Inoltre \emph{nessuno} dei tre parametri è compatibile tra le due regioni (Tabella~\ref{tab:parametri_split}). Se solo l'origine di $p$ si fosse spostata a metà misura, ci si aspetterebbe di vedere cambiare soltanto $A$, mentre variano anche $B$ (di circa 40 mm) e $C$ (di circa 9 mm, il 4.5\%): l'ipotesi di un semplice spostamento dello zero di $p$ non è quindi confermata dal fit separato.
+ 
+
+
 
     \subsection{Correzione dello Shift Sistematico}
     
@@ -430,24 +436,30 @@ L'apparato sperimentale per l'esecuzione della misura della distanza focale è s
 \label{fig:calibrazione_coordinate}
 \end{figure}
 
-\noindent Dove  la lampadina funge da sorgente luminosa, e lo schermo, sul quale verrà riflessa l'immagine del filamento della lampadina, è necessario per individuare la distanza dalla lente tale per cui l'immagine riflessa è a fuoco.
+\noindent Dove la lampadina funge da sorgente luminosa, e lo schermo, sul quale verrà riflessa l'immagine del filamento della lampadina, 
+è necessario per individuare la distanza dalla lente tale per cui l'immagine riflessa è a fuoco.
 le distanze p e q come si può osservare dallo schema si possono determinare tramite le seguenti relazioni:
 
 \[
 q = (y - y_0) + L - (x - x_0)
 \]
+
 \[
 p = (x - x_0) + L + \frac{D}{2}
 \]
- Dove $x_{0},y_{0}$ sono le posizioni iniziali della lampadina e dello schermo sul binario, L è la lunghezza dellla sbarra di metallo utlizzata per individuare tali posizioni e D è il diamtero della lampadina.
+
+Dove $x_{0},y_{0}$ sono le posizioni iniziali della lampadina e dello schermo sul binario, L è la lunghezza dellla sbarra di metallo utlizzata per individuare tali posizioni e D è il diamtero della lampadina.
 $x_{0},y_{0}$ sono state lette sulla scala millimetrata del binario, mentre L e D sono state misurate con un calibro analogico. 
- \section{Analisi dati}
+
+\section{Analisi dati}
 L'andamento atteso per i nostri dati sperimentali $(p_{i},q_{i})$ è dato dalla funzione di fit:
 
 \[
 \frac{1}{x-A} + \frac{1}{y-B} = \frac{1}{C}
 \]
+
 da cui:
+
 \[
  y = B + \frac{C(x-A)}{(x-A) - C}
 \]
@@ -458,46 +470,53 @@ e infine il terzo che ci permette di graficare l'andamento dei residui in funzio
 Per quanto riguarada il secondo grafico Inoltre ci si aspetta che i parametri della gaussiana che approssima la distribuzione dei residui normalizzati siano $\mu$ compatibile con 0 e $\sigma$ compatibile con 1.
 Nel terzo grafico ci si asapetta che sia il coefficiente angolare che l'intercetta siano compatibili con 0.
 Qui di seguito verrano fatte due analisi dati: questa scelta è dovuta dal fatto che a causa di una discontinuità registrata per la costruzione del primo grafico il $\chi^2$ del fit assume un valore molto grande che ci fa capire anche dai risultati ottenuti la non riuscita dell'esperimento.
- \subsection{fit unico}
+ 
+\subsection{fit unico}
+
 \begin{figure}[H]
     \centering
    \includegraphics[width=1.0\columnwidth]{Analisi dati/fit_root.png}
     \caption{Andamento di q in funzione di p}
     \label{fig2}
-   \end{figure}
+\end{figure}
  
-   \begin{figure}[H]
+\begin{figure}[H]
     \centering
    \includegraphics[width=1.0\columnwidth]{Analisi dati/hist.png}
     \caption{istogramma residui normalizzati}
     \label{fig:istogramma-residui}
-   \end{figure}
+\end{figure}
    
- \begin{figure}[H]
+\begin{figure}[H]
     \centering
    \includegraphics[width=1.0\columnwidth]{Analisi dati/fit_line.png}
     \caption{andamento dei residui in funzione della distanza della lente dalla lampadina}
     \label{fig:residui-distanza}
-   \end{figure}
+\end{figure}
 
    
  \subsection{doppio fit}
- \subsection{$Chi^2$ con traslazione di 5mm ai dati dopo la discontinuità}
- Visto l'elevato valore del $chi^2$ ottenuto nel primo fit, si è analizzato meglio il grafico $p-q$ ottenuto dalle misure. Si è notato che attorno alla misura 78 (vedere tabella REF TABELLA) la curva risulta avere un plateu
+ \subsection{$\chi^2$ con traslazione di 5mm ai dati dopo la discontinuità}
+ Visto l'elevato valore del $\chi^2$ ottenuto nel primo fit, si è analizzato meglio il grafico $p-q$ ottenuto dalle misure. Si è notato che attorno alla misura 78 (vedere tabella \ref{tab:dati2}) la curva risulta avere un plateu
  orizzontale, per poi continuare l'andamento iperbolico. 
 
- FOTO ZOOMMATA
+\begin{figure}[H]
+    \centering
+   \includegraphics[width=1.0\columnwidth]{FOTO_MINCHIA.png}
+    \caption{andamento dei residui in funzione della distanza della lente dalla lampadina}
+    \label{fig:residui-distanza}
+\end{figure}
 
- Per questo si è provato a togliere $7mm$ a tutte le misure dopo questo evento. 
- Il $chi^2$ del fit si abbassa notevolmente, passando da $chi^2_1 \simeq 10^4$ a $chi^2_2 \simeq 3 \times 10^3$, ma sopratutto migliora di molto la
- compatibilità dei residui con la retta orizzontale a pendenza nulla
+ Per questo si è provato a togliere $4mm$ a tutte le misure di $p$ e $q$ dopo questo evento. 
+ Il $\chi^2$ del fit si abbassa notevolmente, passando da $\chi^2_1 \simeq 10^4$ a $\chi^2_2 \simeq 3 \times 10^3$, ma sopratutto migliora di molto la
+ compatibilità dei residui con la retta orizzontale a pendenza nulla.
 
- \begin{figure}[H]
+\begin{figure}[H]
     \centering
    \includegraphics[width=1.0\columnwidth]{Analisi dati/fit_line.png}
     \caption{andamento dei residui in funzione della distanza della lente dalla lampadina con  }
     \label{fig:residui-distanza-traslati}
-   \end{figure}
+\end{figure}
 
 \section{Dati}
     
@@ -636,7 +655,5 @@ Qui di seguito verrano fatte due analisi dati: questa scelta è dovuta dal fatto
 1500 & \num{1.7e3} & -- & \num{1.7e3} & 0.12 & 1481.5 & \num{2.3e2} & 0.12 & 0.12 \\
 1650 & \num{1.9e3} & -- & \num{1.9e3} & 0.12 & 1631.5 & \num{2.3e2} & 0.12 & 0.12 \\
 \end{longtable}
-
 \noindent\footnotesize \textbf{Nota.} Un trattino (--) indica una cella vuota nei dati originali.
-\end{document}
 \end{document}
