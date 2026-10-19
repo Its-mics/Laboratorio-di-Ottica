@@ -46,9 +46,11 @@
 \setlength{\tabcolsep}{4pt}
 
 \begin{document}
-\justifying
+
+\justifying 
+
 	\title{\textbf{Verifica delle legge delle lenti sottili}}
-	\author{Tedeschini Michele \hspace{0.7cm} Mirolo Manuele \hspace{0.7cm} Stroili Emanuele}
+	\author{Tedeschini Michele \hspace{0.7cm} Crisitano Ronaldo \hspace{0.7cm} Adolf Hitler \hspace{0.7cm} Stroili Emanuele}
 	\date{16 Ottobre 2026}
 	\maketitle
 	\newgeometry{left=3cm, right=3cm, top=4cm, bottom=4cm}
@@ -190,9 +192,47 @@ Per quanto riguarada il secondo grafico Inoltre ci si aspetta che i parametri de
 Nel terzo grafico ci si asapetta che sia il coefficiente angolare che l'intercetta siano compatibili con 0.
 Qui di seguito verrano fatte due analisi dati: questa scelta è dovuta dal fatto che a causa di una discontinuità registrata per la costruzione del primo grafico il $\Chi^2$ del fit assume un valore molto grande che ci fa capire anche dai risultati ottenuti la non riuscita dell'esperimento.
  \subsection{fit unico}
+\begin{figure}[H]
+    \centering
+   \includegraphics[width=1.0\columnwidth]{Analisi_dati\fit_root.png}
+    \caption{Andamento di q in funzione di p}
+    \label{fig2}
+   \end{figure}
+ 
+   begin{figure}[H]
+    \centering
+   \includegraphics[width=1.0\columnwidth]{Analisi_dati\hist.png}
+    \caption{istogramma residui normalizzati}
+    \label{fig2}
+   \end{figure}
+   
+begin{figure}[H]
+    \centering
+   \includegraphics[width=1.0\columnwidth]{Analisi_dati\fit_line.png}
+    \caption{andamento dei residui in funzione della distanza della lente dalla lampadina }
+    \label{fig2}
+   \end{figure}
+
+   
  \subsection{doppio fit}
  \subsection{$Chi^2$ con traslazione di 5mm ai dati dopo la discontinuità}
+ Visto l'elevato valore del $chi^2$ ottenuto nel primo fit, si è analizzato meglio il grafico $p-q$ ottenuto dalle misure. Si è notato che attorno alla misura 78 (vedere tabella REF TABELLA) la curva risulta avere un plateu
+ orizzontale, per poi continuare l'andamento iperbolico. 
+
+ FOTO ZOOMMATA
+
+ Per questo si è provato a togliere $7mm$ a tutte le misure dopo questo evento. 
+ Il $chi^2$ del fit si abbassa notevolmente, passando da $chi^2_1 \simeq 10^4$ a $chi^2_2 \simeq 3 \times 10^3$, ma sopratutto migliora di molto la
+ compatibilità dei residui con la retta orizzontale a pendenza nulla
+
+ begin{figure}[H]
+    \centering
+   \includegraphics[width=1.0\columnwidth]{Analisi_dati\prove\fit_line.png}
+    \caption{andamento dei residui in funzione della distanza della lente dalla lampadina con  }
+    \label{fig2}
+   \end{figure}
+
+ 
 \section{Conclusione}
 \section{Dati}
-
 \end{document}
