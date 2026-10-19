@@ -47,192 +47,402 @@
 
 \begin{document}
 
-\justifying 
+    \justifying 
 
-	\title{\textbf{Verifica delle legge delle lenti sottili}}
-	\author{Tedeschini Michele \hspace{0.7cm} Crisitano Ronaldo \hspace{0.7cm} Adolf Hitler \hspace{0.7cm} Stroili Emanuele}
-	\date{16 Ottobre 2026}
-	\maketitle
-	\newgeometry{left=3cm, right=3cm, top=4cm, bottom=4cm}
-	\onecolumn
-	\tableofcontents
-\vspace{3cm}
-	\begin{abstract}
-		\centering
-		\large
-    L'esperimento consiste nel verificare la legge delle lenti sottili, graficando la distanza tra lo schermo $q$, e la lente in funzione della distanza tra la lente e la sorgenete $p$. 
-       
-	\end{abstract}
+      \title{\textbf{Verifica delle legge delle lenti sottili}}
+      \author{Tedeschini Michele \hspace{0.7cm} Stroili Emanuele \hspace{0.7cm} Mirolo Manuele}
+      \date{16 Ottobre 2026}
+      \maketitle
+      \newgeometry{left=3cm, right=3cm, top=4cm, bottom=4cm}
+      \onecolumn
+      \tableofcontents
+    \vspace{3cm}
+      \begin{abstract}
+        \centering
+        \large
+        L'esperimento consiste nel verificare la legge delle lenti sottili, graficando la distanza tra lo schermo $q$, e la lente in funzione della distanza tra la lente e la sorgenete $p$. 
+          
+      \end{abstract}
 
-	\newpage
-\restoregeometry
-\twocolumn
+      \newpage
+    \restoregeometry
+    \twocolumn
 
 
 
-\section{Legge fisica da verificare}
-Per una lente a cui si possono applicare l'apprissimazione dei raggi parassiali e l'approsimazione delle lenti sottili, l'inverso della distanza focale è dato da:
-\[
-\frac{1}{f}=\frac{1}{q}+\frac{1}{p}
-\] 
-f rappresenta la distanza dal centro di curvatura della lente in cui tutti i raggi che incidono sulla lente convergono in uno stesso punto.
-Come si 
-\section{Apparato sperimentale}
-L'apparato sperimentale per l'esecuzione della misura della distanza focale è schematizzato nella figura seguente:
-\begin{figure}[H]
-\centering
-% Avvolgiamo il disegno per forzarlo alla larghezza della colonna
-\resizebox{\columnwidth}{!}{
-    \begin{tikzpicture}[transform shape, >=stealth]
-    
-    % ------------------------------------------------
-    % Binario e tacche
-    % ------------------------------------------------
-    \draw[->, thick, gray!80] (-1,0) -- (10.5,0) node[below] {Asse del binario (cm)};
-    \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} \draw[gray!80] (\x,0.1) -- (\x,-0.1);
-    
-    % ------------------------------------------------
-    % 1. POSIZIONE FISSA: Lampada (Origine)
-    % ------------------------------------------------
-    \draw[thick, blue!65!black] (0, 0) -- (0, 2.5);
-    \node[above] at (0, 2.5) {Lampada};
-    \filldraw[black] (0,0) circle (1.5pt);
-    
-    % ================================================
-    % FASE DI CALIBRAZIONE (Elementi tratteggiati/bassi)
-    % ================================================
-    % Definisco la lunghezza della barretta L e l'offset D/2
-    \def\L{2.0}
-    \def\Dmezzi{0.5}
-    
-    % Calcolo le coordinate di calibrazione x_0 e y_0
-    % x_0 = L + D/2
-    \pgfmathsetmacro{\xzero}{\L + \Dmezzi} 
-    % y_0 è distante L da x_0 (y_0 = x_0 + L)
-    \pgfmathsetmacro{\yzero}{\xzero + \L} 
-    
-    % --- Calibrazione di x_0 ---
-    % Barretta L (Lampada -> D/2)
-    \draw[thick, orange, rounded corners=1pt] (0, 0.3) rectangle (\L, 0.6);
-    \node[orange!80!black] at (\L/2, 0.45) {$L$};
-    
-    % Spazio D/2
-    \draw[<->, gray!80!black] (\L, 0.45) -- (\xzero, 0.45);
-    \node[above, gray!80!black] at (\L + \Dmezzi/2, 0.45) {\footnotesize $\frac{D}{2}$};
-    
-    % Riferimento x_0
-    \draw[dashed, blue!50, thick] (\xzero, 0) -- (\xzero, 1.2);
-    \node[below, blue!70] at (\xzero, -0.2) {$x_0$};
-    
-    % --- Calibrazione di y_0 ---
-    % Barretta L (x_0 -> y_0)
-    \draw[thick, orange, rounded corners=1pt] (\xzero, 0.3) rectangle (\yzero, 0.6);
-    \node[orange!80!black] at (\xzero + \L/2, 0.45) {$L$};
-    
-    % Riferimento y_0
-    \draw[dashed, blue!50, thick] (\yzero, 0) -- (\yzero, 1.2);
-    \node[below, blue!70] at (\yzero, -0.2) {$y_0$};
-    
-    
-    % ================================================
-    % FASE DI MISURA (Elementi continui/alti)
-    % ================================================
-    % Posizioni generiche x e y durante l'esperimento
-    \def\xmis{5.5}
-    \def\ymis{9.5}
-    
-    % Lente in posizione x
-    \draw[thick, blue!65!black] (\xmis, 0) -- (\xmis, 2.5);
-    \filldraw[black] (\xmis,0) circle (1.5pt);
-    \node[below, font=\bfseries] at (\xmis, -0.2) {$x$};
-    \node[above] at (\xmis, 2.5) {Lente};
-    
-    % Schermo in posizione y
-    \draw[thick, blue!65!black] (\ymis, 0) -- (\ymis, 2.5);
-    \filldraw[black] (\ymis,0) circle (1.5pt);
-    \node[below, font=\bfseries] at (\ymis, -0.2) {$y$};
-    \node[above] at (\ymis, 2.5) {Schermo};
-    
-    % --- Distanze Ottiche p e q ---
-    \draw[<->, thick, red!80!black] (0, 1.8) -- (\xmis, 1.8) node[midway, fill=white, inner sep=2pt] {$p$};
-    \draw[<->, thick, red!80!black] (\xmis, 1.8) -- (\ymis, 1.8) node[midway, fill=white, inner sep=2pt] {$q$};
-    
-    \end{tikzpicture}
-} % Chiusura del \resizebox
-\caption{Apparato sperimentale e schema per la determinazione delle distanze p e q}
-\label{fig:calibrazione_coordinate}
-\end{figure}
-
-\noindent Dove  la lampadina funge da sorgente luminosa, e lo schermo, sul quale verrà riflessa l'immagine del filamento della lampadina, è necessario per individuare la distanza dalla lente tale per cui l'immagine riflessa è a fuoco.
-le distanze p e q come si può osservare dallo schema si possono determinare tramite le seguenti relazioni:
-
-\[
-q = (y - y_0) + L - (x - x_0)
-\]
-\[
-p = (x - x_0) + L + \frac{D}{2}
-\]
- Dove $x_{0},y_{0}$ sono le posizioni iniziali della lampadina e dello schermo sul binario, L è la lunghezza dellla sbarra di metallo utlizzata per individuare tali posizioni e D è il diamtero della lampadina.
-$x_{0},y_{0}$ sono state lette sulla scala millimetrata del binario, mentre L e D sono state misurate con un calibro analogico. 
- \section{Analisi dati}
-L'andamento atteso per i nostri dati sperimentali $(p_{i},q_{i})$ è dato dalla funzione di fit:
-
-\[
-\frac{1}{x-A} + \frac{1}{y-B} = \frac{1}{C}
-\]
-da cui:
-\[
- y = B + \frac{C(x-A)}{(x-A) - C}
-\]
-
-A,B,C sono parametri da stimare.Per verificare la compatibilità del  modello teorico, si studia la compatibilità dei parametri B e A con 0. 
-L'analisi dei dati raccolti consiste nell'ottenere tre grafici: il primo mette a confronto tra l'andamento dei dati raccolti con la funzione di fit, il secondo consiste nel costruire un istogramma con  le differenze tra i valori teorici della distanza q e quella che abbiamo misurato diviso l'errore sulla distanza (residuo normalizzato) 
-e infine il terzo che ci permette di graficare l'andamento dei residui in funzione della distanza della lente dalla lampadina.
-Per quanto riguarada il secondo grafico Inoltre ci si aspetta che i parametri della gaussiana che approssima la distribuzione dei residui normalizzati siano $\mu$ compatibile con 0 e $\sigma$ compatibile con 1.
-Nel terzo grafico ci si asapetta che sia il coefficiente angolare che l'intercetta siano compatibili con 0.
-Qui di seguito verrano fatte due analisi dati: questa scelta è dovuta dal fatto che a causa di una discontinuità registrata per la costruzione del primo grafico il $\Chi^2$ del fit assume un valore molto grande che ci fa capire anche dai risultati ottenuti la non riuscita dell'esperimento.
- \subsection{fit unico}
-\begin{figure}[H]
+    \section{Legge fisica da verificare}
+    Per una lente a cui si possono applicare l'apprssoimazione dei raggi parassiali e l'approsimazione delle lenti sottili, l'inverso della distanza focale è dato da:
+    \[
+    \frac{1}{f}=\frac{1}{q}+\frac{1}{p}
+    \] 
+    dove $f$ rappresenta la distanza dal centro di curvatura della lente in cui tutti i raggi che incidono sulla lente convergono in uno stesso punto.
+    Come si 
+    \section{Apparato sperimentale}
+    L'apparato sperimentale per l'esecuzione della misura della distanza focale è schematizzato nella figura seguente:
+    \begin{figure}[H]
     \centering
-   \includegraphics[width=1.0\columnwidth]{Analisi_dati\fit_root.png}
-    \caption{Andamento di q in funzione di p}
-    \label{fig2}
-   \end{figure}
- 
-   begin{figure}[H]
+    % Avvolgiamo il disegno per forzarlo alla larghezza della colonna
+    \resizebox{\columnwidth}{!}{
+        \begin{tikzpicture}[transform shape, >=stealth]
+        
+        % ------------------------------------------------
+        % Binario e tacche
+        % ------------------------------------------------
+        \draw[->, thick, gray!80] (-1,0) -- (10.5,0) node[below] {Asse del binario (cm)};
+        \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} \draw[gray!80] (\x,0.1) -- (\x,-0.1);
+        
+        % ------------------------------------------------
+        % 1. POSIZIONE FISSA: Lampada (Origine)
+        % ------------------------------------------------
+        \draw[thick, blue!65!black] (0, 0) -- (0, 2.5);
+        \node[above] at (0, 2.5) {Lampada};
+        \filldraw[black] (0,0) circle (1.5pt);
+        
+        % ================================================
+        % FASE DI CALIBRAZIONE (Elementi tratteggiati/bassi)
+        % ================================================
+        % Definisco la lunghezza della barretta L e l'offset D/2
+        \def\L{2.0}
+        \def\Dmezzi{0.5}
+        
+        % Calcolo le coordinate di calibrazione x_0 e y_0
+        % x_0 = L + D/2
+        \pgfmathsetmacro{\xzero}{\L + \Dmezzi} 
+        % y_0 è distante L da x_0 (y_0 = x_0 + L)
+        \pgfmathsetmacro{\yzero}{\xzero + \L} 
+        
+        % --- Calibrazione di x_0 ---
+        % Barretta L (Lampada -> D/2)
+        \draw[thick, orange, rounded corners=1pt] (0, 0.3) rectangle (\L, 0.6);
+        \node[orange!80!black] at (\L/2, 0.45) {$L$};
+        
+        % Spazio D/2
+        \draw[<->, gray!80!black] (\L, 0.45) -- (\xzero, 0.45);
+        \node[above, gray!80!black] at (\L + \Dmezzi/2, 0.45) {\footnotesize $\frac{D}{2}$};
+        
+        % Riferimento x_0
+        \draw[dashed, blue!50, thick] (\xzero, 0) -- (\xzero, 1.2);
+        \node[below, blue!70] at (\xzero, -0.2) {$x_0$};
+        
+        % --- Calibrazione di y_0 ---
+        % Barretta L (x_0 -> y_0)
+        \draw[thick, orange, rounded corners=1pt] (\xzero, 0.3) rectangle (\yzero, 0.6);
+        \node[orange!80!black] at (\xzero + \L/2, 0.45) {$L$};
+        
+        % Riferimento y_0
+        \draw[dashed, blue!50, thick] (\yzero, 0) -- (\yzero, 1.2);
+        \node[below, blue!70] at (\yzero, -0.2) {$y_0$};
+        
+        
+        % ================================================
+        % FASE DI MISURA (Elementi continui/alti)
+        % ================================================
+        % Posizioni generiche x e y durante l'esperimento
+        \def\xmis{5.5}
+        \def\ymis{9.5}
+        
+        % Lente in posizione x
+        \draw[thick, blue!65!black] (\xmis, 0) -- (\xmis, 2.5);
+        \filldraw[black] (\xmis,0) circle (1.5pt);
+        \node[below, font=\bfseries] at (\xmis, -0.2) {$x$};
+        \node[above] at (\xmis, 2.5) {Lente};
+        
+        % Schermo in posizione y
+        \draw[thick, blue!65!black] (\ymis, 0) -- (\ymis, 2.5);
+        \filldraw[black] (\ymis,0) circle (1.5pt);
+        \node[below, font=\bfseries] at (\ymis, -0.2) {$y$};
+        \node[above] at (\ymis, 2.5) {Schermo};
+        
+        % --- Distanze Ottiche p e q ---
+        \draw[<->, thick, red!80!black] (0, 1.8) -- (\xmis, 1.8) node[midway, fill=white, inner sep=2pt] {$p$};
+        \draw[<->, thick, red!80!black] (\xmis, 1.8) -- (\ymis, 1.8) node[midway, fill=white, inner sep=2pt] {$q$};
+        
+        \end{tikzpicture}
+    } % Chiusura del \resizebox
+    \caption{Apparato sperimentale e schema per la determinazione delle distanze p e q}
+    \label{fig:calibrazione_coordinate}
+    \end{figure}
+
+    \noindent Dove  la lampadina funge da sorgente luminosa, e lo schermo, sul quale verrà riflessa l'immagine del filamento della lampadina, è necessario per individuare la distanza dalla lente tale per cui l'immagine riflessa è a fuoco.
+    le distanze p e q come si può osservare dallo schema si possono determinare tramite le seguenti relazioni:
+
+    \[
+    q = (y - y_0) + L - (x - x_0)
+    \]
+    \[
+    p = (x - x_0) + L + \frac{D}{2}
+    \]
+    Dove $x_{0},y_{0}$ sono le posizioni iniziali della lente e dello schermo sul binario, L è la lunghezza dellla sbarra di metallo utlizzata per individuare tali posizioni e D è il diametro della lampadina.
+    $x_{0},y_{0}$ sono state lette sulla scala millimetrata del binario, mentre L e D sono state misurate con un calibro ventesimale. 
+    \section{Analisi dati}
+    L'andamento atteso per i nostri dati sperimentali $(p_{i},q_{i})$ è dato dalla funzione di fit:
+
+    \[
+    \frac{1}{x-A} + \frac{1}{y-B} = \frac{1}{C}
+    \]
+    da cui:
+    \[
+    y = B + \frac{C(x-A)}{(x-A) - C}
+    \]
+
+    \noindent A,B,C sono parametri da stimare.
+    Per verificare la compatibilità del modello teorico, si studia la compatibilità dei parametri B e A con 0. 
+    Dai dati si ottengono tre grafici: il primo mette a confronto l'andamento dei dati raccolti con la funzione di fit, il secondo consiste nel costruire un istogramma con le differenze tra i valori teorici della distanza q e quella che abbiamo misurato diviso l'errore sulla distanza (residuo normalizzato) 
+    e infine il terzo che ci permette di graficare l'andamento dei residui in funzione della distanza della lente dalla lampadina.
+Per quanto riguarada il secondo grafico Inoltre ci si aspetta che i parametri della gaussiana che approssima la distribuzione dei residui normalizzati siano $\mu$ compatibile con 0 e $\sigma$ compatibile con
+ 1.
+    Nel terzo grafico ci siasapetta che sia il coefficiente angolare che l'intercetta siano compatibili con
+ 0.
+    Qui di seguito verrano fatte due analisi da ti:questa scelta è dovuta dal fatto che a causa di una discontinuità della curva sperimentale registrata del primo grafico il $\chi^{2}$ del fit assume un valore molto grande il che ci farebbe dedurre la non riuscita dell'esperimento, ma per aggirare l'anomalia si è proceduto al calcolo del $\chi^2$ del ramo superiore e del ramo inferior
+    e, per non considerare il campione di dati  problematico nella sua  interezza.
+    \subsection{fit unico}
+    \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{fit_root.png}
+        \caption{Andamento di q in funzione di p}
+        \label{fig2}
+      \end{figure}
+    
+\begin{table}[H]
     \centering
-   \includegraphics[width=1.0\columnwidth]{Analisi_dati\hist.png}
-    \caption{istogramma residui normalizzati}
-    \label{fig2}
-   \end{figure}
-   
-begin{figure}[H]
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        A & $(0.7089 \pm 4.665)\times 10^{-1}$ mm & [no] \\
+        B & $2.605 \pm 0.207 \text{mm}$ & [no] \\            % 66 sigma da 0
+        C & $(200.3 \pm 0.0.913)$ \text{mm}& [-] \\   % 9.9 sigma da 0
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri estratti dal fit di figura \ref{fig2}.}
+    \label{tab:parametri_fig2}
+\end{table}
+
+\noindent Come detto in precedenza si può evincere che ad una distanza dalla lampadina intorno ai $460,470 mm$ è presente una anomalia rispetto alla curva teroica: i punti sperimentali si discostano molto. Di conseguenza il $\chi^{2}$ assume valori dell'ordine di $10^{4}$, 
+per questo motivo abbiamo deciso di ovviare al problema come esposto in precedenza.
+
+
+
+
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{hist.png}
+        \caption{istogramma residui normalizzati}
+        \label{fig3}
+      \end{figure}
+
+
+	  \begin{table}[H]
     \centering
-   \includegraphics[width=1.0\columnwidth]{Analisi_dati\fit_line.png}
-    \caption{andamento dei residui in funzione della distanza della lente dalla lampadina }
-    \label{fig2}
-   \end{figure}
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $\mu$ & $(2.155\pm  0.252)$  & [no] \\      % 3.9 sigma da 0
+        $\sigma$ & $(2.155\pm 0166)\times10^{-7}$  & [no] \\    % 7.2 sigma da 1
+        \bottomrule
+    \end{tabular} 
+	  \caption{$\mu ,\sigma$ dei residui normalizzati \ref{fig2}.}
+	 \label{tab:parametri_fig3}
+\end{table}
+      
+    \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{fit_line.png}
+        \caption{andamento dei residui in funzione ddi p}
+        \label{fig2}
+      \end{figure}
 
-   
- \subsection{doppio fit}
- \subsection{$Chi^2$ con traslazione di 5mm ai dati dopo la discontinuità}
- Visto l'elevato valore del $chi^2$ ottenuto nel primo fit, si è analizzato meglio il grafico $p-q$ ottenuto dalle misure. Si è notato che attorno alla misura 78 (vedere tabella REF TABELLA) la curva risulta avere un plateu
- orizzontale, per poi continuare l'andamento iperbolico. 
-
- FOTO ZOOMMATA
-
- Per questo si è provato a togliere $7mm$ a tutte le misure dopo questo evento. 
- Il $chi^2$ del fit si abbassa notevolmente, passando da $chi^2_1 \simeq 10^4$ a $chi^2_2 \simeq 3 \times 10^3$, ma sopratutto migliora di molto la
- compatibilità dei residui con la retta orizzontale a pendenza nulla
-
- begin{figure}[H]
+      
+  \begin{table}[H]
     \centering
-   \includegraphics[width=1.0\columnwidth]{Analisi_dati\prove\fit_line.png}
-    \caption{andamento dei residui in funzione della distanza della lente dalla lampadina con  }
-    \label{fig2}
-   \end{figure}
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $m$ & $(6.707\pm  0.5704)\times 10^{-4} 1/mm$  & [no] \\      % 3.9 sigma da 0
+        $q$ & $(4.554\pm 0.4314)\times10^{-1}  1/mm$ & [no] \\    % 7.2 sigma da 1
+        \bottomrule
+    \end{tabular} 
+	  \caption{$\mu ,\sigma$ dei residui normalizzati \ref{fig2}.}
+	 \label{tab:parametri_fig3}
+\end{table}
 
- 
-\section{Conclusione}
+
+
+
+
+    \subsection{doppio fit}
+    \subsection{$\chi^{2}$ con traslazione di 7mm ai dati dopo la discontinuità}
+    Visto l'elevato valore del $chi^2$ ottenuto nel primo fit, si è analizzato più approfonditamente il grafico $p-q$ ottenuto dalle misure. 
+    Si è notato che attorno alla misura 78 (vedere tabella REF TABELLA) la curva risulta avere un plateu orizzontale, per poi continuare l'andamento iperbolico. 
+
+    FOTO ZOOMMATA
+         \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{prove/fit_line.png}
+        \caption{andamento dei residui in funzione della distanza della lente dalla lampadina }
+        \label{fig2}
+      \end{figure}
+
+    Per questo motivo si è provato a dimnuire tutte le misure dopo questo evento di $7mm$. 
+    Il $\chi^2$ del fit si abbassa notevolmente, passando da $\chi^2_1 \simeq 10^4$ a $\chi^2_2 \simeq 3 \times 10^3$, ma sopratutto migliora di molto la
+    compatibilità dei residui con la retta orizzontale a pendenza nulla.
+
+     
+        \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{prove/fit_line.png}
+        \caption{andamento dei residui in funzione della distanza della lente dalla lampadina }
+        \label{fig2}
+      \end{figure}
+      
+    Ciò evidenzia un fatto importante: verso la 78-esima misura la lampadina deve essere stata spostasta indietro e questo ha portato ad un alteramento delle misure successive.
+    
+    Per un risultato ancora migliore, si dovrebbero modificare ancora i valori di $p$ e $q$ per individurare precisamente il valore da togliere alle misure.
+
+    \section{Conclusione}
+    
+\onecolumn
+
 \section{Dati}
+    
+\footnotesize
+
+\begin{longtable}{*{9}{c}}
+\caption{Valori di $y$, $p$, $q$ e relative incertezze in funzione di $x$ (tutte le grandezze in mm; valori a 2 cifre significative; $x$ e $p$ riportati come dati).}\label{tab:dati2}\\
+\toprule
+\makecell{$x$\\{[mm]}} & \makecell{$y_\mathrm{min}$\\{[mm]}} & \makecell{$y_\mathrm{max}$\\{[mm]}} & \makecell{$y$\\{[mm]}} & \makecell{$\sigma_y$\\{[mm]}} & \makecell{$p$\\{[mm]}} & \makecell{$q$\\{[mm]}} & \makecell{$\sigma_p$\\{[mm]}} & \makecell{$\sigma_q$\\{[mm]}} \\
+\midrule
+\endfirsthead
+\multicolumn{9}{l}{\footnotesize\textit{Tabella \ref{tab:dati2} --- continua dalla pagina precedente}}\\
+\toprule
+\makecell{$x$\\{[mm]}} & \makecell{$y_\mathrm{min}$\\{[mm]}} & \makecell{$y_\mathrm{max}$\\{[mm]}} & \makecell{$y$\\{[mm]}} & \makecell{$\sigma_y$\\{[mm]}} & \makecell{$p$\\{[mm]}} & \makecell{$q$\\{[mm]}} & \makecell{$\sigma_p$\\{[mm]}} & \makecell{$\sigma_q$\\{[mm]}} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{\footnotesize\textit{continua alla pagina successiva}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+251 & \num{1.8e3} & \num{1.8e3} & \num{1.8e3} & 11 & 232.5 & \num{1.6e3} & 0.12 & 11 \\
+252 & \num{1.7e3} & \num{1.8e3} & \num{1.8e3} & 34 & 233.5 & \num{1.5e3} & 0.12 & 34 \\
+253 & \num{1.7e3} & \num{1.9e3} & \num{1.8e3} & 47 & 234.5 & \num{1.5e3} & 0.12 & 47 \\
+254 & \num{1.6e3} & \num{1.8e3} & \num{1.7e3} & 44 & 235.5 & \num{1.4e3} & 0.12 & 44 \\
+255 & \num{1.6e3} & \num{1.7e3} & \num{1.7e3} & 40 & 236.5 & \num{1.4e3} & 0.12 & 40 \\
+256 & \num{1.6e3} & \num{1.7e3} & \num{1.6e3} & 39 & 237.5 & \num{1.4e3} & 0.12 & 39 \\
+257 & \num{1.5e3} & \num{1.7e3} & \num{1.6e3} & 38 & 238.5 & \num{1.4e3} & 0.12 & 38 \\
+258 & \num{1.5e3} & \num{1.6e3} & \num{1.6e3} & 30 & 239.5 & \num{1.3e3} & 0.12 & 30 \\
+259 & \num{1.5e3} & \num{1.6e3} & \num{1.6e3} & 28 & 240.5 & \num{1.3e3} & 0.12 & 28 \\
+260 & \num{1.5e3} & \num{1.6e3} & \num{1.5e3} & 30 & 241.5 & \num{1.3e3} & 0.12 & 30 \\
+261 & \num{1.5e3} & \num{1.5e3} & \num{1.5e3} & 24 & 242.5 & \num{1.2e3} & 0.12 & 24 \\
+262 & \num{1.4e3} & \num{1.5e3} & \num{1.5e3} & 23 & 243.5 & \num{1.2e3} & 0.12 & 23 \\
+263 & \num{1.4e3} & \num{1.5e3} & \num{1.4e3} & 24 & 244.5 & \num{1.2e3} & 0.12 & 24 \\
+264 & \num{1.4e3} & \num{1.5e3} & \num{1.4e3} & 20 & 245.5 & \num{1.2e3} & 0.12 & 21 \\
+265 & \num{1.4e3} & \num{1.4e3} & \num{1.4e3} & 20 & 246.5 & \num{1.1e3} & 0.12 & 21 \\
+266 & \num{1.4e3} & \num{1.4e3} & \num{1.4e3} & 21 & 247.5 & \num{1.1e3} & 0.12 & 21 \\
+267 & \num{1.3e3} & \num{1.4e3} & \num{1.4e3} & 17 & 248.5 & \num{1.1e3} & 0.12 & 17 \\
+268 & \num{1.3e3} & \num{1.4e3} & \num{1.4e3} & 19 & 249.5 & \num{1.1e3} & 0.12 & 19 \\
+269 & \num{1.3e3} & \num{1.4e3} & \num{1.3e3} & 19 & 250.5 & \num{1.1e3} & 0.12 & 19 \\
+270 & \num{1.3e3} & \num{1.3e3} & \num{1.3e3} & 15 & 251.5 & \num{1.0e3} & 0.12 & 15 \\
+271 & \num{1.3e3} & \num{1.3e3} & \num{1.3e3} & 14 & 252.5 & \num{1.0e3} & 0.12 & 14 \\
+272 & \num{1.3e3} & \num{1.3e3} & \num{1.3e3} & 14 & 253.5 & \num{1.0e3} & 0.12 & 14 \\
+273 & \num{1.2e3} & \num{1.3e3} & \num{1.3e3} & 18 & 254.5 & \num{1.0e3} & 0.12 & 18 \\
+274 & \num{1.2e3} & \num{1.3e3} & \num{1.3e3} & 15 & 255.5 & \num{9.9e2} & 0.12 & 15 \\
+275 & \num{1.2e3} & \num{1.3e3} & \num{1.2e3} & 14 & 256.5 & \num{9.7e2} & 0.12 & 14 \\
+276 & \num{1.2e3} & \num{1.3e3} & \num{1.2e3} & 14 & 257.5 & \num{9.5e2} & 0.12 & 14 \\
+277 & \num{1.2e3} & \num{1.2e3} & \num{1.2e3} & 11 & 258.5 & \num{9.4e2} & 0.12 & 11 \\
+278 & \num{1.2e3} & \num{1.2e3} & \num{1.2e3} & 12 & 259.5 & \num{9.2e2} & 0.12 & 12 \\
+279 & \num{1.2e3} & \num{1.2e3} & \num{1.2e3} & 11 & 260.5 & \num{9.1e2} & 0.12 & 11 \\
+280 & \num{1.2e3} & \num{1.2e3} & \num{1.2e3} & 12 & 261.5 & \num{9.0e2} & 0.12 & 12 \\
+281 & \num{1.2e3} & \num{1.2e3} & \num{1.2e3} & 10 & 262.5 & \num{8.9e2} & 0.12 & 10 \\
+282 & \num{1.1e3} & \num{1.2e3} & \num{1.2e3} & 10 & 263.5 & \num{8.8e2} & 0.12 & 9.5 \\
+283 & \num{1.1e3} & \num{1.2e3} & \num{1.2e3} & 10 & 264.5 & \num{8.7e2} & 0.12 & 9.5 \\
+284 & \num{1.1e3} & \num{1.2e3} & \num{1.1e3} & 12 & 265.5 & \num{8.6e2} & 0.12 & 12 \\
+286 & \num{1.1e3} & \num{1.1e3} & \num{1.1e3} & 8.0 & 267.5 & \num{8.4e2} & 0.12 & 8.1 \\
+288 & \num{1.1e3} & \num{1.1e3} & \num{1.1e3} & 8.0 & 269.5 & \num{8.2e2} & 0.12 & 7.8 \\
+290 & \num{1.1e3} & \num{1.1e3} & \num{1.1e3} & 9.0 & 271.5 & \num{8.0e2} & 0.12 & 9.0 \\
+292 & \num{1.1e3} & \num{1.1e3} & \num{1.1e3} & 8.0 & 273.5 & \num{7.8e2} & 0.12 & 8.1 \\
+294 & \num{1.0e3} & \num{1.1e3} & \num{1.1e3} & 9.0 & 275.5 & \num{7.7e2} & 0.12 & 9.0 \\
+296 & \num{1.0e3} & \num{1.1e3} & \num{1.1e3} & 7.0 & 277.5 & \num{7.5e2} & 0.12 & 6.6 \\
+299 & \num{1.0e3} & \num{1.0e3} & \num{1.0e3} & 9.0 & 280.5 & \num{7.3e2} & 0.12 & 9.2 \\
+300 & \num{1.0e3} & \num{1.0e3} & \num{1.0e3} & 10 & 281.5 & \num{7.3e2} & 0.12 & 9.5 \\
+301 & \num{1.0e3} & \num{1.0e3} & \num{1.0e3} & 9.0 & 282.5 & \num{7.2e2} & 0.12 & 9.2 \\
+302 & \num{1.0e3} & \num{1.0e3} & \num{1.0e3} & 5.0 & 283.5 & \num{7.1e2} & 0.12 & 5.5 \\
+303 & \num{9.9e2} & \num{1.0e3} & \num{1.0e3} & 7.0 & 284.5 & \num{7.0e2} & 0.12 & 6.6 \\
+304 & \num{9.9e2} & \num{1.0e3} & \num{1.0e3} & 7.0 & 285.5 & \num{7.0e2} & 0.12 & 6.6 \\
+305 & \num{9.9e2} & \num{1.0e3} & \num{1.0e3} & 6.0 & 286.5 & \num{6.9e2} & 0.12 & 5.8 \\
+306 & \num{9.9e2} & \num{1.0e3} & \num{9.9e2} & 4.0 & 287.5 & \num{6.8e2} & 0.12 & 4.3 \\
+307 & \num{9.8e2} & \num{1.0e3} & \num{9.9e2} & 5.0 & 288.5 & \num{6.8e2} & 0.12 & 5.2 \\
+308 & \num{9.8e2} & \num{9.9e2} & \num{9.8e2} & 5.0 & 289.5 & \num{6.7e2} & 0.12 & 4.9 \\
+309 & \num{9.7e2} & \num{9.9e2} & \num{9.8e2} & 5.0 & 290.5 & \num{6.7e2} & 0.12 & 4.9 \\
+310 & \num{9.7e2} & \num{9.9e2} & \num{9.8e2} & 5.0 & 291.5 & \num{6.7e2} & 0.12 & 5.5 \\
+311 & \num{9.7e2} & \num{9.7e2} & \num{9.7e2} & 3.0 & 292.5 & \num{6.6e2} & 0.12 & 2.6 \\
+312 & \num{9.6e2} & \num{9.8e2} & \num{9.7e2} & 5.0 & 293.5 & \num{6.5e2} & 0.12 & 4.6 \\
+313 & \num{9.6e2} & \num{9.7e2} & \num{9.6e2} & 3.0 & 294.5 & \num{6.5e2} & 0.12 & 3.5 \\
+314 & \num{9.6e2} & \num{9.7e2} & \num{9.6e2} & 3.0 & 295.5 & \num{6.5e2} & 0.12 & 3.5 \\
+316 & \num{9.5e2} & \num{9.6e2} & \num{9.5e2} & 5.0 & 297.5 & \num{6.4e2} & 0.12 & 4.6 \\
+318 & \num{9.4e2} & \num{9.5e2} & \num{9.5e2} & 4.0 & 299.5 & \num{6.3e2} & 0.12 & 3.8 \\
+320 & \num{9.3e2} & \num{9.5e2} & \num{9.4e2} & 5.0 & 301.5 & \num{6.2e2} & 0.12 & 4.6 \\
+325 & \num{9.2e2} & \num{9.3e2} & \num{9.2e2} & 4.0 & 306.5 & \num{6.0e2} & 0.12 & 4.0 \\
+330 & \num{9.1e2} & \num{9.2e2} & \num{9.1e2} & 3.0 & 311.5 & \num{5.8e2} & 0.12 & 2.6 \\
+335 & \num{8.9e2} & -- & \num{8.9e2} & 0.12 & 316.5 & \num{5.5e2} & 0.12 & 0.12 \\
+340 & \num{8.7e2} & -- & \num{8.7e2} & 0.12 & 321.5 & \num{5.3e2} & 0.12 & 0.12 \\
+345 & \num{8.7e2} & -- & \num{8.7e2} & 0.12 & 326.5 & \num{5.2e2} & 0.12 & 0.12 \\
+350 & \num{8.6e2} & -- & \num{8.6e2} & 0.12 & 331.5 & \num{5.1e2} & 0.12 & 0.12 \\
+355 & \num{8.6e2} & -- & \num{8.6e2} & 0.12 & 336.5 & \num{5.0e2} & 0.12 & 0.12 \\
+360 & \num{8.5e2} & -- & \num{8.5e2} & 0.12 & 341.5 & \num{4.9e2} & 0.12 & 0.12 \\
+365 & \num{8.5e2} & -- & \num{8.5e2} & 0.12 & 346.5 & \num{4.8e2} & 0.12 & 0.12 \\
+370 & \num{8.4e2} & -- & \num{8.4e2} & 0.12 & 351.5 & \num{4.7e2} & 0.12 & 0.12 \\
+375 & \num{8.4e2} & -- & \num{8.4e2} & 0.12 & 356.5 & \num{4.6e2} & 0.12 & 0.12 \\
+380 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 361.5 & \num{4.5e2} & 0.12 & 0.12 \\
+385 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 366.5 & \num{4.5e2} & 0.12 & 0.12 \\
+390 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 371.5 & \num{4.4e2} & 0.12 & 0.12 \\
+395 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 376.5 & \num{4.3e2} & 0.12 & 0.12 \\
+400 & \num{8.2e2} & -- & \num{8.2e2} & 0.12 & 381.5 & \num{4.2e2} & 0.12 & 0.12 \\
+405 & \num{8.2e2} & -- & \num{8.2e2} & 0.12 & 386.5 & \num{4.1e2} & 0.12 & 0.12 \\
+410 & \num{8.2e2} & -- & \num{8.2e2} & 0.12 & 391.5 & \num{4.0e2} & 0.12 & 0.12 \\
+415 & \num{8.1e2} & -- & \num{8.1e2} & 0.12 & 396.5 & \num{4.0e2} & 0.12 & 0.12 \\
+420 & \num{8.2e2} & -- & \num{8.2e2} & 0.12 & 401.5 & \num{4.0e2} & 0.12 & 0.12 \\
+425 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 406.5 & \num{4.0e2} & 0.12 & 0.12 \\
+430 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 411.5 & \num{4.0e2} & 0.12 & 0.12 \\
+435 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 416.5 & \num{3.9e2} & 0.12 & 0.12 \\
+440 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 421.5 & \num{3.9e2} & 0.12 & 0.12 \\
+445 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 426.5 & \num{3.8e2} & 0.12 & 0.12 \\
+450 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 431.5 & \num{3.8e2} & 0.12 & 0.12 \\
+460 & \num{8.3e2} & -- & \num{8.3e2} & 0.12 & 441.5 & \num{3.7e2} & 0.12 & 0.12 \\
+470 & \num{8.4e2} & -- & \num{8.4e2} & 0.12 & 451.5 & \num{3.7e2} & 0.12 & 0.12 \\
+480 & \num{8.4e2} & -- & \num{8.4e2} & 0.12 & 461.5 & \num{3.6e2} & 0.12 & 0.12 \\
+490 & \num{8.4e2} & -- & \num{8.4e2} & 0.12 & 471.5 & \num{3.4e2} & 0.12 & 0.12 \\
+500 & \num{8.5e2} & -- & \num{8.5e2} & 0.12 & 481.5 & \num{3.5e2} & 0.12 & 0.12 \\
+510 & \num{8.6e2} & -- & \num{8.6e2} & 0.12 & 491.5 & \num{3.4e2} & 0.12 & 0.12 \\
+520 & \num{8.6e2} & -- & \num{8.6e2} & 0.12 & 501.5 & \num{3.4e2} & 0.12 & 0.12 \\
+530 & \num{8.7e2} & -- & \num{8.7e2} & 0.12 & 511.5 & \num{3.3e2} & 0.12 & 0.12 \\
+540 & \num{8.7e2} & -- & \num{8.7e2} & 0.12 & 521.5 & \num{3.3e2} & 0.12 & 0.12 \\
+550 & \num{8.8e2} & -- & \num{8.8e2} & 0.12 & 531.5 & \num{3.2e2} & 0.12 & 0.12 \\
+560 & \num{8.9e2} & -- & \num{8.9e2} & 0.12 & 541.5 & \num{3.2e2} & 0.12 & 0.12 \\
+570 & \num{8.9e2} & -- & \num{8.9e2} & 0.12 & 551.5 & \num{3.2e2} & 0.12 & 0.12 \\
+580 & \num{9.0e2} & -- & \num{9.0e2} & 0.12 & 561.5 & \num{3.2e2} & 0.12 & 0.12 \\
+590 & \num{9.1e2} & -- & \num{9.1e2} & 0.12 & 571.5 & \num{3.1e2} & 0.12 & 0.12 \\
+600 & \num{9.1e2} & -- & \num{9.1e2} & 0.12 & 581.5 & \num{3.1e2} & 0.12 & 0.12 \\
+620 & \num{9.3e2} & -- & \num{9.3e2} & 0.12 & 601.5 & \num{3.0e2} & 0.12 & 0.12 \\
+640 & \num{9.4e2} & -- & \num{9.4e2} & 0.12 & 621.5 & \num{3.0e2} & 0.12 & 0.12 \\
+660 & \num{9.6e2} & -- & \num{9.6e2} & 0.12 & 641.5 & \num{3.0e2} & 0.12 & 0.12 \\
+680 & \num{9.7e2} & -- & \num{9.7e2} & 0.12 & 661.5 & \num{2.9e2} & 0.12 & 0.12 \\
+700 & \num{9.9e2} & -- & \num{9.9e2} & 0.12 & 681.5 & \num{2.9e2} & 0.12 & 0.12 \\
+750 & \num{1.0e3} & -- & \num{1.0e3} & 0.12 & 731.5 & \num{2.8e2} & 0.12 & 0.12 \\
+800 & \num{1.1e3} & -- & \num{1.1e3} & 0.12 & 781.5 & \num{2.7e2} & 0.12 & 0.12 \\
+850 & \num{1.1e3} & -- & \num{1.1e3} & 0.12 & 831.5 & \num{2.7e2} & 0.12 & 0.12 \\
+900 & \num{1.2e3} & -- & \num{1.2e3} & 0.12 & 881.5 & \num{2.6e2} & 0.12 & 0.12 \\
+1000 & \num{1.3e3} & -- & \num{1.3e3} & 0.12 & 981.5 & \num{2.5e2} & 0.12 & 0.12 \\
+1100 & \num{1.3e3} & -- & \num{1.3e3} & 0.12 & 1081.5 & \num{2.5e2} & 0.12 & 0.12 \\
+1200 & \num{1.4e3} & -- & \num{1.4e3} & 0.12 & 1181.5 & \num{2.4e2} & 0.12 & 0.12 \\
+1300 & \num{1.5e3} & -- & \num{1.5e3} & 0.12 & 1281.5 & \num{2.4e2} & 0.12 & 0.12 \\
+1400 & \num{1.6e3} & -- & \num{1.6e3} & 0.12 & 1381.5 & \num{2.4e2} & 0.12 & 0.12 \\
+1500 & \num{1.7e3} & -- & \num{1.7e3} & 0.12 & 1481.5 & \num{2.3e2} & 0.12 & 0.12 \\
+1650 & \num{1.9e3} & -- & \num{1.9e3} & 0.12 & 1631.5 & \num{2.3e2} & 0.12 & 0.12 \\
+\end{longtable}
+
+\noindent\footnotesize \textbf{Nota.} Un trattino (--) indica una cella vuota nei dati originali.
+\end{document}
 \end{document}
