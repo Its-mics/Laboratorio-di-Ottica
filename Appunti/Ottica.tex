@@ -2201,12 +2201,11 @@ L'errore finale sulla distanza focale sarà semplicemente $\sigma_C$ restituito 
 
 \section{Propagazione della luce in un dielettrico}
 \subsection{Modello di Lorentz per l'indice di rifrazione}
-Si applica nel caso di gas rarefatti, quando non ho interazione tra le molecole del gas. 
+Si applica nel caso di gas rarefatti (mezzo dielettrico), quando non c'è interazione tra le molecole del gas. 
+Si consideri quindi un gas dove al suo interno vi sono $N$ cariche per unità di volume, ciascuna con carica $q=e^-$. Ipotizzando di poterle spostare tutte di una distanza $\vec{r}$ dalla loro posizione di equilibrio,
+allora si otterrebbe una polarizzazzione macroscopica $\vec{P}= - N e \vec{r}$. 
 
-Al suo interno vi sono $N$ cariche per unità di volume, se sposto queste cariche di una distanza $\vec{r}$ dalla loro posizione di equilibrio,
-allora viene creata una polarizzazzione una $\vec{P}= - N e \vec{r}$. 
-
-Se questo spostamento è dovuto ad un campo elettrico e lo spostamento è piccolo, allora posso scrivere che: $ \vec{F}= -e \vec{E} = k \vec{r}$, da cui: 
+Se questo spostamento è dovuto ad un campo elettrico (statico ed appliccato a tutto il mezzo) e lo spostamento è piccolo, allora posso dire che l'elettrone è legato elasticamente da una forza: $ \vec{F}= -e \vec{E} = k \vec{r}$ alla sua posizione di equilibrio (poiché siamo vicini al minimo), da cui: 
 \begin{equation}
     \vec{P}= \frac{N e^2}{k} \vec{E}
 \end{equation}
@@ -2214,7 +2213,8 @@ Nel caso il campo non sia statico allora introduco un termine dissipativo dovuto
 \begin{equation}
     m \frac{d^2\vec{r}}{dt^2} + m \gamma \frac{d \vec{r}}{dt} + mw_0^2 \vec{r} = -e \vec{E}
 \end{equation}
-Allora assumendo il campo $\vec{E}$ generato da un onda elettromagntica, si avrà che $E \propto e^{- i \omega t}$, e poichè lo spostamento causato sarà sempre oscillatorio:
+dove $\gamma$ è la costante dispersiva dell'attrito e $m \gamma \frac{d \vec{r}}{dt}$ la forza dispersiva propozionale alla velocità di $e^-$.
+Assumendo che il campo $\vec{E}$ sia generato da un onda elettromagntica, si avrà che $E \propto e^{- i \omega t}$, e poichè lo spostamento causato sarà sempre oscillatorio:
 \begin{equation}
     -mw^2 - iwm\gamma + mw_0^2 = -e\vec E
 \end{equation}
@@ -2222,9 +2222,9 @@ da cui, sostituendo in $\vec P$
 \begin{equation}
     P = \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \vec E
 \end{equation}
-con $\omega_0 = \sqrt{\frac{k}{m}}$
+con $\omega_0 = \sqrt{\frac{k}{m}}$ la frequenza della risonanza.
 
-Ricordiamo le equazioni di Maxwell nei mezzi:
+Ricordando le equazioni di Maxwell nei mezzi:
 \begin{equation}
     \begin{cases}
         \nabla \times \mathbf{E}  = \mu_0 \frac{\partial \mathbf{H}}{\partial t}\\
@@ -2240,25 +2240,56 @@ Applicando alla prima il rotore ottengo:
 \end{equation}
 Supponendo di essere in assenza di correnti liberi (siamo in un gas) allora $\mathbf{J}=0$ e
 sostituendo la forma di $\mathbf{P}$ trovata in precedenza, ricordando $\nabla \times (\nabla \times \mathbf{E}) = - \nabla^2 E + \nabla \cdot (\nabla \cdot E)$
-e supponendo $\rho = 0$ si ottiene:
+e supponendo $\rho = 0$ si ottiene ( e quindi le divergenze di E e P = 0):
+
 \begin{equation}
     \nabla \times ( \nabla \times \mathbf{E}) = \frac{1}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2} (1 + \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \frac{\partial^2 \mathbf{E}}{\partial t^2}) = -\nabla^2\mathbf{E}
 \end{equation}
-e definiamo
+si ottiene l'equazione d'onda con $v \neq c$
 \begin{equation}
-    n^2 = 1 + \frac{N e^2}{\epsilon_0 m}\frac{1 }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma }
+    K^2 = C^2 (1+...)^{-1}
 \end{equation}
-dove n ha sia parte reale che immaginaria $ n = R(n) + i J (n)$, da cui deduciamo che l'onda è cevanescente, dovuto alla parte immaginaria. 
+per cui il mio indice di rifrazione sarà: 
+\begin{equation}
+    n^2 = 1 + \frac{N e^2}{\varepsilon_0 m}\frac{1 }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma }
+\end{equation}
+Questo ci dice che l'indice di rifrazione ha un andamento con un termine che dipende dalla frequenza dell'onda elettromagnetica e con un coefficiente tipico delle risonanze.
+Ci si aspetta quindi di avere un effetto più grande quando ci si trova ad una frequenza vicino allo zero.
+Un altra cosa da notare p che n ha sia parte reale che immaginaria ($ n = Re[n] + i IM[n]$) che vedremo cosa comporta.
 
-Se ho più frequenze di risonanza, perchè ho diversi gruppi elettronici, allora introduco la sommatoria sulle varie componenti. 
 
-Nel caso in cui $\omega \rightarrow \lambda$ e $\gamma=0$, allora posso introdurre la Formula di Sellmeier:
+Se andiamo a studiare l'andamento in funzione di $\omega$ in corrispondenza di $Re[n]$ e di $Im[n]$:
+
+GRAFICO CAZZZO
+
+Si può quindi riscrive l'equazione del campo elettrico come $\vec{E} = \vec{E_0} e^{-i(\omega t- Re[n]kz)} e^{- Im[n]kz}$, ovvero ho un ampiezza (l'ultimo termine è un valore reale) decrescente nel tempo.
+Questo poicé a causa di fenomeni di assorbimento/attrito diminuisce l'energia ed ampiezza dell'onda man mano che l'onda si propaga (calore o fenomeni di diffusione).
+Inoltre all'interno degli atomi del gas non c'è solo un elettrone ma diversi che appartegono a gusci atomici diversi, che comporta una diversità di costanti elastiche e quindi frequenze.
+Tenendo conto di questo effetto e quindi di varie frequenze di risonanza si introduce la sommatoria sulle varie componenti che è svolta sulle frazioni di elettroni che hanno una certa energia di legame (ovvero che tiene conto delle varie tipologie di legame). 
+\begin{equation}
+        n^2 = 1 + \frac{N e^2}{\varepsilon_0 m} \sum_{j=1}^{l}  \frac{f_j }{{\omega_{j}}^{2} - \omega^2 - i\omega \gamma_j }
+\end{equation}
+
+GRAFICO CAZZO 2
+
+Nel caso in cui passo dalla frequenza alla lunghezza d'onda $\lambda$ e $\gamma=0$, allora posso introdurre la Formula di Sellmeier:
+
 \begin{equation}
     n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - {\lambda_0}^2}
 \end{equation}
 
-In generale, la polarizzazione totale è minore di quella trovata col modello di Lorenz, il quale vale per gas rarefatti, in cui non vi è l'effetto degli altri elettroni.
+dove il suo indice di rifrazione ha un andamento del genere sia in funzione di $Re[n]$ che di $\lambda$:
+
+
+
+GRAFICO CAZZO 3 
+
+una cosa da notare nella definizione dell'indice di rifrazione iniziale è che nel nostro calcolo si è tenuto conto solo degli elettroni si è trascurato quindi che il nucleo degli atomi possano spostarsi per via del campo esterno.
+Si è trascurato poiché la massa è al denominatore e quindi è abbastanza trascurabile rispetto ai contributi degli elettroni ($m_p \sim 2000 m_e$), un altra cosa è il termine $N$ al numeratore, che ci dice quante cariche ci sono nel mezzo, 
+per cui l'indice di rifrazione è lineare in $N$, questo in particolare è vero per valori piccoli di $N$ poiché se quest'ultimo aumenta troppo il gas non è più un mezzo rarefatto, per cui la polarizzazione complessiva è diversa ovvero minore col modello di lorentz,
+perché se tutti gli elettroni si muovono allo stesso modo, questi a loro volta generano un altro campo E che si contrappone a quello originale facendoli muovere di meno.
 Nonostante questo, la formula di Sellmeier si adatta anche ai mezzi densi, perchè tutto ciò viene inglobato nel coefficente A. 
+
 
 \section{Esperienza 3: Calcolo di n partendo dal modello di Sellmeier}
 Quello che andremmo a fare è calcolare la quantità:
