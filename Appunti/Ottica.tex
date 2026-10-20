@@ -2201,31 +2201,54 @@ L'errore finale sulla distanza focale sarà semplicemente $\sigma_C$ restituito 
 
 \section{Propagazione della luce in un dielettrico}
 \subsection{Modello di Lorentz per l'indice di rifrazione}
-Si applica nel caso di gas rarefatti, quando non ho interazione tra le molecole del gas. Se indico con $N$ la densità di carica ($q0 -e$), se sposto queste cariche di una distanza $\vec{r}$, allora creo una $\vec{P}= - N e \vec{r}$. 
-Se questo spostamento è dovuto ad un campo elettrico e lo spostamento è piccolo, allora posso scrivere che: $ \vec{F}= -e \vec{E} = k \vec{r}$, che mi porta a scrivere che: 
+Si applica nel caso di gas rarefatti, quando non ho interazione tra le molecole del gas. 
+
+Al suo interno vi sono $N$ cariche per unità di volume, se sposto queste cariche di una distanza $\vec{r}$ dalla loro posizione di equilibrio,
+allora viene creata una polarizzazzione una $\vec{P}= - N e \vec{r}$. 
+
+Se questo spostamento è dovuto ad un campo elettrico e lo spostamento è piccolo, allora posso scrivere che: $ \vec{F}= -e \vec{E} = k \vec{r}$, da cui: 
 \begin{equation}
     \vec{P}= \frac{N e^2}{k} \vec{E}
 \end{equation}
-Nel caso il campo non sia statico allora introduco un termine dissipativo dovuto alla radiazione dei dipoli:
+Nel caso il campo non sia statico allora introduco un termine dissipativo dovuto alla radiazione dei dipoli e risolvo l'equazione differenziale:
 \begin{equation}
-    m \frac{d^2\vec{r}}{dt^2} + m \gamma \frac{d \vec{r}}{dt} + k \vec{r} = -e \vec{E}
+    m \frac{d^2\vec{r}}{dt^2} + m \gamma \frac{d \vec{r}}{dt} + mw_0^2 \vec{r} = -e \vec{E}
 \end{equation}
-Allora assumendo il campo $\vec{E}$ generato da un onda EM, allora avrò che $E \sim e^{- i \omega t}$
+Allora assumendo il campo $\vec{E}$ generato da un onda elettromagntica, si avrà che $E \propto e^{- i \omega t}$, e poichè lo spostamento causato sarà sempre oscillatorio:
 \begin{equation}
-    P = \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma }
+    -mw^2 - iwm\gamma + mw_0^2 = -e\vec E
+\end{equation}
+da cui, sostituendo in $\vec P$
+\begin{equation}
+    P = \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \vec E
 \end{equation}
 con $\omega_0 = \sqrt{\frac{k}{m}}$
 
-È da inserire tutte le considerazini sulle equazioni di maxwell nei mezzi
-
+Ricordiamo le equazioni di Maxwell nei mezzi:
 \begin{equation}
-    \nabla \times ( \nabla \times \mathbf{E}) + \frac{1}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2}= - \mu_0 \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \frac{\partial^2 \mathbf{E}}{\partial t^2} = - \Delta \mathbf{E}
+    \begin{cases}
+        \nabla \times \mathbf{E}  = \mu_0 \frac{\partial \mathbf{H}}{\partial t}\\
+        \nabla \times \mathbf{H} - \frac{\partial \mathbf{D}}{\partial t} + \mathbb{J} = 0 \\
+        \rho = \nabla \cdot \mathbf{D} \\
+        \nabla \cdot \mathbf{B} = 0
+    \end{cases}
 \end{equation}
-Ottengo:
+
+Applicando alla prima il rotore ottengo:
+\begin{equation}
+    \nabla \times(\nabla \times \mathbf{E}) = - \mu_0 \frac{\partial \nabla \times \mathbf{H}}{\partial t} = - \mu_0 \varepsilon_0 \frac{\partial^2 \mathbf{E}}{\partial t^2} +\frac{\partial \mu_0 \mathbf{J}}{\partial t} + \frac{\partial \mathbf{P}}{\partial t}
+\end{equation}
+Supponendo di essere in assenza di correnti liberi (siamo in un gas) allora $\mathbf{J}=0$ e
+sostituendo la forma di $\mathbf{P}$ trovata in precedenza, ricordando $\nabla \times (\nabla \times \mathbf{E}) = - \nabla^2 E + \nabla \cdot (\nabla \cdot E)$
+e supponendo $\rho = 0$ si ottiene:
+\begin{equation}
+    \nabla \times ( \nabla \times \mathbf{E}) = \frac{1}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2} (1 + \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \frac{\partial^2 \mathbf{E}}{\partial t^2}) = -\nabla^2\mathbf{E}
+\end{equation}
+e definiamo
 \begin{equation}
     n^2 = 1 + \frac{N e^2}{\epsilon_0 m}\frac{1 }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma }
 \end{equation}
-dove n ha sia parte reale che immaginaria $ n = R(n) + i J (n)$, che mi porta ad avere un campo EM evanescente, collegato con la parte immaginaria. 
+dove n ha sia parte reale che immaginaria $ n = R(n) + i J (n)$, da cui deduciamo che l'onda è cevanescente, dovuto alla parte immaginaria. 
 
 Se ho più frequenze di risonanza, perchè ho diversi gruppi elettronici, allora introduco la sommatoria sulle varie componenti. 
 
@@ -2234,19 +2257,22 @@ Nel caso in cui $\omega \rightarrow \lambda$ e $\gamma=0$, allora posso introdur
     n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - {\lambda_0}^2}
 \end{equation}
 
-La polarizzazione totale è minore in quanto essendo che il campo di reazione è inverso a quello di polarizzazione nei mezzi densi, metre il modello di Lorentz funziona solo per gas rarefatti, quello di Sellmeier si adatta anche ai mezzi densi. 
+In generale, la polarizzazione totale è minore di quella trovata col modello di Lorenz, il quale vale per gas rarefatti, in cui non vi è l'effetto degli altri elettroni.
+Nonostante questo, la formula di Sellmeier si adatta anche ai mezzi densi, perchè tutto ciò viene inglobato nel coefficente A. 
+
 \section{Esperienza 3: Calcolo di n partendo dal modello di Sellmeier}
 Quello che andremmo a fare è calcolare la quantità:
 \begin{equation}
     n = \sqrt{1 + \frac{A x^2}{x^2 - {B}^2}}
 \end{equation}
 Andremmo poi a confrotnare questo con una retta del tipo: $y = A + Bx$
-\subsection{Prisma \- angolo di deviazione minima}
-Considero un prisma e un fasci di luce che entra, chiamo $\delta$ l'angolo di deviazione del fascio. Posso definire $\delta$ come:
+\subsection{Prisma - angolo di deviazione minima}
+
+Considero un prisma e un fascio di luce incidente su di esso, chiamo $\delta$ l'angolo di deviazione del fascio. Posso definire $\delta$ come:
 \begin{equation}
     \delta = ( \theta_1 - {\theta_1}') + ( \theta_2 - {\theta_2}') = \theta_1 + \theta_2 - \alpha
 \end{equation}
-
+dove $\theta_1$ e $\theta_2$ sono gli angoli di incidenza sui bordi del prisma, mentre $\theta_1'$ e $\theta_2'$ sono gli angoli di rifrazione sui bordi del prisma.
 Inoltre so anche che l'angolo del prisma è colelgato con delta con:
 \begin{equation}
     \alpha = \pi - (\frac{\pi}{2} - {\theta_1}') - (\frac{\pi}{2} - {\theta_2}' )= {\theta_1}' - {\theta_2}' 
