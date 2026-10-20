@@ -2269,9 +2269,78 @@ Inoltre, $n$ è una quantità complessa ($n = \text{Re}[n] + i \text{Im}[n]$).
 
 Studiando l'andamento della parte reale $\text{Re}[n]$ e della parte immaginaria $\text{Im}[n]$ in funzione di $\omega$, si osserva il seguente comportamento:
 
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZZO: Andamento di Re(n) e Im(n) rispetto a $\omega$]}}
-\end{center}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+
+        % --- GRAFICO 1: PARTE REALE ---
+        \begin{axis}[
+            width=0.48\textwidth,
+            height=6.5cm,
+            axis lines=middle,
+            xmin=0, xmax=10,
+            ymin=0.2, ymax=2.8,
+            xlabel={$\omega$},
+            ylabel={$\text{Re}[n]$},
+            xtick={5}, xticklabels={$\omega_0$},
+            ytick={1},
+            every axis x label/.style={at={(ticklabel* cs:1.02)}, anchor=west},
+            every axis y label/.style={at={(ticklabel* cs:1.02)}, anchor=south},
+            domain=0.5:9.5,
+            samples=200,
+            clip=false
+        ]
+            % Asintoto orizzontale a y=1
+            \draw[dashed, gray!70, thick] (axis cs:0,1) -- (axis cs:9.5,1);
+
+            % Linee verticali tratteggiate (Risonanza ed estremi)
+            \draw[dashed, gray!70] (axis cs:5,0.2) -- (axis cs:5,2.5); % Risonanza
+            \draw[dashed, gray!70] (axis cs:4,1) -- (axis cs:4,2);     % Massimo
+            \draw[dashed, gray!70] (axis cs:6,1) -- (axis cs:6,0);     % Minimo
+
+            % Curva della parte reale
+            \addplot[PoliBlue, thick, smooth] {1 - 2*(x-5) / ((x-5)^2 + 1)};
+
+            % Testi descrittivi
+            \node[anchor=west, align=left, font=\small, text=black] at (axis cs: -0.2, 2.4) 
+                {$\dfrac{dn}{d\omega} < 0 \quad$ \textbf{Dispersione} \\ \hspace{1.3cm}\textbf{anomala}};
+                
+            \node[anchor=west, align=left, font=\small, text=black] at (axis cs: -0.2, 0.6) 
+                {$\dfrac{dn}{d\omega} > 0 \quad$ \textbf{Dispersione} \\ \hspace{1.3cm}\textbf{normale}};
+        \end{axis}
+
+        % --- GRAFICO 2: PARTE IMMAGINARIA ---
+        \begin{axis}[
+            at={(0.55\textwidth,0)}, % Sposta il secondo grafico a destra
+            width=0.48\textwidth,
+            height=6.5cm,
+            axis lines=middle,
+            xmin=0, xmax=10,
+            ymin=0, ymax=2.5,
+            xlabel={$\omega$},
+            ylabel={$\text{Im}[n]$},
+            xtick={5}, xticklabels={$\omega_0$},
+            ytick=\empty,
+            every axis x label/.style={at={(ticklabel* cs:1.02)}, anchor=west},
+            every axis y label/.style={at={(ticklabel* cs:1.02)}, anchor=south},
+            domain=0.5:9.5,
+            samples=200,
+            clip=false
+        ]
+            % Linea verticale per la risonanza
+            \draw[dashed, gray!70] (axis cs:5,0) -- (axis cs:5,2.1);
+
+            % Curva della parte immaginaria (Lorentziana)
+            \addplot[OpticRed, thick, smooth] {2 / ((x-5)^2 + 1)};
+
+            % Testo descrittivo
+            \node[anchor=west, align=left, font=\small, text=black] at (axis cs: 6, 2.0) 
+                {\textbf{Andamento} \\ \textbf{a risonanza}};
+
+        \end{axis}
+
+    \end{tikzpicture}
+\end{figure}
 
 Per comprendere il significato di $n$, consideriamo la propagazione del campo elettrico lungo l'asse $z$: $\mathbf{E} = \mathbf{E}_0 e^{i(k z - \omega t)}$. Sapendo che $k = n \frac{\omega}{c} = (\text{Re}[n] + i \text{Im}[n]) k_0$, l'equazione dell'onda si riscrive come:
 \begin{equation}
@@ -2285,9 +2354,74 @@ Per tenere conto di questo, si introduce una sommatoria pesata sulle varie frequ
         n^2 = 1 + \frac{N e^2}{\varepsilon_0 m} \sum_{j}  \frac{f_j}{\omega_j^2 - \omega^2 - i\omega \gamma_j}
 \end{equation}
 
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZO 2: Andamento con risonanze multiple]}}
-\end{center}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        % Definisco funzioni matematiche ottimizzate per replicare 
+        % ESATTAMENTE il tratto del tuo disegno a mano:
+        % 'g' alto restringe i picchi lasciando uno spazio perfettamente piatto in mezzo
+        declare function={
+            g = 40; 
+            Ar = 20;
+            Ai = 2.5;
+            re(\x) = 2 - Ar*(\x-3)/(1+g*(\x-3)^2) 
+                       - Ar*(\x-6)/(1+g*(\x-6)^2) 
+                       - Ar*(\x-9)/(1+g*(\x-9)^2);
+            im(\x) = 0.5 + Ai/(1+g*(\x-3)^2) 
+                         + Ai/(1+g*(\x-6)^2) 
+                         + Ai/(1+g*(\x-9)^2);
+        }
+    ]
+
+        % --- GRAFICO 1: PARTE REALE ---
+        \begin{axis}[
+            width=0.48\textwidth,
+            height=5.5cm,
+            axis lines=middle,
+            xmin=-1, xmax=11.5, % Estensione a sinistra per fare la "croce" all'origine
+            ymin=-0.5, ymax=4.5, % Estensione in basso
+            xlabel={$\omega$},
+            ylabel={$\text{Re}[n]$},
+            xtick=\empty, ytick=\empty, % Niente tacche come nel disegno
+            every axis x label/.style={at={(ticklabel* cs:1.0)}, anchor=north, yshift=-5pt},
+            every axis y label/.style={at={(ticklabel* cs:1.0)}, anchor=east, xshift=-5pt},
+            domain=0:11,
+            samples=400, % Alto numero di punti per rendere i picchi curvi e perfetti
+            clip=false
+        ]
+            % Curva della parte reale (3 picchi netti)
+            \addplot[PoliBlue, thick, smooth] {re(x)};
+        \end{axis}
+
+        % --- GRAFICO 2: PARTE IMMAGINARIA ---
+        \begin{axis}[
+            at={(0.55\textwidth,0)}, % Affianca il grafico
+            width=0.48\textwidth,
+            height=5.5cm,
+            axis lines=middle,
+            xmin=-1, xmax=11.5,
+            ymin=-0.5, ymax=4.5,
+            xlabel={$\omega$},
+            ylabel={$\text{Im}[n]$},
+            xtick=\empty, ytick=\empty,
+            every axis x label/.style={at={(ticklabel* cs:1.0)}, anchor=north, yshift=-5pt},
+            every axis y label/.style={at={(ticklabel* cs:1.0)}, anchor=east, xshift=-5pt},
+            domain=0:10.5,
+            samples=400,
+            clip=false
+        ]
+            % Curva della parte immaginaria (3 montagnette isolate)
+            \addplot[OpticRed, thick, smooth] {im(x)};
+
+            % Testo descrittivo "risonanze" posizionato esattamente come nel disegno
+            \node[anchor=west, align=left, font=\bfseries] at (axis cs: 9.8, 1.7) 
+                {risonanze};
+
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 
 Lontano dalle risonanze (dove l'assorbimento è trascurabile, $\gamma_j \approx 0$), è spesso utile esprimere questa relazione in termini di lunghezza d'onda $\lambda$ anziché di frequenza $\omega$. Si ottiene così l'\textbf{Equazione di Sellmeier}:
 \begin{equation}
@@ -2296,9 +2430,57 @@ Lontano dalle risonanze (dove l'assorbimento è trascurabile, $\gamma_j \approx 
 (che nella sua forma semplificata ad un solo termine predominante diventa $n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - \lambda_0^2}$). 
 In questa forma, l'andamento di $\text{Re}[n]$ in funzione di $\lambda$ assume questo aspetto:
 
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZO 3: Andamento di Sellmeier]}}
-\end{center}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+
+        % --- GRAFICO 1: Andamento rispetto a OMEGA ---
+        \begin{axis}[
+            width=0.48\textwidth,
+            height=5.5cm,
+            axis lines=middle,
+            xmin=-1.5, xmax=10,   % Assi sfalsati per formare la croce
+            ymin=-0.8, ymax=5,
+            xlabel={$\omega$},
+            ylabel={$\text{Re}[n]$},
+            xtick=\empty, 
+            ytick={1}, yticklabels={1}, % Mostra solo l'1 sull'asse Y
+            every axis x label/.style={at={(ticklabel* cs:1.0)}, anchor=north, yshift=-5pt},
+            every axis y label/.style={at={(ticklabel* cs:1.0)}, anchor=east, xshift=-5pt},
+            domain=0:9,
+            samples=100,
+            clip=false
+        ]
+            % Linea tratteggiata per l'asintoto y=1
+            \draw[dashed, thick] (axis cs:0,1) -- (axis cs:9,1);
+
+            % Curva che cresce avvicinandosi alla risonanza
+            \addplot[PoliBlue, thick, smooth] {1.2 + 0.035*x^2};
+        \end{axis}
+
+        % --- GRAFICO 2: Andamento rispetto a LAMBDA (Sellmeier) ---
+        \begin{axis}[
+            at={(0.55\textwidth,0)}, % Affianca il grafico a destra
+            width=0.48\textwidth,
+            height=5.5cm,
+            axis lines=middle,
+            xmin=-1.5, xmax=10,
+            ymin=-0.8, ymax=5,
+            xlabel={$\lambda$},
+            ylabel={$\text{Re}[n]$},
+            xtick=\empty, ytick=\empty, % Niente tacche qui
+            every axis x label/.style={at={(ticklabel* cs:1.0)}, anchor=north, yshift=-5pt},
+            every axis y label/.style={at={(ticklabel* cs:1.0)}, anchor=east, xshift=-5pt},
+            domain=1.5:8,
+            samples=100,
+            clip=false
+        ]
+            % Curva decrescente di Sellmeier (tipo 1/x^2)
+            \addplot[PoliBlue, thick, smooth] {0.8 + 4.5/(x-0.2)};
+        \end{axis}
+
+    \end{tikzpicture}
+\end{figure}
 
 \begin{nota}[title=Considerazioni finali sul modello]
 Riguardo al modello appena derivato è importante sottolineare due aspetti fondamentali:
@@ -2322,11 +2504,83 @@ Per poter calcolare l'indice di rifrazione $n$ del vetro, sfrutteremo il fenomen
 Si consideri un prisma avente un angolo al vertice $\alpha$. Un fascio di luce incide sulla faccia sinistra con un angolo $\theta_1$ rispetto alla normale, viene rifratto all'interno del prisma con un angolo $\theta_1'$, viaggia fino alla faccia destra dove incide con un angolo $\theta_2'$ e infine emerge nell'aria con un angolo $\theta_2$.
 Definiamo $\delta$ l'\textbf{angolo di deviazione}, ovvero l'angolo tra il prolungamento del raggio incidente e il raggio uscente.
 
-\vspace{1em}
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZO 4: Schema del prisma con angoli $\theta_1, \theta_1', \theta_2', \theta_2, \delta, \alpha$]}}
-\end{center}
-\vspace{1em}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        scale=1.4, % Scala il disegno per renderlo ben leggibile
+        ray/.style={thick, ForestGreen},
+        normal/.style={dashed, darkgray, thick},
+        extendInc/.style={dashed, Goldenrod, thick},
+        extendEm/.style={dashed, darkgray, thick},
+        >={Stealth[length=3mm, width=2.5mm]} % Stile frecce
+    ]
+
+    % --- COORDINATE PRINCIPALI ---
+    % Prisma
+    \coordinate (Top) at (0,4);
+    \coordinate (BotL) at (-2.5,0);
+    \coordinate (BotR) at (2.5,0);
+
+    % Punti lungo il raggio
+    \coordinate (Start) at (-4, 1.5);
+    \coordinate (P1) at (-1.2, 2.08); % Punto di incidenza faccia SX
+    \coordinate (P2) at (1.5, 1.6);   % Punto di incidenza faccia DX
+    \coordinate (End) at (3.5, -0.5); % Punto finale raggio emergente
+
+    % Intersezione prolungamenti per l'angolo delta (calcolata)
+    \coordinate (Intersect) at (0.67, 2.47);
+    \coordinate (Ext1) at (3, 2.95); % Estensione raggio incidente in avanti
+    \coordinate (Ext2) at (-0.5, 3.7); % Estensione raggio emergente all'indietro
+
+    % Punti per tracciare le normali alle facce
+    \coordinate (N1_top) at (-2.2, 2.68);
+    \coordinate (N1_bot) at (-0.2, 1.48);
+    \coordinate (N2_top) at (2.5, 2.22);
+    \coordinate (N2_bot) at (0.5, 0.98);
+
+    % --- DISEGNO ELEMENTI ---
+    % Prisma
+    \draw[thick, draw=black] (BotL) -- (Top) -- (BotR) -- cycle;
+
+    % Normali
+    \draw[normal] (N1_bot) -- (N1_top);
+    \draw[normal] (N2_bot) -- (N2_top);
+
+    % Prolungamenti dei raggi
+    \draw[extendInc] (P1) -- (Ext1);
+    \draw[extendEm] (P2) -- (Ext2);
+
+    % Raggi (spezzati a metà per posizionare la freccia centralmente)
+    \draw[ray, ->] (Start) -- ($(Start)!0.55!(P1)$);
+    \draw[ray] ($(Start)!0.5!(P1)$) -- (P1);
+
+    \draw[ray, ->] (P1) -- ($(P1)!0.55!(P2)$);
+    \draw[ray] ($(P1)!0.5!(P2)$) -- (P2);
+
+    \draw[ray, ->] (P2) -- ($(P2)!0.55!(End)$);
+    \draw[ray] ($(P2)!0.5!(End)$) -- (End);
+
+    % --- ANGOLI E TRATTEGGI ---
+    % Alpha
+    \pic [draw, fill=red!15, pattern=vertical lines, pattern color=red!70, angle radius=0.8cm, "\Large $\alpha$", angle eccentricity=1.45, text=red!80!black] {angle = BotL--Top--BotR};
+
+    % Theta 1 (rispetto alla normale ESTERNA sinistra)
+    \pic [draw, fill=orange!15, pattern=north west lines, pattern color=orange, angle radius=0.8cm, "\Large $\theta_1$", angle eccentricity=1.5, text=orange!90!black] {angle = N1_top--P1--Start};
+
+    % Theta 1' (rispetto alla normale INTERNA sinistra)
+    \pic [draw, fill=orange!15, pattern=north east lines, pattern color=orange, angle radius=0.8cm, "\Large $\theta_1'$", angle eccentricity=1.5, text=orange!90!black] {angle = N1_bot--P1--P2};
+
+    % Theta 2' (rispetto alla normale INTERNA destra)
+    \pic [draw, fill=violet!15, pattern=north west lines, pattern color=violet, angle radius=0.8cm, "\Large $\theta_2'$", angle eccentricity=1.6, text=violet!90!black] {angle = P1--P2--N2_bot};
+
+    % Theta 2 (CORRETTO: rispetto alla normale ESTERNA destra)
+    \pic [draw, fill=violet!15, pattern=north east lines, pattern color=violet, angle radius=0.8cm, "\Large $\theta_2$", angle eccentricity=1.5, text=violet!90!black] {angle = End--P2--N2_top};
+
+    % Delta
+    \pic [draw, fill=cyan!15, pattern=vertical lines, pattern color=cyan, angle radius=1cm, "\Large $\delta$", angle eccentricity=1.4, text=cyan!80!black] {angle = P2--Intersect--Ext1};
+
+    \end{tikzpicture}
+\end{figure}
 
 Dalla geometria del sistema, l'angolo di deviazione totale è la somma delle deviazioni subite sulle due interfacce:
 \begin{equation}
@@ -2407,15 +2661,125 @@ L'apparato è composto dai seguenti elementi:
     \item \textbf{Goniometro ottico:} Costituito da un piatto graduato rotante con sopra un supporto su cui poggia il prisma, un collimatore con fenditura regolabile (da cui entra la luce) e un cannocchiale (oculare) mobile dotato di un filamento verticale (o mirino).
 \end{itemize}
 
-\vspace{1em}
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO APPARATO: Spettrometro, collimatore e oculare]}}
-\end{center}
-\vspace{1em}
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO PRISMA: Posizionamento del prisma da $45^\circ$ sul piatto]}}
-\end{center}
-\vspace{1em}
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    >=Stealth,
+    tubo/.style={draw=black!70, fill=gray!20, thick},
+    raggio/.style={red!70!black, thick},
+    lab/.style={font=\footnotesize, align=center}
+]
+
+% ---------- Sorgente, filtro, fenditura ----------
+\draw[thick, rounded corners=2pt, fill=yellow!30] (-6.3,-0.45) rectangle (-5.4,0.45);
+\node[lab, anchor=north] at (-5.85,-0.55) {sorgente\\(lampada Na\\o faretto)};
+
+\draw[thick, fill=blue!20] (-5.15,-0.6) rectangle (-5.05,0.6);
+\node[lab, anchor=south] at (-5.1,0.7) {filtro};
+
+% ---------- Collimatore ----------
+\draw[tubo] (-4.7,-0.3) rectangle (-2.3,0.3);
+\fill (-4.75,0.08) rectangle (-4.65,0.3);     % ganasce della fenditura
+\fill (-4.75,-0.3) rectangle (-4.65,-0.08);
+\draw[thick, fill=cyan!20] (-2.3,0) ellipse (0.09 and 0.34);   % lente
+\node[lab, anchor=south] at (-3.4,0.55) {collimatore};
+\node[lab] at (-4.0,-1.2) {fenditura\\regolabile};
+\draw[->, thin] (-4.2,-0.95) -- (-4.68,-0.33);
+
+% ---------- Piatto graduato ----------
+\draw[thick, fill=gray!10] (0,0) circle (1.8);
+\foreach \a in {0,10,...,350} \draw[black!60] (\a:1.8) -- (\a:1.68);
+\foreach \a in {0,30,...,330} \draw[black!80] (\a:1.8) -- (\a:1.58);
+\draw[thick, fill=white] (0,0) circle (1.2);
+\node[lab] at (0.2,2.55) {piatto graduato\\rotante};
+\draw[->, thin] (0.6,2.15) -- (50:1.8);
+
+% ---------- Prisma (ruotato come in Figura 2) ----------
+\begin{scope}[rotate=-12.5]
+  \draw[thick, draw=blue!50!black, fill=cyan!25]
+        (-0.048,0.669) -- (-0.392,-0.163) -- (0.439,-0.507) -- cycle;
+\end{scope}
+\node[lab] at (0,1.0) {prisma};
+
+% ---------- Cannocchiale (ruotato di delta attorno al piatto) ----------
+\begin{scope}[rotate=-25]
+  \draw[tubo] (2.6,-0.3) rectangle (4.9,0.3);
+  \draw[thick, fill=cyan!20] (2.6,0) ellipse (0.09 and 0.34);  % obiettivo
+  \draw[tubo] (4.9,-0.18) rectangle (5.4,0.18);                % oculare
+\end{scope}
+\node[lab] at (2.3,-2.5) {cannocchiale};
+\draw[->, thin] (2.6,-2.25) -- (2.88,-1.7);
+\node[lab] at (4.3,-3.0) {oculare};
+\draw[->, thin] (4.45,-2.75) -- (4.62,-2.35);
+
+% ---------- Mirino: campo visivo con filamento verticale ----------
+\coordinate (E) at (-25:6.0);
+\draw[thick] (E) circle (0.38);
+\draw[thick] ($(E)+(0,-0.38)$) -- ($(E)+(0,0.38)$);
+\node[lab] at ($(E)+(0.1,-0.75)$) {mirino};
+
+% ---------- Raggi e angolo di deviazione ----------
+\draw[raggio, ->] (-4.7,0) -- (0,0);
+\draw[raggio, ->] (0,0) -- (-25:5.4);
+\draw[dashed, gray] (0,0) -- (4.2,0);
+\node[lab, anchor=west] at (4.25,0) {fascio\\non deviato};
+\draw[->] (2.15,0) arc[start angle=0, end angle=-25, radius=2.15];
+\node[font=\small] at (-12:2.45) {$\delta$};
+
+\end{tikzpicture}
+\caption{Schema del sistema (vista dall'alto).}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    >=Stealth,
+    raggio/.style={red!70!black, thick},
+    lab/.style={font=\footnotesize, align=center}
+]
+\coordinate (A)  at (0,0);              % vertice a 45 gradi usato
+\coordinate (C)  at (-1.148,-2.772);    % angolo retto
+\coordinate (B)  at (1.624,-3.920);     % altro angolo a 45 gradi
+\coordinate (P1) at (-0.663,-1.600);    % punto di ingresso
+\coordinate (P2) at (0.663,-1.600);     % punto di uscita
+
+% Prisma
+\draw[thick, draw=blue!50!black, fill=cyan!15] (A) -- (C) -- (B) -- cycle;
+\draw (-1.033,-2.495) -- (-0.756,-2.610) -- (-0.871,-2.887);   % angolo retto
+\draw (A) ++(247.5:0.7) arc[start angle=247.5, end angle=292.5, radius=0.7];
+\node[font=\footnotesize] at ($(A)+(270:1.05)$) {$45^\circ$};
+\node[font=\footnotesize] at (0.2,-2.5) {$n\approx 1.5$};
+\node[lab, anchor=north] at (-0.05,-3.5) {base};
+\node[lab, anchor=east]  at (-0.45,-0.55) {faccia di\\ingresso};
+\node[lab, anchor=west]  at (0.45,-0.55)  {faccia di\\uscita};
+
+% Normali e angolo di incidenza
+\draw[dashed, gray] ($(P1)+(157.5:1.4)$) -- ($(P1)+(-22.5:1.0)$);
+\draw ($(P1)+(157.5:0.8)$) arc[start angle=157.5, end angle=192.53, radius=0.8];
+\node[font=\footnotesize] at ($(P1)+(175:1.1)$) {$i$};
+
+% Raggio
+\draw[raggio, ->] (-3.592,-2.251) -- (P1);
+\draw[raggio, ->] (P1) -- (P2);
+\draw[raggio, ->] (P2) -- ++(-12.53:3.0);
+\node[lab, anchor=north] at (-3.2,-2.35) {raggio\\incidente};
+\node[lab, anchor=north] at (3.2,-2.35)  {raggio\\emergente};
+
+% Angolo di deviazione
+\draw[dashed, gray] (P2) -- ++(12.53:2.4);
+\draw[->] ($(P2)+(12.53:1.6)$) arc[start angle=12.53, end angle=-12.53, radius=1.6];
+\node[font=\small] at ($(P2)+(0:1.95)$) {$\delta$};
+
+\end{tikzpicture}
+\caption{Prisma orientato in modo che il fascio attraversi le due facce che formano il vertice di $45^\circ$.}
+\end{figure}
+
+
+
 
 \textbf{Lettura degli angoli (Il Nonio):}\\
 Il piatto del goniometro è dotato di una scala graduata principale divisa in mezzi gradi ($0.5^\circ$, da delle tacche piccole) e di un nonio diviso in 30 tacche. L'estensione del nonio garantisce una precisione di $\frac{0.5^\circ}{30} = \frac{1}{60}^\circ$.
@@ -2426,11 +2790,61 @@ Per leggere l'angolo:
     \item La misura finale sarà $175^\circ + \frac{5}{60}^\circ$.
 \end{enumerate}
 
-\vspace{1em}
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO SCALA: Esempio di lettura scala + nonio]}}
-\end{center}
-\vspace{1em}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    >=Stealth,
+    lab/.style={font=\footnotesize, align=center}
+]
+% ---------- parametri ----------
+\def\nn{5}                               % tacca del nonio che coincide
+\pgfmathsetmacro{\passo}{0.36}           % passo della scala principale (0.5 gradi), in cm
+\pgfmathsetmacro{\passov}{29*\passo/30}  % passo del nonio: 30 tacche = 29 della scala
+\pgfmathsetmacro{\xz}{\nn*\passo/30}     % posizione dello zero del nonio
+
+% ---------- scala principale (sopra il bordo comune y=0) ----------
+\draw[fill=gray!12, draw=black!60]
+      ({-2*\passo-0.2},0) rectangle ({31*\passo+0.2},0.8);
+\foreach \i in {-1,1,...,31} \draw ({\i*\passo},0) -- ++(0,0.35);   % mezzi gradi
+\foreach \i in {-2,0,...,30} \draw[thick] ({\i*\passo},0) -- ++(0,0.55); % gradi interi
+\foreach \i/\a in {0/175, 4/177, 8/179, 12/181, 16/183, 20/185, 24/187, 28/189}
+    \node[font=\footnotesize, above] at ({\i*\passo},0.8) {$\a^\circ$};
+\node[lab, anchor=south west] at ({-2*\passo-0.2},1.35)
+    {scala principale (tacche da $0.5^\circ$)};
+
+% ---------- nonio (sotto il bordo comune) ----------
+\draw[fill=yellow!15, draw=black!60]
+      ({\xz-0.2},0) rectangle ({\xz+30*\passov+0.2},-0.8);
+\foreach \k in {0,...,30} \draw ({\xz+\k*\passov},0) -- ++(0,-0.35);
+\foreach \k in {0,5,...,30} {
+    \draw[thick] ({\xz+\k*\passov},0) -- ++(0,-0.55);
+    \node[font=\footnotesize, below] at ({\xz+\k*\passov},-0.8) {\k};
+}
+\node[lab, anchor=north east] at ({\xz+30*\passov+0.2},-1.7) {nonio (30 tacche)};
+
+% ---------- evidenziazioni ----------
+% tacca 175 della scala principale e zero del nonio (blu)
+\draw[blue!60!black, very thick] (0,0) -- (0,0.55);
+\draw[blue!60!black, very thick] (\xz,0) -- (\xz,-0.55);
+\node[lab, anchor=north, blue!60!black] at (-0.2,-1.7) {zero del nonio};
+\draw[->, thin, blue!60!black] (-0.1,-1.65) -- (\xz,-1.2);
+
+% tacca del nonio che coincide con una tacca della scala (rosso)
+\draw[red!70!black, very thick] ({\nn*\passo},0) -- ++(0,0.55);
+\draw[red!70!black, very thick] ({\xz+\nn*\passov},0) -- ++(0,-0.55);
+% sostituisci la riga della label rossa con:
+\node[lab, anchor=north, red!70!black] at ({\nn*\passo+1.3},-1.7)
+    {tacca \nn\ coincidente};
+\draw[->, thin, red!70!black] ({\nn*\passo+0.6},-1.65) -- ({\nn*\passo},-1.2);
+
+% ---------- risultato ----------
+
+\end{tikzpicture}
+\caption{Esempio di lettura con il nonio.}
+\end{figure}
+
+
 
 \subsection{Procedura di misurazione}
 La procedura si divide in due fasi principali:
@@ -2454,11 +2868,43 @@ L'errore propagato su $\delta_{\text{min}}$ sarà la somma in quadratura degli e
 \subsection{Analisi Dati}
 Al termine delle misurazioni avremo a disposizione un set di 14 punti (13 filtri + 1 lampada al sodio). Riportando in grafico l'indice di rifrazione calcolato $n$ in funzione della lunghezza d'onda $\lambda$, si osserverà l'andamento dispersivo del vetro.
 
-\vspace{1em}
-\begin{center}
-    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO: Plot sperimentale $n$ in funzione di $\lambda$]}}
-\end{center}
-\vspace{1em}
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.85\textwidth, height=7cm,
+    xlabel={$\lambda$ (nm)}, ylabel={$n$},
+    xmin=430, xmax=720, ymin=1.510, ymax=1.530,
+    grid=both, grid style={gray!25},
+    scaled y ticks=false,
+    yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
+    legend pos=north east, legend cell align=left
+]
+
+% 13 filtri (DATI DI ESEMPIO: sostituire con le misure)
+\addplot+[only marks, mark=*, mark size=2pt, color=blue!60!black,
+    error bars/.cd, x dir=both, x fixed=10, y dir=both, y fixed=0.0005]
+coordinates {
+    (450,1.5258) (470,1.5232) (490,1.5219) (510,1.5204) (530,1.5190)
+    (550,1.5189) (570,1.5171) (600,1.5160) (620,1.5158) (640,1.5142)
+    (660,1.5145) (680,1.5134) (700,1.5129)
+};
+\addlegendentry{filtri}
+
+% lampada al sodio (DATO DI ESEMPIO)
+\addplot+[only marks, mark=square*, mark size=2.5pt, color=red!70!black,
+    error bars/.cd, x dir=both, x fixed=1, y dir=both, y fixed=0.0005]
+coordinates { (589,1.5170) };
+\addlegendentry{lampada Na}
+
+% andamento di Cauchy n = A + B/lambda^2 (OPZIONALE, valori indicativi: cancella o sostituisci col tuo fit)
+\addplot[dashed, gray, thick, domain=440:710, samples=60] {1.5046 + 4200/x^2};
+\addlegendentry{andamento dati}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Indice di rifrazione $n$ del vetro del prisma in funzione della lunghezza d'onda $\lambda$ (13 filtri e lampada al sodio). L'indice diminuisce al crescere di $\lambda$, come atteso per la dispersione normale.}
+\end{figure}
 
 Per confermare il modello teorico, effettueremo un fit dei dati secondo due modelli:
 \begin{itemize}

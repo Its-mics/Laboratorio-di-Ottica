@@ -26,8 +26,8 @@
 \contentsline {subsection}{\numberline {1.8.4}Modello di fit e ricerca della focale}{30}{subsection.1.8.4}%
 \contentsline {section}{\numberline {1.9}Propagazione della luce in un dielettrico}{30}{section.1.9}%
 \contentsline {subsection}{\numberline {1.9.1}Modello di Lorentz per l'indice di rifrazione}{30}{subsection.1.9.1}%
-\contentsline {section}{\numberline {1.10}Esperienza 3: Calcolo di $n$ partendo dal modello di Sellmeier}{33}{section.1.10}%
+\contentsline {section}{\numberline {1.10}Esperienza 3: Calcolo di $n$ partendo dal modello di Sellmeier}{34}{section.1.10}%
 \contentsline {subsection}{\numberline {1.10.1}Teoria: Prisma e angolo di deviazione minima}{34}{subsection.1.10.1}%
-\contentsline {subsection}{\numberline {1.10.2}L'apparato strumentale}{35}{subsection.1.10.2}%
-\contentsline {subsection}{\numberline {1.10.3}Procedura di misurazione}{36}{subsection.1.10.3}%
-\contentsline {subsection}{\numberline {1.10.4}Analisi Dati}{37}{subsection.1.10.4}%
+\contentsline {subsection}{\numberline {1.10.2}L'apparato strumentale}{36}{subsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.10.3}Procedura di misurazione}{38}{subsection.1.10.3}%
+\contentsline {subsection}{\numberline {1.10.4}Analisi Dati}{39}{subsection.1.10.4}%
