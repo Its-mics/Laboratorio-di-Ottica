@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792498063.10681 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792498064.33463 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792498061.53237 38974 9a64dd691c1c5ccde1fc3b4e947a6ced ""
+["pdflatex"] 1792498125.41972 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792498126.65125 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792498125.25063 38967 01cb798b2f03176cac3c218903533854 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -276,10 +276,10 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1788443550 3636777 f03ef9da5e1eb17495f4663aaf7533af ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "FOTO_MINCHIA.png" 1792424331.89948 91958 a66ce14a9df4885211a3f5a6268c2048 ""
-  "esperienza2.aux" 1792498064.24556 7928 2138ddf394f24ceae38bde5957497adf "pdflatex"
-  "esperienza2.out" 1792498064.24648 1061 d286d1cadc9a3db838dbce32f1ac586b "pdflatex"
-  "esperienza2.tex" 1792498061.53237 38974 9a64dd691c1c5ccde1fc3b4e947a6ced ""
-  "esperienza2.toc" 1792498064.24662 667 8a350b4a963e581b54b2b4dc7c79cb29 "pdflatex"
+  "esperienza2.aux" 1792498126.56243 7928 2138ddf394f24ceae38bde5957497adf "pdflatex"
+  "esperienza2.out" 1792498126.56331 1061 d286d1cadc9a3db838dbce32f1ac586b "pdflatex"
+  "esperienza2.tex" 1792498125.25063 38967 01cb798b2f03176cac3c218903533854 ""
+  "esperienza2.toc" 1792498126.56345 667 8a350b4a963e581b54b2b4dc7c79cb29 "pdflatex"
   "fit_line.png" 1792482512.95508 19651 c51cde26e86f428901b7e97fbacc311b ""
   "fit_root.png" 1792482512.46153 24106 a228cc7963a284a5e40cb2238d8eb190 ""
   "fit_root_split.png" 1792438718.4445 21383 9cbb0d9d18023f177197926f011c31f2 ""
