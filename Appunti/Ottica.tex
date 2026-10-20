@@ -2292,35 +2292,126 @@ Nonostante questo, la formula di Sellmeier si adatta anche ai mezzi densi, perch
 
 
 \section{Esperienza 3: Calcolo di n partendo dal modello di Sellmeier}
-Quello che andremmo a fare è calcolare la quantità:
 \begin{equation}
-    n = \sqrt{1 + \frac{A x^2}{x^2 - {B}^2}}
+    n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - {\lambda_0}^2}
 \end{equation}
-Andremmo poi a confrotnare questo con una retta del tipo: $y = A + Bx$
-\subsection{Prisma - angolo di deviazione minima}
 
-Considero un prisma e un fascio di luce incidente su di esso, chiamo $\delta$ l'angolo di deviazione del fascio. Posso definire $\delta$ come:
+Quello che andremmo a fare è calcolare la quantità $A$ e $\lambda_0$ quindi avremo un fit a 2 parametri:
+\begin{equation}
+    y = \sqrt{1 + \frac{A x^2}{x^2 - {B}^2}}
+\end{equation}
+mettendo $B^2$ per avere le stesse unità di misura di x.
+Andremmo poi a confrontare questo con una retta del tipo: $y = A + Bx$.
+Noteremo che il $\chi^2$ del fit iniziale risulterà essere più piccolo di quello della retta e quindi possiamo dire che i nostri dati preferiscono seguire il primo fit (se le cose funzionano), perché
+la curvatura data dalla legge di Sellmeier è abbastanza piccola e l'intervallo di lunghezze d'onda che possiamo utilizzare è abbastanza ristretto, quindi i punti si adattano abbastana bene anche ad una retta.
+
+
+\subsection{Prisma - angolo di deviazione minima}
+Per fare questa misura dobbiamo vedere un prisma e  cosa è lk'angolo di deviazione minima.
+
+si consideri un prisma e un fascio di luce incidente su di esso, chiamo $\delta$ l'angolo di deviazione del fascio. 
+definisco una normale al lato sinistro, un raggio che entra con un angolo $\theta1$ questo raggio sarà un pò rifratto, e avrà la un angolo rispetto la normale $\theta_{1}^{'}$ per poi andare a sbattere contro la parete destra con un angolo $\theta_{2}^{'}$ e viene 
+rifratto di nuovo uscendo con un angolo $\theta_2$.
+Prolungando gli angoli si trova un angolo $\delta$ ovvero l'angolo di deviazione del raggio dovuto al fatto che c'è un prisma nel mezzo.
+
+
+GRAFICO CAZZO 4
+
+Posso definire $\delta$ come:
 \begin{equation}
     \delta = ( \theta_1 - {\theta_1}') + ( \theta_2 - {\theta_2}') = \theta_1 + \theta_2 - \alpha
 \end{equation}
-dove $\theta_1$ e $\theta_2$ sono gli angoli di incidenza sui bordi del prisma, mentre $\theta_1'$ e $\theta_2'$ sono gli angoli di rifrazione sui bordi del prisma.
-Inoltre so anche che l'angolo del prisma è colelgato con delta con:
+dove $\alpha$ è l'angolo al vertice alto del nostro prisma (nel nostro caso $\alpha = \frac{\pi}{4}$),  $\theta_1$ e $\theta_2$ sono gli angoli di incidenza sui bordi del prisma, mentre $\theta_1'$ e $\theta_2'$ sono gli angoli di rifrazione sui bordi del prisma.
+Inoltre so anche che l'angolo del prisma è colelgato con delta con (somma angoli interni di un triangolo):
 \begin{equation}
-    \alpha = \pi - (\frac{\pi}{2} - {\theta_1}') - (\frac{\pi}{2} - {\theta_2}' )= {\theta_1}' - {\theta_2}' 
+    \alpha = \pi - (\frac{\pi}{2} - {\theta_1}') - (\frac{\pi}{2} - {\theta_2}' )= {\theta_1}' + {\theta_2}' 
+\end{equation}
+e quindi:
+\begin{equation}
+    \delta = \theta_1 + \theta_2 - \alpha
+\end{equation}
+il legame tra angoli interni e esterni è snell:
+\begin{equation}
+    \begin{cases}
+        n sin \theta_{1} = n^{'} sin \theta_{1}^{'} \\
+        n sin \theta_{2} = n^{'} sin \theta_{2}^{'}
+    \end{cases}
 \end{equation}
 
-Per trovare angolo minimo allora uso il fatto che quando sono li, non vedo differenza se cambio l'angolo in ingresso $\theta_1$, impongo la condizione:
+
+Per trovare l'angolo di deviazione minimo allora uso il fatto che quando sono li, non vedo differenza se cambio l'angolo in ingresso $\theta_1$, impongo la condizione:
 \begin{equation}
-    \frac{d \delta}{d \theta_1}= 1 + \frac{d \theta_2}{d \theta_2}= 0 
+    \frac{d \delta}{d \theta_1}= 1 + \frac{d \theta_2}{d \theta_1}= 0 
 \end{equation}
-Inoltre differenziando anche la formula per $\alpha$ e usando legge di rifrazione posso trovare che:
+e quindi
 \begin{equation}
-    \frac{\cos({\theta_2}')}{\cos({\theta_1}')}= \frac{\cos({\theta_2})}{\cos({\theta_1})}
+     \frac{d \theta_2}{d \theta_1} = -1
 \end{equation}
-Alla fine posso trovare che:
+ovvero quando $\theta_1$ aumenta $\theta_2$ diminuisce della stessa quantità.
+
+La soluzione che stiamo cercando è quella che rende simmetrica il nostro sistema $\theta_1 = \theta_2$ poiché è l'unica soluzione particolare nel mio sistema.
+Ora usando la legge della rifrazione e differenziandola troviamo:
+\begin{equation}
+    \begin{cases}
+        n sin \theta_{1} d\theta_{1} = n^{'} sin \theta_{1}^{'} d\theta_{1}^{'} \\
+        n sin \theta_{2} d\theta_{2} = n^{'} sin \theta_{2}^{'} d\theta_{2}^{'}
+    \end{cases}
+    \rightarrow
+    \qquad 
+    \frac{ d\theta_{1}^{'}}{d\theta_{2}^{'}}\frac{\cos({\theta_1}')}{\cos({\theta_2}')}= \frac{d\theta_{1}}{d\theta_{2}}\frac{\cos({\theta_1})}{\cos({\theta_2})}
+\end{equation}
+
+Ricavando che $ \frac{d\theta_{1}^{'}}{d\theta_{2}^{'}} = -1$ si riesce a scrivere infine:
+\begin{equation}
+   \frac{\cos({\theta_1}')}{\cos({\theta_2}')}=\frac{\cos({\theta_1})}{\cos({\theta_2})} 
+   \rightarrow
+   \cos({\theta_1}) \cos({\theta_2}') = \cos({\theta_2}) \cos({\theta_1}')
+\end{equation}
+posso ora sfruttare: 
+\begin{equation}
+    \theta_1 = \frac{\alpha}{2}+ x \rightarrow \theta_2 =  \frac{\alpha}{2} - x 
+\end{equation}
+per cui:
+\begin{equation}
+   \cos({\theta_1}) \cos( \frac{\alpha}{2} - x ) = \cos({\theta_2}) \cos( \frac{\alpha}{2} + x )
+\end{equation}
+posso sviluppare:
+\begin{equation}
+   \cos({\theta_1}) \cos( \frac{\alpha}{2}) \cos(x) + \cos({\theta_1}) \sin( \frac{\alpha}{2}) \sin(x)  = \cos({\theta_2}) \cos( \frac{\alpha}{2}) \cos(x) - \cos({\theta_2}) \sin( \frac{\alpha}{2}) \sin(x)
+\end{equation}
+
+\begin{equation}
+ \cos( \frac{\alpha}{2}) \cos(x) ( \cos({\theta_1})-  \cos({\theta_2})) + \sin( \frac{\alpha}{2}) \sin(x)  ( \cos({\theta_1}) +  \cos({\theta_2}))  = 0
+\end{equation}
+questa relazione vale per qualsiasi valore del mio angolo, sappiamo che $\cos( \frac{\alpha}{2})$ e $\sin( \frac{\alpha}{2})$ sono 2 funzioni ortogonali,
+per cui se provo moltiplicare tutto per $\cos( \frac{\alpha}{2})$ e integrare su $\alpha$, trovando che il primo termine mi darà un certo coefficiente mentre il secondo mi darà contributo zero (viceversa per il seno), quindi devo soddisfare contemporaneamente queste 2 relazioni:
+\begin{equation}
+    \cos(x) (\cos(\theta_1) - \cos(\theta_2) )= 0 \qquad \sin(x) (\cos(\theta_1) + \cos(\theta_2) )= 0
+\end{equation}
+
+vediamo cosa ci dice la prima relazione, se prendo $\theta_1 = \theta_2$ x sarà uguale a zero ($x=0$) che mi manda a 0 anche l'altra soluzione, un altra soluzione possibile è $x=\frac{\pi}{2}$ ma la devo escludere poiché $\theta_{1}^{'}$ sarebbe più grande di $\frac{\pi}{2}$, un altro caso è porre $x=0$ e  $\theta_1 = \pi - \theta_2$ per mandare a 0 il termine tra parentesi, dove anche qua si ripresentano angoli maggiori di $\frac{\pi}{2}$.
+Per cui la nostra soluzione sarà:
+\begin{equation}
+    \begin{cases}
+        x=0\\
+        \theta_1 = \theta_2 = \theta\\
+        \theta_1' = \theta_2' = \theta'\\
+        n sin\theta = n' sin\theta' 
+    \end{cases}
+\end{equation}
+per cui $\delta$ diventerà: 
+\begin{equation}
+    \delta = 2 \theta - \alpha
+\end{equation}
+
+Alla fine trovo dalla legge di rifrazione :
 \begin{equation}
     n' = n \frac{\sin(\frac{\delta_{\text{min}} + \alpha}{2})}{\sin(\frac{\alpha}{2})}
 \end{equation}
+
+per cui se sono in grado di misurare angoli di deviazione minima, attraverso questa relazione posso ricavare l'indice di rifrazione e una volta misurato
+lo posso mettere in un grafico in funzione della lunghezza d'onda utilizzata, per vedere come l'indice di rifrazione cambia, per poi verificare se l'andamento rispecchio la legge di smelleier. 
+
 
 \subsection{Il setup}
 Utilizzeremo una lampada al sodio (Na) con una lunghezza d'onda di emissione pari a: $ \lambda = 589 nm  \pm 1$
