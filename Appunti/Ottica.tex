@@ -2199,235 +2199,286 @@ L'errore finale sulla distanza focale sarà semplicemente $\sigma_C$ restituito 
 \end{align*}
 (Notiamo che in $\Delta B$ è corretto trascurare l'errore di posizionamento su $x_0$).\
 
+
 \section{Propagazione della luce in un dielettrico}
 \subsection{Modello di Lorentz per l'indice di rifrazione}
-Si applica nel caso di gas rarefatti (mezzo dielettrico), quando non c'è interazione tra le molecole del gas. 
-Si consideri quindi un gas dove al suo interno vi sono $N$ cariche per unità di volume, ciascuna con carica $q=e^-$. Ipotizzando di poterle spostare tutte di una distanza $\vec{r}$ dalla loro posizione di equilibrio,
-allora si otterrebbe una polarizzazzione macroscopica $\vec{P}= - N e \vec{r}$. 
 
-Se questo spostamento è dovuto ad un campo elettrico (statico ed appliccato a tutto il mezzo) e lo spostamento è piccolo, allora posso dire che l'elettrone è legato elasticamente da una forza: $ \vec{F}= -e \vec{E} = k \vec{r}$ alla sua posizione di equilibrio (poiché siamo vicini al minimo), da cui: 
-\begin{equation}
-    \vec{P}= \frac{N e^2}{k} \vec{E}
-\end{equation}
-Nel caso il campo non sia statico allora introduco un termine dissipativo dovuto alla radiazione dei dipoli e risolvo l'equazione differenziale:
-\begin{equation}
-    m \frac{d^2\vec{r}}{dt^2} + m \gamma \frac{d \vec{r}}{dt} + mw_0^2 \vec{r} = -e \vec{E}
-\end{equation}
-dove $\gamma$ è la costante dispersiva dell'attrito e $m \gamma \frac{d \vec{r}}{dt}$ la forza dispersiva propozionale alla velocità di $e^-$.
-Assumendo che il campo $\vec{E}$ sia generato da un onda elettromagntica, si avrà che $E \propto e^{- i \omega t}$, e poichè lo spostamento causato sarà sempre oscillatorio:
-\begin{equation}
-    -mw^2 - iwm\gamma + mw_0^2 = -e\vec E
-\end{equation}
-da cui, sostituendo in $\vec P$
-\begin{equation}
-    P = \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \vec E
-\end{equation}
-con $\omega_0 = \sqrt{\frac{k}{m}}$ la frequenza della risonanza.
+Si applica tipicamente al caso di gas rarefatti (mezzi dielettrici), dove è lecito trascurare l'interazione reciproca tra le molecole del gas stesso. 
 
-Ricordando le equazioni di Maxwell nei mezzi:
+Si consideri un mezzo gassoso contenente $N$ atomi (o molecole) per unità di volume. Concentriamoci per ora su un singolo elettrone di carica $q = -e$ per ogni atomo. Se a causa di un campo esterno gli elettroni vengono spostati di una distanza $\mathbf{r}$ rispetto alla loro posizione di equilibrio, si genera una polarizzazione macroscopica del mezzo pari a:
+\begin{equation}
+    \mathbf{P} = - N e \mathbf{r}
+\end{equation}
+
+Se questo spostamento è causato da un campo elettrico statico $\mathbf{E}$ applicato a tutto il mezzo e lo spostamento è sufficientemente piccolo, l'elettrone subisce una forza elettrica $\mathbf{F}_{\text{el}} = -e \mathbf{E}$. Essendo vicino al minimo del potenziale, l'elettrone è soggetto a una forza di richiamo (modellizzata come) elastica $\mathbf{F}_{\text{el}} = -k \mathbf{r}$. 
+All'equilibrio, le due forze si bilanciano ($-e \mathbf{E} = k \mathbf{r}$), da cui si ricava lo spostamento $\mathbf{r} = -\frac{e}{k} \mathbf{E}$. Sostituendo questo risultato nell'espressione della polarizzazione otteniamo:
+\begin{equation}
+    \mathbf{P} = \frac{N e^2}{k} \mathbf{E}
+\end{equation}
+
+Nel caso in cui il campo elettrico non sia statico ma oscillante, l'elettrone si comporterà come un oscillatore armonico smorzato. Introduciamo quindi l'equazione del moto tenendo conto di un termine dissipativo (dovuto all'attrito e alla radiazione emessa dal dipolo oscillante):
+\begin{equation}
+    m \frac{d^2\mathbf{r}}{dt^2} + m \gamma \frac{d\mathbf{r}}{dt} + m \omega_0^2 \mathbf{r} = -e \mathbf{E}
+\end{equation}
+dove:
+\begin{itemize}
+    \item $\gamma$ è la costante di smorzamento (dispersiva);
+    \item $m \gamma \frac{d\mathbf{r}}{dt}$ è la forza viscosa proporzionale alla velocità dell'elettrone;
+    \item $\omega_0 = \sqrt{\frac{k}{m}}$ è la frequenza di risonanza naturale dell'oscillatore.
+\end{itemize}
+
+Assumendo che il campo $\mathbf{E}$ sia generato da un'onda elettromagnetica, esso oscillerà con legge armonica $\mathbf{E} \propto e^{- i \omega t}$. Di conseguenza, anche lo spostamento $\mathbf{r}$ avrà un andamento del tipo $\mathbf{r} \propto e^{- i \omega t}$. Calcolando le derivate temporali (che equivalgono a moltiplicare per $-i\omega$), l'equazione differenziale diventa un'equazione algebrica:
+\begin{equation}
+    (-m\omega^2 - i\omega m\gamma + m\omega_0^2)\mathbf{r} = -e\mathbf{E}
+\end{equation}
+Isolando lo spostamento $\mathbf{r}$ e sostituendolo nella definizione di polarizzazione $\mathbf{P} = -N e \mathbf{r}$, si ottiene la polarizzazione dinamica del mezzo:
+\begin{equation}
+    \mathbf{P} = \frac{N e^2/m}{\omega_0^2 - \omega^2 - i\omega \gamma} \mathbf{E}
+\label{eq:polarizzazione_dinamica}
+\end{equation}
+
+Per capire come questa polarizzazione influisca sulla propagazione della luce, ricordiamo le equazioni di Maxwell per i mezzi materiali:
 \begin{equation}
     \begin{cases}
-        \nabla \times \mathbf{E}  = \mu_0 \frac{\partial \mathbf{H}}{\partial t}\\
-        \nabla \times \mathbf{H} - \frac{\partial \mathbf{D}}{\partial t} + \mathbb{J} = 0 \\
-        \rho = \nabla \cdot \mathbf{D} \\
+        \nabla \times \mathbf{E}  = - \mu_0 \frac{\partial \mathbf{H}}{\partial t}\\
+        \nabla \times \mathbf{H} = \frac{\partial \mathbf{D}}{\partial t} + \mathbf{J} \\
+        \nabla \cdot \mathbf{D} = \rho \\
         \nabla \cdot \mathbf{B} = 0
     \end{cases}
 \end{equation}
 
-Applicando alla prima il rotore ottengo:
+Applicando l'operatore rotore ($\nabla \times$) alla prima equazione otteniamo l'equazione delle onde. Sfruttando l'identità vettoriale $\nabla \times (\nabla \times \mathbf{E}) = \nabla(\nabla \cdot \mathbf{E}) - \nabla^2 \mathbf{E}$ e considerando le ipotesi del nostro sistema fisico (gas perfetto senza cariche o correnti libere, quindi $\mathbf{J}=0$ e $\rho=0 \implies \nabla \cdot \mathbf{E} = 0$), l'equazione si semplifica in:
 \begin{equation}
-    \nabla \times(\nabla \times \mathbf{E}) = - \mu_0 \frac{\partial \nabla \times \mathbf{H}}{\partial t} = - \mu_0 \varepsilon_0 \frac{\partial^2 \mathbf{E}}{\partial t^2} +\frac{\partial \mu_0 \mathbf{J}}{\partial t} + \frac{\partial \mathbf{P}}{\partial t}
+    -\nabla^2 \mathbf{E} = - \mu_0 \frac{\partial}{\partial t} \left( \frac{\partial \mathbf{D}}{\partial t} \right)
 \end{equation}
-Supponendo di essere in assenza di correnti liberi (siamo in un gas) allora $\mathbf{J}=0$ e
-sostituendo la forma di $\mathbf{P}$ trovata in precedenza, ricordando $\nabla \times (\nabla \times \mathbf{E}) = - \nabla^2 E + \nabla \cdot (\nabla \cdot E)$
-e supponendo $\rho = 0$ si ottiene ( e quindi le divergenze di E e P = 0):
-
+Ricordando che $\mathbf{D} = \varepsilon_0 \mathbf{E} + \mathbf{P}$, si ricava:
 \begin{equation}
-    \nabla \times ( \nabla \times \mathbf{E}) = \frac{1}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2} (1 + \frac{N e^2/m }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma } \frac{\partial^2 \mathbf{E}}{\partial t^2}) = -\nabla^2\mathbf{E}
+    \nabla^2 \mathbf{E} = \mu_0 \varepsilon_0 \frac{\partial^2 \mathbf{E}}{\partial t^2} + \mu_0 \frac{\partial^2 \mathbf{P}}{\partial t^2}
 \end{equation}
-si ottiene l'equazione d'onda con $v \neq c$
+Sostituendo l'espressione di $\mathbf{P}$ trovata nell'Equazione \ref{eq:polarizzazione_dinamica} e ricordando che $\mu_0 \varepsilon_0 = 1/c^2$, si può raccogliere a fattor comune la derivata temporale (essendo sia $\mathbf{P}$ che $\mathbf{E}$ proporzionali a $e^{-i\omega t}$):
 \begin{equation}
-    K^2 = C^2 (1+...)^{-1}
+    \nabla^2 \mathbf{E} = \frac{1}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2} \left( 1 + \frac{N e^2}{\varepsilon_0 m} \frac{1}{\omega_0^2 - \omega^2 - i\omega \gamma} \right)
 \end{equation}
-per cui il mio indice di rifrazione sarà: 
+Questa è l'equazione delle onde $\nabla^2 \mathbf{E} = \frac{n^2}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2}$, dove il termine tra parentesi rappresenta proprio il quadrato dell'indice di rifrazione complesso:
 \begin{equation}
-    n^2 = 1 + \frac{N e^2}{\varepsilon_0 m}\frac{1 }{{\omega_{0}}^{2} - \omega^2 - i\omega \gamma }
-\end{equation}
-Questo ci dice che l'indice di rifrazione ha un andamento con un termine che dipende dalla frequenza dell'onda elettromagnetica e con un coefficiente tipico delle risonanze.
-Ci si aspetta quindi di avere un effetto più grande quando ci si trova ad una frequenza vicino allo zero.
-Un altra cosa da notare p che n ha sia parte reale che immaginaria ($ n = Re[n] + i IM[n]$) che vedremo cosa comporta.
-
-
-Se andiamo a studiare l'andamento in funzione di $\omega$ in corrispondenza di $Re[n]$ e di $Im[n]$:
-
-GRAFICO CAZZZO
-
-Si può quindi riscrive l'equazione del campo elettrico come $\vec{E} = \vec{E_0} e^{-i(\omega t- Re[n]kz)} e^{- Im[n]kz}$, ovvero ho un ampiezza (l'ultimo termine è un valore reale) decrescente nel tempo.
-Questo poicé a causa di fenomeni di assorbimento/attrito diminuisce l'energia ed ampiezza dell'onda man mano che l'onda si propaga (calore o fenomeni di diffusione).
-Inoltre all'interno degli atomi del gas non c'è solo un elettrone ma diversi che appartegono a gusci atomici diversi, che comporta una diversità di costanti elastiche e quindi frequenze.
-Tenendo conto di questo effetto e quindi di varie frequenze di risonanza si introduce la sommatoria sulle varie componenti che è svolta sulle frazioni di elettroni che hanno una certa energia di legame (ovvero che tiene conto delle varie tipologie di legame). 
-\begin{equation}
-        n^2 = 1 + \frac{N e^2}{\varepsilon_0 m} \sum_{j=1}^{l}  \frac{f_j }{{\omega_{j}}^{2} - \omega^2 - i\omega \gamma_j }
+    n^2 = 1 + \frac{N e^2}{\varepsilon_0 m} \frac{1}{\omega_0^2 - \omega^2 - i\omega \gamma}
 \end{equation}
 
-GRAFICO CAZZO 2
+Questa formula ci mostra che l'indice di rifrazione dipende dalla frequenza $\omega$ dell'onda incidente, ed è caratterizzato da un profilo risonante. L'effetto sulla propagazione sarà massimo quando la frequenza dell'onda è vicina alla frequenza di risonanza del mezzo ($\omega \approx \omega_0$). 
+Inoltre, $n$ è una quantità complessa ($n = \text{Re}[n] + i \text{Im}[n]$).
 
-Nel caso in cui passo dalla frequenza alla lunghezza d'onda $\lambda$ e $\gamma=0$, allora posso introdurre la Formula di Sellmeier:
+Studiando l'andamento della parte reale $\text{Re}[n]$ e della parte immaginaria $\text{Im}[n]$ in funzione di $\omega$, si osserva il seguente comportamento:
 
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZZO: Andamento di Re(n) e Im(n) rispetto a $\omega$]}}
+\end{center}
+
+Per comprendere il significato di $n$, consideriamo la propagazione del campo elettrico lungo l'asse $z$: $\mathbf{E} = \mathbf{E}_0 e^{i(k z - \omega t)}$. Sapendo che $k = n \frac{\omega}{c} = (\text{Re}[n] + i \text{Im}[n]) k_0$, l'equazione dell'onda si riscrive come:
 \begin{equation}
-    n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - {\lambda_0}^2}
+    \mathbf{E}(z,t) = \mathbf{E}_0 e^{- \text{Im}[n] k_0 z} e^{i(\text{Re}[n] k_0 z - \omega t)}
+\end{equation}
+Il termine reale determina la velocità di fase dell'onda, mentre il termine $e^{- \text{Im}[n] k_0 z}$ (strettamente reale e decrescente) rappresenta un decadimento esponenziale dell'ampiezza. La parte immaginaria dell'indice di rifrazione è quindi direttamente responsabile dell'assorbimento dell'onda man mano che si propaga, un fenomeno dovuto alla dissipazione di energia (attrito/calore o diffusione) nel mezzo.
+
+Nella realtà atomica, un atomo possiede più elettroni distribuiti in diversi orbitali (gusci energetici), ciascuno caratterizzato da una diversa costante elastica e, di conseguenza, da una diversa frequenza di risonanza $\omega_j$. 
+Per tenere conto di questo, si introduce una sommatoria pesata sulle varie frequenze di risonanza, dove $f_j$ rappresenta la frazione di elettroni associata all'energia di legame $j$-esima:
+\begin{equation}
+        n^2 = 1 + \frac{N e^2}{\varepsilon_0 m} \sum_{j}  \frac{f_j}{\omega_j^2 - \omega^2 - i\omega \gamma_j}
 \end{equation}
 
-dove il suo indice di rifrazione ha un andamento del genere sia in funzione di $Re[n]$ che di $\lambda$:
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZO 2: Andamento con risonanze multiple]}}
+\end{center}
 
-
-
-GRAFICO CAZZO 3 
-
-una cosa da notare nella definizione dell'indice di rifrazione iniziale è che nel nostro calcolo si è tenuto conto solo degli elettroni si è trascurato quindi che il nucleo degli atomi possano spostarsi per via del campo esterno.
-Si è trascurato poiché la massa è al denominatore e quindi è abbastanza trascurabile rispetto ai contributi degli elettroni ($m_p \sim 2000 m_e$), un altra cosa è il termine $N$ al numeratore, che ci dice quante cariche ci sono nel mezzo, 
-per cui l'indice di rifrazione è lineare in $N$, questo in particolare è vero per valori piccoli di $N$ poiché se quest'ultimo aumenta troppo il gas non è più un mezzo rarefatto, per cui la polarizzazione complessiva è diversa ovvero minore col modello di lorentz,
-perché se tutti gli elettroni si muovono allo stesso modo, questi a loro volta generano un altro campo E che si contrappone a quello originale facendoli muovere di meno.
-Nonostante questo, la formula di Sellmeier si adatta anche ai mezzi densi, perchè tutto ciò viene inglobato nel coefficente A. 
-
-
-\section{Esperienza 3: Calcolo di n partendo dal modello di Sellmeier}
+Lontano dalle risonanze (dove l'assorbimento è trascurabile, $\gamma_j \approx 0$), è spesso utile esprimere questa relazione in termini di lunghezza d'onda $\lambda$ anziché di frequenza $\omega$. Si ottiene così l'\textbf{Equazione di Sellmeier}:
 \begin{equation}
-    n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - {\lambda_0}^2}
+    n^2 = 1 + \sum_i \frac{A_i \lambda^2}{\lambda^2 - \lambda_{0,i}^2}
 \end{equation}
+(che nella sua forma semplificata ad un solo termine predominante diventa $n^2 = 1 + \frac{A \lambda^2}{\lambda^2 - \lambda_0^2}$). 
+In questa forma, l'andamento di $\text{Re}[n]$ in funzione di $\lambda$ assume questo aspetto:
 
-Quello che andremmo a fare è calcolare la quantità $A$ e $\lambda_0$ quindi avremo un fit a 2 parametri:
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZO 3: Andamento di Sellmeier]}}
+\end{center}
+
+\begin{nota}[title=Considerazioni finali sul modello]
+Riguardo al modello appena derivato è importante sottolineare due aspetti fondamentali:
+\begin{enumerate}
+    \item \textbf{Il ruolo del nucleo atomico:} Nel nostro calcolo abbiamo considerato solo la dinamica degli elettroni, trascurando il fatto che anche i nuclei potrebbero spostarsi sotto l'azione del campo elettrico. Questa approssimazione è comunque buona perché la massa compare al denominatore nell'espressione della polarizzazione. Essendo la massa del protone molto più grande di quella dell'elettrone ($m_p \sim 2000 \, m_e$), il contributo dei nuclei alla polarizzazione macroscopica è del tutto trascurabile alle frequenze ottiche.
+    \item \textbf{Dipendenza dalla densità $N$ e limiti del modello:} L'indice di rifrazione cresce linearmente con $N$ (numero di atomi per volume). Questo è vero solo per valori piccoli di $N$ (mezzi rarefatti). Se la densità aumenta troppo (liquidi, solidi o gas densi), le interazioni molecolari non sono più trascurabili. Il campo elettrico percepito dal singolo atomo non è più solo quello dell'onda incidente, ma include anche il campo generato dai dipoli circostanti, i quali si oppongono parzialmente al campo originale smorzando la polarizzazione complessiva (modello di Lorentz-Lorenz). Nonostante ciò, la formula empirica di Sellmeier si adatta perfettamente anche ai mezzi densi, poiché questi effetti microscopici complessi vengono "assorbiti" all'interno dei coefficienti sperimentali $A_i$.
+\end{enumerate}
+\end{nota}
+
+\section{Esperienza 3: Calcolo di $n$ partendo dal modello di Sellmeier}
+
+Lo scopo di questa esperienza è misurare l'indice di rifrazione di un prisma di vetro al variare della lunghezza d'onda e verificare se l'andamento sperimentale segue l'equazione di Sellmeier ricavata teoricamente:
 \begin{equation}
-    y = \sqrt{1 + \frac{A x^2}{x^2 - {B}^2}}
+    n^2(\lambda) = 1 + \frac{A \lambda^2}{\lambda^2 - \lambda_0^2}
 \end{equation}
-mettendo $B^2$ per avere le stesse unità di misura di x.
-Andremmo poi a confrontare questo con una retta del tipo: $y = A + Bx$.
-Noteremo che il $\chi^2$ del fit iniziale risulterà essere più piccolo di quello della retta e quindi possiamo dire che i nostri dati preferiscono seguire il primo fit (se le cose funzionano), perché
-la curvatura data dalla legge di Sellmeier è abbastanza piccola e l'intervallo di lunghezze d'onda che possiamo utilizzare è abbastanza ristretto, quindi i punti si adattano abbastana bene anche ad una retta.
+L'analisi dati consisterà nell'estrarre i parametri incogniti $A$ e $\lambda_0$ tramite un fit non lineare.
 
+\subsection{Teoria: Prisma e angolo di deviazione minima}
+Per poter calcolare l'indice di rifrazione $n$ del vetro, sfrutteremo il fenomeno della rifrazione attraverso un prisma. 
 
-\subsection{Prisma - angolo di deviazione minima}
-Per fare questa misura dobbiamo vedere un prisma e  cosa è lk'angolo di deviazione minima.
+Si consideri un prisma avente un angolo al vertice $\alpha$. Un fascio di luce incide sulla faccia sinistra con un angolo $\theta_1$ rispetto alla normale, viene rifratto all'interno del prisma con un angolo $\theta_1'$, viaggia fino alla faccia destra dove incide con un angolo $\theta_2'$ e infine emerge nell'aria con un angolo $\theta_2$.
+Definiamo $\delta$ l'\textbf{angolo di deviazione}, ovvero l'angolo tra il prolungamento del raggio incidente e il raggio uscente.
 
-si consideri un prisma e un fascio di luce incidente su di esso, chiamo $\delta$ l'angolo di deviazione del fascio. 
-definisco una normale al lato sinistro, un raggio che entra con un angolo $\theta1$ questo raggio sarà un pò rifratto, e avrà la un angolo rispetto la normale $\theta_{1}^{'}$ per poi andare a sbattere contro la parete destra con un angolo $\theta_{2}^{'}$ e viene 
-rifratto di nuovo uscendo con un angolo $\theta_2$.
-Prolungando gli angoli si trova un angolo $\delta$ ovvero l'angolo di deviazione del raggio dovuto al fatto che c'è un prisma nel mezzo.
+\vspace{1em}
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO CAZZO 4: Schema del prisma con angoli $\theta_1, \theta_1', \theta_2', \theta_2, \delta, \alpha$]}}
+\end{center}
+\vspace{1em}
 
-
-GRAFICO CAZZO 4
-
-Posso definire $\delta$ come:
+Dalla geometria del sistema, l'angolo di deviazione totale è la somma delle deviazioni subite sulle due interfacce:
 \begin{equation}
-    \delta = ( \theta_1 - {\theta_1}') + ( \theta_2 - {\theta_2}') = \theta_1 + \theta_2 - \alpha
+    \delta = (\theta_1 - \theta_1') + (\theta_2 - \theta_2') = \theta_1 + \theta_2 - (\theta_1' + \theta_2')
 \end{equation}
-dove $\alpha$ è l'angolo al vertice alto del nostro prisma (nel nostro caso $\alpha = \frac{\pi}{4}$),  $\theta_1$ e $\theta_2$ sono gli angoli di incidenza sui bordi del prisma, mentre $\theta_1'$ e $\theta_2'$ sono gli angoli di rifrazione sui bordi del prisma.
-Inoltre so anche che l'angolo del prisma è colelgato con delta con (somma angoli interni di un triangolo):
+Considerando il triangolo formato dal vertice del prisma e dalle normali alle facce, la somma degli angoli interni ci fornisce la relazione tra l'angolo al vertice $\alpha$ e gli angoli di rifrazione interni:
 \begin{equation}
-    \alpha = \pi - (\frac{\pi}{2} - {\theta_1}') - (\frac{\pi}{2} - {\theta_2}' )= {\theta_1}' + {\theta_2}' 
+    \alpha = \pi - \left(\frac{\pi}{2} - \theta_1'\right) - \left(\frac{\pi}{2} - \theta_2' \right) = \theta_1' + \theta_2'
 \end{equation}
-e quindi:
+Sostituendo $\alpha$ nell'espressione precedente si ottiene la formula generale per la deviazione:
 \begin{equation}
     \delta = \theta_1 + \theta_2 - \alpha
+\label{eq:deviazione}
 \end{equation}
-il legame tra angoli interni e esterni è snell:
+Gli angoli sulle due facce sono inoltre legati dalla legge di Snell:
 \begin{equation}
     \begin{cases}
-        n sin \theta_{1} = n^{'} sin \theta_{1}^{'} \\
-        n sin \theta_{2} = n^{'} sin \theta_{2}^{'}
+        \sin \theta_1 = n \sin \theta_1' \\
+        \sin \theta_2 = n \sin \theta_2'
     \end{cases}
+\label{eq:snell_prisma}
 \end{equation}
 
-
-Per trovare l'angolo di deviazione minimo allora uso il fatto che quando sono li, non vedo differenza se cambio l'angolo in ingresso $\theta_1$, impongo la condizione:
+In laboratorio cercheremo la condizione di \textbf{deviazione minima} ($\delta_{\text{min}}$). Matematicamente, questo avviene quando la derivata di $\delta$ rispetto all'angolo di incidenza $\theta_1$ è nulla:
 \begin{equation}
-    \frac{d \delta}{d \theta_1}= 1 + \frac{d \theta_2}{d \theta_1}= 0 
+    \frac{d \delta}{d \theta_1}= 1 + \frac{d \theta_2}{d \theta_1}= 0 \quad \implies \quad \frac{d \theta_2}{d \theta_1} = -1
 \end{equation}
-e quindi
-\begin{equation}
-     \frac{d \theta_2}{d \theta_1} = -1
-\end{equation}
-ovvero quando $\theta_1$ aumenta $\theta_2$ diminuisce della stessa quantità.
-
-La soluzione che stiamo cercando è quella che rende simmetrica il nostro sistema $\theta_1 = \theta_2$ poiché è l'unica soluzione particolare nel mio sistema.
-Ora usando la legge della rifrazione e differenziandola troviamo:
+Questo significa che, nell'intorno del minimo, se $\theta_1$ aumenta, $\theta_2$ diminuisce della stessa quantità. Differenziando le equazioni di Snell (\ref{eq:snell_prisma}) otteniamo:
 \begin{equation}
     \begin{cases}
-        n sin \theta_{1} d\theta_{1} = n^{'} sin \theta_{1}^{'} d\theta_{1}^{'} \\
-        n sin \theta_{2} d\theta_{2} = n^{'} sin \theta_{2}^{'} d\theta_{2}^{'}
+        \cos \theta_1 \, d\theta_1 = n \cos \theta_1' \, d\theta_1' \\
+        \cos \theta_2 \, d\theta_2 = n \cos \theta_2' \, d\theta_2'
     \end{cases}
-    \rightarrow
-    \qquad 
-    \frac{ d\theta_{1}^{'}}{d\theta_{2}^{'}}\frac{\cos({\theta_1}')}{\cos({\theta_2}')}= \frac{d\theta_{1}}{d\theta_{2}}\frac{\cos({\theta_1})}{\cos({\theta_2})}
+    \quad \implies \quad 
+    \frac{d\theta_1'}{d\theta_2'} \frac{\cos \theta_1'}{\cos \theta_2'} = \frac{d\theta_1}{d\theta_2} \frac{\cos \theta_1}{\cos \theta_2}
+\end{equation}
+Poiché $\alpha = \theta_1' + \theta_2'$ è costante, differenziando si ha $d\theta_1' = - d\theta_2'$, ovvero $\frac{d\theta_1'}{d\theta_2'} = -1$. Sostituendo questa condizione e sapendo che $\frac{d \theta_2}{d \theta_1} = -1$, la relazione precedente diventa:
+\begin{equation}
+   \frac{\cos \theta_1'}{\cos \theta_2'} = \frac{\cos \theta_1}{\cos \theta_2} \quad \implies \quad \cos \theta_1 \cos \theta_2' = \cos \theta_2 \cos \theta_1'
 \end{equation}
 
-Ricavando che $ \frac{d\theta_{1}^{'}}{d\theta_{2}^{'}} = -1$ si riesce a scrivere infine:
+Cerchiamo la soluzione simmetrica introducendo una perturbazione $x$ rispetto al valore medio:
 \begin{equation}
-   \frac{\cos({\theta_1}')}{\cos({\theta_2}')}=\frac{\cos({\theta_1})}{\cos({\theta_2})} 
-   \rightarrow
-   \cos({\theta_1}) \cos({\theta_2}') = \cos({\theta_2}) \cos({\theta_1}')
+    \theta_1 = \frac{\alpha}{2} + x \quad \text{e} \quad \theta_2 = \frac{\alpha}{2} - x 
 \end{equation}
-posso ora sfruttare: 
+Sostituendo nell'uguaglianza dei coseni e sviluppando con le formule di addizione:
 \begin{equation}
-    \theta_1 = \frac{\alpha}{2}+ x \rightarrow \theta_2 =  \frac{\alpha}{2} - x 
+   \cos \theta_1 \cos\left( \frac{\alpha}{2} - x \right) = \cos \theta_2 \cos\left( \frac{\alpha}{2} + x \right)
 \end{equation}
-per cui:
 \begin{equation}
-   \cos({\theta_1}) \cos( \frac{\alpha}{2} - x ) = \cos({\theta_2}) \cos( \frac{\alpha}{2} + x )
+ \cos\left(\frac{\alpha}{2}\right) \cos(x) ( \cos \theta_1 - \cos \theta_2 ) + \sin\left(\frac{\alpha}{2}\right) \sin(x) ( \cos \theta_1 + \cos \theta_2 ) = 0
 \end{equation}
-posso sviluppare:
+Poiché $\cos(\alpha/2)$ e $\sin(\alpha/2)$ sono ortogonali (lin. indipendenti), l'equazione è soddisfatta solo se si annullano contemporaneamente entrambi i coefficienti:
 \begin{equation}
-   \cos({\theta_1}) \cos( \frac{\alpha}{2}) \cos(x) + \cos({\theta_1}) \sin( \frac{\alpha}{2}) \sin(x)  = \cos({\theta_2}) \cos( \frac{\alpha}{2}) \cos(x) - \cos({\theta_2}) \sin( \frac{\alpha}{2}) \sin(x)
+    \cos(x) (\cos \theta_1 - \cos \theta_2)= 0 \qquad \text{e} \qquad \sin(x) (\cos \theta_1 + \cos \theta_2)= 0
 \end{equation}
-
-\begin{equation}
- \cos( \frac{\alpha}{2}) \cos(x) ( \cos({\theta_1})-  \cos({\theta_2})) + \sin( \frac{\alpha}{2}) \sin(x)  ( \cos({\theta_1}) +  \cos({\theta_2}))  = 0
-\end{equation}
-questa relazione vale per qualsiasi valore del mio angolo, sappiamo che $\cos( \frac{\alpha}{2})$ e $\sin( \frac{\alpha}{2})$ sono 2 funzioni ortogonali,
-per cui se provo moltiplicare tutto per $\cos( \frac{\alpha}{2})$ e integrare su $\alpha$, trovando che il primo termine mi darà un certo coefficiente mentre il secondo mi darà contributo zero (viceversa per il seno), quindi devo soddisfare contemporaneamente queste 2 relazioni:
-\begin{equation}
-    \cos(x) (\cos(\theta_1) - \cos(\theta_2) )= 0 \qquad \sin(x) (\cos(\theta_1) + \cos(\theta_2) )= 0
-\end{equation}
-
-vediamo cosa ci dice la prima relazione, se prendo $\theta_1 = \theta_2$ x sarà uguale a zero ($x=0$) che mi manda a 0 anche l'altra soluzione, un altra soluzione possibile è $x=\frac{\pi}{2}$ ma la devo escludere poiché $\theta_{1}^{'}$ sarebbe più grande di $\frac{\pi}{2}$, un altro caso è porre $x=0$ e  $\theta_1 = \pi - \theta_2$ per mandare a 0 il termine tra parentesi, dove anche qua si ripresentano angoli maggiori di $\frac{\pi}{2}$.
-Per cui la nostra soluzione sarà:
+Le soluzioni che includono angoli $>\pi/2$ non hanno significato fisico per il nostro prisma. L'unica soluzione accettabile si ha per $x=0$, che implica la simmetria perfetta del raggio luminoso all'interno del prisma:
 \begin{equation}
     \begin{cases}
-        x=0\\
-        \theta_1 = \theta_2 = \theta\\
-        \theta_1' = \theta_2' = \theta'\\
-        n sin\theta = n' sin\theta' 
+        \theta_1 = \theta_2 \equiv \theta\\
+        \theta_1' = \theta_2' \equiv \theta' = \frac{\alpha}{2}
     \end{cases}
 \end{equation}
-per cui $\delta$ diventerà: 
+Sostituendo questa condizione nell'Equazione \ref{eq:deviazione}, l'angolo di deviazione diventa $\delta_{\text{min}} = 2\theta - \alpha$, da cui $\theta = \frac{\delta_{\text{min}} + \alpha}{2}$. Infine, applicando la legge di Snell all'interfaccia ($\sin \theta = n \sin \theta'$), ricaviamo la formula fondamentale dell'esperienza:
+\begin{definizione}[title=Indice di rifrazione tramite deviazione minima]
+Misurando l'angolo al vertice $\alpha$ e l'angolo di deviazione minima $\delta_{\text{min}}$, l'indice di rifrazione del prisma è dato da:
 \begin{equation}
-    \delta = 2 \theta - \alpha
-\end{equation}
+    n = \frac{\sin\left(\frac{\delta_{\text{min}} + \alpha}{2}\right)}{\sin\left(\frac{\alpha}{2}\right)}
+\end{equation}    
+\end{definizione}
 
-Alla fine trovo dalla legge di rifrazione :
+\subsection{L'apparato strumentale}
+L'apparato è composto dai seguenti elementi:
+\begin{itemize}
+    \item \textbf{Sorgenti luminose:} Una lampada al sodio (Na) che emette una riga spettrale nota a $\lambda = (589 \pm 1) \text{ nm}$ e un faretto a luce bianca.
+    \item \textbf{Filtri:} 13 filtri che selezionano lunghezze d'onda nel range del visibile (da $450 \text{ nm}$ a $700 \text{ nm}$, con $\Delta\lambda \approx \pm 10 \text{ nm}$).
+    \item \textbf{Prisma:} Un prisma di vetro (con $n_v \sim 1.5$, valore medio sperimentale) a base triangolare isoscele (con un angolo di $\frac{\pi}{2}$ e due di $\frac{\pi}{4}$ ). Il prisma andrà orientato in modo che il fascio di luce incida e venga rifratto attraverso le due facce che si incontrano a formare uno degli spigoli a 45°.
+    \item \textbf{Goniometro ottico:} Costituito da un piatto graduato rotante con sopra un supporto su cui poggia il prisma, un collimatore con fenditura regolabile (da cui entra la luce) e un cannocchiale (oculare) mobile dotato di un filamento verticale (o mirino).
+\end{itemize}
+
+\vspace{1em}
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO APPARATO: Spettrometro, collimatore e oculare]}}
+\end{center}
+\vspace{1em}
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO PRISMA: Posizionamento del prisma da $45^\circ$ sul piatto]}}
+\end{center}
+\vspace{1em}
+
+\textbf{Lettura degli angoli (Il Nonio):}\\
+Il piatto del goniometro è dotato di una scala graduata principale divisa in mezzi gradi ($0.5^\circ$, da delle tacche piccole) e di un nonio diviso in 30 tacche. L'estensione del nonio garantisce una precisione di $\frac{0.5^\circ}{30} = \frac{1}{60}^\circ$.
+Per leggere l'angolo:
+\begin{enumerate}
+    \item Si legge il valore sulla scala principale superato dallo zero del nonio (es. $175^\circ$).
+    \item Si individua la tacca del nonio che allinea perfettamente con una qualsiasi tacca della scala principale (es. la tacca 5).
+    \item La misura finale sarà $175^\circ + \frac{5}{60}^\circ$.
+\end{enumerate}
+
+\vspace{1em}
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO SCALA: Esempio di lettura scala + nonio]}}
+\end{center}
+\vspace{1em}
+
+\subsection{Procedura di misurazione}
+La procedura si divide in due fasi principali:
+\begin{enumerate}
+    \item \textbf{Misura dello zero ($\theta_0$):} Senza il prisma, si allinea il cannocchiale direttamente davanti al collimatore. Si centra l'immagine della fenditura sul mirino e si legge l'angolo $\theta_0$. Questa misura è necessaria perché lo "zero" ottico non coincide necessariamente con lo "zero" della scala graduata. La misura di $\theta_0$ va ripetuta a ogni cambio di lunghezza d'onda/filtro per sicurezza.
+    \item \textbf{Ricerca del minimo per la lampada a Sodio:} Si inserisce il prisma. Osservando (tramite un foglio di carta) si cerca il raggio rifratto deviato. Ruotando il piatto che sostiene il prisma, il raggio si sposterà, fino a raggiungere un punto di "inversione" (il raggio si ferma e torna indietro pur continuando a ruotare il prisma nello stesso verso). Quello è il punto di deviazione minima. Si inquadra la fenditura col cannocchiale, si affina la posizione muovendo il piatto e si legge l'angolo $\theta_1$.
+    \item \textbf{Misure con luce bianca e filtri:} Per le altre lunghezze d'onda, l'intensità luminosa dietro ai filtri (specie quelli agli estremi dello spettro, violetto e rosso profondo) è molto bassa. Conviene usare la luce bianca \textit{senza} filtro, inquadrare lo spettro continuo, posizionarsi approssimativamente sul colore desiderato trovando il suo punto di inversione, e solo a quel punto inserire il filtro interferenziale per fare la lettura accurata di $\theta_1$.
+\end{enumerate}
+
+Per ogni lunghezza d'onda, l'angolo di deviazione minima calcolato sarà $\delta_{\text{min}} = |\theta_1 - \theta_0|$.
+Per ridurre le incertezze statistiche e gli errori di posizionamento, è fondamentale ripetere l'intera procedura (ricerca del minimo) \textbf{3 volte per ogni filtro}. Se le misurazioni sono eseguite correttamente, i tre valori di $\theta_1$ devono risultare compatibili entro l'errore di lettura del nonio. In caso contrario, si assume come valore la media e come errore la semidispersione massima $\frac{\theta_{\text{max}} - \theta_{\text{min}}}{2}$.
+
+\textbf{Errori associati:}\\
+Considerando l'incertezza di lettura del nonio, l'errore associato al singolo angolo letto è $\sigma_{\theta} = \frac{1^\circ/60}{\sqrt{12}}$.
+L'errore propagato su $\delta_{\text{min}}$ sarà la somma in quadratura degli errori di $\theta_1$ e $\theta_0$:
 \begin{equation}
-    n' = n \frac{\sin(\frac{\delta_{\text{min}} + \alpha}{2})}{\sin(\frac{\alpha}{2})}
+    \sigma_{\delta} = \sqrt{\sigma_{\theta_1}^2 + \sigma_{\theta_0}^2} = \sqrt{2}\sigma_{\theta}
 \end{equation}
+\textit{(Nota: Prima di inserire gli angoli nelle formule per calcolare $n$, è necessario convertirli in radianti).}
 
-per cui se sono in grado di misurare angoli di deviazione minima, attraverso questa relazione posso ricavare l'indice di rifrazione e una volta misurato
-lo posso mettere in un grafico in funzione della lunghezza d'onda utilizzata, per vedere come l'indice di rifrazione cambia, per poi verificare se l'andamento rispecchio la legge di smelleier. 
+\subsection{Analisi Dati}
+Al termine delle misurazioni avremo a disposizione un set di 14 punti (13 filtri + 1 lampada al sodio). Riportando in grafico l'indice di rifrazione calcolato $n$ in funzione della lunghezza d'onda $\lambda$, si osserverà l'andamento dispersivo del vetro.
 
+\vspace{1em}
+\begin{center}
+    \textcolor{OpticRed}{\textbf{[INSERIRE QUI IL GRAFICO: Plot sperimentale $n$ in funzione di $\lambda$]}}
+\end{center}
+\vspace{1em}
 
-\subsection{Il setup}
+Per confermare il modello teorico, effettueremo un fit dei dati secondo due modelli:
+\begin{itemize}
+    \item \textbf{Fit 1:} Riscriviamo l'equazione teorica, introducendo i parametri di fit $A$ e $B$ (dove $B$ sostituisce la lunghezza d'onda di risonanza $\lambda_0$):
+    \begin{equation}
+        y = \sqrt{1 + \frac{A x^2}{x^2 - B^2}}
+    \end{equation}
+    Il parametro $B$ è elevato al quadrato per mantenere la coerenza dimensionale al denominatore. 
+    I valori da porre nei fit saranno: $A \simeq 1$ (dove in realtà A non è noto) e $B \simeq 100 \text{ nm}$. Il valore di $B$ significa che $\lambda_0 \simeq 100 \text{ nm}$, la risonanza è in una regione ultravioletta. È proprio per questo motivo che il vetro ci appare trasparente nello spettro del visibile (assenza di assorbimento, lontano dalla risonanza).
+    
+    \item \textbf{Fit Lineare:}
+    \begin{equation}
+        y = A + Bx
+    \end{equation}
+    Da questo fit ci aspettiamo un'intercetta all'origine $A \simeq 1.5$, che solleva la retta in corrispondenza del valore medio dell'indice di rifrazione del vetro, e un coefficiente angolare $B \sim 0$ (un valore molto vicino a zero). 
+\end{itemize}
 
-Utilizzeremo una lampada al sodio (Na) con una lunghezza d'onda di emissione pari a: $ \lambda = 589 nm  \pm 1$
-Avremmo poi 13 filtri che coprono come $\lambda = 450 - 700 nm \pm 10 $ 
-
-Per essere significativi bisogna avere circa 13+1 punti, per ogni punto ripetere la misura 3 volte. Poi come errore uso che: $\sigma_{\delta}= \sigma_{\theta} \sqrt{2}$. Notiamo che bisogna stare subito attenti che le 3 misure siano compatibili. 
-
-Per i feat metto $A \simeq 1$ e $B \simeq 100$. 
-
-
-
-
-
-
-
+\begin{nota}[title=Confronto tra i modelli]
+Confrontando il $\chi^2$ dei due fit, noteremo che il $\chi^2$ del modello di Sellmeier è minore di quello del fit lineare, indicando che i dati sperimentali "preferiscono" il modello fisico corretto. Tuttavia, la differenza potrebbe non essere evidente: nell'intervallo (piccolo) del visibile ($450-700 \text{ nm}$), la curvatura imposta dall'equazione di Sellmeier è modesta, e i punti si adattano visivamente a una semplice retta decrescente.
+\end{nota}
 
 
 
