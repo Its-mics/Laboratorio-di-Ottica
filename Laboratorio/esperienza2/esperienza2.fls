@@ -435,7 +435,6 @@ INPUT ./zoomcaz.png
 INPUT ./zoomcaz.png
 INPUT ./zoomcaz.png
 INPUT ./zoomcaz.png
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT ./FOTO_MINCHIA.png
 INPUT ./FOTO_MINCHIA.png
 INPUT ./FOTO_MINCHIA.png
@@ -452,18 +451,12 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT ./scan_shift.png
-INPUT ./scan_shift.png
-INPUT ./scan_shift.png
-INPUT ./scan_shift.png
-INPUT ./scan_shift.png
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT ./hist_shift.png
 INPUT ./hist_shift.png
 INPUT ./hist_shift.png
 INPUT ./hist_shift.png
 INPUT ./hist_shift.png
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecti0800.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm
 INPUT esperienza2.aux

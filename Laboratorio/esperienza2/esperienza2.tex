@@ -309,8 +309,8 @@ e la presenza di conteggi in prossimità delle code della distribuzione allora p
     \label{fig:zoomcaz}
 \end{figure} 
 
-\noindent  Nei residui del fit unico si osserva una discontinuità attorno a $p\simeq 400$ mm (vedi figura \ref{fig:cazzo-cul}): tra la misura a $x=415$ mm ($p=396.5$ mm, $q=397$ mm) e quella a $x=420$ mm ($p=401.5$ mm, $q=400$ mm) la distanza $q$ \emph{aumenta} di 3 mm, mentre per $p$ crescente ci si aspetta una diminuzione di circa 5 mm.
-Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono stati divisi in due insiemi, $p<400$ mm (76 punti) e $p>400$ mm (37 punti), e ciascuno p stato fittato in modod indipendente con la stessa funzione e lo stesso $\chi^2$ del fit unico. 
+\noindent  Nei residui del fit unico si osserva una discontinuità attorno a $p\simeq 400$ mm (vedi figura \ref{fig:cazzo-cul}): tra la misura a $x=415$ mm ($p=396.5$ mm, $q=397$ mm) e quella a $x=420$ mm ($p=401.5$ mm, $q=400$ mm).
+Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono stati divisi in due insiemi, $p<400$ mm (76 punti) e $p>400$ mm (37 punti), e ciascuno p stato fittato in modo indipendente con la stessa funzione e lo stesso $\chi^2$ del fit unico. 
 
 
  
@@ -349,9 +349,7 @@ Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono sta
 
 
 
-\noindent Il $\chi^2$ complessivo dei due fit è $4182.0$ con $107$ gradi di libertà ($\chi^2/\mathrm{ndf}=39.1$), contro $14473.8/110$ ($131.6$) del fit unico: la divisione riduce il $\chi^2$ di circa il 70\%, ma in entrambe le regioni il valore resta molto più grande di 1 ($21.5$ e $76.8$). Inoltre \emph{nessuno} dei tre parametri è compatibile tra le due regioni (Tabella~\ref{tab:parametri_split}). Se solo l'origine di $p$ si fosse spostata a metà misura, ci si aspetterebbe di vedere cambiare soltanto $A$, mentre variano anche $B$ (di circa 40 mm) e $C$ (di circa 9 mm, il 4.5\%): l'ipotesi di un semplice spostamento dello zero di $p$ non è quindi confermata dal fit separato.
-
-
+\noindent Il $\chi^2$ complessivo dei due fit è $4182.0$ con $107$ gradi di libertà ($\chi^2/\mathrm{ndf}=39.1$), contro $14473.8/110$ ($131.6$) del fit unico: la divisione riduce il $\chi^2$ di circa il 70\%, ma in entrambe le regioni il valore resta molto più grande di 1 ($21.5$ e $76.8$). Inoltre \emph{nessuno} dei tre parametri è compatibile tra le due regioni (Tabella~\ref{tab:parametri_split}).
 
 \begin{table}[h]
     \centering
@@ -374,28 +372,16 @@ Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono sta
     \label{tab:residui_split}
 \end{table}
 
-\noindent Le analisi dei residui (Tabella~\ref{tab:residui_split}) hanno un effetto discriminante limitato: nella regione $p>400$ mm l'istogramma contiene solo 37 misure e i parametri della gaussiana sono poco vincolati. Il valore di $\sigma$ ottenuto dal fit dell'istogramma per $p<400$ mm descrive inoltre solo il picco centrale: la deviazione standard dei residui normalizzati è $4.5$ ($8.5$ per $p>400$ mm), coerente con i $\chi^2/\mathrm{ndf}$ ottenuti.
+\noindent Le analisi dei residui (Tabella~\ref{tab:residui_split}) hanno un effetto limitato, poiché nella regione $p>400$ mm l'istogramma contiene solo 37 misure e i parametri della gaussiana sono poco vincolati. 
  
 \noindent In conclusione, i fit separati non isolano una regione ``buona'' dei dati e non spiegano da soli le deviazioni dal modello. Si è quindi provato a descrivere l'anomalia a $p\simeq400$ mm come uno spostamento sistematico di una parte delle misure.
  
 
 \subsection{Correzione dello Shift Sistematico} 
-Osservando più da vicino la zona di plateu (Figura \ref{fig:cazzo-cul}) si nota che i residui del fit unico decrescono progressivamente da $-1.4$ mm ($x=390$ mm) a $-10.6$ mm ($x=415$ mm) e risalgono poi bruscamente a $-2.5$ mm in corrispondenza di $x=420$ mm, con un salto di circa $+8$ mm, per assestarsi infine attorno a $+2$ mm. Un comportamento di questo tipo è quello atteso se, a un certo punto della misura, una parte dell'apparato è stata spostata accidentalmente (urto al banco ottico, scivolamento del supporto della lampadina, della lente o dello schermo), così che le misure successive risultano affette da un offset sistematico rispetto alle precedenti.
+Osservando più da vicino la zona di plateu (Figura \ref{fig:cazzo-cul}) si nota che i residui del fit unico decrescono  da $x=390$ mm a $x=415$ mm e risalgono poi bruscamente in corrispondenza di $x=420$ mm. Si è supposto che un comportamento di questo tipo è quello atteso se, a un certo punto della misura, una parte dell'apparato è stata spostata accidentalmente (urto al banco ottico, scivolamento del supporto della lampadina, della lente o dello schermo), così che le misure successive risultano affette da un offset sistematico rispetto alle precedenti.
 
-\noindent Si è quindi sottratto uno shift $\delta$ a $p$ e a $q$ di tutte le misure con $x\geq 420$ mm, ripetendo il fit unico con le stesse funzioni, gli stessi errori e la stessa selezione dei punti. Poiché $\delta$ non è noto a priori, lo si è determinato scansionando il $\chi^2$ in funzione di $\delta$ (Figura~\ref{fig:scan}): con lo stesso shift su $p$ e $q$ il minimo si trova a $\delta\simeq3.8$ mm, con $\chi^2=7806$. Per comodità è stato usato $\delta=4$ mm ($\chi^2=7824$), contro $14474$ senza correzione. Valori maggiori peggiorano il fit: per $\delta=7$ mm il $\chi^2$ sale a $12707$.
+\noindent Si è quindi sottratto uno shift $\delta$ a $p$ e a $q$ di tutte le misure con $x\geq 420$ mm, ripetendo il fit unico con le stesse funzioni, gli stessi errori e la stessa selezione dei punti. Poiché $\delta$ non è noto a priori, lo si è determinato tramite il $\chi^2$ in funzione di $\delta$: con lo stesso shift su $p$ e $q$ il minimo si trova a $\delta\simeq3.8$ mm, con $\chi^2=7806$. Per comodità è stato usato $\delta=4$ mm ($\chi^2=7824$), contro $14474$ senza correzione. 
 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\columnwidth]{scan_shift.png}
-    \caption{$\chi^2$ del fit unico in funzione dello shift $\delta$ applicato alle misure con $x\geq420$ mm, per le diverse ipotesi sulle grandezze spostate. I punti indicano i minimi.}
-    \label{fig:scan}
-\end{figure}
- 
-
-
-\noindent Il risultato dipende dalla prima misura corretta: iniziando la correzione a $x\leq415$ mm essa è quasi inefficace ($\chi^2>12000$), mentre il minimo si ottiene iniziando a $x=425$ mm ($\delta=4.1$ mm, $\chi^2=6470$). L'evento è quindi localizzato tra $x=420$ mm e $x=425$ mm, coerentemente con l'osservazione precedente. Nel seguito si usa $x=420$ mm.
- 
 \noindent Per capire quale grandezza possa essersi spostata, lo shift è stato applicato separatamente a $p$ e a $q$ (Tabella~\ref{tab:ipotesi_shift}).
  
 \begin{table}[H]
@@ -413,19 +399,16 @@ Osservando più da vicino la zona di plateu (Figura \ref{fig:cazzo-cul}) si nota
         $p$ e $q$ (segno opposto) & \multicolumn{2}{c}{$\chi^2$ sempre crescente} \\
         \bottomrule
     \end{tabular}
-    \caption{Minimo del $\chi^2$ del fit unico (ndf $=110$ prima di stimare $\delta$) per le diverse ipotesi di shift.}
+    \caption{Minimo del $\chi^2$ del fit unico per le diverse ipotesi di shift.}
     \label{tab:ipotesi_shift}
 \end{table}
  
-\noindent L'ipotesi di uno shift di segno opposto su $p$ e $q$ porta a un peggioramento sistematico del $\chi^2$. Poiché tale scenario corrisponderebbe a un errore sulla posizione di riferimento della lente ($x_0$), possiamo escludere che sia stata la lente a muoversi.
+\noindent L'ipotesi di uno shift di segno opposto su $p$ e $q$ porta a un peggioramento del $\chi^2$. 
+\noindent Esclusa la lente, l'anomalia deve essere imputabile allo spostamento della lampadina, dello schermo o a un trascinamento del sistema di riferimento sul banco ottico. Osservando la Tabella \ref{tab:ipotesi_shift}, notiamo che un errore limitato al solo schermo (solo $q$) minimizzerebbe il $\chi^2$. Tuttavia, anche l'ipotesi di un trascinamento su $p$ e $q$ (stesso segno) riduce il $\chi^2$ rispetto ai dati non corretti. Non potendo ricostruire l'accaduto, si è scelto di applicare una traslazione $\Delta p = \Delta q \approx -4$ mm ai dati successivi alla discontinuità.
 
-
-\noindent Esclusa la lente, l'anomalia deve essere imputabile allo spostamento della lampadina, dello schermo o a un trascinamento del sistema di riferimento sul banco ottico. Osservando la Tabella \ref{tab:ipotesi_shift}, notiamo che un errore limitato al solo schermo (solo $q$) minimizzerebbe il $\chi^2$ assoluto. Tuttavia, anche l'ipotesi di un trascinamento congiunto su $p$ e $q$ (stesso segno) abbatte drasticamente il $\chi^2$ rispetto ai dati non corretti.
-
-\noindent Non potendo ricostruire a posteriori l'esatta cinematica dell'urto accidentale, si è optato per l'approccio empirico di applicare una traslazione $\Delta p = \Delta q \approx -4$ mm ai dati successivi alla discontinuità.
-La Tabella~\ref{tab:confronto_shift} confronta il fit unico con e senza lo shift $\delta=4$ mm.
+\noindent La Tabella (~\ref{tab:confronto_shift}) confronta il fit unico con e senza lo shift $\delta=4$ mm.
  
-\begin{table}[!t]
+\begin{table}[h]
     \centering
     \small
     \resizebox{\columnwidth}{!}{%
@@ -446,7 +429,7 @@ La Tabella~\ref{tab:confronto_shift} confronta il fit unico con e senza lo shift
         \bottomrule
     \end{tabular}
     }
-    \caption{Fit unico senza e con lo shift. $A$ e $B$ sono confrontati con 0 includendo le incertezze su $L$, $D/2$ e $x_0$; $\mu,\sigma$ sono i parametri della gaussiana dei residui normalizzati, $m,q$ quelli della retta dei residui.}
+    \caption{Fit unico senza e con lo shift.}
     \label{tab:confronto_shift}
 \end{table}
  
@@ -457,18 +440,18 @@ La Tabella~\ref{tab:confronto_shift} confronta il fit unico con e senza lo shift
     \label{fig:residui_shift}
 \end{figure}
  
-\noindent La correzione riduce il $\chi^2$ del 46\% ed elimina la polarizzazione dei residui normalizzati ($\mu$ compatibile con 0), ma il $\chi^2/\mathrm{ndf}$ resta $71$, $\sigma$ rimane incompatibile con 1 e la retta dei residui continua a non essere compatibile con $m=q=0$. Inoltre $A$ passa da $-1.0$ mm a $9.3$ mm e non è più compatibile con zero, anche tenendo conto delle incertezze sistematiche sull'origine (soglia di circa 7 mm): la correzione attenua la discontinuità a spese di un offset dell'origine di $p$ molto più grande delle incertezze con cui sono state misurate le lunghezze. Anche $C$ cambia di 3.9 mm (circa il 2\%), molto più dell'errore statistico del fit.
+\noindent La correzione riduce il $\chi^2$ del 46\% ed elimina l'errore sistematico nei dati ($\mu$ compatibile con 0), ma il $\chi^2/\mathrm{ndf}$ resta $71$, $\sigma$ rimane incompatibile con 1 e la retta dei residui continua a non essere compatibile con $m=q=0$. Inoltre $A$ passa da $-1.0$ mm a $9.3$ mm e non è più compatibile con zero. Per cui la correzione attenua la discontinuità a spese di un offset dell'origine di $p$.
  
-\noindent Lo shift va quindi inteso come una stima dell'entità di un possibile effetto sistematico, e non come una correzione da adottare per il risultato finale: la sua influenza su $C$ viene inclusa nell'incertezza sistematica discussa nelle conclusioni.
+\noindent C'è da sottolineare infine che lo shift è stato eseguito per verificare la presenza di un possibile effetto sistematico, e non come una correzione da adottare per il risultato finale.
  
  \section{Conclusione}
 \label{sec:conclusione}
 
-\noindent L'esperimento ha permesso di confermare qualitativamente la legge delle lenti sottili. In tutte le analisi condotte, infatti, la curva $q(p)$ segue il corretto andamento iperbolico nell'ampio intervallo esplorato (con $q$ che varia da circa 230 mm ad oltre 1500 mm) e la distanza focale $f$ (rappresentata dal parametro $C$) converge sempre a valori vicini ai 200 mm. 
+\noindent L'esperimento ha permesso di confermare qualitativamente la legge delle lenti sottili. In tutte le analisi condotte, infatti, la curva $q(p)$ segue il corretto andamento iperbolico (con $q$ che varia da circa 230 mm ad oltre 1500 mm) e la distanza focale $f$ (rappresentata dal parametro $C$) converge sempre a valori vicini ai 200 mm. 
 
-\noindent Tuttavia, da un punto di vista strettamente quantitativo, il modello ideale non descrive i dati in modo statisticamente perfetto: in tutte le configurazioni analizzate si ottiene un $\chi^2/\mathrm{ndf}\geq 20$ (Tabella~\ref{tab:riepilogo}) e i parametri $A$, $B$ e $C$ mostrano fluttuazioni significative cambiando il tipo di analisi.
+\noindent Tuttavia, da un punto di vista quantitativo, il modello ideale non descrive i dati in modo statisticamente perfetto: in tutte le configurazioni si ottiene un $\chi^2/\mathrm{ndf}\geq 20$ (Tabella~\ref{tab:riepilogo}) e i parametri $A$, $B$ e $C$ mostrano fluttuazioni significative cambiando il tipo di analisi.
 
-\begin{table}[!t]
+\begin{table}[h]
     \centering
     \small
     \resizebox{\columnwidth}{!}{%
@@ -486,25 +469,19 @@ La Tabella~\ref{tab:confronto_shift} confronta il fit unico con e senza lo shift
         \bottomrule
     \end{tabular}
     }
-    \caption{Riepilogo delle analisi. Nei fit separati con shift, il taglio spaziale su $p$ è applicato \textit{dopo} la correzione dei dati.}
+    \caption{Riepilogo delle analisi.}
     \label{tab:riepilogo}
 \end{table}
 
 
 \noindent L'analisi rivela che l'incertezza sulla distanza focale $f$ è dominata dagli errori sistematici. L'errore puramente statistico restituito dai fit sull'intero set di dati è infatti irrisorio (inferiore a 0.1 mm), mentre i valori stimati per $C$ variano tra $196.9$ e $216.3$ mm a seconda del metodo utilizzato. 
 
-\noindent Per la stima finale di $f$ si è deciso di non utilizzare i fit separati: dividere a metà l'iperbole rende i fit "mal condizionati" (in particolare per $p<400$ mm, dove la curva non raggiunge l'asintoto), portando a risultati meno affidabili. 
-Si è scelto quindi di assumere come valore centrale quello ricavato dal fit unico sui dati originali. Come incertezza sistematica, invece, si è assunta la differenza massima osservata applicando la correzione spaziale ($\delta = 4$ mm) all'intero dataset. Il risultato finale è dunque:
-\[
-f = 200.8 \pm 0.1\,(\mathrm{stat.}) \pm 3.9\,(\mathrm{sist.})\ \mathrm{mm}
-\]
+\noindent Le difficoltà riscontrate nei fit possono essere ricondotte diverse cause principali tra cui
+la sensibilità in prossimità del fuoco, ovvero quando la lente è vicina al fuoco, piccole variazioni di $p$ generano enormi spostamenti dell'immagine $q$. Questo comporta che il $\chi^2$ sia estremamente sensibile al minimo difetto sperimentale.
 
-\noindent Le difficoltà riscontrate nei fit possono essere ricondotte a tre cause principali:
-\begin{itemize}
-    \item \textbf{Sensibilità in prossimità del fuoco}: Quando la lente è vicina al fuoco, piccole variazioni di $p$ generano enormi spostamenti dell'immagine $q$. Questo comporta che il $\chi^2$ sia estremamente sensibile al minimo difetto sperimentale.
-    \item \textbf{Spostamento accidentale dell'apparato}: Come discusso, la discontinuità osservata tra $x=420$ e $425$ mm indica un urto subito dall'apparato. Pur avendo applicato una correzione rigida per mitigare il problema, l'incertezza su quale componente si sia esattamente spostato contribuisce all'errore finale.
-    \item \textbf{Limiti del modello e origini spaziali}: I parametri $A$ e $B$ fungono da "collettori" per tutti i piccoli errori costanti dell'apparato. Assorbono le imprecisioni sulle posizioni di riferimento $x_0$ e $y_0$, le tolleranze costruttive del banco ottico (calibrazione $L$ e raggio $D/2$) e, non da ultimo, la distanza fisica tra i piani principali della lente reale, che contraddice l'approssimazione ideale di "lente sottile". Questi contributi non sono distinguibili matematicamente l'uno dall'altro.
-\end{itemize}
+\noindent Un altra causa di errore è riconducibile allo spostamento accidentale dell'apparato: infatti come detto precedentemente, la discontinuità osservata tra $x=420$ e $425$ mm indica un urto o shift fatto all'apparato. Pur avendo applicato una correzione per risolvere il problema, l'incertezza su quale componente si sia esattamente spostato contribuisce all'errore finale.
+
+\noindent Infine un ultima fonte di errore può essere attribuita ai limiti del modello che non tiene conto della distanza tra i piani della lente reale, non prevista dall'approssimazione ideale di "lente sottile". 
 
 
     
