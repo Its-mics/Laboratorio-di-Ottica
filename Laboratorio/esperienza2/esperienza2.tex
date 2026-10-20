@@ -251,8 +251,8 @@ per questo motivo abbiamo deciso di ovviare al problema come esposto in preceden
     \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{fit_line.png}
-        \caption{andamento dei residui in funzione ddi p}
-        \label{fig2}
+        \caption{andamento dei residui in funzione di p}
+        \label{rettainculo}
       \end{figure}
 
       
@@ -276,6 +276,15 @@ per questo motivo abbiamo deciso di ovviare al problema come esposto in preceden
 
     \subsection{Fit separati}
     \label{sec:split}
+    Come nel fit unico, anche nei fit separati è stato escluso il primo dato. Sono stati inoltre rimossi altri due punti, individuabili nel grafico dei residui (Figura \ref{rettainculo}) e mostrati in dettaglio in Figura \ref{fig:zoomcaz}. Questi presentano residui negativi non riconducibili a un andamento sistematico e contribuiscono in misura non trascurabile al valore di $\chi^2$.
+ 
+\begin{figure}[H]
+    \centering
+   \includegraphics[width=1.0\columnwidth]{zoomcaz.png}
+    \caption{Dati eliminati al fine del miglioramento dei fit}
+    \label{fig:zoomcaz}
+\end{figure} 
+
     Nei residui del fit unico si osserva una discontinuità attorno a $p\simeq 400$ mm (vedi figura \ref{fig:cazzo-cul}): tra la misura a $x=415$ mm ($p=396.5$ mm, $q=397$ mm) e quella a $x=420$ mm ($p=401.5$ mm, $q=400$ mm) la distanza $q$ \emph{aumenta} di 3 mm, mentre per $p$ crescente ci si aspetta una diminuzione di circa 5 mm.
     Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono stati divisi in due insiemi, $p<400$ mm (76 punti) e $p>400$ mm (37 punti), e ciascuno p stato fittato in modod indipendente con la stessa funzione e lo stesso $\chi^2$ del fit unico. 
 

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792479633.99462 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792479635.36631 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792479633.79609 43298 28ddf94354dedf9369ece0ef8c77e149 ""
+["pdflatex"] 1792482671.69585 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" "esperienza2.pdf" "esperienza2" 1792482673.12039 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza2/esperienza2.tex" 1792482671.51459 43885 2ed4d4a8900c00ef50d2da1a8c2432b7 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -277,16 +277,17 @@
   "Analisi dati/fit_root.png" 1792161156.83002 20005 3895afba3bb6ea725fae21083905985c ""
   "Analisi dati/hist.png" 1792161156.83018 18108 e9c56a19023c2935dac8aaf102624f7c ""
   "FOTO_MINCHIA.png" 1792424331.89948 91958 a66ce14a9df4885211a3f5a6268c2048 ""
-  "esperienza2.aux" 1792479635.27857 9434 1a9845183a15f24d8b5cf2889b2df1d2 "pdflatex"
-  "esperienza2.out" 1792479635.27955 1871 9e773d6b5348bc453fe0f24db0687cf8 "pdflatex"
-  "esperienza2.tex" 1792479633.79609 43298 28ddf94354dedf9369ece0ef8c77e149 ""
-  "esperienza2.toc" 1792479635.2797 1083 9d6b1de74d4041341d7ba484fc0a9c49 "pdflatex"
-  "fit_line.png" 1792438731.9281 19651 c51cde26e86f428901b7e97fbacc311b ""
-  "fit_root.png" 1792438731.06252 24106 a228cc7963a284a5e40cb2238d8eb190 ""
+  "esperienza2.aux" 1792482673.03087 9711 12e65eadceff53a65eb5514fad0b8520 "pdflatex"
+  "esperienza2.out" 1792482673.03185 1871 9e773d6b5348bc453fe0f24db0687cf8 "pdflatex"
+  "esperienza2.tex" 1792482671.51459 43885 2ed4d4a8900c00ef50d2da1a8c2432b7 ""
+  "esperienza2.toc" 1792482673.03199 1083 9d6b1de74d4041341d7ba484fc0a9c49 "pdflatex"
+  "fit_line.png" 1792482512.95508 19651 c51cde26e86f428901b7e97fbacc311b ""
+  "fit_root.png" 1792482512.46153 24106 a228cc7963a284a5e40cb2238d8eb190 ""
   "fit_root_split.png" 1792438718.4445 21383 9cbb0d9d18023f177197926f011c31f2 ""
-  "hist.png" 1792438731.63058 23487 e2ce12df0759392320ad92975ecd9893 ""
+  "hist.png" 1792482512.70266 23487 e2ce12df0759392320ad92975ecd9893 ""
   "hist_shift.png" 1792438639.95865 24305 d2e1b38d37e6fe69504deb6cecbe31ef ""
   "scan_shift.png" 1792440599.62266 77544 b58238f1c915572de369cac7ce1dae09 ""
+  "zoomcaz.png" 1792482513.09058 22508 87d4c68a433dad6b637c24988f1020a8 ""
   (generated)
   "esperienza2.aux"
   "esperienza2.log"
