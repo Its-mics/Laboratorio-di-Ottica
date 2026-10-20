@@ -76,7 +76,7 @@
     \frac{1}{f}=\frac{1}{q}+\frac{1}{p}
     \] 
     dove $f$ rappresenta la distanza dal centro di curvatura della lente in cui tutti i raggi che incidono sulla lente convergono in uno stesso punto.
-    Come si 
+
     \section{Apparato sperimentale}
     L'apparato sperimentale per l'esecuzione della misura della distanza focale è schematizzato nella figura seguente:
     \begin{figure}[H]
@@ -164,7 +164,7 @@
     \end{figure}
 
     \noindent Dove  la lampadina funge da sorgente luminosa, e lo schermo, sul quale verrà riflessa l'immagine del filamento della lampadina, è necessario per individuare la distanza dalla lente tale per cui l'immagine riflessa è a fuoco.
-    le distanze p e q come si può osservare dallo schema si possono determinare tramite le seguenti relazioni:
+    Le distanze p e q come si può osservare dallo schema si possono determinare tramite le seguenti relazioni:
 
     \[
     q = (y - y_0) + L - (x - x_0)
@@ -173,7 +173,7 @@
     p = (x - x_0) + L + \frac{D}{2}
     \]
     Dove $x_{0},y_{0}$ sono le posizioni iniziali della lente e dello schermo sul binario, L è la lunghezza dellla sbarra di metallo utlizzata per individuare tali posizioni e D è il diametro della lampadina.
-    $x_{0},y_{0}$ sono state lette sulla scala millimetrata del binario, mentre L e D sono state misurate con un calibro ventesimale. 
+    Le costanti $x_{0},y_{0}$ sono state lette sulla scala millimetrata del binario, mentre L e D sono state misurate con un calibro ventesimale. 
     \section{Analisi dati}
     L'andamento atteso per i nostri dati sperimentali $(p_{i},q_{i})$ è dato dalla funzione di fit:
 
@@ -185,7 +185,7 @@
     y = B + \frac{C(x-A)}{(x-A) - C}
     \]
 
-    \noindent A,B,C sono parametri da stimare. Gli errori sui parametri A,B sono stati calcolati come la somma degli errori sulle  grandezze utilizzate nelle espressioni di p e q:
+    \noindent dove A,B e C sono parametri da stimare. Gli errori sui parametri A,B sono stati calcolati come la somma degli errori sulle  grandezze utilizzate nelle espressioni di p e q:
 
     \[
 \Delta A = \sigma_{fit}+\sigma_{x_{0}}+\sigma_{\frac{D}{2}}+\sigma_{L}
@@ -201,19 +201,19 @@ Con
 \sigma_{x_{0}},\sigma_{\frac{D}{2}},\sigma_{L},\sigma_{y}= \frac{Sens}{\sqrt{3}}
 \]
     \noindent Per verificare la compatibilità del modello teorico, si studia la compatibilità dei parametri B e A con 0. 
-    Dai dati si ottengono tre grafici: il primo mette a confronto l'andamento dei dati raccolti con la funzione di fit, il secondo consiste nel costruire un istogramma con le differenze tra i valori teorici della distanza q e quella che abbiamo misurato diviso l'errore sulla distanza (residuo normalizzato) 
+    Dai dati si ottengono tre grafici: il primo mette a confronto l'andamento dei dati raccolti con la funzione di fit, il secondo è un istogramma con le differenze tra i valori teorici della distanza q e quella che abbiamo misurato diviso l'errore sulla distanza (residuo normalizzato) 
     e infine il terzo che ci permette di graficare l'andamento dei residui in funzione della distanza della lente dalla lampadina.
-Per quanto riguarada il secondo grafico Inoltre ci si aspetta che i parametri della gaussiana che approssima la distribuzione dei residui normalizzati siano $\mu$ compatibile con 0 e $\sigma$ compatibile con
- 1.
-    Nel terzo grafico ci siasapetta che sia il coefficiente angolare che l'intercetta siano compatibili con
+
+Ci si aspetta che la gaussiana che approssima la distribuzione dei residui normalizzati abbia parametri $\mu$ e $\sigma$ rispettivamente compatibili con
+ 0 e 1.
+    Nel terzo grafico ci si aspetta che sia il coefficiente angolare che l'intercetta siano compatibili con
  0.
-    Qui di seguito verrano fatte due analisi da ti:questa scelta è dovuta dal fatto che a causa di una discontinuità della curva sperimentale registrata del primo grafico il $\chi^{2}$ del fit assume un valore molto grande il che ci farebbe dedurre la non riuscita dell'esperimento, ma per aggirare l'anomalia si è proceduto al calcolo del $\chi^2$ del ramo superiore e del ramo inferior
-    e, per non considerare il campione di dati  problematico nella sua  interezza.
     
+ Di seguito verrano riportate due analisi dati: questa scelta è dovuta dal fatto che, a causa di una discontinuità della curva sperimentale registrata nel primo grafico, il $\chi^{2}$ del fit assume un valore molto grande il che ci farebbe dedurre la non riuscita dell'esperimento. Per aggirare l'anomalia si è
+ sono svolti due fit differenti per la prima parte della curva (prima dell'evento di discontinuità) e per la seconda.
     
     
     \subsection{Fit unico}
-    Il primo dato è stato escluso dal fit, poiché la guida non era sufficientemente lunga da consentire la verifica dell'effettivo $y_{\max}$.
 
     \begin{figure}[H]
         \centering
@@ -228,21 +228,17 @@ Per quanto riguarada il secondo grafico Inoltre ci si aspetta che i parametri de
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
         \midrule
-        A & $(0.7089 \pm 4.665)\times 10^{-1}$ mm & [no] \\
-        B & $2.605 \pm 0.207 \text{mm}$ & [no] \\            % 66 sigma da 0
-        C & $(200.3 \pm 0.0.913)$ \text{mm}& [-] \\   % 9.9 sigma da 0
+        A[$mm$] & $(0.7089 \pm 4.665)\times 10^{-1}$& [no] \\
+        B[$mm$] & $2.605 \pm 0.207 $ & [no] \\            % 66 sigma da 0
+        C[$mm$] & $(200.3 \pm 0.0.913)$ & [-] \\   % 9.9 sigma da 0
         \bottomrule
     \end{tabular}
     \caption{Parametri estratti dal fit di figura \ref{fig2}.}
     \label{tab:parametri_fig2}
 \end{table}
 
-\noindent Come detto in precedenza si può evincere che ad una distanza dalla lampadina intorno ai 400 mm è presente una anomalia rispetto alla curva teorica: c'è un leggero discostamento dei dati sperimentali, per 4-8 mm si nota che la distanza q rimane costante, è possibile attribuire il motivo di un valore del  $\chi^{2}$ dell'ordine di $10^{4}$ a questo fatto. 
-Per questo motivo abbiamo deciso di ovviare al problema come esposto in precedenza, la trattazione completa verrà fatta nel paragrafo succesivo.
-
-
-
-
+\noindent Come detto in precedenza si può evincere che ad una distanza dalla lampadina intorno ai 400 mm è presente una anomalia rispetto alla curva teorica (vedere Figura \ref{fig:cazzo-cul}): c'è un leggero discostamento dei dati sperimentali, per 4-8 mm si nota che la distanza q rimane costante (Tabella \ref{tab:dati2}), è possibile attribuire il motivo di un valore del  $\chi^{2}$ dell'ordine di $10^{4}$ a questo fatto. 
+Per questo motivo abbiamo deciso di ovviare al problema con la metodolgia esposta in precedenza, la trattazione completa verrà fatta nel paragrafo succesivo.
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{hist.png}
@@ -266,8 +262,8 @@ Per questo motivo abbiamo deciso di ovviare al problema come esposto in preceden
 \end{table}
       
 
-\noindent La distribuzione attesa per i residui normalizzati è una normale standard, ma come si può osservare dalla non compatibilità (fissata entro $3\sigma$) dei parametri che caratterizzano l'istogramma dei dati sperimentali 
-e la presenza di conteggi in prossimità delle code della distribuzione allora possiamo constatare la non compatibilità con la distribuzione teorica.
+\noindent La distribuzione attesa per i residui normalizzati è una normale standard, ma come si può osservare dal grafico essa non apporssima adeguatamente i nostri dati, dato che dei parametri che caratterizzano l'istogramma dei dati sperimentali 
+non risultano compatibili con 0 e 1 \footnote{dove la compatibilità è stata fissata entro le 3 deviazioni standard} e vi è una anomala presenza di conteggi in prossimità delle code della distribuzione.
 
 
 
@@ -280,27 +276,35 @@ e la presenza di conteggi in prossimità delle code della distribuzione allora p
       \end{figure}
 
   
-  \begin{table}[H]
+    \begin{table}[H]
     \centering
+        \resizebox{\columnwidth}{!}{%
     \begin{tabular}{ccc}
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
         \midrule
-        $m$ & $(6.707\pm  0.5704)\times 10^{-4} 1/mm$  & [no] \\      % 3.9 sigma da 0
-        $q$ & $(4.554\pm 0.4314)\times10^{-1}  1/mm$ & [no] \\    % 7.2 sigma da 1
+        $m$ [$mm^-1$] & $(6.707\pm  0.5704)\times 10^{-4}$  & [no] \\      % 3.9 sigma da 0
+        $q$ [$mm^-1$] & $(4.554\pm 0.4314)\times10^{-1}$ & [no] \\    % 7.2 sigma da 1
         \bottomrule
     \end{tabular} 
+    }
 	  \caption{$\mu ,\sigma$ dei residui normalizzati \ref{fig2}.}
 	 \label{tab:parametri_fig3}
 \end{table}
 
-\noindent Da quest'ultimo grafico invece, possimo constatare che: l'andamento dell'errore commesso sulla distanza q è maggiore per le prime 300 misure, questo perchè l'errore è stato calcolato come la semidispersione su $y_{min}, y_{max}$, rispettivamente la posizione massima e minima entro le quali il filamento della lampadina era a fuoco, poi man mano che questa differenza è scesa sotto (insierire soglia) si è passati a considerare come errore la sensibilità della scala millimetrata poichè la posizione del fuoco era individuata in modo univoco. Infine anche in questo caso otteniamo un valore del $\chi^2$ dello stesso ordine di grandezza del primo grafico, anche in quessto caso la trattazione dettagliata per spiegarne le  cause  verrà fatta nel prossimo paragrafo.
+\noindent Da quest'ultimo grafico invece, possimo constatare che il residuo calcolato sulla distanza q è maggiore per le misure iniziali, 
+questo perchè l'errore è stato calcolato come la semidispersione su $y_{min}, y_{max}$, rispettivamente la posizione massima e minima entro le quali il filamento della lampadina era a fuoco, poi man mano che questa differenza è divenuta impercettibile si è passati a considerare come errore la sensibilità della scala millimetrata.
+
+Di conseguenza, le misure che dominano il fit sono le seconde (quelle con l'errore minore) ed esse coincidono (non esattamente) con quelle dopo la discontinuità.
+
+Per i motivi di cui sopra, anche in questo caso otteniamo un valore del $\chi^2$ dello stesso ordine di grandezza del primo grafico. 
 
 
 
     \subsection{Fit separati}
     \label{sec:split}
-    Come nel fit unico, anche nei fit separati è stato escluso il primo dato. Sono stati inoltre rimossi altri due punti, individuabili nel grafico dei residui (Figura \ref{rettainculo}) e mostrati in dettaglio in Figura \ref{fig:zoomcaz}. Questi presentano residui negativi non riconducibili a un andamento sistematico e contribuiscono in misura non trascurabile al valore di $\chi^2$.
+    In questo fit sono stati rimossi due punti, individuabili nel grafico dei residui (Figura \ref{rettainculo}) e mostrati in dettaglio in Figura \ref{fig:zoomcaz}. 
+    Questi presentano residui negativi non riconducibili a un andamento sistematico e contribuiscono in misura non trascurabile al valore di $\chi^2$.
  
 \begin{figure}[H]
     \centering
@@ -309,15 +313,25 @@ e la presenza di conteggi in prossimità delle code della distribuzione allora p
     \label{fig:zoomcaz}
 \end{figure} 
 
+<<<<<<< HEAD
 \noindent  Nei residui del fit unico si osserva una discontinuità attorno a $p\simeq 400$ mm (vedi figura \ref{fig:cazzo-cul}): tra la misura a $x=415$ mm ($p=396.5$ mm, $q=397$ mm) e quella a $x=420$ mm ($p=401.5$ mm, $q=400$ mm).
 Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono stati divisi in due insiemi, $p<400$ mm (76 punti) e $p>400$ mm (37 punti), e ciascuno p stato fittato in modo indipendente con la stessa funzione e lo stesso $\chi^2$ del fit unico. 
+=======
+<<<<<<< HEAD
+   \noindent  Come citato antecedentemente, nei residui del fit unico si osserva una discontinuità attorno a $p\simeq 400$ mm (vedi figura \ref{fig:cazzo-cul}): tra la misura a $x=415$ mm ($p=396.5$ mm, $q=397$ mm) e quella a $x=420$ mm ($p=401.5$ mm, $q=400$ mm) la distanza $q$ \emph{aumenta} di 3 mm (vedere Tabella \ref{tab:dati2}), mentre per $p$ crescente ci si aspetta una diminuzione di circa 5 mm.
+    Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono stati divisi in due insiemi, $p<400$ mm (76 punti) e $p>400$ mm (37 punti), e su ciascun dataset è stato fatto un fit indipendente con la stessa funzione del fit unico.
+=======
+\noindent  Nei residui del fit unico si osserva una discontinuità attorno a $p\simeq 400$ mm (vedi figura \ref{fig:cazzo-cul}): tra la misura a $x=415$ mm ($p=396.5$ mm, $q=397$ mm) e quella a $x=420$ mm ($p=401.5$ mm, $q=400$ mm) la distanza $q$ \emph{aumenta} di 3 mm, mentre per $p$ crescente ci si aspetta una diminuzione di circa 5 mm.
+Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono stati divisi in due insiemi, $p<400$ mm (76 punti) e $p>400$ mm (37 punti), e ciascuno p stato fittato in modod indipendente con la stessa funzione e lo stesso $\chi^2$ del fit unico. 
+>>>>>>> f87654a7b8ac49629e0b2c1272e9ac47aee1ebab
+>>>>>>> 07154fbfd0ab5cf1e2620cd1cc0b6fd55f837b43
 
 
  
     \begin{figure}[H]
     \centering
    \includegraphics[width=1.0\columnwidth]{FOTO_MINCHIA.png}
-    \caption{andamento dei residui in funzione della distanza della lente dalla lampadina}
+    \caption{Zoom sulla disconitnuità della curva}
     \label{fig:cazzo-cul}
 \end{figure} 
 
@@ -349,7 +363,15 @@ Per capire se l'anomalia dipenda dalla regione di $p$ esplorata, i dati sono sta
 
 
 
+<<<<<<< HEAD
 \noindent Il $\chi^2$ complessivo dei due fit è $4182.0$ con $107$ gradi di libertà ($\chi^2/\mathrm{ndf}=39.1$), contro $14473.8/110$ ($131.6$) del fit unico: la divisione riduce il $\chi^2$ di circa il 70\%, ma in entrambe le regioni il valore resta molto più grande di 1 ($21.5$ e $76.8$). Inoltre \emph{nessuno} dei tre parametri è compatibile tra le due regioni (Tabella~\ref{tab:parametri_split}).
+=======
+\noindent Il $\chi^2$ complessivo dei due fit è $4182.0$ ($\chi^2_{ridotto}=39.1$), contro $14473.8$ ($\chi^2_{ridotto}= 131.6$) del fit unico: la divisione riduce il $\chi^2$ di circa il 70\%, ma in entrambe le regioni il valore resta molto più grande di 1 ($21.5$ e $76.8$). 
+
+Inoltre \emph{nessuno} dei tre parametri è compatibile tra le due regioni (Tabella~\ref{tab:parametri_split}). Se solo l'origine di $p$ si fosse spostata a metà misura, ci si aspetterebbe di vedere cambiare soltanto $A$ e $C$, mentre varia anche $B$ (di circa $40 mm$): l'ipotesi di un semplice spostamento dello zero di $p$ non è quindi confermata dal fit separato.
+
+
+>>>>>>> 07154fbfd0ab5cf1e2620cd1cc0b6fd55f837b43
 
 \begin{table}[h]
     \centering
@@ -403,10 +425,21 @@ Osservando più da vicino la zona di plateu (Figura \ref{fig:cazzo-cul}) si nota
     \label{tab:ipotesi_shift}
 \end{table}
  
+<<<<<<< HEAD
 \noindent L'ipotesi di uno shift di segno opposto su $p$ e $q$ porta a un peggioramento del $\chi^2$. 
 \noindent Esclusa la lente, l'anomalia deve essere imputabile allo spostamento della lampadina, dello schermo o a un trascinamento del sistema di riferimento sul banco ottico. Osservando la Tabella \ref{tab:ipotesi_shift}, notiamo che un errore limitato al solo schermo (solo $q$) minimizzerebbe il $\chi^2$. Tuttavia, anche l'ipotesi di un trascinamento su $p$ e $q$ (stesso segno) riduce il $\chi^2$ rispetto ai dati non corretti. Non potendo ricostruire l'accaduto, si è scelto di applicare una traslazione $\Delta p = \Delta q \approx -4$ mm ai dati successivi alla discontinuità.
 
 \noindent La Tabella (~\ref{tab:confronto_shift}) confronta il fit unico con e senza lo shift $\delta=4$ mm.
+=======
+\noindent L'ipotesi di uno shift di segno opposto su $p$ e $q$ porta a un peggioramento del $\chi^2$. Poiché tale scenario corrisponderebbe a un errore sulla posizione di riferimento della lente ($x_0$), possiamo escludere che sia stata la lente a muoversi.
+
+
+\noindent Esclusa la lente, l'anomalia deve essere imputabile allo spostamento della lampadina o dello schermo. Osservando la Tabella \ref{tab:ipotesi_shift}, notiamo che un errore limitato al solo schermo (solo $q$) minimizzerebbe il $\chi^2$ assoluto. 
+Tuttavia, anche l'ipotesi di uno shift sistematico su $p$ e $q$ (stesso segno) abbassa notevolmente il $\chi^2$ rispetto ai dati non corretti.
+
+\noindent Non potendo ricostruire come (e dove) sia avvenuto l'urto, si è provato ad applicare una traslazione $\Delta p = \Delta q = -4$ $mm$ ai dati successivi alla discontinuità (supponendo, dunque, uno spostamento della lampadina).
+La Tabella~\ref{tab:confronto_shift} confronta il fit unico con e senza lo shift di $4$ mm.
+>>>>>>> 07154fbfd0ab5cf1e2620cd1cc0b6fd55f837b43
  
 \begin{table}[h]
     \centering
@@ -440,16 +473,29 @@ Osservando più da vicino la zona di plateu (Figura \ref{fig:cazzo-cul}) si nota
     \label{fig:residui_shift}
 \end{figure}
  
+<<<<<<< HEAD
 \noindent La correzione riduce il $\chi^2$ del 46\% ed elimina l'errore sistematico nei dati ($\mu$ compatibile con 0), ma il $\chi^2/\mathrm{ndf}$ resta $71$, $\sigma$ rimane incompatibile con 1 e la retta dei residui continua a non essere compatibile con $m=q=0$. Inoltre $A$ passa da $-1.0$ mm a $9.3$ mm e non è più compatibile con zero. Per cui la correzione attenua la discontinuità a spese di un offset dell'origine di $p$.
  
 \noindent C'è da sottolineare infine che lo shift è stato eseguito per verificare la presenza di un possibile effetto sistematico, e non come una correzione da adottare per il risultato finale.
+=======
+\noindent La correzione riduce il $\chi^2$ del 46\% ed elimina l'andamento anomalo dei residui normalizzati ($\mu$ compatibile con 0), ma il $\chi^2_{ridotto}$ resta $71$, $\sigma$ rimane incompatibile con 1 e la retta dei residui continua a non avere parametri $m$ e $q$ compatibili con 0. Inoltre $A$ passa da $-1.0$ mm a $9.3$ mm e non è più compatibile con zero, anche tenendo conto delle incertezze sistematiche sull'origine (soglia di circa 7 mm): la correzione attenua la discontinuità a spese di un offset dell'origine di $p$ molto più grande delle incertezze con cui sono state misurate le lunghezze. 
+Anche $C$ cambia di 3.9 mm (circa il 2\%), molto più dell'errore statistico del fit.
+ 
+\noindent Lo shift applicato va dunque intenso come una stima dello spostamento della lampadina e non come correzzione da adottare su C.
+>>>>>>> 07154fbfd0ab5cf1e2620cd1cc0b6fd55f837b43
  
  \section{Conclusione}
 \label{sec:conclusione}
 
+<<<<<<< HEAD
 \noindent L'esperimento ha permesso di confermare qualitativamente la legge delle lenti sottili. In tutte le analisi condotte, infatti, la curva $q(p)$ segue il corretto andamento iperbolico (con $q$ che varia da circa 230 mm ad oltre 1500 mm) e la distanza focale $f$ (rappresentata dal parametro $C$) converge sempre a valori vicini ai 200 mm. 
 
 \noindent Tuttavia, da un punto di vista quantitativo, il modello ideale non descrive i dati in modo statisticamente perfetto: in tutte le configurazioni si ottiene un $\chi^2/\mathrm{ndf}\geq 20$ (Tabella~\ref{tab:riepilogo}) e i parametri $A$, $B$ e $C$ mostrano fluttuazioni significative cambiando il tipo di analisi.
+=======
+\noindent L'esperimento ha permesso di confermare qualitativamente la legge delle lenti sottili. In tutte le analisi condotte, infatti, la curva $q(p)$ segue il corretto andamento iperbolico e la distanza focale $f$ (cioè $C$) converge sempre a valori vicini ai $200 mm$. 
+
+\noindent Tuttavia, il modello non descrive i nostri dati in modo adeguato: in tutti i fit svolti sulla curva si ottiene un $\chi^2_{ridotto} \geq 20$ (Tabella~\ref{tab:riepilogo}) e i parametri $A$, $B$ e $C$ mostrano fluttuazioni significative cambiando il tipo di analisi.
+>>>>>>> 07154fbfd0ab5cf1e2620cd1cc0b6fd55f837b43
 
 \begin{table}[h]
     \centering
@@ -476,12 +522,26 @@ Osservando più da vicino la zona di plateu (Figura \ref{fig:cazzo-cul}) si nota
 
 \noindent L'analisi rivela che l'incertezza sulla distanza focale $f$ è dominata dagli errori sistematici. L'errore puramente statistico restituito dai fit sull'intero set di dati è infatti irrisorio (inferiore a 0.1 mm), mentre i valori stimati per $C$ variano tra $196.9$ e $216.3$ mm a seconda del metodo utilizzato. 
 
+<<<<<<< HEAD
 \noindent Le difficoltà riscontrate nei fit possono essere ricondotte diverse cause principali tra cui
 la sensibilità in prossimità del fuoco, ovvero quando la lente è vicina al fuoco, piccole variazioni di $p$ generano enormi spostamenti dell'immagine $q$. Questo comporta che il $\chi^2$ sia estremamente sensibile al minimo difetto sperimentale.
 
 \noindent Un altra causa di errore è riconducibile allo spostamento accidentale dell'apparato: infatti come detto precedentemente, la discontinuità osservata tra $x=420$ e $425$ mm indica un urto o shift fatto all'apparato. Pur avendo applicato una correzione per risolvere il problema, l'incertezza su quale componente si sia esattamente spostato contribuisce all'errore finale.
 
 \noindent Infine un ultima fonte di errore può essere attribuita ai limiti del modello che non tiene conto della distanza tra i piani della lente reale, non prevista dall'approssimazione ideale di "lente sottile". 
+=======
+\noindent Per la stima finale di $f$ si è deciso di assumere come valore centrale quello ricavato dal fit unico sui dati originali. 
+Come incertezza sistematica, invece, si è assunta la differenza massima osservata applicando la correzione spaziale ($\delta = 4$ mm) all'intero dataset. Il risultato finale è dunque:
+\[
+f = 200.8 \pm 0.1\,(\mathrm{stat.}) \pm 3.9\,(\mathrm{sist.})\ \mathrm{mm}
+\]
+
+\noindent Possibili fonti d'errore riscontrabili durante la prova sono:
+\begin{itemize}
+    \item \textbf{Sensibilità in prossimità del fuoco}: Quando la lente è vicina al fuoco, piccole variazioni di $p$ generano enormi spostamenti dell'immagine $q$. Questo comporta che il $\chi^2$ sia estremamente sensibile al minimo difetto sperimentale.
+    \item \textbf{Spostamento accidentale dell'apparato}: Come discusso, la discontinuità osservata tra $x=420$ e $425$ mm potrebbe indicare uno spostamento di uno dei componenti dell'apparto sperimentale.
+\end{itemize}
+>>>>>>> 07154fbfd0ab5cf1e2620cd1cc0b6fd55f837b43
 
 
     
