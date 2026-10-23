@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1792575441.70019 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1792575446.09563 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1792575443.79278 137029 fa04716293aacebd4d038fc851e793b7 ""
+["pdflatex"] 1792738967.85085 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1792738972.12423 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1792738967.57725 137078 881ac4f326ec58d22d74c5ce1d153a0c ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -363,9 +363,9 @@
   "Immagini/fit3 iminuit immmagine 2.png" 1790598520.01001 28194 01f69ed9ce175584be62a092d77f7e7b ""
   "Immagini/fit3 iminuit immmagine 3.png" 1790598520.00773 19037 66200aec00100d3a3541a7b590d6883d ""
   "Immagini/fit_iminuit immagine.png" 1790598520.01552 30612 7f0606ceab6311696b3eeb005ba2e105 ""
-  "Ottica.aux" 1792575445.97786 29340 afc152ae4da46595a9c10a3a34937e19 "pdflatex"
-  "Ottica.tex" 1792575443.79278 137029 fa04716293aacebd4d038fc851e793b7 ""
-  "Ottica.toc" 1792575445.99148 2982 e2fd45654760ff6781a3c822a7e1e8bb "pdflatex"
+  "Ottica.aux" 1792738972.00684 29340 afc152ae4da46595a9c10a3a34937e19 "pdflatex"
+  "Ottica.tex" 1792738967.57725 137078 881ac4f326ec58d22d74c5ce1d153a0c ""
+  "Ottica.toc" 1792738972.01988 2982 e2fd45654760ff6781a3c822a7e1e8bb "pdflatex"
   (generated)
   "Ottica.aux"
   "Ottica.log"
