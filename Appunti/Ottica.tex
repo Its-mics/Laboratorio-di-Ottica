@@ -2895,18 +2895,200 @@ Per confermare il modello teorico, effettueremo un fit dei dati secondo due mode
 Confrontando il $\chi^2$ dei due fit, noteremo che il $\chi^2$ del modello di Sellmeier è minore di quello del fit lineare, indicando che i dati sperimentali "preferiscono" il modello fisico corretto. Tuttavia, la differenza potrebbe non essere evidente: nell'intervallo (piccolo) del visibile ($450-700 \text{ nm}$), la curvatura imposta dall'equazione di Sellmeier è modesta, e i punti si adattano visivamente a una semplice retta decrescente.
 \end{nota}
 
+\section{Arcobaleno} 
+Vedremo un applicazione del fenomeno della dispersione dell'indice di rifrazione della lunghezza d'onda.
+
+Come descriviamo il fenomneo del (doppio) arcobaleno? 
+Un buon modello che lo può descrivere è una boccia di vetro piena d'acqua.
+
+Consideriamo una goccia d'acqua sferica di raggio $R$, un raggio incidente su di essa con un \textit{parametro d'impatto} $b$ e angolo di 
+incidenza $\theta_i$ (che corrisponderà anche all'angolo tra $R$ e $l$). Vi sarà un raggio di prima deflessione (non interessante al nostro caso) e un raggio rifratto (rispetto alla superfice di riflessione, localmente piana)
+L'angolo fra la direzione del raggio incidente e il raggio rifratto sarà $\theta_i - \theta_r$ (dove $\theta_r$ è l'angolo del raggio rifratto)
+ 
+AGGIUNGI GRAFICO    
+
+Il raggio subirà dopo una nuova riflessione ed una nuova deflessione, chiamiamo $\Delta$ l'angolo di deviazione "totale" (fra raggio incidente e raggio in uscita dalla goccia).
+\[
+\Delta = (i-r) + (\pi -2r) + (i-r) = \pi +2i -4 \arcsin(\sin(i)/ n)
+\]
+dove abbiamo utilizzato Snell, deriviamo rispetto a i, per studiare se vi è un estremo
+\begin{equation}
+    \frac{d \Delta}{d i} = 2 -\frac{4}{\sqrt{1 - \frac{\sin^2 i}{n^2}}}\frac{\cos i}{n} = 0
+\end{equation}
+
+risolvendo per i si ottiene:
+
+\begin{equation}
+    \sin i = \frac{4 n^2}{3}
+\end{equation}
+
+ed utilizzando n = indice di rifrazione dell'aria si ottiene $i \simeq 0.86 \rightarrow i \simeq 59°$ ed $r \simeq 40°$
+
+e dunque abbiamo 
+
+\begin{equation}
+    \Delta_{min} \simeq 138°
+\end{equation}
+
+per cui $b \simeq 0.86 R$
 
 
+L'angolo complementera a $138$ è 42 che è circa l'angolo alla quale si riesce ad osservare l'arcobaleno. 
 
+Studiando lo stesso fenomeno nel caso di raggio di quarta classe abbiamo
 
+\begin{equation}
+    \Delta = (i - r) + (\pi - 2 r) + (\pi - 2r) + (i-r) = 2\pi + 2i - \arcsin{\sin(i)/n}
+\end{equation}
+nuovamente, cercando $\Delta_min$:
+\begin{equation}
+    \frac{d \Delta}{d i} = 2 - \frac{4}{\sqrt{1 - \frac{\sin^2 i}{n^2}}}\frac{\cos i}{n} = 0
+\end{equation}
+da cui otteniamo i risultati $ i \simeq 77°$ ed $r \simeq 45.5°$ e $\Delta_{min} \simeq 230°$ con $b \simeq 0.95 R$.
+Che corrisponde all'angolo a cui si osserva il secondo arco di arcobaleno
 
+Possiamoi studiare l'andamento di $\Delta$ rispetoto a $\sin i = \frac{b}{R}$ e, contemporaneamente, un grafico della dipendenza di I da $\Delta$, si vede che 
+ci sono molti più angoli che hanno $\Delta_{min}$ a $138°$, e dunque ivi l'intensità è elevata, mentre quelli a $230°$ sono è molto più piccola. 
 
+Inoltre vi è una regione di angoli di incidenza in cui non vi sono raggi di terza e quarta classe, per questo in questi angoli la luminosità del cielo è minore.
 
+In realtà, considerando i fenomeni d'interferenza fra i vari raggi all'interno delle goccie, possono diminuire o aumentare l'intensità della luce nella regione intermedia, dove questi fenomeni sono più visibili.
 
+\subsection{Esperienza 4: Polarizzazione della luce}
+Sappiamo che possiamo descrovere il campo elettrico come un vittore bidimensiomale, scegliamo i vettori della base canonica per farlo.
 
+L'esempio più semplice è la polarizzzazzioe lineare $\vec{E} = \cos \theta \hat{x} + \sin \theta \hat{y}$, dove $\theta$ sono l'angolo di incidenza della luce.
 
+Le componenti in questo caso oscillano in fase, se introduciamo una fase $\delta$ avremo una polarizzazzione elliticca, se $\delta = \pm \pi /2$ allora la polarizzazzione è circolare,
+la quale può essere circolare destra o sinistra.
 
+In generale i due campi saranno
+\[
+\vec{E_x} = \vec{Ex_0} \cos wt
+\]
+\[
+\vec{E_y} = \vec{Ey_0} \cos wt + \phi
+\]
+Il punto descritto da tale vettore si muoverà con coordinnte 
+\[
+x = E_x0 \cos wt
+\]
+\[
+y = E_y0 \cos (wt +\phi)
+\]
+sono particolarmente interessanti le quantità:
+\[
+x/E_x0 = \cos wt \hspace{1cm} y/E_y0 = cos(wt)cos(\phi) - \sin(wt) \sin(\phi)
+\]
+sommando i quadrati otteniamo l'equazione di un ellisse:
+\begin{equation}
+    (x/E_x0)^2 + (y/E_y0)^2 - 2 \frac{x}{E_x0} \frac{y}{E_y0} = \sin^2 \phi
+\end{equation}
+inclinata rispetto all'asse x con $\tan 2\beta = \frac{2E_y0 E_x0}{E_x0^2 - E_y0^2}$
 
+Alcuni casi particolari sono:
+\begin{itemize}
+    \item $\phi = 0$: luce lineare
+    \item $\phi = \frac{\pi}{2}$: luce circolare
+\end{itemize}
+
+Ma se ciascuna delle onde ha una fase $\delta$ diversa, come ottengo la polarizzazzione?
+
+In generale si usa un polarizzatore, cioè delle lastre di materiale plastico (polimeri)che hanno un coefficente di assrobimento diverso a seconda della direzione del campo elettrico
+
+Se il campo elettrico oscilla lungo la direzione dei polimeri, il campo elettrico si muoverà all'interno e vi è un effetto di assrobimento (dovuto al lavoro fatto dal campo).
+Se il campo elettrico oscilla lungo una direzione differente, non vi sarà effetto di assorbimento.
+
+Andremo a guardare cosa succede se polarizzo ($E_1$) la luce uscente da una certa sorgente ($E_0$) e dopo la luce in uscita attraversa un secodo polarizzatore ($E_2$).
+
+Si trova che
+\begin{equation}
+    E_2 = E_1 \cos \alpha
+\end{equation}
+dove $\alpha$ è l'angolo fra i polarizzatore, questa relazione vale anche per le intensità $I_2 = I_1 \cos^2 \alpha$ (legge di Malus).
+
+Ci chiediamo in particolare cosa succede fra il primo e secondo polarizzatore.
+
+Per il primo step (sorgente-polarizzatore), dobbiamo considerare che all'inizio la luce non è polarizzata, l'anadamento segue semmore la legge di Malus,
+però va integrata su tutti gli angoli $\alpha$ possibili:
+
+\begin{equation}
+    I_1 = \frac{1}{2}I_0
+\end{equation}
+
+\subsubsection{Notazione}
+Introduciamo il vettore di Jones:
+se abbiamo un campo elettrico
+\[
+\vec{E} = E_x \hat i + E_y \hat j
+\]
+con
+\[
+E_x = E_x0 \exp(i\theta_x) \hspace{1cm} E_y = E_y0 \exp(i\theta_y)
+\]
+in notazione vettoriale:
+\[
+(E_x, E_y) = (E_x0 \exp(i\theta_x) E_y0 \exp(i\theta_y))
+\]
+la seguente notazione è utile perchè possiamo combinare facilmente le diverse polarizzazzioni, per esempio vediamo subito che una somma di polarizzazzione circolare destra e sinistra ci da la polarizzazione linera
+
+\subsection{Verifica della legge di Malus}
+L'apparato sperimentale sarà composto da 
+\begin{itemize}
+    \item La sorgente di luce bianca
+    \item il primo polarizzatore
+    \item il secondo polarizzatore, messo vicino al primo per che la luce uscente dallo scintillatoro vada attraverso il secondo polarizzatore
+    \item il fotodiodo (ACCESO), mascherato per evitare la saturazione
+\end{itemize}
+Misureremo l'inensità di luce che raggiunge il fotodiodo in funzione dell'angolo fra i polarizzatori.
+
+Ci conviene tenere fisso il secondo polarizzatore e variare l'angolo del primo (qui arriva la luce e riesco a vedere la scala).
+
+Il miglior polarizzatore sarà il primo.
+
+La funzione di fit sarà
+\[
+y = A \cos^2(x - C)+ B
+\]
+dove C è introdotto perchè non è detto che i due polarizzatori sabbimo 0 coincidente, e dipende da coem inizializziamo il fit, infatti la funzione ci può apparire semplicemente traslata,
+ $A = I_max$ e $B$ è un termine di fondo.
+
+Dovremo contorllare che 
+\begin{itemize}
+    \item il fotodiodo non sia in saturazione
+    \item Non possiamo misurare un fondo, perchè no possiamo evitare la luce che arriva alla lampadina, inoltre il sistema è molto compatto ed è difficle 
+avere un fondo consistente. Nonostante questo noteremo nel grafico il valore di B sia significatamente diverso da 0, perchè il polarizzatore non blocca completamente la luce nella direzione parallela ai polimeri
+Dunque avremo una doppia polarizzazzione. Il secondo polarizzatore avrà due componenti, quella della luce polarizzata dal primo polarizzatore e quell "residuaa", sempre proveniente dal primo polarizzatore.
+
+Allora avremo
+\[
+E_2 \propto \sqrt{E_1^2 \cos \alpha + \varepsilon E_1^2 \sin \alpha} = E_1 \sqrt{ \cos \alpha + \varepsilon \sin \alpha} 
+\]
+
+e duqnue
+
+\[
+I_2 = I_1 \cos^2 \alpha + \varepsilon I_1 - \varepsilon I_1 \cos^2 \alpha
+\]
+
+duque
+
+\[
+I_1(1-\varepsilon)\cos^2 \alpha
+\]
+\end{itemize}
+
+Veremo come errori
+\begin{itemize}
+    \item la scala
+    \item il voltmetro
+    \item l'errore maggiore saranno dei punti più alti o bassi nella curva, questo accade perchè il fotodiodo non è allineato perfettamente con l'assei rotazione del polarizztore, allora guardiamo punti diversi del polarizzatore 
+    e dunque in base a dove siamo avremo diversi gradi di assorbimento, poichè il polarizzatore potrebbe non essere perfettamente uniforme
+\end{itemize}
+
+Ha senso guardare allora l'intervallo in cui oscilla l'onda e calcoliamo $\Delta V /V_max$ e ci dice che il nostro polarizzatore ha una certa disuniformità
+
+Inoltre noteremo che la curva non si chiude, perchè il polarizzatore si scalda e il fotodiodo si scarica
 
 
 
