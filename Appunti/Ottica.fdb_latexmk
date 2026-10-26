@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1793029594.63657 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1793029600.35567 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1793029588.47017 149659 ab80aa92452072a8c686d697c0a01f90 ""
+["pdflatex"] 1793053121.78728 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" "Ottica.pdf" "Ottica" 1793053130.48294 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Appunti/Ottica.tex" 1793053121.50614 186140 e591ceb292c8a32436f747b8595f94d0 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -142,6 +142,7 @@
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex" 1601326656 345 9efe6b557b64ab0401dc06a4ef8ca04c ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex" 1601326656 15929 463535aa2c4268fead6674a75c0e8266 ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex" 1755201859 5650 0ccd824135f363f45d6a97602e59d55a ""
+  "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex" 1601326656 788 fb28645a91ec7448ebe79bee60965a88 ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex" 1601326656 321 cdd11262840e01e25374a2d458f15e99 ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex" 1601326656 1319 0b2de5126c6cbc295f0eb77f7344b34d ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex" 1601326656 1179 5483d86c1582c569e665c74efab6281f ""
@@ -153,6 +154,7 @@
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1608933718 11518 738408f795261b70ce8dd47459171309 ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex" 1601326656 3360 d7547ac810d5d8570c7b6f7c224d69da ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1755201859 186859 0445d9a41a87648b4723e04765409541 ""
+  "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex" 1601326656 5220 c70346acb7ff99702098460fd6c18993 ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex" 1601326656 8843 5533436db3e30fbad1e0440db6027dac ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex" 1601326656 7474 f05a7223b140f230922562ac6a9fede5 ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex" 1755201859 31875 f74512d4f7a0bc3c98e4be01a7e9978f ""
@@ -363,9 +365,9 @@
   "Immagini/fit3 iminuit immmagine 2.png" 1790598520.01001 28194 01f69ed9ce175584be62a092d77f7e7b ""
   "Immagini/fit3 iminuit immmagine 3.png" 1790598520.00773 19037 66200aec00100d3a3541a7b590d6883d ""
   "Immagini/fit_iminuit immagine.png" 1790598520.01552 30612 7f0606ceab6311696b3eeb005ba2e105 ""
-  "Ottica.aux" 1793029600.21343 30941 c6ccff42f4d1aa6eb6ca601764fa976e "pdflatex"
-  "Ottica.tex" 1793029588.47017 149659 ab80aa92452072a8c686d697c0a01f90 ""
-  "Ottica.toc" 1793029600.23081 3328 4a9d1fecd68d6bd79fde1e4ed108fbb7 "pdflatex"
+  "Ottica.aux" 1793053130.32415 30972 aca078c1bf03a9172e1c72ca5622a5e8 "pdflatex"
+  "Ottica.tex" 1793053121.50614 186140 e591ceb292c8a32436f747b8595f94d0 ""
+  "Ottica.toc" 1793053130.34255 3345 61d35c90680caf6cdae5aaf2dfda99e8 "pdflatex"
   (generated)
   "Ottica.aux"
   "Ottica.log"

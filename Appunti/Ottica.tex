@@ -60,7 +60,7 @@
 \usepackage{subcaption} 
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
-\usetikzlibrary{positioning, arrows.meta, angles, quotes, trees, patterns, calc}
+\usetikzlibrary{positioning, arrows.meta, angles, quotes, trees, patterns, calc, arrows.meta, decorations.markings}
 
 \pgfplotsset{
     standard/.style={
@@ -2895,240 +2895,1031 @@ Per confermare il modello teorico, effettueremo un fit dei dati secondo due mode
 Confrontando il $\chi^2$ dei due fit, noteremo che il $\chi^2$ del modello di Sellmeier è minore di quello del fit lineare, indicando che i dati sperimentali "preferiscono" il modello fisico corretto. Tuttavia, la differenza potrebbe non essere evidente: nell'intervallo (piccolo) del visibile ($450-700 \text{ nm}$), la curvatura imposta dall'equazione di Sellmeier è modesta, e i punti si adattano visivamente a una semplice retta decrescente.
 \end{nota}
 
-\section{Arcobaleno} 
-
-Vedremo un applicazione del fenomeno della dispersione dovuta alla dipendenza dell'indice di rifrazione dalla lunghezza d'onda.
-Osservando un arcobaleno con il sole alle nostre spalle, vediamo un arco ad un angolo $\theta \sim 40°$ rispetto alla direzione di provenienza del sole con il colore violetto verso la parte bassa e il rosso verso la parte alta. 
-Se siamo particolarmente fortunati si riesce a vedere anche un secondo arco (secondario) a colori invertiti: rosso nella parte interno e violetto esterno.
-in più se si osserva bene la parte di cielo tra i 2 archi è meno luminosa rispetto al cielo sopra e sotto i 2 arcobaleni.  
-
-GRAFICO ARCOBALENO
 
 
-Come descriviamo il fenomneo del (doppio) arcobaleno? 
-Un buon modello che lo può descrivere è una boccia di vetro piena d'acqua (o sfera di cristallo).
+\section{L'Arcobaleno} 
 
-Consideriamo una goccia d'acqua sferica di raggio $R$, si abbia un raggio incidente su di essa con un \textit{parametro d'impatto} $b$ (ovvero l'altezza rispetto al centro della goccia) e angolo di 
-incidenza $\theta_i$ (che corrisponderà anche all'angolo tra $R$ (rispetto al centro) e $R$ (rispetto al parametro di impatto)). Il primo raggio sara riflesso in una direzione non interessante al nostro caso verrà chiamato raggio di prima classe, ci sarà poi il raggio rifratto (normale rispetto alla superfice di separazione, localmente piana),
-il raggio di rifrazione formerà un angolo $\theta_r$ con il raggio $R$ del parametro di impatto.
-L'angolo che resta ovvero l'angolo fra la direzione del raggio incidente e il raggio rifratto sarà $\theta_i - \theta_r$, 
- prolungando un retta dal centro della goccia fino a dove finisce il secondo raggio di rifrazione che incide a destra sulla goccia, fa formare tra i 2 un angolo $\theta_r$. 
- anche in questo caso si avrà un riflessione interna e un raggio in uscita con il nome di raggio di seconda classe (dove l'angolo tra il raggio di uscita e il piano è $\theta_i$).
- prolungando il raggio di rifrazione, si trova un angolo $\pi - \theta_r$ rispetto al raggio di uscita, poichè l'angolo tra il (secondo) raggio di riflessione interna e il piano immaginario orizzontale al centro della goccia è $\theta_r$, quindi
- prolungando a destra il secondo raggio di riflessionte interna e il primo si trova un angolo $2\theta_r$.
-tracciando una retta dall'origine fino al terzo punto di incidenza si trova un angolo con il secondo raggio di riflessione di $\theta_r$, dove anche in questo caso il raggio uscirà (stavolta nella stessa direzione  ma verso opposto di dove il primo raggio entra) questo sarà raggio di terza classe, che formerà un angolo $\theta_i$ con il prolungamento con il secondo raggio di riflessione interna. 
-adesso prolungando a destra anche il terzo raggio di uscita a destra  formerà un angolo $\theta_i - \theta_r$ con il secondo raggio di riflessione interna.
-Prolungandolo ancora di più e prolungando anche il primo raggio incidente a destra si trova che quando si congiungono formano un angolo (esterno) chiamato $\Delta$.  
+L'arcobaleno è un'applicazione del fenomeno della dispersione, dovuta alla dipendenza dell'indice di rifrazione dalla lunghezza d'onda della luce. 
+Osservando un arcobaleno con il sole alle nostre spalle, possiamo notare le seguenti caratteristiche:
+\begin{itemize}
+    \item \textbf{Arco primario:} si forma ad un angolo $\theta \sim 40^\circ$ rispetto alla direzione dei raggi solari. Presenta il colore violetto nella parte bassa e il rosso nella parte alta.
+    \item \textbf{Arco secondario:} visibile solo in condizioni ottimali, si trova ad un angolo maggiore e presenta i colori invertiti (rosso all'interno, violetto all'esterno).
+    \item \textbf{Cielo in mezzo:} la porzione di cielo compresa tra i due archi risulta meno luminosa rispetto al cielo circostante.
+\end{itemize}
 
-AGGIUNGI GRAFICO GOCCIA
 
- chiamiamo quindi $\Delta$ l'angolo di deviazione "totale" (fra raggio incidente e raggio in uscita dalla goccia), che si può calcolare come somma delle diverse deviazione alle interfacce, 
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=Stealth, font=\small]
+
+    % Colori personalizzati per i raggi
+    \colorlet{RayRed}{red!80!black}
+    \colorlet{RayViolet}{violet!90!black}
+
+    % Origine (osservatore / goccia)
+    \coordinate (O) at (0,0);
+
+    % Asse orizzontale (linea di vista / asse antisolare)
+    \draw[thick] (-1,0) -- (10,0);
+    \draw[dashed] (-3,0) -- (-1,0);
+
+    % ================= ARCO PRIMARIO =================
+    % Angolo ~40-42 gradi. Violetto in basso, Rosso in alto
+    \draw[thick, RayViolet] (O) -- (40.5:8.5) node[above left, text=black] {V};
+    \draw[thick, RayRed]    (O) -- (42.5:8.5) node[above left, text=black] {R};
+    
+    % Sfumatura leggera per dare l'idea dei colori in mezzo
+    \shade[bottom color=RayViolet, top color=RayRed, opacity=0.2] 
+        (O) -- (40.5:8.5) arc (40.5:42.5:8.5) -- cycle;
+        
+    % Etichetta
+    \node[rotate=41.5] at (41.5:9.2) {\textbf{Primario}};
+
+    % ================= ARCO SECONDARIO =================
+    % Angolo ~50-52 gradi. Colori invertiti: Rosso in basso, Violetto in alto
+    \draw[thick, RayRed]    (O) -- (50:9) node[above left, text=black] {R};
+    \draw[thick, RayViolet] (O) -- (52:9) node[above left, text=black] {V};
+    
+    \shade[bottom color=RayRed, top color=RayViolet, opacity=0.2] 
+        (O) -- (50:9) arc (50:52:9) -- cycle;
+        
+    % Etichetta
+    \node[rotate=51] at (51:9.7) {\textbf{Secondario}};
+
+    % ================= BANDA OSCURA =================
+    \node[rotate=46, align=center, text=gray!80!black] at (46.5:7.5) {\textbf{Banda oscura}};
+
+    % ================= ANGOLI =================
+    % Arco per 40° (Primario)
+    \draw[->, thick] (4,0) arc (0:40.5:4);
+    \node at (20.25:4.5) {$40^\circ$};
+
+    % Arco per 50° (Secondario)
+    \draw[->, thick] (2.5,0) arc (0:50:2.5);
+    \node at (28:1.8) {$50^\circ$};
+
+
+\end{tikzpicture}
+\end{center}
+
+Per descrivere il fenomeno del (doppio) arcobaleno, un ottimo modello fisico è quello di assimilare la goccia d'acqua a una sfera di vetro o cristallo piena d'acqua.
+
+\subsection*{Geometria del raggio nella goccia d'acqua}
+Consideriamo una goccia d'acqua sferica di raggio $R$. Un raggio di luce incide su di essa caratterizzato da un \textit{parametro d'impatto} $b$ (ovvero la distanza della retta di incidenza dal centro della goccia). Sulla superficie di separazione, localmente piana, definiamo:
+\begin{itemize}
+    \item $i$ (o $\theta_i$): l'angolo di incidenza rispetto alla normale (il raggio passante per il centro).
+    \item $r$ (o $\theta_r$): l'angolo di rifrazione.
+\end{itemize}
+Quando la luce colpisce la goccia, subisce diverse interazioni, suddivisibili in "classi" di raggi:
+\begin{enumerate}
+    \item \textbf{Raggio di prima classe:} la parte di luce che viene immediatamente riflessa all'esterno (non contribuisce all'arcobaleno).
+    \item \textbf{Raggio di seconda classe:} il raggio che subisce una rifrazione, attraversa la goccia ed esce senza subire riflessioni interne.
+    \item \textbf{Raggio di terza classe:} il raggio che subisce una rifrazione, \textit{una riflessione interna} ed esce dalla goccia verso l'osservatore. \textbf{Questo genera l'arcobaleno primario.}
+    \item \textbf{Raggio di quarta classe:} il raggio che subisce una rifrazione, \textit{due riflessioni interne} ed esce. \textbf{Questo genera l'arcobaleno secondario.}
+\end{enumerate}
+
+Tracciando geometricamente il percorso del raggio di terza classe all'interno della goccia e prolungando i raggi incidente e uscente, si individua un angolo esterno $\Delta$, detto \textbf{angolo di deviazione totale}.
+
+\begin{center}
+    
+\begin{tikzpicture}[
+    >=Stealth,
+    ray/.style={thick,
+        decoration={markings,
+            mark=at position 0.55 with {\arrow{Stealth[length=3mm,width=2.4mm]}}},
+        postaction={decorate}},
+    tratt/.style={thin, dash pattern=on 4pt off 3pt}
+]
+ 
+  % ---------------- parametri ----------------
+  \pgfmathsetmacro{\R}{2.6}                       % raggio della goccia
+  \pgfmathsetmacro{\ia}{59.4}                     % angolo di incidenza i [gradi]
+  \pgfmathsetmacro{\nind}{1.333}                  % indice di rifrazione dell'acqua
+  \pgfmathsetmacro{\ra}{asin(sin(\ia)/\nind)}     % angolo di rifrazione r (Snell)
+ 
+  % ---------------- geometria ----------------
+  % posizioni polari (rispetto al centro) dei tre punti sulla superficie
+  \pgfmathsetmacro{\thA}{180-\ia}                 % punto A: rifrazione in ingresso
+  \pgfmathsetmacro{\thB}{2*\ra-\ia}               % punto B: riflessione interna
+  \pgfmathsetmacro{\thC}{4*\ra-\ia-180}           % punto C: rifrazione in uscita
+  % direzioni dei raggi
+  \pgfmathsetmacro{\dAB}{\ra-\ia}                 % tratto AB
+  \pgfmathsetmacro{\dBC}{3*\ra-\ia-180}           % tratto BC
+  \pgfmathsetmacro{\dUno}{180-2*\ia}              % raggio di 1a classe
+  \pgfmathsetmacro{\dDue}{2*\ra-2*\ia}            % raggio di 2a classe
+  \pgfmathsetmacro{\dTre}{4*\ra-2*\ia-180}        % raggio di 3a classe
+  % direzioni ausiliarie per gli archi degli angoli
+  \pgfmathsetmacro{\nAin}{-\ia}                   % normale interna in A
+  \pgfmathsetmacro{\bBA}{\dAB+180}                % da B verso A
+  \pgfmathsetmacro{\nBin}{\thB+180}               % normale interna in B
+  \pgfmathsetmacro{\dBCp}{\dBC+360}               % direzione BC (positiva)
+  \pgfmathsetmacro{\bCB}{\dBC+180}                % da C verso B
+  \pgfmathsetmacro{\nCin}{\thC+180}               % normale interna in C
+ 
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\thA:\R);
+  \coordinate (B) at (\thB:\R);
+  \coordinate (C) at (\thC:\R);
+  \pgfmathsetmacro{\yA}{\R*sin(\ia)}              % quota del raggio incidente = b
+  \coordinate (S) at (-4.2,\yA);                  % inizio del raggio incidente
+ 
+  % punto P: intersezione tra il prolungamento del raggio incidente
+  % e il prolungamento all'indietro del raggio uscente (per Delta)
+  \pgfmathsetmacro{\xC}{\R*cos(\thC)}
+  \pgfmathsetmacro{\yC}{\R*sin(\thC)}
+  \pgfmathsetmacro{\dBack}{\dTre+180}
+  \pgfmathsetmacro{\tP}{(\yA-\yC)/sin(\dBack)}
+  \coordinate (P) at ({\xC+\tP*cos(\dBack)},\yA);
+ 
+  % macro per gli angoli: centro, angolo iniziale, angolo finale, raggio
+  % dell'arco, angolo e distanza dell'etichetta, testo
+  \def\marc#1#2#3#4#5#6#7{%
+    \draw[thin] (#1) ++(#2:#4) arc[start angle=#2, end angle=#3, radius=#4];
+    \node[font=\footnotesize, inner sep=1pt] at ([shift={(#5:#6)}]#1) {#7};}
+ 
+  % ---------------- asse, b ed R ----------------
+  \draw[thin] (-4.2,0) -- (O);
+  \draw[<->] (-3.6,0) -- (-3.6,\yA) node[midway,left] {$b$};
+  \draw[->] (O) -- (-\R,0) node[pos=0.72,above=1pt] {$R$};
+ 
+  % ---------------- goccia ----------------
+  \draw[thick] (O) circle (\R);
+  \draw[thin] (-0.1,0) -- (0.1,0) (0,-0.1) -- (0,0.1);
+  \node[draw,circle,inner sep=1.5pt] at (-1.5,-0.9) {$n$};
+ 
+  % normali (tratteggiate, prolungate all'esterno)
+  \draw[tratt] (O) -- (\thA:{\R+1.3});
+  \draw[tratt] (O) -- (\thB:{\R+1.3});
+  \draw[tratt] (O) -- (\thC:{\R+1.3});
+ 
+  % prolungamenti dei raggi (tratteggiati)
+  \draw[tratt] (A) -- (P);                         % raggio incidente
+  \draw[tratt] (B) -- ++(\dAB:2.3);                % AB oltre B
+  \draw[tratt] (C) -- ++(\dBC:1.7);                % BC oltre C
+ 
+  % ---------------- raggi ----------------
+  \draw[ray] (S) -- (A);
+  \draw[ray] (A) -- (B);
+  \draw[ray] (B) -- (C);
+  \draw[ray] (A) -- ++(\dUno:2.2) node[above right] {\small 1\textsuperscript{a} classe};
+  \draw[ray] (B) -- ++(\dDue:2.6) node[right]       {\small 2\textsuperscript{a} classe};
+  \draw[ray] (C) -- ++(\dTre:3.0) node[below left]  {\small 3\textsuperscript{a} classe};
+ 
+  \fill (A) circle (1.4pt);
+  \fill (B) circle (1.4pt);
+  \fill (C) circle (1.4pt);
+ 
+  % ---------------- angoli ----------------
+  % al centro: i tra il raggio OA e l'orizzontale (sin i = b/R)
+  \marc{O}{\thA}{180}{0.8}{150}{1.1}{$i$}
+ 
+  % in A (ingresso)
+  \marc{A}{\thA}{180}{0.7}{150}{1.0}{$i$}
+  \marc{A}{\nAin}{\dAB}{0.9}{-39}{1.3}{$r$}
+  \marc{A}{\dAB}{0}{1.6}{-9.6}{2.3}{$i-r$}
+ 
+  % in B (riflessione interna)
+  \marc{B}{\bBA}{\nBin}{0.8}{181}{1.15}{$r$}
+  \marc{B}{\nBin}{\dBCp}{0.8}{221}{1.15}{$r$}
+  \marc{B}{\dDue}{\thB}{0.95}{1}{1.35}{$i$}
+  \marc{B}{\dBC}{\dAB}{1.6}{-69}{2.2}{$\pi-2r$}
+ 
+  % in C (uscita)
+  \marc{C}{\bCB}{\nCin}{0.8}{81}{1.2}{$r$}
+  \marc{C}{\dTre}{\thC}{0.95}{-98}{1.35}{$i$}
+  \marc{C}{\dTre}{\dBC}{1.5}{-128.4}{2.0}{$i-r$}
+ 
+  % ---------------- angolo di deviazione totale Delta ----------------
+  % (commenta questo blocco se non serve)
+  \draw[tratt] (C) -- (P);
+  \draw[->,thin] (P) ++(0:1.0) arc[start angle=0, end angle=\dTre, radius=1.0];
+  \node at ([shift={(-69:1.45)}]P) {$\Delta$};
+ 
+\end{tikzpicture}
+\end{center}
+
+L'angolo $\Delta$ si calcola come somma delle singole deviazioni subite dal raggio alle varie interfacce:
 \[
-\Delta = (i-r) + (\pi -2r) + (i-r) = \pi +2i -4r
+\Delta = (i - r) + (\pi - 2r) + (i - r) = \pi + 2i - 4r
 \]
-usando snell e considerando l'indice di rifrazione dell'aria $n_{aria} \sim 1 $ si trova l'indice di rifrazione dell'oggetto:
+Utilizzando la legge di Snell per l'interfaccia aria-acqua e approssimando $n_{\text{aria}} \simeq 1$, si ha:
 \begin{equation}
-    \frac{sin(i)}{sin(r)} = n
+    \frac{\sin i}{\sin r} = n \implies r = \arcsin\left(\frac{\sin i}{n}\right)
 \end{equation}
-per cui si trova:
+Sostituendo $r$, l'angolo di deviazione diventa una funzione dipendente solo dall'angolo di incidenza $i$:
 \begin{equation}
-   \Delta  = \pi +2i - 4\arcsin(\sin(i)/ n) = \Delta(i)
-\end{equation}
- Per cui il nostro angolo di deviazione dipenderà dall'angolo di incidenza, per studiarne la dipendenza deriviamo rispetto a i (per studiare se ha un estremo), questa operazioen si fa sul raggio di terza classe poiché se fosse fatto sul raggio di prima o seconda classe
- si troverebbe che non ha minimo (almeno all'interno dei valori di minmi e max degli angoli):
-\begin{equation}
-    \frac{d \Delta}{d i} = 2 -\frac{4}{\sqrt{1 - \frac{\sin^2 i}{n^2}}}\frac{\cos i}{n} = 0
+   \Delta(i)  = \pi + 2i - 4\arcsin\left(\frac{\sin i}{n}\right)
 \end{equation}
 
-risolvendo per i si ottiene:
-
+\subsection*{Calcolo dell'angolo per l'arcobaleno primario}
+Per trovare la direzione in cui la luce è più intensa, dobbiamo cercare i punti di stazionarietà (minimo) della deviazione $\Delta(i)$. Deriviamo rispetto ad $i$ e poniamo uguale a zero:
 \begin{equation}
-    2\sqrt{1 - \frac{sin^2 (i)}{n}} = 4 \frac{cos(i)}{n} \rightarrow n^2 - sin^2 (i) = 4 cos(i)
+    \frac{d \Delta}{d i} = 2 - \frac{4}{\sqrt{1 - \frac{\sin^2 i}{n^2}}} \cdot \frac{\cos i}{n} = 0
 \end{equation}
-
-
+Risolviamo per trovare l'angolo $i$:
+\begin{equation}
+    2\sqrt{1 - \frac{\sin^2 i}{n^2}} = 4 \frac{\cos i}{n} \implies n^2 - \sin^2 i = 4 \cos^2 i
+\end{equation}
+Ricordando che $\cos^2 i = 1 - \sin^2 i$, otteniamo:
 \begin{equation}
      \sin^2 i = \frac{4 - n^2}{3}
 \end{equation}
-
-
-ed utilizzando n = indice di rifrazione dell'acqua ($n_{acqua}\sim 1.33$) si ottiene $i \simeq 0.86 \rightarrow i \simeq 59^\circ$ ed $r \simeq 40^\circ$
-
-e dunque abbiamo 
-
+Utilizzando l'indice di rifrazione dell'acqua ($n_{\text{acqua}} \simeq 1.33$), calcoliamo i valori numerici:
+\[
+    i \simeq 0.86 \text{ rad} \implies i \simeq 59^\circ \quad \text{ed} \quad r \simeq 40^\circ
+\]
+Inserendo questi valori, la deviazione minima è:
 \begin{equation}
-    \Delta_{min} \simeq 138^\circ
+    \Delta_{\text{min}} \simeq 138^\circ
+\end{equation}
+Poiché $\sin i = \frac{b}{R}$, troviamo che questo avviene per un parametro di impatto $b \simeq 0.86 R$.
+L'angolo di osservazione dell'arcobaleno primario rispetto ai raggi incidenti è il supplementare della deviazione minima: $180^\circ - 138^\circ = 42^\circ$.
+
+\begin{nota}
+Poiché l'indice di rifrazione $n$ dipende dalla lunghezza d'onda (dispersione), l'angolo di uscita varia leggermente per ogni colore. Questo "apre" la luce bianca solare nello spettro visibile dell'arcobaleno.
+\end{nota}
+
+\subsection*{Arcobaleno Secondario (Raggio di quarta classe)}
+Se analizziamo i raggi che entrano nella metà inferiore della goccia e subiscono \textbf{due riflessioni interne} (raggi di quarta classe), l'angolo di deviazione totale diventa:
+\begin{equation}
+    \Delta = (i - r) + (\pi - 2r) + (\pi - 2r) + (i - r) = 2\pi + 2i - 6r
 \end{equation}
 
-per cui essendo $sin(i) = \frac{b}{R} $ si ha $b \simeq 0.86 R$
+\begin{center}
 
-
-L'angolo complementere a $138$ sarà quindi di $42^\circ$ che è circa l'angolo alla quale si riesce ad osservare l'arcobaleno. 
-Ovviamente $\Delta$ dipende anche dall'indice di rifrazione dell'acqua che però a sua volta dipenderà anche dalla lunghezza d'onda, per cui l'angolo minimo dipenderà 
-dalla lunghezza d'onda che ci evidenzia la differenza di angolo visto prima (grafico arcobaleno) in base alle diverse lunghezze d'onda
-
-
-Studiando ora lo stesso fenomeno ma nel caso in cui  il raggio incidente entra da sotto (quindi con un b dall'altra parte), nel caso di raggio di quarta classe abbiamo 
-
-GRAFICO GOCCIA 2
-
-
-\begin{equation}
-    \Delta = (i - r) + (\pi - 2 r) + (\pi - 2r) + (i-r) = 2\pi + 2i - 6r = 2\pi + 2i - 6\arcsin{\sin(i)/n}
-\end{equation}
-nuovamente, cercando $\Delta_min$:
-\begin{equation}
-    \frac{d \Delta}{d i} = 2 - \frac{4}{\sqrt{1 - \frac{\sin^2 i}{n^2}}}\frac{\cos i}{n} = 0
-\end{equation}
-da cui otteniamo i risultati $ i \simeq 72°$ ed $r \simeq 45.5°$ e $\Delta_{min} \simeq 230°$ con $b \simeq 0.95 R$.
-Il cui angolo complementare corrisponde all'angolo a cui si osserva il secondo arco di arcobaleno, la dipendenza dall'indice di rifrazione fa si che i colori siano invertiti.
-Possiamo anche osservare l'andamento del $sin(i) = \frac{b}{R}$ al variare di $\Delta$:
-dove rappresento graficamente $\Delta 4 $ e $\Delta 3$ con rispettivamente un massimo e minimo.
-se adesso aggiungo dall'altra parte in ascissa l'intensità $I$, troverò un intensità maggiore su $\Delta_3 $ Poiché ho un minimo più largo (c'è molta più luce che esce), questo sarà il raggio primario mentre l'altro il secondario, inoltre un altra motivazione è che ogni volta che c'è una riflessione parte dell'intensità si perde. 
-
-AGGIUNGI GRAFICO DI DELTA 
-
-
+\begin{tikzpicture}[
+    >=Stealth,
+    ray/.style={thick,
+        decoration={markings,
+            mark=at position 0.55 with {\arrow{Stealth[length=3mm,width=2.4mm]}}},
+        postaction={decorate}},
+    tratt/.style={thin, dash pattern=on 4pt off 3pt}
+]
  
-Inoltre vi è una regione di angoli di incidenza in cui non vi sono raggi di terza e quarta classe, per questo in questi angoli la luminosità del cielo è minore.
-
-In realtà, considerando i fenomeni d'interferenza fra i vari raggi all'interno delle goccie, possono diminuire o aumentare l'intensità della luce nella regione intermedia, dove questi fenomeni sono più visibili.
-
-\subsection{Esperienza 4: Polarizzazione della luce}
-Sappiamo che possiamo descrovere il campo elettrico come un vittore bidimensiomale, scegliamo i vettori della base canonica per farlo.
-
-L'esempio più semplice è la polarizzzazzioe lineare $\vec{E} = \cos \theta \hat{x} + \sin \theta \hat{y}$, dove $\theta$ sono l'angolo di incidenza della luce.
-
-Le componenti in questo caso oscillano in fase, se introduciamo una fase $\delta$ avremo una polarizzazzione elliticca, se $\delta = \pm \pi /2$ allora la polarizzazzione è circolare,
-la quale può essere circolare destra o sinistra.
-
-In generale i due campi saranno
+  % ---------------- parametri ----------------
+  \pgfmathsetmacro{\R}{2.6}                       % raggio della goccia
+  \pgfmathsetmacro{\ia}{50}                       % angolo di incidenza i [gradi]
+  \pgfmathsetmacro{\nind}{1.333}                  % indice di rifrazione dell'acqua
+  \pgfmathsetmacro{\ra}{asin(sin(\ia)/\nind)}     % angolo di rifrazione r (Snell)
+ 
+  % ---------------- geometria ----------------
+  % il raggio entra nella meta' inferiore e gira in senso antiorario:
+  % A (ingresso), B e C (riflessioni interne), D (uscita)
+  \pgfmathsetmacro{\thA}{\ia-180}
+  \pgfmathsetmacro{\thB}{\ia-2*\ra}
+  \pgfmathsetmacro{\thC}{180+\ia-4*\ra}
+  \pgfmathsetmacro{\thD}{360+\ia-6*\ra}
+  % direzioni dei tratti interni
+  \pgfmathsetmacro{\dAB}{\ia-\ra}
+  \pgfmathsetmacro{\dBC}{180+\ia-3*\ra}
+  \pgfmathsetmacro{\dCD}{360+\ia-5*\ra}
+  % direzioni dei raggi di 1a, 2a, 3a e 4a classe
+  \pgfmathsetmacro{\dUno}{2*\ia-180}
+  \pgfmathsetmacro{\dDue}{2*\ia-2*\ra}
+  \pgfmathsetmacro{\dTre}{180+2*\ia-4*\ra}
+  \pgfmathsetmacro{\dQuat}{360+2*\ia-6*\ra}       % = Delta
+  % direzioni ausiliarie per gli archi degli angoli
+  \pgfmathsetmacro{\nAout}{\ia+180}               % normale esterna in A
+  \pgfmathsetmacro{\dUnop}{2*\ia+180}             % raggio di 1a classe (positivo)
+  \pgfmathsetmacro{\bBA}{\dAB+180}
+  \pgfmathsetmacro{\nBin}{\thB+180}
+  \pgfmathsetmacro{\nCin}{\thC+180}
+  \pgfmathsetmacro{\bCB}{\dBC+180}
+  \pgfmathsetmacro{\nDin}{\thD-180}
+  \pgfmathsetmacro{\bDC}{\dCD-180}
+ 
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\thA:\R);
+  \coordinate (B) at (\thB:\R);
+  \coordinate (C) at (\thC:\R);
+  \coordinate (D) at (\thD:\R);
+  \pgfmathsetmacro{\yA}{-\R*sin(\ia)}             % quota del raggio incidente = -b
+  \coordinate (S) at (-5.2,\yA);                  % inizio del raggio incidente
+ 
+  % punto P: dove il raggio uscente (4a classe) incrocia il raggio incidente
+  \pgfmathsetmacro{\xD}{\R*cos(\thD)}
+  \pgfmathsetmacro{\yD}{\R*sin(\thD)}
+  \pgfmathsetmacro{\tP}{(\yA-\yD)/sin(\dQuat)}
+  \coordinate (P) at ({\xD+\tP*cos(\dQuat)},\yA);
+ 
+  % macro per gli angoli: centro, angolo iniziale, angolo finale, raggio
+  % dell'arco, angolo e distanza dell'etichetta, testo
+  \def\marc#1#2#3#4#5#6#7{%
+    \draw[thin] (#1) ++(#2:#4) arc[start angle=#2, end angle=#3, radius=#4];
+    \node[font=\footnotesize, inner sep=1pt] at ([shift={(#5:#6)}]#1) {#7};}
+ 
+  % ---------------- riferimento orizzontale e b ----------------
+  \draw[tratt] (-4.9,0) -- (O);
+  \draw[<->] (-4.6,0) -- (-4.6,\yA) node[midway,left] {$b$};
+ 
+  % ---------------- goccia ----------------
+  \draw[thick] (O) circle (\R);
+  \draw[thin] (-0.1,0) -- (0.1,0) (0,-0.1) -- (0,0.1);
+ 
+  % normali (tratteggiate, prolungate all'esterno)
+  \draw[tratt] (O) -- (\thA:{\R+1.0});
+  \draw[tratt] (O) -- (\thB:{\R+1.0});
+  \draw[tratt] (O) -- (\thC:{\R+1.4});
+  \draw[tratt] (O) -- (\thD:{\R+0.7});
+ 
+  % prolungamento del raggio incidente
+  \draw[tratt] (A) -- (3.8,\yA);
+ 
+  % ---------------- raggi ----------------
+  \draw[ray] (S) -- (A);
+  \draw[ray] (A) -- (B);
+  \draw[ray] (B) -- (C);
+  \draw[ray] (C) -- (D);
+  \draw[ray] (A) -- ++(\dUno:2.4)  node[right]      {\small 1\textsuperscript{a} classe};
+  \draw[ray] (B) -- ++(\dDue:2.6)  node[right]      {\small 2\textsuperscript{a} classe};
+  \draw[ray] (C) -- ++(\dTre:2.6)  node[above left] {\small 3\textsuperscript{a} classe};
+  \draw[ray] (D) -- ++(\dQuat:4.8) node[below]      {\small 4\textsuperscript{a} classe};
+ 
+  \fill (A) circle (1.4pt);
+  \fill (B) circle (1.4pt);
+  \fill (C) circle (1.4pt);
+  \fill (D) circle (1.4pt);
+ 
+  % ---------------- angoli ----------------
+  % in A (ingresso): r dentro, due angoli i fuori (incidente e riflesso)
+  \marc{A}{\dAB}{\ia}{0.8}{32}{1.1}{$r$}
+  \marc{A}{180}{\nAout}{0.5}{205}{0.85}{$i$}
+  \marc{A}{\nAout}{\dUnop}{0.5}{255}{0.85}{$i$}
+ 
+  % in B (prima riflessione interna)
+  \marc{B}{\nBin}{\bBA}{0.8}{177}{1.1}{$r$}
+  \marc{B}{\dBC}{\nBin}{0.8}{142}{1.1}{$r$}
+ 
+  % in C (seconda riflessione interna)
+  \marc{C}{\nCin}{\bCB}{0.8}{287}{1.1}{$r$}
+  \marc{C}{\dCD}{\nCin}{0.8}{252}{1.1}{$r$}
+ 
+  % in D (uscita)
+  \marc{D}{\nDin}{\bDC}{0.8}{37}{1.1}{$r$}
+ 
+  % ---------------- angolo di deviazione totale Delta ----------------
+  % rotazione (antioraria) dalla direzione incidente a quella uscente
+  \draw[->,thin] (P) ++(0:0.55) arc[start angle=0, end angle=\dQuat, radius=0.55];
+  \node at ([shift={(125:0.9)}]P) {$\Delta$};
+ 
+\end{tikzpicture}
+\end{center}
+Cercando nuovamente la deviazione minima $\frac{d\Delta}{di} = 0$, si ottiene:
 \[
-\vec{E_x} = \vec{Ex_0} \cos wt
+i \simeq 72^\circ, \quad r \simeq 45.5^\circ, \quad \Delta_{\text{min}} \simeq 230^\circ, \quad b \simeq 0.95 R
 \]
+Il supplementare di questo angolo corrisponde all'angolo a cui si osserva il secondo arco. La geometria di questa doppia riflessione comporta che l'ordine dei colori sia invertito rispetto al primario.
+
+Rappresentando graficamente l'intensità luminosa $I$ in funzione di $\Delta$, si nota che in corrispondenza di $\Delta_3$ (primario) e $\Delta_4$ (secondario) l'intensità ha dei picchi. Tuttavia, il primario è molto più luminoso perché ogni riflessione interna comporta una perdita di intensità.
+
+Rappresentando graficamente l'intensità luminosa $I$ in funzione dell'angolo di deviazione $\Delta$, si nota che in corrispondenza di $\Delta_3$ (primario, $138^\circ$) e $\Delta_4$ (secondario, $130^\circ$ rispetto alla direzione frontale) l'intensità presenta dei picchi asimmetrici. Tuttavia, l'arcobaleno primario è molto più luminoso perché ogni riflessione interna comporta una sensibile perdita di intensità.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=Stealth, font=\small]
+
+    % ================= PARAMETRI E COORDINATE =================
+    % Livelli verticali (Angoli \Delta)
+    \def\yTop{4.5}   % 180°
+    \def\yPri{3.2}   % 138° (Primario)
+    \def\ySec{2.0}   % 130° (Secondario)
+    \def\yBot{0}     % 0°
+
+    % Posizioni orizzontali (Assi)
+    \def\xLeft{-0.7} % Asse per Intensità (I)
+    \def\xRight{0.7} % Asse per b/R
+    
+    % Posizioni b/R (Grafico di Destra)
+    \def\xPri{3.5}   % b/R = 0.86
+    \def\xSec{4.5}   % b/R = 0.95
+    \def\xEnd{5.2}   % b/R = 1
+
+    % Posizioni Intensità (Grafico di Sinistra)
+    \def\xIpri{-4.5} % Picco I primario
+    \def\xIsec{-3.2} % Picco I secondario
+
+
+    % ================= LINEE GUIDA TRATTEGGIATE =================
+    % Orizzontali
+    \draw[dashed, gray!70] (\xIpri-0.5, \yTop) -- (\xEnd+0.5, \yTop);
+    \draw[dashed, gray!70] (\xIpri-0.5, \yPri) -- (\xEnd+0.5, \yPri);
+    \draw[dashed, gray!70] (\xIpri-0.5, \ySec) -- (\xEnd+0.5, \ySec);
+
+    % Etichette angolari al centro (tra i due grafici)
+    \node at (0, \yTop+0.25) {$180^\circ$};
+    \node at (0, \yPri+0.25) {$138^\circ$};
+    \node at (0, \ySec+0.25) {$130^\circ$};
+
+
+    % ================= GRAFICO DI SINISTRA (Intensità I) =================
+    % Assi
+    \draw[->] (\xLeft, -0.3) -- (\xLeft, \yTop+0.8) node[right] {$\Delta$};
+    \draw[->] (\xLeft+0.2, 0) -- (\xIpri-1.5, 0) node[below] {$I$};
+    \node[below left] at (\xLeft, 0) {$0$};
+
+    % Picco Primario (138°)
+    % Linea orizzontale e curva (caustica) che va verso l'alto
+    \draw[thick, PoliBlue] (\xLeft, \yPri) -- (\xIpri, \yPri);
+    \draw[thick, PoliBlue] (\xIpri, \yPri) to[out=5, in=260] (\xLeft, \yTop);
+
+    % Picco Secondario (130°)
+    % Linea orizzontale e curva (caustica) che va verso il basso
+    \draw[thick, PoliBlue] (\xLeft, \ySec) -- (\xIsec, \ySec);
+    \draw[thick, PoliBlue] (\xIsec, \ySec) to[out=-5, in=100] (\xLeft, 1);
+
+
+    % ================= GRAFICO DI DESTRA (b/R vs \Delta) =================
+    % Assi
+    \draw[->] (\xRight, -0.3) -- (\xRight, \yTop+0.8) node[right] {$\Delta$};
+    \draw[->] (\xRight-0.2, 0) -- (\xEnd+1, 0) node[below] {$b/R$};
+    \node[below right] at (\xRight, 0) {$0$};
+
+    % Tacche asse x (b/R) con linee verticali tratteggiate
+    \draw[dashed, gray!70] (\xPri, 0) -- (\xPri, \yPri);
+    \node[below] at (\xPri, -0.15) {$0.86$};
+
+    \draw[dashed, gray!70] (\xSec, 0) -- (\xSec, \ySec);
+    \node[below] at (\xSec, -0.15) {$0.95$};
+
+    \draw[dashed, gray!70] (\xEnd, 0) -- (\xEnd, \yTop);
+    \node[below] at (\xEnd, -0.15) {$1$};
+
+    % Curva Superiore (Raggio di 3a classe)
+    % Da 180°, scende fino a 138° (minimo) e risale
+    \draw[thick, OpticRed] (\xRight, \yTop) to[out=-15, in=180] (\xPri, \yPri) to[out=0, in=250] (\xEnd, \yTop);
+
+    % Curva Inferiore (Raggio di 4a classe)
+    % Da 0°, sale fino a 130° (massimo in questo sistema di riferimento) e scende
+    \draw[thick, OpticRed] (\xRight, 0) to[out=45, in=180] (\xSec, \ySec) to[out=0, in=100] (\xEnd, 0);
+
+
+    % ================= ETICHETTE E DETTAGLI =================
+    % Banda Oscura di Alexander
+    \node[align=left, right, text=gray!80!black] at (\xEnd+0.8, {(\yPri+\ySec)/2}) {\textbf{Banda}\\ \textbf{oscura}};
+
+\end{tikzpicture}
+\end{center}
+
+Inoltre, l'assenza di raggi deviati nella regione angolare compresa tra i due arcobaleni spiega la minore luminosità di quella porzione di cielo. 
+Fenomeni aggiuntivi di interferenza tra i raggi all'interno della goccia possono generare bande luminose supplementari (archi supernumerari), particolarmente visibili nella regione interna.
+
+
+
+
+\section{Esperienza 4: Polarizzazione della luce}
+
+Ricordando che le onde elettromagnetiche sono onde trasversali: il campo elettrico $\vec{E}$ e il campo magnetico $\vec{B}$ oscillano su un piano ortogonale alla direzione di propagazione. Possiamo prendere come riferimento il campo elettrico e descriverlo come un vettore bidimensionale nel piano trasverso alla direzione di propagazione (asse $z$). Scegliamo come base gli assi $x$ e $y$.
+
+\subsection*{Tipi di Polarizzazione}
+Il caso più semplice è la \textbf{polarizzazione lineare}, in cui il campo oscilla lungo una singola direzione fissa:
 \[
-\vec{E_y} = \vec{Ey_0} \cos wt + \phi
+\vec{E} = E_0 (\cos \theta \hat{x} + \sin \theta \hat{y})
 \]
-Il punto descritto da tale vettore si muoverà con coordinnte 
+In questo caso, le componenti $E_x$ ed $E_y$ oscillano perfettamente in fase tra loro.
+
+\begin{center}
+    % PRIMO GRAFICO: Evoluzione temporale della polarizzazione lineare
+    \begin{tikzpicture}[>=Stealth, scale=0.85]
+        
+        \def\ang{35} % Angolo di polarizzazione fisso
+        
+        % Stili
+        \tikzset{
+            asse/.style={->, gray!80, line width=0.4pt},
+            vettore/.style={->, thick, PoliBlue}
+        }
+        
+        % Frame 1: Ampiezza massima positiva
+        \begin{scope}[xshift=0cm]
+            \draw[asse] (-1.5,0) -- (1.5,0);
+            \draw[asse] (0,-1.5) -- (0,1.5);
+            \draw[vettore] (0,0) -- (\ang:1.5);
+        \end{scope}
+        
+        % Frame 2: Ampiezza media positiva
+        \begin{scope}[xshift=3.5cm]
+            \draw[asse] (-1.5,0) -- (1.5,0);
+            \draw[asse] (0,-1.5) -- (0,1.5);
+            \draw[vettore] (0,0) -- (\ang:0.75);
+        \end{scope}
+        
+        % Frame 3: Attraversamento dello zero verso valori negativi
+        \begin{scope}[xshift=7cm]
+            \draw[asse] (-1.5,0) -- (1.5,0);
+            \draw[asse] (0,-1.5) -- (0,1.5);
+            \draw[vettore] (0,0) -- (\ang+180:0.5);
+        \end{scope}
+        
+        % Frame 4: Ampiezza massima negativa
+        \begin{scope}[xshift=10.5cm]
+            \draw[asse] (-1.5,0) -- (1.5,0);
+            \draw[asse] (0,-1.5) -- (0,1.5);
+            \draw[vettore] (0,0) -- (\ang+180:1.5);
+        \end{scope}
+        
+        % Frame 5: Ritorno verso lo zero
+        \begin{scope}[xshift=14cm]
+            \draw[asse] (-1.5,0) -- (1.5,0);
+            \draw[asse] (0,-1.5) -- (0,1.5);
+            \draw[vettore] (0,0) -- (\ang+180:0.75);
+        \end{scope}
+
+        % Freccia del tempo sotto i grafici
+        \draw[->, thick, gray] (0, -2) -- (14, -2) node[midway, below, text=black] {Tempo $t$};
+
+    \end{tikzpicture}
+    
+    \vspace{1cm} % Spazio tra i due grafici
+    
+    % SECONDO GRAFICO: Scomposizione del vettore E
+    \begin{tikzpicture}[>=Stealth, scale=1.5]
+        
+        % Coordinate del vettore
+        \def\Ex{2}
+        \def\Ey{1.4}
+        
+        % Assi
+        \draw[->, gray!90, thick] (-0.5, 0) -- (3, 0) node[right, text=black] {$x$};
+        \draw[->, gray!90, thick] (0, -0.5) -- (0, 2.2) node[above, text=black] {$y$};
+        
+        % Vettore Campo Elettrico
+        \coordinate (E) at (\Ex, \Ey);
+        \draw[->, very thick, PoliBlue] (0,0) -- (E) node[above right] {$\vec{E}$};
+        
+        % Proiezioni (Linee tratteggiate)
+        \draw[dashed, thick, OpticRed!70] (\Ex, 0) -- (E);
+        \draw[dashed, thick, OpticRed!70] (0, \Ey) -- (E);
+        
+        % Etichette delle componenti
+        \node[below] at (\Ex, -0.05) {$E_x = E_0 \cos\theta$};
+        \node[left] at (-0.05, \Ey) {$E_y = E_0 \sin\theta$};
+        
+        % Angolo theta
+        \draw[->, thick] (0.7,0) arc (0:{atan(\Ey/\Ex)}:0.7);
+        \node at ({atan(\Ey/\Ex)/2}:0.95) {$\theta$};
+        
+    \end{tikzpicture}
+\end{center}
+
+In generale, le due componenti del campo possono avere uno sfasamento $\phi$:
+\begin{align*}
+    E_x &= E_{x0} \cos(\omega t) \\
+    E_y &= E_{y0} \cos(\omega t + \phi)
+\end{align*}
+Il punto descritto dalla punta del vettore $\vec{E}$ si muoverà nel piano tracciando una curva. Riscriviamo le equazioni:
 \[
-x = E_x0 \cos wt
+\frac{E_x}{E_{x0}} = \cos(\omega t) \hspace{2cm} \frac{E_y}{E_{y0}} = \cos(\omega t)\cos\phi - \sin(\omega t)\sin\phi
 \]
-\[
-y = E_y0 \cos (wt +\phi)
-\]
-sono particolarmente interessanti le quantità:
-\[
-x/E_x0 = \cos wt \hspace{1cm} y/E_y0 = cos(wt)cos(\phi) - \sin(wt) \sin(\phi)
-\]
-sommando i quadrati otteniamo l'equazione di un ellisse:
+Combinando queste due equazioni ed eliminando il tempo $t$, si ottiene l'equazione generale di un'ellisse:
 \begin{equation}
-    (x/E_x0)^2 + (y/E_y0)^2 - 2 \frac{x}{E_x0} \frac{y}{E_y0} = \sin^2 \phi
+    \left(\frac{E_x}{E_{x0}}\right)^2 + \left(\frac{E_y}{E_{y0}}\right)^2 - 2 \frac{E_x}{E_{x0}} \frac{E_y}{E_{y0}} \cos\phi = \sin^2 \phi
 \end{equation}
-inclinata rispetto all'asse x con $\tan 2\beta = \frac{2E_y0 E_x0}{E_x0^2 - E_y0^2}$
-
-Alcuni casi particolari sono:
+L'asse maggiore dell'ellisse risulta inclinato rispetto all'asse $x$ di un angolo $\beta$ tale che:
+\[
+\tan(2\beta) = \frac{2 E_{x0} E_{y0} \cos\phi}{E_{x0}^2 - E_{y0}^2}
+\]
+Questa situazione descrive la \textbf{polarizzazione ellittica}. Esistono due casi notevoli:
 \begin{itemize}
-    \item $\phi = 0$: luce lineare
-    \item $\phi = \frac{\pi}{2}$: luce circolare
+    \item \textbf{Polarizzazione Lineare:} Se $\phi = 0$ o $\phi = \pi$, l'ellisse degenera in un segmento. Le due componenti sono in fase o in controfase.
+    \item \textbf{Polarizzazione Circolare:} Se $\phi = \frac{\pi}{2}$ o $\frac{3\pi}{2}$ e le ampiezze sono uguali ($E_{x0} = E_{y0}$), la curva diventa una circonferenza. A seconda del segno della fase, il vettore ruoterà in senso orario (circolare destra) o antiorario (circolare sinistra).
 \end{itemize}
 
-Ma se ciascuna delle onde ha una fase $\delta$ diversa, come ottengo la polarizzazzione?
+\subsection*{Polarizzatori e Legge di Malus}
+Come si può polarizzare una luce non polarizzata? Si utilizzano i \textbf{polarizzatori}, tipicamente lastre di materiale polimerico. Le lunghe molecole dei polimeri sono allineate in una specifica direzione.
+\begin{itemize}
+    \item Se il campo elettrico oscilla \textbf{parallelamente} alle catene polimeriche, compie lavoro sugli elettroni del materiale e viene \textbf{assorbito}.
+    \item Se il campo elettrico oscilla \textbf{ortogonalmente} ad esse, non vi è assorbimento e l'onda viene \textbf{trasmessa}.
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, scale=0.95, font=\small]
 
-In generale si usa un polarizzatore, cioè delle lastre di materiale plastico (polimeri)che hanno un coefficente di assrobimento diverso a seconda della direzione del campo elettrico
+    % Stili ricorrenti
+    \tikzset{
+        vetE/.style={->, very thick, OpticRed},
+        vetOsc/.style={<->, OpticRed, thick},
+        polaroid/.style={thick, draw=PoliBlue, fill=PoliBlue!5, opacity=0.8},
+        assePol/.style={<->, thick, PoliBlue}
+    }
 
-Se il campo elettrico oscilla lungo la direzione dei polimeri, il campo elettrico si muoverà all'interno e vi è un effetto di assrobimento (dovuto al lavoro fatto dal campo).
-Se il campo elettrico oscilla lungo una direzione differente, non vi sarà effetto di assorbimento.
+    % ================= 1. SORGENTE (Lampadina) =================
+    \begin{scope}[shift={(0,0)}]
+        % Filamento e bulbo
+        \draw[thick, fill=yellow!10] (0,0.5) circle (0.6);
+        \draw[thick, decoration={coil, aspect=0.4, segment length=2mm, amplitude=1mm}, decorate] (-0.2, 0.4) -- (0.2, 0.4);
+        \draw[thick] (-0.2, 0.4) -- (-0.2, -0.1);
+        \draw[thick] (0.2, 0.4) -- (0.2, -0.1);
+        % Base della lampadina
+        \draw[thick, fill=gray!30] (-0.3, -0.1) rectangle (0.3, -0.5);
+        \draw[thick, fill=gray!50] (-0.2, -0.5) -- (0, -0.7) -- (0.2, -0.5) -- cycle;
+        \node[below, text=black, font=\bfseries] at (0, -1.2) {Sorgente};
+    \end{scope}
 
-Andremo a guardare cosa succede se polarizzo ($E_1$) la luce uscente da una certa sorgente ($E_0$) e dopo la luce in uscita attraversa un secodo polarizzatore ($E_2$).
+    % ================= 2. LUCE INCIDENTE (E0) =================
+    \begin{scope}[shift={(2, 0.2)}]
+        \draw[vetE] (0, 0) -- (1.5, 0) node[midway, above] {$\vec{E}_0$};
+        % Simbolo luce non polarizzata
+        \draw[OpticRed, thin, <->] (0.75, -0.3) -- (0.75, 0.3);
+        \draw[OpticRed, thin, <->] (0.5, -0.15) -- (1.0, 0.15);
+        \draw[OpticRed, thin, <->] (0.5, 0.15) -- (1.0, -0.15);
+    \end{scope}
 
-Si trova che
-\begin{equation}
-    E_2 = E_1 \cos \alpha
-\end{equation}
-dove $\alpha$ è l'angolo fra i polarizzatore, questa relazione vale anche per le intensità $I_2 = I_1 \cos^2 \alpha$ (legge di Malus).
+    % ================= 3. PRIMO POLARIZZATORE =================
+    \def\angUno{60} % Angolo asse primo polarizzatore (SOLO LETTERE)
+    \begin{scope}[shift={(4.5, 0.2)}]
+        \draw[polaroid] (0,0) ellipse (0.4 and 1.4);
+        \draw[assePol] (\angUno+180:1.1) -- (\angUno:1.1);
+        \node[below, text=black, font=\bfseries] at (0, -1.4) {Polarizzatore};
+    \end{scope}
 
-Ci chiediamo in particolare cosa succede fra il primo e secondo polarizzatore.
+    % ================= 4. LUCE POLARIZZATA (E1) =================
+    \begin{scope}[shift={(6, 0.2)}]
+        \draw[vetE] (0, 0) -- (1.5, 0) node[midway, above] {$\vec{E}_1$};
+        % Simbolo luce polarizzata (inclinato come il polarizzatore)
+        \draw[vetOsc] (0.75,0) ++(\angUno+180:0.3) -- ++(\angUno:0.6);
+    \end{scope}
 
-Per il primo step (sorgente-polarizzatore), dobbiamo considerare che all'inizio la luce non è polarizzata, l'anadamento segue semmore la legge di Malus,
-però va integrata su tutti gli angoli $\alpha$ possibili:
+    % ================= 5. SECONDO POLARIZZATORE (Analizzatore) =================
+    \def\angDue{20} % Angolo asse analizzatore (SOLO LETTERE)
+    \begin{scope}[shift={(8.5, 0.2)}]
+        \draw[polaroid] (0,0) ellipse (0.4 and 1.4);
+        
+        % Asse del primo polarizzatore (riferimento tratteggiato)
+        \draw[dashed, thick, gray] (\angUno:0) -- (\angUno:1.2);
+        
+        % Asse dell'analizzatore (solido)
+        \draw[assePol] (\angDue+180:1.1) -- (\angDue:1.1);
+        
+        % Angolo Alpha
+        \draw[->, thick] (\angUno:0.6) arc (\angUno:\angDue:0.6);
+        \node[right] at ({((\angUno+\angDue)/2)}:0.6) {$\alpha$};
+        
+        \node[below, text=black, font=\bfseries] at (0, -1.4) {Analizzatore};
+    \end{scope}
 
+    % ================= 6. LUCE TRASMESSA (E2) =================
+    \begin{scope}[shift={(10, 0.2)}]
+        \draw[vetE] (0, 0) -- (1.5, 0) node[midway, above] {$\vec{E}_2$};
+        % Simbolo luce polarizzata (inclinato come l'analizzatore)
+        \draw[vetOsc] (0.75,0) ++(\angDue+180:0.3) -- ++(\angDue:0.6);
+    \end{scope}
+
+    % ================= 7. FOTODIODO =================
+    \begin{scope}[shift={(12.5, 0.2)}]
+        % Corpo del fotodiodo
+        \draw[thick, fill=gray!20] (-0.4, -0.6) rectangle (0.4, 0.6);
+        % Finestra del sensore
+        \draw[thick, fill=black] (-0.1, -0.15) rectangle (0.1, 0.15);
+        \node[below, text=black, font=\bfseries] at (0, -1.4) {Fotodiodo};
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}
+
+Se inseriamo in successione due polarizzatori sul cammino della luce:
+\begin{enumerate}
+    \item Il primo polarizzatore (chiamato \textit{polarizzatore}) trasforma la luce in ingresso ($E_0$) in luce polarizzata linearmente ($E_1$).
+    \item Il secondo polarizzatore (chiamato \textit{analizzatore}), il cui asse di trasmissione forma un angolo $\alpha$ con il primo, trasmetterà soltanto la componente del campo parallela al proprio asse di trasmissione ($E_2$).
+\end{enumerate}
+
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, scale=1.4, font=\small]
+    
+    % Definizioni Angoli e Lunghezze
+    \def\angPol{80}   % Inclinazione Asse Polarizzatore (E1)
+    \def\angAna{25}   % Inclinazione Asse Analizzatore (E2)
+    \def\L{3.5}       % Modulo del vettore E1
+    
+    % Coordinate vettori
+    \coordinate (O) at (0,0);
+    \coordinate (E1) at (\angPol:\L);
+    % Calcolo trigonometrico esatto della proiezione: L * cos(angPol - angAna)
+    \coordinate (E2) at (\angAna:{\L*cos(\angPol-\angAna)}); 
+    
+    % ================= ASSI DEI POLARIZZATORI =================
+    % Asse Analizzatore (Linea continua con freccia)
+    \draw[->, gray!80, thick] (\angAna:-1.5) -- (\angAna:4.5) node[right, text=black] {\textbf{Asse Analizzatore}};
+    
+    % Asse Polarizzatore (Linea continua con freccia)
+    \draw[->, gray!80, thick] (\angPol:-1) -- (\angPol:4.2) node[above, text=black] {\textbf{Asse Polarizzatore}};
+    
+    % Asse di assorbimento dell'analizzatore (ortogonale, tratteggiato)
+    \draw[dashed, gray!60] (\angAna+90:-1) -- (\angAna+90:3.5);
+
+    % ================= VETTORI E CAMPI =================
+    % Vettore E1 (Uscente dal primo polarizzatore)
+    \draw[->, very thick, PoliBlue] (O) -- (E1) node[left] {$\vec{E}_1$};
+    
+    % Vettore E2 (Trasmesso dall'analizzatore)
+    \draw[->, very thick, OpticRed] (O) -- (E2) node[below right] {$\vec{E}_2$};
+    
+    % Linea di proiezione (dal tip di E1 ortogonale all'asse dell'analizzatore)
+    \draw[dashed, thick, gray!90] (E1) -- (E2);
+    
+    % Simbolo angolo retto sulla proiezione
+    \coordinate (RightAngleCorner) at ($(E2) + (\angAna+90:0.15)$);
+    \coordinate (RightAngle1) at ($(RightAngleCorner) + (\angAna:0.15)$);
+    \coordinate (RightAngle2) at ($(E2) + (\angAna:0.15)$);
+    \draw[gray, thin] (E2) -- ++(\angPol-90:0.15) -- ++(\angAna+180:0.15) -- ++(\angPol+90:0.15); % Quadratino
+    
+    % ================= ANGOLO ALPHA =================
+    \draw[<->, thick] (\angAna:1.2) arc (\angAna:\angPol:1.2);
+    \node at ({((\angAna+\angPol)/2)}:1.5) {$\alpha$};
+
+    
+\end{tikzpicture}
+\end{center}
+Per le ampiezze dei campi vale la relazione $E_2 = E_1 \cos \alpha$. 
+Poiché l'intensità luminosa è proporzionale al quadrato dell'ampiezza del campo elettrico ($I \propto E^2$), si ricava la:
+
+\begin{definizione}[title=Legge di Malus]
+    L'intensità $I_2$ della luce trasmessa dal secondo polarizzatore è data da:
+    \begin{equation}
+        I_2 = I_1 \cos^2 \alpha
+    \end{equation}
+    dove $I_1$ è l'intensità della luce incidente sull'analizzatore e $\alpha$ è l'angolo tra gli assi di trasmissione dei due polarizzatori.
+\end{definizione}
+
+\textbf{Cosa accade invece al primo polarizzatore?} \\
+La luce emessa da una normale lampadina a filamento è generata dalla diseccitazione di atomi indipendenti, emettendo onde con direzioni di polarizzazione e fasi del tutto casuali (luce non polarizzata). 
+Applicando la Legge di Malus a questa luce, l'angolo $\alpha$ assunto dalle varie onde è aleatorio. Occorre quindi calcolare il valore medio della funzione $\cos^2 \alpha$ su tutti gli angoli possibili tra $0$ e $2\pi$, che risulta essere esattamente $\frac{1}{2}$. 
+Pertanto, l'intensità della luce uscente dal primo polarizzatore sarà esattamente la metà dell'intensità iniziale:
 \begin{equation}
     I_1 = \frac{1}{2}I_0
 \end{equation}
 
-\subsubsection{Notazione}
-Introduciamo il vettore di Jones:
-se abbiamo un campo elettrico
+
+
+\subsubsection{Notazione: Il Vettore di Jones}
+Per descrivere lo stato di polarizzazione della luce in modo compatto si utilizza il formalismo dei \textbf{vettori di Jones}. 
+Dato un campo elettrico $\vec{E} = E_x \hat{i} + E_y \hat{j}$, le cui componenti nel piano trasverso sono:
 \[
-\vec{E} = E_x \hat i + E_y \hat j
+E_x = E_{x0} \exp(i\Phi_x) \hspace{1cm} E_y = E_{y0} \exp(i\Phi_y)
 \]
-con
+possiamo rappresentarlo in notazione vettoriale come:
 \[
-E_x = E_x0 \exp(i\theta_x) \hspace{1cm} E_y = E_y0 \exp(i\theta_y)
+\begin{pmatrix}
+E_x \\
+E_y
+\end{pmatrix}
+=
+\begin{pmatrix}
+E_{x0}\exp(i\Phi_x) \\
+E_{y0}\exp(i\Phi_y)
+\end{pmatrix}
 \]
-in notazione vettoriale:
-\[
-(E_x, E_y) = (E_x0 \exp(i\theta_x) E_y0 \exp(i\theta_y))
-\]
-la seguente notazione è utile perchè possiamo combinare facilmente le diverse polarizzazzioni, per esempio vediamo subito che una somma di polarizzazzione circolare destra e sinistra ci da la polarizzazione linera
+Questa notazione matriciale, normalizzando le ampiezze, ci permette di scrivere gli stati di polarizzazione fondamentali in modo molto semplice:
+\begin{itemize}
+    \item $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$: Polarizzazione lineare lungo l'asse $x$.
+    \item $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$: Polarizzazione lineare lungo l'asse $y$.
+    \item $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$: Polarizzazione lineare inclinata a $\frac{\pi}{4}$ (45°) rispetto a $x$.
+    \item $\begin{pmatrix} 1 \\ i \end{pmatrix}$: Polarizzazione circolare \textbf{sinistra}.
+    \item $\begin{pmatrix} 1 \\ -i \end{pmatrix}$: Polarizzazione circolare \textbf{destra}.
+\end{itemize}
+
+Questo formalismo risulta estremamente utile per le combinazioni di stati. Ad esempio, se sommiamo una polarizzazione circolare destra e una sinistra:
+\begin{equation}
+    \begin{pmatrix} 1 \\ i \end{pmatrix} + \begin{pmatrix} 1 \\ -i \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} \propto \begin{pmatrix} 1 \\ 0 \end{pmatrix}
+\end{equation}
+Si nota immediatamente che il risultato è una polarizzazione lineare. Questo significa che, esattamente come possiamo scomporre un vettore lineare nelle sue componenti $x$ e $y$, possiamo anche descriverlo come la sovrapposizione di due onde polarizzate circolarmente (destra e sinistra). È puramente una scelta della base vettoriale.
+
+
+% ---------------------------------------------------------
+
 
 \subsection{Verifica della legge di Malus}
-L'apparato sperimentale sarà composto da 
+
+\subsubsection*{Apparato Sperimentale}
+L'apparato per verificare la legge di Malus è montato su un binario ottico ed è composto da:
 \begin{itemize}
-    \item La sorgente di luce bianca
-    \item il primo polarizzatore
-    \item il secondo polarizzatore, messo vicino al primo per che la luce uscente dallo scintillatoro vada attraverso il secondo polarizzatore
-    \item il fotodiodo (ACCESO), mascherato per evitare la saturazione
-\end{itemize}
-Misureremo l'inensità di luce che raggiunge il fotodiodo in funzione dell'angolo fra i polarizzatori.
-
-Ci conviene tenere fisso il secondo polarizzatore e variare l'angolo del primo (qui arriva la luce e riesco a vedere la scala).
-
-Il miglior polarizzatore sarà il primo.
-
-La funzione di fit sarà
-\[
-y = A \cos^2(x - C)+ B
-\]
-dove C è introdotto perchè non è detto che i due polarizzatori sabbimo 0 coincidente, e dipende da coem inizializziamo il fit, infatti la funzione ci può apparire semplicemente traslata,
- $A = I_max$ e $B$ è un termine di fondo.
-
-Dovremo contorllare che 
-\begin{itemize}
-    \item il fotodiodo non sia in saturazione
-    \item Non possiamo misurare un fondo, perchè no possiamo evitare la luce che arriva alla lampadina, inoltre il sistema è molto compatto ed è difficle 
-avere un fondo consistente. Nonostante questo noteremo nel grafico il valore di B sia significatamente diverso da 0, perchè il polarizzatore non blocca completamente la luce nella direzione parallela ai polimeri
-Dunque avremo una doppia polarizzazzione. Il secondo polarizzatore avrà due componenti, quella della luce polarizzata dal primo polarizzatore e quell "residuaa", sempre proveniente dal primo polarizzatore.
-
-Allora avremo
-\[
-E_2 \propto \sqrt{E_1^2 \cos \alpha + \varepsilon E_1^2 \sin \alpha} = E_1 \sqrt{ \cos \alpha + \varepsilon \sin \alpha} 
-\]
-
-e duqnue
-
-\[
-I_2 = I_1 \cos^2 \alpha + \varepsilon I_1 - \varepsilon I_1 \cos^2 \alpha
-\]
-
-duque
-
-\[
-I_1(1-\varepsilon)\cos^2 \alpha
-\]
+    \item Una \textbf{sorgente} di luce bianca.
+    \item Il \textbf{primo polarizzatore}, posizionato a distanza intermedia (né troppo vicino né troppo lontano dalla sorgente).
+    \item Il \textbf{secondo polarizzatore} (analizzatore), messo il più vicino possibile al primo per garantire che tutta la luce trasmessa dal primo attraversi anche il secondo.
+    \item Un \textbf{fotodiodo} (acceso e collegato a un voltmetro) accuratamente mascherato per evitare la saturazione. 
 \end{itemize}
 
-Veremo come errori
+I polarizzatori sono dotati di scale graduate. Per eseguire la misura dell'intensità luminosa (letta come tensione sul voltmetro) in funzione dell'angolo, \textbf{conviene mantenere fisso il secondo polarizzatore e ruotare il primo}. Questo perché il primo polarizzatore è quello che riceve la luce diretta, rendendo più facile leggere la sua scala graduata, che possiede tacche per ogni singolo grado (da 0° a 360°). Basteranno circa 180 misure per descrivere il fenomeno.
+
+\begin{center}
+
+
+\begin{tikzpicture}[
+    >=Stealth,
+    post/.style={thick},
+    carr/.style={thick, fill=white},
+    lbl/.style={font=\small}
+]
+ 
+  \def\yb{2.2}      % quota dell'asse ottico sopra il binario
+ 
+  % macro per un polarizzatore: posizione sul binario, inclinazione
+  % dell'asse di trasmissione (gradi rispetto alla verticale)
+  \def\polar#1#2{%
+    \draw[post] (#1,0) -- (#1,0.85);
+    \draw[carr] (#1-0.25,-0.15) rectangle (#1+0.25,0.15);
+    \draw[thick, fill=white] (#1,\yb) ellipse (0.38 and 1.35);
+    % scala graduata sul bordo
+    \begin{scope}[shift={(#1,\yb)}]
+      \foreach \a in {0,30,...,330} {
+        \draw[thin] (\a:0.38 and 1.35) -- (\a:0.46 and 1.43);
+      }
+    \end{scope}
+    % asse di trasmissione
+    \draw[<->, thin] (#1,\yb) ++({90+#2}:0.6) -- ++({270+#2}:1.2);
+  }
+ 
+  % ---------------- binario ottico ----------------
+  \draw[thick,->] (-0.6,0) -- (12.8,0);
+  \node[below right, font=\footnotesize] at (-0.6,-0.1) {binario ottico};
+ 
+  % ---------------- sorgente ----------------
+  \draw[post] (1.4,0) -- (1.4,1.4);
+  \draw[carr] (1.15,-0.15) rectangle (1.65,0.15);
+  \draw[thick, rounded corners=3pt, fill=white] (0,1.4) rectangle (2.8,3.0);
+  \draw[thick, decorate,
+        decoration={coil, aspect=0.6, segment length=3.5pt, amplitude=3.5pt}]
+        (0.3,\yb) -- (1.25,\yb);
+  \draw[thick, fill=white] (1.8,\yb) circle (0.5);
+  % filamento
+  \draw[thin] (1.6,\yb-0.32) -- (1.6,\yb) -- (1.68,\yb+0.12) -- (1.76,\yb-0.06)
+              -- (1.84,\yb+0.12) -- (1.92,\yb-0.06) -- (2.0,\yb) -- (2.0,\yb-0.32);
+  \node[lbl, above] at (1.4,3.05) {Sorgente};
+ 
+  % ---------------- polarizzatori ----------------
+  \polar{5.0}{25}      % primo polarizzatore (ruotabile)
+  \polar{6.5}{0}       % secondo polarizzatore (analizzatore, fisso)
+  % freccia di rotazione sul primo polarizzatore
+  \draw[<->, thin] (5.0,\yb) ++(35:0.58 and 1.5)
+        arc[start angle=35, end angle=70, x radius=0.58, y radius=1.5];
+  \node[lbl, above left, align=right] at (5.1,3.45) {primo\\polarizzatore};
+  \node[lbl, above right, align=left] at (6.4,3.45)
+        {secondo\\polarizzatore\\(analizzatore)};
+ 
+  % ---------------- fotodiodo ----------------
+  \draw[post] (9.3,0) -- (9.3,1.75);
+  \draw[carr] (9.05,-0.15) rectangle (9.55,0.15);
+  \draw[thick, fill=gray!15] (8.65,2.65) -- (9.95,2.65) -- (10.3,2.9)
+                             -- (9.0,2.9) -- cycle;                 % faccia superiore
+  \draw[thick, fill=gray!30] (9.95,1.75) -- (10.3,2.0) -- (10.3,2.9)
+                             -- (9.95,2.65) -- cycle;               % faccia laterale
+  \draw[thick, fill=white]   (8.65,1.75) rectangle (9.95,2.65);     % faccia frontale
+  \node[lbl, above] at (9.5,2.95) {Fotodiodo};
+ 
+  % ---------------- voltmetro ----------------
+  \node[draw, circle, thick, minimum size=0.95cm] (V) at (11.3,-1.6) {$V$};
+  \node[lbl, below] at (V.south) {Voltmetro};
+  \draw[thick] (10.12,2.2) .. controls (11.7,2.2) and (11.9,0.4) .. (V.north);
+ 
+  % ---------------- luce ----------------
+  \draw[dashed, ->] (2.95,\yb) -- (4.55,\yb);
+  \draw[dashed, ->] (5.45,\yb) -- (6.05,\yb);
+  \draw[dashed, ->] (6.95,\yb) -- (8.55,\yb);
+ 
+\end{tikzpicture}
+
+\end{center}
+
+\subsubsection*{Funzione di Fit e Parametri}
+I dati acquisiti in laboratorio descriveranno una curva che interpoleremo (in radianti) con la funzione:
+\begin{equation}
+    y = A \cos^2(x - C) + B
+\end{equation}
+Analizziamo il significato fisico dei tre parametri di fit:
 \begin{itemize}
-    \item la scala
-    \item il voltmetro
-    \item l'errore maggiore saranno dei punti più alti o bassi nella curva, questo accade perchè il fotodiodo non è allineato perfettamente con l'assei rotazione del polarizztore, allora guardiamo punti diversi del polarizzatore 
-    e dunque in base a dove siamo avremo diversi gradi di assorbimento, poichè il polarizzatore potrebbe non essere perfettamente uniforme
+    \item $\mathbf{A}$: Rappresenta l'intensità massima trasmessa ($I_{\text{max}}$).
+    \item $\mathbf{C}$: È un angolo di fase (correzione dello zero). L'angolo "zero" letto sulla scala graduata potrebbe non coincidere con il perfetto allineamento degli assi dei due polarizzatori. Il parametro $C$ trasla la funzione per compensare questo disallineamento e dipenderà fortemente da come viene inizializzato il fit.
+    \item $\mathbf{B}$: Rappresenta il termine di fondo, ovvero la luce residua misurata nei punti di minimo della curva.
 \end{itemize}
 
-Ha senso guardare allora l'intervallo in cui oscilla l'onda e calcoliamo $\Delta V /V_max$ e ci dice che il nostro polarizzatore ha una certa disuniformità
+\subsubsection*{Interpretazione Fisica del parametro di fondo B}
+Durante l'esperienza bisognerà prestare attenzione a due cose fondamentali: evitare che il fotodiodo vada in saturazione e gestire la luce di fondo. Essendo il sistema compatto e aperto, è difficile isolarlo completamente dalla luce ambientale. 
 
-Inoltre noteremo che la curva non si chiude, perchè il polarizzatore si scalda e il fotodiodo si scarica
+Tuttavia, tracciando il grafico della tensione in funzione dell'angolo $x$:
+\begin{center}
+    
+\begin{tikzpicture}[>=Stealth]
+ 
+  \pgfmathsetmacro{\A}{2.2}          % ampiezza
+  \pgfmathsetmacro{\B}{0.6}          % fondo
+  \pgfmathsetmacro{\C}{0.8}          % fase [rad]
+  \pgfmathsetmacro{\Ymax}{\A+\B}
+ 
+  % assi
+  \draw[->, thick] (-0.7,0) -- (8.2,0) node[below] {$x$};
+  \draw[->, thick] (0,-0.3) -- (0,3.6) node[left]  {$y$};
+ 
+  % livelli del minimo (B) e del massimo (A + B)
+  \draw[dashed, thin] (0,\B)    -- (7.7,\B);
+  \draw[dashed, thin] (0,\Ymax) -- (7.7,\Ymax);
+  \node[left] at (0,\B)    {$B$};
+  \node[left] at (0,\Ymax) {$A+B$};
+  \draw[<->] (7.7,\B) -- (7.7,\Ymax) node[midway, right] {$A$};
+ 
+  % curva
+  \draw[very thick, domain=-0.3:7.2, samples=200, variable=\x]
+        plot ({\x}, {\A*(cos(deg(\x-\C)))^2 + \B});
+ 
+\end{tikzpicture}
+
+\end{center}
+Noteremo che il valore minimo della curva non scende a zero, ma si assesta su un valore $B$ significativamente diverso da zero (di conseguenza i massimi arriveranno a $B + A$). 
+Questo fondo \textbf{non è dovuto solo alla luce ambientale}, ma a un'imperfezione intrinseca del primo polarizzatore. Esso blocca (quasi) completamente la luce nella direzione parallela ai polimeri, ma una piccolissima frazione di luce passa comunque anche in altre direzioni al suo asse di trasmissione.
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, font=\small]
+
+  % parametri (la schiacciatura è ESAGERATA per renderla visibile)
+  \pgfmathsetmacro{\semiA}{2.6}                 % semiasse maggiore -> E_1
+  \pgfmathsetmacro{\semiB}{0.55}                % semiasse minore   -> sqrt(eps) E_1
+  \pgfmathsetmacro{\alfa}{40}                   % angolo alpha dell'analizzatore [gradi]
+  \pgfmathsetmacro{\projA}{\semiA*cos(\alfa)}   % proiezione di E_1 sull'asse di P_2
+  \pgfmathsetmacro{\projB}{\semiB*sin(\alfa)}   % proiezione di sqrt(eps)E_1 sull'asse di P_2
+
+  %%%%%%%%%% (a) luce in uscita da P1 %%%%%%%%%%
+  \begin{scope}
+    \draw[->, gray] (-3.1,0) -- (3.4,0) node[below] {$x_1$};
+    \draw[->, gray] (0,-1.1) -- (0,1.4) node[left]  {$y_1$};
+
+    \draw[very thick] (0,0) ellipse ({\semiA} and {\semiB});
+
+    \draw[->, thick, blue!70!black] (0,0) -- (\semiA,0)
+          node[midway, below] {$E_1$};
+    \draw[->, thick, red!70!black]  (0,0) -- (0,\semiB)
+          node[midway, left] {$\sqrt{\varepsilon}\,E_1$};
+
+    \node at (0,-1.7) {(a) luce in uscita da $P_1$};
+  \end{scope}
+
+  %%%%%%%%%% (b) proiezione sull'analizzatore %%%%%%%%%%
+  \begin{scope}[xshift=8.5cm]
+    \draw[->, gray] (-3.1,0) -- (3.4,0) node[below] {$x_1$};
+    \draw[->, gray] (0,-1.1) -- (0,1.4) node[left]  {$y_1$};
+
+    \draw[very thick] (0,0) ellipse ({\semiA} and {\semiB});
+
+    \coordinate (T1) at (\semiA,0);        % estremo di E_1
+    \coordinate (T2) at (0,\semiB);        % estremo di sqrt(eps)E_1
+    \coordinate (Q1) at (\alfa:\projA);    % proiezione di T1 sull'asse di P_2
+    \coordinate (Q2) at (\alfa:\projB);    % proiezione di T2 sull'asse di P_2
+
+    % asse di trasmissione di P2 (ruotato di alpha)
+    \draw[->, thick, green!45!black] ({\alfa+180}:2.6) -- (\alfa:3.9)
+          node[above right] {$x_2$};
+
+    % angolo alpha
+    \draw[->, thin] (3.0,0) arc[start angle=0, end angle=\alfa, radius=3.0];
+    \node at ({\alfa/2}:3.4) {$\alpha$};
+
+    % proiezioni ortogonali sull'asse di P2
+    \draw[dotted, thick, blue!70!black] (T1) -- (Q1);
+    \draw[dotted, thick, red!70!black]  (T2) -- (Q2);
+
+    % componenti sull'asse di P2
+    \draw[very thick, blue!70!black] (0,0) -- (Q1)
+          node[pos=0.8, above=1pt, sloped] {$E_1\cos\alpha$};
+    \draw[very thick, red!70!black]  (0,0) -- (Q2);
+    \node[inner sep=0pt,
+          pin={[pin distance=1.4cm, pin edge={thin, gray}]140:{$\sqrt{\varepsilon}\,E_1\sin\alpha$}}]
+          at (Q2) {};
+
+    \node at (0,-1.7) {(b) proiezione sull'asse di $P_2$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{center}
+
+Di conseguenza, la luce in uscita dal primo polarizzatore \textbf{non è perfettamente polarizzata linearmente}, ma possiede una polarizzazione \textbf{ellittica molto schiacciata}.
+Avremo quindi una componente di ampiezza massima $E_1$ lungo l'asse principale di trasmissione, e una componente molto piccola (che chiameremo $\sqrt{\varepsilon} E_1$) lungo l'asse ortogonale. 
+
+Quando questa luce ellittica incontra il secondo polarizzatore (ruotato di un angolo $\alpha$), l'intensità totale trasmessa $I_2$ sarà la somma dei contributi delle due componenti proiettate sull'asse dell'analizzatore:
+\begin{equation}
+    I_2 = I_1 \cos^2 \alpha + (\varepsilon I_1) \sin^2 \alpha
+\end{equation}
+Ricordando l'identità trigonometrica $\sin^2 \alpha = 1 - \cos^2 \alpha$, possiamo riscrivere:
+\begin{equation}
+    I_2 = I_1 \cos^2 \alpha + \varepsilon I_1 (1 - \cos^2 \alpha)
+\end{equation}
+Raggruppando i termini in $\cos^2\alpha$, otteniamo:
+\begin{equation}
+    I_2 = I_1(1 - \varepsilon)\cos^2 \alpha + \varepsilon I_1
+\end{equation}
+\begin{nota}
+Come si vede dall'equazione, emerge un termine costante $B = \varepsilon I_1$. Questo dimostra che il "sollevamento" dei minimi della legge di Malus è dovuto principalmente all'ellitticità della luce prodotta dal polarizzatore. Per questo motivo, l'effetto della luce ambientale diventa trascurabile rispetto a questa problematica strumentale.
+\end{nota}
+
+\subsubsection*{Analisi degli errori e sistematiche}
+Le incertezze sulla nostra misurazione proverranno da diverse fonti:
+\begin{itemize}
+    \item \textbf{Errore di lettura (scala graduata):} L'allineamento manuale tacca su tacca (sensibilità di $1^\circ$).
+    \item \textbf{Errore del multimetro:} L'incertezza sulla lettura della tensione del fotodiodo.
+    \item \textbf{Disuniformità del polarizzatore:} È la fonte di errore sistematico maggiore. L'asse di rotazione del polarizzatore potrebbe non coincidere perfettamente col centro del fascio di luce. Ruotando, il fascio di luce colpirà porzioni diverse del polimero. A causa di difetti di fabbrica, disuniformità costruttive o semplice polvere, il grado di assorbimento varierà leggermente in base al punto colpito.
+\end{itemize}
+
+Questo ultimo effetto sarà visibile tracciando il grafico dei \textbf{residui} (3° grafico). Osserveremo un andamento oscillante.
+Prendendo l'ampiezza di questa oscillazione ($\Delta V$) e dividendola per l'ampiezza massima del segnale ($V_{\text{max}}$), il rapporto $\frac{\Delta V}{V_{\text{max}}}$ ci fornirà una stima quantitativa della disuniformità superficiale del polarizzatore.
+
+Infine, si potrà notare che l'inizio e la fine della curva (a $0^\circ$ e a $360^\circ$) potrebbero non combaciare perfettamente (la curva "non si chiude"). Ciò è dovuto a piccole variazioni della risposta dello strumento nel corso del tempo: durante il tempo necessario a prendere le misure, il riscaldamento della lampadina e la reazione del fotodiodo possono causare una lenta variazione dell'intensità o della sensibilità di fondo.
+
+
+
 
 
 
