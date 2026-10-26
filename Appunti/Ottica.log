@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  26 OCT 2026 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  26 OCT 2026 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1349,63 +1349,41 @@ Package cleveref Info: loaded `italian' language definitions on input line 2837.
 Package cleveref Info: loaded `italian' language definitions on input line 2896.
  [39]
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2925.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2901.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2925.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2901.
 
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2925.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2925.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2930.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2930.
-
-Package cleveref Info: loaded `italian' language definitions on input line 2942.
+Package cleveref Info: loaded `italian' language definitions on input line 2926.
 [40]
+Package cleveref Info: loaded `italian' language definitions on input line 2982.
+ [41]
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2947.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2947.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2947.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2983.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2947.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2983.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2947.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2983.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2947.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2983.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2951.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2983.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2951.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 2983.
 
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2951.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 2951.
-
-Package cleveref Info: loaded `italian' language definitions on input line 2991.
-[41]
-Package cleveref Info: loaded `italian' language definitions on input line 3035.
- [42]
-Package cleveref Info: loaded `italian' language definitions on input line 3084.
+Package cleveref Info: loaded `italian' language definitions on input line 3031.
+[42]
+Package cleveref Info: loaded `italian' language definitions on input line 3075.
  [43]
-Package cleveref Info: loaded `italian' language definitions on input line 3097.
- [44] (./Ottica.aux
+Package cleveref Info: loaded `italian' language definitions on input line 3124.
+ [44]
+Package cleveref Info: loaded `italian' language definitions on input line 3137.
+ [45] (./Ottica.aux
 Package cleveref Info: loaded `italian' language definitions on input line 8.
 Package cleveref Info: loaded `italian' language definitions on input line 9.
 )
@@ -1415,18 +1393,18 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 73266 strings out of 467525
- 1822472 string characters out of 5418983
+ 73268 strings out of 467525
+ 1822501 string characters out of 5418983
  3163732 words of memory out of 5000000
  100519 multiletter control sequences out of 15000+600000
- 771229 words of font info for 304 fonts, out of 8000000 for 9000
+ 771142 words of font info for 303 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,19n,108p,1065b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Ottica.pdf (48 pages, 743680 bytes).
+Output written on Ottica.pdf (49 pages, 748023 bytes).
 PDF statistics:
- 1057 PDF objects out of 1200 (max. 8388607)
- 905 compressed objects within 10 object streams
- 465 named destinations out of 1000 (max. 500000)
+ 1067 PDF objects out of 1200 (max. 8388607)
+ 914 compressed objects within 10 object streams
+ 469 named destinations out of 1000 (max. 500000)
  76211 words of extra memory for PDF output out of 89155 (max. 10000000)
 

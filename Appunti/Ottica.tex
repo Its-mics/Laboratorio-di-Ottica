@@ -2896,22 +2896,46 @@ Confrontando il $\chi^2$ dei due fit, noteremo che il $\chi^2$ del modello di Se
 \end{nota}
 
 \section{Arcobaleno} 
-Vedremo un applicazione del fenomeno della dispersione dell'indice di rifrazione della lunghezza d'onda.
+
+Vedremo un applicazione del fenomeno della dispersione dovuta alla dipendenza dell'indice di rifrazione dalla lunghezza d'onda.
+Osservando un arcobaleno con il sole alle nostre spalle, vediamo un arco ad un angolo $\theta \sim 40°$ rispetto alla direzione di provenienza del sole con il colore violetto verso la parte bassa e il rosso verso la parte alta. 
+Se siamo particolarmente fortunati si riesce a vedere anche un secondo arco (secondario) a colori invertiti: rosso nella parte interno e violetto esterno.
+in più se si osserva bene la parte di cielo tra i 2 archi è meno luminosa rispetto al cielo sopra e sotto i 2 arcobaleni.  
+
+GRAFICO ARCOBALENO
+
 
 Come descriviamo il fenomneo del (doppio) arcobaleno? 
-Un buon modello che lo può descrivere è una boccia di vetro piena d'acqua.
+Un buon modello che lo può descrivere è una boccia di vetro piena d'acqua (o sfera di cristallo).
 
-Consideriamo una goccia d'acqua sferica di raggio $R$, un raggio incidente su di essa con un \textit{parametro d'impatto} $b$ e angolo di 
-incidenza $\theta_i$ (che corrisponderà anche all'angolo tra $R$ e $l$). Vi sarà un raggio di prima deflessione (non interessante al nostro caso) e un raggio rifratto (rispetto alla superfice di riflessione, localmente piana)
-L'angolo fra la direzione del raggio incidente e il raggio rifratto sarà $\theta_i - \theta_r$ (dove $\theta_r$ è l'angolo del raggio rifratto)
- 
-AGGIUNGI GRAFICO    
+Consideriamo una goccia d'acqua sferica di raggio $R$, si abbia un raggio incidente su di essa con un \textit{parametro d'impatto} $b$ (ovvero l'altezza rispetto al centro della goccia) e angolo di 
+incidenza $\theta_i$ (che corrisponderà anche all'angolo tra $R$ (rispetto al centro) e $R$ (rispetto al parametro di impatto)). Il primo raggio sara riflesso in una direzione non interessante al nostro caso verrà chiamato raggio di prima classe, ci sarà poi il raggio rifratto (normale rispetto alla superfice di separazione, localmente piana),
+il raggio di rifrazione formerà un angolo $\theta_r$ con il raggio $R$ del parametro di impatto.
+L'angolo che resta ovvero l'angolo fra la direzione del raggio incidente e il raggio rifratto sarà $\theta_i - \theta_r$, 
+ prolungando un retta dal centro della goccia fino a dove finisce il secondo raggio di rifrazione che incide a destra sulla goccia, fa formare tra i 2 un angolo $\theta_r$. 
+ anche in questo caso si avrà un riflessione interna e un raggio in uscita con il nome di raggio di seconda classe (dove l'angolo tra il raggio di uscita e il piano è $\theta_i$).
+ prolungando il raggio di rifrazione, si trova un angolo $\pi - \theta_r$ rispetto al raggio di uscita, poichè l'angolo tra il (secondo) raggio di riflessione interna e il piano immaginario orizzontale al centro della goccia è $\theta_r$, quindi
+ prolungando a destra il secondo raggio di riflessionte interna e il primo si trova un angolo $2\theta_r$.
+tracciando una retta dall'origine fino al terzo punto di incidenza si trova un angolo con il secondo raggio di riflessione di $\theta_r$, dove anche in questo caso il raggio uscirà (stavolta nella stessa direzione  ma verso opposto di dove il primo raggio entra) questo sarà raggio di terza classe, che formerà un angolo $\theta_i$ con il prolungamento con il secondo raggio di riflessione interna. 
+adesso prolungando a destra anche il terzo raggio di uscita a destra  formerà un angolo $\theta_i - \theta_r$ con il secondo raggio di riflessione interna.
+Prolungandolo ancora di più e prolungando anche il primo raggio incidente a destra si trova che quando si congiungono formano un angolo (esterno) chiamato $\Delta$.  
 
-Il raggio subirà dopo una nuova riflessione ed una nuova deflessione, chiamiamo $\Delta$ l'angolo di deviazione "totale" (fra raggio incidente e raggio in uscita dalla goccia).
+AGGIUNGI GRAFICO GOCCIA
+
+ chiamiamo quindi $\Delta$ l'angolo di deviazione "totale" (fra raggio incidente e raggio in uscita dalla goccia), che si può calcolare come somma delle diverse deviazione alle interfacce, 
 \[
-\Delta = (i-r) + (\pi -2r) + (i-r) = \pi +2i -4 \arcsin(\sin(i)/ n)
+\Delta = (i-r) + (\pi -2r) + (i-r) = \pi +2i -4r
 \]
-dove abbiamo utilizzato Snell, deriviamo rispetto a i, per studiare se vi è un estremo
+usando snell e considerando l'indice di rifrazione dell'aria $n_{aria} \sim 1 $ si trova l'indice di rifrazione dell'oggetto:
+\begin{equation}
+    \frac{sin(i)}{sin(r)} = n
+\end{equation}
+per cui si trova:
+\begin{equation}
+   \Delta  = \pi +2i - 4\arcsin(\sin(i)/ n) = \Delta(i)
+\end{equation}
+ Per cui il nostro angolo di deviazione dipenderà dall'angolo di incidenza, per studiarne la dipendenza deriviamo rispetto a i (per studiare se ha un estremo), questa operazioen si fa sul raggio di terza classe poiché se fosse fatto sul raggio di prima o seconda classe
+ si troverebbe che non ha minimo (almeno all'interno dei valori di minmi e max degli angoli):
 \begin{equation}
     \frac{d \Delta}{d i} = 2 -\frac{4}{\sqrt{1 - \frac{\sin^2 i}{n^2}}}\frac{\cos i}{n} = 0
 \end{equation}
@@ -2919,37 +2943,53 @@ dove abbiamo utilizzato Snell, deriviamo rispetto a i, per studiare se vi è un 
 risolvendo per i si ottiene:
 
 \begin{equation}
-    \sin i = \frac{4 n^2}{3}
+    2\sqrt{1 - \frac{sin^2 (i)}{n}} = 4 \frac{cos(i)}{n} \rightarrow n^2 - sin^2 (i) = 4 cos(i)
 \end{equation}
 
-ed utilizzando n = indice di rifrazione dell'aria si ottiene $i \simeq 0.86 \rightarrow i \simeq 59°$ ed $r \simeq 40°$
+
+\begin{equation}
+     \sin^2 i = \frac{4 - n^2}{3}
+\end{equation}
+
+
+ed utilizzando n = indice di rifrazione dell'acqua ($n_{acqua}\sim 1.33$) si ottiene $i \simeq 0.86 \rightarrow i \simeq 59^\circ$ ed $r \simeq 40^\circ$
 
 e dunque abbiamo 
 
 \begin{equation}
-    \Delta_{min} \simeq 138°
+    \Delta_{min} \simeq 138^\circ
 \end{equation}
 
-per cui $b \simeq 0.86 R$
+per cui essendo $sin(i) = \frac{b}{R} $ si ha $b \simeq 0.86 R$
 
 
-L'angolo complementera a $138$ è 42 che è circa l'angolo alla quale si riesce ad osservare l'arcobaleno. 
+L'angolo complementere a $138$ sarà quindi di $42^\circ$ che è circa l'angolo alla quale si riesce ad osservare l'arcobaleno. 
+Ovviamente $\Delta$ dipende anche dall'indice di rifrazione dell'acqua che però a sua volta dipenderà anche dalla lunghezza d'onda, per cui l'angolo minimo dipenderà 
+dalla lunghezza d'onda che ci evidenzia la differenza di angolo visto prima (grafico arcobaleno) in base alle diverse lunghezze d'onda
 
-Studiando lo stesso fenomeno nel caso di raggio di quarta classe abbiamo
+
+Studiando ora lo stesso fenomeno ma nel caso in cui  il raggio incidente entra da sotto (quindi con un b dall'altra parte), nel caso di raggio di quarta classe abbiamo 
+
+GRAFICO GOCCIA 2
+
 
 \begin{equation}
-    \Delta = (i - r) + (\pi - 2 r) + (\pi - 2r) + (i-r) = 2\pi + 2i - \arcsin{\sin(i)/n}
+    \Delta = (i - r) + (\pi - 2 r) + (\pi - 2r) + (i-r) = 2\pi + 2i - 6r = 2\pi + 2i - 6\arcsin{\sin(i)/n}
 \end{equation}
 nuovamente, cercando $\Delta_min$:
 \begin{equation}
     \frac{d \Delta}{d i} = 2 - \frac{4}{\sqrt{1 - \frac{\sin^2 i}{n^2}}}\frac{\cos i}{n} = 0
 \end{equation}
-da cui otteniamo i risultati $ i \simeq 77°$ ed $r \simeq 45.5°$ e $\Delta_{min} \simeq 230°$ con $b \simeq 0.95 R$.
-Che corrisponde all'angolo a cui si osserva il secondo arco di arcobaleno
+da cui otteniamo i risultati $ i \simeq 72°$ ed $r \simeq 45.5°$ e $\Delta_{min} \simeq 230°$ con $b \simeq 0.95 R$.
+Il cui angolo complementare corrisponde all'angolo a cui si osserva il secondo arco di arcobaleno, la dipendenza dall'indice di rifrazione fa si che i colori siano invertiti.
+Possiamo anche osservare l'andamento del $sin(i) = \frac{b}{R}$ al variare di $\Delta$:
+dove rappresento graficamente $\Delta 4 $ e $\Delta 3$ con rispettivamente un massimo e minimo.
+se adesso aggiungo dall'altra parte in ascissa l'intensità $I$, troverò un intensità maggiore su $\Delta_3 $ Poiché ho un minimo più largo (c'è molta più luce che esce), questo sarà il raggio primario mentre l'altro il secondario, inoltre un altra motivazione è che ogni volta che c'è una riflessione parte dell'intensità si perde. 
 
-Possiamoi studiare l'andamento di $\Delta$ rispetoto a $\sin i = \frac{b}{R}$ e, contemporaneamente, un grafico della dipendenza di I da $\Delta$, si vede che 
-ci sono molti più angoli che hanno $\Delta_{min}$ a $138°$, e dunque ivi l'intensità è elevata, mentre quelli a $230°$ sono è molto più piccola. 
+AGGIUNGI GRAFICO DI DELTA 
 
+
+ 
 Inoltre vi è una regione di angoli di incidenza in cui non vi sono raggi di terza e quarta classe, per questo in questi angoli la luminosità del cielo è minore.
 
 In realtà, considerando i fenomeni d'interferenza fra i vari raggi all'interno delle goccie, possono diminuire o aumentare l'intensità della luce nella regione intermedia, dove questi fenomeni sono più visibili.
