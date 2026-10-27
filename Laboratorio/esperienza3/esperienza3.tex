@@ -71,7 +71,175 @@
 
 
     \section{Legge fisica da verificare}
+    La formula che descrive come cambia l'indice di rifrazione in funzione della lunghezza d'onda è data dall' \textit{equazione di Sellmeier}:
+    \[
+    n(\lambda) = \sqrt{1 + \frac{A\lambda^2}{\lambda^2-\lambda_0^2}}
+    \]
+    Per faremo incidere un raggio luminoso su un prisma, che verrà da esso deviato. L'obbiettivo è individuare l'angolo di deviazione minore, da cui si ottiene l'indice di rifrazione tramite:
+    \begin{equation}
+    n = \frac{\sin(\frac{\delta_{min}+\alpha}{2})}{\sin(\frac{\alpha}{2})}  
+    \end{equation}
+    \label{eq:1}
     \section{Apparato sperimentale}
+    L'apparato è composto dai seguenti elementi:
+    \begin{itemize}
+        \item Sorgenti luminose: Una lampada al sodio che emette una riga spettrale nota a $\lambda = (589 \pm 1) \text{ nm}$ e un faretto a luce bianca;
+        \item Filtri: 13 filtri che selezionano lunghezze d'onda nel range del visibile (da $450 \text{ nm}$ a $700 \text{ nm}$, con $\Delta\lambda \approx \pm 10 \text{ nm}$);
+        \item Prisma: Un prisma di vetro (con $n_v \sim 1.5$, valore medio sperimentale) a base triangolare isoscele;
+        \item Goniometro ottico: Costituito da un piatto graduato rotante con sopra un supporto su cui poggia il prisma;
+        \item Collimatore con fenditura regolabile; 
+        \item Cannocchiale mobile dotato di un filamento verticale.
+    \end{itemize}
+
+    \begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{
+    \begin{tikzpicture}[
+        >=Stealth,
+        tubo/.style={draw=black!70, fill=gray!20, thick},
+        raggio/.style={red!70!black, thick},
+        lab/.style={font=\footnotesize, align=center}
+    ]
+
+    % ---------- Sorgente, filtro, fenditura ----------
+    \draw[thick, rounded corners=2pt, fill=yellow!30] (-6.3,-0.45) rectangle (-5.4,0.45);
+    \node[lab, anchor=north] at (-5.85,-0.55) {sorgente\\(lampada Na\\o faretto)};
+
+    \draw[thick, fill=blue!20] (-5.15,-0.6) rectangle (-5.05,0.6);
+    \node[lab, anchor=south] at (-5.1,0.7) {filtro};
+
+    % ---------- Collimatore ----------
+    \draw[tubo] (-4.7,-0.3) rectangle (-2.3,0.3);
+    \fill (-4.75,0.08) rectangle (-4.65,0.3);     % ganasce della fenditura
+    \fill (-4.75,-0.3) rectangle (-4.65,-0.08);
+    \draw[thick, fill=cyan!20] (-2.3,0) ellipse (0.09 and 0.34);   % lente
+    \node[lab, anchor=south] at (-3.4,0.55) {collimatore};
+    \node[lab] at (-4.0,-1.2) {fenditura\\regolabile};
+    \draw[->, thin] (-4.2,-0.95) -- (-4.68,-0.33);
+
+    % ---------- Piatto graduato ----------
+    \draw[thick, fill=gray!10] (0,0) circle (1.8);
+    \foreach \a in {0,10,...,350} \draw[black!60] (\a:1.8) -- (\a:1.68);
+    \foreach \a in {0,30,...,330} \draw[black!80] (\a:1.8) -- (\a:1.58);
+    \draw[thick, fill=white] (0,0) circle (1.2);
+    \node[lab] at (0.2,2.55) {piatto graduato\\rotante};
+    \draw[->, thin] (0.6,2.15) -- (50:1.8);
+
+    % ---------- Prisma (ruotato come in Figura 2) ----------
+    \begin{scope}[rotate=-12.5]
+      \draw[thick, draw=blue!50!black, fill=cyan!25]
+            (-0.048,0.669) -- (-0.392,-0.163) -- (0.439,-0.507) -- cycle;
+    \end{scope}
+    \node[lab] at (0,1.0) {prisma};
+
+    % ---------- Cannocchiale (ruotato di delta attorno al piatto) ----------
+    \begin{scope}[rotate=-25]
+      \draw[tubo] (2.6,-0.3) rectangle (4.9,0.3);
+      \draw[thick, fill=cyan!20] (2.6,0) ellipse (0.09 and 0.34);  % obiettivo
+      \draw[tubo] (4.9,-0.18) rectangle (5.4,0.18);                % oculare
+    \end{scope}
+    \node[lab] at (2.3,-2.5) {cannocchiale};
+    \draw[->, thin] (2.6,-2.25) -- (2.88,-1.7);
+    \node[lab] at (4.3,-3.0) {oculare};
+    \draw[->, thin] (4.45,-2.75) -- (4.62,-2.35);
+
+    % ---------- Mirino: campo visivo con filamento verticale ----------
+    \coordinate (E) at (-25:6.0);
+    \draw[thick] (E) circle (0.38);
+    \draw[thick] ($(E)+(0,-0.38)$) -- ($(E)+(0,0.38)$);
+    \node[lab] at ($(E)+(0.1,-0.75)$) {mirino};
+
+    % ---------- Raggi e angolo di deviazione ----------
+    \draw[raggio, ->] (-4.7,0) -- (0,0);
+    \draw[raggio, ->] (0,0) -- (-25:5.4);
+    \draw[dashed, gray] (0,0) -- (4.2,0);
+    \node[lab, anchor=west] at (4.25,0) {fascio\\non deviato};
+    \draw[->] (2.15,0) arc[start angle=0, end angle=-25, radius=2.15];
+    \node[font=\small] at (-12:2.45) {$\delta$};
+
+    \end{tikzpicture}
+    }
+    \caption{Schema del sistema (vista dall'alto).}
+    \end{figure}
+    \subsection{Procedimento di misura}
+    La misura consiste nell' individuare dapprima l'angolo $\theta_0$ del raggio di luce non deviato. Dopodichè, il prisma verrà appoggiato sul goniometro, esso 
+    devierà la luce di un certo angolo $\delta$. Ruotando il goniometro, e dunque il prisma, in modo che la luce venga deviata di un angolo sempre minore, si
+    arriverà ad un angolo $\delta_{min}$ dopo la quale, anche continuando a ruotare il prisma, la deviazione aumenterà.
+    \section{Analisi Dati}
+    Dalla misura potremmo ottenere 3 grafici:
+    \begin{itemize}
+      \item Un grafico di $n$ (ottenuto tramite la \ref{eq:1}) in funzione di $\lambda$. Si proverà a fittare la curva ottenuta tramite la funzione:
+      \begin{equation}
+        y = \sqrt{1 + \frac{Ax^2}{x^2 - B^2}} 
+      \label{eq:2}
+      \end{equation}
+      In particolare, ci si attende che il valore di B sia compatibile con 100 (poichè $\lambda_0 = 100n$ è la lunghezza d'onda di risonananza del vetro).
+
+      Dato l'esiguo intervallo di lunghezze d'onda sulla quale si lavora, è possibile che i dati siano fittati meglio dalla funzione:
+      \begin{equation}
+        y = Ax + B
+        \label{eq:3}
+      \end{equation}
+      \item L'istogramma dei residui normalizzati $r = \frac{n_{fit} - n_{\text{misurato}}}{\sigma_{eff}}$ dove: $n_{fit}$ è ottenuto dalla \ref{eq:2}, 
+      $n_{\text{misurato}}$ ottenuto dalla \ref{eq:1} e $\sigma_{eff}$ la varianza efficace su $n_{fit}$.
+
+      Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$ siano rispettivamente compatibili con 0 e 1.
+
+      \item L'andamento dei residui (non normalizzati) in funzione di $\lambda$. Ci attendiamo che essi vengano fittati tramite una retta di pendenza ($m$)intercetta
+      ($q$) compatibili con 0.
+    \end{itemize}
     \section{Grafici}
+       \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_root.png}
+        \caption{Grafico $n_{\text{misurato}}$ vs $\lambda$ con tutti i punti.}
+        \label{fig1}
+      \end{figure}
+
+        \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_confronto.png}
+        \caption{Confronto fra le funzioni di fit \ref{eq:2} e \ref{eq:3}}
+        \label{fig2}
+      \end{figure}
+
+      E' facile osservare come la funzione di fit data dalla \ref{eq:2} descriva in modo più adeguato i dati rispetto alla \ref{eq:3}.
+
+      Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
+      gli ultimi due risultano avere un valore minore di quello previsto dal fit, mentre i precedenti due hanno un valore maggiore.
+
+      PARTE ERRORE RELATIVO
+      Per capire su quale coppia di misure si sia fatto un errore, si sono svolti due successivi fit, uno senza gli ultimi due e l'altro senza il terzultimo e quartultimo.
+      Si è così calcolato l'errore relativo commesso su $\delta$
+
+      PARTE DISCOTAMENTO IN TACCHE (MICHELE)
+
+      ....
+
+      ANALISI CHI QUADRO OTTENUTO CON GLI ALTRI FIT 
+
+      ....
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/hist.png}
+        \caption{Istogramma dei residui normalizzati, ottenuti dalla \ref{eq:2}, con tutti i punti.}
+        \label{fig3}
+      \end{figure}
+      ANDAMENTO DEI RESIDUI NORMALIZZATI NON RISPETTA LA GAUSSIANA (POCHI DATI) + MOSTRARE ALTRE GAUSSIANE OTTENUTE CON ALTRI FIT
+
+      ....
+
+
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_line.png}
+        \caption{Andamento dei residui, ottenuti dalla \ref{eq:2}, in funzione di $\lambda$, con tutti i punti.}
+        \label{fig4}
+      \end{figure}
+
+      ASSUNZIONE DELL'ERRORE SU ALPHA --> COME SPOSTA I DATI QUESTO PARAMETRO E RISULTATO DELLA MISURA 
+
+      ...
+
     \section{Conclusioni}
     \end{document}
