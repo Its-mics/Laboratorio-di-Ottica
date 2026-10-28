@@ -295,9 +295,26 @@
       ...
 
       \subsection{Analisi aggiuntiva}
-       PARTE ERRORE RELATIVO
-      Per capire su quale coppia di misure si sia fatto un errore, si sono svolti due successivi fit, uno senza gli ultimi due e l'altro senza il terzultimo e quartultimo.
-      Si è così calcolato l'errore relativo commesso su $\delta$
+          \subsubsection{Confronto tra i fit}
+    \begin{table}[H]
+      \centering
+      \caption{Fit con la \eqref{eq:2} (Sellmeier) e con la retta \eqref{eq:3}, con e senza le coppie di punti con residuo alto}
+      \label{tab:fit}
+      \small
+      \resizebox{\columnwidth}{!}{
+      \begin{tabular}{lcccc}
+        \toprule
+        Fit & $A$ & $B$ [nm] & $\chi^2/ndf$ & $p$ \\
+        \midrule
+        Sellmeier, tutti i punti & $1.2679\pm0.0010$ & $95.0\pm1.3$ & $19.9/12$ & $0.07$ \\
+        Sellmeier, senza 671, 690 nm & $1.2714\pm0.0013$ & $91.4\pm1.5$ & $4.4/10$ & $0.93$ \\
+        Sellmeier, senza 620, 656 nm & $1.2661\pm0.0012$ & $96.6\pm1.4$ & $5.7/10$ & $0.84$ \\
+        Sellmeier, senza i 4 punti & $1.2692\pm0.0018$ & $93.5\pm2.0$ & $1.2/8$ & $0.996$ \\
+        Retta, tutti i punti & --- & --- & $55.3/12$ & $1.6\times10^{-7}$ \\
+        \bottomrule
+      \end{tabular}}
+    \end{table}
+
 
 
       \begin{table}[H]
@@ -356,6 +373,84 @@
     \label{tab:risultati_fit_nuovi}
 \end{table}
 
+
+    Si nota che il $91\%$ del $\chi^2$ del fit di Sellmeier (18.1 su 19.9) viene dai quattro punti a 620--690 nm. Togliendo una qualunque coppia il $\chi^2$ diminuisce ($4.4/10$ e $5.7/10$); togliendoli tutti e quattro si ottiene $1.2/8$.
+
+\subsubsection{Valutazione dell'errore relativo su $\delta$}
+Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 671 e 690 nm e uno senza 620 e 656 nm. In questo modo i punti esclusi non influenzano la previsione, e si può confrontare il $\delta$ misurato con quello previsto dalla curva:
+    \begin{equation}
+      \varepsilon_\delta = \frac{|\delta_{fit}-\delta_{mis}|}{\delta_{fit}}
+      \label{eq:4}
+    \end{equation}
+    dove $\delta_{fit}=2\arcsin\!\left(n_{fit}\sin\frac{\alpha}{2}\right)-\alpha$ e $n_{fit}$ viene dalla \eqref{eq:2} con i parametri del fit senza la coppia considerata. Si trova $\varepsilon_\delta=0.21\%$ (671 nm), $0.25\%$ (690 nm), $0.19\%$ (620 nm) e $0.22\%$ (656 nm).
+
+    Le quattro misure si discostano in modo simile e togliere una qualunque coppia migliora il fit allo stesso modo (Tab.~\ref{tab:fit}). Non si può quindi dire che ne sia sbagliata una sola.
+
+    \subsubsection{Confronto dei residui con la precisione del goniometro}
+    Il goniometro misura direttamente l'angolo $\delta_{min}$, mentre $n$ si ricava da esso con la \eqref{eq:1}. Per capire se i residui $n_{mis}-n_{fit}$ sono compatibili con la precisione dello strumento conviene quindi esprimerli come errore di lettura su $\delta$, in tacche del nonio. Per farlo serve prima stimare l'incertezza su $\delta_{min}$.
+
+    Il nonio ha una risoluzione di $1'=1/60^\circ$ (che chiameremo ``una tacca''), a cui associamo l'incertezza di lettura
+    \[
+      \sigma_{lett}=\frac{1'}{\sqrt3}\simeq0.58'\;(=0.0096^\circ)
+    \]
+    Per $\theta_0$ c'è una sola lettura per filtro, quindi $\sigma_{\theta_0}=\sigma_{lett}$. Per $\theta_1$ ci sono tre letture, di cui si prende la media; come incertezza si usa la semidispersione delle tre letture divisa per $\sqrt3$, ma mai meno di $\sigma_{lett}$:
+    \begin{equation}
+      \sigma_{\theta_1}=\max\!\left(\sigma_{lett},\ \frac{\theta_{max}-\theta_{min}}{2\sqrt3}\right)
+      \label{eq:sigtheta}
+    \end{equation}
+    Se le tre letture differiscono di 2 tacche o meno, il secondo termine vale al più $\frac{2'}{2\sqrt3}=\sigma_{lett}$, quindi $\sigma_{\theta_1}=\sigma_{lett}$. Per esempio, le letture $263.800^\circ$, $263.783^\circ$ e $263.767^\circ$ differiscono di $0.033^\circ=2'$. Questo è il caso di 12 filtri su 14, e comprende tutti i punti con residuo alto discussi più avanti; solo a 455 e 470 nm le letture sono più sparse e l'incertezza è maggiore.
+
+    Per questi 12 filtri $\theta_1$ e $\theta_0$ hanno la stessa incertezza, quindi, sommando in quadratura, l'errore su $\delta_{min}=|\theta_1-\theta_0|$ è $\sigma_\delta=\sqrt2\,\sigma_{lett}\simeq0.82'$.
+
+    Per passare dai residui alle tacche si usa la derivata della \eqref{eq:1}, che trasforma l'incertezza su $\delta$ in incertezza su $n$:
+    \begin{equation}
+      \sigma_{n,i}=\left|\frac{\partial n}{\partial\delta}\right|_i\sigma_{\delta,i}
+      \qquad
+      \frac{\partial n}{\partial \delta}=\frac{\cos\frac{\delta+\alpha}{2}}{2\sin\frac{\alpha}{2}}
+      \label{eq:sigman}
+    \end{equation}
+    Una variazione $\Delta\delta$ dell'angolo produce quindi sull'indice una variazione $\Delta n=(\partial n/\partial\delta)\,\Delta\delta$. Al contrario, un residuo $n_{mis}-n_{fit}$ corrisponde a un \emph{errore equivalente} sull'angolo
+    \begin{equation}
+      \Delta\delta_i=\frac{n_{mis,i}-n_{fit,i}}{(\partial n/\partial\delta)_i}
+      \label{eq:5}
+    \end{equation}
+    Poiché $\delta_{min}$ varia poco ($0.450$--$0.463$ rad), la derivata resta tra $1.060$ e $1.065\ \mathrm{rad}^{-1}$ e la conversione è praticamente la stessa per tutti i punti: una tacca ($1'=2.91\times10^{-4}$ rad) sposta $n$ sempre di $\Delta n\simeq3.1\times10^{-4}$. Per lo stesso motivo le differenze tra i $\sigma_n$ dei vari punti vengono quasi solo da $\sigma_\delta$.
+
+    A questo punto si può confrontare l'errore equivalente di ogni punto con la sua incertezza $\sigma_{\delta,i}$ (Tab.~\ref{tab:tacche}). I quattro punti a 620--690 nm hanno errori equivalenti di $1.6$--$2.4$ tacche e il punto a 420 nm di $2.7$; per gli altri nove punti l'errore equivalente è al più di $0.6$ tacche. In unità di $\sigma_\delta$, i cinque punti con residuo alto stanno tra $2.0$ e $3.3\,\sigma_\delta$, gli altri entro $0.8\,\sigma_\delta$. Per spiegare i cinque punti basterebbe quindi che $\delta_{min}$ fosse stato letto sbagliato di 2--3 tacche ($0.03^\circ$--$0.05^\circ$).
+
+\begin{table}[H]
+      \centering
+      \caption{Punti con $|r|>1$ rispetto al fit di Sellmeier completo ($r$ = residuo normalizzato). }
+      \label{tab:tacche}
+      \small
+      \resizebox{\columnwidth}{!}{
+      \begin{tabular}{ccccrrcr}
+        \toprule
+        $\lambda$ [nm] & $n_{mis}$ & $n_{fit}$ & $n_{mis}-n_{fit}$ & $r$ & $\Delta\delta$ [tacche] & $\sigma_\delta$ [tacche] & $\Delta\delta/\sigma_\delta$ \\
+        \midrule
+        420 & 1.52764 & 1.52848 & $-0.00083$ & $-1.20$ & $-2.7$ & $0.82$ & $-3.3$ \\
+        620 & 1.51668 & 1.51605 & $+0.00063$ & $+1.98$ & $+2.0$ & $0.82$ & $+2.5$ \\
+        656 & 1.51570 & 1.51495 & $+0.00074$ & $+2.48$ & $+2.4$ & $0.82$ & $+2.9$ \\
+        671 & 1.51404 & 1.51455 & $-0.00050$ & $-1.71$ & $-1.6$ & $0.82$ & $-2.0$ \\
+        690 & 1.51342 & 1.51407 & $-0.00065$ & $-2.25$ & $-2.1$ & $0.82$ & $-2.6$ \\
+        \bottomrule
+      \end{tabular}}
+    \end{table}
+    Infine, il residuo normalizzato $r$ è più piccolo di $\Delta\delta/\sigma_\delta$ (a 656 nm $r=2.48$ contro $2.9$), perché $\sigma_{eff}$ comprende anche l'incertezza su $\lambda$, oltre a quella su $n$.
+
+
+    \subsubsection{Ipotesi su lunghezza d'onda}
+    Si è anche verificato se gli scarti possano dipendere da una $\lambda$ diversa da quella nominale del filtro. Fittando con la \eqref{eq:2} i soli punti con $\lambda\le589$ nm, per ciascun $n_{mis}$ si è calcolata la $\lambda$ che la curva richiederebbe. Per i quattro punti con residuo alto si ottengono $605$, $635$, $699$ e $729$ nm al posto di $620$, $656$, $671$ e $690$ nm, cioè scarti di $-15$, $-21$, $+28$ e $+39$ nm; per tutti gli altri punti lo scarto è al più di $5$ nm. Gli scarti superano la tolleranza dei filtri ($\pm10$ nm), quindi l'incertezza su $\lambda$ da sola non basta e un errore di puntamento resta la spiegazione più naturale.
+
+  
+
+
+
+
+
+
+
+    
 
     \section{Conclusioni}
     \end{document}
