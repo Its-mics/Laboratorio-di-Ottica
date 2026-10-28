@@ -189,10 +189,38 @@
       ($q$) compatibili con 0.
     \end{itemize}
     \section{Grafici}
+
        \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_root.png}
-        \caption{Grafico $n_{\text{misurato}}$ vs $\lambda$ con tutti i punti.}
+        \caption{Fit tra $n_{\text{misurato}}$ vs $\lambda$ e l'andamento teorico utilizzando la legge di Sellmeier.}
+        \label{fig1}
+      \end{figure}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} \\
+        \midrule
+        $\chi^2_{Sellmeier}$ & $4.604$ & [-] \\
+        A & $1.27 \pm 1.05 \times 10^{-3}$ & [-]\\  
+        B &  $95.0 \pm 1.33$ & [no] \\
+        \bottomrule
+    \end{tabular}
+    \caption{Valori dei parametri estratti dal fit con il modello di Sellmeier.}
+    \label{tab:parametri_fig2}
+\end{table}
+
+
+
+
+
+          \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_lineare.png}
+        \caption{Fit lineare di  $n_{\text{misurato}}$ vs $\lambda$ .}
         \label{fig1}
       \end{figure}
 
@@ -203,14 +231,39 @@
         \label{fig2}
       \end{figure}
 
-      E' facile osservare come la funzione di fit data dalla \ref{eq:2} descriva in modo più adeguato i dati rispetto alla \ref{eq:3}.
 
-      Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} \\
+        \midrule
+        $\chi^2_{lineare}$ & $4.604$  \\
+        $\chi^2_{sellmeier}$ & $1.658$  \\  
+        $\Delta \chi$ &  2.93 \\
+        \bottomrule
+    \end{tabular}
+    \caption{confronto tra i valori di $\chi^2$ ottenuti dai due fit.}
+    \label{tab:parametri_fig2}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+      E' facile osservare come la funzione di fit data dalla \ref{eq:2} descriva in modo più adeguato i dati rispetto alla \ref{eq:3}. Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
       gli ultimi due risultano avere un valore minore di quello previsto dal fit, mentre i precedenti due hanno un valore maggiore.
 
       PARTE ERRORE RELATIVO
       Per capire su quale coppia di misure si sia fatto un errore, si sono svolti due successivi fit, uno senza gli ultimi due e l'altro senza il terzultimo e quartultimo.
-      Si è così calcolato l'errore relativo commesso su $\delta$
+      Si è così calcolato l'errore relativo commesso su $\delta$ (messa in una subsection in fondo: prima presntiamo i risulltati con il campione intero)
 
       PARTE DISCOTAMENTO IN TACCHE (MICHELE)
 
@@ -240,6 +293,69 @@
       ASSUNZIONE DELL'ERRORE SU ALPHA --> COME SPOSTA I DATI QUESTO PARAMETRO E RISULTATO DELLA MISURA 
 
       ...
+
+      \subsection{Analisi aggiuntiva}
+       PARTE ERRORE RELATIVO
+      Per capire su quale coppia di misure si sia fatto un errore, si sono svolti due successivi fit, uno senza gli ultimi due e l'altro senza il terzultimo e quartultimo.
+      Si è così calcolato l'errore relativo commesso su $\delta$
+
+
+      \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
+        \midrule
+       
+        $A$ & $1.2714 \pm 0.0013$ & [-] \\
+        $B$ & $91.4 \pm 1.5$  & [no] \\
+        $\chi^2/\text{ndf}$ & $0.44$  & [-] \\
+        $\mu$ & $0.9 \pm 0.1486$  & [no] \\
+        $\sigma$ & $0.5 \pm 0.1$  & [no] \\
+        \bottomrule
+    \end{tabular}
+    \caption{Risultati del fit togliendo ultimi due punti.}
+    \label{tab:risultati_fit_nuovi}
+\end{table}
+
+
+      \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
+        \midrule
+       
+        $A$ & $1.2661 \pm 0.0012$ & [-] \\
+        $B$ & $96.6 \pm 1.4$  & [no] \\
+        $\chi^2/\text{ndf}$ & $0.57$  & [-] \\
+        $\mu$ &  . & [no] \\
+        $\sigma$ & . & [no] \\
+        \bottomrule
+    \end{tabular}
+    \caption{Risultati del fit togliendo i penultimi due punti.}
+    \label{tab:risultati_fit_nuovi}
+\end{table}
+
+
+
+
+      \begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} \\
+        \midrule
+       
+        $\epsilon_1$ & $0.21$\\
+        $\epsilon_2$ & $0.25$ \\
+       
+        \bottomrule
+    \end{tabular}
+    \caption{Risultati del fit togliendo i penultimi due punti.}
+    \label{tab:risultati_fit_nuovi}
+\end{table}
+
 
     \section{Conclusioni}
     \end{document}
