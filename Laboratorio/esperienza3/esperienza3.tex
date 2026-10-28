@@ -75,7 +75,7 @@
     \[
     n(\lambda) = \sqrt{1 + \frac{A\lambda^2}{\lambda^2-\lambda_0^2}}
     \]
-    Per faremo incidere un raggio luminoso su un prisma, che verrà da esso deviato. L'obbiettivo è individuare l'angolo di deviazione minore, da cui si ottiene l'indice di rifrazione tramite:
+    Per verificarla, faremo incidere un raggio luminoso su un prisma, che verrà da esso deviato. L'obbiettivo è individuare l'angolo di deviazione minore, da cui si ottiene l'indice di rifrazione ($n$) tramite:
     \begin{equation}
     n = \frac{\sin(\frac{\delta_{min}+\alpha}{2})}{\sin(\frac{\alpha}{2})}  
     \end{equation}
@@ -164,16 +164,16 @@
     \subsection{Procedimento di misura}
     La misura consiste nell' individuare dapprima l'angolo $\theta_0$ del raggio di luce non deviato. Dopodichè, il prisma verrà appoggiato sul goniometro, esso 
     devierà la luce di un certo angolo $\delta$. Ruotando il goniometro, e dunque il prisma, in modo che la luce venga deviata di un angolo sempre minore, si
-    arriverà ad un angolo $\delta_{min}$ dopo la quale, anche continuando a ruotare il prisma, la deviazione aumenterà.
+    arriverà ad un angolo $\delta_{min}$ dopo la quale, anche continuando a ruotare il prisma, la deviazione aumenterà invece che diminuire.
     \section{Analisi Dati}
     Dalla misura potremmo ottenere 3 grafici:
     \begin{itemize}
-      \item Un grafico di $n$ (ottenuto tramite la \ref{eq:1}) in funzione di $\lambda$. Si proverà a fittare la curva ottenuta tramite la funzione:
+      \item Un grafico di $n$ (ottenuto tramite la \ref{eq:1}) in funzione di $\lambda$. Si proverà a fittare i dati conla funzione:
       \begin{equation}
         y = \sqrt{1 + \frac{Ax^2}{x^2 - B^2}} 
       \label{eq:2}
       \end{equation}
-      In particolare, ci si attende che il valore di B sia compatibile con 100 (poichè $\lambda_0 = 100n$ è la lunghezza d'onda di risonananza del vetro).
+      In particolare, ci si attende che il valore di B sia compatibile con 100 (poichè $\lambda_0 = 100nm$ è la lunghezza d'onda di risonananza del vetro).
 
       Dato l'esiguo intervallo di lunghezze d'onda sulla quale si lavora, è possibile che i dati siano fittati meglio dalla funzione:
       \begin{equation}
@@ -185,10 +185,11 @@
 
       Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$ siano rispettivamente compatibili con 0 e 1.
 
-      \item L'andamento dei residui (non normalizzati) in funzione di $\lambda$. Ci attendiamo che essi vengano fittati tramite una retta di pendenza ($m$)intercetta
+      \item L'andamento dei residui (non normalizzati) in funzione di $\lambda$. Ci attendiamo che essi vengano fittati tramite una retta di pendenza ($m$) eintercetta
       ($q$) compatibili con 0.
     \end{itemize}
     \section{Grafici}
+    Si riportano i grafici ottenuti e i parametri dei fit (il $\chi^2$ riportato è sempre da intedersi come il $\chi^2_{ridotto}$)
 
        \begin{figure}[H]
         \centering
@@ -248,39 +249,19 @@
 \end{table}
 
 
+      E' facile osservare come la funzione di fit data dalla (\ref{eq:2}) descriva in modo più adeguato i dati rispetto alla (\ref{eq:3}). Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
+      gli ultimi due risultano avere un valore minore di quello previsto dal fit, mentre i precedenti due hanno un valore maggiore. Un analisi più dettagliata su questi punti anomali è riportata nel paragrafo \ref{par:err_par}.
 
-
-
-
-
-
-
-
-
-
-      E' facile osservare come la funzione di fit data dalla \ref{eq:2} descriva in modo più adeguato i dati rispetto alla \ref{eq:3}. Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
-      gli ultimi due risultano avere un valore minore di quello previsto dal fit, mentre i precedenti due hanno un valore maggiore.
-
-      PARTE ERRORE RELATIVO
-      Per capire su quale coppia di misure si sia fatto un errore, si sono svolti due successivi fit, uno senza gli ultimi due e l'altro senza il terzultimo e quartultimo.
-      Si è così calcolato l'errore relativo commesso su $\delta$ (messa in una subsection in fondo: prima presntiamo i risulltati con il campione intero)
-
-      PARTE DISCOTAMENTO IN TACCHE (MICHELE)
-
-      ....
-
-      ANALISI CHI QUADRO OTTENUTO CON GLI ALTRI FIT 
-
-      ....
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/hist.png}
         \caption{Istogramma dei residui normalizzati, ottenuti dalla \ref{eq:2}, con tutti i punti.}
         \label{fig3}
       \end{figure}
-      ANDAMENTO DEI RESIDUI NORMALIZZATI NON RISPETTA LA GAUSSIANA (POCHI DATI) + MOSTRARE ALTRE GAUSSIANE OTTENUTE CON ALTRI FIT
-
-      ....
+      Nell'istogramma soprariportato, la scelta del numero di bin è stata dettata dalla \textit{formula di Scott}, che si basa sulla varianza dei dati ed è ottimizzata per la normale standard. Essa è data da, denotando con $r$ il set di dati dei residui normalizzati:
+      \[
+      N_{bin} = \frac{\text{max}_{r} - \text{min}_{r}}{3.5\sigma_{r}/\sqrt[3]{N_{punti}}}
+      \]
 
 
       \begin{figure}[H]
@@ -290,16 +271,28 @@
         \label{fig4}
       \end{figure}
 
-      ASSUNZIONE DELL'ERRORE SU ALPHA --> COME SPOSTA I DATI QUESTO PARAMETRO E RISULTATO DELLA MISURA 
+      
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità}\\
+        \midrule
+        $m$ & ($-4 \times 10^{-7}$ $\pm$ $10^{-6}$) $nm^{-1}$ & sì \\
+        $q$ & $2.4 \times 10^{-4}$   $\pm$ $7.8 \times 10^{-4}$ & sì\\  
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri della retta dei residui e loro compatibilità.}
+    \label{tab:parametri_fig2}
+\end{table}
 
-      ...
-
-      \subsection{Analisi aggiuntiva}
+      \subsection{Analisi aggiuntiva}\label{par:err_par}
           \subsubsection{Confronto tra i fit}
+    Si nota che il $91\%$ del $\chi^2$ del fit di Sellmeier (18.1 su 19.9) viene dai quattro punti a 620--690 nm. Togliendo l'ultima o la penultima coppia il $\chi^2_{ridotto}$ diminuisce ($0.4$ e $0.6$); togliendoli tutti e quattro si ottiene $0.15$.
+
     \begin{table}[H]
       \centering
-      \caption{Fit con la \eqref{eq:2} (Sellmeier) e con la retta \eqref{eq:3}, con e senza le coppie di punti con residuo alto}
-      \label{tab:fit}
+
       \small
       \resizebox{\columnwidth}{!}{
       \begin{tabular}{lcccc}
@@ -313,8 +306,38 @@
         Retta, tutti i punti & --- & --- & $55.3/12$ & $1.6\times10^{-7}$ \\
         \bottomrule
       \end{tabular}}
+            \caption{Fit con la \eqref{eq:2} (Sellmeier) e con la retta \eqref{eq:3}, con e senza le coppie di punti con residuo alto}
+                \label{tab:fit}
     \end{table}
 
+\subsubsection{Valutazione dell'errore relativo su $\delta$}
+Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 671 e 690 nm e uno senza 620 e 656 nm. In questo modo i punti esclusi non influenzano la previsione, e si può valutare l'entità dell'errore commesso su $\delta$ misurato con quello previsto dalla curva:
+    \begin{equation}
+      \varepsilon_{r_{\delta}} = \frac{|\delta_{fit}-\delta_{mis}|}{\delta_{fit}}
+      \label{eq:4}
+    \end{equation}
+    dove $\delta_{fit}=2\arcsin\!\left(n_{fit}\sin\frac{\alpha}{2}\right)-\alpha$ e $n_{fit}$ viene dalla \eqref{eq:2} con i parametri del fit senza la coppia considerata. Si trova $\varepsilon_{r_{\delta}}=0.21\%$ (671 nm), $0.25\%$ (690 nm), $0.19\%$ (620 nm) e $0.22\%$ (656 nm).
+
+
+      \begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{$\lambda$} [nm] & \textbf{$\varepsilon_{r}$} \\
+        \midrule
+       
+        $620$ & $0.19$ \\
+        $656$ & $0.22$ \\
+        $671$ & $0.21$ \\
+        $690$ & $0.25$ \\
+       
+        \bottomrule
+    \end{tabular}
+    \caption{Errori relativi sulle ultime due coppie.}
+    \label{tab:risultati_fit_nuovi}
+\end{table}
+
+    Le quattro misure si discostano in modo simile e togliere una qualunque coppia migliora il fit allo stesso modo (Tab. \ref{tab:fit}). Tramite questa analisi non si può concludere dire quale delle due (o entrambre) sia anomala.
 
 
       \begin{table}[H]
@@ -331,7 +354,7 @@
         $\sigma$ & $0.5 \pm 0.1$  & [no] \\
         \bottomrule
     \end{tabular}
-    \caption{Risultati del fit togliendo ultimi due punti.}
+    \caption{Risultati del fit togliendo ultimi due punti\protect\footnote{con [-] si indica che no ci aspettava una compatibilità con un certo valore}.}
     \label{tab:risultati_fit_nuovi}
 \end{table}
 
@@ -353,38 +376,6 @@
     \caption{Risultati del fit togliendo i penultimi due punti.}
     \label{tab:risultati_fit_nuovi}
 \end{table}
-
-
-
-
-      \begin{table}[H]
-    \centering
-    \begin{tabular}{cc}
-        \toprule
-        \textbf{Parametri} & \textbf{Valori} \\
-        \midrule
-       
-        $\epsilon_1$ & $0.21$\\
-        $\epsilon_2$ & $0.25$ \\
-       
-        \bottomrule
-    \end{tabular}
-    \caption{Risultati del fit togliendo i penultimi due punti.}
-    \label{tab:risultati_fit_nuovi}
-\end{table}
-
-
-    Si nota che il $91\%$ del $\chi^2$ del fit di Sellmeier (18.1 su 19.9) viene dai quattro punti a 620--690 nm. Togliendo una qualunque coppia il $\chi^2$ diminuisce ($4.4/10$ e $5.7/10$); togliendoli tutti e quattro si ottiene $1.2/8$.
-
-\subsubsection{Valutazione dell'errore relativo su $\delta$}
-Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 671 e 690 nm e uno senza 620 e 656 nm. In questo modo i punti esclusi non influenzano la previsione, e si può confrontare il $\delta$ misurato con quello previsto dalla curva:
-    \begin{equation}
-      \varepsilon_\delta = \frac{|\delta_{fit}-\delta_{mis}|}{\delta_{fit}}
-      \label{eq:4}
-    \end{equation}
-    dove $\delta_{fit}=2\arcsin\!\left(n_{fit}\sin\frac{\alpha}{2}\right)-\alpha$ e $n_{fit}$ viene dalla \eqref{eq:2} con i parametri del fit senza la coppia considerata. Si trova $\varepsilon_\delta=0.21\%$ (671 nm), $0.25\%$ (690 nm), $0.19\%$ (620 nm) e $0.22\%$ (656 nm).
-
-    Le quattro misure si discostano in modo simile e togliere una qualunque coppia migliora il fit allo stesso modo (Tab.~\ref{tab:fit}). Non si può quindi dire che ne sia sbagliata una sola.
 
     \subsubsection{Confronto dei residui con la precisione del goniometro}
     Il goniometro misura direttamente l'angolo $\delta_{min}$, mentre $n$ si ricava da esso con la \eqref{eq:1}. Per capire se i residui $n_{mis}-n_{fit}$ sono compatibili con la precisione dello strumento conviene quindi esprimerli come errore di lettura su $\delta$, in tacche del nonio. Per farlo serve prima stimare l'incertezza su $\delta_{min}$.
@@ -442,15 +433,10 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
     \subsubsection{Ipotesi su lunghezza d'onda}
     Si è anche verificato se gli scarti possano dipendere da una $\lambda$ diversa da quella nominale del filtro. Fittando con la \eqref{eq:2} i soli punti con $\lambda\le589$ nm, per ciascun $n_{mis}$ si è calcolata la $\lambda$ che la curva richiederebbe. Per i quattro punti con residuo alto si ottengono $605$, $635$, $699$ e $729$ nm al posto di $620$, $656$, $671$ e $690$ nm, cioè scarti di $-15$, $-21$, $+28$ e $+39$ nm; per tutti gli altri punti lo scarto è al più di $5$ nm. Gli scarti superano la tolleranza dei filtri ($\pm10$ nm), quindi l'incertezza su $\lambda$ da sola non basta e un errore di puntamento resta la spiegazione più naturale.
 
+    \subsubsection{Ipotesi nell'errore di $\alpha$}
+          ASSUNZIONE DELL'ERRORE SU ALPHA --> COME SPOSTA I DATI QUESTO PARAMETRO E RISULTATO DELLA MISURA
+      ...
   
-
-
-
-
-
-
-
-    
 
     \section{Conclusioni}
     \end{document}
