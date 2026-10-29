@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  28 OCT 2026 23:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  29 OCT 2026 07:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -803,6 +803,9 @@ LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
 LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
 
 
+LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
+
+
 LaTeX Warning: Label `tab:risultati_fit_nuovi' multiply defined.
 
 
@@ -991,12 +994,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<Analisi dati/Immagini/fit_lineare.png, id=144, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_lineare.png, id=145, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_lineare.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_lineare.png>
 Package pdftex.def Info: Analisi dati/Immagini/fit_lineare.png  used on input line 223.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/fit_confronto.png, id=145, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_confronto.png, id=146, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_confronto.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_confronto.png>
 Package pdftex.def Info: Analisi dati/Immagini/fit_confronto.png  used on input line 230.
@@ -1006,40 +1009,51 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-<Analisi dati/Immagini/hist.png, id=153, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/hist.png, id=154, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/hist.png Graphic file (type png)
 <use Analisi dati/Immagini/hist.png>
 Package pdftex.def Info: Analisi dati/Immagini/hist.png  used on input line 257.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
+
+Overfull \hbox (21.62505pt too wide) in paragraph at lines 265--274
+ [][] 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [4 <./Analisi dati/Immagini/fit_root.png> <./Analisi dati/Immagini/fit_lineare.png> <./Analisi dati/Immagini/fit_confronto.png> <./Analisi dati/Immagini/hist.png>]
-<Analisi dati/Immagini/fit_line.png, id=166, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_line.png, id=168, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_line.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_line.png>
-Package pdftex.def Info: Analisi dati/Immagini/fit_line.png  used on input line 269.
+Package pdftex.def Info: Analisi dati/Immagini/fit_line.png  used on input line 287.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
-Overfull \hbox (35.47282pt too wide) in paragraph at lines 277--285
+Overfull \hbox (35.47282pt too wide) in paragraph at lines 295--303
  [][] 
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 313.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\delta' on input line 313.
+(hyperref)                removing `math shift' on input line 331.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 313.
+(hyperref)                removing `\delta' on input line 331.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 331.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1047,15 +1061,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 436.
+(hyperref)                removing `math shift' on input line 457.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 436.
+(hyperref)                removing `\alpha' on input line 457.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 436.
+(hyperref)                removing `math shift' on input line 457.
 
 
 
@@ -1072,20 +1086,20 @@ Package rerunfilecheck Info: File `esperienza3.out' has not changed.
 (rerunfilecheck)             Checksum: 9EE9E512E584CCE333A03D4E4F9BCA88;2131.
  ) 
 Here is how much of TeX's memory you used:
- 54721 strings out of 469959
- 1315352 string characters out of 5469834
- 1956621 words of memory out of 5000000
+ 54722 strings out of 469959
+ 1315368 string characters out of 5469834
+ 1957620 words of memory out of 5000000
  80846 multiletter control sequences out of 15000+600000
  646507 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,12n,106p,793b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,12n,106p,793b,1036s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0500.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0900.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on esperienza3.pdf (6 pages, 394914 bytes).
+Output written on esperienza3.pdf (6 pages, 395705 bytes).
 PDF statistics:
- 634 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
+ 635 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
  278 words of extra memory for PDF output out of 10000 (max. 10000000)
 

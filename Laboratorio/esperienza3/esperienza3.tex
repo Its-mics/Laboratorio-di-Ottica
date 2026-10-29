@@ -203,14 +203,14 @@
     \centering
     \begin{tabular}{ccc}
         \toprule
-        \textbf{Parametri} & \textbf{Valori} \\
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
         \midrule
-        $\chi^2_{Sellmeier}$ & $4.604$ & [-] \\
-        A & $1.27 \pm 1.05 \times 10^{-3}$ & [-]\\  
-        B &  $95.0 \pm 1.33$ & [no] \\
+        $\chi^2_{Sellmeier}$ & $1.6$ & [-] \\
+        A & $1.3 \pm 10^{-3}$ & [-]\\  
+        B &  $95 \pm 1$ $nm$ & [no] \\
         \bottomrule
     \end{tabular}
-    \caption{Valori dei parametri estratti dal fit con il modello di Sellmeier.}
+    \caption{Valori dei parametri estratti dal fit con il modello di Sellmeier\protect\footnote{con [-] si indica che no ci aspettava una compatibilità con un certo valore}.}
     \label{tab:parametri_fig2}
 \end{table}
 
@@ -239,8 +239,8 @@
         \toprule
         \textbf{Parametri} & \textbf{Valori} \\
         \midrule
-        $\chi^2_{lineare}$ & $4.604$  \\
-        $\chi^2_{sellmeier}$ & $1.658$  \\  
+        $\chi^2_{lineare}$ & $4.6$  \\
+        $\chi^2_{sellmeier}$ & $1.6$  \\  
         $\Delta \chi$ &  2.93 \\
         \bottomrule
     \end{tabular}
@@ -258,6 +258,24 @@
         \caption{Istogramma dei residui normalizzati, ottenuti dalla \ref{eq:2}, con tutti i punti.}
         \label{fig3}
       \end{figure}
+
+      
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità}\\
+        \midrule
+        $\mu$ & $-1.5 \times 10^{-7} \pm 2 \times 10^{-6}$ & sì \\      
+        $\sigma$ & $0.87 \pm 0.02$  & sì\\  
+        $const$ & $9.5 \pm 3.2$ & no \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri della retta gaussiana dei residui normalizzati e loro compatibilità.}
+    \label{tab:parametri_fig2}
+\end{table}
+
+
       Nell'istogramma soprariportato, la scelta del numero di bin è stata dettata dalla \textit{formula di Scott}, che si basa sulla varianza dei dati ed è ottimizzata per la normale standard. Essa è data da, denotando con $r$ il set di dati dei residui normalizzati:
       \[
       N_{bin} = \frac{\text{max}_{r} - \text{min}_{r}}{3.5\sigma_{r}/\sqrt[3]{N_{punti}}}
@@ -299,11 +317,11 @@
         \toprule
         Fit & $A$ & $B$ [nm] & $\chi^2/ndf$ & $p$ \\
         \midrule
-        Sellmeier, tutti i punti & $1.2679\pm0.0010$ & $95.0\pm1.3$ & $19.9/12$ & $0.07$ \\
-        Sellmeier, senza 671, 690 nm & $1.2714\pm0.0013$ & $91.4\pm1.5$ & $4.4/10$ & $0.93$ \\
-        Sellmeier, senza 620, 656 nm & $1.2661\pm0.0012$ & $96.6\pm1.4$ & $5.7/10$ & $0.84$ \\
-        Sellmeier, senza i 4 punti & $1.2692\pm0.0018$ & $93.5\pm2.0$ & $1.2/8$ & $0.996$ \\
-        Retta, tutti i punti & --- & --- & $55.3/12$ & $1.6\times10^{-7}$ \\
+        Sellmeier, tutti i punti & $1.268\pm0.001$ & $95\pm1$ & $1.6$ & $0.07$ \\
+        Sellmeier, senza 671, 690 nm & $1.271\pm0.001$ & $91.0\pm1.5$ & $0.4$ & $0.93$ \\
+        Sellmeier, senza 620, 656 nm & $1.266\pm0.001$ & $96\pm1$ & $0.6$ & $0.84$ \\
+        Sellmeier, senza i 4 punti & $1.269\pm0.002$ & $93\pm2$ & $0.15$ & $0.996$ \\
+        Retta, tutti i punti & --- & --- & $4.6$ & $10^{-7}$ \\
         \bottomrule
       \end{tabular}}
             \caption{Fit con la \eqref{eq:2} (Sellmeier) e con la retta \eqref{eq:3}, con e senza le coppie di punti con residuo alto}
@@ -354,7 +372,7 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
         $\sigma$ & $0.5 \pm 0.1$  & [no] \\
         \bottomrule
     \end{tabular}
-    \caption{Risultati del fit togliendo ultimi due punti\protect\footnote{con [-] si indica che no ci aspettava una compatibilità con un certo valore}.}
+    \caption{Risultati del fit togliendo ultimi due punti.}
     \label{tab:risultati_fit_nuovi}
 \end{table}
 
@@ -376,6 +394,9 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
     \caption{Risultati del fit togliendo i penultimi due punti.}
     \label{tab:risultati_fit_nuovi}
 \end{table}
+
+
+
 
     \subsubsection{Confronto dei residui con la precisione del goniometro}
     Il goniometro misura direttamente l'angolo $\delta_{min}$, mentre $n$ si ricava da esso con la \eqref{eq:1}. Per capire se i residui $n_{mis}-n_{fit}$ sono compatibili con la precisione dello strumento conviene quindi esprimerli come errore di lettura su $\delta$, in tacche del nonio. Per farlo serve prima stimare l'incertezza su $\delta_{min}$.
