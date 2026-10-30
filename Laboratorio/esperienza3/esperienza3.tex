@@ -162,20 +162,20 @@
     \caption{Schema del sistema (vista dall'alto).}
     \end{figure}
     \subsection{Procedimento di misura}
-    La misura consiste nell' individuare dapprima l'angolo $\theta_0$ del raggio di luce non deviato. Dopodichè, il prisma verrà appoggiato sul goniometro, esso 
+    \noindent La misura consiste nell' individuare dapprima l'angolo $\theta_0$ del raggio di luce non deviato. Dopodichè, il prisma verrà appoggiato sul goniometro, esso 
     devierà la luce di un certo angolo $\delta$. Ruotando il goniometro, e dunque il prisma, in modo che la luce venga deviata di un angolo sempre minore, si
     arriverà ad un angolo $\delta_{min}$ dopo la quale, anche continuando a ruotare il prisma, la deviazione aumenterà invece che diminuire.
     \section{Analisi Dati}
-    Dalla misura potremmo ottenere 3 grafici:
+    \noindent Dalla misura potremmo ottenere 3 grafici:
     \begin{itemize}
       \item Un grafico di $n$ (ottenuto tramite la \ref{eq:1}) in funzione di $\lambda$. Si proverà a fittare i dati conla funzione:
       \begin{equation}
         y = \sqrt{1 + \frac{Ax^2}{x^2 - B^2}} 
       \label{eq:2}
       \end{equation}
-      In particolare, ci si attende che il valore di B sia compatibile con 100 (poichè $\lambda_0 = 100nm$ è la lunghezza d'onda di risonananza del vetro).
+      \noindent In particolare, ci si attende che il valore di B sia compatibile con 100 (poichè $\lambda_0 = 100nm$ è la lunghezza d'onda di risonananza del vetro).
 
-      Dato l'esiguo intervallo di lunghezze d'onda sulla quale si lavora, è possibile che i dati siano fittati meglio dalla funzione:
+      \noindent Dato l'esiguo intervallo di lunghezze d'onda sulla quale si lavora, è possibile che i dati siano fittati meglio dalla funzione:
       \begin{equation}
         y = Ax + B
         \label{eq:3}
@@ -183,13 +183,13 @@
       \item L'istogramma dei residui normalizzati $r = \frac{n_{fit} - n_{\text{misurato}}}{\sigma_{eff}}$ dove: $n_{fit}$ è ottenuto dalla \ref{eq:2}, 
       $n_{\text{misurato}}$ ottenuto dalla \ref{eq:1} e $\sigma_{eff}$ la varianza efficace su $n_{fit}$.
 
-      Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$ siano rispettivamente compatibili con 0 e 1.
+      \noindent Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$ siano rispettivamente compatibili con 0 e 1.
 
       \item L'andamento dei residui (non normalizzati) in funzione di $\lambda$. Ci attendiamo che essi vengano fittati tramite una retta di pendenza ($m$) eintercetta
       ($q$) compatibili con 0.
     \end{itemize}
     \section{Grafici}
-    Si riportano i grafici ottenuti e i parametri dei fit (il $\chi^2$ riportato è sempre da intedersi come il $\chi^2_{ridotto}$)
+    \noindent Si riportano i grafici ottenuti e i parametri dei fit (il $\chi^2$ riportato è sempre da intedersi come il $\chi^2_{ridotto}$)
 
        \begin{figure}[H]
         \centering
@@ -249,7 +249,7 @@
 \end{table}
 
 
-      E' facile osservare come la funzione di fit data dalla (\ref{eq:2}) descriva in modo più adeguato i dati rispetto alla (\ref{eq:3}). Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
+      \noindent E' facile osservare come la funzione di fit data dalla (\ref{eq:2}) descriva in modo più adeguato i dati rispetto alla (\ref{eq:3}). Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
       gli ultimi due risultano avere un valore minore di quello previsto dal fit, mentre i precedenti due hanno un valore maggiore. Un analisi più dettagliata su questi punti anomali è riportata nel paragrafo \ref{par:err_par}.
 
       \begin{figure}[H]
@@ -276,7 +276,7 @@
 \end{table}
 
 
-      Nell'istogramma soprariportato, la scelta del numero di bin è stata dettata dalla \textit{formula di Scott}, che si basa sulla varianza dei dati ed è ottimizzata per la normale standard. Essa è data da, denotando con $r$ il set di dati dei residui normalizzati:
+      \noindent Nell'istogramma soprariportato, la scelta del numero di bin è stata dettata dalla \textit{formula di Scott}, che si basa sulla varianza dei dati ed è ottimizzata per la normale standard. Essa è data da, denotando con $r$ il set di dati dei residui normalizzati:
       \[
       N_{bin} = \frac{\text{max}_{r} - \text{min}_{r}}{3.5\sigma_{r}/\sqrt[3]{N_{punti}}}
       \]
@@ -306,7 +306,7 @@
 
       \subsection{Analisi aggiuntiva}\label{par:err_par}
           \subsubsection{Confronto tra i fit}
-    Si nota che il $91\%$ del $\chi^2$ del fit di Sellmeier (18.1 su 19.9) viene dai quattro punti a 620--690 nm. Togliendo l'ultima o la penultima coppia il $\chi^2_{ridotto}$ diminuisce ($0.4$ e $0.6$); togliendoli tutti e quattro si ottiene $0.15$.
+    \noindent Si nota che il $91\%$ del $\chi^2$ del fit di Sellmeier (18.1 su 19.9) viene dai quattro punti a 620--690 nm. Togliendo l'ultima o la penultima coppia il $\chi^2_{ridotto}$ diminuisce ($0.4$ e $0.6$); togliendoli tutti e quattro si ottiene $0.15$.
 
     \begin{table}[H]
       \centering
@@ -329,7 +329,7 @@
     \end{table}
 
 \subsubsection{Valutazione dell'errore relativo su $\delta$}
-Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 671 e 690 nm e uno senza 620 e 656 nm. In questo modo i punti esclusi non influenzano la previsione, e si può valutare l'entità dell'errore commesso su $\delta$ misurato con quello previsto dalla curva:
+\noindent Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 671 e 690 nm e uno senza 620 e 656 nm. In questo modo i punti esclusi non influenzano la previsione, e si può valutare l'entità dell'errore commesso su $\delta$ misurato con quello previsto dalla curva:
     \begin{equation}
       \varepsilon_{r_{\delta}} = \frac{|\delta_{fit}-\delta_{mis}|}{\delta_{fit}}
       \label{eq:4}
@@ -355,7 +355,42 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
     \label{tab:risultati_fit_nuovi}
 \end{table}
 
-    Le quattro misure si discostano in modo simile e togliere una qualunque coppia migliora il fit allo stesso modo (Tab. \ref{tab:fit}). Tramite questa analisi non si può concludere dire quale delle due (o entrambre) sia anomala.
+   \noindent Le quattro misure si discostano in modo simile e togliere una qualunque coppia migliora il fit allo stesso modo (Tab. \ref{tab:fit}). Tramite questa analisi non si può concludere dire quale delle due (o entrambre) sia anomala.
+  \noindent Per questo motivo riportiamo gli istogrammi ottenuti dei residui normalizzati e i relativi parametri $\mu$ $\sigma$.
+    
+    
+
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png}
+        \caption{ istogramma residui normalizzati ottenuto togliendo dal fit i punti rispettivi a $\lambda=620,656$ .}
+        \label{fig4}
+      \end{figure}
+
+
+      \begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
+        \midrule
+    
+        $\mu$ & $14.4 \pm 19.5$  & [si] \\
+        $\sigma$ & $4.34\pm 2.81$  & [si] \\
+        \bottomrule
+    \end{tabular}
+    \caption{valori dei parametri togliendo i penultimi due punti.}
+    \label{tab:risultati_fit_nuovi}
+\end{table}
+
+\noindent i valori ottenuti in questo caso ci lasciano intendere come l'errore sui parametri sia sovrastimato, questa conclusione deriva anche dal fatto che  il $\chi^2$ dell'istogramma assume un valore minore di 1. 
+
+  \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png}
+        \caption{ istogramma residui normalizzati ottenuto togliendo dal fit i punti rispettivi a $\lambda=671,690$.}
+        \label{fig4}
+      \end{figure}
 
 
       \begin{table}[H]
@@ -365,38 +400,16 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
         \midrule
        
-        $A$ & $1.271 \pm 0.001$ & [-] \\
-        $B$ & $91 \pm 1.5$  & [no] \\
-        $\chi^2/\text{ndf}$ & $0.44$  & [-] \\
-        $\mu$ & $0.9 \pm 0.1$  & [no] \\
-        $\sigma$ & $0.5 \pm 0.1$  & [no] \\
+        $\mu$ &  $(8.92\pm 1.49)\times10^{-1}$ & [no] \\
+        $\sigma$ & $(5.29 \pm 1.20)\times10^{-1}$ & [no] \\
         \bottomrule
     \end{tabular}
-    \caption{Risultati del fit togliendo ultimi due punti.}
+    \caption{valori dei parametri togliendo gli ultimi due punti.}
     \label{tab:risultati_fit_nuovi}
 \end{table}
-
-
-      \begin{table}[H]
-    \centering
-    \begin{tabular}{ccc}
-        \toprule
-        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
-        \midrule
-       
-        $A$ & $1.266 \pm 0.001$ & [-] \\
-        $B$ & $96.6 \pm 1.4$  & [no] \\
-        $\chi^2/\text{ndf}$ & $0.6$  & [-] \\
-        $\mu$ &  $14 \pm 2$ & [no] \\
-        $\sigma$ & $4 \pm 3$ & [sì] \\
-        \bottomrule
-    \end{tabular}
-    \caption{Risultati del fit togliendo i penultimi due punti.}
-    \label{tab:risultati_fit_nuovi}
-\end{table}
-
-
-
+ \noindent In questo caso abbiamo errori minori ma non abbiamo compatibilità dei parametri con i valori teorici, ciò risulta ragionevole in virtù del teorema del limite centrale: togliendo punti al nostro campione di misure se ne riduce la dimensione, quindi la distribuzione seguita dai dati si discosta sempre di più dalla gaussiana standard. 
+Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero campione delle 14 misure, e quindi avendo maggiore statistica, i paremtri rislutano entrambi compatibili.
+\noindent Concludiamo quindi che non possiamo stabilire quale delle due coppie sia quella "anomala" e che escludere una delle due dal campione porta a risultati non validi.
 
     \subsubsection{Confronto dei residui con la precisione del goniometro}
     Il goniometro misura direttamente l'angolo $\delta_{min}$, mentre $n$ si ricava da esso con la \eqref{eq:1}. Per capire se i residui $n_{mis}-n_{fit}$ sono compatibili con la precisione dello strumento conviene quindi esprimerli come errore di lettura su $\delta$, in tacche del nonio. Per farlo serve prima stimare l'incertezza su $\delta_{min}$.
@@ -412,23 +425,23 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
     \end{equation}
     Se le tre letture differiscono di 2 tacche o meno, il secondo termine vale al più $\frac{2'}{2\sqrt3}=\sigma_{lett}$, quindi $\sigma_{\theta_1}=\sigma_{lett}$. Per esempio, le letture $263.800^\circ$, $263.783^\circ$ e $263.767^\circ$ differiscono di $0.033^\circ=2'$. Questo è il caso di 12 filtri su 14, e comprende tutti i punti con residuo alto discussi più avanti; solo a 455 e 470 nm le letture sono più sparse e l'incertezza è maggiore.
 
-    Per questi 12 filtri $\theta_1$ e $\theta_0$ hanno la stessa incertezza, quindi, sommando in quadratura, l'errore su $\delta_{min}=|\theta_1-\theta_0|$ è $\sigma_\delta=\sqrt2\,\sigma_{lett}\simeq0.82'$.
+    \noindent Per questi 12 filtri $\theta_1$ e $\theta_0$ hanno la stessa incertezza, quindi, sommando in quadratura, l'errore su $\delta_{min}=|\theta_1-\theta_0|$ è $\sigma_\delta=\sqrt2\,\sigma_{lett}\simeq0.82'$.
 
-    Per passare dai residui alle tacche si usa la derivata della \eqref{eq:1}, che trasforma l'incertezza su $\delta$ in incertezza su $n$:
+   \noindent Per passare dai residui alle tacche si usa la derivata della \eqref{eq:1}, che trasforma l'incertezza su $\delta$ in incertezza su $n$:
     \begin{equation}
       \sigma_{n,i}=\left|\frac{\partial n}{\partial\delta}\right|_i\sigma_{\delta,i}
       \qquad
       \frac{\partial n}{\partial \delta}=\frac{\cos\frac{\delta+\alpha}{2}}{2\sin\frac{\alpha}{2}}
       \label{eq:sigman}
     \end{equation}
-    Una variazione $\Delta\delta$ dell'angolo produce quindi sull'indice una variazione $\Delta n=(\partial n/\partial\delta)\,\Delta\delta$. Al contrario, un residuo $n_{mis}-n_{fit}$ corrisponde a un \emph{errore equivalente} sull'angolo
+   \noindent Una variazione $\Delta\delta$ dell'angolo produce quindi sull'indice una variazione $\Delta n=(\partial n/\partial\delta)\,\Delta\delta$. Al contrario, un residuo $n_{mis}-n_{fit}$ corrisponde a un \emph{errore equivalente} sull'angolo
     \begin{equation}
       \Delta\delta_i=\frac{n_{mis,i}-n_{fit,i}}{(\partial n/\partial\delta)_i}
       \label{eq:5}
     \end{equation}
-    Poiché $\delta_{min}$ varia poco ($0.450$--$0.463$ rad), la derivata resta tra $1.060$ e $1.065\ \mathrm{rad}^{-1}$ e la conversione è praticamente la stessa per tutti i punti: una tacca ($1'=2.91\times10^{-4}$ rad) sposta $n$ sempre di $\Delta n\simeq3.1\times10^{-4}$. Per lo stesso motivo le differenze tra i $\sigma_n$ dei vari punti vengono quasi solo da $\sigma_\delta$.
+   \noindent Poiché $\delta_{min}$ varia poco ($0.450$--$0.463$ rad), la derivata resta tra $1.060$ e $1.065\ \mathrm{rad}^{-1}$ e la conversione è praticamente la stessa per tutti i punti: una tacca ($1'=2.91\times10^{-4}$ rad) sposta $n$ sempre di $\Delta n\simeq3.1\times10^{-4}$. Per lo stesso motivo le differenze tra i $\sigma_n$ dei vari punti vengono quasi solo da $\sigma_\delta$.
 
-    A questo punto si può confrontare l'errore equivalente di ogni punto con la sua incertezza $\sigma_{\delta,i}$ (Tab.~\ref{tab:tacche}). I quattro punti a 620--690 nm hanno errori equivalenti di $1.6$--$2.4$ tacche e il punto a 420 nm di $2.7$; per gli altri nove punti l'errore equivalente è al più di $0.6$ tacche. In unità di $\sigma_\delta$, i cinque punti con residuo alto stanno tra $2.0$ e $3.3\,\sigma_\delta$, gli altri entro $0.8\,\sigma_\delta$. Per spiegare i cinque punti basterebbe quindi che $\delta_{min}$ fosse stato letto sbagliato di 2--3 tacche ($0.03^\circ$--$0.05^\circ$).
+   \noindent A questo punto si può confrontare l'errore equivalente di ogni punto con la sua incertezza $\sigma_{\delta,i}$ (Tab.~\ref{tab:tacche}). I quattro punti a 620--690 nm hanno errori equivalenti di $1.6$--$2.4$ tacche e il punto a 420 nm di $2.7$; per gli altri nove punti l'errore equivalente è al più di $0.6$ tacche. In unità di $\sigma_\delta$, i cinque punti con residuo alto stanno tra $2.0$ e $3.3\,\sigma_\delta$, gli altri entro $0.8\,\sigma_\delta$. Per spiegare i cinque punti basterebbe quindi che $\delta_{min}$ fosse stato letto sbagliato di 2--3 tacche ($0.03^\circ$--$0.05^\circ$).
 
 \begin{table}[H]
       \centering
@@ -448,7 +461,7 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
         \bottomrule
       \end{tabular}}
     \end{table}
-    Infine, il residuo normalizzato $r$ è più piccolo di $\Delta\delta/\sigma_\delta$ (a 656 nm $r=2.48$ contro $2.9$), perché $\sigma_{eff}$ comprende anche l'incertezza su $\lambda$, oltre a quella su $n$.
+    \noindent Infine, il residuo normalizzato $r$ è più piccolo di $\Delta\delta/\sigma_\delta$ (a 656 nm $r=2.48$ contro $2.9$), perché $\sigma_{eff}$ comprende anche l'incertezza su $\lambda$, oltre a quella su $n$.
 
 
     \subsubsection{Ipotesi su lunghezza d'onda}
@@ -458,4 +471,6 @@ Per capire quale coppia sia la responsabile, si sono fatti due fit: uno senza 67
     Consideriamo ora l'ipotesi che lo scarto delle ultime 2 lunghezze d'onda sia dovuta ad una errata assunzione dell'isoscietà del prisma. Si introduce allora un termine correttivo del tipo $\epsilon_\alpha$, così da avere due angoli $\alpha'_{1/2} = \alpha \pm \epsilon_{\alpha}$. 
     Assumiano allora di aver eseguito tutte le misure dal lato pari a $\alpha'_1$, tranne le ultime due lunghezze d'onda dal lato dell'angolo $\alpha'_2$. 
     \section{Conclusioni}
+    Abbiamo concluso.
+
     \end{document}
