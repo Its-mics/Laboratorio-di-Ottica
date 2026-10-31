@@ -1,0 +1,174 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=2cm, bottom=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{circuitikz}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz-3dplot}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing} % Risolve l'errore sulla decoration library
+\usetikzlibrary{arrows.meta}              % Necessario per l'opzione >=Stealth
+% \usepackage{booktabs}
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}  %per rendere l'indice genrale "interattivo"
+\usepackage{enumitem}  %distanza degli itemize
+\setlist[itemize]{itemsep=4pt, parsep=1pt}
+\newtcolorbox{nota}{
+  blanker,
+  before skip=1em,
+  after skip=1em,
+  left=1em,
+  borderline west={1pt}{0pt}{black},
+  fontupper=\itshape,
+  before upper={\noindent\textbf{Nota}:\quad}
+}
+
+\setlength{\intextsep}{8pt} % per regolare la distanza grafico tabelle
+\setlength{\columnsep}{60pt}
+\setlength{\tabcolsep}{4pt}
+
+\begin{document}
+
+    \justifying 
+
+      \title{\textbf{Verifica della legge di Malus}}
+      \author{Tedeschini Michele \hspace{0.7cm} Stroili Emanuele \hspace{0.7cm} Mirolo Manuele \hspace{0.7cm} Brusini Alessio} 
+      \date{30 Ottobre 2026}
+      \maketitle
+      \newgeometry{left=3cm, right=3cm, top=4cm, bottom=4cm}
+      \onecolumn
+      \tableofcontents
+    \vspace{3cm}
+      \begin{abstract}
+        \centering
+        \large
+        L'esperimento consiste nel verificare la legge di Malus per l'irradianza dell'onda trasmessa da un sistema di due  polarizzatori. 
+          
+      \end{abstract}
+
+      \newpage
+    \restoregeometry
+    \twocolumn
+
+
+
+    \section{Legge fisica da verificare}
+    La legge da verificare che prende il nome di legge di Malus afferma che l'irradianza dell'onda trasmessa da un sistema di due polarizzatori è data da: 
+  \begin{equation}
+        I_2 = I_1 \cos^2 \alpha
+    \end{equation}
+    \section{Apparato sperimentale}
+
+
+
+  \begin{figure}[H]
+  \centering
+  \resizebox{\columnwidth}{!}{
+\begin{tikzpicture}[
+    >=Stealth,
+    post/.style={thick},
+    carr/.style={thick, fill=white},
+    lbl/.style={font=\small}
+]
+ 
+  \def\yb{2.2}      % quota dell'asse ottico sopra il binario
+ 
+  % macro per un polarizzatore: posizione sul binario, inclinazione
+  % dell'asse di trasmissione (gradi rispetto alla verticale)
+  \def\polar#1#2{%
+    \draw[post] (#1,0) -- (#1,0.85);
+    \draw[carr] (#1-0.25,-0.15) rectangle (#1+0.25,0.15);
+    \draw[thick, fill=white] (#1,\yb) ellipse (0.38 and 1.35);
+    % scala graduata sul bordo
+    \begin{scope}[shift={(#1,\yb)}]
+      \foreach \a in {0,30,...,330} {
+        \draw[thin] (\a:0.38 and 1.35) -- (\a:0.46 and 1.43);
+      }
+    \end{scope}
+    % asse di trasmissione
+    \draw[<->, thin] (#1,\yb) ++({90+#2}:0.6) -- ++({270+#2}:1.2);
+  }
+ 
+  % ---------------- binario ottico ----------------
+  \draw[thick,->] (-0.6,0) -- (12.8,0);
+  \node[below right, font=\footnotesize] at (-0.6,-0.1) {binario ottico};
+ 
+  % ---------------- sorgente ----------------
+  \draw[post] (1.4,0) -- (1.4,1.4);
+  \draw[carr] (1.15,-0.15) rectangle (1.65,0.15);
+  \draw[thick, rounded corners=3pt, fill=white] (0,1.4) rectangle (2.8,3.0);
+  \draw[thick, decorate,
+        decoration={coil, aspect=0.6, segment length=3.5pt, amplitude=3.5pt}]
+        (0.3,\yb) -- (1.25,\yb);
+  \draw[thick, fill=white] (1.8,\yb) circle (0.5);
+  % filamento
+  \draw[thin] (1.6,\yb-0.32) -- (1.6,\yb) -- (1.68,\yb+0.12) -- (1.76,\yb-0.06)
+              -- (1.84,\yb+0.12) -- (1.92,\yb-0.06) -- (2.0,\yb) -- (2.0,\yb-0.32);
+  \node[lbl, above] at (1.4,3.05) {Sorgente};
+ 
+  % ---------------- polarizzatori ----------------
+  \polar{5.0}{25}      % primo polarizzatore (ruotabile)
+  \polar{6.5}{0}       % secondo polarizzatore (analizzatore, fisso)
+  % freccia di rotazione sul primo polarizzatore
+  \draw[<->, thin] (5.0,\yb) ++(35:0.58 and 1.5)
+        arc[start angle=35, end angle=70, x radius=0.58, y radius=1.5];
+  \node[lbl, above left, align=right] at (5.1,3.45) {primo\\polarizzatore};
+  \node[lbl, above right, align=left] at (6.4,3.45)
+        {secondo\\polarizzatore\\(analizzatore)};
+ 
+  % ---------------- fotodiodo ----------------
+  \draw[post] (9.3,0) -- (9.3,1.75);
+  \draw[carr] (9.05,-0.15) rectangle (9.55,0.15);
+  \draw[thick, fill=gray!15] (8.65,2.65) -- (9.95,2.65) -- (10.3,2.9)
+                             -- (9.0,2.9) -- cycle;                 % faccia superiore
+  \draw[thick, fill=gray!30] (9.95,1.75) -- (10.3,2.0) -- (10.3,2.9)
+                             -- (9.95,2.65) -- cycle;               % faccia laterale
+  \draw[thick, fill=white]   (8.65,1.75) rectangle (9.95,2.65);     % faccia frontale
+  \node[lbl, above] at (9.5,2.95) {Fotodiodo};
+ 
+  % ---------------- voltmetro ----------------
+  \node[draw, circle, thick, minimum size=0.95cm] (V) at (11.3,-1.6) {$V$};
+  \node[lbl, below] at (V.south) {Voltmetro};
+  \draw[thick] (10.12,2.2) .. controls (11.7,2.2) and (11.9,0.4) .. (V.north);
+ 
+  % ---------------- luce ----------------
+  \draw[dashed, ->] (2.95,\yb) -- (4.55,\yb);
+  \draw[dashed, ->] (5.45,\yb) -- (6.05,\yb);
+  \draw[dashed, ->] (6.95,\yb) -- (8.55,\yb);
+ 
+\end{tikzpicture}
+ }
+\end{figure}
+    L'apparato per verificare la legge di Malus è montato su un binario ottico ed è composto da:
+\begin{itemize}
+    \item Una \textbf{sorgente} di luce bianca.
+    \item Il \textbf{primo polarizzatore}, posizionato a distanza intermedia (né troppo vicino né troppo lontano dalla sorgente).
+    \item Il \textbf{secondo polarizzatore} (analizzatore), messo il più vicino possibile al primo per garantire che tutta la luce trasmessa dal primo attraversi anche il secondo.
+    \item Un \textbf{fotodiodo} (acceso e collegato a un voltmetro) accuratamente mascherato per evitare la saturazione. 
+\end{itemize}
+
+    \section{Analisi dati}
+    \section{Grafici}
+    \section{conclusione}
+\end{document}
