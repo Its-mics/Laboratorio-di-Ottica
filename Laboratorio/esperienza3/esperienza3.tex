@@ -46,6 +46,7 @@
 \setlength{\tabcolsep}{4pt}
 
 \begin{document}
+\input{Analisi dati/risultati.tex}
 
     \justifying 
 
@@ -205,11 +206,12 @@
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
         \midrule
-        $\chi^2_{Sellmeier}$ & $1.6$ & [-] \\
+        $\chi^2_{Sellmeier}$ & $19.9 $ & [-] \\
         A & $1.3 \pm 10^{-3}$ & [-]\\  
         B &  $95 \pm 1$ $nm$ & [no] \\
         \bottomrule
     \end{tabular}
+
     \caption{Valori dei parametri estratti dal fit con il modello di Sellmeier\protect\footnote{con [-] si indica che no ci aspettava una compatibilità con un certo valore}.}
     \label{tab:parametri_fig2}
 \end{table}
@@ -239,9 +241,9 @@
         \toprule
         \textbf{Parametri} & \textbf{Valori} \\
         \midrule
-        $\chi^2_{lineare}$ & $4.6$  \\
-        $\chi^2_{sellmeier}$ & $1.6$  \\  
-        $\Delta \chi$ &  2.93 \\
+        $\chi^2_{lineare}$ & $55.25$  \\
+        $\chi^2_{sellmeier}$ & $19.87$  \\  
+        $\Delta \chi$ &  $35.38$ \\
         \bottomrule
     \end{tabular}
     \caption{confronto tra i valori di $\chi^2$ ottenuti dai due fit.}
@@ -266,9 +268,9 @@
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità}\\
         \midrule
-        $\mu$ & $-1.5 \times 10^{-7} \pm 2 \times 10^{-6}$ & sì \\      
-        $\sigma$ & $0.87 \pm 0.02$  & sì\\  
-        $const$ & $9.5 \pm 3.2$ & no \\
+        $\mu$ & $-0.15 \pm 0.25$ & sì \\      
+        $\sigma$ & $0.87 \pm 0.18$  & sì\\  
+        $const$ & $9.42 \pm 3.17$ & si \\
         \bottomrule
     \end{tabular}
     \caption{Parametri della retta gaussiana dei residui normalizzati e loro compatibilità.}
