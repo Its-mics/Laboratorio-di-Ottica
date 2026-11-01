@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1793542741.70063 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" "esperienza3.pdf" "esperienza3" 1793542743.34628 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" 1793542741.71967 23691 8f3835c353e6dd964ef99a0f518a1b3c ""
+["pdflatex"] 1793545826.69843 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" "esperienza3.pdf" "esperienza3" 1793545829.11896 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" 1793545824.38151 25168 301e46456044c0e2974329cdcae293be ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -280,10 +280,10 @@
   "Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png" 1793219104.38785 21275 6d26a1d1c1264792961074db591a622a ""
   "Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png" 1793219104.38941 23463 066cfe08cc38a553958e772782c2372d ""
   "Analisi dati/risultati.tex" 1793542427.35239 252 1a369c5327253b5e635103033c6d27f9 ""
-  "esperienza3.aux" 1793542743.22471 8033 c972ecd2b2973e153596414ca44d9df9 "pdflatex"
-  "esperienza3.out" 1793542743.22616 2131 9ee9e512e584cce333a03d4e4f9bca88 "pdflatex"
-  "esperienza3.tex" 1793542741.71967 23691 8f3835c353e6dd964ef99a0f518a1b3c ""
-  "esperienza3.toc" 1793542743.22635 1146 03aa5c5a732ada21166931f99d400711 "pdflatex"
+  "esperienza3.aux" 1793545828.90543 8033 c972ecd2b2973e153596414ca44d9df9 "pdflatex"
+  "esperienza3.out" 1793545828.90747 2131 9ee9e512e584cce333a03d4e4f9bca88 "pdflatex"
+  "esperienza3.tex" 1793545824.38151 25168 301e46456044c0e2974329cdcae293be ""
+  "esperienza3.toc" 1793545828.90778 1146 03aa5c5a732ada21166931f99d400711 "pdflatex"
   (generated)
   "esperienza3.aux"
   "esperienza3.log"
