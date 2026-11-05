@@ -2,6 +2,8 @@
 \babel@toc {italian}{}\relax 
 \contentsline {section}{\numberline {1}Legge fisica da verificare}{3}{section.1}%
 \contentsline {section}{\numberline {2}Apparato sperimentale}{3}{section.2}%
-\contentsline {section}{\numberline {3}Analisi dati}{3}{section.3}%
+\contentsline {section}{\numberline {3}Analisi Dati}{3}{section.3}%
 \contentsline {section}{\numberline {4}Grafici}{3}{section.4}%
-\contentsline {section}{\numberline {5}conclusione}{3}{section.5}%
+\contentsline {subsection}{\numberline {4.1}Correzzione per lo scaricamento della batteria}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Correzione per l'andamento periodico}{4}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Conclusione}{5}{section.5}%

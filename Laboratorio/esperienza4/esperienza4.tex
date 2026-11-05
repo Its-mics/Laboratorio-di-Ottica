@@ -76,12 +76,10 @@
     \section{Legge fisica da verificare}
     La legge da verificare che prende il nome di legge di Malus afferma che l'irradianza dell'onda trasmessa da un sistema di due polarizzatori è data da: 
   \begin{equation}
-        I_2 = I_1 \cos^2 \alpha
+        I_2 = I_1 \cos^2 \theta
     \end{equation}
+    dove $I_1$ è l'irradianza dell'onda trasmessa dal primo polarizzatore, $\theta$ è l'angolo tra gli assi di trasmissione dei due polarizzatori.
     \section{Apparato sperimentale}
-
-
-
   \begin{figure}[H]
   \centering
   \resizebox{\columnwidth}{!}{
@@ -168,7 +166,99 @@
     \item Un \textbf{fotodiodo} (acceso e collegato a un voltmetro) accuratamente mascherato per evitare la saturazione. 
 \end{itemize}
 
-    \section{Analisi dati}
+    \section{Analisi Dati}
+    Per verificare la legge di Malus, si è proceduto a ruotare il primo polarizzatore di un due gradi e a misurare la tensione in uscita dal fotodiodo.
+
+    \noindent Dalla misura potremmo ottenere 3 grafici:
+    \begin{itemize}
+      \item Un grafico di $V$, in funzione di $\theta$. Si proverà a descrivere l'andamento dei dati tramite la funzione:
+      \begin{equation}
+        y = A \cos^2(\theta - C) + B
+      \label{eq:1}
+      \end{equation}
+      \noindent Non ci attendiamo compatibilità di nessuno dei parametri con uno specifico valore. 
+      Il parametro $C$ rappresenta lo sfasamento tra l'angolo di rotazione del primo polarizzatore e l'angolo di trasmissione del secondo.
+
+      \item L'istogramma dei residui normalizzati $r = \frac{V_{fit} - V_{\text{misurato}}}{\sigma_{eff}}$ dove: $V_{fit}$ è ottenuto dalla \ref{eq:1}, 
+      $V_{\text{misurato}}$ e $\sigma_{eff}$ la varianza efficace su $V_{fit}$.
+
+      \noindent Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$ siano rispettivamente compatibili con 0 e 1.
+
+      \item L'andamento dei residui (non normalizzati) in funzione di $\theta$. Ci attendiamo che essi vengano fittati tramite una retta di pendenza ($m$) e intercetta
+      ($q$) compatibili con 0.
+    \end{itemize}
+
     \section{Grafici}
-    \section{conclusione}
+    Si riportano i grafici ottenuti e i parametri dei fit.
+
+       \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/malus_fit.png}
+        \caption{Fit tra $V_{\text{misurato}}$ vs $\theta$ e l'andamento teorico utilizzando la legge di Malus.}
+        \label{fig1}
+      \end{figure}
+
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/malus_hist.png}
+        \caption{Istogramma dei residui normalizzati, ottenuti dalla \ref{eq:1}.}
+        \label{fig2}
+      \end{figure}
+
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/malus_residui.png}
+        \caption{Andamento dei residui (non normalizzati) in funzione di $\theta$.}
+        \label{fig3}
+      \end{figure}
+
+      Come si può notare da quest'ultimo grafico, i residui non sono compatibili con una retta di pendenza e intercetta pari a 0. 
+      Inoltre, il loro andamento non è casuale, ma segue un andamento periodico. Questo ci ha fatto presuppore la presenza di un errore sistematico. 
+
+      \subsection{Correzzione per lo scaricamento della batteria}
+      Per testare l'ipotesi di cui sopra, abbiamo dapprima cercato di capire la causa della pendenza negativa della retta, individuato nello scaricamento 
+      della batteria del fotodiodo. Proprio per questo motivo, la misura era da completarsi in breve tempo, per evitare che la tensione in uscita dal fotodiodo diminuisse eccessivamente.
+
+      Di conseguenza, si è supposto uno scaricamento esponenziale della batteria (PERCHE?), approssimato come lineare, vista la celerità nel compiere la misura.
+      Per tal motivo, si è moltiplicata alla funzione di fit \ref{eq:1} per un termine linere $1 + D \theta$, ottenendo la nuova funzione di fit:
+      \begin{equation}
+        y = \left[ A \cos^2(\theta - C) + B \right](1 + D \theta)
+      \label{eq:2}
+      \end{equation}
+      Il nuovo fit ha portato a risultati migliori, ottenendo un $\chi^2_{ridotto}= ...$, la retta dei residui compatibile con una retta di pendenza e intercetta pari a 0, come visibile dal grafico ivi riportato.
+       \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/malus_residui_fondo.png}
+        \caption{Andamento dei residui (non normalizzati) in funzione di $\theta$, con la correzione per lo scaricamento della batteria.}
+        \label{fig4}
+      \end{figure}
+      Nonostante tale miglioramento, è evidente che i residui presentino ancora un andamento periodico.
+
+      \subsection{Correzione per l'andamento periodico}
+      L'andamento dei residui è ben descrivibile da una funzione sinusoidale, individuata, tramite un fit sui residui stessi, come:
+      \begin{equation}
+       r(\theta) = E \cos(4  \theta - C)
+      \label{eq:3}
+      \end{equation}
+      Dove $C$ è lo stesso parametro della \ref{eq:2}, in quanto si è dapprima supposto che l'andamento periodico dei residui fosse imputabile
+      ad una disomogeneità del secondo polarizzatore, colpito dal fascio di luce polarizzata in punti diversi a seconda dell'angolo di rotazione del primo polarizzatore.
+      
+      Tramite questa correzzione, la funzione di fit diviene:
+      \begin{equation}
+        y = \left[ A \cos^2(\theta - C) + B \right](1 + D \theta) ( 1 + E \cos(4  \theta - C))
+      \end{equation}
+      Con questa nuova funzione di fit, si è ottenuto un $\chi^2_{ridotto}= ...$, ed un grafico dei residui decisamente migliore (visibile in \ref{fig5}). 
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/malus_residui_filtro.png}
+        \caption{Andamento dei residui (non normalizzati) in funzione di $\theta$, con la correzione per l'andamento periodico.}
+        \label{fig5}
+      \end{figure}
+
+      DUBBIO SULL'OVER FITTING
+
+      PERCENTUALE DI RESIDUI NORMALIZZZATI ENTRO 1 SIGMA
+      
+      4* FIT E SUPPOSIZIONE DI UN EFFETTO SCONNESSO DALLA DISOMOGENITA'
+    \section{Conclusione}
 \end{document}
