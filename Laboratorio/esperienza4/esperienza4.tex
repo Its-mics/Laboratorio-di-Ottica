@@ -167,7 +167,7 @@
 \end{itemize}
 
     \section{Analisi Dati}
-    Per verificare la legge di Malus, si è proceduto a ruotare il primo polarizzatore di un due gradi e a misurare la tensione in uscita dal fotodiodo.
+    Per verificare la legge di Malus, si è proceduto a ruotare il primo polarizzatore di due gradi e a misurare la tensione in uscita dal fotodiodo.
 
     \noindent Dalla misura potremmo ottenere 3 grafici:
     \begin{itemize}
@@ -235,9 +235,10 @@
       Nonostante tale miglioramento, è evidente che i residui presentino ancora un andamento periodico.
 
       \subsection{Correzione per l'andamento periodico}
+      \label{Disomog}
       L'andamento dei residui è ben descrivibile da una funzione sinusoidale, individuata, tramite un fit sui residui stessi, come:
       \begin{equation}
-       r(\theta) = E \cos(4  \theta - C)
+       r(\theta) = E \cos(2  \theta - C)
       \label{eq:3}
       \end{equation}
       Dove $C$ è lo stesso parametro della \ref{eq:2}, in quanto si è dapprima supposto che l'andamento periodico dei residui fosse imputabile
@@ -245,7 +246,7 @@
       
       Tramite questa correzzione, la funzione di fit diviene:
       \begin{equation}
-        y = \left[ A \cos^2(\theta - C) + B \right](1 + D \theta) ( 1 + E \cos(4  \theta - C))
+        y = \left[ A \cos^2(\theta - C) + B \right](1 + D \theta) ( 1 + E \cos(2  \theta - C))
       \end{equation}
       Con questa nuova funzione di fit, si è ottenuto un $\chi^2_{ridotto}= ...$, ed un grafico dei residui decisamente migliore (visibile in \ref{fig5}). 
       \begin{figure}[H]
@@ -255,10 +256,192 @@
         \label{fig5}
       \end{figure}
 
-      DUBBIO SULL'OVER FITTING
 
-      PERCENTUALE DI RESIDUI NORMALIZZZATI ENTRO 1 SIGMA
+      \subsubsection{Percentuale di residui entro $1\sigma$}
+      Un ulteriore controllo consiste nel contare quanti residui normalizzati cadono in $|r|<1$. Se il modello è corretto e le incertezze sono ben stimate, i residui seguono una gaussiana con $\mu=0$ e $\sigma=1$:
+      ci aspettiamo quindi il $68{,}3\%$ dei punti entro $1\sigma$ e il $95{,}4\%$ entro $2\sigma$. I risultati sono in Tabella~\ref{tab:sigma}.
+      Nei primi due fit solo il $30\%$ circa dei residui sta entro $1\sigma$, segno che l'andamento dei dati non è descritto dal modello. Dopo l'introduzione delle 2 correzzioni la frazione sale al $64{,}9\%$ ($126$ punti su $194$),
+      compatibile con il valore atteso.
+      \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{lccc}
+          \toprule
+          Fit & $\chi^2/\mathrm{ndf}$ & entro $1\sigma$ & entro $2\sigma$ \\
+          \midrule
+          Malus                  & $3{,}94$ & $30{,}4\%$ & $64{,}4\%$ \\
+          Malus + deriva         & $3{,}43$ & $30{,}9\%$ & $69{,}1\%$ \\
+          + Andamento per.          & $1{,}02$ & $64{,}9\%$ & $97{,}9\%$ \\
+          \midrule
+          Atteso (gaussiana)     & $\approx 1$ & $68{,}3\%$ & $95{,}4\%$ \\
+          \bottomrule
+        \end{tabular}
+        \caption{Frazione di residui normalizzati entro $1\sigma$ e $2\sigma$ per i primi tre fit.}
+        \label{tab:sigma}
+      \end{table}
+
       
-      4* FIT E SUPPOSIZIONE DI UN EFFETTO SCONNESSO DALLA DISOMOGENITA'
-    \section{Conclusione}
+
+
+      \subsection{Ipotesi di una sorgente parzialmente polarizzata}
+ 
+      Nel terzo fit la fase dell'andamento periodico era fissata uguale a $C$, cioè legata all'orientazione del secondo polarizzatore, come ci si aspetterebbe se fosse dovuto a una sua disomogeneità.
+      Per verificarlo abbiamo reso libera la fase, sostituendo $C$ con un nuovo parametro $F$:
+      \begin{equation}
+        \begin{split}
+          y = {}& \left[ A \cos^2(\theta - C) + B \right](1 + D \theta) \\
+                & \times \left[ 1 + E \cos(2\theta - F) \right]
+        \end{split}
+      \label{eq:4}
+      \end{equation}
+      Il $\chi^2$ scende da $193{,}7$ a $100{,}7$ con un solo parametro in più, e i valori ottenuti (Tabella~\ref{tab:par4}) sono $F = (159{,}0 \pm 2{,}0)^\circ$ e $C = (176{,}8 \pm 0{,}2)^\circ$.
+      La loro differenza è $F - C = (-17{,}8 \pm 1{,}8)^\circ$ ciò ci dice che: la fase dell'andamento periodico non coincide con quella del secondo polarizzatore,
+      e quindi l'ipotesi di una sua disomogeneità non è sufficiente a spiegare i dati. 
+      \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{cc}
+          \toprule
+          Parametro & Valore \\
+          \midrule
+          $A$ [V]               & $2{,}481 \pm 0{,}019$ \\
+          $B$ [V]               & $2{,}603 \pm 0{,}007$ \\
+          $C$ [rad]             & $3{,}086 \pm 0{,}004$ \\
+          $D$ [rad$^{-1}$]      & $(-1{,}15 \pm 0{,}16)\cdot 10^{-3}$ \\
+          $E$                   & $0{,}0673 \pm 0{,}0024$ \\
+          $F$ [rad]             & $2{,}775 \pm 0{,}035$ \\
+          \midrule
+          $\chi^2/\mathrm{ndf}$ & $100{,}7/188 = 0{,}54$ \\
+          \bottomrule
+        \end{tabular}
+        \caption{Parametri del fit con la \ref{eq:4}.}
+        \label{tab:par4}
+      \end{table}
+ 
+      Per capire che forma abbia l'andamento periodico senza assumere a priori il suo periodo, siamo ripartiti dai residui del fit con la legge di Malus e la deriva (Figura~\ref{fig:disom1}).
+      Li abbiamo descritti come $a\cos(k\theta) + b\sin(k\theta)$, per $k = 1, \dots, 6$, e per ogni $k$ abbiamo riportato l'ampiezza $\sqrt{a^2 + b^2}$
+      della sinusoide che meglio li descrive (Figura~\ref{fig:disom2}).
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/disom_residui.png}
+        \caption{Residui del fit con Malus con sovrapposta l'onda con $k = 4$ ottenuta dal fit.}
+        \label{fig:disom1}
+      \end{figure}
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/disom_ampiezze.png}
+        \caption{Ampiezza della sinusoide con $k$ che meglio descrive i residui, per $k = 1, \dots, 6$.}
+        \label{fig:disom2}
+      \end{figure}
+      Domina nettamente $k = 4$, cioè un periodo di $90^\circ$. Per $k = 2$ l'ampiezza è praticamente nulla come ci si aspetta,
+      poiché una componente con periodo $180^\circ$ è già assorbita dal fit di Malus. Aggiungiamo quindi alla funzione di fit un'onda con $k = 4$:
+      \begin{equation}
+        \begin{split}
+        y ={}& \left[ A \cos^2(\theta - C) + B \right](1 + D \theta) \\
+             & + G\cos(4\theta - H)
+        \end{split}
+      \label{eq:5}
+      \end{equation}
+    Il $\chi^2$ passa da $651{,}7$ ($190$ gradi di libertà) a $100{,}8$ ($188$), con $G = (0{,}0416 \pm 0{,}0018)$~V, pari allo $0{,}87\%$ del valore massimo $V_{max} = 4{,}80$~V, e $H = (152{,}6 \pm 2{,}5)^\circ$.
+      I residui normalizzati che ne risultano (Figura~\ref{fig:disom3}) non mostrano più un andamento periodico e hanno un andamento casuale.
+      \begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Immagini/disom_residui_finali.png}
+        \caption{Residui normalizzati in funzione di $\theta$ dopo l'aggiunta dell'onda con $k = 4$.}
+        \label{fig:disom3}
+      \end{figure}
+ 
+      Resta da capire da dove nasca un'onda con $k = 4$. Abbiamo ipotizzato un effetto non considerato nel modello: la luce della sorgente non è perfettamente non polarizzata, ma
+      \emph{parzialmente polarizzata} lungo una direzione $\varphi_0$ ignota. Con $P \in [0,1]$ (il caso ideale è $P = 0$), la luce emessa è composta da
+      \begin{itemize}
+        \item una parte non polarizzata, di irradianza $I_0(1-P)$;
+        \item una parte polarizzata linearmente lungo $\varphi_0$, di irradianza $I_0 P$.
+      \end{itemize}
+      Dopo il primo polarizzatore, ruotato di un angolo $\theta$, la parte non polarizzata viene dimezzata, mentre quella polarizzata segue la legge di Malus rispetto a $\varphi_0$:
+      \begin{equation}
+        \begin{split}
+          I_1(\theta) &= \frac{I_0(1-P)}{2} + I_0 P\cos^2(\theta - \varphi_0) \\
+                      &= \frac{I_0}{2}\left[ 1 + P\cos 2(\theta - \varphi_0) \right]
+        \end{split}
+      \end{equation}
+      Questa luce attraversa il secondo polarizzatore, il cui asse corrisponde a $\theta = C$ sulla scala, e vale ancora la legge di Malus:
+      \begin{equation}
+        \begin{split}
+          I_2(\theta) &= I_1(\theta)\cos^2(\theta - C) \\
+                      &= \frac{I_0}{4}\left[ 1 + P\cos 2(\theta - \varphi_0) \right]\left[ 1 + \cos 2(\theta - C) \right]
+        \end{split}
+      \end{equation}
+      Nello sviluppo compare il prodotto di due coseni con argomento $2\theta$, che per la formula di prostaferesi $\cos a\cos b = \tfrac{1}{2}\left[ \cos(a-b) + \cos(a+b) \right]$ diventa
+      \begin{equation}
+        \begin{split}
+          & \cos 2(\theta - \varphi_0)\,\cos 2(\theta - C) \\
+          & = \tfrac{1}{2}\cos 2(\varphi_0 - C) + \tfrac{1}{2}\cos(4\theta - 2\varphi_0 - 2C)
+        \end{split}
+      \end{equation}
+      e quindi
+      \begin{equation}
+        \begin{split}
+          I_2(\theta) = {}& \frac{I_0}{4}\left[ 1 + \frac{P}{2}\cos 2(\varphi_0 - C) \right] \\
+          & + \frac{I_0}{4}\left[ \cos 2(\theta - C) + P\cos 2(\theta - \varphi_0) \right] \\
+          & + \frac{I_0 P}{8}\cos(4\theta - 2\varphi_0 - 2C)
+        \end{split}
+      \label{eq:6}
+      \end{equation}
+      I tre termini della \ref{eq:6} hanno ruoli diversi nel fit:
+      \begin{itemize}
+        \item il primo è costante e viene assorbito dal parametro $B$;
+        \item il secondo è una combinazione di coseni con periodo $180^\circ$, la stessa dipendenza della legge di Malus, e viene assorbito dai parametri $A$, $B$ e $C$ del fit;
+        \item il terzo ha periodo $90^\circ$ e non può essere assorbito da una funzione di Malus: è l'onda con $k = 4$ trovata nei residui.
+      \end{itemize}
+      Il periodo di $90^\circ$ nasce quindi dal prodotto di due dipendenze con periodo $180^\circ$, quella della sorgente parzialmente polarizzata e quella del secondo polarizzatore.
+       Confrontando il terzo termine della \ref{eq:6} con l'onda della \ref{eq:5} si ottiene
+      \begin{equation}
+        G = \frac{I_0 P}{8} \simeq \frac{A P}{4} \qquad H = 2\varphi_0 + 2C
+      \end{equation}
+      dove si è usato che, per $P$ piccolo, l'ampiezza della parte di Malus è $A \simeq I_0/2$. 
+ \newline
+
+      La funzione \ref{eq:4} è la stessa ipotesi dove si moltiplica invece che somamre.
+      Sviluppando il prodotto come sopra, il suo termine a $4\theta$ ha ampiezza $G = AE/4$ e fase $H = F + 2C$, in accordo con la relazione appena ricavata.
+      Usando i parametri del fit con la fase libera (Tabella~\ref{tab:par4}) si ottengono quindi i valori attesi per $G$ e $H$, che confrontiamo con quelli ricavati direttamente dai residui (Tabella~\ref{tab:conf}).
+      \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{lcc}
+          \toprule
+          & Fit dei residui & Dal fit con $E$, $F$ \\
+          \midrule
+          $G$ [V]               & $0{,}0416 \pm 0{,}0018$ & $0{,}0417 \pm 0{,}0018$ \\
+          $H$ [$^\circ$]        & $152{,}6 \pm 2{,}5$     & $152{,}6 \pm 2{,}4$ \\
+          $\chi^2/\mathrm{ndf}$ & $100{,}8/188$           & $100{,}7/188$ \\
+          \bottomrule
+        \end{tabular}
+        \caption{Ampiezza e fase dell'onda con $k = 4$, ricavate dal fit dei residui e dal fit con la fase libera.}
+        \label{tab:conf}
+      \end{table}
+      I valori coincidono e quindi questo ci dice che i due fit sono due scritture dello stesso modello e infatti ottengono lo stesso $\chi^2$. Questo risultato ci dice che non è una prova indipendente della sorgente parzialmente polarizzata,
+      ma mostra che l'onda con $k = 4$ trovata nei residui è esattamente quella prevista da questa ipotesi, con $k = 4$ e con la fase $H = 2\varphi_0 + 2C$.
+ \\
+     Inoltre dal fit con la fase libera otteniamo un grado di polarizzazione $P = E = 0{,}067 \pm 0{,}002$ e una direzione $\varphi_0 = F/2 = (79{,}5 \pm 1{,}0)^\circ$,
+      che forma un angolo di $(82{,}7 \pm 0{,}8)^\circ$ con l'asse del secondo polarizzatore.
+      
+
+      Resta da commentare il $\chi^2/\mathrm{ndf} = 0{,}54$, che è minore di $1$. Un valore così basso potrebbe far sospettare un overfitting, ma con $6$ parametri su $194$ punti, tutti con un significato fisico, non si ritiene la spiegazione più plausibile.
+      È anche probabile che le incertezze siano state scelte in modo eccessivo.
+ 
+
+      \subsubsection{Dubbio sull'\emph{overfitting}}
+      Ogni parametro aggiunto al modello ne aumenta la flessibilità e quindi, migliora l'accordo con i dati e abbassa il $\chi^2$, anche quando il parametro non descrive il fenomeno fisico.
+      Se il modello finisce per adattarsi al rumore dei dati invece che al fenomeno, si sta riscontrando un \emph{overfitting}. Aggiungendo la deriva ($D$) e la modulazione ($E$) ai fit si è quindi corso questo rischio.
+     Ci limitiamo perciò a motivare perché riteniamo che non si sia verificato e che il miglioramento ottenuto sia reale.
+      \begin{itemize}
+        \item Ciascun parametro è stato introdotto per descrivere un effetto di un fenomeno fisico (lo scaricamento della batteria, l'andamenento periodico), dopo aver osservato un andamento sistematico nei residui.
+        \item  Il modello passa da $3$ a $5$ parametri su $194$ punti e ciò è troppo poco per seguire le fluttuazioni di ogni punto, per cui può riprodurre solo un andamento sistematico.
+        \item  L'introduzione dei parametri non si limita a un $\chi^2$ più basso ma fa scomparire l'andamento periodico dei residui.
+      \end{itemize}
+      Riteniamo quindi che il miglioramento ottenuto sia dovuto alla descrizione di un effetto sistematico reale e non a un adattamento al rumore.
+
+
+\section{Conclusioni}
+
 \end{document}
