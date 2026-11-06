@@ -78,9 +78,9 @@
     \]
     Per verificarla, faremo incidere un raggio luminoso su un prisma, che verrà da esso deviato. L'obbiettivo è individuare l'angolo di deviazione minore, da cui si ottiene l'indice di rifrazione ($n$) tramite:
     \begin{equation}
-    n = \frac{\sin(\frac{\delta_{min}+\alpha}{2})}{\sin(\frac{\alpha}{2})}  
+      n = \frac{\sin(\frac{\delta_{min}+\alpha}{2})}{\sin(\frac{\alpha}{2})}  
+      \label{eq:1}
     \end{equation}
-    \label{eq:1}
     \section{Apparato sperimentale}
     L'apparato è composto dai seguenti elementi:
     \begin{itemize}
@@ -469,9 +469,34 @@ Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero ca
     \subsubsection{Ipotesi su lunghezza d'onda}
     Si è anche verificato se gli scarti possano dipendere da una $\lambda$ diversa da quella nominale del filtro. Fittando con la \eqref{eq:2} i soli punti con $\lambda\le589$ nm, per ciascun $n_{mis}$ si è calcolata la $\lambda$ che la curva richiederebbe. Per i quattro punti con residuo alto si ottengono $605$, $635$, $699$ e $729$ nm al posto di $620$, $656$, $671$ e $690$ nm, cioè scarti di $-15$, $-21$, $+28$ e $+39$ nm; per tutti gli altri punti lo scarto è al più di $5$ nm. Gli scarti superano la tolleranza dei filtri ($\pm10$ nm), quindi l'incertezza su $\lambda$ da sola non basta e un errore di puntamento resta la spiegazione più naturale.
 
-    \subsubsection{Ipotesi nell'errore di $\alpha$}
-    Consideriamo ora l'ipotesi che lo scarto delle ultime 2 lunghezze d'onda sia dovuta ad una errata assunzione dell'isoscietà del prisma. Si introduce allora un termine correttivo del tipo $\epsilon_\alpha$, così da avere due angoli $\alpha'_{1/2} = \alpha \pm \epsilon_{\alpha}$. 
-    Assumiano allora di aver eseguito tutte le misure dal lato pari a $\alpha'_1$, tranne le ultime due lunghezze d'onda dal lato dell'angolo $\alpha'_2$. 
+\subsubsection{Ipotesi nell'errore di $\alpha$}
+Consideriamo ora l'ipotesi che lo scarto delle ultime 2 lunghezze d'onda sia dovuta ad una errata assunzione dell'isoscietà del prisma. Si pensa allora di avere due angoli diversi ai lati del prisma, rispettivamente nel nostro caso: $\alpha_1 = \frac{\pi}{2} + \epsilon$ e $\alpha_2 = \frac{\pi}{2} - \epsilon$. In base al lato avrò un differente angolo di deviazione minimo $\delta_1$ e $\delta_2$.
+Essendo che mi trovo alla stessa lunghezza d'onda, la $n$ dell'equazione \eqref{eq:1} è la stessa nei due lati del prisma, posso allora imporre:
+\begin{equation}
+  \frac{\sin(\frac{\delta_1+\alpha_1}{2})}{\sin(\frac{\alpha_1}{2})} =\frac{\sin(\frac{\delta_2+\alpha_2}{2})}{\sin(\frac{\alpha_2}{2})} 
+\end{equation}
+che andando a misurare in maniera sperimentale $\delta_1 - \delta_2 = C > 0$, posso andare ad invertire la mia equazione per trovare l'errore $\epsilon$
+\begin{equation}
+  \frac{\sin\left(\frac{\delta_2 - \epsilon}{2} + \frac{\pi}{4}\right)\sin\left(\frac{\pi}{4} + \frac{\epsilon}{2}\right)}{\sin\left(\frac{\delta_2 + C + \epsilon}{2} + \frac{\pi}{4}\right)\sin\left(\frac{\pi}{4} - \frac{\epsilon}{2}\right)} = 1
+\end{equation}
+Ora nel caso di $\lambda = 690$ ho un $\delta_1 \cong 25.78^{\circ}$ e un $C \cong 0.04^{\circ}$ per quella $\lambda$; che mi portano ad un risultato di:
+\begin{equation*}
+  \boxed{\epsilon \cong 0.06^{\circ}}
+\end{equation*}
+Andando ora a valutare le ultime due lunghezze d'ond a assumendo che siano quelle prese dal lato con $\alpha_2$, ottengo il grafico corretto:
+\begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_root_alpha.png}
+        \caption{ Fit legge di Sellmeier, con termine correttivo su $\lambda = 671, 690$.}
+        \label{fig4}
+\end{figure}
+Possiamo anche assumere che le due lunghezza d'onda pari a $\lambda= 620,656$ siano quello prese dal lato con $\alpha_1$ e le altre dall'altro lato:
+\begin{figure}[H]
+        \centering
+      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_root_alpha1.png.png}
+        \caption{ Fit legge di Sellmeier, con termine correttivo su $\lambda = 620, 656$.}
+        \label{fig4}
+\end{figure}
 
 \section{Conclusioni}
 \noindent Abbiamo misurato l'indice di rifrazione $n$ di un prisma di vetro a 14 lunghezze d'onda tra 450 e 700 nm e abbiamo verificato se segue l'equazione di Sellmeier \eqref{eq:2}. Come atteso, $n$ diminuisce al crescere di $\lambda$. Il fit dà $A=1.268\pm0.001$ e $B=(95\pm1)$ nm, con $\chi^2_{ridotto}=1.6$ ($p=0.07$): il modello non è rigettato, anche se non è ottimo. I residui normalizzati sono compatibili con una gaussiana standard ($\mu=-0.15\pm0.25$, $\sigma=0.87\pm0.18$). Il fit con una retta \eqref{eq:3}, che ha lo stesso numero di parametri, è invece nettamente peggiore ($\chi^2_{ridotto}=4.6$, $p\sim10^{-7}$, $\Delta\chi^2=35.4$): i dati mostrano la curvatura prevista da Sellmeier. Il valore di $B$ è vicino ai 100 nm attesi, ma non compatibile con essi (circa $5\sigma$). Il modello è però un'approssimazione di un vetro reale, quindi $B$ è un parametro variabile e non va interpretato troppo letteralmente.
