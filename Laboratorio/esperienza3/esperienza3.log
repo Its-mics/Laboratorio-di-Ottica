@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.14)  7 NOV 2026 00:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.14)  7 NOV 2026 01:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -786,7 +786,38 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip80
-) (./esperienza3.aux)
+) (./esperienza3.aux
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
+
+
+LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
+
+
+LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
+
+
+LaTeX Warning: Label `fig4' multiply defined.
+
+
+LaTeX Warning: Label `tab:risultati_fit_nuovi' multiply defined.
+
+
+LaTeX Warning: Label `fig4' multiply defined.
+
+
+LaTeX Warning: Label `tab:risultati_fit_nuovi' multiply defined.
+
+
+LaTeX Warning: Label `fig4' multiply defined.
+
+
+LaTeX Warning: Label `fig4' multiply defined.
+
+)
 \openout1 = `esperienza3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
@@ -887,10 +918,11 @@ Package siunitx Warning: Detected the "physics" package:
 
 Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 48.
 Package hyperref Info: Link coloring ON on input line 48.
+(./esperienza3.out) (./esperienza3.out)
 \@outlinefile=\write4
 \openout4 = `esperienza3.out'.
 
-(./Analisi dati/risultati.tex)
+ (./Analisi dati/risultati.tex)
 LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -939,8 +971,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-No file esperienza3.toc.
+ (./esperienza3.toc)
 \tf@toc=\write5
 \openout5 = `esperienza3.toc'.
 
@@ -952,20 +983,11 @@ No file esperienza3.toc.
 ]
 
 
-LaTeX Warning: Reference `eq:1' on page 3 undefined on input line 172.
-
-
-LaTeX Warning: Reference `eq:2' on page 3 undefined on input line 184.
-
-
-LaTeX Warning: Reference `eq:1' on page 3 undefined on input line 185.
-
-
 Underfull \hbox (badness 1184) in paragraph at lines 184--186
 []\T1/cmr/m/n/10 L'istogramma dei re-si-dui nor-ma-liz-za-ti $\OML/cmm/m/it/10 r \OT1/cmr/m/n/10 =
  []
 
-<Analisi dati/Immagini/fit_root.png, id=57, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_root.png, id=122, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_root.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_root.png>
 Package pdftex.def Info: Analisi dati/Immagini/fit_root.png  used on input line 197.
@@ -976,65 +998,31 @@ Package pdftex.def Info: Analisi dati/Immagini/fit_root.png  used on input line 
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./Analisi dati/Immagini/fit_root.png>]
-<Analisi dati/Immagini/fit_lineare.png, id=89, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_lineare.png, id=147, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_lineare.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_lineare.png>
 Package pdftex.def Info: Analisi dati/Immagini/fit_lineare.png  used on input line 225.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/fit_confronto.png, id=90, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_confronto.png, id=148, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_confronto.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_confronto.png>
 Package pdftex.def Info: Analisi dati/Immagini/fit_confronto.png  used on input line 232.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
-
-LaTeX Warning: Reference `eq:2' on page 4 undefined on input line 233.
-
-
-LaTeX Warning: Reference `eq:3' on page 4 undefined on input line 233.
-
-
-LaTeX Warning: Reference `eq:2' on page 4 undefined on input line 233.
-
-
-LaTeX Warning: Reference `eq:3' on page 4 undefined on input line 233.
-
-
-LaTeX Warning: Reference `eq:2' on page 4 undefined on input line 254.
-
-
-LaTeX Warning: Reference `eq:3' on page 4 undefined on input line 254.
-
-
-LaTeX Warning: Reference `par:err_par' on page 4 undefined on input line 255.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-<Analisi dati/Immagini/hist.png, id=91, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/hist.png, id=156, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/hist.png Graphic file (type png)
 <use Analisi dati/Immagini/hist.png>
 Package pdftex.def Info: Analisi dati/Immagini/hist.png  used on input line 259.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-
-LaTeX Warning: Reference `eq:2' on page 4 undefined on input line 260.
-
-
-LaTeX Warning: Reference `eq:2' on page 4 undefined on input line 260.
-
-<Analisi dati/Immagini/fit_line.png, id=92, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_line.png, id=159, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_line.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_line.png>
 Package pdftex.def Info: Analisi dati/Immagini/fit_line.png  used on input line 289.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-
-LaTeX Warning: Reference `eq:2' on page 4 undefined on input line 290.
-
-
-LaTeX Warning: Reference `eq:2' on page 4 undefined on input line 290.
-
 
 Overfull \hbox (35.47282pt too wide) in paragraph at lines 297--305
  [][] 
@@ -1047,18 +1035,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [4 <./Analisi dati/Immagini/fit_lineare.png> <./Analisi dati/Immagini/fit_confronto.png> <./Analisi dati/Immagini/hist.png> <./Analisi dati/Immagini/fit_line.png>]
 
-LaTeX Warning: Reference `eq:2' on page 5 undefined on input line 329.
-
-
-LaTeX Warning: Reference `eq:3' on page 5 undefined on input line 329.
-
-
-LaTeX Warning: Reference `eq:2' on page 5 undefined on input line 329.
-
-
-LaTeX Warning: Reference `eq:3' on page 5 undefined on input line 329.
-
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 333.
 
@@ -1070,20 +1046,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 333.
 
-
-LaTeX Warning: Reference `eq:2' on page 5 undefined on input line 339.
-
-
-LaTeX Warning: Reference `tab:fit' on page 5 undefined on input line 360.
-
-<Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png, id=106, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png, id=181, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png Graphic file (type png)
 <use Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png>
 Package pdftex.def Info: Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png  used on input line 367.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
 
-<Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png, id=107, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png, id=182, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png Graphic file (type png)
 <use Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png>
 Package pdftex.def Info: Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png  used on input line 392.
@@ -1096,19 +1066,6 @@ Overfull \hbox (8.83981pt too wide) in paragraph at lines 400--409
 
 
 [5 <./Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png> <./Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png>]
-
-LaTeX Warning: Reference `eq:1' on page 6 undefined on input line 417.
-
-
-LaTeX Warning: Reference `eq:1' on page 6 undefined on input line 432.
-
-
-
-
-LaTeX Warning: Reference `tab:tacche' on page 6 undefined on input line 446.
-
-
-LaTeX Warning: Reference `eq:2' on page 6 undefined on input line 470.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1123,82 +1080,50 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 472.
 
 
-LaTeX Warning: Reference `eq:1' on page 6 undefined on input line 474.
-
-
 
 [6]
-<Analisi dati/Immagini/fit_root_alpha.png, id=142, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/fit_root_alpha.png, id=217, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/fit_root_alpha.png Graphic file (type png)
 <use Analisi dati/Immagini/fit_root_alpha.png>
 Package pdftex.def Info: Analisi dati/Immagini/fit_root_alpha.png  used on input line 489.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-
-
-LaTeX Warning: File `Analisi dati/Immagini/fit_root_alpha1.png.png' not found on input line 496.
-
-
-/Users/alessiobrusini/Desktop/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex:496: Package pdftex.def Error: File `Analisi dati/Immagini/fit_root_alpha1.png.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.496 ...si dati/Immagini/fit_root_alpha1.png.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `eq:2' on page 7 undefined on input line 502.
-
-
-LaTeX Warning: Reference `eq:3' on page 7 undefined on input line 502.
-
-
-Underfull \vbox (badness 3000) has occurred while \output is active []
+<Analisi dati/Immagini/fit_root_alpha1.png, id=218, 798.985pt x 574.145pt>
+File: Analisi dati/Immagini/fit_root_alpha1.png Graphic file (type png)
+<use Analisi dati/Immagini/fit_root_alpha1.png>
+Package pdftex.def Info: Analisi dati/Immagini/fit_root_alpha1.png  used on input line 496.
+(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
 
 
 
-
-[7 <./Analisi dati/Immagini/fit_root_alpha.png>] (./esperienza3.aux)
+[7 <./Analisi dati/Immagini/fit_root_alpha.png> <./Analisi dati/Immagini/fit_root_alpha1.png>] (./esperienza3.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `esperienza3.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `esperienza3.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  9EE9E512E584CCE333A03D4E4F9BCA88;2131.
+Package rerunfilecheck Info: File `esperienza3.out' has not changed.
+(rerunfilecheck)             Checksum: 9EE9E512E584CCE333A03D4E4F9BCA88;2131.
  ) 
 Here is how much of TeX's memory you used:
- 54630 strings out of 473190
- 1307972 string characters out of 5715800
- 1957171 words of memory out of 5000000
- 77215 multiletter control sequences out of 15000+600000
- 578832 words of font info for 85 fonts, out of 8000000 for 9000
+ 54625 strings out of 473190
+ 1306968 string characters out of 5715800
+ 1958171 words of memory out of 5000000
+ 77205 multiletter control sequences out of 15000+600000
+ 578519 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,12n,106p,1059b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,12n,106p,1050b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on esperienza3.pdf (7 pages, 561982 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on esperienza3.pdf (7 pages, 558366 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 363 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
  49 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 298 words of extra memory for PDF output out of 10000 (max. 10000000)
 
