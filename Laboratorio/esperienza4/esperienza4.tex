@@ -219,13 +219,14 @@
       Per testare l'ipotesi di cui sopra, abbiamo dapprima cercato di capire la causa della pendenza negativa della retta, individuato nello scaricamento 
       della batteria del fotodiodo. Proprio per questo motivo, la misura era da completarsi in breve tempo, per evitare che la tensione in uscita dal fotodiodo diminuisse eccessivamente.
 
-      Di conseguenza, si è supposto uno scaricamento esponenziale della batteria (PERCHE?), approssimato come lineare, vista la celerità nel compiere la misura.
-      Per tal motivo, si è moltiplicata alla funzione di fit \ref{eq:1} per un termine linere $1 + D \theta$, ottenendo la nuova funzione di fit:
+      Di conseguenza, si è supposto uno scaricamento della batteria dipendente dal tempo, approssimato come lineare, vista la celerità nel compiere la misura.
+      Assumendo il tempo trascorso tra le misure come costanti posso assumere $\theta \propto t$.
+      Per tal motivo, si è moltiplicata alla funzione di fit \ref{eq:1} per un termine linere $1 + D \theta$. Si è così ottentua la nuova funzione di fit:
       \begin{equation}
         y = \left[ A \cos^2(\theta - C) + B \right](1 + D \theta)
       \label{eq:2}
       \end{equation}
-      Il nuovo fit ha portato a risultati migliori, ottenendo un $\chi^2_{ridotto}= ...$, la retta dei residui compatibile con una retta di pendenza e intercetta pari a 0, come visibile dal grafico ivi riportato.
+      Il nuovo fit ha portato a risultati migliori, ottenendo un $\chi^2_{ridotto}= 3{,}43$, la retta dei residui compatibile con una retta di pendenza e intercetta pari a 0, come visibile dal grafico ivi riportato.
        \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Immagini/malus_residui_fondo.png}
@@ -246,9 +247,12 @@
       
       Tramite questa correzzione, la funzione di fit diviene:
       \begin{equation}
-        y = \left[ A \cos^2(\theta - C) + B \right](1 + D \theta) ( 1 + E \cos(2  \theta - C))
+        \begin{split}  
+          y = {}&\left[ A \cos^2(\theta - C) + B \right](1 + D \theta) \\
+              & \times ( 1 + E \cos(2  \theta - C))
+        \end{split}
       \end{equation}
-      Con questa nuova funzione di fit, si è ottenuto un $\chi^2_{ridotto}= ...$, ed un grafico dei residui decisamente migliore (visibile in \ref{fig5}). 
+      Con questa nuova funzione di fit, si è ottenuto un $\chi^2_{ridotto}= 1{,}03$, ed un grafico dei residui decisamente migliore (visibile in \ref{fig5}). 
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Immagini/malus_residui_filtro.png}
@@ -443,5 +447,8 @@
 
 
 \section{Conclusioni}
+Abbiamo valutato l'andamento dell'intensità di una sorgente luminosa (supposta isotropa) passante prima per un polarizzatore e poi per un analizzatore. Utilizzadno come funzione di prova la sola legge di Malus (\ref{eq:1}), si ha un $\chi^2_{red} = 3,93$ e residui normlizzati con $\mu = 0.44 \pm 0.2, \; \sigma = 2.27 \pm 0.2$, dunque possiamo scare l'ipotesi che questa descrive bene i nostri dati. \\
+Dobbiamo allora considerare i termini corretti dovuti agli errori sistematici presenti nell'apparato speirmentale: scaricamento batteria fotodiodo (\ref{eq:2}) e luce parzialmente polarizzata (\ref{eq:5}). Da questa ipotesi si ottiene una funzione di fit con un $\chi^2_{red} = 0.53$, mentre i residui normalizzati hanno parametri: $\mu = -0.01 \pm 0.05, \; \sigma = 0.73 \pm 0.05$
+
 
 \end{document}
