@@ -164,7 +164,7 @@
     \end{figure}
     \subsection{Procedimento di misura}
     \noindent La misura consiste nell' individuare dapprima l'angolo $\theta_0$ del raggio di luce non deviato. Dopodichè, il prisma verrà appoggiato sul goniometro, esso 
-    devierà la luce di un certo angolo $\delta$. Ruotando il goniometro, e dunque il prisma, in modo che la luce venga deviata di un angolo sempre minore, si
+    devierà la luce di un certo angolo $\delta$. Ruotando la base su cui poggia il prisma, in modo che la luce venga deviata di un angolo sempre minore, si
     arriverà ad un angolo $\delta_{min}$ dopo la quale, anche continuando a ruotare il prisma, la deviazione aumenterà invece che diminuire.
     \section{Analisi Dati}
     \noindent Dalla misura potremmo ottenere 3 grafici:
@@ -176,21 +176,27 @@
       \end{equation}
       \noindent In particolare, ci si attende che il valore di B sia compatibile con 100 (poichè $\lambda_0 = 100nm$ è la lunghezza d'onda di risonananza del vetro).
 
-      \noindent Dato l'esiguo intervallo di lunghezze d'onda sulla quale si lavora, è possibile che i dati siano fittati meglio dalla funzione:
+      \noindent Dato l'esiguo intervallo di lunghezze d'onda sulla quale si lavora, è possibile che i dati siano descritti in maniera più adeguata dalla funzione:
       \begin{equation}
         y = Ax + B
         \label{eq:3}
       \end{equation}
-      \item L'istogramma dei residui normalizzati $r = \frac{n_{fit} - n_{\text{misurato}}}{\sigma_{eff}}$ dove: $n_{fit}$ è ottenuto dalla \ref{eq:2}, 
-      $n_{\text{misurato}}$ ottenuto dalla \ref{eq:1} e $\sigma_{eff}$ la varianza efficace su $n_{fit}$.
+      \item L'istogramma dei residui normalizzati $r = \frac{n_{fit} - n_{\text{misurato}}}{\sigma_{eff}}$ dove: $n_{fit}$ è ottenuto dalla (\ref{eq:2}), 
+      $n_{\text{misurato}}$ ottenuto dalla (\ref{eq:1}) e $\sigma_{eff}$ la varianza efficace su $n_{fit}$.
 
-      \noindent Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$ siano rispettivamente compatibili con 0 e 1.
+      \noindent Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$, che descrive la distribuzione dell'istogramma, siano rispettivamente compatibili con 0 e 1.
 
       \item L'andamento dei residui (non normalizzati) in funzione di $\lambda$. Ci attendiamo che essi vengano fittati tramite una retta di pendenza ($m$) e intercetta
       ($q$) compatibili con 0.
     \end{itemize}
+
+  Si dirà che un parametro ($x$) è compatibile con un certo valore ($x^*$), se, data la sua incertezza ($\sigma_x$), vale la seguente:
+  \[
+  \abs{x - x^*} < 2\sigma_x
+  \]
+
     \section{Grafici}
-    \noindent Si riportano i grafici ottenuti e i parametri dei fit (il $\chi^2$ riportato è sempre da intedersi come il $\chi^2_{ridotto}$)
+    \noindent Si riportano i grafici ottenuti e i parametri dei fit.
 
        \begin{figure}[H]
         \centering
@@ -198,23 +204,22 @@
         \caption{Fit tra $n_{\text{misurato}}$ vs $\lambda$ e l'andamento teorico utilizzando la legge di Sellmeier.}
         \label{fig1}
       \end{figure}
-
-
 \begin{table}[H]
     \centering
     \begin{tabular}{ccc}
         \toprule
-        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
         \midrule
-        $\chi^2_{Sellmeier}$ & $19.9 $ & [-] \\
-        A & $1.3 \pm 10^{-3}$ & [-]\\  
-        B &  $95 \pm 1$ $nm$ & [no] \\
+        $\chi^2_{Sellmeier}$ & $19.9$ & [-]\footnotemark \\
+        A & $1.3 \pm 10^{-3}$ & [-] \\  
+        B & $95 \pm 1$ nm & [no] \\
         \bottomrule
     \end{tabular}
-
-    \caption{Valori dei parametri estratti dal fit con il modello di Sellmeier\protect\footnote{con [-] si indica che no ci aspettava una compatibilità con un certo valore}.}
-    \label{tab:parametri_fig2}
+    \caption{Parametri del fit e loro compatibilità.}
+    \label{tab:parametri_fig1}
 \end{table}
+\footnotetext{Con [-] si indica che non ci si aspettava una compatibilità con un certo valore.}
+
 
 
 
@@ -251,13 +256,13 @@
 \end{table}
 
 
-      \noindent E' facile osservare come la funzione di fit data dalla (\ref{eq:2}) descriva in modo più adeguato i dati rispetto alla (\ref{eq:3}). Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
+      \noindent E' facile osservare come la funzione di fit non lineare descriva in modo più adeguato i dati rispetto all'altra. Nonostante questo, si osserva che gli ultimi 4 punti presentano un discostamento significativo rispetto alla curva di fit, più precisamente,
       gli ultimi due risultano avere un valore minore di quello previsto dal fit, mentre i precedenti due hanno un valore maggiore. Un analisi più dettagliata su questi punti anomali è riportata nel paragrafo \ref{par:err_par}.
 
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/hist.png}
-        \caption{Istogramma dei residui normalizzati, ottenuti dalla \ref{eq:2}, con tutti i punti.}
+        \caption{Istogramma dei residui normalizzati, ottenuti dalla (\ref{eq:2}), con tutti i punti.}
         \label{fig3}
       \end{figure}
 
@@ -268,9 +273,9 @@
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità}\\
         \midrule
-        $\mu$ & $-0.15 \pm 0.25$ & sì \\      
-        $\sigma$ & $0.87 \pm 0.18$  & sì\\  
-        $const$ & $9.42 \pm 3.17$ & si \\
+        $\mu$ & $-0.15 \pm 0.25$ & [sì] \\      
+        $\sigma$ & $0.87 \pm 0.18$  & [sì]\\  
+        $const$ & $9.42 \pm 3.17$ & [sì] \\
         \bottomrule
     \end{tabular}
     \caption{Parametri della retta gaussiana dei residui normalizzati e loro compatibilità.}
@@ -287,7 +292,7 @@
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_line.png}
-        \caption{Andamento dei residui, ottenuti dalla \ref{eq:2}, in funzione di $\lambda$, con tutti i punti.}
+        \caption{Andamento dei residui, ottenuti dalla (\ref{eq:2}), in funzione di $\lambda$, con tutti i punti.}
         \label{fig4}
       \end{figure}
 
@@ -298,8 +303,8 @@
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità}\\
         \midrule
-        $m$ & ($-4 \times 10^{-7}$ $\pm$ $10^{-6}$) $nm^{-1}$ & sì \\
-        $q$ & $2.4 \times 10^{-4}$   $\pm$ $7.8 \times 10^{-4}$ & sì\\  
+        $m$ & ($-4 \times 10^{-7}$ $\pm$ $10^{-6}$) $nm^{-1}$ & [sì] \\
+        $q$ & $2.4 \times 10^{-4}$   $\pm$ $7.8 \times 10^{-4}$ & [sì]\\  
         \bottomrule
     \end{tabular}
     \caption{Parametri della retta dei residui e loro compatibilità.}
@@ -308,7 +313,8 @@
 
       \subsection{Analisi aggiuntiva}\label{par:err_par}
           \subsubsection{Confronto tra i fit}
-    \noindent Si nota che il $91\%$ del $\chi^2$ del fit di Sellmeier (18.1 su 19.9) viene dai quattro punti a 620--690 nm. Togliendo l'ultima o la penultima coppia il $\chi^2_{ridotto}$ diminuisce ($0.4$ e $0.6$); togliendoli tutti e quattro si ottiene $0.15$.
+\noindent Togliendo gli ultimi quattro punti dal fit di Sellmeier, si nota che il $91\%$ del $\chi^2$ (18.1 su 19.9) proviene da essi (lunghezze d'onda tra $620$ e $690\text{ nm}$). 
+Togliendo solo una fra l'ultima o la penultima coppia, il $\chi^2_{\text{ridotto}}$ diminuisce ($\chi^2_{\text{rid, no ultima}} = 0.4$, $\chi^2_{\text{rid, no penultima}} = 0.6$).
 
     \begin{table}[H]
       \centering
@@ -336,7 +342,7 @@
       \varepsilon_{r_{\delta}} = \frac{|\delta_{fit}-\delta_{mis}|}{\delta_{fit}}
       \label{eq:4}
     \end{equation}
-    dove $\delta_{fit}=2\arcsin\!\left(n_{fit}\sin\frac{\alpha}{2}\right)-\alpha$ e $n_{fit}$ viene dalla \eqref{eq:2} con i parametri del fit senza la coppia considerata. Si trova $\varepsilon_{r_{\delta}}=0.21\%$ (671 nm), $0.25\%$ (690 nm), $0.19\%$ (620 nm) e $0.22\%$ (656 nm).
+    dove $\delta_{fit}=2\arcsin\!\left(n_{fit}\sin\frac{\alpha}{2}\right)-\alpha$ e $n_{fit}$ viene dalla \eqref{eq:2}, calcolato con i parametri del fit senza la coppia considerata. Si trova $\varepsilon_{r_{\delta}}=0.21\%$ (671 nm), $0.25\%$ (690 nm), $0.19\%$ (620 nm) e $0.22\%$ (656 nm).
 
 
       \begin{table}[H]
@@ -385,7 +391,7 @@
     \label{tab:risultati_fit_nuovi}
 \end{table}
 
-\noindent i valori ottenuti in questo caso ci lasciano intendere come l'errore sui parametri sia sovrastimato, questa conclusione deriva anche dal fatto che  il $\chi^2$ dell'istogramma assume un valore minore di 1. 
+\noindent I valori ottenuti in questo caso ci lasciano intendere come l'errore sui parametri sia sovrastimato, questa conclusione deriva anche dal fatto che  il $\chi^2$ dell'istogramma assume un valore minore di 1. 
 
   \begin{figure}[H]
         \centering
@@ -410,7 +416,7 @@
     \label{tab:risultati_fit_nuovi}
 \end{table}
  \noindent In questo caso abbiamo errori minori ma non abbiamo compatibilità dei parametri con i valori teorici, ciò risulta ragionevole in virtù del teorema del limite centrale: togliendo punti al nostro campione di misure se ne riduce la dimensione, quindi la distribuzione seguita dai dati si discosta sempre di più dalla gaussiana standard. 
-Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero campione delle 14 misure, e quindi avendo maggiore statistica, i paremtri rislutano entrambi compatibili.
+Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero campione delle 14 misure, e quindi avendo maggiore statistica, i parametri risultano entrambi compatibili.
 \noindent Concludiamo quindi che non possiamo stabilire quale delle due coppie sia quella "anomala" e che escludere una delle due dal campione porta a risultati non validi.
 
     \subsubsection{Confronto dei residui con la precisione del goniometro}
@@ -420,7 +426,7 @@ Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero ca
     \[
       \sigma_{lett}=\frac{1'}{\sqrt3}\simeq0.58'\;(=0.0096^\circ)
     \]
-    Per $\theta_0$ c'è una sola lettura per filtro, quindi $\sigma_{\theta_0}=\sigma_{lett}$. Per $\theta_1$ ci sono tre letture, di cui si prende la media; come incertezza si usa la semidispersione delle tre letture divisa per $\sqrt3$, ma mai meno di $\sigma_{lett}$:
+    Per $\theta_0$ c'è una sola lettura per filtro, quindi $\sigma_{\theta_0}=\sigma_{lett}$. Per $\theta_1$ ci sono tre letture, di cui si prende la media; come incertezza si usa la semidispersione delle tre letture divisa per $\sqrt3$, in modo che essa non sia mai minore di $\sigma_{lett}$:
     \begin{equation}
       \sigma_{\theta_1}=\max\!\left(\sigma_{lett},\ \frac{\theta_{max}-\theta_{min}}{2\sqrt3}\right)
       \label{eq:sigtheta}
@@ -443,11 +449,10 @@ Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero ca
     \end{equation}
    \noindent Poiché $\delta_{min}$ varia poco ($0.450$--$0.463$ rad), la derivata resta tra $1.060$ e $1.065\ \mathrm{rad}^{-1}$ e la conversione è praticamente la stessa per tutti i punti: una tacca ($1'=2.91\times10^{-4}$ rad) sposta $n$ sempre di $\Delta n\simeq3.1\times10^{-4}$. Per lo stesso motivo le differenze tra i $\sigma_n$ dei vari punti vengono quasi solo da $\sigma_\delta$.
 
-   \noindent A questo punto si può confrontare l'errore equivalente di ogni punto con la sua incertezza $\sigma_{\delta,i}$ (Tab.~\ref{tab:tacche}). I quattro punti a 620--690 nm hanno errori equivalenti di $1.6$--$2.4$ tacche e il punto a 420 nm di $2.7$; per gli altri nove punti l'errore equivalente è al più di $0.6$ tacche. In unità di $\sigma_\delta$, i cinque punti con residuo alto stanno tra $2.0$ e $3.3\,\sigma_\delta$, gli altri entro $0.8\,\sigma_\delta$. Per spiegare i cinque punti basterebbe quindi che $\delta_{min}$ fosse stato letto sbagliato di 2--3 tacche ($0.03^\circ$--$0.05^\circ$).
+   \noindent A questo punto si può confrontare l'errore equivalente di ogni punto con la sua incertezza $\sigma_{\delta,i}$ (Tab.~\ref{tab:tacche}). I quattro punti a 620--690 nm hanno errori equivalenti di $1.6$ ÷ $2.4$ tacche e il punto a 420 nm di $2.7$; per gli altri nove punti l'errore equivalente è al più di $0.6$ tacche. In unità di $\sigma_\delta$, i cinque punti con residuo alto stanno tra $2.0\,\sigma_\delta$ e $3.3\,\sigma_\delta$, gli altri entro $0.8\,\sigma_\delta$. Per spiegare i cinque punti basterebbe quindi che $\delta_{min}$ fosse stato letto sbagliato di 2--3 tacche ($0.03^\circ$--$0.05^\circ$).
 
 \begin{table}[H]
       \centering
-      \caption{Punti con $|r|>1$ rispetto al fit di Sellmeier completo ($r$ = residuo normalizzato). }
       \label{tab:tacche}
       \small
       \resizebox{\columnwidth}{!}{
@@ -462,6 +467,7 @@ Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero ca
         690 & 1.5134 & 1.5141 & $-0.0007$ & $-2.3$ & $-2.1$ & $0.8$ & $-2.6$ \\
         \bottomrule
       \end{tabular}}
+      \caption{Punti con $|r|>1$ rispetto al fit di Sellmeier completo ($r$ = residuo normalizzato). }
     \end{table}
     \noindent Infine, il residuo normalizzato $r$ è più piccolo di $\Delta\delta/\sigma_\delta$ (a 656 nm $r=2.48$ contro $2.9$), perché $\sigma_{eff}$ comprende anche l'incertezza su $\lambda$, oltre a quella su $n$.
 
@@ -470,27 +476,51 @@ Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero ca
     Si è anche verificato se gli scarti possano dipendere da una $\lambda$ diversa da quella nominale del filtro. Fittando con la \eqref{eq:2} i soli punti con $\lambda\le589$ nm, per ciascun $n_{mis}$ si è calcolata la $\lambda$ che la curva richiederebbe. Per i quattro punti con residuo alto si ottengono $605$, $635$, $699$ e $729$ nm al posto di $620$, $656$, $671$ e $690$ nm, cioè scarti di $-15$, $-21$, $+28$ e $+39$ nm; per tutti gli altri punti lo scarto è al più di $5$ nm. Gli scarti superano la tolleranza dei filtri ($\pm10$ nm), quindi l'incertezza su $\lambda$ da sola non basta e un errore di puntamento resta la spiegazione più naturale.
 
 \subsubsection{Ipotesi nell'errore di $\alpha$}
-Consideriamo ora l'ipotesi che lo scarto delle ultime 2 lunghezze d'onda sia dovuta ad una errata assunzione dell'isoscietà del prisma. Si pensa allora di avere due angoli diversi ai lati del prisma, rispettivamente nel nostro caso: $\alpha_1 = \frac{\pi}{2} + \epsilon$ e $\alpha_2 = \frac{\pi}{2} - \epsilon$. In base al lato avrò un differente angolo di deviazione minimo $\delta_1$ e $\delta_2$.
-Essendo che mi trovo alla stessa lunghezza d'onda, la $n$ dell'equazione \eqref{eq:1} è la stessa nei due lati del prisma, posso allora imporre:
+Infine, abbiamo considerato l'ipotesi che lo scarto ottenuto per le ultime 4 lunghezze d'onda sia dovuto ad un'errata assunzione sull'angolo $\alpha$ del prisma, supposto a forma di triangolo rettangolo isoscele ($\alpha_1^* = \alpha_2^*= \frac{\pi}{2}$).
+\noindent Dunque, si è supposto che gli angoli fossero diversi ai lati del prisma, rispettivamente nel nostro caso\footnote{Poiché una diminuzione di $\alpha$ sposta i punti verso l'alto (e viceversa), si è scelto di aggiungere o sottrarre $\epsilon$ a seconda della necessità di alzare o abbassare i punti per migliorare il fit.}:
+ $\alpha_1 = \frac{\pi}{2} + \epsilon$ e $\alpha_2 = \frac{\pi}{2} - \epsilon$. In base al lato si avrà un differente angolo di deviazione minima, $\delta_1$ e $\delta_2$.
+Per misure compiute alla stessa lunghezza d'onda, la $n$ dell'equazione \eqref{eq:1} è la stessa, indipendentemente dall'angolo considerato, cioè:
 \begin{equation}
   \frac{\sin(\frac{\delta_1+\alpha_1}{2})}{\sin(\frac{\alpha_1}{2})} =\frac{\sin(\frac{\delta_2+\alpha_2}{2})}{\sin(\frac{\alpha_2}{2})} 
 \end{equation}
-che andando a misurare in maniera sperimentale $\delta_1 - \delta_2 = C > 0$, posso andare ad invertire la mia equazione per trovare l'errore $\epsilon$
+Per verificare tale ipotesi, si sono compiute delle ulteriori misure, che hanno riportato angoli di deviazione minima differenti in base al lato del prisma considerato.
+Difatti, si è ottenuto $\delta_1 - \delta_2 = C > 0$. Si può ricavare l'errore $\epsilon$ invertendo la seguente l'equazione:
 \begin{equation}
   \frac{\sin\left(\frac{\delta_2 - \epsilon}{2} + \frac{\pi}{4}\right)\sin\left(\frac{\pi}{4} + \frac{\epsilon}{2}\right)}{\sin\left(\frac{\delta_2 + C + \epsilon}{2} + \frac{\pi}{4}\right)\sin\left(\frac{\pi}{4} - \frac{\epsilon}{2}\right)} = 1
 \end{equation}
-Ora nel caso di $\lambda = 690$ ho un $\delta_1 \cong 25.78^{\circ}$ e un $C \cong 0.04^{\circ}$ per quella $\lambda$; che mi portano ad un risultato di:
+Nel caso $\lambda = 690$ si ottiene $\delta_1 \cong 25.78^{\circ}$ e un $C \cong 0.04^{\circ}$; da cui si ricava:
 \begin{equation*}
   \boxed{\epsilon \cong 0.06^{\circ}}
 \end{equation*}
-Andando ora a valutare le ultime due lunghezze d'ond a assumendo che siano quelle prese dal lato con $\alpha_2$, ottengo il grafico corretto:
+Assumendo che la misura corrispondente alle ultime due lunghezze d'onda sia stata misurata sul lato con $\alpha_2$ (quando le altre sono state misurate sul lato con $\alpha_1$),
+si corregge il valore di $\alpha$ nella (\ref{eq:1}) sottraendogli $\epsilon$. Rigraficando i dati, si ottiene il seguente fit:
+
 \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_root_alpha.png}
         \caption{ Fit legge di Sellmeier, con termine correttivo su $\lambda = 671, 690$.}
         \label{fig4}
 \end{figure}
-Possiamo anche assumere che le due lunghezza d'onda pari a $\lambda= 620,656$ siano quello prese dal lato con $\alpha_1$ e le altre dall'altro lato:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $\chi^2$ & $6.5$ & [-]\\
+        $\chi^2_{ridotto}$ & $0.5$ & [-]\\
+        A & $1.3 \pm 10^{-3}$ & [-] \\  
+        B & $90 \pm 1$ nm & [no] \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri del fit con correzzione di $\alpha$ per le ultime due misure e loro compatibilità.}
+    \label{tab:parametri_fig1}
+\end{table}
+
+Ragionando in modo opposto, si può assumere che la misura alle lunghezze d'onda $\lambda = 620, 656$ sia stata misurata sul lato con $\alpha_1$, mentre le altre sul lato con $\alpha_2$. 
+Contrariamente a prima, si corregge il valore di $\alpha$ nella (\ref{eq:1}), per queste due misure, aggiungendogli $\epsilon$. Rigraficando i dati, si ottiene il seguente fit:
+
 \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/fit_root_alpha1.png}
@@ -498,9 +528,35 @@ Possiamo anche assumere che le due lunghezza d'onda pari a $\lambda= 620,656$ si
         \label{fig4}
 \end{figure}
 
-\section{Conclusioni}
-\noindent Abbiamo misurato l'indice di rifrazione $n$ di un prisma di vetro a 14 lunghezze d'onda tra 450 e 700 nm e abbiamo verificato se segue l'equazione di Sellmeier \eqref{eq:2}. Come atteso, $n$ diminuisce al crescere di $\lambda$. Il fit dà $A=1.268\pm0.001$ e $B=(95\pm1)$ nm, con $\chi^2_{ridotto}=1.6$ ($p=0.07$): il modello non è rigettato, anche se non è ottimo. I residui normalizzati sono compatibili con una gaussiana standard ($\mu=-0.15\pm0.25$, $\sigma=0.87\pm0.18$). Il fit con una retta \eqref{eq:3}, che ha lo stesso numero di parametri, è invece nettamente peggiore ($\chi^2_{ridotto}=4.6$, $p\sim10^{-7}$, $\Delta\chi^2=35.4$): i dati mostrano la curvatura prevista da Sellmeier. Il valore di $B$ è vicino ai 100 nm attesi, ma non compatibile con essi (circa $5\sigma$). Il modello è però un'approssimazione di un vetro reale, quindi $B$ è un parametro variabile e non va interpretato troppo letteralmente.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità} \\
+        \midrule
+        $\chi^2$ & $10.3$ & [-]\\
+        $\chi^2_{ridotto}$ & $0.8$ & [-]\\
+        A & $1.3 \pm 10^{-3}$ & [-] \\  
+        B & $98 \pm 2$ nm & [sì] \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri del fit con correzzione di $\alpha$ per la penultima coppia di misure e loro compatibilità.}
+    \label{tab:11}
+\end{table}
 
-\noindent Il $91\%$ del $\chi^2$ viene da quattro punti tra 620 e 690 nm. Il loro scarto equivale a leggere $\delta_{min}$ sbagliato di circa 2 tacche del nonio, e non è spiegabile con la tolleranza dei filtri ($\pm10$ nm). La causa più probabile è quindi un errore di lettura dell'angolo, ma non si è riuscito a stabilire quale coppia di punti sia responsabile. Per questo si è deciso di  tenere tutti i dati nel risultato finale. In conclusione, i dati sono compatibili con la legge di Sellmeier e escludono una dipendenza lineare di $n$ da $\lambda$.
+Quest'ultimo fit ha un $\chi^2_{ridotto}$ nettamente migliore rispetto a tutti gli altri, suggerendo che le misure con base del prisma differente siano a $\lambda = 620, 656$ nm. Inoltre, il valore di $B$ risulta compatibile con quello atteso.
+
+\section{Conclusioni}
+\noindent Abbiamo misurato l'indice di rifrazione $n$ di un prisma di vetro a 14 lunghezze d'onda tra 450 e 700 nm e abbiamo verificato se segue l'equazione di Sellmeier \eqref{eq:2}. Come atteso, $n$ diminuisce al crescere di $\lambda$. 
+
+Il fit restituisce $A=1.268\pm0.001$ e $B=(95\pm1)$ nm, con $\chi^2_{ridotto}=1.6$ ($p=0.07$): il modello non è rigettato, anche se non è ottimo. I residui normalizzati sono compatibili con una gaussiana standard ($\mu=-0.15\pm0.25$, $\sigma=0.87\pm0.18$). Il fit con la retta di fit \eqref{eq:3}, è invece nettamente peggiore ($\chi^2_{ridotto}=4.6$, $p\sim10^{-7}$, $\Delta\chi^2=35.4$): i dati mostrano la curvatura prevista da Sellmeier. 
+Il valore di $B$ è vicino ai 100 nm attesi, ma non compatibile con essi (rientra in circa $5\sigma$). Il modello è però un'approssimazione di un vetro reale, quindi $B$ è un parametro variabile e non va interpretato troppo letteralmente.
+
+\noindent Il $91\%$ del $\chi^2$ viene da quattro punti tra 620 e 690 nm. Il loro scarto equivale a leggere $\delta_{min}$ sbagliato di circa 2 tacche del nonio, e non è spiegabile con la tolleranza dei filtri ($\pm10$ nm). La causa più probabile è quindi un errore di lettura dell'angolo, ma non si è riuscito a stabilire quale coppia di punti sia responsabile. 
+Per questo si è deciso di tenere tutti i dati nel risultato finale. 
+
+In ultima analisi, si è considerata la possibilità che il prisma non fosse perfettamente un triangolo rettangolo isoscele. Correggendo l'angolo $\alpha$ si ottiene un fit nettamente migliore, suggerendo la validità di questa ipotesi. 
+
+In conclusione, i dati sono compatibili con la legge di Sellmeier e escludono una dipendenza lineare di $n$ da $\lambda$.
     
     \end{document}
