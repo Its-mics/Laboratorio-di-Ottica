@@ -252,7 +252,7 @@
               & \times ( 1 + E \cos(2  \theta - C))
         \end{split}
       \end{equation}
-      Con questa nuova funzione di fit, si è ottenuto un $\chi^2_{ridotto}= 1{,}03$, ed un grafico dei residui decisamente migliore (visibile in \ref{fig5}). 
+      Con questa nuova funzione di fit, si è ottenuto un $\chi^2_{ridotto}= 1$, ed un grafico dei residui decisamente migliore (visibile in \ref{fig5}). 
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Immagini/malus_residui_filtro.png}
@@ -298,8 +298,8 @@
         \end{split}
       \label{eq:4}
       \end{equation}
-      Il $\chi^2$ scende da $193{,}7$ a $100{,}7$ con un solo parametro in più, e i valori ottenuti (Tabella~\ref{tab:par4}) sono $F = (159{,}0 \pm 2{,}0)^\circ$ e $C = (176{,}8 \pm 0{,}2)^\circ$.
-      La loro differenza è $F - C = (-17{,}8 \pm 1{,}8)^\circ$ ciò ci dice che: la fase dell'andamento periodico non coincide con quella del secondo polarizzatore,
+      Il $\chi_{rid}^2$ scende da $1$ a $0.5$ con un solo parametro in più, e i valori ottenuti (Tabella~\ref{tab:par4}) sono $F = (159 \pm 2)^\circ$ e $C = (176.8 \pm 0{,}2)^\circ$.
+      La loro differenza è $F - C = -17{,}8 ^\circ$ ciò ci dice che: la fase dell'andamento periodico non coincide con quella del secondo polarizzatore,
       e quindi l'ipotesi di una sua disomogeneità non è sufficiente a spiegare i dati. 
       \begin{table}[H]
         \centering
@@ -308,12 +308,12 @@
           \toprule
           Parametro & Valore \\
           \midrule
-          $A$ [V]               & $2{,}481 \pm 0{,}019$ \\
+          $A$ [V]               & $2{,}48 \pm 0{,}02$ \\
           $B$ [V]               & $2{,}603 \pm 0{,}007$ \\
           $C$ [rad]             & $3{,}086 \pm 0{,}004$ \\
           $D$ [rad$^{-1}$]      & $(-1{,}15 \pm 0{,}16)\cdot 10^{-3}$ \\
-          $E$                   & $0{,}0673 \pm 0{,}0024$ \\
-          $F$ [rad]             & $2{,}775 \pm 0{,}035$ \\
+          $E$                   & $0{,}067 \pm 0{,}002$ \\
+          $F$ [rad]             & $2{,}78 \pm 0{,}04$ \\
           \midrule
           $\chi^2/\mathrm{ndf}$ & $100{,}7/188 = 0{,}54$ \\
           \bottomrule
@@ -346,7 +346,7 @@
         \end{split}
       \label{eq:5}
       \end{equation}
-    Il $\chi^2$ passa da $651{,}7$ ($190$ gradi di libertà) a $100{,}8$ ($188$), con $G = (0{,}0416 \pm 0{,}0018)$~V, pari allo $0{,}87\%$ del valore massimo $V_{max} = 4{,}80$~V, e $H = (152{,}6 \pm 2{,}5)^\circ$.
+    Il $\chi^2_{rid}$ passa da $0.54$ a $0.53$, con $G = (0{,}0416 \pm 0{,}002)$~V, pari allo $0{,}87\%$ del valore massimo $V_{max} = 4{,}80$~V, e $H = (152{,}6 \pm 2{,}5)^\circ$.
       I residui normalizzati che ne risultano (Figura~\ref{fig:disom3}) non mostrano più un andamento periodico e hanno un andamento casuale.
       \begin{figure}[H]
         \centering
@@ -362,19 +362,15 @@
         \item una parte polarizzata linearmente lungo $\varphi_0$, di irradianza $I_0 P$.
       \end{itemize}
       Dopo il primo polarizzatore, ruotato di un angolo $\theta$, la parte non polarizzata viene dimezzata, mentre quella polarizzata segue la legge di Malus rispetto a $\varphi_0$:
-      \begin{equation}
-        \begin{split}
+      \begin{align*}
           I_1(\theta) &= \frac{I_0(1-P)}{2} + I_0 P\cos^2(\theta - \varphi_0) \\
                       &= \frac{I_0}{2}\left[ 1 + P\cos 2(\theta - \varphi_0) \right]
-        \end{split}
-      \end{equation}
-      Questa luce attraversa il secondo polarizzatore, il cui asse corrisponde a $\theta = C$ sulla scala, e vale ancora la legge di Malus:
-      \begin{equation}
-        \begin{split}
+      \end{align*}
+      Questa luce attraversa il secondo polarizzatore, il cui asse è sfasato di un angolo $C$, e vale ancora la legge di Malus:
+      \begin{align*}
           I_2(\theta) &= I_1(\theta)\cos^2(\theta - C) \\
                       &= \frac{I_0}{4}\left[ 1 + P\cos 2(\theta - \varphi_0) \right]\left[ 1 + \cos 2(\theta - C) \right]
-        \end{split}
-      \end{equation}
+        \end{align*}
       Nello sviluppo compare il prodotto di due coseni con argomento $2\theta$, che per la formula di prostaferesi $\cos a\cos b = \tfrac{1}{2}\left[ \cos(a-b) + \cos(a+b) \right]$ diventa
       \begin{equation}
         \begin{split}
@@ -405,8 +401,8 @@
       dove si è usato che, per $P$ piccolo, l'ampiezza della parte di Malus è $A \simeq I_0/2$. 
  \newline
 
-      La funzione \ref{eq:4} è la stessa ipotesi dove si moltiplica invece che somamre.
-      Sviluppando il prodotto come sopra, il suo termine a $4\theta$ ha ampiezza $G = AE/4$ e fase $H = F + 2C$, in accordo con la relazione appena ricavata.
+      La funzione di fit \ref{eq:4} tiene già conto di questa ipotesi, ma si moltiplica invece che sommare.
+      Sviluppando il prodotto come sopra, il termine a $4\theta$ ha ampiezza $G = AE/4$ e fase $H = F + 2C$, in accordo con la relazione appena ricavata.
       Usando i parametri del fit con la fase libera (Tabella~\ref{tab:par4}) si ottengono quindi i valori attesi per $G$ e $H$, che confrontiamo con quelli ricavati direttamente dai residui (Tabella~\ref{tab:conf}).
       \begin{table}[H]
         \centering
@@ -415,9 +411,9 @@
           \toprule
           & Fit dei residui & Dal fit con $E$, $F$ \\
           \midrule
-          $G$ [V]               & $0{,}0416 \pm 0{,}0018$ & $0{,}0417 \pm 0{,}0018$ \\
-          $H$ [$^\circ$]        & $152{,}6 \pm 2{,}5$     & $152{,}6 \pm 2{,}4$ \\
-          $\chi^2/\mathrm{ndf}$ & $100{,}8/188$           & $100{,}7/188$ \\
+          $G$ [V]               & $0{,}042 \pm 0{,}002$ & $0{,}041 \pm 0{,}002$ \\
+          $H$ [$^\circ$]        & $153 \pm 3$     & $153 \pm 3$ \\
+          $\chi_{rid}^2$ & $0.5$           & $0.5$ \\
           \bottomrule
         \end{tabular}
         \caption{Ampiezza e fase dell'onda con $k = 4$, ricavate dal fit dei residui e dal fit con la fase libera.}
@@ -430,24 +426,22 @@
       che forma un angolo di $(82{,}7 \pm 0{,}8)^\circ$ con l'asse del secondo polarizzatore.
       
 
-      Resta da commentare il $\chi^2/\mathrm{ndf} = 0{,}54$, che è minore di $1$. Un valore così basso potrebbe far sospettare un overfitting, ma con $6$ parametri su $194$ punti, tutti con un significato fisico, non si ritiene la spiegazione più plausibile.
+      Resta da commentare il $\chi^2/\mathrm{ndf} = 0{,}54$, che è minore di $1$. Un valore così basso potrebbe far sospettare un overfitting, viene riportata un analisi su questo fatto nella sezione succesiva.
       È anche probabile che le incertezze siano state scelte in modo eccessivo.
  
 
       \subsubsection{Dubbio sull'\emph{overfitting}}
       Ogni parametro aggiunto al modello ne aumenta la flessibilità e quindi, migliora l'accordo con i dati e abbassa il $\chi^2$, anche quando il parametro non descrive il fenomeno fisico.
-      Se il modello finisce per adattarsi al rumore dei dati invece che al fenomeno, si sta riscontrando un \emph{overfitting}. Aggiungendo la deriva ($D$) e la modulazione ($E$) ai fit si è quindi corso questo rischio.
-     Ci limitiamo perciò a motivare perché riteniamo che non si sia verificato e che il miglioramento ottenuto sia reale.
-      \begin{itemize}
-        \item Ciascun parametro è stato introdotto per descrivere un effetto di un fenomeno fisico (lo scaricamento della batteria, l'andamenento periodico), dopo aver osservato un andamento sistematico nei residui.
-        \item  Il modello passa da $3$ a $5$ parametri su $194$ punti e ciò è troppo poco per seguire le fluttuazioni di ogni punto, per cui può riprodurre solo un andamento sistematico.
-        \item  L'introduzione dei parametri non si limita a un $\chi^2$ più basso ma fa scomparire l'andamento periodico dei residui.
-      \end{itemize}
+      Se il modello finisce per adattarsi al rumore dei dati invece che al fenomeno, si sta riscontrando un \emph{overfitting}. Aggiungendo parametri ai fit si è quindi corso questo rischio.
+      Vogliamo però motivare la nostra scelta, e affermare che il miglioramento ottenuto sia reale.
+      Ciascun parametro aggiunto è stato accompagnato da una spiegazione sul fenomeno fisico che dovrebbe modellare (lo scaricamento della batteria, l'andamenento periodico).
+
+      \noindent Il modello passa da $3$ a $5$ parametri su $194$ punti e ciò è troppo poco per seguire le fluttuazioni di ogni punto.
       Riteniamo quindi che il miglioramento ottenuto sia dovuto alla descrizione di un effetto sistematico reale e non a un adattamento al rumore.
 
 
 \section{Conclusioni}
-Abbiamo valutato l'andamento dell'intensità di una sorgente luminosa (supposta isotropa) passante prima per un polarizzatore e poi per un analizzatore. Utilizzadno come funzione di prova la sola legge di Malus (\ref{eq:1}), si ha un $\chi^2_{red} = 3,93$ e residui normlizzati con $\mu = 0.44 \pm 0.2, \; \sigma = 2.27 \pm 0.2$, dunque possiamo scare l'ipotesi che questa descrive bene i nostri dati. \\
+Abbiamo valutato l'andamento dell'intensità di una sorgente luminosa (supposta isotropa) passante prima per un polarizzatore e poi per un analizzatore. Utilizzando come funzione di fit la sola legge di Malus (\ref{eq:1}), si ha un $\chi^2_{red} = 3,93$ e residui normlizzati con $\mu = 0.44 \pm 0.2, \; \sigma = 2.27 \pm 0.2$, dunque possiamo scare l'ipotesi che questa descrive bene i nostri dati. \\
 Dobbiamo allora considerare i termini corretti dovuti agli errori sistematici presenti nell'apparato speirmentale: scaricamento batteria fotodiodo (\ref{eq:2}) e luce parzialmente polarizzata (\ref{eq:5}). Da questa ipotesi si ottiene una funzione di fit con un $\chi^2_{red} = 0.53$, mentre i residui normalizzati hanno parametri: $\mu = -0.01 \pm 0.05, \; \sigma = 0.73 \pm 0.05$
 
 
