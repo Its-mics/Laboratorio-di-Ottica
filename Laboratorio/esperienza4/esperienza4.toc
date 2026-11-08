@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {2}Apparato sperimentale}{3}{section.2}%
 \contentsline {section}{\numberline {3}Analisi Dati}{3}{section.3}%
 \contentsline {section}{\numberline {4}Grafici}{3}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Correzzione per lo scaricamento della batteria}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}Correzione per lo scaricamento della batteria}{4}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Correzione per l'andamento periodico}{4}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Percentuale di residui entro $1\sigma $}{5}{subsubsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.3}Ipotesi di una sorgente parzialmente polarizzata}{5}{subsection.4.3}%

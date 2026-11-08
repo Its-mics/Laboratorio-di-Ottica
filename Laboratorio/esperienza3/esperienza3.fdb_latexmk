@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794132515.08956 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" "esperienza3.pdf" "esperienza3" 1794132519.59122 0
+["pdflatex"] 1794133131.77555 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" "esperienza3.pdf" "esperienza3" 1794133134.2669 0
   "Analisi dati/Immagini/fit_confronto.png" 1793210402 20319 aa45b41f671b7b049aee3b2a5d8e743c ""
   "Analisi dati/Immagini/fit_line.png" 1793210402 18648 b2d55e94888b2f02e474e88baeda3aaa ""
   "Analisi dati/Immagini/fit_lineare.png" 1793210402 17565 39f3dcbc7d1149ac26a70fc5e0ac04f8 ""
@@ -283,11 +283,11 @@
   "C:/Users/manue/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253165583 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/manue/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/manue/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729261622 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" 1794132509 28913 66f8fd1444726101d5af2c6abee3bdff ""
-  "esperienza3.aux" 1794132518 8165 8d4f4eed565b246b99d753ae5eb83f37 "pdflatex"
-  "esperienza3.out" 1794132518 2131 9ee9e512e584cce333a03d4e4f9bca88 "pdflatex"
-  "esperienza3.tex" 1794132509 28913 66f8fd1444726101d5af2c6abee3bdff ""
-  "esperienza3.toc" 1794132518 1146 63c62f23347346cb1e4c6757ce5ba7a1 "pdflatex"
+  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" 1794133130 28832 2fc9d1f8d4f54ffa2b84d659480f9725 ""
+  "esperienza3.aux" 1794133133 8165 8d4f4eed565b246b99d753ae5eb83f37 "pdflatex"
+  "esperienza3.out" 1794133133 2131 9ee9e512e584cce333a03d4e4f9bca88 "pdflatex"
+  "esperienza3.tex" 1794133130 28832 2fc9d1f8d4f54ffa2b84d659480f9725 ""
+  "esperienza3.toc" 1794133133 1146 63c62f23347346cb1e4c6757ce5ba7a1 "pdflatex"
   (generated)
   "esperienza3.aux"
   "esperienza3.log"
