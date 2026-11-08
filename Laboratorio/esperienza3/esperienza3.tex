@@ -85,7 +85,7 @@
     L'apparato è composto dai seguenti elementi:
     \begin{itemize}
         \item Sorgenti luminose: Una lampada al sodio che emette una riga spettrale nota a $\lambda = (589 \pm 1) \text{ nm}$ e un faretto a luce bianca;
-        \item Filtri: 13 filtri che selezionano lunghezze d'onda nel range del visibile (da $450 \text{ nm}$ a $700 \text{ nm}$, con $\Delta\lambda \approx \pm 10 \text{ nm}$);
+        \item Filtri: 14 filtri che selezionano lunghezze d'onda nel range del visibile (da $450 \text{ nm}$ a $700 \text{ nm}$, con $\Delta\lambda \approx \pm 5 \text{ nm}$);
         \item Prisma: Un prisma di vetro (con $n_v \sim 1.5$, valore medio sperimentale) a base triangolare isoscele;
         \item Goniometro ottico: Costituito da un piatto graduato rotante con sopra un supporto su cui poggia il prisma;
         \item Collimatore con fenditura regolabile; 
@@ -303,8 +303,8 @@
         \toprule
         \textbf{Parametri} & \textbf{Valori} & \textbf{Compatibilità}\\
         \midrule
-        $m$ & ($-4 \times 10^{-7}$ $\pm$ $10^{-6}$) $nm^{-1}$ & [sì] \\
-        $q$ & $2.4 \times 10^{-4}$   $\pm$ $7.8 \times 10^{-4}$ & [sì]\\  
+        $m$ & ($-0.4  \pm  1 ) \times 10^{-6}$ nm$^{-1}$ & [sì] \\
+        $q$ & ($2.4 $$\pm$ $7.8) \times 10^{-4}$ & [sì]\\  
         \bottomrule
     \end{tabular}
     \caption{Parametri della retta dei residui e loro compatibilità.}
@@ -364,59 +364,28 @@ Togliendo solo una fra l'ultima o la penultima coppia, il $\chi^2_{\text{ridotto
 \end{table}
 
    \noindent Le quattro misure si discostano in modo simile e togliere una qualunque coppia migliora il fit allo stesso modo (Tab. \ref{tab:fit}). Tramite questa analisi non si può concludere dire quale delle due (o entrambre) sia anomala.
-  \noindent Per questo motivo riportiamo gli istogrammi ottenuti dei residui normalizzati e i relativi parametri $\mu$ $\sigma$.
+  \noindent Non riportiamo gli istogrammi ottenuti dei residui normalizzati e i relativi parametri $\mu$ $\sigma$ con i punti esclusi poichè, in virtù del teorema del limite centrale, togliendo punti al nostro campione di misure se ne riduce la dimensione,
+   quindi la distribuzione seguita dai dati si discosta sempre di più dalla gaussiana standard. 
+Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero campione delle 14 misure, e quindi avendo maggiore statistica, i parametri risultano entrambi compatibili.
     
-    
-
-      \begin{figure}[H]
-        \centering
-      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png}
-        \caption{ istogramma residui normalizzati ottenuto togliendo dal fit i punti rispettivi a $\lambda=620,656$ .}
-        \label{fig4}
-      \end{figure}
-
-
+Riportiamo comunque una tabella che riporta il valore medio dei residui normalizzati e la loro deviazione standard.
       \begin{table}[H]
     \centering
-    \begin{tabular}{ccc}
+    \begin{tabular}{cc}
         \toprule
-        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
+        \textbf{Parametri} & \textbf{Valori} \\
         \midrule
     
-        $\mu$ & $14.4 \pm 19.5$  & [si] \\
-        $\sigma$ & $4.34\pm 2.81$  & [si] \\
+        $\bar{r}_{\text{no 671,690 }}$ & $14.4 \pm 19.5$  \\
+        $\sigma_{r_{\text{no 671,690}}}$ & $4.34\pm 2.81$  \\
+        $\bar{r}_{\text{no 620,656}} $ &  $(8.92\pm 1.49)\times10^{-1}$ \\
+        $\sigma_{r_{\text{no 620,656}}}$ & $(5.29 \pm 1.20)\times10^{-1}$ \\
         \bottomrule
     \end{tabular}
     \caption{valori dei parametri togliendo i penultimi due punti.}
     \label{tab:risultati_fit_nuovi}
 \end{table}
 
-\noindent I valori ottenuti in questo caso ci lasciano intendere come l'errore sui parametri sia sovrastimato, questa conclusione deriva anche dal fatto che  il $\chi^2$ dell'istogramma assume un valore minore di 1. 
-
-  \begin{figure}[H]
-        \centering
-      \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png}
-        \caption{ istogramma residui normalizzati ottenuto togliendo dal fit i punti rispettivi a $\lambda=671,690$.}
-        \label{fig4}
-      \end{figure}
-
-
-      \begin{table}[H]
-    \centering
-    \begin{tabular}{ccc}
-        \toprule
-        \textbf{Parametri} & \textbf{Valori} & \textbf{Compatabilità} \\
-        \midrule
-       
-        $\mu$ &  $(8.92\pm 1.49)\times10^{-1}$ & [no] \\
-        $\sigma$ & $(5.29 \pm 1.20)\times10^{-1}$ & [no] \\
-        \bottomrule
-    \end{tabular}
-    \caption{valori dei parametri togliendo gli ultimi due punti.}
-    \label{tab:risultati_fit_nuovi}
-\end{table}
- \noindent In questo caso abbiamo errori minori ma non abbiamo compatibilità dei parametri con i valori teorici, ciò risulta ragionevole in virtù del teorema del limite centrale: togliendo punti al nostro campione di misure se ne riduce la dimensione, quindi la distribuzione seguita dai dati si discosta sempre di più dalla gaussiana standard. 
-Questa conclusione è ancora più evidente dal fatto che cosiderando l'intero campione delle 14 misure, e quindi avendo maggiore statistica, i parametri risultano entrambi compatibili.
 \noindent Concludiamo quindi che non possiamo stabilire quale delle due coppie sia quella "anomala" e che escludere una delle due dal campione porta a risultati non validi.
 
     \subsubsection{Confronto dei residui con la precisione del goniometro}
@@ -514,7 +483,7 @@ si corregge il valore di $\alpha$ nella (\ref{eq:1}) sottraendogli $\epsilon$. R
         B & $90 \pm 1$ nm & [no] \\
         \bottomrule
     \end{tabular}
-    \caption{Parametri del fit con correzzione di $\alpha$ per le ultime due misure e loro compatibilità.}
+    \caption{Parametri del fit con correzione di $\alpha$ per le ultime due misure e loro compatibilità.}
     \label{tab:parametri_fig1}
 \end{table}
 
@@ -540,7 +509,7 @@ Contrariamente a prima, si corregge il valore di $\alpha$ nella (\ref{eq:1}), pe
         B & $98 \pm 2$ nm & [sì] \\
         \bottomrule
     \end{tabular}
-    \caption{Parametri del fit con correzzione di $\alpha$ per la penultima coppia di misure e loro compatibilità.}
+    \caption{Parametri del fit con correzione di $\alpha$ per la penultima coppia di misure e loro compatibilità.}
     \label{tab:11}
 \end{table}
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794068379.12732 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" "esperienza3.pdf" "esperienza3" 1794068385.98373 0
+["pdflatex"] 1794132515.08956 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" "esperienza3.pdf" "esperienza3" 1794132519.59122 0
   "Analisi dati/Immagini/fit_confronto.png" 1793210402 20319 aa45b41f671b7b049aee3b2a5d8e743c ""
   "Analisi dati/Immagini/fit_line.png" 1793210402 18648 b2d55e94888b2f02e474e88baeda3aaa ""
   "Analisi dati/Immagini/fit_lineare.png" 1793210402 17565 39f3dcbc7d1149ac26a70fc5e0ac04f8 ""
@@ -7,8 +7,6 @@
   "Analisi dati/Immagini/fit_root_alpha.png" 1794038438 20690 91cf72ee66fd6531030e429efcd7d8bc ""
   "Analisi dati/Immagini/fit_root_alpha1.png" 1794038438 21001 a32a40f079f5f0fb00cae178e45a091d ""
   "Analisi dati/Immagini/hist.png" 1793210402 24580 91f5be188ed875faf0681d996c7bbd57 ""
-  "Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png" 1793210402 21275 c610b100e1aab09b1d0e5d5789eb257b ""
-  "Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png" 1793210402 23463 2f29a1e76d6fe6425c99f4940ec4cda6 ""
   "Analisi dati/risultati.tex" 1794038438 262 a6e02d2a0240918234d22c255030ec7a ""
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1792494984 81015 8f522890e5525b3cb752cee1c80a3b68 ""
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0900.pk" 1748538834 22504 42a3f95f43de46a13cbf653330dc2dd8 ""
@@ -285,11 +283,11 @@
   "C:/Users/manue/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253165583 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/manue/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/manue/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729261622 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" 1794068376 30103 082eb7e59fd97712d6335e826f4eb8f9 ""
-  "esperienza3.aux" 1794068384 9191 a764204fc1646a3972f5647cdef0a901 "pdflatex"
-  "esperienza3.out" 1794068384 2131 9ee9e512e584cce333a03d4e4f9bca88 "pdflatex"
-  "esperienza3.tex" 1794068376 30103 082eb7e59fd97712d6335e826f4eb8f9 ""
-  "esperienza3.toc" 1794068384 1146 d2a648dd9d91ab42de0d0f16985c1710 "pdflatex"
+  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza3/esperienza3.tex" 1794132509 28913 66f8fd1444726101d5af2c6abee3bdff ""
+  "esperienza3.aux" 1794132518 8165 8d4f4eed565b246b99d753ae5eb83f37 "pdflatex"
+  "esperienza3.out" 1794132518 2131 9ee9e512e584cce333a03d4e4f9bca88 "pdflatex"
+  "esperienza3.tex" 1794132509 28913 66f8fd1444726101d5af2c6abee3bdff ""
+  "esperienza3.toc" 1794132518 1146 63c62f23347346cb1e4c6757ce5ba7a1 "pdflatex"
   (generated)
   "esperienza3.aux"
   "esperienza3.log"

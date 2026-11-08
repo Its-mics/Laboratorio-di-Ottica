@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  7 NOV 2026 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  8 NOV 2026 11:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -803,15 +803,6 @@ LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
 LaTeX Warning: Label `tab:parametri_fig2' multiply defined.
 
 
-LaTeX Warning: Label `fig4' multiply defined.
-
-
-LaTeX Warning: Label `tab:risultati_fit_nuovi' multiply defined.
-
-
-LaTeX Warning: Label `fig4' multiply defined.
-
-
 LaTeX Warning: Label `tab:risultati_fit_nuovi' multiply defined.
 
 
@@ -1039,7 +1030,7 @@ File: Analisi dati/Immagini/fit_line.png Graphic file (type png)
 Package pdftex.def Info: Analisi dati/Immagini/fit_line.png  used on input line 294.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
-Overfull \hbox (35.47282pt too wide) in paragraph at lines 302--310
+Overfull \hbox (24.39774pt too wide) in paragraph at lines 302--310
  [][] 
  []
 
@@ -1060,70 +1051,56 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 339.
 
-<Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png, id=176, 798.985pt x 574.145pt>
-File: Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png Graphic file (type png)
-<use Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png>
-Package pdftex.def Info: Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png  used on input line 373.
-(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-
-
-[5 <./Analisi dati/Immagini/fit_line.png> <./Analisi dati/Immagini/istogrammi/hist_togliendo_620_656.png>]
-<Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png, id=194, 798.985pt x 574.145pt>
-File: Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png Graphic file (type png)
-<use Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png>
-Package pdftex.def Info: Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png  used on input line 398.
-(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-
-Overfull \hbox (8.83981pt too wide) in paragraph at lines 406--415
- [][] 
- []
-
-
-
-
-Package caption Warning: \label without proper reference on input line 456.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab:tacche' on page 6 undefined on input line 452.
-
-
-
-[6 <./Analisi dati/Immagini/istogrammi/hist_togliendo_671_690.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 478.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 478.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 478.
-
-
-
-<Analisi dati/Immagini/fit_root_alpha.png, id=214, 798.985pt x 574.145pt>
-File: Analisi dati/Immagini/fit_root_alpha.png Graphic file (type png)
-<use Analisi dati/Immagini/fit_root_alpha.png>
-Package pdftex.def Info: Analisi dati/Immagini/fit_root_alpha.png  used on input line 500.
-(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/fit_root_alpha1.png, id=216, 798.985pt x 574.145pt>
-File: Analisi dati/Immagini/fit_root_alpha1.png Graphic file (type png)
-<use Analisi dati/Immagini/fit_root_alpha1.png>
-Package pdftex.def Info: Analisi dati/Immagini/fit_root_alpha1.png  used on input line 526.
-(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[7 <./Analisi dati/Immagini/fit_root_alpha.png>]
+[5 <./Analisi dati/Immagini/fit_line.png>]
+
+
+Package caption Warning: \label without proper reference on input line 425.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:tacche' on page 6 undefined on input line 421.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 447.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\alpha' on input line 447.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 447.
 
 
 
-[8 <./Analisi dati/Immagini/fit_root_alpha1.png>] (esperienza3.aux)
+[6]
+<Analisi dati/Immagini/fit_root_alpha.png, id=210, 798.985pt x 574.145pt>
+File: Analisi dati/Immagini/fit_root_alpha.png Graphic file (type png)
+<use Analisi dati/Immagini/fit_root_alpha.png>
+Package pdftex.def Info: Analisi dati/Immagini/fit_root_alpha.png  used on input line 469.
+(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
+
+
+<Analisi dati/Immagini/fit_root_alpha1.png, id=212, 798.985pt x 574.145pt>
+File: Analisi dati/Immagini/fit_root_alpha1.png Graphic file (type png)
+<use Analisi dati/Immagini/fit_root_alpha1.png>
+Package pdftex.def Info: Analisi dati/Immagini/fit_root_alpha1.png  used on input line 495.
+(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
+
+
+[7 <./Analisi dati/Immagini/fit_root_alpha.png> <./Analisi dati/Immagini/fit_root_alpha1.png>]
+
+
+
+[8
+
+] (esperienza3.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -1139,17 +1116,17 @@ Package rerunfilecheck Info: File `esperienza3.out' has not changed.
 (rerunfilecheck)             Checksum: 9EE9E512E584CCE333A03D4E4F9BCA88;2131.
  ) 
 Here is how much of TeX's memory you used:
- 54781 strings out of 469959
- 1317572 string characters out of 5469834
- 1956767 words of memory out of 5000000
- 80889 multiletter control sequences out of 15000+600000
+ 54764 strings out of 469959
+ 1316600 string characters out of 5469834
+ 1959764 words of memory out of 5000000
+ 80875 multiletter control sequences out of 15000+600000
  646507 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,13n,106p,793b,1061s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,15n,106p,793b,1061s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0500.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0900.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on esperienza3.pdf (8 pages, 486483 bytes).
+Output written on esperienza3.pdf (8 pages, 455888 bytes).
 PDF statistics:
- 694 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 703 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 288 words of extra memory for PDF output out of 10000 (max. 10000000)
 
