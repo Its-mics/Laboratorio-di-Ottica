@@ -3918,6 +3918,208 @@ Prendendo l'ampiezza di questa oscillazione ($\Delta V$) e dividendola per l'amp
 
 Infine, si potrà notare che l'inizio e la fine della curva (a $0^\circ$ e a $360^\circ$) potrebbero non combaciare perfettamente (la curva "non si chiude"). Ciò è dovuto a piccole variazioni della risposta dello strumento nel corso del tempo: durante il tempo necessario a prendere le misure, il riscaldamento della lampadina e la reazione del fotodiodo possono causare una lenta variazione dell'intensità o della sensibilità di fondo.
 
+\section{Fenomeni di rifrazione e riflessione}
+Consideriamo una superfice di separazione tra due mezzi ottici con indici di rifrazione $n_1$ e $n_2$.
+Supponiamo un onda incida su tale superficie con un angolo $\theta_i$ rispetto alla normale. 
+
+All'onda incidente e rifratta associamo dei campi elettrici $\vec{E}_i$ e $\vec{E}_t$ e magnetici $\vec{H}_i$ e $\vec{H}_t$.
+
+Consideriamo dapprima il caso del campo elettrico parallelo al piano, ossia di \textit{polarizzazzione trasversa elettrica} (TE).
+Il secondo caso sarà quello del campo elettrico perpendicolare al piano, ossia di \textit{polarizzazione trasversa magnetica} (TM).
+
+Poichè possiamo descrivere ogni onda EM utilizzando un sistema di versori, utilizzero questi per scomporle in queste due polarizzazzioni.
+
+Dobbiamo impostare le condizione di continuità all'interfaccia
+\[
+E_i + E_r = E_t
+\]
+\[
+H_i + H_r = H_t
+\]
+Sapendo che $H = 1/ \mu k \times \vec E$, avrò 
+\[
+-kE \cos (\theta_i) + kE_r \cos(\theta_i) = -kE_t\cos(\theta_t)
+\]
+Dalla relazione per H invece ottengo:
+\[
+E_i \cos(\theta_i) + E_r \cos(\theta_i) = E_t \cos(\theta_t)
+\]
+Introduco i coefficenti di trasmissione e riflessione:
+\[
+r_s = E_r/E_i |TE
+e_l =E_r/E |TM
+\]
+\[
+T_s = E_T/E_i |TE
+eT_l =E_T/E |TM
+\]
+abbiamo un iportante relazione:
+\[
+r_s = \frac{n_i \cos \theta_i - n_t \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} 
+\]
+e
+\[
+r_t = \frac{- n_i \cos \theta_i + n_i \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} 
+\]
+da cui:
+\[
+r_s = r_p = \frac{n_i - n_t}{n_i + n_p}
+\]
+Sfruttando snell posso riscrivere $r_s$
+\[
+r_s = \frac{n_i \cos \theta_i - \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}{n_i \cos \theta_i + \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}
+\]
+\[
+r_t = \frac{ - n_i \cos \theta_i - \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}{n_i \cos \theta_i + \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}
+\]
+Definiamo il coefficente di riflessione:
+\[
+R = |r^2| = |\frac{E_r}{E_i} = |n_i -n_t|^2 / |n_i + n_t|^2
+\]
+
+Vediamo cosa accade in funzioen di $\theta_i$:
+il primo caso è $n_i/n_t < 1$, dal grafico si vede che per l'onda TM e per l'onda TE abbiamo coefficenti identici quando $\theta_i =  0$, abbiamo 
+un punto $\theta_V$ per cui la componente trasversa magnetica si annulla completamnete
+
+$n_i/n_t > 1$, abbiamo un angolo critico $\theta_c$ per cui $r$ ha valore 1, ed anche in questo caso c'è un angolo $\theta_V$ in cui la trasversa si annulla.
+
+Studiando il comportamento di R, prima il caso $n_i/n_t < 1$
+ abbiamo un andamento crescentre per la TE, per la TM abbiamo un annullamento in $\theta_V$.
+
+ Per $n_i/n_t > 1$ abbiamo un andamento simile per la TE, mentre TM si annulla a $\theta_V$, dopo $\theta_C$ abbiamo sempre il valore 1.
+
+ Proviamo a impostare alcuni coefficenti:
+ $r_s = 0 \rightarrow n_i\cos(\theta_i) = \sqrt{n_i^2 - n_t^2 \sin ^2 \theta_i} \rightarrow n_i^2 = n_t^2$
+Nel caso invece:
+\[
+r_t =0 \rightarrow n_t^2 \cos \theta_i = n_i \sqrt{n_t^2 - n_i^2 \sin^2 \theta_i} \rightarrow (n_t^4 - n_i ^4) \cos (\theta_i) = n_i ^2 (n_t^2 - n_i ^2)
+\]
+da cui 
+\[
+\cos^2\theta_i = \frac{n_i^2}{n_i^2 + n_t^2}
+\]
+da cui 
+\[
+\tan^ \theta_b= \frac{n_t}{n_i}
+\]
+dove abbiamo definito $\theta_B$ \textit{angolo di Brewster}, angolo alla quale la luce uscente risulta sempre polarizzata lineramente, purtroppo a questo angolo
+$R \simeq 0.150$, il metodo non èmolto efficente
+
+\subsection{Angolo critico}
+Abbiamo definito prima l'angolo critico, vediamo il suo significato. 
+Il termine sotto radice nel caso $n_i/n_t > 1$ può diventare negativo, ciò capita se:
+\[
+\sin \theta_i > \frac{n_t}{n_i} 
+\]
+da cui la definizione di $\theta_c$
+In questo caso:
+\[
+r_s = \frac{n_i \cos \theta_i - i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}{n_i \cos \theta_i + i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}
+\]
+\[
+r_t = \frac{- n_i \cos \theta_i - i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}{n_i \cos \theta_i + i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}
+\]
+da cui $r_s r_s^* =1 = r_t r_t^*$
+
+ vale, in questo caaso:
+\[
+\vec k_t \cdot \vec r = \vec k_t \cos \theta_i - k_t y \frac{\sin \theta_i}{\sin \theta_t} = \vec k_t \sin \theta_i - i k_t y \sqrt{n_i^2 / n_t^2 \sin \theta_i}
+\]
+Allora l'onda trasmetta è data da:
+\[
+E_t = \vec E \exp (i(kx-wt)) \exp(-\alpha |y|)
+\]
+e decade esponenzialmente, quindi dopo $\theta_c$ l'onda si propaga solo parallalelamente alla superfice, nonostante questo il campo esiste lo stesso, 
+per garantire la continuità del campo elettrico.
+
+\subsection{Come osservare l'onda evanescente}
+Prendiamo un prima e facciamo enetrare un raggio di luce perpendicolarmente ad un lato, possiamo calcolare $\theta_c \simeq 41\circ$, 
+se inseriamo un secondo prisma adiacento al primo, vedremo un raggio che passa, proprio perchè l'onda deve esserci per quanto constato prima.
+Ma ciò va fatto con onde con lunghezze d'onda adeguate, altrimenti l'onda è troppo attenuata e non vediamo niente.
+
+Abbiamo visto che nel caso di onda evanescente
+\[
+r_s = e^{i\delta} = \frac{A e^{i\alpha}}{A e^{-i\alpha}} = e^{2 i \alpha}
+\]
+e 
+\[
+r_p = e^{-i\delta_p}  = - \frac{B e^{i\beta}}{B e^{-i\beta}} = e^{2 i \beta}
+\]
+tramite un sistema posso ricavare:
+\[
+\tan(\alpha)=\frac{\sqrt(n_i^2 \sin^2\theta_i - n_t^2)}{n_i\cos\theta_i}
+\]
+e
+\[
+\tan(\beta)=\frac{n_i\sqrt(n_i^2 \sin^2\theta_i - n_t^2)}{n_t\cos\theta_i}
+\]
+Le onde dunque hanno differenze di fase diverse, e si può ricavare:
+\[
+\tan(\frac{\Delta}{2}) = \frac{\cos(\theta_i \sqrt{n_i^2 \sin^2\theta_i - n_t^2})}{n_i^2 \sin^2\theta_i}
+\]
+L'andamento di $$\Delta$$, da $\theta_c$ è crescente, maggiormente per la polarizzazione TM. La differenza massima fra le due fasi si nota a
+\[
+\Delta(\theta \simeq 54^\circ) \simeq 45^\circ
+\]
+E questo è un nuovo metodo per ottenere luce polarizzata. 
+
+Questo èè possibile grazie \textit{rombo di Fresnel}, facciamo incidere un raggio di luce polarizzato a $45^\circ$, 
+alla prima rifrazione la polarizzazzione non è più lineare, a casua dello sfasamento fra le due onde, una nuova rifrazione porta ad una polarizzazione cirolare
+
+
+Essendo la riflessione totale, non abbiamo perdita di energia.
+
+
+Possiamo verficiare che la polarizzazzione sia circolare tramite la legge di Malus, avremo prima un andamento el tipo $\cos^2$, mentre dopo avremo un andamento costante 
+
+\section{Misura dell'angolo di Brewster}
+Conoscendo l'angolo di brewster possiamo ricavare l'indice di rifrazione del materiale, infatti:
+\[
+n = n_i \tan(\theta_B) 
+\]
+Per misurare l'angolo di Brewster, utilizziamo un apparato composto da:
+\begin{itemize}
+    \item Faretto con lampada al sodio
+    \item canocchiale
+    \item prisma: facciamo inciderel la luce sul lato più grande
+\end{itemize}
+Confronteremo doopo $n$ ottenuto a 589nm con qurllo ottenuto nell'esperienza precedente
+
+In questo caso, però, studieremo la luce riflessa.
+
+Sapendo che ci attendiamo $\theta_b=57^\circ$, questo vuol dire che $\theta_i-\theta_0 \simeq 60^\circ$ dove $\theta_0$ è la misura di 0. Dunque la misura andrà fatta ad un terzo di angolo piatto rispetto alla misura di zero.
+
+Rimembrando il grafico ottenuto per R nel caso di TM e TE.
+
+Supponiamo di essere a circa $60^\circ$, come faccio a sapere d'avere una TM, 
+ruoto il polarizzaatore e vedo l'intensità della lcue nell'culare, passerà da un massimo ad un minimo passando da TE a TM. Per avere polarizzazzione TE, allora, 
+dovrò capire il punto dove l'intensità è minore, possiamo fare ciò proprio perche conoscioamo già più o meno $\theta_B$, in caso contrario infatti sarebbe stato difficle esploare dove l'intensità era minore.
+
+Dopodcihè muovo di un grado il prisma con una mano, mentre l'oculare va spostato di 2 gradi, mi sto muovendo nella curva per R,
+se l'intensità aumenta allora devo tornare indietro e dopodiche fermarmi subito prima che l'intensità della luce cominci ad aumentare.
+
+Dunque avrem:
+\[
+\theta_B = (\pi - \theta_i)/2
+\]
+
+Gli errori sono
+\begin{itemize}
+    \item L'errore sulla scelta dell'intensità minima, ma è difficle anche definire un intervallo dove l'intesnità è simile, faccio più misure possibile,
+    ricavo una determinata distribuzioe (possibile da fittare con una gaussiana), ma dopo non ci sarà necessario, perchè la distribuzione non è detto che sia gaussiano, perchè
+    è difficle avere misure pià grande verso intensità maggiorel, dunque avrò principalemnte code a sinistra (dove l'intensità è minore)
+    INTERESSANTE CALCOLARE L'INDICE DI KURTOSIS QUI?? (COMMENTO MIO PERSONALE)
+    è utile anche cambaire persona che misura l'intensità e vedere se i dati ottenuti siano compatibili
+    \item Persone diverse hanno sensibilità diverse
+    \item Il fatto che i polarizzatori non siano perfetti, oltre alla componente principale avremo una componente in direzione ortogonale. La curva spsota il minimo verso sinista, questo effetto si può correggere
+    valutando la quantità di luce non polarizzata, invertendo la legge di Malus
+\end{itemize}
+In questo caso la miusra potrebbe essere più imprecisa perchè l'intervallo di sensibilità su R, in quanto vogliamo individuare la posizione di un minimo e non il suo valore.
+Ma, nuovamente, se si fanno tante misure la statistica può battere questo bias
+
+
+
+
 
 
 
