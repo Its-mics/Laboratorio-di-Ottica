@@ -3918,209 +3918,814 @@ Prendendo l'ampiezza di questa oscillazione ($\Delta V$) e dividendola per l'amp
 
 Infine, si potrà notare che l'inizio e la fine della curva (a $0^\circ$ e a $360^\circ$) potrebbero non combaciare perfettamente (la curva "non si chiude"). Ciò è dovuto a piccole variazioni della risposta dello strumento nel corso del tempo: durante il tempo necessario a prendere le misure, il riscaldamento della lampadina e la reazione del fotodiodo possono causare una lenta variazione dell'intensità o della sensibilità di fondo.
 
+
+
+
+
+
 \section{Fenomeni di rifrazione e riflessione}
-Consideriamo una superfice di separazione tra due mezzi ottici con indici di rifrazione $n_1$ e $n_2$.
-Supponiamo un onda incida su tale superficie con un angolo $\theta_i$ rispetto alla normale. 
 
-All'onda incidente e rifratta associamo dei campi elettrici $\vec{E}_i$ e $\vec{E}_t$ e magnetici $\vec{H}_i$ e $\vec{H}_t$.
+Consideriamo una superficie di separazione tra due mezzi ottici con indici di rifrazione $n_1$ e $n_2$ (che indicheremo anche con $n_i$ per il mezzo incidente e $n_t$ per il mezzo trasmesso).
+Supponiamo che un'onda piana con vettore d'onda $\vec{k}$ incida su tale superficie con un angolo $\theta$ ($\theta_i$) rispetto alla normale: parte dell'onda viene riflessa con vettore d'onda $\vec{k}'$ e angolo $\theta'$ ($\theta_r$), mentre la restante parte viene rifratta (trasmessa) con vettore d'onda $\vec{k}''$ e angolo $\theta''$ ($\theta_t$).
 
-Consideriamo dapprima il caso del campo elettrico parallelo al piano, ossia di \textit{polarizzazzione trasversa elettrica} (TE).
-Il secondo caso sarà quello del campo elettrico perpendicolare al piano, ossia di \textit{polarizzazione trasversa magnetica} (TM).
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Sfondo leggero per distinguere il secondo mezzo
+        \fill[PoliBlue!6] (-4.2, -3.2) rectangle (4.2, 0);
 
-Poichè possiamo descrivere ogni onda EM utilizzando un sistema di versori, utilizzero questi per scomporle in queste due polarizzazzioni.
+        % Coordinate principali
+        \coordinate (O) at (0,0);
+        \coordinate (Ntop) at (0, 3.2);
+        \coordinate (Nbot) at (0, -3.2);
+        \coordinate (I) at (128:3.6);  % Onda incidente (theta = 38°)
+        \coordinate (R) at (52:3.6);   % Onda riflessa (theta' = 38°)
+        \coordinate (T) at (-68:3.6);  % Onda rifratta (theta'' = 22°)
 
-Dobbiamo impostare le condizione di continuità all'interfaccia
-\[
-E_i + E_r = E_t
-\]
-\[
-H_i + H_r = H_t
-\]
-Sapendo che $H = 1/ \mu k \times \vec E$, avrò 
-\[
--kE \cos (\theta_i) + kE_r \cos(\theta_i) = -kE_t\cos(\theta_t)
-\]
-Dalla relazione per H invece ottengo:
-\[
-E_i \cos(\theta_i) + E_r \cos(\theta_i) = E_t \cos(\theta_t)
-\]
-Introduco i coefficenti di trasmissione e riflessione:
-\[
-r_s = E_r/E_i |TE
-e_l =E_r/E |TM
-\]
-\[
-T_s = E_T/E_i |TE
-eT_l =E_T/E |TM
-\]
-abbiamo un iportante relazione:
-\[
-r_s = \frac{n_i \cos \theta_i - n_t \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} 
-\]
-e
-\[
-r_t = \frac{- n_i \cos \theta_i + n_i \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} 
-\]
-da cui:
-\[
-r_s = r_p = \frac{n_i - n_t}{n_i + n_p}
-\]
-Sfruttando snell posso riscrivere $r_s$
-\[
-r_s = \frac{n_i \cos \theta_i - \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}{n_i \cos \theta_i + \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}
-\]
-\[
-r_t = \frac{ - n_i \cos \theta_i - \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}{n_i \cos \theta_i + \sqrt{n_t^2 - n_i^2 \sin ^2 \theta_i}}
-\]
-Definiamo il coefficente di riflessione:
-\[
-R = |r^2| = |\frac{E_r}{E_i} = |n_i -n_t|^2 / |n_i + n_t|^2
-\]
+        % Superficie di separazione e normale
+        \draw[->, thick, black!75] (-4.2, 0) -- (4.2, 0);
+        \draw[->, thick, black!75] (Nbot) -- (Ntop);
 
-Vediamo cosa accade in funzioen di $\theta_i$:
-il primo caso è $n_i/n_t < 1$, dal grafico si vede che per l'onda TM e per l'onda TE abbiamo coefficenti identici quando $\theta_i =  0$, abbiamo 
-un punto $\theta_V$ per cui la componente trasversa magnetica si annulla completamnete
+        % Raggi (vettori d'onda) con freccia lungo il percorso
+        \draw[OpticRed, very thick, -{Stealth[length=2.6mm, width=2mm]}] (I) -- ($(I)!0.52!(O)$) node[midway, left=4pt, text=black] {$\vec{k}$};
+        \draw[OpticRed, very thick] ($(I)!0.50!(O)$) -- (O);
 
-$n_i/n_t > 1$, abbiamo un angolo critico $\theta_c$ per cui $r$ ha valore 1, ed anche in questo caso c'è un angolo $\theta_V$ in cui la trasversa si annulla.
+        \draw[OpticRed, very thick, -{Stealth[length=2.6mm, width=2mm]}] (O) -- ($(O)!0.55!(R)$) node[at end, right=4pt, text=black] {$\vec{k}'$};
+        \draw[OpticRed, very thick] ($(O)!0.52!(R)$) -- (R);
 
-Studiando il comportamento di R, prima il caso $n_i/n_t < 1$
- abbiamo un andamento crescentre per la TE, per la TM abbiamo un annullamento in $\theta_V$.
+        \draw[OpticRed, very thick, -{Stealth[length=2.6mm, width=2mm]}] (O) -- ($(O)!0.58!(T)$) node[at end, right=4pt, text=black] {$\vec{k}''$};
+        \draw[OpticRed, very thick] ($(O)!0.55!(T)$) -- (T);
 
- Per $n_i/n_t > 1$ abbiamo un andamento simile per la TE, mentre TM si annulla a $\theta_V$, dopo $\theta_C$ abbiamo sempre il valore 1.
+        % Angoli rispetto alla normale
+        \pic[draw, ->, angle radius=1.25cm, angle eccentricity=1.25, "$\theta$"] {angle = Ntop--O--I};
+        \pic[draw, <-, angle radius=1.25cm, angle eccentricity=1.25, "$\theta'$"] {angle = R--O--Ntop};
+        \pic[draw, ->, angle radius=1.45cm, angle eccentricity=1.30, "$\theta''$"] {angle = Nbot--O--T};
 
- Proviamo a impostare alcuni coefficenti:
- $r_s = 0 \rightarrow n_i\cos(\theta_i) = \sqrt{n_i^2 - n_t^2 \sin ^2 \theta_i} \rightarrow n_i^2 = n_t^2$
-Nel caso invece:
+        % Indici di rifrazione dei due mezzi
+        \node[draw=PoliBlue, circle, inner sep=2pt, fill=white] at (-3.3, 1.6) {$n_1$};
+        \node[draw=PoliBlue, circle, inner sep=2pt, fill=white] at (-3.3, -1.6) {$n_2$};
+    \end{tikzpicture}
+\end{figure}
+
+Valgono le leggi della riflessione e della rifrazione (legge di Snell):
+\begin{align*}
+    \theta_i &= \theta_r \\
+    n_i \sin\theta_i &= n_t \sin\theta_t
+\end{align*}
+
+All'onda incidente, riflessa e rifratta associamo rispettivamente i campi elettrici $\vec{E}$, $\vec{E}'$ e $\vec{E}''$ (o $\vec{E}_i, \vec{E}_r, \vec{E}_t$) e i campi magnetici $\vec{H}$, $\vec{H}'$ e $\vec{H}''$ (o $\vec{H}_i, \vec{H}_r, \vec{H}_t$).
+
+Poiché è possibile descrivere qualsiasi onda elettromagnetica mediante un sistema di versori, possiamo scomporla analizzando due casi distinti di polarizzazione:
+\begin{itemize}
+    \item \textbf{Polarizzazione Trasversa Elettrica (TE):} il campo elettrico $\vec{E}$ è perpendicolare al piano di incidenza (quindi parallelo al piano di separazione tra i due mezzi).
+    \item \textbf{Polarizzazione Trasversa Magnetica (TM):} il campo magnetico $\vec{H}$ è perpendicolare al piano di incidenza (mentre $\vec{E}$ giace nel piano di incidenza).
+\end{itemize}
+
+\subsection*{Condizioni di continuità e coefficienti di Fresnel}
+
+Imponiamo le condizioni di continuità delle componenti tangenziali dei campi all'interfaccia. Per le componenti già parallele all'interfaccia si ha:
+\begin{align*}
+    \text{TE:} \quad E + E' &= E'' \\
+    \text{TM:} \quad H - H' &= H''
+\end{align*}
+dove il segno meno nel caso TM è scelto per convenzione, poiché il campo magnetico è perpendicolare al piano di incidenza.
+
+Vediamo cosa accade alle componenti che vanno proiettate lungo la superficie:
+\begin{itemize}
+    \item \textbf{Caso TE} (proiezione di $\vec{H}$):
+    \[
+        H_i \cos\theta_i + H_r \cos\theta_i = H_t \cos\theta_t
+    \]
+    Sapendo che $\vec{H} = \frac{1}{\mu \omega} \vec{k} \times \vec{E}$, si ottiene:
+    \[
+        -k_i E_i \cos\theta_i + k_i E_r \cos\theta_i = -k_t E_t \cos\theta_t
+    \]
+    \item \textbf{Caso TM} (proiezione di $\vec{E}$ e relazione per $\vec{H}$):
+    \[
+        E_i \cos\theta_i + E_r \cos\theta_i = E_t \cos\theta_t
+    \]
+    e analogamente per $\vec{H}$:
+    \[
+        -k_i H_i + k_i H_r = -k_t H_t
+    \]
+\end{itemize}
+
+Introduciamo ora i \textbf{coefficienti di riflessione e trasmissione} per le ampiezze dei campi nei due casi di polarizzazione:
+\begin{align*}
+    r_s &= \left.\frac{E_r}{E_i}\right|_{\text{TE}}, & r_p &= \left.\frac{E_r}{E_i}\right|_{\text{TM}} \\
+    T_s &= \left.\frac{E_t}{E_i}\right|_{\text{TE}}, & T_p &= \left.\frac{E_t}{E_i}\right|_{\text{TM}}
+\end{align*}
+
+Risolvendo il sistema delle condizioni al contorno si trovano le relazioni di Fresnel per la riflessione:
+\begin{align*}
+    \text{TE:} \quad r_s &= \frac{n_i \cos\theta_i - n_t \cos\theta_t}{n_i \cos\theta_i + n_t \cos\theta_t} \\
+    \text{TM:} \quad r_p &= \frac{n_i \cos\theta_t - n_t \cos\theta_i}{n_i \cos\theta_t + n_t \cos\theta_i}
+\end{align*}
+
+Esaminiamo il caso limite di \textbf{incidenza normale} ($\theta_i = 0$, e quindi $\theta_t = 0$):
 \[
-r_t =0 \rightarrow n_t^2 \cos \theta_i = n_i \sqrt{n_t^2 - n_i^2 \sin^2 \theta_i} \rightarrow (n_t^4 - n_i ^4) \cos (\theta_i) = n_i ^2 (n_t^2 - n_i ^2)
+    r_s = r_p = \frac{n_i - n_t}{n_i + n_t}
 \]
-da cui 
-\[
-\cos^2\theta_i = \frac{n_i^2}{n_i^2 + n_t^2}
-\]
-da cui 
-\[
-\tan^ \theta_b= \frac{n_t}{n_i}
-\]
-dove abbiamo definito $\theta_B$ \textit{angolo di Brewster}, angolo alla quale la luce uscente risulta sempre polarizzata lineramente, purtroppo a questo angolo
-$R \simeq 0.150$, il metodo non èmolto efficente
+Maggiore è la differenza tra gli indici di rifrazione, maggiore è la quantità di luce riflessa. Inoltre, se il coefficiente è negativo ($r < 0$), la direzione del campo elettrico risulta invertita: nel passaggio da un mezzo meno denso a uno più denso (ad esempio da aria a vetro, $n_i < n_t$), la fase dell'onda riflessa subisce uno sfasamento di $\pi$.
+
+Sfruttando la legge di Snell ($\cos\theta_t = \sqrt{1 - \frac{n_i^2}{n_t^2}\sin^2\theta_i}$), possiamo riscrivere $r_s$ e $r_p$ unicamente in funzione dell'angolo di incidenza $\theta_i$:
+\begin{align*}
+    r_s &= \frac{n_i \cos\theta_i - \sqrt{n_t^2 - n_i^2 \sin^2\theta_i}}{n_i \cos\theta_i + \sqrt{n_t^2 - n_i^2 \sin^2\theta_i}} \\
+    r_p &= \frac{n_i \sqrt{n_t^2 - n_i^2 \sin^2\theta_i} - n_t^2 \cos\theta_i}{n_i \sqrt{n_t^2 - n_i^2 \sin^2\theta_i} + n_t^2 \cos\theta_i}
+\end{align*}
+
+\begin{definizione}[title=Riflettanza]
+    La \textbf{riflettanza} $R$ è la grandezza che ne descrive l'aspetto energetico, ossia il rapporto tra l'energia riflessa e quella incidente:
+    \[
+        R = |r|^2 = \left|\frac{E_r}{E_i}\right|^2
+    \]
+    Nel caso di incidenza normale essa vale:
+    \[
+        R = \left|\frac{n_i - n_t}{n_i + n_t}\right|^2
+    \]
+\end{definizione}
+
+\subsection*{Andamento in funzione dell'angolo di incidenza}
+
+Analizziamo cosa accade al variare di $\theta_i$ nei due regimi possibili:
+
+\begin{enumerate}
+    \item \textbf{Riflessione esterna ($n_i / n_t < 1$, cioè $n_i < n_t$, es.\ aria--vetro):}
+
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=6.2cm,
+                axis lines=middle,
+                xmin=-5, xmax=102,
+                ymin=-1.2, ymax=1.25,
+                xtick={90},
+                xticklabels={$90^\circ$},
+                ytick={-1, -0.2, 1},
+                yticklabels={$-1$, $\frac{n_1-n_2}{n_1+n_2}$, $1$},
+                xlabel={$\theta$},
+                ylabel={$E'/E$},
+                xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+                ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+                clip=false
+            ]
+                % Linee guida tratteggiate
+                \draw[dotted, gray] (axis cs:0,1) -- (axis cs:90,1) -- (axis cs:90,-1) -- (axis cs:0,-1);
+
+                % Curva TE (r_s)
+                \addplot[PoliBlue, very thick, domain=0:90, samples=100]
+                    {(cos(x) - sqrt(2.25 - sin(x)^2)) / (cos(x) + sqrt(2.25 - sin(x)^2))};
+                \node[PoliBlue, font=\small, below] at (axis cs:76,-0.75) {TE};
+
+                % Curva TM (r_p)
+                \addplot[OpticRed, very thick, domain=0:90, samples=100]
+                    {(sqrt(2.25 - sin(x)^2) - 2.25*cos(x)) / (sqrt(2.25 - sin(x)^2) + 2.25*cos(x))};
+                \node[OpticRed, font=\small, left] at (axis cs:84,0.82) {TM};
+
+                % Angolo di Brewster
+                \fill[black] (axis cs:56.31,0) circle (1.5pt);
+                \draw[->, >=Stealth, thin] (axis cs:42,0.48) node[above, align=center, font=\scriptsize] {angolo di\\Brewster} -- (axis cs:55.5,0.04);
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=6.2cm,
+                axis lines=middle,
+                xmin=-5, xmax=102,
+                ymin=-0.12, ymax=1.2,
+                xtick={90},
+                xticklabels={$90^\circ$},
+                ytick={1},
+                yticklabels={$1$},
+                xlabel={$\theta$},
+                ylabel={$|E'/E|^2$},
+                xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+                ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+                clip=false
+            ]
+                % Linee guida tratteggiate
+                \draw[dotted, gray] (axis cs:0,1) -- (axis cs:90,1) -- (axis cs:90,0);
+
+                % Curva TE (R_s)
+                \addplot[PoliBlue, very thick, domain=0:90, samples=100]
+                    {((cos(x) - sqrt(2.25 - sin(x)^2)) / (cos(x) + sqrt(2.25 - sin(x)^2)))^2};
+                \node[PoliBlue, font=\small, above left] at (axis cs:62,0.22) {TE};
+
+                % Curva TM (R_p)
+                \addplot[OpticRed, very thick, domain=0:90, samples=100]
+                    {((sqrt(2.25 - sin(x)^2) - 2.25*cos(x)) / (sqrt(2.25 - sin(x)^2) + 2.25*cos(x)))^2};
+                \node[OpticRed, font=\small, right] at (axis cs:80,0.32) {TM};
+
+                % Angolo di Brewster
+                \fill[black] (axis cs:56.31,0) circle (1.5pt);
+                \node[above, font=\small] at (axis cs:56.31,0.03) {$\theta_B$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \caption{Andamento di $E'/E$ e della riflettanza $|E'/E|^2$ in funzione dell'angolo di incidenza $\theta$ nel caso di riflessione esterna ($n_1/n_2 < 1$).}
+\end{figure}
+    In questo caso, a incidenza normale si ha una perdita per riflessione pari a circa $R \simeq \SI{4}{\percent}$ per singola interfaccia. Supponendo di attraversare $N$ superfici, la frazione totale trasmessa sarà $(1-R)^N$ (ad esempio, con $N = 10$ superfici si avrà una trasmissione complessiva di circa il $\SI{66}{\percent}$). Per la conservazione dell'energia, nei mezzi non assorbenti vale $R + T = 1$, dove $T$ è la trasmittanza. Queste perdite rappresentano un problema significativo nei sistemi ottici complessi, come i telescopi.
+
+    Dai grafici si osserva che i coefficienti per l'onda TE e TM coincidono a $\theta_i = 0$, mentre esiste un particolare angolo $\theta_B$, detto \textit{angolo di Brewster}, in corrispondenza del quale la componente trasversa magnetica (TM) riflessa si annulla completamente.
+
+    \item \textbf{Riflessione interna ($n_i / n_t > 1$, cioè $n_i > n_t$, es.\ vetro--aria):}
+
+    \begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=6.2cm,
+                axis lines=middle,
+                xmin=-5, xmax=102,
+                ymin=-1.2, ymax=1.25,
+                xtick={90},
+                xticklabels={$90^\circ$},
+                ytick={-1, 0.2, 1},
+                yticklabels={$-1$, $\frac{n_1-n_2}{n_1+n_2}$, $1$},
+                xlabel={$\theta$},
+                ylabel={$E'/E$},
+                xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+                ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+                clip=false
+            ]
+                % Linee guida tratteggiate
+                \draw[dotted, gray] (axis cs:0,1) -- (axis cs:90,1) -- (axis cs:90,-1) -- (axis cs:0,-1);
+                \draw[dotted, gray] (axis cs:41.81,1) -- (axis cs:41.81,-1);
+
+                % Curva TE (r_s) fino a theta_c e poi modulo 1
+                \addplot[PoliBlue, very thick, domain=0:41.8103, samples=120]
+                    {(1.5*cos(x) - sqrt(max(0, 1 - 2.25*sin(x)^2))) / (1.5*cos(x) + sqrt(max(0, 1 - 2.25*sin(x)^2)))};
+                \addplot[PoliBlue, very thick, domain=41.8103:90, samples=2] {1};
+                \node[PoliBlue, font=\small, above] at (axis cs:72,1.02) {TE};
+
+                % Curva TM (r_p) fino a theta_c e poi modulo 1
+                \addplot[OpticRed, very thick, domain=0:41.8103, samples=120]
+                    {(1.5*sqrt(max(0, 1 - 2.25*sin(x)^2)) - cos(x)) / (1.5*sqrt(max(0, 1 - 2.25*sin(x)^2)) + cos(x))};
+                \addplot[OpticRed, very thick, domain=41.8103:90, samples=2] {-1};
+                \node[OpticRed, font=\small, below] at (axis cs:72,-1.02) {TM};
+
+                % Angolo di Brewster
+                \fill[black] (axis cs:33.69,0) circle (1.5pt);
+                \draw[->, >=Stealth, thin] (axis cs:20,-0.55) node[below, align=center, font=\scriptsize] {angolo di\\Brewster} -- (axis cs:33,-0.04);
+
+                % Angolo critico
+                \draw[->, >=Stealth, thin] (axis cs:68,0.45) node[above, align=center, font=\scriptsize] {angolo critico\\(riflessione totale)} -- (axis cs:43,0.04);
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=6.2cm,
+                axis lines=middle,
+                xmin=-5, xmax=102,
+                ymin=-0.12, ymax=1.2,
+                xtick={90},
+                xticklabels={$90^\circ$},
+                ytick={1},
+                yticklabels={$1$},
+                xlabel={$\theta$},
+                ylabel={$|E'/E|^2$},
+                xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+                ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+                clip=false
+            ]
+                % Linee guida tratteggiate
+                \draw[dotted, gray] (axis cs:0,1) -- (axis cs:90,1) -- (axis cs:90,0);
+                \draw[dotted, gray] (axis cs:41.81,1) -- (axis cs:41.81,0);
+
+                % Curva TE (R_s)
+                \addplot[PoliBlue, very thick, domain=0:41.8103, samples=120]
+                    {((1.5*cos(x) - sqrt(max(0, 1 - 2.25*sin(x)^2))) / (1.5*cos(x) + sqrt(max(0, 1 - 2.25*sin(x)^2))))^2};
+                \node[PoliBlue, font=\small, above left] at (axis cs:34,0.45) {TE};
+
+                % Curva TM (R_p)
+                \addplot[OpticRed, very thick, domain=0:41.8103, samples=120]
+                    {((1.5*sqrt(max(0, 1 - 2.25*sin(x)^2)) - cos(x)) / (1.5*sqrt(max(0, 1 - 2.25*sin(x)^2)) + cos(x)))^2};
+                \node[OpticRed, font=\small, right] at (axis cs:41,0.32) {TM};
+
+                % Riflessione totale per theta > theta_c
+                \addplot[black, very thick, domain=41.8103:90, samples=2] {1};
+
+                % Angolo di Brewster e critico
+                \fill[black] (axis cs:33.69,0) circle (1.5pt);
+                \node[below, font=\small] at (axis cs:31,-0.02) {$\theta_B$};
+                \node[below, font=\small] at (axis cs:45,-0.02) {$\theta_c$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \caption{Andamento di $E'/E$ e della riflettanza $|E'/E|^2$ in funzione dell'angolo di incidenza $\theta$ nel caso di riflessione interna ($n_1/n_2 > 1$).}
+\end{figure}
+    Anche in questo caso è presente l'angolo di Brewster $\theta_B$, ma compare inoltre un \textit{angolo critico} $\theta_c$ oltre il quale $|r| = 1$, ovvero si verifica la \textbf{riflessione totale}.
+\end{enumerate}
+
+Riassumendo l'andamento della riflettanza $R$:
+\begin{itemize}
+    \item Per $n_i/n_t < 1$, la componente TE ha un andamento monotono crescente fino a $1$, mentre la componente TM si annulla in $\theta_B$ prima di risalire verso $1$.
+    \item Per $n_i/n_t > 1$, la componente TE ha un andamento analogo raggiungendo $1$ in $\theta_c$, mentre la TM si annulla in $\theta_B$ e, superato $\theta_c$, entrambe mantengono costantemente il valore $R = 1$.
+\end{itemize}
+
+\subsection*{Annullamento dei coefficienti e angolo di Brewster}
+
+Proviamo a determinare analiticamente quando i coefficienti di riflessione possono annullarsi:
+\begin{itemize}
+    \item Per la componente TE ($r_s = 0$):
+    \[
+        n_i \cos\theta_i = \sqrt{n_t^2 - n_i^2 \sin^2\theta_i} \implies n_i^2 = n_t^2
+    \]
+    Pertanto, per due mezzi distinti, l'onda trasversa elettrica non si annulla mai: una riflessione TE è sempre presente.
+
+    \item Per la componente TM ($r_p = 0$):
+    \[
+        n_t^2 \cos\theta_i = n_i \sqrt{n_t^2 - n_i^2 \sin^2\theta_i}
+    \]
+    Elevando al quadrato e raccogliendo si ottiene:
+    \[
+        (n_t^4 - n_i^4) \cos^2\theta_i = n_i^2 (n_t^2 - n_i^2)
+    \]
+    da cui:
+    \[
+        \cos^2\theta_i = \frac{n_i^2}{n_i^2 + n_t^2} \implies \tan\theta_B = \frac{n_t}{n_i}
+    \]
+\end{itemize}
+
+\begin{definizione}[title=Angolo di Brewster]
+    L'\textbf{angolo di Brewster} $\theta_B$, definito da $\tan\theta_B = n_t / n_i$, è l'angolo di incidenza al quale la componente riflessa trasversa magnetica (TM) si annulla completamente.
+\end{definizione}
+
+Questo fenomeno costituisce un modo per ottenere luce riflessa linearmente polarizzata (nella sola componente TE); tuttavia, poiché a questo angolo la riflettanza della componente TE vale circa $R \simeq \num{0.150}$, il metodo non è molto efficiente. Nel caso di interfaccia aria--vetro, l'angolo di Brewster vale circa $\theta_B \simeq 57^\circ$.
 
 \subsection{Angolo critico}
-Abbiamo definito prima l'angolo critico, vediamo il suo significato. 
-Il termine sotto radice nel caso $n_i/n_t > 1$ può diventare negativo, ciò capita se:
-\[
-\sin \theta_i > \frac{n_t}{n_i} 
-\]
-da cui la definizione di $\theta_c$
-In questo caso:
-\[
-r_s = \frac{n_i \cos \theta_i - i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}{n_i \cos \theta_i + i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}
-\]
-\[
-r_t = \frac{- n_i \cos \theta_i - i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}{n_i \cos \theta_i + i \sqrt{n_i^2 \sin^2 \theta_i - n_t^2}}
-\]
-da cui $r_s r_s^* =1 = r_t r_t^*$
 
- vale, in questo caaso:
+Esaminiamo ora il significato fisico dell'angolo critico $\theta_c$. Nel caso $n_1 > n_2$ (ossia $n_i > n_t$), il termine sotto radice nei coefficienti di Fresnel può diventare negativo; ciò accade quando:
 \[
-\vec k_t \cdot \vec r = \vec k_t \cos \theta_i - k_t y \frac{\sin \theta_i}{\sin \theta_t} = \vec k_t \sin \theta_i - i k_t y \sqrt{n_i^2 / n_t^2 \sin \theta_i}
+    \sin\theta_i > \frac{n_t}{n_i}
 \]
-Allora l'onda trasmetta è data da:
+La condizione limite $\sin\theta_c = \frac{n_t}{n_i}$ definisce proprio l'angolo critico $\theta_c$.
+
+Per $\theta_i > \theta_c$, possiamo estrarre l'unità immaginaria $i$ dalla radice e riscrivere i coefficienti come:
+\begin{align*}
+    \text{TE:} \quad r_s &= \frac{n_i \cos\theta_i - i \sqrt{n_i^2 \sin^2\theta_i - n_t^2}}{n_i \cos\theta_i + i \sqrt{n_i^2 \sin^2\theta_i - n_t^2}} \\
+    \text{TM:} \quad r_p &= \frac{i n_i \sqrt{n_i^2 \sin^2\theta_i - n_t^2} - n_t^2 \cos\theta_i}{i n_i \sqrt{n_i^2 \sin^2\theta_i - n_t^2} + n_t^2 \cos\theta_i}
+\end{align*}
+In entrambi i casi il numeratore e il denominatore hanno lo stesso modulo (a meno di un segno), quindi:
 \[
-E_t = \vec E \exp (i(kx-wt)) \exp(-\alpha |y|)
+    r_s r_s^* = 1 = r_p r_p^*
 \]
-e decade esponenzialmente, quindi dopo $\theta_c$ l'onda si propaga solo parallalelamente alla superfice, nonostante questo il campo esiste lo stesso, 
-per garantire la continuità del campo elettrico.
+che conferma quanto osservato nei grafici per $\theta_i > \theta_c$ (riflessione totale).
+
+Vediamo cosa succede all'onda trasmessa nel secondo mezzo oltre l'angolo critico:
+\[
+    \vec{E}_t(\vec{r}, t) = \vec{E} e^{i(\vec{k}_t \cdot \vec{r} - \omega t)}
+\]
+Utilizzando la legge di Snell, il coseno dell'angolo trasmesso $\theta''$ risulta puramente immaginario:
+\[
+    \cos\theta'' = \sqrt{1 - \sin^2\theta''} = \sqrt{1 - \frac{n_i^2}{n_t^2} \sin^2\theta_i} = i \sqrt{\frac{n_i^2}{n_t^2} \sin^2\theta_i - 1}
+\]
+Di conseguenza, il prodotto scalare $\vec{k}_t \cdot \vec{r}$ nel piano di incidenza $(x,y)$ diventa:
+\[
+    \vec{k}_t \cdot \vec{r} = k'' x \sin\theta'' + k'' y \cos\theta'' = k'' x \sin\theta'' + i k'' y \sqrt{\frac{n_i^2}{n_t^2} \sin^2\theta_i - 1}
+\]
+(o con il segno meno lungo la direzione di penetrazione $-y$). Sostituendo questa espressione nell'onda trasmessa, otteniamo:
+\[
+    \vec{E}_t = \vec{E} \exp\bigl(i(k_1 x - \omega t)\bigr) \exp(-\alpha |y|)
+\]
+dove abbiamo definito:
+\[
+    k_1 = k'' \sin\theta'' = k_i \sin\theta_i, \qquad \alpha = k'' \sqrt{\frac{n_i^2}{n_t^2} \sin^2\theta_i - 1}
+\]
+
+\begin{nota}
+    La componente trasmessa $\vec{E}_t$ (onda evanescente) si propaga parallelamente all'interfaccia e presenta un'ampiezza che decade esponenzialmente in funzione della profondità $|y|$. Pertanto, superato $\theta_c$, l'onda non si propaga più in profondità nel secondo mezzo ma solo lungo la superficie; nonostante ciò, il campo nel secondo mezzo esiste comunque per garantire la continuità del campo elettrico all'interfaccia.
+\end{nota}
+
+
 
 \subsection{Come osservare l'onda evanescente}
-Prendiamo un prima e facciamo enetrare un raggio di luce perpendicolarmente ad un lato, possiamo calcolare $\theta_c \simeq 41\circ$, 
-se inseriamo un secondo prisma adiacento al primo, vedremo un raggio che passa, proprio perchè l'onda deve esserci per quanto constato prima.
-Ma ciò va fatto con onde con lunghezze d'onda adeguate, altrimenti l'onda è troppo attenuata e non vediamo niente.
 
-Abbiamo visto che nel caso di onda evanescente
-\[
-r_s = e^{i\delta} = \frac{A e^{i\alpha}}{A e^{-i\alpha}} = e^{2 i \alpha}
-\]
-e 
-\[
-r_p = e^{-i\delta_p}  = - \frac{B e^{i\beta}}{B e^{-i\beta}} = e^{2 i \beta}
-\]
-tramite un sistema posso ricavare:
-\[
-\tan(\alpha)=\frac{\sqrt(n_i^2 \sin^2\theta_i - n_t^2)}{n_i\cos\theta_i}
-\]
-e
-\[
-\tan(\beta)=\frac{n_i\sqrt(n_i^2 \sin^2\theta_i - n_t^2)}{n_t\cos\theta_i}
-\]
-Le onde dunque hanno differenze di fase diverse, e si può ricavare:
-\[
-\tan(\frac{\Delta}{2}) = \frac{\cos(\theta_i \sqrt{n_i^2 \sin^2\theta_i - n_t^2})}{n_i^2 \sin^2\theta_i}
-\]
-L'andamento di $$\Delta$$, da $\theta_c$ è crescente, maggiormente per la polarizzazione TM. La differenza massima fra le due fasi si nota a
-\[
-\Delta(\theta \simeq 54^\circ) \simeq 45^\circ
-\]
-E questo è un nuovo metodo per ottenere luce polarizzata. 
+Consideriamo un prisma rettangolo isoscele (con angoli $\pi/4$ e $\pi/2$) e facciamo entrare un raggio di luce perpendicolarmente a uno dei cateti: il raggio inciderà sull'ipotenusa con un angolo di $\pi/4$ ($45^\circ$) rispetto alla normale.
+Per un vetro con indice di rifrazione $n_1 = \num{1.5}$ (verso aria $n_2 = 1$), l'angolo critico vale $\theta_c \simeq 41^\circ$. Poiché l'angolo di incidenza supera $\theta_c$, il prisma produce una riflessione totale interna e dall'altra parte non emerge alcun raggio trasmesso.
 
-Questo èè possibile grazie \textit{rombo di Fresnel}, facciamo incidere un raggio di luce polarizzato a $45^\circ$, 
-alla prima rifrazione la polarizzazzione non è più lineare, a casua dello sfasamento fra le due onde, una nuova rifrazione porta ad una polarizzazione cirolare
+Se però avviciniamo molto un secondo prisma al primo, osserviamo che al diminuire della distanza tra le due superfici ricompare un raggio trasmesso: ciò dimostra l'effettiva esistenza del campo evanescente oltre l'interfaccia, come dedotto in precedenza.
+Realizzare questa esperienza con la luce visibile è tuttavia molto difficile. L'ampiezza dell'onda evanescente decade infatti come $\exp(-\alpha |y|)$, dove il coefficiente di attenuazione $\alpha$ è proporzionale al numero d'onda $k = 2\pi/\lambda$: di conseguenza, la distanza caratteristica $1/\alpha$ entro cui l'onda si attenua è dello stesso ordine di grandezza della lunghezza d'onda $\lambda$. Poiché la luce visibile ha $\lambda \lesssim \SI{700}{\nano\meter}$, i due prismi andrebbero posizionati a una distanza inferiore a $\SI{700}{\nano\meter}$ per evitare che l'onda si estingua prima di raggiungere il secondo prisma; per osservare facilmente il fenomeno conviene quindi utilizzare onde con lunghezza d'onda maggiore.
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Primo prisma (in basso a sinistra)
+        \coordinate (A1) at (-1.5, -1.5);
+        \coordinate (B1) at (1.5, -1.5);
+        \coordinate (C1) at (-1.5, 1.5);
+        \filldraw[fill=PoliBlue!10, draw=PoliBlue, thick] (A1) -- (B1) -- (C1) -- cycle;
 
-Essendo la riflessione totale, non abbiamo perdita di energia.
+        % Secondo prisma (in alto a destra, separato da un piccolo gap)
+        \coordinate (A2) at (1.9, 1.9);
+        \coordinate (B2) at (-1.1, 1.9);
+        \coordinate (C2) at (1.9, -1.1);
+        \filldraw[fill=PoliBlue!10, draw=PoliBlue, thick] (A2) -- (B2) -- (C2) -- cycle;
 
+        % Raggio incidente (entra perpendicolarmente nel primo prisma)
+        \draw[OpticRed, very thick, ->] (-3.6, 0) -- (-2.1, 0);
+        \draw[OpticRed, very thick] (-2.1, 0) -- (0, 0);
+        \node[above, font=\scriptsize] at (-2.6, 0.1) {Raggio incidente};
 
-Possiamo verficiare che la polarizzazzione sia circolare tramite la legge di Malus, avremo prima un andamento el tipo $\cos^2$, mentre dopo avremo un andamento costante 
+        % Raggio riflesso totalmente (esce verso il basso)
+        \draw[OpticRed, very thick, ->] (0, 0) -- (0, -2.9);
+        \node[right, font=\scriptsize, align=left] at (0.1, -2.3) {Raggio\\riflesso};
 
-\section{Misura dell'angolo di Brewster}
-Conoscendo l'angolo di brewster possiamo ricavare l'indice di rifrazione del materiale, infatti:
+        % Accoppiamento evanescente nel gap + raggio trasmesso (tratteggiato)
+        \draw[OpticRed, thick, dotted] (0, 0) -- (0.4, 0);
+        \draw[OpticRed, very thick, dashed, ->] (0.4, 0) -- (3.8, 0);
+        \node[above, font=\scriptsize] at (2.9, 0.1) {Raggio trasmesso};
+
+    \end{tikzpicture}
+\end{figure}
+
+\subsection*{Differenza di fase nella riflessione totale}
+
+Riprendiamo i coefficienti di riflessione nel caso di onda evanescente ($\theta_i > \theta_c$):
+\begin{align*}
+    \text{TE:} \quad r_s &= e^{-i\delta_s} = \frac{A e^{-i\alpha}}{A e^{i\alpha}}, & \text{con } \delta_s &= 2\alpha \\
+    \text{TM:} \quad r_p &= e^{-i\delta_p} = -\frac{B e^{-i\beta}}{B e^{i\beta}}, & \text{con } \delta_p &= 2\beta 
+\end{align*}
+dove abbiamo posto:
+\begin{align*}
+    A e^{i\alpha} &= n_i \cos\theta_i + i \sqrt{n_i^2 \sin^2\theta_i - n_t^2} \\
+    B e^{i\beta} &= n_t^2 \cos\theta_i + i n_i \sqrt{n_i^2 \sin^2\theta_i - n_t^2}
+\end{align*}
+Da queste definizioni ricaviamo le tangenti degli angoli di fase $\alpha$ e $\beta$:
+\begin{align*}
+    \tan\alpha &= \tan\left(\frac{\delta_s}{2}\right) = \frac{\sqrt{n_i^2 \sin^2\theta_i - n_t^2}}{n_i \cos\theta_i} \\
+    \tan\beta &= \tan\left(\frac{\delta_p}{2}\right) = \frac{n_i \sqrt{n_i^2 \sin^2\theta_i - n_t^2}}{n_t^2 \cos\theta_i}
+\end{align*}
+
+In regime di riflessione totale, quindi, le componenti TM e TE subiscono sfasamenti diversi. Definendo la differenza di fase $\Delta = \delta_p - \delta_s$, si può ricavare la relazione:
 \[
-n = n_i \tan(\theta_B) 
+    \tan\left(\frac{\Delta}{2}\right) = \frac{\cos\theta_i \sqrt{n_i^2 \sin^2\theta_i - n_t^2}}{n_i \sin^2\theta_i}
 \]
-Per misurare l'angolo di Brewster, utilizziamo un apparato composto da:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.75\textwidth,
+            height=6.5cm,
+            axis lines=middle,
+            xmin=0, xmax=98,
+            ymin=0, ymax=3.55,
+            xtick={41.81, 54, 90},
+            xticklabels={$\theta_c$, $54^\circ$, $90^\circ$},
+            ytick={0.7854, 1.5708, 2.3562, 3.1416},
+            yticklabels={$\dfrac{\pi}{4}$, $\dfrac{\pi}{2}$, $\dfrac{3}{4}\pi$, $\pi$},
+            xlabel={$\theta_i$},
+            ylabel={$\delta$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            clip=false
+        ]
+            % Linee guida tratteggiate per pi e 90 gradi
+            \draw[dotted, gray] (axis cs:0,3.1416) -- (axis cs:90,3.1416) -- (axis cs:90,0);
+
+            % Curva delta_p (TM)
+            \addplot[
+                OpticRed, very thick, smooth,
+                samples at={41.8103, 41.815, 41.83, 41.86, 41.92, 42.0, 42.2, 42.5, 43, 44, 45, 47, 49, 51, 54, 57, 60, 64, 68, 72, 76, 80, 84, 88, 90}
+            ] {2 * atan2(1.5 * sqrt(max(0, 2.25*sin(x)^2 - 1)), cos(x)) * pi / 180};
+            \node[OpticRed, font=\small, above left] at (axis cs:58,2.25) {$\delta_p$};
+
+            % Curva delta_s (TE)
+            \addplot[
+                PoliBlue, very thick, smooth,
+                samples at={41.8103, 41.815, 41.83, 41.86, 41.92, 42.0, 42.2, 42.5, 43, 44, 45, 47, 49, 51, 54, 57, 60, 64, 68, 72, 76, 80, 84, 88, 90}
+            ] {2 * atan2(sqrt(max(0, 2.25*sin(x)^2 - 1)), 1.5*cos(x)) * pi / 180};
+            \node[PoliBlue, font=\small, below right] at (axis cs:64,1.65) {$\delta_s$};
+
+            % Freccia verticale a 54° per evidenziare Delta ≈ pi/4
+            \draw[<->, >=Stealth, thick, black] (axis cs:54, 1.34) -- (axis cs:54, 2.09);
+            \node[right, font=\small] at (axis cs:54.5, 1.82) {$\Delta \simeq \dfrac{\pi}{4}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Andamento degli sfasamenti $\delta_p$ (TM) e $\delta_s$ (TE) nella riflessione totale interna al variare di $\theta_i$.}
+\end{figure}
+L'andamento di $\Delta$ parte da $\theta_c$ ed è crescente (lo sfasamento aumenta maggiormente per la polarizzazione TM). Il valore massimo della differenza tra le due fasi si osserva intorno a $\theta \simeq 54^\circ$, dove:
+\[
+    \Delta(\theta \simeq 54^\circ) \simeq 45^\circ
+\]
+Questo effetto fornisce un ulteriore metodo per produrre luce polarizzata, in particolare \textbf{polarizzata circolarmente}, sfruttando il \textit{rombo di Fresnel}.
+Se facciamo incidere un raggio di luce polarizzato linearmente a $45^\circ$ su un rombo di Fresnel tagliato in modo che l'angolo di incidenza interno sia di $54^\circ$:
 \begin{itemize}
-    \item Faretto con lampada al sodio
-    \item canocchiale
-    \item prisma: facciamo inciderel la luce sul lato più grande
+    \item alla prima riflessione totale interna, le due componenti accumulano una differenza di fase $\Delta = \pi/4$, trasformando la polarizzazione da lineare a ellittica;
+    \item una seconda riflessione totale interna introduce un'ulteriore differenza di fase di $\pi/4$, portando lo sfasamento complessivo a $\pi/2$ e generando così in uscita una \textbf{polarizzazione circolare}.
 \end{itemize}
-Confronteremo doopo $n$ ottenuto a 589nm con qurllo ottenuto nell'esperienza precedente
 
-In questo caso, però, studieremo la luce riflessa.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale=1.15]
+        % Coordinate esatte del rombo di Fresnel (angolo 54° rispetto alla verticale)
+        \coordinate (TL) at (0, 2.5);
+        \coordinate (BL) at (0, 0.5);
+        \coordinate (TR) at (2.8, 0.4657);
+        \coordinate (BR) at (2.8, -1.5343);
 
-Sapendo che ci attendiamo $\theta_b=57^\circ$, questo vuol dire che $\theta_i-\theta_0 \simeq 60^\circ$ dove $\theta_0$ è la misura di 0. Dunque la misura andrà fatta ad un terzo di angolo piatto rispetto alla misura di zero.
+        % Punti del percorso ottico interno
+        \coordinate (Pin)  at (0, 1.8);
+        \coordinate (P1)   at (0.9635, 1.8);
+        \coordinate (P2)   at (1.8141, -0.8180);
+        \coordinate (Pout) at (2.8, -0.8180);
 
-Rimembrando il grafico ottenuto per R nel caso di TM e TE.
+        % Rombo di Fresnel
+        \filldraw[fill=PoliBlue!8, draw=PoliBlue, thick] (TL) -- (TR) -- (BR) -- (BL) -- cycle;
 
-Supponiamo di essere a circa $60^\circ$, come faccio a sapere d'avere una TM, 
-ruoto il polarizzaatore e vedo l'intensità della lcue nell'culare, passerà da un massimo ad un minimo passando da TE a TM. Per avere polarizzazzione TE, allora, 
-dovrò capire il punto dove l'intensità è minore, possiamo fare ciò proprio perche conoscioamo già più o meno $\theta_B$, in caso contrario infatti sarebbe stato difficle esploare dove l'intensità era minore.
+        % Angoli di 54° (vertice in alto a sx e vertice in basso a dx)
+        \pic[draw, angle radius=0.46cm, angle eccentricity=1.48, "$54^\circ$" {font=\scriptsize}] {angle = BL--TL--TR};
+        \pic[draw, angle radius=0.46cm, angle eccentricity=1.48, "$54^\circ$" {font=\scriptsize}] {angle = TR--BR--BL};
 
-Dopodcihè muovo di un grado il prisma con una mano, mentre l'oculare va spostato di 2 gradi, mi sto muovendo nella curva per R,
-se l'intensità aumenta allora devo tornare indietro e dopodiche fermarmi subito prima che l'intensità della luce cominci ad aumentare.
+        % Raggio luminoso (ingresso, 2 riflessioni totali interne, uscita)
+        \draw[OpticRed, thick, ->] (-0.7, 1.8) -- (Pin);
+        \draw[OpticRed, thick] (Pin) -- (P1) -- (P2) -- (Pout);
+        \draw[OpticRed, thick, ->] (Pout) -- (3.4, -0.8180);
 
-Dunque avrem:
+        % Polarizzazione lineare a 45° sul tratto iniziale
+        \draw[PoliBlue, thick, <->] ($(Pin)!0.32!(P1) + (-0.12,-0.16)$) -- ($(Pin)!0.32!(P1) + (0.12,0.16)$);
+        \draw[PoliBlue, thick, <->] ($(Pin)!0.65!(P1) + (-0.12,-0.16)$) -- ($(Pin)!0.65!(P1) + (0.12,0.16)$);
+        \node[above right, align=center, font=\scriptsize] at (0.85, 2.05) {polarizzazione\\lineare};
+
+        % Polarizzazione ellittica dopo la prima riflessione
+        \foreach \t in {0.28, 0.50, 0.72} {
+            \coordinate (E) at ($(P1)!\t!(P2)$);
+            \draw[PoliBlue, thick, rotate around={-10:(E)}] (E) ellipse (0.21 and 0.07);
+        }
+        \node[left, align=center, font=\scriptsize] at (0.95, 0.15) {polarizzazione\\ellittica};
+
+        % Polarizzazione circolare dopo la seconda riflessione
+        \foreach \t in {0.26, 0.52, 0.78} {
+            \coordinate (C) at ($(P2)!\t!(Pout)$);
+            \draw[PoliBlue, thick] (C) ellipse (0.09 and 0.14);
+        }
+        \node[below left, align=center, font=\scriptsize] at (2.15, -1.15) {polarizzazione\\circolare};
+
+        % Riquadro sinistro: polarizzazione lineare a 45°
+        \draw[thick, black!80] (-2.7, 1.0) rectangle (-1.1, 2.6);
+        \draw[OpticRed, very thick, <->] (-2.4, 1.3) -- (-1.4, 2.3);
+        \node[below, align=center, font=\scriptsize] at (-1.9, 0.9) {polarizzazione\\lineare a $45^\circ$};
+
+        % Riquadro destro: polarizzazione circolare in uscita
+        \draw[thick, black!80] (3.6, -1.62) rectangle (5.2, -0.02);
+        \draw[OpticRed, very thick, ->] (4.4, -0.82) ++(45:0.55) arc (45:-310:0.55);
+        \node[below, align=center, font=\scriptsize] at (4.4, -1.72) {polarizzazione\\circolare};
+    \end{tikzpicture}
+\end{figure}
+
+Trattandosi di riflessione totale interna, il processo avviene senza perdita di energia. Possiamo infine verificare che la polarizzazione ottenuta sia effettivamente circolare applicando la legge di Malus tramite un analizzatore rotante: prima del rombo si osserverà un andamento del tipo $\cos^2$, mentre in uscita si rileverà un'intensità costante al variare dell'angolo.
+
+\section{Esperienza 5: Misura dell'angolo di Brewster}
+
+In questa esperienza sarà necessario raccogliere molte misure ripetute, poiché l'incertezza sulla singola lettura è ignota (o comunque difficile da stimare a priori, analogamente alla stima dell'intervallo di messa a fuoco per la deviazione minima e la lunghezza focale). Ripetendo la misura potremo ricavare dalla dispersione dei dati la deviazione standard $\sigma_{\theta_B}$ (incertezza sulla distribuzione) e l'errore sulla media $\sigma_{\bar{\theta}_B} = \sigma_{\theta_B} / \sqrt{N}$.
+L'obiettivo dell'esperienza è misurare l'indice di rifrazione del vetro.
+
+Conoscendo l'angolo di Brewster $\theta_B$, è possibile determinare l'indice di rifrazione del materiale mediante la relazione:
 \[
-\theta_B = (\pi - \theta_i)/2
+    n = n_i \tan\theta_B
 \]
+Anche in questa esperienza, per eseguire correttamente la propagazione degli errori, sarà necessario convertire gli angoli in radianti.
 
-Gli errori sono
+Per effettuare la misura utilizziamo lo stesso apparato impiegato nella verifica della legge di Sellmeier:
 \begin{itemize}
-    \item L'errore sulla scelta dell'intensità minima, ma è difficle anche definire un intervallo dove l'intesnità è simile, faccio più misure possibile,
-    ricavo una determinata distribuzioe (possibile da fittare con una gaussiana), ma dopo non ci sarà necessario, perchè la distribuzione non è detto che sia gaussiano, perchè
-    è difficle avere misure pià grande verso intensità maggiorel, dunque avrò principalemnte code a sinistra (dove l'intensità è minore)
-    INTERESSANTE CALCOLARE L'INDICE DI KURTOSIS QUI?? (COMMENTO MIO PERSONALE)
-    è utile anche cambaire persona che misura l'intensità e vedere se i dati ottenuti siano compatibili
-    \item Persone diverse hanno sensibilità diverse
-    \item Il fatto che i polarizzatori non siano perfetti, oltre alla componente principale avremo una componente in direzione ortogonale. La curva spsota il minimo verso sinista, questo effetto si può correggere
-    valutando la quantità di luce non polarizzata, invertendo la legge di Malus
+    \item un faretto con lampada al sodio ($\lambda = \SI{589}{\nano\meter}$), che consentirà eventualmente di confrontare il valore di $n$ con quello ricavato nell'esperienza precedente (a patto di utilizzare lo stesso prisma);
+    \item un cannocchiale con fenditura, un goniometro ottico e un prisma: faremo incidere la luce sulla faccia più grande del prisma e, anziché osservare la luce trasmessa, andremo a misurare la luce riflessa.
 \end{itemize}
-In questo caso la miusra potrebbe essere più imprecisa perchè l'intervallo di sensibilità su R, in quanto vogliamo individuare la posizione di un minimo e non il suo valore.
-Ma, nuovamente, se si fanno tante misure la statistica può battere questo bias
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    >=Stealth,
+    tubo/.style={draw=black!70, fill=gray!20, thick},
+    raggio/.style={red!70!black, thick},
+    lab/.style={font=\footnotesize, align=center}
+]
+% ---------- Parametri ----------
+\pgfmathsetmacro{\thB}{56}          % angolo di Brewster (solo disegno)
+\pgfmathsetmacro{\ain}{90+\thB}     % direzione della sorgente
+\pgfmathsetmacro{\aref}{90-\thB}    % direzione del cannocchiale
 
+% ---------- Goniometro (piatto graduato) ----------
+\draw[thick, fill=gray!10] (0,0) circle (1.9);
+\foreach \a in {0,10,...,350} \draw[black!60] (\a:1.9) -- (\a:1.78);
+\foreach \a in {0,30,...,330} \draw[black!80] (\a:1.9) -- (\a:1.68);
+\node[lab] at (-3.3,-1.7) {goniometro ottico};
+\draw[->, thin] (-2.6,-1.45) -- (210:1.9);
 
+% ---------- Prisma (faccia più grande lungo il diametro) ----------
+\draw[thick, draw=blue!50!black, fill=cyan!25] (-1.2,0) -- (1.2,0) -- (0,-1.2) -- cycle;
+\draw[very thick, blue!50!black] (-1.2,0) -- (1.2,0);
+\node[lab] at (0,-0.5) {prisma};
+\node[lab] at (3.7,-1.0) {faccia più grande\\del prisma};
+\draw[->, thin] (2.75,-0.8) -- (0.9,-0.03);
 
+% ---------- Normale ----------
+\draw[dashed, gray] (0,0) -- (0,3.3);
+\node[lab, anchor=south] at (0,3.3) {normale};
 
+% ---------- Sorgente, fenditura, polarizzatore (lungo il raggio incidente) ----------
+\begin{scope}[rotate=\ain]
+    % lampada al sodio
+    \draw[thick, rounded corners=2pt, fill=yellow!30] (5.4,-0.5) rectangle (6.3,0.5);
+    % fenditura
+    \draw[thick, fill=gray!60] (4.5,-0.7) rectangle (4.65,-0.07);
+    \draw[thick, fill=gray!60] (4.5,0.07) rectangle (4.65,0.7);
+    % polarizzatore
+    \draw[thick, fill=blue!20] (3.3,-0.55) rectangle (3.45,0.55);
+\end{scope}
+\node[lab, anchor=east] at ([shift={(-0.65,0)}]\ain:5.85) {lampada al sodio\\($\lambda = 589\,\mathrm{nm}$)};
+\node[lab] at ([shift={(0.4,0.9)}]\ain:4.58) {fenditura};
+\node[lab, anchor=east] at ([shift={(-0.4,-0.35)}]\ain:3.38) {polarizzatore};
+
+% ---------- Cannocchiale con oculare (lungo il raggio riflesso) ----------
+\begin{scope}[rotate=\aref]
+    \draw[tubo] (2.6,-0.3) rectangle (4.6,0.3);
+    \draw[thick, fill=cyan!20] (2.6,0) ellipse (0.09 and 0.34);   % obiettivo
+    \draw[tubo] (4.6,-0.18) rectangle (5.1,0.18);                 % oculare
+\end{scope}
+\node[lab] at ([shift={(0.8,-1.3)}]\aref:3.6) {cannocchiale};
+\draw[->, thin] ([shift={(0.65,-1.05)}]\aref:3.6) -- ([shift={(0.1,-0.35)}]\aref:3.6);
+\node[lab] at ([shift={(1.3,-1.0)}]\aref:5.1) {oculare};
+\draw[->, thin] ([shift={(1.0,-0.8)}]\aref:5.1) -- ([shift={(0.08,-0.2)}]\aref:4.85);
+
+% ---------- Mirino: campo visivo con filamento verticale ----------
+\coordinate (E) at (\aref:6.1);
+\draw[thick] (E) circle (0.38);
+\draw[thick] ($(E)+(0,-0.38)$) -- ($(E)+(0,0.38)$);
+\node[lab, anchor=west] at ($(E)+(0.5,0)$) {mirino};
+
+% ---------- Raggi ----------
+\draw[raggio, ->] (\ain:5.4) -- (0,0);
+\draw[raggio, ->] (0,0) -- (\aref:5.0);
+
+% ---------- Angoli di incidenza e di riflessione ----------
+\draw[->] (0,1.0) arc[start angle=90, end angle=\ain, radius=1.0];
+\node[font=\small] at ({(90+\ain)/2}:1.38) {$\theta_B$};
+\draw[->] (0,1.0) arc[start angle=90, end angle=\aref, radius=1.0];
+\node[font=\small] at ({(90+\aref)/2}:1.38) {$\theta_B$};
+\end{tikzpicture}
+\label{fig:brewster}
+\end{figure}
+\subsection*{Procedura di misura}
+
+Indichiamo con $\theta_0$ la posizione di zero sul goniometro (misurata senza il prisma, con il cannocchiale allineato direttamente alla sorgente) e con $\theta_i$ la lettura del cannocchiale in corrispondenza del raggio riflesso dal prisma.
+Quando il fascio incide esattamente all'angolo di Brewster $\theta_B$ rispetto alla normale alla faccia del prisma, per la legge della riflessione anche l'angolo di riflessione vale $\theta_B$: l'angolo compreso tra il raggio incidente e quello riflesso è quindi $2\theta_B$.
+Poiché $\theta_0$ corrisponde al tratto rettilineo del fascio (a $180^\circ$, rispetto alla direzione di provenienza), l'angolo di cui viene ruotato il cannocchiale tra la posizione di zero e il raggio riflesso è l'angolo supplementare:
+\[
+    \theta_B = \frac{\pi - |\theta_i - \theta_0|}{2}
+\]
+Misureremo quindi prima $\theta_0$ senza il prisma e successivamente cercheremo $\theta_i$ con il prisma inserito.
+Poiché ci aspettiamo $\theta_B \simeq 57^\circ$ (per luce polarizzata TM su vetro), la differenza angolare attesa è $|\theta_i - \theta_0| \simeq 66^\circ$ ($\sim 60^\circ$): per la ricerca del raggio riflesso basterà quindi posizionare il cannocchiale a circa $60^\circ$ (cioè a circa un terzo di angolo $\pi/3$) rispetto alla misura di zero $\theta_0$.
+Ricordando l'andamento della riflettanza $R(\theta)$ per le polarizzazioni TM e TE:
+
+ \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=6.2cm,
+                axis lines=middle,
+                xmin=-5, xmax=102,
+                ymin=-0.12, ymax=1.2,
+                xtick={90},
+                xticklabels={$90^\circ$},
+                ytick={1},
+                yticklabels={$1$},
+                xlabel={$\theta$},
+                ylabel={$|E'/E|^2$},
+                xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+                ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+                clip=false
+            ]
+                % Linee guida tratteggiate
+                \draw[dotted, gray] (axis cs:0,1) -- (axis cs:90,1) -- (axis cs:90,0);
+
+                % Curva TE (R_s)
+                \addplot[PoliBlue, very thick, domain=0:90, samples=100]
+                    {((cos(x) - sqrt(2.25 - sin(x)^2)) / (cos(x) + sqrt(2.25 - sin(x)^2)))^2};
+                \node[PoliBlue, font=\small, above left] at (axis cs:62,0.22) {TE};
+
+                % Curva TM (R_p)
+                \addplot[OpticRed, very thick, domain=0:90, samples=100]
+                    {((sqrt(2.25 - sin(x)^2) - 2.25*cos(x)) / (sqrt(2.25 - sin(x)^2) + 2.25*cos(x)))^2};
+                \node[OpticRed, font=\small, right] at (axis cs:80,0.32) {TM};
+
+                % Angolo di Brewster
+                \fill[black] (axis cs:56.31,0) circle (1.5pt);
+                \node[above, font=\small] at (axis cs:56.31,0.03) {$\theta_B$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+Posizioniamoci attorno a un angolo di separazione di circa $60^\circ$. Per assicurarci di lavorare in polarizzazione TM, ruotiamo il polarizzatore osservando l'intensità della luce nell'oculare: l'intensità passerà da un massimo (TE) a un minimo (TM). Fisseremo il polarizzatore nella posizione di minima intensità; questa operazione è possibile proprio perché conosciamo già approssimativamente il valore di $\theta_B$ (in caso contrario sarebbe stato molto difficile individuare la regione in cui l'intensità si attenua).
+
+Dopo una prima lettura, si procede ruotando il prisma di $1^\circ$ con una mano e spostando contemporaneamente il cannocchiale di $2^\circ$ (così da seguire il raggio riflesso mentre ci si sposta lungo la curva $R(\theta)$):
+\begin{itemize}
+    \item se l'intensità luminosa aumenta, ci si sta allontanando dal minimo e occorre tornare indietro;
+    \item se ci si muove verso sinistra (angoli più piccoli) occorre comunque fermarsi con cautela per non falsare la misura, poiché in quella zona la curva è piatta e si osservano valori di intensità molto simili. Sapendo che la misura attesa corrisponde a una separazione intorno ai $\sim 60^\circ$, conviene tornare verso destra e fermarsi subito prima che l'intensità torni ad aumentare.
+\end{itemize}
+
+\subsection*{Analisi degli errori e osservazioni}
+
+Le principali fonti di incertezza e le accortezze nell'analisi dei dati sono le seguenti:
+\begin{itemize}
+    \item \textbf{Incertezza sul minimo e distribuzione delle misure:} oltre alla risoluzione del goniometro, l'errore dominante è legato alla stima visiva dell'intensità minima, poiché è difficile delimitare con precisione l'intervallo angolare in cui la luminosità appare uniforme. Per questo motivo si spostano ogni volta prisma e cannocchiale e si ripete la misura il maggior numero di volte possibile, costruendo una distribuzione statistica dei dati.
+
+   \begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.85\textwidth,
+    height=6.5cm,
+    xlabel={$\theta_B$ [$^\circ$]},
+    ylabel={conteggi},
+    xmin=55.3, xmax=57.7,
+    ymin=0, ymax=28,
+    ytick={0,5,...,25},
+    xtick={55.4,55.6,...,57.6},
+    xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=1},
+    ymajorgrids, grid style={dashed, gray!30},
+    legend pos=north east,
+    legend style={font=\footnotesize, draw=none, fill=white, fill opacity=0.8, text opacity=1},
+    tick label style={font=\footnotesize},
+    label style={font=\small}
+]
+
+% Istogramma (N = 60 misure simulate, bin da 0.2 gradi)
+\addplot[ybar interval, fill=cyan!25, draw=blue!50!black, thick]
+    coordinates {
+        (55.4,0) (55.6,0) (55.8,2) (56.0,14) (56.2,18) (56.4,13)
+        (56.6,8) (56.8,4) (57.0,1) (57.2,0) (57.4,0)
+    };
+\addlegendentry{misure ($N=60$)}
+
+% Profilo asimmetrico atteso (coda verso angoli maggiori)
+\addplot[red!70!black, very thick, smooth, mark=none, domain=55.7:57.7]
+    coordinates {
+        (55.70,0.01) (55.75,0.07) (55.80,0.24) (55.85,0.73) (55.90,1.84)
+        (55.95,3.88) (56.00,6.94) (56.05,10.64) (56.10,14.20) (56.15,16.88)
+        (56.20,18.29) (56.25,18.55) (56.30,17.99) (56.35,16.97) (56.40,15.71)
+        (56.45,14.33) (56.50,12.90) (56.55,11.48) (56.60,10.08) (56.65,8.75)
+        (56.70,7.50) (56.75,6.35) (56.80,5.31) (56.85,4.38) (56.90,3.57)
+        (56.95,2.88) (57.00,2.29) (57.05,1.80) (57.10,1.40) (57.15,1.07)
+        (57.20,0.81) (57.25,0.61) (57.30,0.45) (57.40,0.24) (57.50,0.12)
+        (57.60,0.06) (57.70,0.03)
+    };
+\addlegendentry{profilo asimmetrico}
+
+% Media e banda $\pm\sigma$
+\addplot[black, thick, dashed, mark=none] coordinates {(56.39,0) (56.39,28)};
+\addlegendentry{media $\bar{\theta}_B$}
+\addplot[black!60, thick, dotted, mark=none] coordinates {(56.12,0) (56.12,28)};
+\addplot[black!60, thick, dotted, mark=none] coordinates {(56.66,0) (56.66,28)};
+\addlegendentry{$\bar{\theta}_B\pm\sigma_{\theta_B}$}
+
+% Annotazioni sulle code
+\node[font=\footnotesize, align=center, anchor=south west] at (axis cs:56.95,6.0) {coda lunga:\\intensità bassa\\e poco variabile};
+\draw[->, thin] (axis cs:57.2,5.9) -- (axis cs:57.12,1.6);
+\node[font=\footnotesize, align=center, anchor=south east] at (axis cs:55.95,11) {fianco ripido:\\pochi errori};
+\draw[->, thin] (axis cs:55.85,10.9) -- (axis cs:55.88,5.2);
+\end{axis}
+\end{tikzpicture}
+\label{fig:distribuzione-brewster}
+\end{figure}
+
+    Sebbene si possa pensare di eseguire un fit gaussiano, ciò non è strettamente necessario (e nemmeno garantito), poiché la distribuzione non è necessariamente gaussiana: è infatti difficile commettere errori verso la zona in cui l'intensità cresce rapidamente (la curva è più ripida), quindi si avranno prevalentemente code dal lato in cui l'intensità rimane bassa e varia lentamente, generando una distribuzione asimmetrica.
+
+    \begin{nota}
+        \textit{(Nota mia: interessante calcolare l'indice di curtosi qui?)}
+    \end{nota}
+
+    Dai dati raccolti si calcolano la media $\bar{\theta}_B$, la deviazione standard $\sigma_{\theta_B}$ e l'incertezza sulla media:
+    \[
+        \sigma_{\bar{\theta}_B} = \frac{\sigma_{\theta_B}}{\sqrt{N}}
+    \]
+    dove $N$ è il numero totale di misure effettuate. Risulta inoltre utile confrontare i valori di $\bar{\theta}_B$ ottenuti dai diversi componenti del gruppo per verificarne la compatibilità.
+
+    \item \textbf{Sensibilità soggettiva:} operatori diversi possiedono una diversa sensibilità dell'occhio nella valutazione del minimo luminoso; è quindi utile far ripetere le misure a persone diverse per verificare la compatibilità dei risultati.
+
+    \item \textbf{Imperfezione dei polarizzatori:} poiché i polarizzatori reali non sono ideali, oltre alla componente principale viene trasmessa anche una piccola frazione della componente ortogonale. Questo effetto sposta il minimo apparente della curva verso sinistra e può essere corretto stimando la quantità di luce residua non polarizzata mediante l'inversione della legge di Malus.
+\end{itemize}
+
+Rispetto all'esperienza di verifica della legge di Sellmeier, questa misura può risultare meno precisa a causa dell'ampio intervallo di insensibilità attorno al minimo di $R$, dato che si cerca la posizione di un minimo anziché misurare direttamente una grandezza come la deviazione minima. Tuttavia, effettuando un numero elevato di misure la statistica permette di ridurre l'errore casuale; restano comunque presenti errori sistematici (come la diversa sensibilità degli osservatori e la non idealità/disuniformità del polarizzatore) che non possono essere eliminati tramite la statistica.
 
 
 

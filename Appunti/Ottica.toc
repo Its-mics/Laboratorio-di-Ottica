@@ -34,6 +34,6 @@
 \contentsline {subsubsection}{Notazione: Il Vettore di Jones}{47}{subsubsection*.35}%
 \contentsline {subsection}{\numberline {1.10.1}Verifica della legge di Malus}{48}{subsection.1.10.1}%
 \contentsline {section}{\numberline {1.11}Fenomeni di rifrazione e riflessione}{51}{section.1.11}%
-\contentsline {subsection}{\numberline {1.11.1}Angolo critico}{52}{subsection.1.11.1}%
-\contentsline {subsection}{\numberline {1.11.2}Come osservare l'onda evanescente}{53}{subsection.1.11.2}%
-\contentsline {section}{\numberline {1.12}Misura dell'angolo di Brewster}{54}{section.1.12}%
+\contentsline {subsection}{\numberline {1.11.1}Angolo critico}{55}{subsection.1.11.1}%
+\contentsline {subsection}{\numberline {1.11.2}Come osservare l'onda evanescente}{56}{subsection.1.11.2}%
+\contentsline {section}{\numberline {1.12}Esperienza 5: Misura dell'angolo di Brewster}{58}{section.1.12}%
