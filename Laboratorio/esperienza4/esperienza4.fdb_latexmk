@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1794605410.7417 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza4/esperienza4.tex" "esperienza4.pdf" "esperienza4" 1794605413.226 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza4/esperienza4.tex" 1794605410.52135 32808 3d4d2d3696d4eef13a753c8d2a2ea0db ""
+["pdflatex"] 1794606431.16736 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza4/esperienza4.tex" "esperienza4.pdf" "esperienza4" 1794606433.65095 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza4/esperienza4.tex" 1794606432.49731 32824 362c7b5f0c92f972dcbea7f702d98d4e ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -283,10 +283,10 @@
   "Immagini/malus_residui.png" 1794603994.95279 30103 e3f31d2c9d0ae7d5f2b4e665c7b682c8 ""
   "Immagini/malus_residui_filtro.png" 1794603996.54724 27973 dfd23a34e682cbf22b66c437ab62761b ""
   "Immagini/malus_residui_fondo.png" 1794603995.68365 28846 3d6769e52c05d1b59829f3f3334cb949 ""
-  "esperienza4.aux" 1794605413.04363 6113 53b41362fa9330b47d06a35459c021ae "pdflatex"
-  "esperienza4.out" 1794605413.04522 1885 39442df99c761cf7360e813c68f807af "pdflatex"
-  "esperienza4.tex" 1794605410.52135 32808 3d4d2d3696d4eef13a753c8d2a2ea0db ""
-  "esperienza4.toc" 1794605413.04549 966 e8e432987b0d60719b32b2bb0d57f233 "pdflatex"
+  "esperienza4.aux" 1794606433.46599 6123 2ca019aa8a2eaa0d6190a0f015d63ca9 "pdflatex"
+  "esperienza4.out" 1794606433.46791 1885 39442df99c761cf7360e813c68f807af "pdflatex"
+  "esperienza4.tex" 1794606432.49731 32824 362c7b5f0c92f972dcbea7f702d98d4e ""
+  "esperienza4.toc" 1794606433.4682 966 e8e432987b0d60719b32b2bb0d57f233 "pdflatex"
   (generated)
   "esperienza4.aux"
   "esperienza4.log"
