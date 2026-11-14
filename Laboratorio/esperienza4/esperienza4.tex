@@ -167,6 +167,7 @@
 \end{itemize}
 
     \section{Analisi Dati}
+    Le prime misure ($\theta = 0^\circ - 10^\circ$, 6 punti) risultavano anomale. Dopo il giro completo sono quindi state rifatte agli stessi angoli ruotati di $2\pi$, e i 6 punti iniziali sono stati esclusi dall’analisi, che usa quindi 194 dei 200 punti di Tab. 4.
     Per verificare la legge di Malus, si è proceduto a ruotare il primo polarizzatore di due gradi e a misurare la tensione in uscita dal fotodiodo.
 
     \noindent Dalla misura potremmo ottenere 3 grafici:
@@ -179,7 +180,7 @@
       \noindent Non ci attendiamo compatibilità di nessuno dei parametri con uno specifico valore. 
       Il parametro $C$ rappresenta lo sfasamento tra l'angolo di rotazione del primo polarizzatore e l'angolo di trasmissione del secondo.
 
-      \item L'istogramma dei residui normalizzati $r = \frac{V_{fit} - V_{\text{misurato}}}{\sigma_{eff}}$ dove: $V_{fit}$ è ottenuto dalla \ref{eq:1}, 
+      \item L'istogramma dei residui normalizzati $r = \frac{V_{fit} - V_{\text{misurato}}}{\sigma_{eff}}$ dove: $V_{fit}$ è ottenuto dalla (\ref{eq:1}), 
       $V_{\text{misurato}}$ e $\sigma_{eff}$ la varianza efficace su $V_{fit}$.
 
       \noindent Se il modello teorico è corretto ci aspettiamo che i parametri della gaussiana $\mu$ e $\sigma$ siano rispettivamente compatibili con 0 e 1.
@@ -213,14 +214,14 @@
       \end{figure}
 
       Come si può notare da quest'ultimo grafico, i residui non sono compatibili con una retta di pendenza e intercetta pari a 0. 
-      Inoltre, il loro andamento non è casuale, ma segue un andamento periodico. Questo ci ha fatto presuppore la presenza di un errore sistematico. 
+      Inoltre, il loro andamento non è casuale, ma segue un andamento periodico. Questo ci ha fatto presupporre la presenza di un errore sistematico. 
 
       \subsection{Correzione per lo scaricamento della batteria}
-      Per testare l'ipotesi di cui sopra, abbiamo dapprima cercato di capire la causa della pendenza negativa della retta, individuato nello scaricamento 
+      Per testare l'ipotesi di cui sopra, abbiamo dapprima cercato di capire la causa della pendenza negativa della retta, individuata nello scaricamento 
       della batteria del fotodiodo. Proprio per questo motivo, la misura era da completarsi in breve tempo, per evitare che la tensione in uscita dal fotodiodo diminuisse eccessivamente.
 
       Di conseguenza, si è supposto uno scaricamento della batteria dipendente dal tempo, approssimato come lineare, vista la celerità nel compiere la misura.
-      Assumendo il tempo trascorso tra le misure come costanti posso assumere $\theta \propto t$.
+      Assumendo il tempo trascorso tra le misure come costante posso assumere $\theta \propto t$.
       Per tal motivo, si è moltiplicata alla funzione di fit \ref{eq:1} per un termine linere $1 + D \theta$. Si è così ottentua la nuova funzione di fit:
       \begin{equation}
         y = \left[ A \cos^2(\theta - C) + B \right](1 + D \theta)
@@ -256,7 +257,7 @@
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Immagini/malus_residui_filtro.png}
-        \caption{Andamento dei residui (non normalizzati) in funzione di $\theta$, con la correzione per l'andamento periodico.}
+        \caption{Andamento dei residui (non normalizzati)3, 93 in funzione di $\theta$, con la correzione per l'andamento periodico.}
         \label{fig5}
       \end{figure}
 
@@ -298,7 +299,7 @@
         \end{split}
       \label{eq:4}
       \end{equation}
-      Il $\chi_{rid}^2$ scende da $1$ a $0.5$ con un solo parametro in più, e i valori ottenuti (Tabella~\ref{tab:par4}) sono $F = (159 \pm 2)^\circ$ e $C = (176.8 \pm 0{,}2)^\circ$.
+      Il $\chi_{rid}^2$ scende da $1,02$ a $0.54$ con un solo parametro in più, e i valori ottenuti (Tabella~\ref{tab:par4}) sono $F = (159 \pm 2)^\circ$ e $C = (176.8 \pm 0{,}2)^\circ$.
       La loro differenza è $F - C = -17{,}8 ^\circ$ ciò ci dice che: la fase dell'andamento periodico non coincide con quella del secondo polarizzatore,
       e quindi l'ipotesi di una sua disomogeneità non è sufficiente a spiegare i dati. 
       \begin{table}[H]
@@ -346,7 +347,7 @@
         \end{split}
       \label{eq:5}
       \end{equation}
-    Il $\chi^2_{rid}$ passa da $0.54$ a $0.53$, con $G = (0{,}0416 \pm 0{,}002)$~V, pari allo $0{,}87\%$ del valore massimo $V_{max} = 4{,}80$~V, e $H = (152{,}6 \pm 2{,}5)^\circ$.
+    Il $\chi^2_{rid}$ passa da $0.54$ a $0.53$, con $G = (0{,}042 \pm 0{,}002)$~V, pari allo $0{,}87\%$ del valore massimo $V_{max} = 4{,}80$~V, e $H = (152{,}6 \pm 2{,}5)^\circ$.
       I residui normalizzati che ne risultano (Figura~\ref{fig:disom3}) non mostrano più un andamento periodico e hanno un andamento casuale.
       \begin{figure}[H]
         \centering
@@ -419,14 +420,14 @@
         \caption{Ampiezza e fase dell'onda con $k = 4$, ricavate dal fit dei residui e dal fit con la fase libera.}
         \label{tab:conf}
       \end{table}
-      I valori coincidono e quindi questo ci dice che i due fit sono due scritture dello stesso modello e infatti ottengono lo stesso $\chi^2$. Questo risultato ci dice che non è una prova indipendente della sorgente parzialmente polarizzata,
+      I valori coincidono entro le incertezze: la componente a $4\theta$ del modello (6) è la stessa onda aggiunta in (7). Questo risultato ci dice che non è una prova indipendente della sorgente parzialmente polarizzata,
       ma mostra che l'onda con $k = 4$ trovata nei residui è esattamente quella prevista da questa ipotesi, con $k = 4$ e con la fase $H = 2\varphi_0 + 2C$.
  \\
      Inoltre dal fit con la fase libera otteniamo un grado di polarizzazione $P = E = 0{,}067 \pm 0{,}002$ e una direzione $\varphi_0 = F/2 = (79{,}5 \pm 1{,}0)^\circ$,
       che forma un angolo di $(82{,}7 \pm 0{,}8)^\circ$ con l'asse del secondo polarizzatore.
       
 
-      Resta da commentare il $\chi^2/\mathrm{ndf} = 0{,}54$, che è minore di $1$. Un valore così basso potrebbe far sospettare un overfitting, viene riportata un analisi su questo fatto nella sezione succesiva.
+      Resta da commentare il $\chi^2/\mathrm{ndf} = 0{,}54$, che è minore di $1$. Un valore così basso potrebbe far sospettare un overfitting, viene riportata un analisi su questo fatto nella sezione successiva.
       È anche probabile che le incertezze siano state scelte in modo eccessivo.
  
 
@@ -434,15 +435,15 @@
       Ogni parametro aggiunto al modello ne aumenta la flessibilità e quindi, migliora l'accordo con i dati e abbassa il $\chi^2$, anche quando il parametro non descrive il fenomeno fisico.
       Se il modello finisce per adattarsi al rumore dei dati invece che al fenomeno, si sta riscontrando un \emph{overfitting}. Aggiungendo parametri ai fit si è quindi corso questo rischio.
       Vogliamo però motivare la nostra scelta, e affermare che il miglioramento ottenuto sia reale.
-      Ciascun parametro aggiunto è stato accompagnato da una spiegazione sul fenomeno fisico che dovrebbe modellare (lo scaricamento della batteria, l'andamenento periodico).
+      Ciascun parametro aggiunto è stato accompagnato da una spiegazione sul fenomeno fisico che dovrebbe modellare (lo scaricamento della batteria, l'andamento periodico).
 
-      \noindent Il modello passa da $3$ a $5$ parametri su $194$ punti e ciò è troppo poco per seguire le fluttuazioni di ogni punto.
+      \noindent Il modello passa da $3$ a $6$ parametri su $194$ punti e ciò è troppo poco per seguire le fluttuazioni di ogni punto.
       Riteniamo quindi che il miglioramento ottenuto sia dovuto alla descrizione di un effetto sistematico reale e non a un adattamento al rumore.
 
 
 \section{Conclusioni}
-Abbiamo valutato l'andamento dell'intensità di una sorgente luminosa (supposta isotropa) passante prima per un polarizzatore e poi per un analizzatore. Utilizzando come funzione di fit la sola legge di Malus (\ref{eq:1}), si ha un $\chi^2_{red} = 3,93$ e residui normlizzati con $\mu = 0.44 \pm 0.2, \; \sigma = 2.27 \pm 0.2$, dunque possiamo scare l'ipotesi che questa descrive bene i nostri dati. \\
-Dobbiamo allora considerare i termini corretti dovuti agli errori sistematici presenti nell'apparato speirmentale: scaricamento batteria fotodiodo (\ref{eq:2}) e luce parzialmente polarizzata (\ref{eq:5}). Da questa ipotesi si ottiene una funzione di fit con un $\chi^2_{red} = 0.53$, mentre i residui normalizzati hanno parametri: $\mu = -0.01 \pm 0.05, \; \sigma = 0.73 \pm 0.05$
+Abbiamo valutato l'andamento dell'intensità di una sorgente luminosa (supposta non polarizzata) passante prima per un polarizzatore e poi per un analizzatore. Utilizzando come funzione di fit la sola legge di Malus (\ref{eq:1}), si ha un $\chi^2_{red} = 3,94$ e residui normalizzati con $\mu = 0.44 \pm 0.20, \; \sigma = 2.27 \pm 0.20$, dunque possiamo scartare l'ipotesi che questa descrive bene i nostri dati. \\
+Dobbiamo allora considerare i termini correttivi dovuti agli errori sistematici presenti nell'apparato sperimentale: scaricamento batteria fotodiodo (\ref{eq:2}) e luce parzialmente polarizzata (\ref{eq:5}). Da questa ipotesi si ottiene una funzione di fit con un $\chi^2_{red} = 0.53$, mentre i residui normalizzati hanno parametri: $\mu = -0.01 \pm 0.05, \; \sigma = 0.73 \pm 0.05$
 
 \onecolumn
 \begin{table}[!t]
