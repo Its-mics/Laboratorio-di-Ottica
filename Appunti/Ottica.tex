@@ -207,6 +207,51 @@
 \justifying
 
 \frontmatter % Numerazione romana per indici
+
+
+% Comando per le citazioni: testo + attribuzione allineata a destra
+\newcommand{\citazione}[2]{%
+  \begin{quote}
+    \textit{«#1»}\par
+    \vspace{-0.3em}
+    {\raggedleft\small --- #2\par}
+  \end{quote}}
+
+\chapter*{Premessa}
+\markboth{Premessa}{}
+\phantomsection
+\addcontentsline{toc}{chapter}{Premessa}
+
+Questi appunti sono stati fatti nel corso 
+dell'anno accademico 2026/27 e si basano esclusivamente sulle lezioni del
+prof.~Della Ricca. 
+Eventuali errori sono stati inseriti volutamente per
+verificare che qualcuno stesse leggendo.
+
+\noindent Prima di addentrarci negli appunti, rendiamo omaggio a chi
+ha studiato questi argomenti prima di noi, con qualche libertà sulle fonti.
+
+\citazione{Se ho visto più lontano, è perché ho sbirciato la relazione
+di quelli dell'anno prima.}%
+{Isaac Newton (liberamente riadattato)}
+
+\citazione{Eppur si muove.}%
+{Galileo Galilei, guardando lo spot del laser dopo aver toccato il
+tavolo }
+
+\citazione{Daje roma}%
+{Prof.~Della Ricca}
+
+
+
+
+
+
+
+
+
+
+
 \tableofcontents
 
 \mainmatter % Numerazione araba per i capitoli

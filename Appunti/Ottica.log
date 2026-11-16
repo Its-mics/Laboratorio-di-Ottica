@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  16 NOV 2026 23:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  16 NOV 2026 23:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1140,26 +1140,34 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2
 
+] [1
+
 ] (./Ottica.toc
 Package cleveref Info: loaded `italian' language definitions on input line 1.
 Package cleveref Info: loaded `italian' language definitions on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 4.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 4.
-)
+(Font)              <6> on input line 5.
+
+Underfull \vbox (badness 1515) has occurred while \output is active []
+
+ [2
+
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}])
 \tf@toc=\write4
 \openout4 = `Ottica.toc'.
 
- [1
+Package cleveref Info: loaded `italian' language definitions on input line 257.
+ [3]
+Package cleveref Info: loaded `italian' language definitions on input line 257.
+ [4
 
-{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-Package cleveref Info: loaded `italian' language definitions on input line 212.
- [2]
+]
 Capitolo 1.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 219.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 264.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1167,56 +1175,55 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 232.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 277.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 233.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 278.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.247 plt.
+l.292 plt.
           figure() [1
 
-
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<Immagini/fit_iminuit immagine.png, id=132, 412.6617pt x 328.8285pt>
+<Immagini/fit_iminuit immagine.png, id=146, 412.6617pt x 328.8285pt>
 File: Immagini/fit_iminuit immagine.png Graphic file (type png)
 <use Immagini/fit_iminuit immagine.png>
-Package pdftex.def Info: Immagini/fit_iminuit immagine.png  used on input line 281.
+Package pdftex.def Info: Immagini/fit_iminuit immagine.png  used on input line 326.
 (pdftex.def)             Requested size: 318.66948pt x 253.93127pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 285.
+Package cleveref Info: loaded `italian' language definitions on input line 330.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.285 
+l.330 
        [2] [3 <./Immagini/fit_iminuit immagine.png>]
-<Immagini/fit3 iminuit immmagine 1.png, id=192, 401.8212pt x 328.8285pt>
+<Immagini/fit3 iminuit immmagine 1.png, id=205, 401.8212pt x 328.8285pt>
 File: Immagini/fit3 iminuit immmagine 1.png Graphic file (type png)
 <use Immagini/fit3 iminuit immmagine 1.png>
-Package pdftex.def Info: Immagini/fit3 iminuit immmagine 1.png  used on input line 362.
+Package pdftex.def Info: Immagini/fit3 iminuit immmagine 1.png  used on input line 407.
 (pdftex.def)             Requested size: 227.62206pt x 186.27515pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 363.
-<Immagini/fit3 iminuit immmagine 2.png, id=193, 400.3758pt x 328.8285pt>
+(Font)              <10.95> on input line 408.
+<Immagini/fit3 iminuit immmagine 2.png, id=206, 400.3758pt x 328.8285pt>
 File: Immagini/fit3 iminuit immmagine 2.png Graphic file (type png)
 <use Immagini/fit3 iminuit immmagine 2.png>
-Package pdftex.def Info: Immagini/fit3 iminuit immmagine 2.png  used on input line 372.
+Package pdftex.def Info: Immagini/fit3 iminuit immmagine 2.png  used on input line 417.
 (pdftex.def)             Requested size: 218.51521pt x 179.47139pt.
-<Immagini/fit3 iminuit immmagine 3.png, id=194, 417.7206pt x 328.8285pt>
+<Immagini/fit3 iminuit immmagine 3.png, id=207, 417.7206pt x 328.8285pt>
 File: Immagini/fit3 iminuit immmagine 3.png Graphic file (type png)
 <use Immagini/fit3 iminuit immmagine 3.png>
-Package pdftex.def Info: Immagini/fit3 iminuit immmagine 3.png  used on input line 379.
+Package pdftex.def Info: Immagini/fit3 iminuit immmagine 3.png  used on input line 424.
 (pdftex.def)             Requested size: 218.51521pt x 172.01036pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 388.
+Package cleveref Info: loaded `italian' language definitions on input line 433.
  [4]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 394.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 439.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [5{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./Immagini/fit3 iminuit immmagine 1.png> <./Immagini/fit3 iminuit immmagine 2.png> <./Immagini/fit3 iminuit immmagine 3.png>] (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1226,34 +1233,34 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Package cleveref Info: loaded `italian' language definitions on input line 446.
+Package cleveref Info: loaded `italian' language definitions on input line 491.
  [6]
-Overfull \hbox (4.37428pt too wide) in paragraph at lines 467--468
+Overfull \hbox (4.37428pt too wide) in paragraph at lines 512--513
 \T1/lmr/m/n/12 (-20) Nel ca-so di mi-su-re $\OT1/lmr/m/n/12 (-20) (\OML/lmm/m/it/12 x; y\OT1/lmr/m/n/12 (-20) )$ \T1/lmr/m/n/12 (-20) con in-cer-tez-ze su en-tram-bi gli as-si, si uti-liz-za la clas-se \T1/lmtt/m/n/12 TGraphErrors\T1/lmr/m/n/12 (-20) .
  []
 
 [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 542.
+Package cleveref Info: loaded `italian' language definitions on input line 587.
  [8]
-Package cleveref Info: loaded `italian' language definitions on input line 600.
+Package cleveref Info: loaded `italian' language definitions on input line 645.
  [9]
-Package cleveref Info: loaded `italian' language definitions on input line 670.
+Package cleveref Info: loaded `italian' language definitions on input line 715.
  [10]
-Package cleveref Info: loaded `italian' language definitions on input line 740.
+Package cleveref Info: loaded `italian' language definitions on input line 785.
  [11]
-Package cleveref Info: loaded `italian' language definitions on input line 783.
+Package cleveref Info: loaded `italian' language definitions on input line 828.
  [12]
-Package cleveref Info: loaded `italian' language definitions on input line 834.
+Package cleveref Info: loaded `italian' language definitions on input line 879.
  [13]
-Package cleveref Info: loaded `italian' language definitions on input line 854.
+Package cleveref Info: loaded `italian' language definitions on input line 899.
  [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 938.
+Package cleveref Info: loaded `italian' language definitions on input line 983.
  [15]
-Package cleveref Info: loaded `italian' language definitions on input line 939.
+Package cleveref Info: loaded `italian' language definitions on input line 984.
  [16]
 Capitolo 2.
 [17
@@ -1261,100 +1268,100 @@ Capitolo 2.
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 1060.
+Package cleveref Info: loaded `italian' language definitions on input line 1105.
  [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 1157.
+Package cleveref Info: loaded `italian' language definitions on input line 1202.
  [19]
-Package cleveref Info: loaded `italian' language definitions on input line 1187.
+Package cleveref Info: loaded `italian' language definitions on input line 1232.
  [20]
-Package cleveref Info: loaded `italian' language definitions on input line 1250.
+Package cleveref Info: loaded `italian' language definitions on input line 1295.
  [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 1360.
+Package cleveref Info: loaded `italian' language definitions on input line 1405.
  [22]
-Package cleveref Info: loaded `italian' language definitions on input line 1497.
+Package cleveref Info: loaded `italian' language definitions on input line 1542.
  [23]
-Package cleveref Info: loaded `italian' language definitions on input line 1662.
+Package cleveref Info: loaded `italian' language definitions on input line 1707.
  [24]
-Package cleveref Info: loaded `italian' language definitions on input line 1760.
+Package cleveref Info: loaded `italian' language definitions on input line 1805.
  [25]
-Package cleveref Info: loaded `italian' language definitions on input line 1897.
+Package cleveref Info: loaded `italian' language definitions on input line 1942.
  [26]
-Package cleveref Info: loaded `italian' language definitions on input line 1944.
+Package cleveref Info: loaded `italian' language definitions on input line 1989.
  [27]
-Package cleveref Info: loaded `italian' language definitions on input line 2046.
+Package cleveref Info: loaded `italian' language definitions on input line 2091.
  [28]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2097.
+(Font)              <5> on input line 2142.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 2140.
+Package cleveref Info: loaded `italian' language definitions on input line 2185.
  [29]
 Underfull \vbox (badness 7963) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 2151.
+Package cleveref Info: loaded `italian' language definitions on input line 2196.
  [30]
-Package cleveref Info: loaded `italian' language definitions on input line 2172.
+Package cleveref Info: loaded `italian' language definitions on input line 2217.
  [31]
 Capitolo 3.
 [32
 
 ]
-Package cleveref Info: loaded `italian' language definitions on input line 2240.
+Package cleveref Info: loaded `italian' language definitions on input line 2285.
  [33]
-Overfull \hbox (5.56206pt too wide) in paragraph at lines 2312--2313
+Overfull \hbox (5.56206pt too wide) in paragraph at lines 2357--2358
  [][] 
  []
 
 
-Overfull \hbox (34.78383pt too wide) in paragraph at lines 2393--2394
+Overfull \hbox (34.78383pt too wide) in paragraph at lines 2438--2439
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 2395.
+Package cleveref Info: loaded `italian' language definitions on input line 2440.
  [34]
-Package cleveref Info: loaded `italian' language definitions on input line 2461.
+Package cleveref Info: loaded `italian' language definitions on input line 2506.
  [35]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 2463.
+(Font)              <17.28> on input line 2508.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2463.
+(hyperref)                removing `math shift' on input line 2508.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2463.
+(hyperref)                removing `math shift' on input line 2508.
 
-Package cleveref Info: loaded `italian' language definitions on input line 2560.
+Package cleveref Info: loaded `italian' language definitions on input line 2605.
 [36]
-Package cleveref Info: loaded `italian' language definitions on input line 2623.
+Package cleveref Info: loaded `italian' language definitions on input line 2668.
  [37]
-Package cleveref Info: loaded `italian' language definitions on input line 2750.
+Package cleveref Info: loaded `italian' language definitions on input line 2795.
  [38]
-Package cleveref Info: loaded `italian' language definitions on input line 2824.
+Package cleveref Info: loaded `italian' language definitions on input line 2869.
  [39]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package cleveref Info: loaded `italian' language definitions on input line 2891.
+Package cleveref Info: loaded `italian' language definitions on input line 2936.
 [40]
-Package cleveref Info: loaded `italian' language definitions on input line 2963.
+Package cleveref Info: loaded `italian' language definitions on input line 3008.
  [41]
-Package cleveref Info: loaded `italian' language definitions on input line 2983.
+Package cleveref Info: loaded `italian' language definitions on input line 3028.
  [42]
-Package cleveref Info: loaded `italian' language definitions on input line 3126.
+Package cleveref Info: loaded `italian' language definitions on input line 3171.
  [43]
-Package cleveref Info: loaded `italian' language definitions on input line 3270.
+Package cleveref Info: loaded `italian' language definitions on input line 3315.
  [44]
-Package cleveref Info: loaded `italian' language definitions on input line 3366.
+Package cleveref Info: loaded `italian' language definitions on input line 3411.
  [45]
 Capitolo 4.
 
@@ -1363,69 +1370,69 @@ Underfull \vbox (badness 3302) has occurred while \output is active []
  [46
 
 ]
-Package cleveref Info: loaded `italian' language definitions on input line 3575.
+Package cleveref Info: loaded `italian' language definitions on input line 3620.
  [47]
-Package cleveref Info: loaded `italian' language definitions on input line 3646.
+Package cleveref Info: loaded `italian' language definitions on input line 3691.
  [48]
-Package cleveref Info: loaded `italian' language definitions on input line 3694.
+Package cleveref Info: loaded `italian' language definitions on input line 3739.
  [49]
-Package cleveref Info: loaded `italian' language definitions on input line 3789.
+Package cleveref Info: loaded `italian' language definitions on input line 3834.
  [50]
-Package cleveref Info: loaded `italian' language definitions on input line 3892.
+Package cleveref Info: loaded `italian' language definitions on input line 3937.
  [51]
-Package cleveref Info: loaded `italian' language definitions on input line 3931.
+Package cleveref Info: loaded `italian' language definitions on input line 3976.
  [52]
-Package cleveref Info: loaded `italian' language definitions on input line 3994.
+Package cleveref Info: loaded `italian' language definitions on input line 4039.
  [53]
-Package cleveref Info: loaded `italian' language definitions on input line 4047.
+Package cleveref Info: loaded `italian' language definitions on input line 4092.
  [54]
-Package cleveref Info: loaded `italian' language definitions on input line 4235.
+Package cleveref Info: loaded `italian' language definitions on input line 4280.
  [55]
-Package cleveref Info: loaded `italian' language definitions on input line 4270.
+Package cleveref Info: loaded `italian' language definitions on input line 4315.
  [56]
-Package cleveref Info: loaded `italian' language definitions on input line 4312.
+Package cleveref Info: loaded `italian' language definitions on input line 4357.
  [57]
-Package cleveref Info: loaded `italian' language definitions on input line 4366.
+Package cleveref Info: loaded `italian' language definitions on input line 4411.
  [58]
-Package cleveref Info: loaded `italian' language definitions on input line 4433.
+Package cleveref Info: loaded `italian' language definitions on input line 4478.
  [59]
-Package cleveref Info: loaded `italian' language definitions on input line 4510.
+Package cleveref Info: loaded `italian' language definitions on input line 4555.
  [60]
-Package cleveref Info: loaded `italian' language definitions on input line 4638.
+Package cleveref Info: loaded `italian' language definitions on input line 4683.
  [61]
 Underfull \vbox (badness 2951) has occurred while \output is active []
 
-Package cleveref Info: loaded `italian' language definitions on input line 4711.
+Package cleveref Info: loaded `italian' language definitions on input line 4756.
  [62]
-Package cleveref Info: loaded `italian' language definitions on input line 4740.
+Package cleveref Info: loaded `italian' language definitions on input line 4785.
  [63]
 Capitolo 5.
 [64
 
 ]
-Package cleveref Info: loaded `italian' language definitions on input line 4882.
+Package cleveref Info: loaded `italian' language definitions on input line 4927.
  [65]
-Package cleveref Info: loaded `italian' language definitions on input line 4944.
+Package cleveref Info: loaded `italian' language definitions on input line 4989.
  [66]
-Package cleveref Info: loaded `italian' language definitions on input line 4998.
+Package cleveref Info: loaded `italian' language definitions on input line 5043.
  [67]
-Package cleveref Info: loaded `italian' language definitions on input line 5130.
+Package cleveref Info: loaded `italian' language definitions on input line 5175.
  [68]
-Package cleveref Info: loaded `italian' language definitions on input line 5189.
+Package cleveref Info: loaded `italian' language definitions on input line 5234.
  [69]
-Package cleveref Info: loaded `italian' language definitions on input line 5294.
+Package cleveref Info: loaded `italian' language definitions on input line 5339.
  [70]
-Package cleveref Info: loaded `italian' language definitions on input line 5314.
+Package cleveref Info: loaded `italian' language definitions on input line 5359.
  [71]
-Package cleveref Info: loaded `italian' language definitions on input line 5447.
+Package cleveref Info: loaded `italian' language definitions on input line 5492.
  [72]
-Package cleveref Info: loaded `italian' language definitions on input line 5521.
+Package cleveref Info: loaded `italian' language definitions on input line 5566.
  [73]
-Package cleveref Info: loaded `italian' language definitions on input line 5570.
+Package cleveref Info: loaded `italian' language definitions on input line 5615.
  [74]
-Package cleveref Info: loaded `italian' language definitions on input line 5631.
+Package cleveref Info: loaded `italian' language definitions on input line 5676.
  [75]
-Package cleveref Info: loaded `italian' language definitions on input line 5683.
+Package cleveref Info: loaded `italian' language definitions on input line 5728.
  [76] (./Ottica.aux
 Package cleveref Info: loaded `italian' language definitions on input line 8.
 Package cleveref Info: loaded `italian' language definitions on input line 9.
@@ -1436,18 +1443,18 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 75025 strings out of 467525
- 1855762 string characters out of 5418983
- 3840037 words of memory out of 5000000
- 102107 multiletter control sequences out of 15000+600000
+ 75033 strings out of 467525
+ 1855868 string characters out of 5418983
+ 3840095 words of memory out of 5000000
+ 102111 multiletter control sequences out of 15000+600000
  778212 words of font info for 346 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,19n,108p,1065b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Ottica.pdf (80 pages, 968283 bytes).
+Output written on Ottica.pdf (82 pages, 971143 bytes).
 PDF statistics:
- 1243 PDF objects out of 1440 (max. 8388607)
- 1050 compressed objects within 11 object streams
- 547 named destinations out of 1000 (max. 500000)
- 78199 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1257 PDF objects out of 1440 (max. 8388607)
+ 1062 compressed objects within 11 object streams
+ 551 named destinations out of 1000 (max. 500000)
+ 78207 words of extra memory for PDF output out of 89155 (max. 10000000)
 
