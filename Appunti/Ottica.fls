@@ -551,8 +551,8 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmmib7.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 OUTPUT Ottica.toc
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -630,6 +630,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmri8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT Ottica.aux
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
@@ -658,3 +659,4 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
