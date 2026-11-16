@@ -4727,6 +4727,61 @@ Le principali fonti di incertezza e le accortezze nell'analisi dei dati sono le 
 
 Rispetto all'esperienza di verifica della legge di Sellmeier, questa misura può risultare meno precisa a causa dell'ampio intervallo di insensibilità attorno al minimo di $R$, dato che si cerca la posizione di un minimo anziché misurare direttamente una grandezza come la deviazione minima. Tuttavia, effettuando un numero elevato di misure la statistica permette di ridurre l'errore casuale; restano comunque presenti errori sistematici (come la diversa sensibilità degli osservatori e la non idealità/disuniformità del polarizzatore) che non possono essere eliminati tramite la statistica.
 
+\chapter{interferenza}
+\section{Introduzione ai fenomeni di interferenza}
+Questi fenomeni sono governati dal principio di sovrapposizione dei campi, queste sono garantiti dal fatto che i campi sono soluzione delle eq.di Maxwell.
+Consideriamo due sorgenti:
+\begin{itemize}
+    \item $\vec{E}_1= \vec{E}_{1,0} cos (\omega_1 t -\vec{k}_1 \cdot (\vec{r} - \vec{r}_1) + \psi_1)$
+    \item $\vec{E}_2= \vec{E}_{,0} cos (\omega_2 t -\vec{k}_2 \cdot (\vec{r} - \vec{r}_2) + \psi_2)$
+\end{itemize}
+In realtà quello che riusciamp a misurre noi è l'irradianza, che è data da $$I(r)= \epsilon_0 c \left\langle |\vec{E}_{\text{tot}(\vec{r}, t)}|^2\right\rangle$$, che possiamo riscirvere come:
+\begin{equation}
+    I(\vec{r})= I_1(\vec{r}) + I_2(\vec{r}) + 2 \epsilon_0 c \vec{E}_{1,0} \cdot \vec{E}_{2,0} \left\langle \cos(\omega_1 t - \vec{k_1} \cdot (\vec{r} - \vec{r_1}) + \psi_1) \cos(\omega_2 t - \vec{k_2} \cdot (\vec{r} - \vec{r_2}) + \psi_2)\right\rangle
+\end{equation}
+Allora mi trovo in due distente situazioni, infatti $I(r)$ 
+\begin{itemize}
+    \item $I_1(\vec{r}) + I_2(\vec{r})$ \; \; se $\omega_1 \neq \omega_2 , \vec{E}_{1,0} \perp \vec{E}_{2,0}  , \psi_1(t ) = \psi_2 (t)$ 
+    \item $I_1(\vec{r}) + I_2(\vec{r}) + 2 \sqrt{I_1(\vec{r} ) I_2(\vec{r})} \cos(\alpha) \cos[\vec{k_1} \cdot (\vec{r} - \vec{r_1}) + \psi_1 - \vec{k_2} \cdot (\vec{r} - \vec{r_2}) - \psi_2]$ \; se $\omega_1$
+\end{itemize}
+\subsection{Esperimetno di Jung}
+L'esperimento di Jung consiste in due fenditure che vengono irradiate da una luce puntiforme. Da qui si può osservare interferenza costruttiva dovuto alla differenza di cammino ottico. 
+Infatti l'interferena cosntruittiva è data da:
+\begin{equation*}
+    \vec{k } \cdot  ( \vec{r_2} - \vec{r_1}) + \psi_2 - \psi_1 = \pm 2 m \pi
+\end{equation*}
+Allora nelle codizioni per cui ho intererenza si ha $\psi_1 = \psi_2$ e dunque $ |d_1 - d_2| = m \lambda$. Dopo alcune approssimazioni si ha che:
+\begin{equation*}
+    \frac{y h }{x} = m \lambda
+\end{equation*}
+\subsection{Altri esperimenti per la genesi di interferenze}
+sss
+
+\section{Esperimento 6 }
+\subsection{Difrazione da una fenditura: teoria }
+Ho uno schermo lungo l'asse x, con un apertura con larghezza $2d$. A questa faccio arrivare un fronte d'onda piana. 
+Utilizzo allora l'approssimazione di Franhofer ($\theta$ piccolo, s (distanza) grande, $\vec{k_1} \parallel \vec{k_2})$\\
+Considero allora che all'interno della fenditura ho una densità costante di campo elettrico pari $ \lambda_{\text{campo} = \frac{E_0}{2d}}$. Dunque il campo totale è:
+\begin{equation}
+    E_{schermo} = \int_{-d}^{+d} dx \frac{E_0}{2d} e^{-i \Delta \psi(x)} \cong \int_{-d}^{+d} dx \frac{E_0}{2d} e^{\frac{i k x y }{s}} = \frac{E_0 s}{d k y} \sin(\frac{kdy}{s})
+\end{equation}
+Dunque posso misurare il termine:
+\begin{equation}
+    \frac{I}{I_0} = \frac{\sin^2(\frac{kdy}{s})}{(\frac{kdy}{s})^2}
+\end{equation}
+
+\subsection{Apparato sperimentale}
+Ho un laser (1 mm) con una lente convergente davanti, se allora sono più lontano della lunghezza focale posso mettere un altra lente alla distranza ($f_1 + f_2$). 
+Così facendo ho ottenuto un onda piana con un diametro maggiore. 
+Il fit da fare è:
+\begin{equation*}
+    y = A \frac{\sin^2(B(x-C))}{[B(x-C)]^2} + D
+\end{equation*}
+Gli errori sulla misura sono quelli sulla posizone dell'oggetto, ma anche 
+
+
+
+
 
 
 
