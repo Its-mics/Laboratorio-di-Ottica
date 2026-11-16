@@ -4731,21 +4731,41 @@ Rispetto all'esperienza di verifica della legge di Sellmeier, questa misura può
 \section{Introduzione ai fenomeni di interferenza}
 Questi fenomeni sono governati dal principio di sovrapposizione dei campi, queste sono garantiti dal fatto che i campi sono soluzione delle eq.di Maxwell.
 Consideriamo due sorgenti:
+
 \begin{itemize}
-    \item $\vec{E}_1= \vec{E}_{1,0} cos (\omega_1 t -\vec{k}_1 \cdot (\vec{r} - \vec{r}_1) + \psi_1)$
-    \item $\vec{E}_2= \vec{E}_{,0} cos (\omega_2 t -\vec{k}_2 \cdot (\vec{r} - \vec{r}_2) + \psi_2)$
+    \item $\vec{E}_1= \vec{E}_{1,0} cos (\omega_1 t -\vec{k}_1 \cdot (\vec{r} - \vec{r}_1) + \psi_1) = \vec{E}_1(\vec{r},t)$
+    \item $\vec{E}_2= \vec{E}_{,0} cos (\omega_2 t -\vec{k}_2 \cdot (\vec{r} - \vec{r}_2) + \psi_2) = \vec{E}_2(\vec{r},t)$
 \end{itemize}
-In realtà quello che riusciamp a misurre noi è l'irradianza, che è data da $$I(r)= \epsilon_0 c \left\langle |\vec{E}_{\text{tot}(\vec{r}, t)}|^2\right\rangle$$, che possiamo riscirvere come:
+
+GRAFICO
+
+se r è lo stesso nei 2 il campo totale in quel punto sarà (per il rpincipio di sovrapposizione):
 \begin{equation}
-    I(\vec{r})= I_1(\vec{r}) + I_2(\vec{r}) + 2 \epsilon_0 c \vec{E}_{1,0} \cdot \vec{E}_{2,0} \left\langle \cos(\omega_1 t - \vec{k_1} \cdot (\vec{r} - \vec{r_1}) + \psi_1) \cos(\omega_2 t - \vec{k_2} \cdot (\vec{r} - \vec{r_2}) + \psi_2)\right\rangle
+    E_{tot} = \vec{E}_1(\vec{r},t) + \vec{E}_2(\vec{r},t)
 \end{equation}
-Allora mi trovo in due distente situazioni, infatti $I(r)$ 
+
+
+In realtà quello che riusciamp a misurre noi è l'irradianza, che è data da $$I(r)= \epsilon_0 c \left\langle |\vec{E}_{\text{tot}(\vec{r}, t)}|^2\right\rangle $$, che possiamo riscirvere come:
+\begin{equation}
+    I(\vec{r})= \langle |\vec{E}_1(\vec{r},t)|^2 \rangle + \langle |\vec{E}_2(\vec{r},t)|^2\rangle + 2 \epsilon_0 c \langle \vec{E}_{1} \cdot \vec{E}_{2} \rangle
+\end{equation}
+dove l'ultimo termine è l'interferenza.
+
+$$I(\vec{r})= I_1 + I_2 + 2 \epsilon_0 c \vec{E}_{1,0} \cdot \vec{E}_{2,0} \left\langle \cos(\omega_1 t - \vec{k_1} \cdot (\vec{r} - \vec{r_1}) + \psi_1) \cos(\omega_2 t - \vec{k_2} \cdot (\vec{r} - \vec{r_2}) + \psi_2)\right\rangle$$
+Allora mi trovo in due distinte situazioni, infatti $I(r)$ 
 \begin{itemize}
-    \item $I_1(\vec{r}) + I_2(\vec{r})$ \; \; se $\omega_1 \neq \omega_2 , \vec{E}_{1,0} \perp \vec{E}_{2,0}  , \psi_1(t ) = \psi_2 (t)$ 
-    \item $I_1(\vec{r}) + I_2(\vec{r}) + 2 \sqrt{I_1(\vec{r} ) I_2(\vec{r})} \cos(\alpha) \cos[\vec{k_1} \cdot (\vec{r} - \vec{r_1}) + \psi_1 - \vec{k_2} \cdot (\vec{r} - \vec{r_2}) - \psi_2]$ \; se $\omega_1$
+    \item $I_1(\vec{r}) + I_2(\vec{r})$ \; \; se $\omega_1 \neq \omega_2 , \vec{E}_{1,0} \perp \vec{E}_{2,0}  , \psi_1(t ) \neq \psi_2 (t)$ ovvero le fasi dipendono dal tempo
+    \item $I_1(\vec{r}) + I_2(\vec{r}) + 2 \sqrt{I_1(\vec{r} ) I_2(\vec{r})} \cos(\alpha) \cos[\vec{k_1} \cdot (\vec{r} - \vec{r_1}) + \psi_1 - \vec{k_2} \cdot (\vec{r} - \vec{r_2}) - \psi_2]$ \; se $\omega_1= \omega_2, |\vec{k_1}| = |\vec{k_2}|$
 \end{itemize}
-\subsection{Esperimetno di Jung}
-L'esperimento di Jung consiste in due fenditure che vengono irradiate da una luce puntiforme. Da qui si può osservare interferenza costruttiva dovuto alla differenza di cammino ottico. 
+
+per cui il termine di interferenza compare solo se i 2 campi hanno la stessa polarizzazione (perché hanno stessa frequenza ed )
+
+\subsection{Esperimento di Young}
+L'esperimento di Young consiste in due fenditure che vengono irradiate da una sorgente di luce puntiforme, si può dedurre che se la sorgente è monocromatica allora $S_1$ e $S_2$ (le 2 fenditure) avranno la stess frequenza. Se S(sorgente) è centrale ad $S_1$ o $S_2$, allora la somma farà 0.  Se invece non fosse monocromatica non è un problema perché al di là delle 2 aperture le onde con frequenze diverse si sommano (e quindi propagano) come abbiamo visto prima non andando a generare interferenza se la frequenza è diversa.
+ 
+
+GRAFICO
+
 Infatti l'interferena cosntruittiva è data da:
 \begin{equation*}
     \vec{k } \cdot  ( \vec{r_2} - \vec{r_1}) + \psi_2 - \psi_1 = \pm 2 m \pi
