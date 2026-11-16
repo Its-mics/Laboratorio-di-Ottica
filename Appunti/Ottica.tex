@@ -4779,9 +4779,25 @@ Il fit da fare è:
 \end{equation*}
 Gli errori sulla misura sono quelli sulla posizone dell'oggetto, ma anche 
 
-
-
-
+\subsection{Difrazione di una fenditura rettangolare e circolare}
+Succede la stessa cosa, ma ho un integrale doppio:
+\begin{equation}
+    E_{schermo} = \int_{-b}^{+b} \int_{-a}^{+a} dx dy \frac{E_0}{2a 2b} e^{-i \Delta \psi(x)} e^{-i \Delta \psi(y)} = \frac{E_0 s^2}{a b k^2 y x } \sin(\frac{k a y}{s}) \sin(\frac{k b x}{s})
+\end{equation}
+Se ho invece una fenditura circolare posso dividerla in piccole fettine, questo mi fa in modo di avere:
+\begin{equation}
+    E_{\text{schermo}}= \int_{-R}^{+R} dx \frac{E_0}{\pi R^2} \sqrt{R^2 - x^2} e^{-i \Delta \psi(x)}
+\end{equation}
+Risolvendo questa posso trovare la figura di bessel che mi serve per la distinzione di stelle vicine. 
+ \subsection{Difrazione di un filo}
+Se ho un filo di lunghezza 2d, allora quello hce ottengo è:
+\begin{equation}
+    E_{\text{schermo}} = E_0 - E_0 \frac{\sin(\frac{k d y }{s})}{\frac{ k d y}{s}} 
+\end{equation} 
+Dunque la mia intensità è data da:
+\begin{equation}
+    \frac{I}{I_0} = 1 
+\end{equation}
 
 
 
