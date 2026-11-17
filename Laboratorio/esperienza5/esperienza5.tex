@@ -261,74 +261,75 @@ L'apparato per misurare l'angolo di Brewster è composto da:
         \label{fig:hist_mich}
       \end{figure}
 
+A causa della diversa sensibilità delle singole persone si hanno distribuzioni e parametri differenti.
+
+Analizzando la distribuzione di ciascun osservatore si può dedurre che:
+\begin{itemize}
+  \item per il primo e il quarto osservatore l'istogramma non si distribuisce secondo nessuna distribuzione nota, nonostante ciò i valori medi ricavati risultano essere compatibili tra di loro e con il terzo osservatore;
+  \item mancando di un adeguato numero di misure esse non si distribuiscono come una normale; 
+\end{itemize}
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{lcccc}
+    \toprule
+    Persona & $N$ & $\bar\theta_B$ [$^\circ$] & $\sigma_{\theta_B}$ [$^\circ$] & $\sigma_{\bar\theta_B}$ [$^\circ$] \\
+    \midrule
+    Manuele & $30$ & $56{,}811$ & $0{,}34$ & $0{,}062$ \\
+    Alessio & $25$ & $56{,}97$ & $0{,}59$ & $0{,}12$ \\
+    Emanuele & $20$ & $56{,}715$ & $0{,}18$ & $0{,}041$ \\
+    Michele & $30$ & $56{,}889$ & $0{,}40$ & $0{,}073$ \\
+    \midrule
+    Totale & $105$ & $56{,}853$ & $0{,}41$ & $0{,}040$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Media, deviazione standard e incertezza sulla media di $\theta_B$ per ciascun persona e per tutti i dati.}
+\label{tab:theta}
+\end{table}
+
+Si noti come le medie differiscano al massimo per una decina di secondi di gradi (\ref{tab:theta}). 
+
+Riportiamo infine la tabella dei valori degli indici di rifrazione ricavati dal campione complessivo delle 105 misure e dai campioni dei singoli osservatori:
 
 
-\textbf{DA DIRE: ogni persona ha media e dispersione diverse a causa della sensibilità divers inoltre con pochi dati il fit gaussiano ha poco significato}
-Analizzando la distribuzione di ciascun osservatore si può dedurre che: per il primo e il quarto osservatore l'istogramma non si distribuisce secondo nessuna distribuzione nota, nonostante ciò i valori medi ricavati risultano essere compatibili tra di loro e risultano essere compatibili con il valore medio ricavato dalla distribuzione del secondo osservatore. La non compatibilità avviene con il valore medio del terzo osservatore: si può notare che la discrepanza tra il valore della scarto tra i valori medi e il valore di soglia per la compatibilità è dell'ordine del millesimo di grado; rispettivamente tra il secondo e il terzo osservatore è pari a $0,0014$° e tra il terzo e il quarto è di $0,0066$°. 
-Infine, soffermandosi sulle distribuzioni dei singoli osservatori, è importante far notare che in mancanza di un campione di dimensioni adeguatamente estese non ha particolare signifcato esguire un fit con una normale standard.
-
-      \begin{table}[H]
-        \centering
-        \small
-        \begin{tabular}{lcccc}
-          \toprule
-          Persona & $N$ & $\bar\theta_B$ [$^\circ$] & $\sigma_{\theta_B}$ [$^\circ$] & $\sigma_{\bar\theta_B}$ [$^\circ$] \\
-          \midrule
-          Manuele & $30$ & $56{,}811$ & $0{,}34$ & $0{,}062$ \\
-          Alessio & $25$ & $56{,}97$ & $0{,}59$ & $0{,}12$ \\
-          Emanuele & $20$ & $56{,}715$ & $0{,}18$ & $0{,}041$ \\
-          Michele & $30$ & $56{,}889$ & $0{,}40$ & $0{,}073$ \\
-          \midrule
-          Totale & $105$ & $56{,}853$ & $0{,}41$ & $0{,}040$ \\
-          \bottomrule
-        \end{tabular}
-        \caption{Media, deviazione standard e incertezza sulla media di $\theta_B$ per ciascun persona e per tutti i dati.}
-        \label{tab:theta}
-      \end{table}
-
+\begin{table}[H]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{1.5pt}
+\begin{tabular}{lcccc@{\hspace{3pt}}c}
+  \toprule
+  Persona & $n$ & $\sigma_n$ & $|n - n_{\mathrm{Sell}}|$ & $2\sqrt{\sigma_n^2 + \sigma_{\mathrm{Sell}}^2}$ & \makecell{compati-\\bilità} \\
+  \midrule
+  Manuele & $1{,}5292$ & $0{,}0036$ & $0{,}00076$ & $0{,}00728$ & sì \\
+  Alessio & $1{,}5387$ & $0{,}0070$ & $0{,}01022$ & $0{,}01392$ & sì \\
+  Emanuele & $1{,}5236$ & $0{,}0024$ & $0{,}00482$ & $0{,}00476$ & no \\
+  Michele & $1{,}5338$ & $0{,}0043$ & $0{,}00536$ & $0{,}00855$ & sì \\
+  \midrule
+  Totale & $1{,}5317$ & $0{,}0024$ & $0{,}00325$ & $0{,}00475$ & sì \\
+  \midrule
+  $n_{\mathrm{Sell}}$ & $1{,}5285$ & $0{,}0003$ & -- & -- & -- \\
+  \bottomrule
+\end{tabular}
+\caption{Indici di rifrazione e verifica della compatibilità}
+\label{tab:n}
+\end{table}
 
 
-      \texttbf{DA DIRE: le medie delle quattro persone differiscono di pochi decimi di grado}
-      
-        \begin{table}[H]
-        \centering
-        \footnotesize
-        \setlength{\tabcolsep}{1.5pt}
-        \begin{tabular}{lcccc@{\hspace{3pt}}c}
-          \toprule
-          Persona & $n$ & $\sigma_n$ & $|n - n_{\mathrm{Sell}}|$ & $2\sqrt{\sigma_n^2 + \sigma_{\mathrm{Sell}}^2}$ & \makecell{compati-\\bilità} \\
-          \midrule
-          Manuele & $1{,}5292$ & $0{,}0036$ & $0{,}00076$ & $0{,}00728$ & sì \\
-          Alessio & $1{,}5387$ & $0{,}0070$ & $0{,}01022$ & $0{,}01392$ & sì \\
-          Emanuele & $1{,}5236$ & $0{,}0024$ & $0{,}00482$ & $0{,}00476$ & no \\
-          Michele & $1{,}5338$ & $0{,}0043$ & $0{,}00536$ & $0{,}00855$ & sì \\
-          \midrule
-          Totale & $1{,}5317$ & $0{,}0024$ & $0{,}00325$ & $0{,}00475$ & sì \\
-          \midrule
-          $n_{\mathrm{Sell}}$ & $1{,}5285$ & $0{,}0003$ & -- & -- & -- \\
-          \bottomrule
-        \end{tabular}
-        \caption{Indici di rifrazione e verifica della compatibilità}
-        \label{tab:n}
-      \end{table}
-      Riportiamo infine la tabella dei valori degli indici di rifrazione ricavati dal campione complessivo delle 105 misure e dal campione del singolo osservatore:
+\begin{figure}[H]
+  \centering
+\includegraphics[width=1.0\columnwidth]{Immagini/pointrange.png}
+  \caption{Indice di rifrazione $n$ per ciascuna persona e per tutti i dati, confrontato con $n_{\mathrm{Sell}}$ dell'esperienza 3.}
+  \label{fig:pointrange}
+\end{figure}
+
+Tre dei quattro valori sono compatibili con il valore ricavato attraverso Sellmeier, con degli errori molto maggiori rispetto a quest'ultimo. Il valore con la dispersione minore risultà però anche quello non campatibile con $n_{\text{Sell}}$ (per una quantità $ \propto 4 \% $).
 
 
-      \begin{figure}[H]
-        \centering
-      \includegraphics[width=1.0\columnwidth]{Immagini/pointrange.png}
-        \caption{Indice di rifrazione $n$ per ciascuna persona e per tutti i dati, confrontato con $n_{\mathrm{Sell}}$ dell'esperienza 3.}
-        \label{fig:pointrange}
-      \end{figure}
+\section{Conclusioni}
+Abbiamo dovuto prendere una quantità significativa di misura per poter avere una stima, anche se approssimativa, dell'errore. In quanto le misure risultano essere tutte compatibili tra di loro e considerate come indipendenti, possiamo allora considerarli nella loro interezza.
 
-      \textbf{DA DIRE: 3 valori su 4 sono compatibili con n di sellmeir poi la precisione è peggiore rispetto l'esperienza 3 come ci si aspetta e restano errori sistematici che non si possono togliere tipo sensibilità persone che fanno spostare il minimo e la disomogeneta polarizzatore}
-      Dai valori sopra riportati e dal grafico di \fig{6} possiamo constatare che: le misure dell'indice di rifrazione risultano compatibili tra di loro sia ytra coascun osservatore sia quella del singolo con il valore medio estartto dal campione complessivo, in secondo luogo la compatibilità con il valore dell'indice di rifrazione misurato nella precedente esperienza di laboratorio avviene per tre osservatori su quattro: una possibile fonte d'errore in cui è facile imbattersi nello svolgimento di questa misura è la sensibilità all'intensità luminosa di chi osserva, che è soggetiva. Per quanto riguarda il valore ottenuto prendendo in cosiderazione il campione complessivo ci aspettava la compatibilità poichè aumenntando il numero di misure il valore medio tende a quello più probabile (devo rilegeere sono di fertta sta andando a lezioen) 
-
-
-
-
-      \section{Conclusioni}
-
+Rispetto al valore precedentemente calcolato la misura ricavata dalla totalità dei dati ne risulta compatibile, dunque possiamo supporre la bontà di quest'ultima. 
 
 \onecolumn
 \begin{table}[!t]
