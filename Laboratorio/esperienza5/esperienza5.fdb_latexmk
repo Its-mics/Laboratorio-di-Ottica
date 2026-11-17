@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794874117.14061 "/Users/alessiobrusini/Desktop/Laboratorio-di-Ottica/Laboratorio/esperienza5/esperienza5.tex" "esperienza5.pdf" "esperienza5" 1794874118.58241 0
+["pdflatex"] 1794875007.70309 "/Users/alessiobrusini/Desktop/Laboratorio-di-Ottica/Laboratorio/esperienza5/esperienza5.tex" "esperienza5.pdf" "esperienza5" 1794875009.05508 0
   "/Users/alessiobrusini/Desktop/Laboratorio-di-Ottica/Laboratorio/esperienza5/esperienza5.tex" 1794874116.95322 15388 5572ba4e9528ee417c2ee3ea62b84536 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -274,16 +274,16 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1744615906 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1744615851 3345739 8af9b4ca0365e8322b3f223347aeeeee ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Immagini/histAleData.png" 1794824098.77359 25104 e964643874bdea764c2318d52eda2341 ""
-  "Immagini/histManuData.png" 1794824098.77377 23178 f89fbd6db430601b6f48327c15b4e5a6 ""
-  "Immagini/histMichData.png" 1794824098.77399 22070 18095d342382259eaac3d9a837775687 ""
-  "Immagini/histStroiliData.png" 1794824098.77414 24025 5998e7495f66cd5ba40df03f216a904c ""
-  "Immagini/hist_totalData.png" 1794824098.77431 24828 1528f0f8dec9e3174f3b2ffe25c63fe1 ""
-  "Immagini/pointrange.png" 1794824098.77514 61466 d43d8c12576e9216b72aa7aef3d813af ""
-  "esperienza5.aux" 1794874118.47266 4221 fd014958357a7775471f2b17cc334eb4 "pdflatex"
-  "esperienza5.out" 1794874118.47359 539 3dfc5cb3846ad7afb2847ea63b31da97 "pdflatex"
+  "Immagini/histAleData.png" 1794875007.32775 25216 75ce3cab27aab2edc219c26dae253797 ""
+  "Immagini/histManuData.png" 1794875007.30966 23246 e5862386421731afbad661ac78fc9861 ""
+  "Immagini/histMichData.png" 1794875007.36446 22147 9835394511930ea501291b5ac54fa4a5 ""
+  "Immagini/histStroiliData.png" 1794875007.34603 24137 8e5f020f8838a8070929d21c2b2c19ac ""
+  "Immagini/hist_totalData.png" 1794875007.29089 24972 deb0f973359b705beee8f7be467e842d ""
+  "Immagini/pointrange.png" 1794875007.56964 62263 d4a3ceb405d0691c053244f8ac702e3a ""
+  "esperienza5.aux" 1794875008.95036 4221 fd014958357a7775471f2b17cc334eb4 "pdflatex"
+  "esperienza5.out" 1794875008.95127 539 3dfc5cb3846ad7afb2847ea63b31da97 "pdflatex"
   "esperienza5.tex" 1794874116.95322 15388 5572ba4e9528ee417c2ee3ea62b84536 ""
-  "esperienza5.toc" 1794874118.47377 403 f0306fdf1b51708fb0e6f05d5b7dd972 "pdflatex"
+  "esperienza5.toc" 1794875008.95146 403 f0306fdf1b51708fb0e6f05d5b7dd972 "pdflatex"
   (generated)
   "esperienza5.aux"
   "esperienza5.log"
