@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794912730.65847 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza5/esperienza5.tex" "esperienza5.pdf" "esperienza5" 1794912735.68908 0
+["pdflatex"] 1794912771.07168 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza5/esperienza5.tex" "esperienza5.pdf" "esperienza5" 1794912776.5446 0
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1792494984 81015 8f522890e5525b3cb752cee1c80a3b68 ""
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0900.pk" 1748538834 22504 42a3f95f43de46a13cbf653330dc2dd8 ""
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1745730635 25420 85c9bd0d2c0285994386342aaede91c1 ""
@@ -280,11 +280,11 @@
   "Immagini/histStroiliData.png" 1794912227 24496 77c96b448f7774d64b27ed19c3180ab8 ""
   "Immagini/hist_totalData.png" 1794912227 24828 28963a27ecfcdea6f0c5b2f9845ecd21 ""
   "Immagini/pointrange.png" 1794912227 54328 de8ca2d079a23113f3fefca34535bbfb ""
-  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza5/esperienza5.tex" 1794912728 17350 cb24204dc368774448d13a0b6963820c ""
-  "esperienza5.aux" 1794912734 4543 dd8e52b23d6c155801f55534af97f93d "pdflatex"
-  "esperienza5.out" 1794912734 969 5a903fe23d2a3148286371a85022269e "pdflatex"
-  "esperienza5.tex" 1794912728 17350 cb24204dc368774448d13a0b6963820c ""
-  "esperienza5.toc" 1794912734 594 eb8ed3db87d08d88ff9110f4a26a040d "pdflatex"
+  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza5/esperienza5.tex" 1794912762 17350 1c1fd1bf405cb96d5c50f50ca3bf4367 ""
+  "esperienza5.aux" 1794912775 4543 d051a18c52128450ebcfa5bf0a37f9c9 "pdflatex"
+  "esperienza5.out" 1794912775 966 5d20a9d0a8170f74651ce69babfacd69 "pdflatex"
+  "esperienza5.tex" 1794912762 17350 1c1fd1bf405cb96d5c50f50ca3bf4367 ""
+  "esperienza5.toc" 1794912775 594 8ef35184427255ca31038ed9d976aea2 "pdflatex"
   (generated)
   "esperienza5.aux"
   "esperienza5.log"
