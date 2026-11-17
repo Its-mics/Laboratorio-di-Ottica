@@ -524,6 +524,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT ./Ottica.toc
 INPUT ./Ottica.toc
 INPUT Ottica.toc
@@ -598,7 +599,6 @@ INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -630,6 +630,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmri8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT Ottica.aux
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
@@ -658,3 +659,4 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt12.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

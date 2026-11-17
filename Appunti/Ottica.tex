@@ -207,12 +207,57 @@
 \justifying
 
 \frontmatter % Numerazione romana per indici
+
+
+% Comando per le citazioni: testo + attribuzione allineata a destra
+\newcommand{\citazione}[2]{%
+  \begin{quote}
+    \textit{«#1»}\par
+    \vspace{-0.3em}
+    {\raggedleft\small --- #2\par}
+  \end{quote}}
+
+\chapter*{Premessa}
+\markboth{Premessa}{}
+\phantomsection
+\addcontentsline{toc}{chapter}{Premessa}
+
+Questi appunti sono stati fatti nel corso 
+dell'anno accademico 2026/27 e si basano esclusivamente sulle lezioni del
+prof.~Della Ricca. 
+Eventuali errori sono stati inseriti volutamente per
+verificare che qualcuno stesse leggendo.
+
+\noindent Prima di addentrarci negli appunti, rendiamo omaggio a chi
+ha studiato questi argomenti prima di noi, con qualche libertà sulle fonti.
+
+\citazione{Se ho visto più lontano, è perché ho sbirciato la relazione
+di quelli dell'anno prima.}%
+{Isaac Newton (liberamente riadattato)}
+
+\citazione{Eppur si muove.}%
+{Galileo Galilei, guardando lo spot del laser dopo aver toccato il
+tavolo }
+
+\citazione{Daje roma}%
+{Prof.~Della Ricca}
+
+
+
+
+
+
+
+
+
+
+
 \tableofcontents
 
 \mainmatter % Numerazione araba per i capitoli
 \pagestyle{fancy}
 
-\chapter{Introduzione all'Ottica}
+\chapter{Onde elettromagnetiche e irradianza}
 
 \section*{Introduzione: Analisi Dati con Python (Facoltativo)}
 
@@ -621,7 +666,7 @@ Definisco il vettore d'onda locale e l'indice di rifrazione $n(\vec{r})$:
 \end{equation}
 Da cui il modulo del vettore d'onda: $k(\vec{r}) = |\vec{k}(\vec{r})| = k_0 |\nabla S(\vec{r})| = k_0 n(\vec{r})$.
 
-\subsection{Principio di Fermat e Cammino Ottico}
+\subsection*{Principio di Fermat e Cammino Ottico}
 
 \begin{figure}[H]
     \centering
@@ -680,7 +725,7 @@ Definita la variazione di una funzione $\delta l$, il Principio di Fermat afferm
 \end{equation}
 \end{definizione}
 
-\section*{Trasporto di energia}
+\section{Trasporto di energia}
 Consideriamo un volume $V$ contenente delle cariche in movimento. 
 
 \begin{figure}[H]
@@ -776,7 +821,7 @@ Se considero un'onda piana monocromatica:
 
 \textbf{Obiettivo}: Realizzare un apparato assimilabile ad una sorgente puntiforme per verificare la legge dell'irradianza per tale sorgente.
 
-\subsection{Modello Teorico}
+\subsection*{Modello Teorico}
 Consideriamo l'energia che attraversa due porzioni di superfici sferiche $S_1$ e $S_2$ a distanze $r_1$ e $r_2$. Per la conservazione dell'energia nell'intervallo $\Delta t$:
 \begin{equation}
     I_1 S_1 \Delta t = I_2 S_2 \Delta t \quad \implies \quad \frac{I_1}{I_2} = \frac{S_2}{S_1}
@@ -803,7 +848,7 @@ Siccome gli angoli solidi sono uguali, vale la relazione $S_i = \Delta\Omega \cd
     \frac{I_1}{I_2} = \frac{r_2^2}{r_1^2} \quad \longrightarrow \quad I(r) = I_1 \left(\frac{r_1}{r}\right)^2
 \end{equation}
 
-\subsection{Set-up Sperimentale e Procedura}
+\subsection*{Set-up Sperimentale e Procedura}
 L'apparato per la misura prevede un binario graduato (circa \qty{2000}{\milli\metre}) su cui allineare un fotodiodo (con circuito amplificatore montato su supporto mobile) e una lampadina sferica (diametro $D \simeq \qty{40}{\milli\metre}$ misurabile con calibro). Il fotodiodo è collegato ad un voltmetro. L'andamento atteso per la tensione letta è $V \sim 1/r^2$.
 
 \begin{figure}[H]
@@ -844,7 +889,7 @@ L'incertezza sulle ordinate (Voltaggio) è data invece dalla somma quadratica de
 \end{itemize}
 \end{nota}
 
-\subsection{Analisi Dati e Preparazione per ROOT}
+\subsection*{Analisi Dati e Preparazione per ROOT}
 
 \textbf{ATTENZIONE agli Errori nel Fit:} Per eseguire il fit (es. in ROOT), si assegna ai punti \textbf{solo} l'incertezza sulla coordinata $x_i$ (ovvero $\sigma_x$) e l'errore di lettura del voltmetro su $V_i$. \textbf{NON propagare subito $x_0$ e $D$} nei punti sperimentali, altrimenti si introdurrebbero false correlazioni che sballerebbero i risultati.
 
@@ -866,7 +911,7 @@ Come prova ulteriore della dipendenza $1/r^2$, è richiesto eseguire un \textbf{
 verificando che l'esponente stimato sia compatibile con 2.
 
 
-\subsection{Grafici Diagnostici Finali}
+\subsection*{Grafici Diagnostici Finali}
 Per un'analisi completa e corretta, la relazione di laboratorio dovrà presentare \textbf{tre grafici}:
 
 \begin{figure}[H]
@@ -936,7 +981,8 @@ Per un'analisi completa e corretta, la relazione di laboratorio dovrà presentar
     \caption{Diagnostica statistica post-fit.}
 \end{figure}
 
-\section{Legge di riflessione}
+\chapter{Ottica geometrica: riflessione, rifrazione e lenti}
+\section{Riflessione e rifrazione dal principio di Fermat}
 Ricordiamo il principio di Fermat, il quale stabilisce che la luce segue il percorso per cui la variazione del cammino ottico è nulla (cammino stazionario, tipicamente un minimo):
 \begin{equation}
     \delta l = \delta \int_\gamma n(\vec r) ds = 0 
@@ -1159,7 +1205,7 @@ Il principio alla base della formazione delle immagini (stigmatismo) impone che 
     l_{O \to C_1 \to C_2 \to I} = l_{O \to L_1 \to L_2 \to I}
 \end{equation}
 
-\subsection{Approssimazioni}
+\subsection*{Approssimazioni}
 Per risolvere matematicamente il sistema, applichiamo due semplificazioni fondamentali:
 \begin{enumerate}
     \item \textbf{Approssimazione dei raggi parassiali}: $p,q \gg h_1, h_2$. I raggi si mantengono molto vicini all'asse ottico.
@@ -1203,7 +1249,7 @@ ritroviamo la fondamentale \textbf{Legge delle lenti sottili}:
     \frac{1}{p} + \frac{1}{q} =  \frac{1}{f}
 \end{equation}
 
-\subsection{Casistiche e Applicazioni}
+\subsection*{Casistiche e Applicazioni}
 L'equazione delle lenti sottili ci permette di analizzare diverse configurazioni sperimentali notevoli:
 
 \begin{itemize}
@@ -1508,7 +1554,7 @@ Dividendo membro a membro, otteniamo la legge di trasformazione del raggio di cu
 \end{equation}
 
 
-\subsection{Matrici dei componenti ottici fondamentali}
+\subsection*{Matrici dei componenti ottici fondamentali}
 Il vantaggio di questo formalismo è che ogni componente ottico basilare possiede una propria matrice caratteristica $M$. Analizziamo i casi principali.
 
 \begin{itemize}
@@ -1848,7 +1894,7 @@ Da cui si ricava la matrice di trasferimento della lente sottile:
 \end{itemize}
 
 
-\subsection{Applicazioni del metodo matriciale}
+\subsection*{Applicazioni del metodo matriciale}
 
 Il vero potere di questo metodo risiede nel fatto che un intero sistema ottico può essere descritto moltiplicando tra loro le matrici dei singoli componenti (da destra verso sinistra, seguendo il percorso della luce).
 
@@ -1949,7 +1995,7 @@ devo verificare l'andamento:
 \begin{equation}
     \frac{1}{f} = \frac{1}{p} + \frac{1}{q}
 \end{equation}
-\subsection{Apparto sperimentale}
+\subsection*{Apparto sperimentale}
 Composto ddal solito binario graduato con supporto per la lampadina ed un primo supporto mobile con la lente, seguito da un altro con uno schermo (foglio di carta su supporto), dove verifichermemo la messa a fuoco. 
 
 \begin{figure}[H]
@@ -2043,7 +2089,7 @@ Nel piano $(p, q)$ questa è un'iperbole equilatera traslata, in cui i valori de
 \label{fig:iperbole_pq}
 \end{figure}
 
-\subsection{Misura operativa delle distanze $p$ e $q$}
+\subsection*{Misura operativa delle distanze $p$ e $q$}
 Sul banco ottico leggiamo le coordinate spaziali dei supporti ($x$ per la lente, $y$ per lo schermo), che non corrispondono direttamente alle distanze ottiche $p$ e $q$ a causa degli ingombri fisici dei supporti stessi, i quali impediscono di far coincidere i centri ottici.
 
 Per ricavare $p$ utilizziamo una procedura di calibrazione con una barretta di lunghezza nota $L$ (misurata preventivamente con un calibro). Portando il supporto della lente a battuta contro la barretta (appoggiata al supporto della lampadina), leggiamo sul binario una coordinata di riferimento $x_0$ (posizione della lente). In questa configurazione, sappiamo che la distanza ottica reale tra lente e lampadina è pari alla lunghezza della barretta più la metà dello spessore del supporto della lente ($D/2$). Quando spostiamo la lente in una generica posizione $x$, la distanza oggetto $p$ sarà data da:
@@ -2137,7 +2183,7 @@ In modo analogo calibriamo $q$. Mantenendo la lente nella posizione $x_0$, inter
 \label{fig:calibrazione_coordinate}
 \end{figure}
 
-\subsection{Procedura di misura e gestione delle incertezze}
+\subsection*{Procedura di misura e gestione delle incertezze}
 È fisicamente impossibile ottenere un'immagine se $p < f$, pertanto la presa dati deve iniziare per distanze maggiori della focale. Per trovare operativamente il punto di partenza, posizioniamo lo schermo alla distanza massima consentita dal binario e spostiamo la lente fino a trovare la prima messa a fuoco utile. All'inizio (lente vicina alla lampada) la curva teorica è molto ripida: procederemo quindi spostando la lente a passi piccoli (es. $1 \text{ mm}$). Avanzando lungo il binario, lo schermo camminerà verso di noi, finché non si supererà il punto simmetrico; da lì in poi $q$ resterà circa costante. 
 
 Il processo di messa a fuoco consiste nel cercare sul foglio l'immagine nitida e capovolta del filamento della lampadina. Operativamente, ad ogni step \textit{fissiamo la lente} allineandola accuratamente alla tacca del binario (rendendo l'errore su $x$ trascurabile, derivante solo dalla lettura e pari a $\sigma_x = \frac{0,2}{\sqrt{3}}$) e \textit{muoviamo lo schermo} ($y$) finché l'immagine appare a fuoco. 
@@ -2145,7 +2191,7 @@ In questo modo, l'errore significativo risiede interamente sulla misura di $y$ (
 
 L'incertezza $\sigma_y$ associata alla messa a fuoco non è costante durante l'esperienza. È determinata dall'intervallo spaziale all'interno del quale l'immagine appare soggettivamente nitida. Quando la lente è vicina alla lampadina e lo schermo è molto lontano, i raggi che convergono sullo schermo incidono con angoli molto piccoli (sono quasi paralleli); di conseguenza, anche spostando lo schermo di molto, la dimensione della macchia luminosa varia impercettibilmente, causando una $\sigma_y$ molto grande. Al contrario, nella configurazione quasi simmetrica (lente a metà strada), i raggi incidono con un angolo maggiore e il minimo spostamento dello schermo sfoca immediatamente l'immagine, rendendo la misura molto più precisa.
 
-\subsection{Modello di fit e ricerca della focale}
+\subsection*{Modello di fit e ricerca della focale}
 Proprio a causa della complessa propagazione degli errori sistematici (su $x_0$, $L$, $y_0$, $D/2$), in fase preliminare trascuriamo questi ultimi ed eseguiamo il fit direttamente sulle coordinate di lettura $x$ e $y$. Riscriviamo l'equazione delle lenti sottili come:
 \begin{equation}
     \frac{1}{x-A} + \frac{1}{y-B} = \frac{1}{C}
@@ -2168,9 +2214,9 @@ L'errore finale sulla distanza focale sarà semplicemente $\sigma_C$ restituito 
 \end{align*}
 (Notiamo che in $\Delta B$ è corretto trascurare l'errore di posizionamento su $x_0$).\
 
-
-\section{Propagazione della luce in un dielettrico}
-\subsection{Modello di Lorentz per l'indice di rifrazione}
+\chapter{Dispersione e indice di rifrazione}
+\section{Propagazione in un dielettrico: modello di Lorentz}
+\subsection*{Modello di Lorentz per l'indice di rifrazione}
 
 Si applica tipicamente al caso di gas rarefatti (mezzi dielettrici), dove è lecito trascurare l'interazione reciproca tra le molecole del gas stesso. 
 
@@ -2467,7 +2513,7 @@ Lo scopo di questa esperienza è misurare l'indice di rifrazione di un prisma di
 \end{equation}
 L'analisi dati consisterà nell'estrarre i parametri incogniti $A$ e $\lambda_0$ tramite un fit non lineare.
 
-\subsection{Teoria: Prisma e angolo di deviazione minima}
+\subsection*{Teoria: Prisma e angolo di deviazione minima}
 Per poter calcolare l'indice di rifrazione $n$ del vetro, sfrutteremo il fenomeno della rifrazione attraverso un prisma. 
 
 Si consideri un prisma avente un angolo al vertice $\alpha$. Un fascio di luce incide sulla faccia sinistra con un angolo $\theta_1$ rispetto alla normale, viene rifratto all'interno del prisma con un angolo $\theta_1'$, viaggia fino alla faccia destra dove incide con un angolo $\theta_2'$ e infine emerge nell'aria con un angolo $\theta_2$.
@@ -2621,7 +2667,7 @@ Misurando l'angolo al vertice $\alpha$ e l'angolo di deviazione minima $\delta_{
 \end{equation}    
 \end{definizione}
 
-\subsection{L'apparato strumentale}
+\subsection*{L'apparato strumentale}
 L'apparato è composto dai seguenti elementi:
 \begin{itemize}
     \item \textbf{Sorgenti luminose:} Una lampada al sodio (Na) che emette una riga spettrale nota a $\lambda = (589 \pm 1) \text{ nm}$ e un faretto a luce bianca.
@@ -2815,7 +2861,7 @@ Per leggere l'angolo:
 
 
 
-\subsection{Procedura di misurazione}
+\subsection*{Procedura di misurazione}
 La procedura si divide in due fasi principali:
 \begin{enumerate}
     \item \textbf{Misura dello zero ($\theta_0$):} Senza il prisma, si allinea il cannocchiale direttamente davanti al collimatore. Si centra l'immagine della fenditura sul mirino e si legge l'angolo $\theta_0$. Questa misura è necessaria perché lo "zero" ottico non coincide necessariamente con lo "zero" della scala graduata. La misura di $\theta_0$ va ripetuta a ogni cambio di lunghezza d'onda/filtro per sicurezza.
@@ -2834,7 +2880,7 @@ L'errore propagato su $\delta_{\text{min}}$ sarà la somma in quadratura degli e
 \end{equation}
 \textit{(Nota: Prima di inserire gli angoli nelle formule per calcolare $n$, è necessario convertirli in radianti).}
 
-\subsection{Analisi Dati}
+\subsection*{Analisi Dati}
 Al termine delle misurazioni avremo a disposizione un set di 14 punti (13 filtri + 1 lampada al sodio). Riportando in grafico l'indice di rifrazione calcolato $n$ in funzione della lunghezza d'onda $\lambda$, si osserverà l'andamento dispersivo del vetro.
 
 \begin{figure}[h!]
@@ -3362,7 +3408,7 @@ Inoltre, l'assenza di raggi deviati nella regione angolare compresa tra i due ar
 Fenomeni aggiuntivi di interferenza tra i raggi all'interno della goccia possono generare bande luminose supplementari (archi supernumerari), particolarmente visibili nella regione interna.
 
 
-
+\chapter{Polarizzazione, riflessione e trasmissione}
 
 \section{Esperienza 4: Polarizzazione della luce}
 
@@ -3685,7 +3731,7 @@ Si nota immediatamente che il risultato è una polarizzazione lineare. Questo si
 % ---------------------------------------------------------
 
 
-\subsection{Verifica della legge di Malus}
+\subsection*{Verifica della legge di Malus}
 
 \subsubsection*{Apparato Sperimentale}
 L'apparato per verificare la legge di Malus è montato su un binario ottico ed è composto da:
@@ -3923,7 +3969,7 @@ Infine, si potrà notare che l'inizio e la fine della curva (a $0^\circ$ e a $36
 
 
 
-\section{Fenomeni di rifrazione e riflessione}
+\section{Coefficienti di Fresnel}
 
 Consideriamo una superficie di separazione tra due mezzi ottici con indici di rifrazione $n_1$ e $n_2$ (che indicheremo anche con $n_i$ per il mezzo incidente e $n_t$ per il mezzo trasmesso).
 Supponiamo che un'onda piana con vettore d'onda $\vec{k}$ incida su tale superficie con un angolo $\theta$ ($\theta_i$) rispetto alla normale: parte dell'onda viene riflessa con vettore d'onda $\vec{k}'$ e angolo $\theta'$ ($\theta_r$), mentre la restante parte viene rifratta (trasmessa) con vettore d'onda $\vec{k}''$ e angolo $\theta''$ ($\theta_t$).
@@ -4270,7 +4316,7 @@ Proviamo a determinare analiticamente quando i coefficienti di riflessione posso
 
 Questo fenomeno costituisce un modo per ottenere luce riflessa linearmente polarizzata (nella sola componente TE); tuttavia, poiché a questo angolo la riflettanza della componente TE vale circa $R \simeq \num{0.150}$, il metodo non è molto efficiente. Nel caso di interfaccia aria--vetro, l'angolo di Brewster vale circa $\theta_B \simeq 57^\circ$.
 
-\subsection{Angolo critico}
+\subsection*{Angolo critico}
 
 Esaminiamo ora il significato fisico dell'angolo critico $\theta_c$. Nel caso $n_1 > n_2$ (ossia $n_i > n_t$), il termine sotto radice nei coefficienti di Fresnel può diventare negativo; ciò accade quando:
 \[
@@ -4316,7 +4362,7 @@ dove abbiamo definito:
 
 
 
-\subsection{Come osservare l'onda evanescente}
+\subsection*{Come osservare l'onda evanescente}
 
 Consideriamo un prisma rettangolo isoscele (con angoli $\pi/4$ e $\pi/2$) e facciamo entrare un raggio di luce perpendicolarmente a uno dei cateti: il raggio inciderà sull'ipotenusa con un angolo di $\pi/4$ ($45^\circ$) rispetto alla normale.
 Per un vetro con indice di rifrazione $n_1 = \num{1.5}$ (verso aria $n_2 = 1$), l'angolo critico vale $\theta_c \simeq 41^\circ$. Poiché l'angolo di incidenza supera $\theta_c$, il prisma produce una riflessione totale interna e dall'altra parte non emerge alcun raggio trasmesso.
@@ -4726,6 +4772,953 @@ Le principali fonti di incertezza e le accortezze nell'analisi dei dati sono le 
 \end{itemize}
 
 Rispetto all'esperienza di verifica della legge di Sellmeier, questa misura può risultare meno precisa a causa dell'ampio intervallo di insensibilità attorno al minimo di $R$, dato che si cerca la posizione di un minimo anziché misurare direttamente una grandezza come la deviazione minima. Tuttavia, effettuando un numero elevato di misure la statistica permette di ridurre l'errore casuale; restano comunque presenti errori sistematici (come la diversa sensibilità degli osservatori e la non idealità/disuniformità del polarizzatore) che non possono essere eliminati tramite la statistica.
+
+
+
+
+
+
+
+
+
+
+\chapter{Interferenza e diffrazione}
+
+\section{Interferenza}
+
+I fenomeni di interferenza sono governati dal \textbf{principio di sovrapposizione} dei campi, garantito dal fatto che i campi elettromagnetici sono soluzioni lineari delle equazioni di Maxwell.
+Consideriamo due sorgenti che generano rispettivamente i campi:
+\begin{itemize}
+    \item $\vec{E}_1(\vec{r}, t) = \vec{E}_{1,0} \cos\bigl(\omega_1 t - \vec{k}_1 \cdot (\vec{r} - \vec{r}_1) + \psi_1\bigr)$
+    \item $\vec{E}_2(\vec{r}, t) = \vec{E}_{2,0} \cos\bigl(\omega_2 t - \vec{k}_2 \cdot (\vec{r} - \vec{r}_2) + \psi_2\bigr)$
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Coordinate principali
+        \coordinate (O)  at (0, 0);
+        \coordinate (S1) at (1.5, 2.8);
+        \coordinate (S2) at (1.8, -0.4);
+        \coordinate (P)  at (6.5, 1.8);
+
+        % Origine e assi di riferimento leggeri
+        \draw[->, thin, gray!60] (-0.4, 0) -- (1.0, 0);
+        \draw[->, thin, gray!60] (0, -0.4) -- (0, 1.0);
+        \fill[black] (O) circle (1.5pt) node[below left] {$O$};
+
+        % Vettori posizione dall'origine
+        \draw[->, thick, PoliBlue!75] (O) -- (S1) node[midway, left=2pt] {$\vec{r}_1$};
+        \draw[->, thick, PoliBlue!75] (O) -- (S2) node[midway, below=2pt] {$\vec{r}_2$};
+        \draw[->, thick, dashed, black!75] (O) -- (P) node[pos=0.62, above=1pt] {$\vec{r}$};
+
+        % Vettori distanza relativa (dalle sorgenti al punto P)
+        \draw[->, thick, black!70] (S1) -- (P) node[pos=0.58, above=2pt] {$\vec{r} - \vec{r}_1$};
+        \draw[->, thick, black!70] (S2) -- (P) node[pos=0.58, below=3pt] {$\vec{r} - \vec{r}_2$};
+
+        % Vettori d'onda k1 e k2
+        \draw[->, very thick, OpticRed] (S1) -- ($(S1)!0.28!(P)$) node[midway, below=3pt] {$\vec{k}_1$};
+        \draw[->, very thick, OpticRed] (S2) -- ($(S2)!0.28!(P)$) node[midway, above=2pt] {$\vec{k}_2$};
+
+        % Sorgenti e punto di osservazione
+        \fill[PoliBlue] (S1) circle (2.2pt) node[above left=2pt] {$S_1$};
+        \fill[PoliBlue] (S2) circle (2.2pt) node[below right=1pt] {$S_2$};
+        \fill[OpticRed] (P)  circle (2.2pt) node[below right=1pt] {$P$};
+
+        % Campi elettrici in P e angolo alpha tra le polarizzazioni
+        \coordinate (E1tip) at ($(P) + (75:1.15)$);
+        \coordinate (E2tip) at ($(P) + (18:1.15)$);
+        \draw[->, very thick, ForestGreen] (P) -- (E1tip) node[above] {$\vec{E}_1$};
+        \draw[->, very thick, ForestGreen] (P) -- (E2tip) node[right] {$\vec{E}_2$};
+        \pic[draw, angle radius=0.45cm, angle eccentricity=1.45, "$\alpha$" {font=\scriptsize}] {angle = E2tip--P--E1tip};
+    \end{tikzpicture}
+\end{figure}
+
+Valutando entrambi i campi nello stesso punto $\vec{r}$ dello spazio, per il principio di sovrapposizione il campo elettrico totale è:
+\begin{equation}
+    \vec{E}_{\text{tot}}(\vec{r}, t) = \vec{E}_1(\vec{r}, t) + \vec{E}_2(\vec{r}, t)
+\end{equation}
+
+Sperimentalmente, tuttavia, non misuriamo direttamente il campo istantaneo bensì l'\textbf{irradianza}, definita come:
+\[
+    I(\vec{r}) = \varepsilon_0 c \left\langle \left|\vec{E}_{\text{tot}}(\vec{r}, t)\right|^2 \right\rangle
+\]
+che possiamo espandere nel modo seguente:
+\begin{equation}
+    I(\vec{r}) = \varepsilon_0 c \left\langle |\vec{E}_1(\vec{r}, t)|^2 \right\rangle + \varepsilon_0 c \left\langle |\vec{E}_2(\vec{r}, t)|^2 \right\rangle + 2 \varepsilon_0 c \left\langle \vec{E}_1(\vec{r}, t) \cdot \vec{E}_2(\vec{r}, t) \right\rangle
+\end{equation}
+dove l'ultimo addendo rappresenta il \textbf{termine di interferenza}. Sostituendo le espressioni esplicite dei due campi si ottiene:
+\[
+    I(\vec{r}) = I_1 + I_2 + 2 \varepsilon_0 c \, \vec{E}_{1,0} \cdot \vec{E}_{2,0} \left\langle \cos\bigl(\omega_1 t - \vec{k}_1 \cdot (\vec{r} - \vec{r}_1) + \psi_1\bigr) \cos\bigl(\omega_2 t - \vec{k}_2 \cdot (\vec{r} - \vec{r}_2) + \psi_2\bigr) \right\rangle
+\]
+
+In base alle caratteristiche delle due onde, ci troviamo quindi in due situazioni distinte:
+\begin{itemize}
+    \item \textbf{Assenza di interferenza:}
+    \[
+        I(\vec{r}) = I_1(\vec{r}) + I_2(\vec{r})
+    \]
+    se $\omega_1 \neq \omega_2$, oppure se $\vec{E}_{1,0} \perp \vec{E}_{2,0}$, oppure se le fasi $\psi_1(t)$ e $\psi_2(t)$ variano indipendentemente nel tempo (cioè non vi è coerenza di fase).
+
+    \item \textbf{Presenza di interferenza:}
+    \[
+        I(\vec{r}) = I_1(\vec{r}) + I_2(\vec{r}) + 2\sqrt{I_1(\vec{r}) I_2(\vec{r})} \cos\alpha \cos\bigl[\vec{k}_1 \cdot (\vec{r} - \vec{r}_1) - \vec{k}_2 \cdot (\vec{r} - \vec{r}_2) - \psi_1 + \psi_2\bigr]
+    \]
+    se $\omega_1 = \omega_2$, $|\vec{k}_1| = |\vec{k}_2|$ (con $\alpha$ angolo tra $\vec{E}_{1,0}$ ed $\vec{E}_{2,0}$ e differenza di fase $\psi_2 - \psi_1$ costante nel tempo).
+\end{itemize}
+
+Il termine di interferenza compare quindi soltanto se i due campi hanno polarizzazione non ortogonale (in particolare la stessa polarizzazione, $\cos\alpha \neq 0$), la stessa frequenza e una differenza di fase costante nel tempo.
+
+\subsection*{Esperimento di Young}
+
+L'esperimento di Young consiste in due fenditure $S_1$ e $S_2$ illuminate da un'unica sorgente luminosa puntiforme $S$.
+Se la sorgente è monocromatica, le due fenditure (che agiscono come sorgenti secondarie) emettono alla stessa frequenza; inoltre, se $S$ è posta in posizione simmetrica (centrale) rispetto a $S_1$ e $S_2$, la differenza di fase iniziale tra le due aperture è nulla ($\psi_2 - \psi_1 = 0$).
+Se invece la sorgente non è monocromatica, non vi è comunque problema: al di là delle due fenditure le componenti a frequenze diverse si sommano in irradianza senza generare interferenza incrociata tra frequenze differenti (ciascuna frequenza interferisce solo con se stessa).
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Lampadina a sinistra
+        \begin{scope}[shift={(-3.3, 0)}]
+            \filldraw[fill=gray!35, draw=black!80, thick] (-0.11, -0.32) rectangle (0.11, -0.10);
+            \draw[black!80, thin] (-0.11, -0.22) -- (0.11, -0.22);
+            \filldraw[fill=yellow!35, draw=black!80, thick]
+                (-0.11, -0.10) .. controls (-0.30, 0.08) and (-0.28, 0.44) .. (0, 0.44)
+                               .. controls (0.28, 0.44) and (0.30, 0.08) .. (0.11, -0.10) -- cycle;
+            \draw[black!70, thin] (-0.06, -0.05) -- (-0.04, 0.14) -- (0, 0.08) -- (0.04, 0.14) -- (0.06, -0.05);
+        \end{scope}
+
+        % Prima parete con fenditura singola S
+        \draw[very thick, PoliBlue] (-2.0, 0.14) -- (-2.0, 2.3);
+        \draw[very thick, PoliBlue] (-2.0, -2.3) -- (-2.0, -0.14);
+        \draw[thick, PoliBlue] (-2.12, 0.14) -- (-1.88, 0.14);
+        \draw[thick, PoliBlue] (-2.12, -0.14) -- (-1.88, -0.14);
+        \node[above left=2pt] at (-2.05, 0.15) {$S$};
+
+        % Fronti d'onda uscenti da S
+        \foreach \r in {0.45, 0.85, 1.25, 1.65} {
+            \draw[PoliBlue!60, thick] (-2.0, 0) ++(-36:\r) arc (-36:36:\r);
+        }
+
+        % Seconda parete con doppia fenditura S1 e S2
+        \draw[very thick, PoliBlue] (0, 1.02) -- (0, 2.3);
+        \draw[very thick, PoliBlue] (0, -0.78) -- (0, 0.78);
+        \draw[very thick, PoliBlue] (0, -2.3) -- (0, -1.02);
+        \foreach \y in {1.02, 0.78, -0.78, -1.02} {
+            \draw[thick, PoliBlue] (-0.12, \y) -- (0.12, \y);
+        }
+        \node[left=4pt] at (0, 0.90) {$S_1$};
+        \node[left=4pt] at (0, -0.90) {$S_2$};
+
+        % Schermo di osservazione
+        \draw[very thick, black!80] (4.6, -2.3) -- (4.6, 2.3);
+        \node[below=2pt, font=\small] at (4.6, -2.3) {schermo};
+
+        % Raggi da S1 e S2 verso il punto P sullo schermo
+        \coordinate (P) at (4.6, 1.35);
+        \draw[OpticRed, thick, ->] (0, 0.90) -- (P) node[midway, above=2pt, text=black] {$d_1$};
+        \draw[OpticRed, thick, ->] (0, -0.90) -- (P) node[midway, below=3pt, text=black] {$d_2$};
+        \fill[OpticRed] (P) circle (1.8pt) node[right=2pt, text=black] {$P$};
+    \end{tikzpicture}
+\end{figure}
+
+Possiamo realizzare la stessa configurazione partendo da una comune lampadina posta dietro una singola fenditura $S$, collocata davanti allo schermo con le due fenditure $S_1$ e $S_2$.
+Osserviamo la figura luminosa su uno schermo posto a distanza fissata, dove un punto generico dista $d_1$ da $S_1$ e $d_2$ da $S_2$. Riprendendo l'equazione dell'irradianza, se le distanze sono sufficientemente grandi i due campi risultano praticamente paralleli ($\cos\alpha \simeq 1$); la condizione di \textbf{interferenza costruttiva} (in cui il termine coseno raggiunge il massimo positivo $+1$) richiede che l'argomento del coseno sia un multiplo intero di $2\pi$:
+\[
+    \vec{k} \cdot (\vec{r}_2 - \vec{r}_1) + \psi_2 - \psi_1 = \pm 2m\pi \qquad (m \in \mathbb{N})
+\]
+dove $k = 2\pi/\lambda$.
+Se $\psi_2 - \psi_1 = 0$ (sorgente simmetrica rispetto alle due sorgenti secondarie $S_1$ e $S_2$), tale condizione si riduce a:
+\[
+    |d_1 - d_2| = m\lambda
+\]
+L'interferenza è quindi costruttiva (massimo luminoso) quando la differenza di cammino ottico tra le due onde prodotte in $S_1$ e $S_2$ è un multiplo intero della lunghezza d'onda. Se invece $\psi_2 - \psi_1 \neq 0$, l'intera figura sullo schermo risulta traslata di una quantità corrispondente alla differenza di fase.
+
+Indichiamo ora con $h$ la distanza tra le fenditure $S_1$ e $S_2$, con $x$ la distanza tra la parete delle fenditure e lo schermo di osservazione, e scegliamo un asse verticale $y$ diretto verso l'alto con origine al centro dello schermo.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Parete delle fenditure S1 e S2
+        \draw[very thick, PoliBlue] (0, -2.0) -- (0, 2.2);
+        \foreach \y in {-1.0, 1.0} {
+            \draw[very thick, black] (-0.1, \y) -- (0.1, \y);
+        }
+        \node[above left=1pt] at (0, 1.0) {$S_1$};
+        \node[above left=1pt] at (0, -1.0) {$S_2$};
+
+        % Quota distanza h tra le fenditure
+        \draw[thin, gray] (-0.3, 1.0) -- (-0.85, 1.0);
+        \draw[thin, gray] (-0.3, -1.0) -- (-0.85, -1.0);
+        \draw[<->, thick, black!80] (-0.65, -1.0) -- (-0.65, 1.0) node[midway, left=2pt] {$h$};
+
+        % Asse centrale di riferimento (y = 0)
+        \draw[dashed, gray] (0, 0) -- (5.0, 0);
+
+        % Schermo come asse verticale y verso l'alto
+        \draw[->, very thick, black!80] (5.0, -2.0) -- (5.0, 2.4) node[right=2pt] {$y$};
+        \draw[thick] (4.92, 0) -- (5.08, 0) node[right=2pt] {$0$};
+
+        % Raggi dalle due fenditure al punto P(y) sullo schermo
+        \coordinate (P) at (5.0, 1.7);
+        \draw[OpticRed, thick, ->] (0, 1.0) -- (P);
+        \draw[OpticRed, thick, ->] (0, -1.0) -- (P);
+        \fill[OpticRed] (P) circle (1.8pt) node[right=3pt, text=black] {$P(y)$};
+
+        % Quota distanza x tra parete e schermo
+        \draw[<->, thick, black!80] (0.1, -2.25) -- (4.9, -2.25) node[midway, below=2pt] {$x$};
+    \end{tikzpicture}
+    \caption{Geometria per il calcolo della differenza di cammino ottico nell'esperimento di Young.}
+\end{figure}
+
+La condizione di interferenza costruttiva sui cammini ottici si scrive:
+\begin{equation}
+    \sqrt{x^2 + \left(y + \frac{h}{2}\right)^2} - \sqrt{x^2 + \left(y - \frac{h}{2}\right)^2} = m\lambda
+\end{equation}
+Assumendo $x \gg y, h$, possiamo effettuare uno sviluppo in serie di Taylor al primo ordine:
+\begin{equation}
+    \sqrt{x^2 + \left(y \pm \frac{h}{2}\right)^2} = x \sqrt{1 + \frac{\left(y \pm \frac{h}{2}\right)^2}{x^2}} \simeq x \left[1 + \frac{1}{2}\left(\frac{y \pm \frac{h}{2}}{x}\right)^2\right]
+\end{equation}
+Sostituendo nella differenza dei cammini otteniamo:
+\begin{equation}
+    x \left[1 + \frac{1}{2}\left(\frac{y + \frac{h}{2}}{x}\right)^2 - 1 - \frac{1}{2}\left(\frac{y - \frac{h}{2}}{x}\right)^2\right] = m\lambda
+\end{equation}
+Semplificando e raccogliendo il fattore $\frac{1}{2x}$, resta:
+\begin{equation}
+    \frac{1}{2x} \, (2yh) = m\lambda \implies \frac{yh}{x} = m\lambda
+\end{equation}
+da cui si ricava la posizione dei massimi sullo schermo:
+\[
+    y = \frac{m\lambda x}{h}
+\]
+Riportando in grafico l'irradianza in funzione di $y$ sullo schermo, ci aspettiamo un massimo centrale in $y = 0$ e massimi secondari simmetrici in $y = \pm \frac{m\lambda x}{h}$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.78\textwidth,
+            height=5.6cm,
+            axis lines=middle,
+            xmin=-2.55, xmax=2.65,
+            ymin=-0.08, ymax=1.22,
+            xtick={-2, -1, 1, 2},
+            xticklabels={$-\dfrac{2\lambda x}{h}$, $-\dfrac{\lambda x}{h}$, $\dfrac{\lambda x}{h}$, $\dfrac{2\lambda x}{h}$},
+            ytick={1},
+            yticklabels={$I_{\max}$},
+            xlabel={$y$},
+            ylabel={$I(y)$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            xticklabel style={font=\small},
+            clip=false
+        ]
+            % Origine
+            \node[below left, font=\small] at (axis cs:0,0) {$0$};
+
+            % Linee guida tratteggiate sui massimi
+            \draw[dotted, gray] (axis cs:-2,1) -- (axis cs:2,1);
+            \pgfplotsinvokeforeach{-2,-1,1,2}{
+    \draw[dotted, gray] (axis cs:#1,0) -- (axis cs:#1,1);
+}
+
+            % Curva di interferenza I(y) = I_max cos^2(pi h y / (lambda x))
+            \addplot[OpticRed, very thick, domain=-2.35:2.35, samples=200] {cos(180*x)^2};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Andamento dell'irradianza sullo schermo in funzione della posizione $y$ nell'esperimento di Young.}
+\end{figure}
+
+Da questa espressione seguono alcune importanti osservazioni:
+\begin{itemize}
+    \item \textbf{Sorgente monocromatica:} sullo schermo si osservano frange luminose la cui separazione è proporzionale alla lunghezza d'onda $\lambda$ (le frange risultano molto spaziate per il rosso e più ravvicinate per il verde). Per effettuare misure agevoli conviene porre lo schermo molto distante dalle fenditure ($x$ grande) e mantenere le due sorgenti molto vicine ($h$ piccolo), così da amplificare la figura di interferenza grazie al fattore geometrico $x/h$.
+    \item \textbf{Fasi iniziali diverse ($\psi_1 \neq \psi_2$):} tutta la figura di interferenza si trasla verticalmente e il massimo centrale non si trova più in $y = 0$, ma spostato di una certa distanza.
+    \item \textbf{Sorgente non monocromatica:} confrontando ad esempio la componente rossa con quella verde, il massimo centrale ($m=0$) continua a trovarsi in $y=0$ sovrapponendo tutte le frequenze, mentre i massimi secondari ($m \neq 0$) relativi al rosso risultano più spostati verso l'esterno rispetto a quelli del verde.
+\end{itemize}
+
+\subsection*{Altri esperimenti per produrre interferenza}
+
+Altri dispositivi classici per generare fenomeni di interferenza coerente sono:
+\begin{itemize}
+    \item \textbf{Specchio di Lloyd:} si utilizza uno specchio riflettente orizzontale con una sorgente posta al di sopra e uno schermo perpendicolare allo specchio. Sullo schermo giungono sia la luce diretta dalla sorgente sia quella riflessa dallo specchio: si sommano così due campi elettrici in cui l'onda riflessa appare come generata da una sorgente virtuale simmetrica (stessa frequenza e differenza di fase fissa).
+
+    \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Specchio orizzontale (con tratteggio inferiore)
+        \draw[very thick, PoliBlue] (0, 0) -- (4.2, 0);
+        \fill[pattern=north east lines, pattern color=gray!50] (0, -0.15) rectangle (4.2, 0);
+
+        % Schermo verticale perpendicolare allo specchio
+        \draw[very thick, black!80] (4.2, -1.2) -- (4.2, 2.3);
+        \node[right=2pt, font=\small] at (4.2, 1.9) {schermo};
+
+        % Sorgente reale S e sorgente virtuale S'
+        \coordinate (S)  at (0.5, 1.3);
+        \coordinate (S1) at (0.5, -1.3);
+        \coordinate (M)  at (2.591, 0);
+        \coordinate (P)  at (4.2, 1.0);
+
+        \fill[PoliBlue] (S)  circle (2pt) node[above left] {$S$};
+        \fill[PoliBlue!70] (S1) circle (2pt) node[below left] {$S'$};
+
+        % Raggio diretto S -> P
+        \draw[OpticRed, thick, ->] (S) -- ($(S)!0.55!(P)$);
+        \draw[OpticRed, thick] ($(S)!0.50!(P)$) -- (P);
+
+        % Raggio riflesso S -> M -> P e prolungamento virtuale tratteggiato da S'
+        \draw[OpticRed, thick, ->] (S) -- ($(S)!0.55!(M)$);
+        \draw[OpticRed, thick] ($(S)!0.50!(M)$) -- (M);
+        \draw[OpticRed, thick, ->] (M) -- ($(M)!0.60!(P)$);
+        \draw[OpticRed, thick] ($(M)!0.55!(P)$) -- (P);
+        \draw[dashed, gray] (S1) -- (M);
+
+        \fill[OpticRed] (P) circle (1.8pt);
+    \end{tikzpicture}
+    \caption{Schema dello specchio di Lloyd: il raggio diretto e quello riflesso sullo specchio interferiscono sullo schermo come se provenissero da $S$ e dalla sorgente virtuale $S'$.}
+\end{figure}
+
+    \item \textbf{Specchi di Fresnel:} disponendo due specchi piani leggermente inclinati tra loro di fronte a una sorgente e a uno schermo, i raggi riflessi dai due specchi sembrano provenire da due sorgenti virtuali coerenti $S_1$ e $S_2$ che interferiscono sullo schermo.
+
+    \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale=0.92]
+        % Coordinate esatte (specchi inclinati tra loro con vertice in O)
+        \coordinate (O)  at (0, 0);
+        \coordinate (S)  at (1.6, 2.5);
+        \coordinate (S1) at (-2.888, 0.687);
+        \coordinate (S2) at (-2.039, -2.157);
+        \coordinate (A)  at (-0.240, 0.593);
+        \coordinate (B)  at (1.016, -0.793);
+        \coordinate (P)  at (3.8, 0.45);
+
+        % I due specchi piani leggermente inclinati
+        \draw[very thick, PoliBlue] (112:2.0) -- (O) -- (-38:2.4);
+        \draw[thick, gray!60] ($(112:2.0)+(-0.08,-0.03)$) -- (-0.08,-0.03) -- ($(-38:2.4)+(-0.06,-0.06)$);
+
+        % Schermo verticale
+        \draw[very thick, black!80] (3.8, -1.9) -- (3.8, 2.9);
+        \node[right=2pt, font=\small] at (3.8, 2.5) {schermo};
+
+        % Sorgente reale S e sorgenti virtuali S1, S2
+        \fill[PoliBlue] (S)  circle (2pt) node[above right] {$S$};
+        \fill[PoliBlue!70] (S1) circle (2pt) node[above left] {$S_1$};
+        \fill[PoliBlue!70] (S2) circle (2pt) node[below left] {$S_2$};
+
+        % Raggi riflessi dal primo e dal secondo specchio
+        \draw[OpticRed, thick, ->] (S) -- ($(S)!0.55!(A)$);
+        \draw[OpticRed, thick] ($(S)!0.50!(A)$) -- (A);
+        \draw[OpticRed, thick, ->] (A) -- ($(A)!0.55!(P)$);
+        \draw[OpticRed, thick] ($(A)!0.50!(P)$) -- (P);
+
+        \draw[OpticRed, thick, ->] (S) -- ($(S)!0.55!(B)$);
+        \draw[OpticRed, thick] ($(S)!0.50!(B)$) -- (B);
+        \draw[OpticRed, thick, ->] (B) -- ($(B)!0.55!(P)$);
+        \draw[OpticRed, thick] ($(B)!0.50!(P)$) -- (P);
+
+        % Prolungamenti virtuali tratteggiati
+        \draw[dashed, gray] (S1) -- (A);
+        \draw[dashed, gray] (S2) -- (B);
+
+        \fill[OpticRed] (P) circle (1.8pt);
+    \end{tikzpicture}
+    \caption{Schema degli specchi di Fresnel: i raggi riflessi dai due specchi inclinati sembrano provenire dalle due sorgenti virtuali coerenti $S_1$ e $S_2$.}
+\end{figure}
+
+    \item \textbf{Biprisma di Fresnel:} si impiega un prisma molto schiacciato (con angolo al vertice prossimo a $180^\circ$) posto tra la sorgente e lo schermo. Il fascio emesso da $S$ viene rifratto dalle due metà del prisma sdoppiandosi come se provenisse da due sorgenti virtuali $S_1$ e $S_2$; i due campi risultanti producono interferenza sullo schermo.
+
+   \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Biprisma schiacciato (faccia piana a sx, vertice ottuso a dx)
+        \filldraw[fill=PoliBlue!10, draw=PoliBlue, thick]
+            (0, 1.8) -- (0.42, 0) -- (0, -1.8) -- cycle;
+
+        % Schermo verticale
+        \draw[very thick, black!80] (4.2, -2.1) -- (4.2, 2.1);
+        \node[right=2pt, font=\small] at (4.2, 1.7) {schermo};
+
+        % Coordinate raggi e sorgenti
+        \coordinate (S)    at (-2.6, 0);
+        \coordinate (S1)   at (-2.6, 1.662);
+        \coordinate (S2)   at (-2.6, -1.662);
+        \coordinate (Q1in) at (0, 0.95);
+        \coordinate (Q1ut) at (0.191, 0.98);
+        \coordinate (Q2in) at (0, -0.95);
+        \coordinate (Q2ut) at (0.191, -0.98);
+        \coordinate (P)    at (4.2, 0);
+
+        % Sorgente reale S e sorgenti virtuali S1, S2
+        \fill[PoliBlue] (S)  circle (2pt) node[left=2pt] {$S$};
+        \fill[PoliBlue!70] (S1) circle (2pt) node[above left] {$S_1$};
+        \fill[PoliBlue!70] (S2) circle (2pt) node[below left] {$S_2$};
+
+        % Raggio superiore e inferiore attraverso il biprisma
+        \draw[OpticRed, thick, ->] (S) -- ($(S)!0.55!(Q1in)$);
+        \draw[OpticRed, thick] ($(S)!0.50!(Q1in)$) -- (Q1in) -- (Q1ut);
+        \draw[OpticRed, thick, ->] (Q1ut) -- ($(Q1ut)!0.55!(P)$);
+        \draw[OpticRed, thick] ($(Q1ut)!0.50!(P)$) -- (P);
+
+        \draw[OpticRed, thick, ->] (S) -- ($(S)!0.55!(Q2in)$);
+        \draw[OpticRed, thick] ($(S)!0.50!(Q2in)$) -- (Q2in) -- (Q2ut);
+        \draw[OpticRed, thick, ->] (Q2ut) -- ($(Q2ut)!0.55!(P)$);
+        \draw[OpticRed, thick] ($(Q2ut)!0.50!(P)$) -- (P);
+
+        % Prolungamenti virtuali tratteggiati
+        \draw[dashed, gray] (S1) -- (Q1ut);
+        \draw[dashed, gray] (S2) -- (Q2ut);
+
+        \fill[OpticRed] (P) circle (1.8pt);
+    \end{tikzpicture}
+    \caption{Schema del biprisma di Fresnel: le due metà del prisma rifrangono il fascio come se fosse emesso dalle due sorgenti virtuali $S_1$ e $S_2$.}
+\end{figure}
+\end{itemize}
+
+
+
+\section{Esperienza 6: diffrazione da una fenditura}
+
+\subsection*{Diffrazione da una fenditura: teoria}
+
+Consideriamo uno schermo disposto lungo l'asse $x$, dotato di un'apertura (fenditura) di larghezza $2d$ centrata nell'origine (da $-d$ a $+d$). Facciamo incidere su di essa un fronte d'onda piano (ottenuto ponendo la sorgente luminosa a grande distanza, così da poter approssimare le onde sferiche con onde piane).
+Osserviamo la figura luminosa su uno schermo posto a distanza $s$ dall'apertura: tracciando una retta dal centro della fenditura allo schermo fissiamo la posizione di riferimento $y = 0$, mentre un raggio inclinato di un angolo $\theta$ raggiunge lo schermo a un'altezza $y = s\tan\theta$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Coordinate principali
+        \coordinate (O) at (0, 0);
+        \coordinate (C) at (5.2, 0);
+        \coordinate (P) at (5.2, 1.55);
+
+        % Schermo opaco lungo l'asse x con apertura di larghezza 2d
+        \draw[very thick, PoliBlue] (0, -1.8) -- (0, -0.45);
+        \draw[very thick, PoliBlue, ->] (0, 0.45) -- (0, 2.3) node[left=2pt, text=black] {$x$};
+        \draw[dashed, gray!60] (0, -0.45) -- (0, 0.45);
+        \draw[thick, PoliBlue] (-0.12, 0.45) -- (0.12, 0.45);
+        \draw[thick, PoliBlue] (-0.12, -0.45) -- (0.12, -0.45);
+        \node[above left=1pt, font=\small] at (0, 0) {$0$};
+
+        % Quota larghezza 2d della fenditura
+        \draw[thin, gray] (-0.18, 0.45) -- (-0.65, 0.45);
+        \draw[thin, gray] (-0.18, -0.45) -- (-0.65, -0.45);
+        \draw[<->, thick, black!80] (-0.50, -0.45) -- (-0.50, 0.45) node[midway, left=2pt] {$2d$};
+
+        % Schermo di osservazione (asse y)
+        \draw[->, very thick, black!80] (5.2, -1.8) -- (5.2, 2.3) node[right=2pt] {$y$};
+        \node[below left=1pt, font=\small] at (C) {$0$};
+
+        % Asse di riferimento centrale (distanza s) e raggio ad angolo theta
+        \draw[dashed, black!75] (O) -- (C) node[midway, below=3pt] {$s$};
+        \draw[OpticRed, thick, ->] (O) -- (P);
+        \fill[OpticRed] (P) circle (1.8pt);
+
+        % Angolo theta
+        \pic[draw, ->, angle radius=1.85cm, angle eccentricity=1.20, "$\theta$"] {angle = C--O--P};
+
+        % Quota altezza y = s tan(theta) sullo schermo
+        \draw[thin, gray] (5.32, 0) -- (5.75, 0);
+        \draw[thin, gray] (5.32, 1.55) -- (5.75, 1.55);
+        \draw[<->, thick, black!80] (5.55, 0) -- (5.55, 1.55) node[midway, right=3pt] {$y = s\tan\theta$};
+    \end{tikzpicture}
+    \caption{Geometria della diffrazione da una fenditura di larghezza $2d$ osservata su uno schermo posto a distanza $s$.}
+\end{figure}
+
+Ci poniamo nell'\textbf{approssimazione di Fraunhofer}: angolo $\theta$ piccolo, distanza $s$ molto grande rispetto alle dimensioni della fenditura, e raggi diretti verso lo schermo praticamente paralleli ($\vec{k}_1 \parallel \vec{k}_2$).
+
+Supponendo che sull'apertura incida un campo elettrico di ampiezza $E_0$, all'interno della fenditura abbiamo una densità lineare costante di campo elettrico (campo per unità di lunghezza):
+\[
+    \lambda_{\text{campo}} = \frac{E_0}{2d}
+\]
+Applicando il \textbf{principio di Huygens--Fresnel}, possiamo trattare ogni elemento infinitesimo $\mathrm{d}x$ dell'apertura come una sorgente puntiforme secondaria di ampiezza proporzionale a $\lambda_{\text{campo}}\,\mathrm{d}x$; il campo elettrico risultante sullo schermo sarà la sovrapposizione (integrale) dei contributi di tutte queste sorgenti:
+\begin{equation}
+    E_{\text{schermo}} = \int_{-d}^{+d} \frac{E_0}{2d} e^{-i \Delta\psi(x)} \,\mathrm{d}x
+\end{equation}
+
+Analizziamo la differenza di fase $\Delta\psi(x)$ lungo l'apertura rispetto al centro $x = 0$:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Coordinate principali
+        \coordinate (O)  at (0, 0);
+        \coordinate (X)  at (0, 1.5);
+        \coordinate (H)  at (3.3, 0);
+        \coordinate (R2) at (28:4.6);
+        \coordinate (R1) at ($(X) + (28:4.6)$);
+        \coordinate (Q)  at ($(O)!(X)!(R2)$); % Proiezione ortogonale di X sul raggio da O
+
+        % Fenditura lungo l'asse x (da -d a +d)
+        \draw[very thick, PoliBlue] (0, -2.2) -- (0, -1.8);
+        \draw[very thick, PoliBlue, ->] (0, 1.8) -- (0, 2.5);
+        \draw[dashed, gray!70] (0, -1.8) -- (0, 1.8);
+        \draw[thick, PoliBlue] (-0.12, 1.8) -- (0.12, 1.8) node[left=10pt, text=black, font=\small] {$+d$};
+        \draw[thick, PoliBlue] (-0.12, -1.8) -- (0.12, -1.8) node[left=10pt, text=black, font=\small] {$-d$};
+        \fill[black] (O) circle (1.6pt) node[below left=1pt, font=\small] {$0$};
+        \fill[black] (X) circle (1.6pt);
+
+        % Quota della coordinata x sull'apertura
+        \draw[thin, gray] (-0.15, 1.5) -- (-0.75, 1.5);
+        \draw[thin, gray] (-0.15, 0) -- (-0.75, 0);
+        \draw[<->, thick, black!80] (-0.60, 0) -- (-0.60, 1.5) node[midway, left=2pt] {$x$};
+
+        % Asse orizzontale di riferimento
+        \draw[dashed, black!70] (O) -- (H);
+
+        % Raggi paralleli uscenti da X e da O ad angolo theta
+        \draw[OpticRed, thick, ->] (X) -- (R1);
+        \draw[OpticRed, thick, ->] (Q) -- (R2);
+
+        % Differenza di cammino ottico OQ = x sin(theta)
+        \draw[ForestGreen, ultra thick] (O) -- (Q);
+
+        % Segmento ortogonale XQ e simbolo di angolo retto in Q
+        \draw[dashed, black!80] (X) -- (Q);
+        \draw[thin] ($(Q) + (118:0.18)$) -- ($(Q) + (118:0.18) + (208:0.18)$) -- ($(Q) + (208:0.18)$);
+
+        % Angoli theta (all'origine e nel triangolo sull'apertura)
+        \pic[draw, angle radius=1.35cm, angle eccentricity=1.20, "$\theta$"] {angle = H--O--R2};
+        \pic[draw, angle radius=0.62cm, angle eccentricity=1.38, "$\theta$" {font=\scriptsize}] {angle = O--X--Q};
+
+        % Etichetta della differenza di cammino e di fase
+        \draw[->, thick, ForestGreen!80!black] (1.35, -0.75) to[bend left=22] ($(O)!0.55!(Q) + (0.04,-0.08)$);
+        \node[right=2pt, align=left, font=\small] at (1.35, -0.82) {$\Delta r = x\sin\theta$\\$\Delta\psi(x) = -k x \sin\theta \simeq -\dfrac{k x y}{s}$};
+    \end{tikzpicture}
+    \caption{Calcolo della differenza di cammino ottico $\Delta r = x\sin\theta$ tra il raggio uscente dalla posizione $x$ sull'apertura e quello uscente dal centro $x = 0$.}
+\end{figure}
+
+La differenza di fase tra un'onda emessa in $x$ e quella emessa al centro vale:
+\begin{equation}
+    \Delta\psi(x) = -k x \sin\theta \simeq -\frac{k x y}{s}
+\end{equation}
+Sostituendo nell'integrale otteniamo:
+\begin{equation}
+    E_{\text{schermo}} \simeq \int_{-d}^{+d} \frac{E_0}{2d} e^{i \frac{k x y}{s}} \,\mathrm{d}x = \frac{E_0 s}{2 i d k y} \left(e^{i \frac{k d y}{s}} - e^{-i \frac{k d y}{s}}\right)
+\end{equation}
+da cui, usando l'identità $\sin\alpha = (e^{i\alpha} - e^{-i\alpha})/(2i)$:
+\begin{equation}
+    E_{\text{schermo}} \simeq \frac{E_0 s}{d k y} \sin\left(\frac{k d y}{s}\right) = E_0 \frac{\sin\left(\frac{k d y}{s}\right)}{\frac{k d y}{s}}
+\end{equation}
+
+Possiamo quindi esprimere l'irradianza normalizzata sullo schermo come:
+\begin{equation}
+    \frac{I}{I_0} = \frac{\sin^2\left(\frac{k d y}{s}\right)}{\left(\frac{k d y}{s}\right)^2}
+\end{equation}
+
+Riportando in grafico $I/I_0$ in funzione di $y$, si osserva che per $y \to 0$ il rapporto $I/I_0$ tende a $1$ (massimo centrale), seguito da una serie di massimi secondari decrescenti e minimi nulli:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.76\textwidth,
+            height=5.8cm,
+            axis lines=middle,
+            xmin=-2.55, xmax=2.65,
+            ymin=-0.15, ymax=1.22,
+            xtick={-2, -1, 1, 2},
+            xticklabels={$-\dfrac{\lambda s}{d}$, $-\dfrac{\lambda s}{2d}$, $\dfrac{\lambda s}{2d}$, $\dfrac{\lambda s}{d}$},
+            ytick=\empty,
+            xlabel={$y$},
+            ylabel={$I/I_0$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            xticklabel style={font=\small},
+            clip=false
+        ]
+            % Etichetta del massimo unitario in y = 0
+            \node[above left=1pt, font=\small] at (axis cs:0,1) {$1$};
+
+            % Curva I/I_0 = sinc^2(pi y / (lambda s / 2d))
+            % (numero pari di campioni per evitare la valutazione esatta in x = 0)
+            \addplot[OpticRed, very thick, domain=-2.3:2.3, samples=300]
+                {(sin(180*x) / (pi*x))^2};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Profilo di irradianza normalizzata $I/I_0$ sullo schermo per la diffrazione di Fraunhofer da una singola fenditura.}
+\end{figure}
+
+La posizione dei \textbf{minimi} si ricava facilmente ponendo uguale a zero l'argomento del seno (escluso $y=0$, dove si ha il massimo centrale):
+\[
+    \frac{k d y_{\min}}{s} = \pm m\pi \implies y_{\min} = \pm \frac{m \lambda s}{2d} \qquad (m = 1, 2, 3, \dots)
+\]
+Da questa relazione si deduce che la figura di diffrazione risulta tanto più allargata quanto più è grande la lunghezza d'onda $\lambda$ (o la distanza $s$) e quanto più è piccola la larghezza $2d$ della fenditura; al contrario, se $2d \gg \lambda$ i minimi si schiacciano verso il centro e non si osservano più effetti apprezzabili di diffrazione.
+
+\subsection*{Apparato sperimentale}
+
+Per la misura si utilizzano due laser (con diametro del fascio di circa $\SI{1}{\milli\meter}$), uno rosso e uno verde, le cui lunghezze d'onda vanno annotate in laboratorio.
+Il laser emette un fascio molto sottile e collimato. Per espanderlo in un'onda piana di diametro maggiore si utilizza un sistema di due lenti convergenti:
+\begin{itemize}
+    \item la prima lente (di focale $f_1$) focalizza il fascio, che oltre il fuoco torna a divergere;
+    \item una seconda lente (di focale $f_2$), posta a distanza $f_1 + f_2$ dalla prima, collima nuovamente il fascio rendendolo parallelo ma con diametro maggiore.
+\end{itemize}
+
+Facciamo poi incidere questo fascio allargato su una fenditura regolabile mediante una vite: la larghezza verrà fissata e mantenuta costante durante le misure, scegliendola in modo che le frange di diffrazione siano sufficientemente separate e ben misurabili.
+
+L'apparato è montato su un banco ottico (binario) a un lato della stanza; sul lato opposto è disposto un binario ortogonale dotato di scala graduata e di un fotodiodo. Poiché l'allargamento del fascio produce una distribuzione spaziale di intensità sullo schermo, la finestra del fotodiodo viene coperta parzialmente con del nastro adesivo lasciando una sottile fessura verticale: in questo modo si campiona puntualmente l'intensità su minimi e massimi (mentre una fessura ampia orizzontalmente medierebbe l'intensità su un intervallo esteso, appiattendo le oscillazioni). Poiché i due laser hanno intensità diverse, può essere necessario aggiungere o togliere nastro (o regolare l'attenuazione) quando si cambia sorgente.
+
+La fenditura viene regolata in modo che la parte significativa della figura di diffrazione copra un intervallo di circa $2\text{--}\SI{3}{\centi\meter}$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.82\textwidth,
+            height=6.2cm,
+            axis lines=middle,
+            xmin=-1.68, xmax=1.78,
+            ymin=-0.12, ymax=1.62,
+            xtick={-1.5, -1.0, -0.5, 0.5, 1.0, 1.5},
+            ytick=\empty,
+            xlabel={$x\,[\si{\centi\meter}]$},
+            ylabel={$V$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            tick label style={font=\small},
+            clip=false
+        ]
+            \node[below left=1pt, font=\small] at (axis cs:0,0) {$0$};
+
+            % Tacca ed etichetta V_max
+            \draw[thin, black] (axis cs:-0.04, 1) -- (axis cs:0.04, 1);
+            \node[left=4pt, font=\small] at (axis cs:0, 1) {$V_{\max}$};
+
+            % Curva di diffrazione (picco centrale largo ~6 mm su escursione di 3 cm)
+            \addplot[OpticRed, very thick, domain=-1.5:1.5, samples=360]
+                {(sin(180 * x / 0.3) / (pi * x / 0.3))^2};
+
+            % Quota ampiezza del picco centrale (~5-6 mm)
+            \draw[dotted, PoliBlue] (axis cs:-0.3, 0) -- (axis cs:-0.3, 1.15);
+            \draw[dotted, PoliBlue] (axis cs:0.3, 0)  -- (axis cs:0.3, 1.15);
+            \draw[<->, >=Stealth, PoliBlue, thick] (axis cs:-0.3, 1.12) -- (axis cs:0.3, 1.12);
+            \node[right=3pt, PoliBlue, font=\scriptsize] at (axis cs:0.3, 1.12) {$\sim 5\text{--}\SI{6}{\milli\meter}$};
+
+            % Quota intervallo totale di misura (~3 cm)
+            \draw[dotted, gray] (axis cs:-1.5, 0) -- (axis cs:-1.5, 1.35);
+            \draw[dotted, gray] (axis cs:1.5, 0)  -- (axis cs:1.5, 1.35);
+            \draw[<->, >=Stealth, black!75, thick] (axis cs:-1.5, 1.32) -- (axis cs:1.5, 1.32)
+                node[pos=0.76, above=2pt, font=\scriptsize] {intervallo di misura ($\sim \SI{3}{\centi\meter}$)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Andamento della figura di diffrazione sull'intervallo di scansione di circa $2\text{--}\SI{3}{\centi\meter}$ lungo la scala graduata del fotodiodo.}
+\end{figure}
+
+Il binario di raccolta è dotato di una manovella laterale che sposta il supporto del fotodiodo lungo una scala graduata millimetrica. Su un'escursione di $\SI{3}{\centi\meter}$ si acquisiscono complessivamente $120$ misure ($60$ misure del segnale e $60$ misure del fondo in corrispondenza di ciascuna posizione).
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale=0.92]
+        % ---------- Banco ottico sinistro (binario) ----------
+        \draw[very thick, black!70] (-6.8, -1.45) -- (0.0, -1.45);
+        \draw[thick, black!50] (-6.8, -1.55) -- (0.0, -1.55);
+        \node[below, font=\scriptsize] at (-3.4, -1.62) {binario ottico};
+
+        % Laser (rosso / verde, fascio ~ 1 mm)
+        \draw[thick, fill=gray!20, rounded corners=2pt] (-6.6, -0.25) rectangle (-5.1, 0.25);
+        \draw[thick] (-5.85, -0.25) -- (-5.85, -1.45);
+        \node[above, align=center, font=\scriptsize] at (-5.85, 0.35) {laser (rosso / verde)\\$\varnothing \simeq \SI{1}{\milli\meter}$};
+
+        % Sistema di due lenti (espansore di fascio) a distanza f1 + f2
+        % Lente 1 (f1)
+        \draw[thick, fill=cyan!20] (-3.8, 0) ellipse (0.10 and 0.60);
+        \draw[thick] (-3.8, -0.60) -- (-3.8, -1.45);
+        \node[above, font=\scriptsize] at (-3.8, 0.65) {$f_1$};
+
+        % Lente 2 (f2)
+        \draw[thick, fill=cyan!20] (-2.0, 0) ellipse (0.12 and 0.80);
+        \draw[thick] (-2.0, -0.80) -- (-2.0, -1.45);
+        \node[above, font=\scriptsize] at (-2.0, 0.85) {$f_2$};
+
+        % Quota distanza f1 + f2 tra le lenti
+        \draw[<->, thin, black!75] (-3.8, -1.15) -- (-2.0, -1.15)
+            node[midway, above=1pt, font=\scriptsize] {$f_1 + f_2$};
+
+        % Percorso del fascio laser (collimato -> fuoco -> espanso parallelo)
+        \fill[OpticRed!12] (-2.0, -0.45) rectangle (-0.6, 0.45);
+        \draw[OpticRed, thick] (-5.1, 0.05) -- (-3.8, 0.05) -- (-3.2, 0) -- (-2.0, -0.45) -- (-0.6, -0.45);
+        \draw[OpticRed, thick] (-5.1, -0.05) -- (-3.8, -0.05) -- (-3.2, 0) -- (-2.0, 0.45) -- (-0.6, 0.45);
+        \draw[OpticRed, thin, ->] (-2.0, 0) -- (-1.2, 0);
+
+        % Fenditura regolabile con vite micrometrica
+        \draw[very thick, PoliBlue] (-0.6, 0.14) -- (-0.6, 0.85);
+        \draw[very thick, PoliBlue] (-0.6, -0.85) -- (-0.6, -0.14);
+        \draw[thick] (-0.6, -0.85) -- (-0.6, -1.45);
+        \draw[thick, fill=gray!30] (-0.68, 0.85) rectangle (-0.52, 1.10);
+        \node[above, align=center, font=\scriptsize] at (-0.6, 1.15) {fenditura\\regolabile};
+
+        % ---------- Propagazione su grande distanza s ----------
+        \fill[OpticRed!7] (-0.6, 0.12) -- (3.25, 0.72) -- (3.25, -0.72) -- (-0.6, -0.12) -- cycle;
+        \draw[OpticRed, dashed, ->] (-0.6, 0) -- (3.2, 0);
+        \draw[OpticRed!60, thin] (-0.6, 0.12) -- (3.25, 0.70);
+        \draw[OpticRed!60, thin] (-0.6, -0.12) -- (3.25, -0.70);
+
+        % Quota distanza s (nella zona libera tra i due supporti)
+        \draw[<->, thick, black!80] (-0.55, -1.15) -- (3.45, -1.15)
+            node[midway, above=2pt, font=\scriptsize] {$s \simeq 2\text{--}\SI{3}{\meter}$};
+
+        % ---------- Binario ortogonale graduato con fotodiodo e manovella ----------
+        \draw[very thick, black!75] (2.6, -1.85) -- (4.3, -1.05);
+        \draw[thick, black!50] (2.6, -1.95) -- (4.3, -1.15);
+        \foreach \t in {0.1, 0.2, ..., 0.9} {
+            \coordinate (T) at ($(2.6,-1.85)!\t!(4.3,-1.05)$);
+            \draw[thin, black!70] (T) -- ($(T)+(0,-0.08)$);
+        }
+        % Manovella laterale
+        \draw[thick] (2.6, -1.90) -- (2.3, -2.04) -- (2.3, -1.82);
+        \node[left, font=\scriptsize] at (2.22, -1.95) {manovella};
+        \node[below, align=center, font=\scriptsize] at (3.6, -1.98) {binario ortogonale\\(scala millimetrica)};
+
+        % Supporto mobile e fotodiodo (con nastro adesivo e fessura verticale)
+        \draw[thick] (3.50, -1.45) -- (3.50, -0.35);
+        \draw[thick, fill=gray!15] (3.25, -0.35) rectangle (3.75, 0.35);
+        \fill[black!75] (3.25, -0.35) rectangle (3.42, 0.35);
+        \fill[black!75] (3.58, -0.35) rectangle (3.75, 0.35);
+        \draw[thick, PoliBlue] (3.42, -0.35) rectangle (3.58, 0.35);
+        \node[above, align=center, font=\scriptsize] at (3.5, 0.80) {fotodiodo\\(fessura verticale\\con nastro)};
+
+        % Voltmetro collegato al fotodiodo
+        \draw[thick] (3.75, 0) .. controls (4.65, 0) and (5.05, -0.25) .. (5.05, -0.55);
+        \draw[thick, fill=white] (5.05, -0.85) circle (0.30) node {\small $V$};
+        \node[below, font=\scriptsize] at (5.05, -1.20) {voltmetro};
+    \end{tikzpicture}
+    \caption{Schema completo dell'apparato sperimentale per la misura della diffrazione da una singola fenditura.}
+\end{figure}
+Il fotodiodo è orientato in modo da guardare verso l'interno della stanza (lontano dalla finestra) per minimizzare la luce ambientale di fondo; quest'ultima resta comunque presente e va misurata in corrispondenza di ogni punto. Operativamente, mentre un operatore regola la posizione del fotodiodo, un secondo operatore scherma il laser per acquisire la lettura di fondo, per poi spostarsi e misurare il segnale.
+
+\subsection*{Analisi dei dati e fit}
+
+La curva da fittare sui dati raccolti è:
+\begin{equation*}
+    y = A \frac{\sin^2\bigl(B(x - C)\bigr)}{\bigl[B(x - C)\bigr]^2} + D
+\end{equation*}
+dove i parametri rappresentano:
+\begin{itemize}
+    \item $A$: il valore massimo di tensione $V_{\max}$ misurato dal fotodiodo sul picco centrale;
+    \item $B = \dfrac{2\pi}{\lambda} \dfrac{d}{s}$, dove $s$ è la distanza tra la fenditura e il fotodiodo e $d$ (semilarghezza della fenditura) è l'incognita da ricavare;
+    \item $C$: il centro della figura di diffrazione sulla scala del fotodiodo (parametro di allineamento, atteso intorno a $0$);
+    \item $D$: il livello residuo di fondo (atteso intorno a $0$ una volta sottratto il fondo).
+\end{itemize}
+
+Dal fit si ricava $B \pm \sigma_B$ e da esso $d \pm \sigma_d$. Per evitare che il fit non lineare diverga a causa delle oscillazioni della funzione, conviene eseguire prima un fit preliminare includendo le sole incertezze sulle $y$ (date dal fotodiodo) e ponendo a zero l'incertezza sulle $x$; una volta ottenuto un valore affidabile di $B$, lo si usa come stima iniziale per il fit completo che include anche l'incertezza di lettura sulle tacche della scala ($\sigma_x = \frac{0{,}2}{\sqrt{3}}\,\si{\milli\meter}$).
+La larghezza della fenditura viene scelta in modo da raccogliere $5\text{--}6$ punti attorno al picco centrale (su circa $5\text{--}\SI{6}{\milli\meter}$) e almeno circa $3$ punti per lobo nelle code, così da campionare adeguatamente sia i massimi secondari sia i minimi.
+
+Successivamente si sostituisce il laser (cambiando lunghezza d'onda) e si ripete l'intera procedura ricavando nuovamente $d \pm \sigma_d$. L'obiettivo è verificare:
+\begin{enumerate}
+    \item con ciascun fit singolo, che i dati sperimentali seguano l'andamento teorico $\operatorname{sinc}^2$;
+    \item confrontando le due lunghezze d'onda, che entrambe forniscano valori compatibili della stessa larghezza della fenditura (stimata inferiore a $\SI{0.5}{\milli\meter}$).
+\end{enumerate}
+
+L'incertezza su $d = \frac{B \lambda s}{2\pi}$ si ottiene propagando in quadratura gli errori su $B$ e sulla distanza $s$:
+\[
+    \sigma_d = \frac{\lambda}{2\pi} \sqrt{(s\,\sigma_B)^2 + (B\,\sigma_s)^2}
+\]
+
+\section{Diffrazione da una fenditura rettangolare e circolare e da un filo}
+
+Estendiamo il calcolo precedente al caso di una fenditura bidimensionale finita (senza più assumere che la fenditura sia infinitamente lunga lungo una direzione).
+
+\subsection*{Fenditura rettangolare}
+
+Indichiamo con $2a$ la lunghezza del lato corto (lungo $x'$) e con $2b$ quella del lato lungo (lungo $y'$) dell'apertura rettangolare, mentre $(x, y)$ rappresentano le coordinate sullo schermo.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Vettori obliqui per rappresentare i piani in prospettiva
+        \coordinate (u) at (0.72, 0.42);  % direzione asse x' / x
+        \coordinate (v) at (0, 1.05);     % direzione asse y' / y
+
+        \coordinate (O1) at (0, 0);
+        \coordinate (O2) at (5.4, 0);
+
+        % --- Piano sinistro: schermo opaco con apertura rettangolare (2a x 2b) ---
+        \fill[PoliBlue!14, even odd rule]
+            ($-2.0*(u) + 1.65*(v)$) -- ($2.0*(u) + 1.65*(v)$) -- ($2.0*(u) - 1.65*(v)$) -- ($-2.0*(u) - 1.65*(v)$) -- cycle
+            ($-0.85*(u) + 1.05*(v)$) -- ($0.85*(u) + 1.05*(v)$) -- ($0.85*(u) - 1.05*(v)$) -- ($-0.85*(u) - 1.05*(v)$) -- cycle;
+        \draw[thick, PoliBlue]
+            ($-2.0*(u) + 1.65*(v)$) -- ($2.0*(u) + 1.65*(v)$) -- ($2.0*(u) - 1.65*(v)$) -- ($-2.0*(u) - 1.65*(v)$) -- cycle;
+        \draw[very thick, PoliBlue]
+            ($-0.85*(u) + 1.05*(v)$) -- ($0.85*(u) + 1.05*(v)$) -- ($0.85*(u) - 1.05*(v)$) -- ($-0.85*(u) - 1.05*(v)$) -- cycle;
+
+        % Assi x' e y' sull'apertura
+        \draw[->, thin, black!75] ($-1.5*(u)$) -- ($1.7*(u)$) node[above right, font=\small] {$x'$};
+        \draw[->, thin, black!75] ($-1.4*(v)$) -- ($1.5*(v)$) node[above, font=\small] {$y'$};
+
+        % Quote 2a (lato corto lungo x') e 2b (lato lungo lungo y')
+        \draw[<->, thick, black!80] ($-0.85*(u) - 1.30*(v)$) -- ($0.85*(u) - 1.30*(v)$)
+            node[midway, below right=-1pt, font=\small] {$2a$};
+        \draw[<->, thick, black!80] ($-1.25*(u) - 1.05*(v)$) -- ($-1.25*(u) + 1.05*(v)$)
+            node[midway, left=2pt, font=\small] {$2b$};
+
+        % --- Piano destro: schermo di osservazione (x, y) ---
+        \filldraw[fill=BoxGray, draw=black!75, thick]
+            ($(O2) - 2.0*(u) + 1.65*(v)$) -- ($(O2) + 2.0*(u) + 1.65*(v)$) -- ($(O2) + 2.0*(u) - 1.65*(v)$) -- ($(O2) - 2.0*(u) - 1.65*(v)$) -- cycle;
+
+        % Assi x e y sullo schermo
+        \draw[->, thin, black!75] ($(O2) - 1.6*(u)$) -- ($(O2) + 1.8*(u)$) node[above right, font=\small] {$x$};
+        \draw[->, thin, black!75] ($(O2) - 1.4*(v)$) -- ($(O2) + 1.5*(v)$) node[above, font=\small] {$y$};
+
+        % Asse ottico (distanza s) e raggio verso P(x,y)
+        \draw[dashed, black!75] (O1) -- (O2) node[midway, below=3pt, font=\small] {$s$};
+        \coordinate (P) at ($(O2) + 0.85*(u) + 0.72*(v)$);
+        \draw[OpticRed, thick, ->] (O1) -- (P);
+        \fill[OpticRed] (P) circle (1.8pt) node[above right=-1pt, text=black, font=\small] {$P(x,y)$};
+    \end{tikzpicture}
+\end{figure}
+Il calcolo è analogo al caso monodimensionale, ma coinvolge un integrale doppio sull'area dell'apertura:
+\begin{equation}
+    E_{\text{schermo}}(x, y) = \int_{-b}^{+b} \int_{-a}^{+a} \frac{E_0}{4ab} e^{i\frac{k x' x}{s}} e^{i\frac{k y' y}{s}} \,\mathrm{d}x'\,\mathrm{d}y' = \frac{E_0 s^2}{a b k^2 x y} \sin\left(\frac{k a x}{s}\right) \sin\left(\frac{k b y}{s}\right)
+\end{equation}
+Rappresentando in un grafico tridimensionale l'irradianza normalizzata $I/I_0$, si ottiene il prodotto di due funzioni seno cardinale al quadrato lungo i due assi ortogonali dello schermo:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.78\textwidth,
+            height=7.2cm,
+            view={35}{35},
+            xmin=-1.8, xmax=1.8,
+            ymin=-1.8, ymax=1.8,
+            zmin=0, zmax=1.08,
+            xtick={-1, 0, 1},
+            ytick={-1, 0, 1},
+            ztick={0, 0.5, 1},
+            xlabel={$x$},
+            ylabel={$y$},
+            zlabel={$I/I_0$},
+            colormap={optics}{color=(PoliBlue!15) color=(PoliBlue!80) color=(OpticRed)},
+            tick label style={font=\scriptsize},
+            label style={font=\small}
+        ]
+            % Numero pari di campioni per evitare la valutazione esatta in (0,0)
+            % Fattore 2 su y rispetto a x per mostrare l'allargamento lungo il lato stretto 2a (b = 2a)
+            \addplot3[
+                surf,
+                shader=faceted,
+                faceted color=PoliBlue!40!black,
+                domain=-1.8:1.8,
+                y domain=-1.8:1.8,
+                samples=38
+            ] {(sin(180*x)/(pi*x))^2 * (sin(360*y)/(2*pi*y))^2};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Distribuzione tridimensionale dell'irradianza normalizzata $I/I_0$ per un'apertura rettangolare ($b = 2a$): la figura è più estesa lungo $x$, ossia nella direzione del lato più corto.}
+\end{figure}
+
+Sullo schermo si osserva quindi una figura a scacchiera di macchie luminose con intensità massima al centro (più allargata lungo la direzione corrispondente al lato più stretto).
+
+\subsection*{Fenditura circolare}
+
+Consideriamo ora un'apertura circolare di raggio $R$. Possiamo suddividerla in strisce sottili di larghezza $\mathrm{d}x'$ lungo la direzione $x'$: ciascuna striscia ha altezza $2\sqrt{R^2 - x'^2}$, e la superficie totale dell'apertura è $\pi R^2$.
+Integrando sullo schermo lungo l'asse $y$ otteniamo:
+\begin{equation}
+    E_{\text{schermo}} = \int_{-R}^{+R} \frac{E_0}{\pi R^2} \, 2\sqrt{R^2 - x'^2} \, e^{i \frac{k x' y}{s}} \,\mathrm{d}x'
+\end{equation}
+Effettuando il cambio di variabili $u = x'/R$ e definendo $\rho = \frac{k R y}{s}$:
+\begin{equation}
+    E_{\text{schermo}} = \frac{2 E_0}{\pi R^2} \int_{-1}^{+1} \sqrt{R^2 - R^2 u^2} \, e^{i \rho u} \, R \,\mathrm{d}u = 2 E_0 \frac{J_1(\rho)}{\rho}
+\end{equation}
+dove $J_1(\rho)$ è la \textbf{funzione di Bessel di prima specie di ordine $1$}. L'irradianza sullo schermo vale pertanto:
+\begin{equation}
+    I = I_0 \left(2 \frac{J_1(\rho)}{\rho}\right)^2
+\end{equation}
+
+Il profilo radiale dell'irradianza presenta un massimo centrale circondato da anelli concentrici chiari e scuri:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        declare function={
+            airyG(\z) = 1 - \z/72 * (1 - \z/90 * (1 - \z/110 * (1 - \z/132 * (1 - \z/156 * (1 - \z/182)))));
+            airyF(\z) = 1 - \z/2  * (1 - \z/6  * (1 - \z/12  * (1 - \z/20  * (1 - \z/30  * (1 - \z/42 * (1 - \z/56 * airyG(\z)))))));
+        }
+    ]
+        \begin{axis}[
+            width=0.78\textwidth,
+            height=5.8cm,
+            axis lines=middle,
+            xmin=-8.2, xmax=8.5,
+            ymin=-0.08, ymax=1.18,
+            xtick={-3.832, 3.832},
+            xticklabels={$-\num{3.832}$, $\num{3.832}$},
+            ytick=\empty,
+            xlabel={$\rho$},
+            ylabel={$I/I_0$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            tick label style={font=\small},
+            clip=false
+        ]
+            \node[above left=1pt, font=\small] at (axis cs:0,1) {$1$};
+            \node[below left=1pt, font=\small] at (axis cs:0,0) {$0$};
+
+            % Curva di Airy: I/I_0 = (2 J_1(rho) / rho)^2
+            \addplot[OpticRed, very thick, domain=-7.8:7.8, samples=220]
+                {(airyF(x*x/4))^2};
+
+            % Evidenziazione del primo zero (rho = ±3.832)
+            \fill[PoliBlue] (axis cs:-3.832,0) circle (1.6pt);
+            \fill[PoliBlue] (axis cs:3.832,0) circle (1.6pt);
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+Il primo zero della funzione di Bessel $J_1(\rho)$ si ha per $\rho_1 \simeq \num{3.832}$. Sostituendo nella definizione di $\rho = k R \theta$ (con $\theta \simeq y/s$ e diametro $D = 2R$), si ricava la posizione angolare del primo minimo:
+\[
+    \theta_{\min} = \frac{\num{3.832}}{k R} = \frac{\num{1.22}\,\lambda}{D}
+\]
+Questo risultato è fondamentale perché stabilisce il \textbf{limite di risoluzione} degli strumenti ottici (ad esempio nell'osservazione di sorgenti poste a grande distanza, come due stelle vicine). Ciascuna sorgente produce un massimo centrale circondato da aloni concentrici: affinché le due sorgenti siano distinguibili, esse devono essere sufficientemente distanti in modo che il massimo centrale dell'una cada almeno in corrispondenza del primo minimo dell'altra.
+
+\subsection*{Diffrazione da un filo}
+
+Finora abbiamo studiato la diffrazione prodotta da aperture attraverso cui l'onda si propaga; consideriamo ora il caso complementare di un \textbf{ostacolo}, ossia un filo sottile di spessore $2d$.
+Il campo elettrico sullo schermo è dato dal campo incidente indisturbato $E_0$ a cui viene sottratto il contributo della porzione di fronte d'onda intercettata dall'ostacolo (equivalente al campo diffratto da una fenditura della stessa larghezza $2d$):
+\begin{equation}
+    E_{\text{schermo}} = E_0 - E_0 \frac{\sin\left(\frac{k d y}{s}\right)}{\frac{k d y}{s}}
+\end{equation}
+
+L'irradianza risultante vale quindi:
+\begin{equation}
+    \frac{I}{I_0} = 1 + \frac{\sin^2\left(\frac{k d y}{s}\right)}{\left(\frac{k d y}{s}\right)^2} - 2 \frac{\sin\left(\frac{k d y}{s}\right)}{\frac{k d y}{s}}
+\end{equation}
+Sullo schermo, attorno alla regione centrale, il termine incrociato $-2\operatorname{sinc}$ può assumere sia valori positivi sia negativi, generando oscillazioni dell'intensità al di sopra e al di sotto del valore uniforme $I_0$:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.80\textwidth,
+            height=5.8cm,
+            axis lines=middle,
+            xmin=-4.7, xmax=4.9,
+            ymin=-0.12, ymax=1.72,
+            xtick={-2, -1, 1, 2},
+            xticklabels={$-\dfrac{\lambda s}{d}$, $-\dfrac{\lambda s}{2d}$, $\dfrac{\lambda s}{2d}$, $\dfrac{\lambda s}{d}$},
+            ytick={1},
+            yticklabels={$1$},
+            xlabel={$y$},
+            ylabel={$I/I_0$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            xticklabel style={font=\small},
+            clip=false
+        ]
+            % Valore uniforme di riferimento I / I_0 = 1
+            \draw[dashed, PoliBlue, thick] (axis cs:-4.5,1) -- (axis cs:4.5,1);
+            \node[above right, PoliBlue, font=\scriptsize] at (axis cs:2.5,1.02) {};
+
+            % Curva I/I_0 = (1 - sinc(pi x))^2
+            % (numero pari di campioni per evitare la valutazione esatta in x = 0)
+            \addplot[OpticRed, very thick, domain=-4.5:4.5, samples=320]
+                {(1 - sin(180*x)/(pi*x))^2};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+
+
+
+
 
 
 
