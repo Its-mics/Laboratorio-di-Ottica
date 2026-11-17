@@ -4,4 +4,6 @@
 \contentsline {section}{\numberline {2}Apparato sperimentale}{3}{section.2}%
 \contentsline {section}{\numberline {3}Analisi Dati}{3}{section.3}%
 \contentsline {section}{\numberline {4}Grafici}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Istogramma con tutti i dati}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Istogrammi dei singoli operatori}{4}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Conclusioni}{5}{section.5}%
