@@ -69,7 +69,7 @@
       \begin{abstract}
         \centering
         \large
-        L'esperimento consiste nel misurare l'indice di rifrazione del vetro di un prisma tramite la misura dell'angolo di Brewster.
+        L'esperimento consiste nel ricavare l'indice di rifrazione del vetro di un prisma tramite la misura dell'angolo di Brewster.
 
       \end{abstract}
 
@@ -77,14 +77,14 @@
     \restoregeometry
     \twocolumn
 
-\section{Legge fisica}
-L'angolo di Brewster $\theta_B$ è l'angolo di incidenza al quale la componente riflessa trasversa magnetica (TM) si annulla completamente. Esso è definito da:
+\section{Introduzione}
+L'angolo di Brewster $\theta_B$ è l'angolo di incidenza al quale la componente riflessa trasversa magnetica (TM) si annulla completamente. Esso è definito dalla relazione:
 \begin{equation}
     \tan\theta_B = \frac{n_t}{n_i}
     \label{eq:brew}
 \end{equation}
 dove $n_i$ è l'indice di rifrazione del mezzo incidente e $n_t$ quello del mezzo trasmesso.
-Conoscendo l'angolo di Brewster è quindi possibile determinare l'indice di rifrazione $n$ del vetro, con $n_i$ indice di rifrazione dell'aria:
+Conoscendo l'angolo di Brewster è quindi possibile determinare l'indice di rifrazione $n$ del vetro, denotando con $n_i$ indice di rifrazione dell'aria:
 \begin{equation}
     n = n_i \tan\theta_B .
     \label{eq:n}
@@ -177,32 +177,37 @@ Conoscendo l'angolo di Brewster è quindi possibile determinare l'indice di rifr
 
 L'apparato per misurare l'angolo di Brewster è composto da:
 \begin{itemize}
-    \item Una lampada al sodio ($\lambda = 589$ nm), con una fenditura che definisce il fascio di luce.
-    \item Un polarizzatore, posto sul cammino del fascio incidente, ruotato in modo da lavorare in polarizzazione TM.
+    \item Una lampada al sodio ($\lambda = 589$ nm).
+    \item Un polarizzatore, posto sul cammino del fascio incidente, ruotato in modo che quest'ultimo sia del tipo TM.
     \item Un goniometro ottico su cui è appoggiato il prisma di vetro: dove si misura la luce riflessa.
     \item Un cannocchiale con mirino, che permette di seguire il raggio riflesso e di leggerne la posizione.
 \end{itemize}
 
 \section{Analisi Dati}
-    Per misurare l'angolo di Brewster si è misurata la posizione di zero $\theta_0$ del goniometro (senza il prisma) e la lettura $\theta_i$ del cannocchiale in corrispondenza del raggio riflesso, ricavando
+    Per misurare l'angolo di Brewster si è misurata la posizione di zero $\theta_0$ del goniometro (senza il prisma) e l'angolo $\theta_i$ alla quale il raggio riflesso aveva intensità minore, ricavando $\theta_B$ dalla relazione:
     \begin{equation}
-        \theta_B = \frac{\pi - |\theta_i - \theta_0|}{2}.
+        \theta_{B_i} = \frac{\pi - |\theta_i - \theta_0|}{2}.
         \label{eq:thB}
     \end{equation}
-    L'incertezza sulla singola misura è difficile da stimare a priori, quindi la misura è stata ripetuta riposizionando ogni volta prisma e cannocchiale: in totale 105 misure di 4 persone diverse (Tab.~\ref{tab:dati}).
+    Vista la difficoltà nell'individuazione del minimo dell'intensità luminosa del raggio riflesso, per ricavare l'incertezza sul risultato, si è ripetuta la misura più volte, riposizionando ogni volta prisma e cannocchiale: in totale
+    sono state svolte 105 misure di 4 persone diverse (Tab.~\ref{tab:dati}).
 
     \noindent Dalle misure otteniamo:
     \begin{itemize}
       \item L'istogramma dei valori di $\theta_B$ per ciascuna persona e per tutti i dati. Si proverà a descriverlo tramite una gaussiana di parametri $\mu$ e $\sigma$. 
-      Non ci attendiamo però che la distribuzione sia necessariamente gaussiana: gli errori cadono prevalentemente dal lato in cui l'intensità della luce varia lentamente, quindi la distribuzione può risultare asimmetrica.
+      Non ci attendiamo però che la distribuzione sia necessariamente gaussiana, essa potrebbe presentare un'asimmetria dovuta alla tendenza a registrare valori di $\theta_{B_i}$ a sinistra del minimo del coefficente di riflessione (R), che si verifica a $\theta_B$.
+      In questo intervallo, infatti, l'intensità della luce è quasi costante.
 
       \item La media, la deviazione standard e l'incertezza sulla media di $\theta_B$, per ciascuna persona e per tutti i dati:
-      \begin{equation}
-        \bar\theta_B = \frac{1}{N}\sum_{i=1}^{N}\theta_{B,i} \qquad \sigma_{\bar\theta_B} = \frac{\sigma_{\theta_B}}{\sqrt{N}}
-        \label{eq:stat}
-      \end{equation}
+   \begin{equation}
+  \begin{gathered}
+    \bar{\theta}_B = \frac{1}{N}\sum_{i=1}^{N}\theta_{B,i} \qquad \sigma_{\bar{\theta}_B} = \frac{\sigma_{\theta_B}}{\sqrt{N}} \\[6pt]
+    \sigma_{\theta_B} = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(\theta_{B,i} - \bar{\theta}_B)^2}
+  \end{gathered}
+  \label{eq:stat}
+\end{equation}
 
-      \item L'indice di rifrazione $n = n_i\tan\bar\theta_B$, con $n_i = 1{,}000293$ indice dell'aria, e la sua incertezza (con $\sigma_{\bar\theta_B}$ in radianti):
+      \item L'indice di rifrazione $n = n_i\tan\bar\theta_B$, con $n_i = 1$ quello dell'aria, e la sua incertezza (con $\sigma_{\bar\theta_B}$ in radianti):
       \begin{equation}
     \sigma_n = \frac{n_i}{\cos^2\bar\theta_B}\,\sigma_{\bar\theta_B}        \label{eq:sigman}
       \end{equation}
@@ -219,7 +224,7 @@ L'apparato per misurare l'angolo di Brewster è composto da:
 
   \section{Grafici}
     Si riportano i grafici e le tabelle ottenuti.
-
+    \subsection{Istogramma con tutti i dati}
        \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Immagini/hist_totalData.png}
@@ -230,9 +235,9 @@ L'apparato per misurare l'angolo di Brewster è composto da:
 
 
 
-\noindent Come si può vedere dall'istogramma complessivo di tutte le 105 misure esso non si distribuisce secondo una gaussiana, ciò è dovuto sall'andamento dell'intensità luminosa: essa aumentava fin da subito la propria intensità per angoli cresecnti rispetto al valore dell'angolo in cui essa sia annullava. Proprio per questo motivo non ci aspetta dunque un andamento gaussiano ma uno che è ricondicibile  a quest'ultimo per valori di angoli osservati minori dell'angolo di Brewster medio e un "troncamento" della coda per angoli cresecnti:
+\noindent Come si può vedere dall'istogramma complessivo di tutte le 105 misure esso non si distribuisce secondo una gaussiana, come spiegato prima, ciò è dovuto all'andamento dell'intensità luminosa. 
 
-
+      \subsection{Istogrammi dei singoli operatori}
       \begin{figure}[H]
         \centering
       \includegraphics[width=1.0\columnwidth]{Immagini/histManuData.png}
@@ -263,32 +268,31 @@ L'apparato per misurare l'angolo di Brewster è composto da:
 
 A causa della diversa sensibilità delle singole persone si hanno distribuzioni e parametri differenti.
 
-Analizzando la distribuzione di ciascun osservatore si può dedurre che:
-\begin{itemize}
-  \item per il primo e il quarto osservatore l'istogramma non si distribuisce secondo nessuna distribuzione nota, nonostante ciò i valori medi ricavati risultano essere compatibili tra di loro e con il terzo osservatore;
-  \item mancando di un adeguato numero di misure esse non si distribuiscono come una normale; 
-\end{itemize}
+Analizzando la distribuzione di ciascun osservatore si vede che 
+per il primo e il quarto osservatore l'istogramma si distribuisce in modo differente rispetto a quanto avviene per il
+del secondo e del terzo. Nonostante ciò, i valori medi ricavati risultano essere compatibili tra di loro e con il terzo osservatore;
+
 
 \begin{table}[H]
   \centering
   \small
   \begin{tabular}{lcccc}
     \toprule
-    Persona & $N$ & $\bar\theta_B$ [$^\circ$] & $\sigma_{\theta_B}$ [$^\circ$] & $\sigma_{\bar\theta_B}$ [$^\circ$] \\
+    Operatore & $N$ & $\bar\theta_B$ [$^\circ$] & $\sigma_{\theta_B}$ [$^\circ$] & $\sigma_{\bar\theta_B}$ [$^\circ$]\\
     \midrule
-    Manuele & $30$ & $56{,}811$ & $0{,}34$ & $0{,}062$ \\
-    Alessio & $25$ & $56{,}97$ & $0{,}59$ & $0{,}12$ \\
-    Emanuele & $20$ & $56{,}715$ & $0{,}18$ & $0{,}041$ \\
-    Michele & $30$ & $56{,}889$ & $0{,}40$ & $0{,}073$ \\
+    1 & $30$ & $56{,}81$ & $0{,}30$ & $0{,}06$ \\
+    2 & $25$ & $57{,}21$ & $0{,}67$ & $0{,}12$ \\
+    3 & $20$ & $56{,}72$ & $0{,}21$ & $0{,}04$  \\
+    4 & $30$ & $56{,}89$ & $0{,}40$ & $0{,}07$ \\
     \midrule
-    Totale & $105$ & $56{,}853$ & $0{,}41$ & $0{,}040$ \\
+    Totale & $105$ & $56{,}91$ & $0{,}41$ & $0{,}04$ \\
     \bottomrule
   \end{tabular}
   \caption{Media, deviazione standard e incertezza sulla media di $\theta_B$ per ciascun persona e per tutti i dati.}
 \label{tab:theta}
 \end{table}
 
-Si noti come le medie differiscano al massimo per una decina di secondi di gradi (\ref{tab:theta}). 
+Si noti come le medie differiscano al massimo per una decina di secondi di gradi. 
 
 Riportiamo infine la tabella dei valori degli indici di rifrazione ricavati dal campione complessivo delle 105 misure e dai campioni dei singoli osservatori:
 
@@ -299,14 +303,14 @@ Riportiamo infine la tabella dei valori degli indici di rifrazione ricavati dal 
 \setlength{\tabcolsep}{1.5pt}
 \begin{tabular}{lcccc@{\hspace{3pt}}c}
   \toprule
-  Persona & $n$ & $\sigma_n$ & $|n - n_{\mathrm{Sell}}|$ & $2\sqrt{\sigma_n^2 + \sigma_{\mathrm{Sell}}^2}$ & \makecell{compati-\\bilità} \\
+  Operatore & $n$ & $\sigma_n$ & $|n - n_{\mathrm{Sell}}|$ & $2\sqrt{\sigma_n^2 + \sigma_{\mathrm{Sell}}^2}$ & \makecell{compati-\\bilità} \\
   \midrule
-  Manuele & $1{,}5292$ & $0{,}0036$ & $0{,}00076$ & $0{,}00728$ & sì \\
-  Alessio & $1{,}5387$ & $0{,}0070$ & $0{,}01022$ & $0{,}01392$ & sì \\
-  Emanuele & $1{,}5236$ & $0{,}0024$ & $0{,}00482$ & $0{,}00476$ & no \\
-  Michele & $1{,}5338$ & $0{,}0043$ & $0{,}00536$ & $0{,}00855$ & sì \\
+  1 & $1{,}5292$ & $0{,}0036$ & $0{,}00076$ & $0{,}00728$ & [sì] \\
+  2 & $1{,}5387$ & $0{,}0070$ & $0{,}01022$ & $0{,}01392$ & [sì] \\
+  3 & $1{,}5236$ & $0{,}0024$ & $0{,}00482$ & $0{,}00476$ & [no] \\
+  4 & $1{,}5338$ & $0{,}0043$ & $0{,}00536$ & $0{,}00855$ & [sì] \\
   \midrule
-  Totale & $1{,}5317$ & $0{,}0024$ & $0{,}00325$ & $0{,}00475$ & sì \\
+  Totale & $1{,}5317$ & $0{,}0024$ & $0{,}00325$ & $0{,}00475$ & [sì] \\
   \midrule
   $n_{\mathrm{Sell}}$ & $1{,}5285$ & $0{,}0003$ & -- & -- & -- \\
   \bottomrule
@@ -323,54 +327,58 @@ Riportiamo infine la tabella dei valori degli indici di rifrazione ricavati dal 
   \label{fig:pointrange}
 \end{figure}
 
-Tre dei quattro valori sono compatibili con il valore ricavato attraverso Sellmeier, con degli errori molto maggiori rispetto a quest'ultimo. Il valore con la dispersione minore risultà però anche quello non campatibile con $n_{\text{Sell}}$ (per una quantità $ \propto 4 \% $).
+Tre dei quattro valori sono compatibili con il valore ricavato attraverso Sellmeier, con degli errori molto maggiori rispetto a quest'ultimo. Il valore con la dispersione minore risultà però anche quello non campatibile con $n_{\text{Sell}}$ (di circa il $ 4 \% $).
 
 
 \section{Conclusioni}
-Abbiamo dovuto prendere una quantità significativa di misura per poter avere una stima, anche se approssimativa, dell'errore. In quanto le misure risultano essere tutte compatibili tra di loro e considerate come indipendenti, possiamo allora considerarli nella loro interezza.
+Per ricavare l'incertezza sulla misura di $\theta_B$ si sono dovute prendere una quantità significativa di misura
+così da poter fare una stima, anche se approssimativa, dell'errore. 
 
-Rispetto al valore precedentemente calcolato la misura ricavata dalla totalità dei dati ne risulta compatibile, dunque possiamo supporre la bontà di quest'ultima. 
+\noindent I valori medi ottenuti per ogni operatore risultano essere compatibili tra loro e il valore ottenuto con la totalità dei dati risulta compatibile con $n_{\mathrm{Sell}}$.
+E' comunque interssante evidenziare il fatto che la misura compiuta in questa prova abbia un incertezza nettamente maggiore rispetto a quella compiuta nell'esperienza 3.
 
 \onecolumn
-\begin{table}[!t]
+\begin{table}[h]
 \centering
-\begin{tabular}{ccccc}
+\caption{Misure di $\theta_{B_i}$, $\theta_0$ e $\theta_i$ per ciascun operatore. }\label{tab:op}
+\begin{tabular}{ccc@{\hspace{9pt}}ccc@{\hspace{9pt}}ccc@{\hspace{9pt}}ccc}
 \toprule
-$i$ & Manuele & Alessio & Emanuele & Michele \\
+\multicolumn{3}{c}{Operatore 1} & \multicolumn{3}{c}{Operatore 2} & \multicolumn{3}{c}{Operatore 3} & \multicolumn{3}{c}{Operatore 4} \\
+\cmidrule(lr){1-3} \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12}
+\makecell{$\theta_{B_i}$\\{[$^\circ$]}} & \makecell{$\theta_0$\\{[$^\circ$]}} & \makecell{$\theta_i$\\{[$^\circ$]}} & \makecell{$\theta_{B_i}$\\{[$^\circ$]}} & \makecell{$\theta_0$\\{[$^\circ$]}} & \makecell{$\theta_i$\\{[$^\circ$]}} & \makecell{$\theta_{B_i}$\\{[$^\circ$]}} & \makecell{$\theta_0$\\{[$^\circ$]}} & \makecell{$\theta_i$\\{[$^\circ$]}} & \makecell{$\theta_{B_i}$\\{[$^\circ$]}} & \makecell{$\theta_0$\\{[$^\circ$]}} & \makecell{$\theta_i$\\{[$^\circ$]}} \\
 \midrule
-1 & 56.625 & 58.417 & 56.667 & 56.450 \\
-2 & 57.083 & 56.717 & 56.875 & 57.325 \\
-3 & 56.517 & 56.400 & 56.750 & 56.700 \\
-4 & 57.617 & 56.183 & 56.825 & 56.783 \\
-5 & 57.117 & 58.242 & 56.667 & 56.525 \\
-6 & 56.583 & 56.183 & 56.825 & 57.450 \\
-7 & 57.017 & 56.817 & 56.875 & 57.450 \\
-8 & 56.700 & 57.150 & 57.292 & 56.567 \\
-9 & 56.450 & 57.233 & 56.633 & 56.292 \\
-10 & 56.892 & 56.900 & 56.617 & 56.400 \\
-11 & 57.292 & 56.325 & 56.667 & 57.125 \\
-12 & 56.575 & 57.292 & 56.667 & 56.333 \\
-13 & 56.450 & 57.067 & 56.667 & 56.367 \\
-14 & 56.533 & 58.042 & 56.733 & 57.200 \\
-15 & 56.700 & 56.150 & 56.783 & 56.767 \\
-16 & 56.450 & 56.708 & 56.733 & 56.450 \\
-17 & 56.892 & 56.550 & 56.558 & 56.900 \\
-18 & 56.450 & 57.150 & 56.417 & 57.200 \\
-19 & 56.508 & 56.667 & 56.542 & 56.567 \\
-20 & 57.200 & 57.142 & 56.500 & 56.567 \\
-21 & 56.700 & 56.875 &  & 57.375 \\
-22 & 57.200 & 56.717 &  & 57.033 \\
-23 & 57.100 & 57.167 &  & 57.367 \\
-24 & 56.742 & 56.967 &  & 57.250 \\
-25 & 56.783 & 57.250 &  & 57.450 \\
-26 & 57.075 &  &  & 56.700 \\
-27 & 56.370 &  &  & 56.650 \\
-28 & 56.533 &  &  & 57.408 \\
-29 & 57.550 &  &  & 57.300 \\
-30 & 56.617 &  &  & 56.733 \\
+56.6 & 0.400 & 67.7 & 58.4 & 0.500 & 63.7 & 56.7 & 0.333 & 67.0 & 56.5 & 0.400 & 66.7 \\
+57.1 &  & 65.6 & 56.7 &  & 67.1 & 56.9 &  & 66.6 & 57.3 &  & 65.0 \\
+56.5 &  & 66.0 & 56.4 &  & 67.7 & 56.8 &  & 66.8 & 56.7 &  & 66.2 \\
+57.6 &  & 66.6 & 56.2 &  & 68.1 & 56.8 &  & 66.7 & 56.8 &  & 66.0 \\
+57.1 &  & 66.0 & 58.2 &  & 64.0 & 56.7 &  & 67.0 & 56.5 &  & 66.6 \\
+56.6 &  & 66.6 & 56.2 &  & 68.1 & 56.8 &  & 66.7 & 57.5 &  & 64.7 \\
+57.0 &  & 65.7 & 56.8 &  & 66.9 & 56.9 &  & 66.6 & 57.5 &  & 64.7 \\
+56.7 &  & 65.8 & 57.2 &  & 66.2 & 57.3 &  & 65.8 & 56.6 &  & 66.5 \\
+56.5 &  & 65.7 & 57.2 &  & 66.0 & 56.6 &  & 67.1 & 56.3 &  & 67.0 \\
+56.9 &  & 65.8 & 56.9 &  & 66.7 & 56.6 &  & 67.1 & 56.4 &  & 66.8 \\
+57.3 &  & 66.0 & 56.3 &  & 67.9 & 56.7 &  & 67.0 & 57.1 &  & 65.4 \\
+56.6 &  & 65.2 & 57.3 &  & 65.9 & 56.7 &  & 67.0 & 56.3 &  & 66.9 \\
+56.5 &  & 65.5 & 57.1 &  & 66.4 & 56.7 &  & 67.0 & 56.4 &  & 66.9 \\
+56.5 &  & 66.2 & 58.0 &  & 64.4 & 56.7 &  & 66.9 & 57.2 &  & 65.2 \\
+56.7 &  & 65.9 & 56.2 &  & 68.2 & 56.8 &  & 66.8 & 56.8 &  & 66.1 \\
+56.5 &  & 65.5 & 56.7 &  & 67.1 & 56.7 &  & 66.9 & 56.5 &  & 66.7 \\
+56.9 &  & 66.2 & 56.6 &  & 67.4 & 56.6 &  & 67.2 & 56.9 &  & 65.8 \\
+56.5 &  & 67.0 & 57.2 &  & 66.2 & 56.4 &  & 67.5 & 57.2 &  & 65.2 \\
+56.5 &  & 67.5 & 56.7 &  & 67.2 & 56.5 &  & 67.3 & 56.6 &  & 66.5 \\
+57.2 &  & 66.6 & 57.1 &  & 66.2 & 56.5 &  & 67.3 & 56.6 &  & 66.5 \\
+56.7 &  & 67.2 & 56.9 &  & 66.8 & -- &  & -- & 57.4 &  & 64.9 \\
+57.2 &  & 67.5 & 56.7 &  & 67.1 & -- &  & -- & 57.0 &  & 65.5 \\
+57.1 &  & 66.9 & 57.2 &  & 66.2 & -- &  & -- & 57.4 &  & 64.9 \\
+56.7 &  & 66.2 & 57.0 &  & 66.6 & -- &  & -- & 57.3 &  & 65.1 \\
+56.8 &  & 66.3 & 57.3 &  & 66.0 & -- &  & -- & 57.5 &  & 64.7 \\
+57.1 &  & 65.3 & -- &  & -- & -- &  & -- & 56.7 &  & 66.2 \\
+56.4 &  & 66.8 & -- &  & -- & -- &  & -- & 56.7 &  & 66.3 \\
+56.5 &  & 66.9 & -- &  & -- & -- &  & -- & 57.4 &  & 64.8 \\
+57.6 &  & 65.8 & -- &  & -- & -- &  & -- & 57.3 &  & 65.0 \\
+56.6 &  & 67.0 & -- &  & -- & -- &  & -- & 56.7 &  & 66.1 \\
 \bottomrule
 \end{tabular}
-\caption{Misure di $\theta_B$ [gradi] di ciascuna persona.}
-\label{tab:dati}
 \end{table}
+
 \end{document}
