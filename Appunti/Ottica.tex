@@ -5817,25 +5817,83 @@ E_{schermo} = \int_{-a}^{a} ... +  \int_{-2d -a}^{-2d + a} ... + ... + \int_{(N-
 \]
 Da cui si ottiene:
 \[
-\frac{E}{N} \frac{s}{kdy}\sin(\frac{kay}{s}) ... = \frac{E_0}{N}\frac{\sin(kNy){s}}{\sin(kay){s}}\frac{\sin(kay){s}}{kay/s}
+\frac{E}{N} \frac{s}{kdy}\sin\left(\frac{kay}{s}\right) ... = \frac{E_0}{N}\frac{\sin(kNy){s}}{\sin\frac{kay}{s}}\frac{\sin(kay){s}}{\frac{kay}{s}}
 \]
 da cui si ottiene l'irradianza:
 \[
-I= I_0 \frac{\sin^2 \beta}{\beta^2}\left(\sin(\gamma N)/N\sin(\gamma)\right)^2
+I= I_0 \frac{\sin^2 \beta}{\beta^2}\left(\frac{\sin(\gamma N)}{N\sin(\gamma)}\right)^2
 \]
-dove $\beta = kny/s$ e $\gamma = kdy/s$.
+dove $\beta = \frac{kny}{s}$ e $\gamma = \frac{kdy}{s}$.
 
 Avrò massimi principali quando il secondo termine vale uno, e dei massimi secondari. Se N è molto grande l'altezza dei massimi secondari è minuscola, dunque con un 
 numero abbastanza grande di fenditure il secondo termine è quasi irrilevante.
 
+\subsection{Ulteriori complicazioni}
+Il laser viene allargato tramite le lenti, ogni sua imperfezione viene ingigantita. 
+Eventuali granelli di polvere possono disturbare la misura.
 
+Inoltre, le doppie fenditure non sono meccaniche, ma sono diapositive, colorate di nero a parte dove vi è la fenditura.
 
+Rispetto alla volta scorsa, abbiamo un intensità della luce più bassa, dunque non dobbiamo coprire totalemente il fotodiodo nel caso del colore verde.
+Questo è un vantaggio, perchè non ci interessa come cambia l'intensià lungo la direzione ortogonale, questo cambiamento è dato da delle imperfezioni,
+per considerare una media, integro su tutti questi.
 
+\section{Biprisma di Fresnel}
+Sia D la distanza fra la sorgente e il prisma, l'effetto del biprisma è quello di simulare una sorgente più alta rispetto a quella reale.
 
+Sia h la distanza verticale fra la sorgente reale e simulata, sia $\theta$ l'angolo spazzato fra la retta ortogonale al prisma passante per la sorgente e 
+il punto di arrivo del raggio sul prisma.
+Sia $\alpha/2$ l'angolo al lato del prisma. Il raggio rifratto inciderà sullo schermo con angolo: $\theta - \alpha/2$.
 
+Come si è fatto già in precedenza per Sellmeier, si ottiene:
+\[
+\alpha/2 = \arcsin(\frac{\sin \theta_1}{n}) + \arcsin(\frac{\sin \theta_2}{n}+)
+\]
+approssimando per piccoli angoli:
+\[
+\alpha/2 \simeq \frac{\theta_1}{n} + \frac{\theta_2}{n} \rightarrow \theta_2 = \frac{n \alpha}{2} - \theta
+\]
+mentre 
+\[
+h \simeq D \tan \theta + D \tan (\theta_2 - \alpha/2) = D \tan \theta + D \tan (\alpha/2 (n-1) - \theta) \simeq D \theta D (\alpha/2 (n-1) - \theta)
+\]
+da cui
+\[
+h \simeq D \frac{D \alpha (n-1) }{n}
+\]
+Allora considerando anche la sorgente simulata al di sotto: 
+\begin{align*}
+   H = 2h  \\
+   y H/ x= \frac{y2h}{D+D'}
+\end{align*}
+allora la distanza fra due massimi è 
+\[
+\Delta y = \frac{\lambda (D+D')}{D\alpha(n-1)}
+\]
+dove abbiamo utilizzato il calcolo precedente per D e dove D' è la distanza fra prisma e schermo.
 
+Quando si fa incidere sul biprisma un intero fascio di luce esso ristringerà tale fascio, creando interferenza al centro del fascio rifratto.
 
+\subsection{Specchio antiriflesso}
+Consideriamo una lente di spessore $h$ e supponiamo di far incidere su di essa un onda EM con angolo $\theta$.
+Una parte del raggio viene trasmessa, colpirà l'altra parte della lente, e verrà riflesso, insieme all'onda riflessa iniziale.
 
+Essendo la riflessione esterna, avremo: $E_0 \Delta \phi E_1$, ($E_0$ incidente, $E_1$ riflesso primario) mentre ciò non è vero per $E_2$ (rifratto) ed $E_3$ (riflesso secondario).
+
+La differenza di fase totale (fra 1 e 2) sarà dato da:
+\[
+\Delta \Phi = \pi + \frac{2 \pi 2 h n}{\lambda}
+\]
+dove l'ultimo fattore è dovuto dalla differenza di fase data dal maggiore spazio percorso. 
+
+Guardiamo il caso di interferenza distruttiva:
+\[
+\pi(1 + \frac{4hn}{\lambda}) = (2m +1)\pi \rightarrow h = \frac{\lambda m}{2n}
+\]
+allora modificando l'indice $n$ posso avere sempre interferenza distruttiva. Questo funziona per una lunghezza d'onda,
+altre vengono riflesse, per questo in alcuni rivestimenti si possono osserve sfumature di varie colori.
+
+Questo 
 
 
 
