@@ -5718,6 +5718,128 @@ Sullo schermo, attorno alla regione centrale, il termine incrociato $-2\operator
     \end{tikzpicture}
 \end{figure}
 
+\subsection{Massimi della curva di interferenza}
+I massimi della funziona d'interferenza sono spostati rispetto ad una normale funzione sinusoidale a cause dell'andamento $\frac{1}{x^2}$.
+
+\noindent Questi possono essere studiati tramite la derivata prima della funzione irradianza, annullandola si trova un equazione del tipo $\tan(x) = x$,
+non risolvibile aniliticamente, per questo si usa un metodo grafico. 
+
+Numericamente si trova:
+\begin{align*}
+    x_0 = 0 \\
+    x_1 = 1.43 \pi \\
+    x_2 = 2.46 \pi \\
+    x_3 = 3.47 \pi
+\end{align*}
+Si nota allora che: $x_m \rightarrow \infty = \frac{2n +1}{2} \pi$
+
+\section{Diffrazione da doppia fenditura}
+Supponiamo di avere 2 fenditure di larghezza 2a, con i centri separati di 2d. Su queste due fenditure incide un onda piana.
+
+Ad una distanza $s$ mettiamo uno schermo, per angoli piccole e $s$ grandi avremo $y = \tan \theta$. Come l'ultima volta avremo:
+\[
+E_{schermo} = \int_{-d-a}^{-d+a} \frac{E_0}{4a}dx \exp\left[-\Delta\phi(x)\right] + \int_{d-a}^{d+a} \frac{E_0}{4a}dx \exp[-\Delta \phi(x)]
+\]
+approssimando coem l'ultima volta: $\Delta \phi \simeq - \frac{k y}{s}$, si trova:
+\[
+\int_{-d-a}^{-d+a} \frac{E_0}{4a}dx \exp\left[-\frac{k y}{s}\right] + \int_{d-a}^{d+a} \frac{E_0}{4a}dx \exp\left[-\frac{k y}{s}\right]
+\]
+che si risolve:
+\[
+E_{schermo} = \frac{E_0}{4a} \frac{s}{a k y} \exp\left[-i\frac{ka y}{s}\right](\exp\left[\frac{ - a k y}{s}\right] +  \exp[\frac{ a k y}{s}])
+\]
+riscrivibile in:
+\[
+E_0 \frac{\sin\left(\frac{kay}{s}\right)}{\frac{kay}{s}} \cos\left(\frac{kdy}{s}\right)
+\]
+da cui la formula per l'irradianza:
+\[
+I(x) = I_0 \left(\frac{\sin(\frac{kay}{s})}{\frac{kay}{s}} \cos\left(\frac{kdy}{s}\right)\right)^2
+\]
+allora troviamo i minimi dovuti sia al seno che al coseno:
+\begin{align*}
+    y_0 = 0 \\
+    y_n = \pm \frac{n \lambda s }{2d} \\
+    y_m = \pm \frac{m \lambda a }{2a}
+\end{align*}
+Per questo dovremo fare più misure rispetto all'esperienza precedente. Per rendere la figura più grande utilizziamo come l'ultima volta le lenti,
+questo diminuirà nuovamente l'intensità del diodo.
+
+La funzione di fit di questa esperienza sarà data da:
+\begin{equation*}
+    y = A \frac{\sin^2\bigl(B(x - C)\bigr)}{\bigl[B(x - C)\bigr]^2}\cos^2\left(D(x-c)\right) + E
+\end{equation*}
+ricaviamo da D e B i valori di $2d$ e $2a$.
+
+\section{Caso delle 3 fenditure}
+La differenza di cammino, per una fenditura, fra i raggi è data da:
+\[
+d_{12} = \sqrt{x^2 + (y +\frac{h}{2})^2} -  \sqrt{x^2 + (y -\frac{h}{2})^2} \simeq \frac{yh}{2}
+\]
+dove abbiamo svolto le solite approsimazioni su angoli e distanze.
+
+Allora otteniamo:
+\[
+\theta_{12} = \frac{2 \pi yh }{\lambda x}
+\]
+da cui:
+\[
+y_{max} = m \frac{\lambda x}{h}
+\]
+
+Si ottiene, per due sorgenti:
+\[
+I = 2I_0 (1+ \cos(\theta_{12}))
+\]
+
+Nel caso delle tre fenditure si ottiene:
+\[
+I = I_0 (3 +2 (\cos \theta_{12} + \cos \theta_{23} + \cos \theta_{13}) )
+\]
+per la differenza di cammino si ha:
+\begin{align*}
+d_{12} = \frac{h(y-\frac{h}{2})}{x} \\
+d_{13} = \frac{2yh}{x} \\
+d_{23} = \frac{h(y+\frac{h}{2})}{x} \simeq \frac{h y}{x} \\
+\end{align*}
+da cui si può notare:
+\[
+d_{12} \simeq d_{23} \simeq d_{13} \rightarrow \theta_{12} \simeq \theta_{23} \simeq \theta_{13}/2 \simeq \frac{2 \pi h x}{\lambda x}
+\]
+da cui la formula riportatat sopra.
+
+\section{Caso n fenditure: Reticolo di diffrazione}
+Un reticolo di diffrazione si può vedere per esempio nei cd.
+
+Abbiamo varie aperture di larghezza $2a$ distanziate di $2d$. Per calcolare cosa accade nello schermo torno all'approccio degli intergali:
+\[
+E_{schermo} = \int_{-a}^{a} ... +  \int_{-2d -a}^{-2d + a} ... + ... + \int_{(N-1)2d - a}^{(N-1)2d + a} \frac{E_0}{N2d} dx \exp \left[\Delta \phi(x)\right] = \frac{E_0}{N2d} \frac{s}{iky}\left(1 - \exp[-ikdy/s] + \exp[ikdy/s] + \exp[h(N-1)\frac{dy}{s}] \times (\exp[ikay / s]+  \exp[ - ikay / s]) \right)
+\]
+Da cui si ottiene:
+\[
+\frac{E}{N} \frac{s}{kdy}\sin(\frac{kay}{s}) ... = \frac{E_0}{N}\frac{\sin(kNy){s}}{\sin(kay){s}}\frac{\sin(kay){s}}{kay/s}
+\]
+da cui si ottiene l'irradianza:
+\[
+I= I_0 \frac{\sin^2 \beta}{\beta^2}\left(\sin(\gamma N)/N\sin(\gamma)\right)^2
+\]
+dove $\beta = kny/s$ e $\gamma = kdy/s$.
+
+Avrò massimi principali quando il secondo termine vale uno, e dei massimi secondari. Se N è molto grande l'altezza dei massimi secondari è minuscola, dunque con un 
+numero abbastanza grande di fenditure il secondo termine è quasi irrilevante.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
