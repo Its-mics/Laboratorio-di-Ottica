@@ -24,11 +24,9 @@
 \contentsline {chapter}{\numberline {5}Interferenza e diffrazione}{64}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Interferenza}{64}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Esperienza 6: diffrazione da una fenditura}{69}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Diffrazione da una fenditura rettangolare e circolare e da un filo}{73}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Massimi della curva di interferenza}{76}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}Diffrazione da doppia fenditura}{77}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Caso delle 3 fenditure}{78}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Caso n fenditure: Reticolo di diffrazione}{78}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Ulteriori complicazioni}{79}{subsection.5.6.1}%
-\contentsline {section}{\numberline {5.7}Biprisma di Fresnel}{79}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Specchio antiriflesso}{80}{subsection.5.7.1}%
+\contentsline {section}{\numberline {5.3}Diffrazione da una fenditura rettangolare e circolare e da un filo}{74}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Esperienza 7: Diffrazione da doppia fenditura}{77}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Caso delle 3 fenditure}{80}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Caso a $N$ fenditure: Reticolo di diffrazione}{82}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Biprisma di Fresnel}{83}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Specchio antiriflesso}{85}{subsection.5.7.1}%
