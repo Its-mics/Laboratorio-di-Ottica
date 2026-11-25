@@ -1,0 +1,4 @@
+d verde = 0.22003686339291917 ± 0.0005543561988560995 mm
+d rosso = 0.21254465869553069 ± 0.0005318222122972024 mm
+|d verde - d rosso| = 0.007492204697388483 mm  (9.75 sigma)
+d verde NON è compatibile con d rosso

@@ -5485,7 +5485,7 @@ Il binario di raccolta è dotato di una manovella laterale che sposta il support
     \end{tikzpicture}
     \caption{Schema completo dell'apparato sperimentale per la misura della diffrazione da una singola fenditura.}
 \end{figure}
-Il fotodiodo è orientato in modo da guardare verso l'interno della stanza (lontano dalla finestra) per minimizzare la luce ambientale di fondo; quest'ultima resta comunque presente e va misurata in corrispondenza di ogni punto. Operativamente, mentre un operatore regola la posizione del fotodiodo, un secondo operatore scherma il laser per acquisire la lettura di fondo, per poi spostarsi e misurare il segnale.
+Il fotodiodo è orientaƒto in modo da guardare verso l'interno della stanza (lontano dalla finestra) per minimizzare la luce ambientale di fondo; quest'ultima resta comunque presente e va misurata in corrispondenza di ogni punto. Operativamente, mentre un operatore regola la posizione del fotodiodo, un secondo operatore scherma il laser per acquisire la lettura di fondo, per poi spostarsi e misurare il segnale.
 
 \subsection*{Analisi dei dati e fit}
 
@@ -5514,6 +5514,24 @@ L'incertezza su $d = \frac{B \lambda s}{2\pi}$ si ottiene propagando in quadratu
 \[
     \sigma_d = \frac{\lambda}{2\pi} \sqrt{(s\,\sigma_B)^2 + (B\,\sigma_s)^2}
 \]
+
+
+\subsection*{Massimi della curva di diffrazione}
+
+I massimi secondari della figura di diffrazione da una singola fenditura risultano leggermente spostati rispetto a quelli di una normale funzione sinusoidale a causa del fattore $\frac{1}{x^2}$ che moltiplica $\sin^2 x$ nella funzione $\operatorname{sinc}^2(x) = \left(\frac{\sin x}{x}\right)^2$.
+
+Per individuarne la posizione si studia la derivata prima dell'irradianza rispetto a $x = \frac{kdy}{s}$: ponendola uguale a zero si ottiene (oltre agli zeri $\sin x = 0$) l'equazione trascendente:
+\[
+    \tan x = x
+\]
+Poiché non è risolvibile analiticamente, si ricorre a un metodo grafico o numerico, trovando le soluzioni:
+\begin{align*}
+    x_0 &= 0 \\
+    x_1 &\simeq \num{1.43}\pi \\
+    x_2 &\simeq \num{2.46}\pi \\
+    x_3 &\simeq \num{3.47}\pi
+\end{align*}
+Si osserva che al crescere dell'ordine $m$ ($m \to \infty$), le posizioni dei massimi tendono asintoticamente ai multipli seminteri dispari di $\pi$: $x_m \to \frac{2m+1}{2}\pi$.
 
 \section{Diffrazione da una fenditura rettangolare e circolare e da un filo}
 
@@ -5718,184 +5736,785 @@ Sullo schermo, attorno alla regione centrale, il termine incrociato $-2\operator
     \end{tikzpicture}
 \end{figure}
 
-\subsection{Massimi della curva di interferenza}
-I massimi della funziona d'interferenza sono spostati rispetto ad una normale funzione sinusoidale a cause dell'andamento $\frac{1}{x^2}$.
+\section{Esperienza 7: Diffrazione da doppia fenditura}
 
-\noindent Questi possono essere studiati tramite la derivata prima della funzione irradianza, annullandola si trova un equazione del tipo $\tan(x) = x$,
-non risolvibile aniliticamente, per questo si usa un metodo grafico. 
+Supponiamo di avere due fenditure parallele ciascuna di larghezza $2a$, i cui centri sono separati da una distanza $2d$ (cioè centrate in $-d$ e $+d$, negli intervalli $[-d-a, -d+a]$ e $[d-a, d+a]$). Sulle due fenditure incide un'onda piana.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Coordinate principali
+        \coordinate (O) at (0, 0);
+        \coordinate (C) at (5.4, 0);
+        \coordinate (P) at (5.4, 1.75);
 
-Numericamente si trova:
+        % Schermo opaco lungo l'asse x con due aperture di larghezza 2a centrate in ±d
+        % (d = 1.0, a = 0.3 -> aperture in [0.7, 1.3] e [-1.3, -0.7])
+        \draw[very thick, PoliBlue] (0, -2.1) -- (0, -1.3);
+        \draw[very thick, PoliBlue] (0, -0.7) -- (0, 0.7);
+        \draw[very thick, PoliBlue, ->] (0, 1.3) -- (0, 2.4) node[left=2pt, text=black] {$x$};
+        \draw[dashed, gray!60] (0, 0.7) -- (0, 1.3);
+        \draw[dashed, gray!60] (0, -1.3) -- (0, -0.7);
+
+        % Tacche ai bordi delle fenditure e ai centri (±d)
+        \foreach \y in {-1.3, -0.7, 0.7, 1.3} {
+            \draw[thick, PoliBlue] (-0.11, \y) -- (0.11, \y);
+        }
+        \foreach \y in {-1.0, 1.0} {
+            \draw[thin, gray!70] (-0.08, \y) -- (0.08, \y);
+        }
+        \node[above right=1pt, font=\small] at (0, 0) {$0$};
+
+        % Quota interna: distanza 2d tra i centri delle due fenditure
+        \draw[thin, gray!65] (-0.12, 1.0) -- (-0.58, 1.0);
+        \draw[thin, gray!65] (-0.12, -1.0) -- (-0.58, -1.0);
+        \draw[<->, thick, black!80] (-0.45, -1.0) -- (-0.45, 1.0)
+            node[midway, left=1pt, font=\small] {$2d$};
+
+        % Quote esterne: larghezza 2a di ciascuna fenditura
+        \draw[thin, gray!65] (-0.15, 1.3) -- (-1.30, 1.3);
+        \draw[thin, gray!65] (-0.15, 0.7) -- (-1.30, 0.7);
+        \draw[<->, thick, black!80] (-1.15, 0.7) -- (-1.15, 1.3)
+            node[midway, left=2pt, font=\small] {$2a$};
+
+        \draw[thin, gray!65] (-0.15, -0.7) -- (-1.30, -0.7);
+        \draw[thin, gray!65] (-0.15, -1.3) -- (-1.30, -1.3);
+        \draw[<->, thick, black!80] (-1.15, -1.3) -- (-1.15, -0.7)
+            node[midway, left=2pt, font=\small] {$2a$};
+
+        % Schermo di osservazione (asse y)
+        \draw[->, very thick, black!80] (5.4, -2.1) -- (5.4, 2.4) node[right=2pt] {$y$};
+        \node[below left=1pt, font=\small] at (C) {$0$};
+
+        % Asse centrale (distanza s) e raggio ad angolo theta
+        \draw[dashed, black!75] (O) -- (C) node[midway, below=3pt] {$s$};
+        \draw[OpticRed, thick, ->] (O) -- (P);
+        \fill[OpticRed] (P) circle (1.8pt);
+
+        % Angolo theta
+        \pic[draw, ->, angle radius=1.9cm, angle eccentricity=1.20, "$\theta$"] {angle = C--O--P};
+
+        % Quota altezza y = s tan(theta) sullo schermo
+        \draw[thin, gray!65] (5.52, 0) -- (5.95, 0);
+        \draw[thin, gray!65] (5.52, 1.75) -- (5.95, 1.75);
+        \draw[<->, thick, black!80] (5.75, 0) -- (5.75, 1.75)
+            node[midway, right=3pt] {$y = s\tan\theta$};
+    \end{tikzpicture}
+\end{figure}
+
+Poniamo uno schermo di osservazione a distanza $s$ dalle fenditure: nell'approssimazione di Fraunhofer (angoli piccoli e $s$ grande), un punto ad angolo $\theta$ sullo schermo si trova all'altezza $y = s\tan\theta$. Analogamente al caso della fenditura singola, il campo elettrico sullo schermo è la somma degli integrali sulle due aperture:
+\[
+    E_{\text{schermo}} = \int_{-d-a}^{-d+a} \frac{E_0}{4a} e^{-i \Delta\phi(x)} \,\mathrm{d}x + \int_{d-a}^{d+a} \frac{E_0}{4a} e^{-i \Delta\phi(x)} \,\mathrm{d}x
+\]
+Approssimando la differenza di fase come in precedenza, $\Delta\phi(x) \simeq -\frac{k x y}{s}$, otteniamo:
+\[
+    E_{\text{schermo}} \simeq \int_{-d-a}^{-d+a} \frac{E_0}{4a} e^{i\frac{k x y}{s}} \,\mathrm{d}x + \int_{d-a}^{d+a} \frac{E_0}{4a} e^{i\frac{k x y}{s}} \,\mathrm{d}x
+\]
+Svolgendo i due integrali si ricava:
+\[
+    E_{\text{schermo}} = \frac{E_0}{2} \frac{\sin\left(\frac{k a y}{s}\right)}{\frac{k a y}{s}} \left(e^{-i\frac{k d y}{s}} + e^{i\frac{k d y}{s}}\right) = E_0 \frac{\sin\left(\frac{k a y}{s}\right)}{\frac{k a y}{s}} \cos\left(\frac{k d y}{s}\right)
+\]
+da cui segue l'espressione dell'irradianza sullo schermo:
+\[
+    I(y) = I_0 \left(\frac{\sin\left(\frac{k a y}{s}\right)}{\frac{k a y}{s}} \cos\left(\frac{k d y}{s}\right)\right)^2
+\]
+
+Esaminiamo alcuni casi limite notevoli di questa formula:
+\begin{itemize}
+    \item \textbf{Per $d \to 0$:} le due fenditure si avvicinano fino a sovrapporsi ($\cos(kdy/s) \to 1$) e ci si riconduce al caso della diffrazione da \textbf{una singola fenditura}.
+    \item \textbf{Per $a \to 0$:} l'inviluppo di diffrazione tende a $1$ ($\operatorname{sinc} \to 1$) e ci si riconduce all'interferenza di \textbf{due sorgenti puntiformi} (esperimento di Young).
+    \item \textbf{Per $k \to 0$ ($\lambda \to \infty$):} sia il seno cardinale sia il coseno tendono a $1$, quindi non si osservano più né diffrazione né interferenza e l'intensità sullo schermo risulta uniforme ($I = I_0$).
+\end{itemize}
+
+Studiamo ora l'andamento di $I/I_0$ in funzione di $y$:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.84\textwidth,
+            height=6.6cm,
+            axis lines=middle,
+            xmin=-2.25, xmax=2.35,
+            ymin=-0.16, ymax=1.22,
+            xtick=\empty,
+            ytick=\empty,
+            xlabel={$y$},
+            ylabel={$I/I_0$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            clip=false
+        ]
+            \node[above left=1pt, font=\small] at (axis cs:0, 1) {$1$};
+
+            % Inviluppo di diffrazione (singola fenditura di larghezza 2a)
+            \addplot[PoliBlue, dashed, thick, domain=-2.1:2.1, samples=300]
+                {(sin(180*x)/(pi*x))^2};
+
+            % Curva completa: diffrazione + interferenza (es. rapporto d/a = 2.5)
+            % (numero pari di campioni per evitare la valutazione esatta in x = 0)
+            \addplot[OpticRed, very thick, domain=-2.1:2.1, samples=400]
+                {(sin(180*x)/(pi*x) * cos(450*x))^2};
+
+            % Indicatori dei minimi (primo minimo di interferenza in x=0.2, diffrazione in x=1.0)
+            \fill[black] (axis cs:0.2, 0) circle (1.4pt);
+            \fill[black] (axis cs:1.0, 0) circle (1.4pt);
+
+            \draw[->, >=Stealth, thin, black!80] (axis cs:0.48, -0.25) to[bend left=18] (axis cs:0.21, -0.02);
+            \node[below, align=center, font=\scriptsize] at (axis cs:0.52, -0.25)
+                {minimo interferenza\\$y_{\min}^{\text{int}} = \pm\dfrac{(2n+1)\lambda s}{4d}$};
+
+            \draw[->, >=Stealth, thin, black!80] (axis cs:1.58, -0.25) to[bend left=18] (axis cs:1.02, -0.02);
+            \node[below, align=center, font=\scriptsize] at (axis cs:1.68, -0.25)
+                {minimo diffrazione\\$y_{\min}^{\text{diff}} = \pm\dfrac{m\lambda s}{2a}$};
+        \end{axis}
+    \end{tikzpicture}
+    \vspace{0.6cm}
+\end{figure}
+
+Nella figura di intensità distinguiamo il massimo centrale in $y_0 = 0$, i massimi/minimi dovuti all'interferenza (fattore coseno, legato alla separazione $2d$) e i minimi dovuti alla diffrazione (fattore seno cardinale, legato alla larghezza $2a$):
 \begin{align*}
-    x_0 = 0 \\
-    x_1 = 1.43 \pi \\
-    x_2 = 2.46 \pi \\
-    x_3 = 3.47 \pi
+    y_0 &= 0 && \text{(massimo centrale)} \\
+    y_n^{\text{int}} &= \pm \frac{n \lambda s}{2d} && \text{(massimi di interferenza; minimi in } \pm\tfrac{(2n+1)\lambda s}{4d}\text{)} \\
+    y_m^{\text{diff}} &= \pm \frac{m \lambda s}{2a} && \text{(minimi di diffrazione, } m \ge 1\text{)}
 \end{align*}
-Si nota allora che: $x_m \rightarrow \infty = \frac{2n +1}{2} \pi$
 
-\section{Diffrazione da doppia fenditura}
-Supponiamo di avere 2 fenditure di larghezza 2a, con i centri separati di 2d. Su queste due fenditure incide un onda piana.
+\subsection*{Note sperimentali e fit dei dati}
 
-Ad una distanza $s$ mettiamo uno schermo, per angoli piccole e $s$ grandi avremo $y = \tan \theta$. Come l'ultima volta avremo:
-\[
-E_{schermo} = \int_{-d-a}^{-d+a} \frac{E_0}{4a}dx \exp\left[-\Delta\phi(x)\right] + \int_{d-a}^{d+a} \frac{E_0}{4a}dx \exp[-\Delta \phi(x)]
-\]
-approssimando coem l'ultima volta: $\Delta \phi \simeq - \frac{k y}{s}$, si trova:
-\[
-\int_{-d-a}^{-d+a} \frac{E_0}{4a}dx \exp\left[-\frac{k y}{s}\right] + \int_{d-a}^{d+a} \frac{E_0}{4a}dx \exp\left[-\frac{k y}{s}\right]
-\]
-che si risolve:
-\[
-E_{schermo} = \frac{E_0}{4a} \frac{s}{a k y} \exp\left[-i\frac{ka y}{s}\right](\exp\left[\frac{ - a k y}{s}\right] +  \exp[\frac{ a k y}{s}])
-\]
-riscrivibile in:
-\[
-E_0 \frac{\sin\left(\frac{kay}{s}\right)}{\frac{kay}{s}} \cos\left(\frac{kdy}{s}\right)
-\]
-da cui la formula per l'irradianza:
-\[
-I(x) = I_0 \left(\frac{\sin(\frac{kay}{s})}{\frac{kay}{s}} \cos\left(\frac{kdy}{s}\right)\right)^2
-\]
-allora troviamo i minimi dovuti sia al seno che al coseno:
-\begin{align*}
-    y_0 = 0 \\
-    y_n = \pm \frac{n \lambda s }{2d} \\
-    y_m = \pm \frac{m \lambda a }{2a}
-\end{align*}
-Per questo dovremo fare più misure rispetto all'esperienza precedente. Per rendere la figura più grande utilizziamo come l'ultima volta le lenti,
-questo diminuirà nuovamente l'intensità del diodo.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale=0.92]
+        % ---------- Banco ottico sinistro (binario) ----------
+        \draw[very thick, black!70] (-6.8, -1.45) -- (0.0, -1.45);
+        \draw[thick, black!50] (-6.8, -1.55) -- (0.0, -1.55);
+        \node[below, font=\scriptsize] at (-3.4, -1.62) {binario ottico};
 
-La funzione di fit di questa esperienza sarà data da:
+        % Laser (rosso / verde, fascio ~ 1 mm)
+        \draw[thick, fill=gray!20, rounded corners=2pt] (-6.6, -0.25) rectangle (-5.1, 0.25);
+        \draw[thick] (-5.85, -0.25) -- (-5.85, -1.45);
+        \node[above, align=center, font=\scriptsize] at (-5.85, 0.35) {laser (rosso / verde)\\$\varnothing \simeq \SI{1}{\milli\meter}$};
+
+        % Sistema di due lenti (espansore di fascio) a distanza f1 + f2
+        % Lente 1 (f1)
+        \draw[thick, fill=cyan!20] (-3.8, 0) ellipse (0.10 and 0.60);
+        \draw[thick] (-3.8, -0.60) -- (-3.8, -1.45);
+        \node[above, font=\scriptsize] at (-3.8, 0.65) {$f_1$};
+
+        % Lente 2 (f2)
+        \draw[thick, fill=cyan!20] (-2.0, 0) ellipse (0.12 and 0.80);
+        \draw[thick] (-2.0, -0.80) -- (-2.0, -1.45);
+        \node[above, font=\scriptsize] at (-2.0, 0.85) {$f_2$};
+
+        % Quota distanza f1 + f2 tra le lenti
+        \draw[<->, thin, black!75] (-3.8, -1.15) -- (-2.0, -1.15)
+            node[midway, above=1pt, font=\scriptsize] {$f_1 + f2$};
+
+        % Percorso del fascio laser (collimato -> fuoco -> espanso parallelo)
+        \fill[OpticRed!12] (-2.0, -0.45) rectangle (-0.6, 0.45);
+        \draw[OpticRed, thick] (-5.1, 0.05) -- (-3.8, 0.05) -- (-3.2, 0) -- (-2.0, -0.45) -- (-0.6, -0.45);
+        \draw[OpticRed, thick] (-5.1, -0.05) -- (-3.8, -0.05) -- (-3.2, 0) -- (-2.0, 0.45) -- (-0.6, 0.45);
+        \draw[OpticRed, thin, ->] (-2.0, 0) -- (-1.2, 0);
+
+        % Doppia fenditura su diapositiva (due aperture centrate in ±0.22)
+        \draw[thick] (-0.6, -0.85) -- (-0.6, -1.45);
+        \draw[thick, fill=gray!20] (-0.68, -0.88) rectangle (-0.52, 0.88);
+        % Zone annerite della diapositiva che lasciano due fenditure aperte
+        \fill[black!85] (-0.65, 0.29) rectangle (-0.55, 0.85);
+        \fill[black!85] (-0.65, -0.15) rectangle (-0.55, 0.15);
+        \fill[black!85] (-0.65, -0.85) rectangle (-0.55, -0.29);
+        \fill[white] (-0.65, 0.15) rectangle (-0.55, 0.29);
+        \fill[white] (-0.65, -0.29) rectangle (-0.55, -0.15);
+        \node[above, align=center, font=\scriptsize] at (-0.6, 0.95) {doppia fenditura\\(su diapositiva)};
+
+        % ---------- Propagazione e sovrapposizione dei due fasci su distanza s ----------
+        \fill[OpticRed!7] (-0.55, 0.29) -- (3.25, 0.72) -- (3.25, -0.72) -- (-0.55, -0.29) -- cycle;
+        \draw[OpticRed, dashed, ->] (-0.55, 0.22) -- (3.22, 0.04);
+        \draw[OpticRed, dashed, ->] (-0.55, -0.22) -- (3.22, -0.04);
+        \draw[OpticRed!60, thin] (-0.55, 0.29) -- (3.25, 0.72);
+        \draw[OpticRed!60, thin] (-0.55, -0.29) -- (3.25, -0.72);
+
+        % Quota distanza s (nella zona libera tra i due supporti)
+        \draw[<->, thick, black!80] (-0.55, -1.15) -- (3.45, -1.15)
+            node[midway, above=2pt, font=\scriptsize] {$s \simeq 2\text{--}\SI{3}{\meter}$};
+
+        % ---------- Binario ortogonale graduato con fotodiodo e manovella ----------
+        \draw[very thick, black!75] (2.6, -1.85) -- (4.3, -1.05);
+        \draw[thick, black!50] (2.6, -1.95) -- (4.3, -1.15);
+        \foreach \t in {0.1, 0.2, ..., 0.9} {
+            \coordinate (T) at ($(2.6,-1.85)!\t!(4.3,-1.05)$);
+            \draw[thin, black!70] (T) -- ($(T)+(0,-0.08)$);
+        }
+        % Manovella laterale
+        \draw[thick] (2.6, -1.90) -- (2.3, -2.04) -- (2.3, -1.82);
+        \node[left, font=\scriptsize] at (2.22, -1.95) {manovella};
+        \node[below, align=center, font=\scriptsize] at (3.6, -1.98) {binario ortogonale\\(scala millimetrica)};
+
+        % Supporto mobile e fotodiodo (con apertura meno schermata rispetto all'Esp. 6)
+        \draw[thick] (3.50, -1.45) -- (3.50, -0.35);
+        \draw[thick, fill=gray!15] (3.25, -0.35) rectangle (3.75, 0.35);
+        \fill[black!75] (3.25, -0.35) rectangle (3.34, 0.35);
+        \fill[black!75] (3.66, -0.35) rectangle (3.75, 0.35);
+        \draw[thick, PoliBlue] (3.34, -0.35) rectangle (3.66, 0.35);
+        \node[above, align=center, font=\scriptsize] at (3.5, 0.80) {fotodiodo\\(finestra più aperta\\con meno nastro)};
+
+        % Voltmetro collegato al fotodiodo
+        \draw[thick] (3.75, 0) .. controls (4.65, 0) and (5.05, -0.25) .. (5.05, -0.55);
+        \draw[thick, fill=white] (5.05, -0.85) circle (0.30) node {\small $V$};
+        \node[below, font=\scriptsize] at (5.05, -1.20) {voltmetro};
+    \end{tikzpicture}
+    \caption{Schema dell'apparato sperimentale per l'Esperienza 7 (diffrazione e interferenza da doppia fenditura su diapositiva).}
+\end{figure}
+
+
+In questa esperienza sarà necessario acquisire un numero maggiore di misure rispetto all'esperienza precedente: all'interno del picco centrale di diffrazione compaiono infatti più picchi di interferenza (ad esempio 3 picchi nel lobo principale), che altrimenti verrebbero campionati in modo troppo grossolano.
+Per allargare adeguatamente la figura si utilizza nuovamente il sistema a due lenti (espansore di fascio), che però riduce l'intensità incidente sul fotodiodo; inoltre, scegliendo una separazione $2d$ piccola la figura di interferenza si allarga (ad esempio da $-40$ a $+\SI{40}{\milli\meter}$), ma lo svantaggio è che l'energia viene distribuita su più picchi rendendo ciascun massimo meno intenso. Nella relazione confronteremo i valori ricavati sia per la larghezza $2a$ della singola fenditura sia per la separazione $2d$ tra le due fenditure.
+
+La funzione di fit per i dati di questa esperienza è:
 \begin{equation*}
-    y = A \frac{\sin^2\bigl(B(x - C)\bigr)}{\bigl[B(x - C)\bigr]^2}\cos^2\left(D(x-c)\right) + E
+    y = A \frac{\sin^2\bigl(B(x - C)\bigr)}{\bigl[B(x - C)\bigr]^2} \cos^2\bigl(D(x - C)\bigr) + E
 \end{equation*}
-ricaviamo da D e B i valori di $2d$ e $2a$.
+dove $C$ rappresenta il centro comune di entrambe le funzioni sulla scala del fotodiodo, mentre dai parametri $B = \frac{2\pi a}{\lambda s}$ e $D = \frac{2\pi d}{\lambda s}$ si ricavano rispettivamente $2a$ e $2d$.
+
+Rispetto all'esperienza precedente intervengono alcune complicazioni aggiuntive:
+\begin{itemize}
+    \item La misura è molto sensibile all'andamento sulle code, dove la derivata della funzione è più piccola.
+    \item Allargando il fascio laser tramite le lenti, ogni imperfezione del fascio viene ingigantita; inoltre eventuali granelli di polvere possono disturbare la misura.
+    \item Le doppie fenditure non sono fenditure meccaniche ma diapositive (annerite ovunque tranne in corrispondenza delle fenditure), e il supporto plastico è soggetto a imperfezioni ottiche.
+    \item Avendo un'intensità luminosa più bassa rispetto alla singola fenditura, nel caso del laser verde non è necessario coprire strettamente la finestra del fotodiodo con il nastro. Questo rappresenta anzi un vantaggio: eventuali variazioni di intensità lungo la direzione ortogonale (verticale), dovute alle imperfezioni della diapositiva o del fascio, vengono così integrate e mediate automaticamente su tutta l'altezza del sensore.
+\end{itemize}
 
 \section{Caso delle 3 fenditure}
-La differenza di cammino, per una fenditura, fra i raggi è data da:
-\[
-d_{12} = \sqrt{x^2 + (y +\frac{h}{2})^2} -  \sqrt{x^2 + (y -\frac{h}{2})^2} \simeq \frac{yh}{2}
-\]
-dove abbiamo svolto le solite approsimazioni su angoli e distanze.
 
-Allora otteniamo:
+Nel passaggio a più fenditure, anziché ricavare direttamente un singolo coseno dagli esponenziali complessi (come accade nel caso simmetrico a 2 fenditure), conviene calcolare direttamente l'irradianza risultante a partire dalle differenze di cammino e di fase tra le coppie di sorgenti.
+
+Riprendiamo prima il caso delle 2 fenditure di Young (separate da una distanza $h$):
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Parete delle fenditure S1 e S2
+        \draw[very thick, PoliBlue] (0, -2.0) -- (0, 2.2);
+        \foreach \y in {-1.0, 1.0} {
+            \draw[very thick, black] (-0.1, \y) -- (0.1, \y);
+        }
+        \node[above left=1pt] at (0, 1.0) {$S_1$};
+        \node[above left=1pt] at (0, -1.0) {$S_2$};
+
+        % Quota distanza h tra le fenditure
+        \draw[thin, gray] (-0.3, 1.0) -- (-0.85, 1.0);
+        \draw[thin, gray] (-0.3, -1.0) -- (-0.85, -1.0);
+        \draw[<->, thick, black!80] (-0.65, -1.0) -- (-0.65, 1.0) node[midway, left=2pt] {$h$};
+
+        % Asse centrale di riferimento (y = 0)
+        \draw[dashed, gray] (0, 0) -- (5.0, 0);
+
+        % Schermo come asse verticale y verso l'alto
+        \draw[->, very thick, black!80] (5.0, -2.0) -- (5.0, 2.4) node[right=2pt] {$y$};
+        \draw[thick] (4.92, 0) -- (5.08, 0) node[right=2pt] {$0$};
+
+        % Raggi dalle due fenditure al punto P(y) sullo schermo
+        \coordinate (P) at (5.0, 1.7);
+        \draw[OpticRed, thick, ->] (0, 1.0) -- (P);
+        \draw[OpticRed, thick, ->] (0, -1.0) -- (P);
+        \fill[OpticRed] (P) circle (1.8pt) node[right=3pt, text=black] {$P(y)$};
+
+        % Quota distanza x tra parete e schermo
+        \draw[<->, thick, black!80] (0.1, -2.25) -- (4.9, -2.25) node[midway, below=2pt] {$x$};
+    \end{tikzpicture}
+    \caption{Geometria per il calcolo della differenza di cammino ottico nell'esperimento di Young.}
+\end{figure}
+
+La differenza di cammino tra i due raggi, con le consuete approssimazioni per piccoli angoli e grandi distanze ($x \gg y, h$), vale:
 \[
-\theta_{12} = \frac{2 \pi yh }{\lambda x}
+    d_{12} = \sqrt{x^2 + \left(y + \frac{h}{2}\right)^2} - \sqrt{x^2 + \left(y - \frac{h}{2}\right)^2} \simeq \frac{y h}{x}
 \]
-da cui:
+La corrispondente differenza di fase è:
 \[
-y_{max} = m \frac{\lambda x}{h}
+    \theta_{12} = k d_{12} = \frac{k y h}{x} = \frac{2\pi y h}{\lambda x}
+\]
+Imponendo la condizione di massimo ($\cos\theta_{12} = 1$, ossia $\theta_{12} = 2m\pi$), si ritrova la posizione dei massimi:
+\[
+    y_{\max} = m \frac{\lambda x}{h}
+\]
+L'irradianza per due sorgenti coerenti di uguale intensità $I_0$ si scrive quindi:
+\[
+    I = 2 I_0 \bigl(1 + \cos\theta_{12}\bigr) = 2 I_0 + 2 I_0 \cos\theta_{12}
 \]
 
-Si ottiene, per due sorgenti:
-\[
-I = 2I_0 (1+ \cos(\theta_{12}))
-\]
+Consideriamo ora \textbf{3 fenditure} poste a distanza $h$ l'una dall'altra (ad esempio alle quote $+h$, $0$ e $-h$):
 
-Nel caso delle tre fenditure si ottiene:
-\[
-I = I_0 (3 +2 (\cos \theta_{12} + \cos \theta_{23} + \cos \theta_{13}) )
-\]
-per la differenza di cammino si ha:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Parete con le 3 fenditure (quote +h, 0, -h)
+        \draw[very thick, PoliBlue] (0, -1.8) -- (0, -1.10);
+        \draw[very thick, PoliBlue] (0, -0.90) -- (0, -0.10);
+        \draw[very thick, PoliBlue] (0, 0.10) -- (0, 0.90);
+        \draw[very thick, PoliBlue] (0, 1.10) -- (0, 1.9);
+
+        % Tacche ai bordi e centri delle 3 fenditure
+        \foreach \y in {1.0, 0.0, -1.0} {
+            \draw[dashed, gray!60] (0, \y-0.10) -- (0, \y+0.10);
+            \draw[thick, PoliBlue] (-0.09, \y+0.10) -- (0.09, \y+0.10);
+            \draw[thick, PoliBlue] (-0.09, \y-0.10) -- (0.09, \y-0.10);
+        }
+        \node[left=3pt, font=\small] at (-0.08, 1.0) {$1$};
+        \node[left=3pt, font=\small] at (-0.08, 0.0) {$2$};
+        \node[left=3pt, font=\small] at (-0.08, -1.0) {$3$};
+
+        % Quote delle due separazioni consecutive h
+        \foreach \y in {-1.0, 0.0, 1.0} {
+            \draw[thin, gray!65] (-0.50, \y) -- (-0.85, \y);
+        }
+        \draw[<->, thick, black!80] (-0.68, 0.02) -- (-0.68, 0.98) node[midway, left=2pt] {$h$};
+        \draw[<->, thick, black!80] (-0.68, -0.98) -- (-0.68, -0.02) node[midway, left=2pt] {$h$};
+
+        % Asse centrale di riferimento (y = 0)
+        \draw[dashed, gray!70] (0, 0) -- (5.2, 0);
+
+        % Schermo di osservazione (asse y verso l'alto)
+        \draw[->, very thick, black!80] (5.2, -1.8) -- (5.2, 2.3) node[right=2pt] {$y$};
+        \draw[thick] (5.12, 0) -- (5.28, 0) node[right=2pt] {$0$};
+
+        % Raggi dalle 3 fenditure verso il punto P(y) sullo schermo
+        \coordinate (P) at (5.2, 1.65);
+        \draw[OpticRed, thick, ->] (0, 1.0) -- (P);
+        \draw[OpticRed, thick, ->] (0, 0.0) -- (P);
+        \draw[OpticRed, thick, ->] (0, -1.0) -- (P);
+        \fill[OpticRed] (P) circle (1.8pt) node[right=3pt, text=black] {$P(y)$};
+
+        % Quota distanza x tra fenditure e schermo
+        \draw[<->, thick, black!80] (0.05, -2.05) -- (5.15, -2.05) node[midway, below=2pt] {$x$};
+    \end{tikzpicture}
+    \caption{Geometria per il calcolo delle differenze di cammino ottico nel caso di $3$ fenditure equidistanti con passo $h$.}
+\end{figure}
+
+Calcoliamo le distanze $r_1, r_2, r_3$ dalle tre fenditure fino al punto $(x, y)$ sullo schermo sviluppando in serie di Taylor al primo ordine per $x \gg y, h$:
 \begin{align*}
-d_{12} = \frac{h(y-\frac{h}{2})}{x} \\
-d_{13} = \frac{2yh}{x} \\
-d_{23} = \frac{h(y+\frac{h}{2})}{x} \simeq \frac{h y}{x} \\
+    r_1 &= \sqrt{x^2 + (y - h)^2} = x \sqrt{1 + \frac{(y - h)^2}{x^2}} \simeq x + \frac{(y - h)^2}{2x} = x + \frac{y^2 - 2yh + h^2}{2x} \\
+    r_2 &= \sqrt{x^2 + y^2} = x \sqrt{1 + \frac{y^2}{x^2}} \simeq x + \frac{y^2}{2x} \\
+    r_3 &= \sqrt{x^2 + (y + h)^2} = x \sqrt{1 + \frac{(y + h)^2}{x^2}} \simeq x + \frac{(y + h)^2}{2x} = x + \frac{y^2 + 2yh + h^2}{2x}
 \end{align*}
-da cui si può notare:
+Sottraendo a coppie i cammini otteniamo le tre differenze di cammino ottico:
+\begin{align*}
+    d_{12} &= r_2 - r_1 \simeq \frac{y^2}{2x} - \frac{y^2 - 2yh + h^2}{2x} = \frac{2yh - h^2}{2x} = \frac{h}{x}\left(y - \frac{h}{2}\right) \\
+    d_{23} &= r_3 - r_2 \simeq \frac{y^2 + 2yh + h^2}{2x} - \frac{y^2}{2x} = \frac{2yh + h^2}{2x} = \frac{h}{x}\left(y + \frac{h}{2}\right) \\
+    d_{13} &= r_3 - r_1 \simeq \frac{y^2 + 2yh + h^2}{2x} - \frac{y^2 - 2yh + h^2}{2x} = \frac{4yh}{2x} = \frac{2yh}{x}
+\end{align*}
+Per $y \gg h$ (trascurando il termine $h/2$ rispetto a $y$), si osserva che:
 \[
-d_{12} \simeq d_{23} \simeq d_{13} \rightarrow \theta_{12} \simeq \theta_{23} \simeq \theta_{13}/2 \simeq \frac{2 \pi h x}{\lambda x}
+    d_{12} \simeq d_{23} \simeq \frac{y h}{x} \qquad \text{e} \qquad d_{13} = \frac{2 y h}{x} \simeq 2\,d_{12}
 \]
-da cui la formula riportatat sopra.
-
-\section{Caso n fenditure: Reticolo di diffrazione}
-Un reticolo di diffrazione si può vedere per esempio nei cd.
-
-Abbiamo varie aperture di larghezza $2a$ distanziate di $2d$. Per calcolare cosa accade nello schermo torno all'approccio degli intergali:
+e quindi per le differenze di fase $\theta_{ij} = \frac{2\pi}{\lambda} d_{ij}$ vale:
 \[
-E_{schermo} = \int_{-a}^{a} ... +  \int_{-2d -a}^{-2d + a} ... + ... + \int_{(N-1)2d - a}^{(N-1)2d + a} \frac{E_0}{N2d} dx \exp \left[\Delta \phi(x)\right] = \frac{E_0}{N2d} \frac{s}{iky}\left(1 - \exp[-ikdy/s] + \exp[ikdy/s] + \exp[h(N-1)\frac{dy}{s}] \times (\exp[ikay / s]+  \exp[ - ikay / s]) \right)
+    \theta_{12} \simeq \theta_{23} \simeq \frac{\theta_{13}}{2} \simeq \frac{2\pi y h}{\lambda x}
 \]
-Da cui si ottiene:
+Sommando i contributi di tutte e tre le coppie di interferenza ($1$--$2$, $2$--$3$ e $1$--$3$), l'irradianza nel caso di tre fenditure diventa:
 \[
-\frac{E}{N} \frac{s}{kdy}\sin\left(\frac{kay}{s}\right) ... = \frac{E_0}{N}\frac{\sin(kNy){s}}{\sin\frac{kay}{s}}\frac{\sin(kay){s}}{\frac{kay}{s}}
+    I = I_0 \Bigl[3 + 2\bigl(\cos\theta_{12} + \cos\theta_{23} + \cos\theta_{13}\bigr)\Bigr]
 \]
-da cui si ottiene l'irradianza:
+dove il termine costante di base passa da $2I_0$ (due fenditure) a $3I_0$ (tre fenditure), mentre al termine di interferenza della singola coppia si sostituisce la somma dei tre termini incrociati tra tutte le coppie possibili.
+
+
+
+
+
+
+
+
+\section{Caso a $N$ fenditure: Reticolo di diffrazione}
+
+Un esempio comune di reticolo di diffrazione è costituito dalla superficie di un CD.
+Consideriamo un sistema formato da $N$ aperture parallele, ciascuna di larghezza $2a$, i cui centri sono distanziati tra loro di $2d$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Coordinate principali
+        \coordinate (O) at (0, -1.5);
+        \coordinate (C) at (5.4, -1.5);
+        \coordinate (P) at (5.4, 0.35);
+
+        % Reticolo lungo l'asse x: fenditure centrate in 0, 2d, 4d, ..., (N-1)2d
+        % (semilarghezza a = 0.16, passo 2d = 1.0)
+        \draw[very thick, PoliBlue] (0, -2.15) -- (0, -1.66);
+        \draw[very thick, PoliBlue] (0, -1.34) -- (0, -0.66);
+        \draw[very thick, PoliBlue] (0, -0.34) -- (0, 0.34);
+        \draw[very thick, PoliBlue] (0, 0.66) -- (0, 0.92);
+        \node[PoliBlue] at (0, 1.18) {$\vdots$};
+        \draw[very thick, PoliBlue] (0, 1.38) -- (0, 1.64);
+        \draw[very thick, PoliBlue, ->] (0, 1.96) -- (0, 2.55) node[left=2pt, text=black] {$x$};
+
+        % Aperture tratteggiate e tacche dei bordi
+        \foreach \yc in {-1.5, -0.5, 0.5, 1.8} {
+            \draw[dashed, gray!60] (0, \yc-0.16) -- (0, \yc+0.16);
+            \draw[thick, PoliBlue] (-0.09, \yc+0.16) -- (0.09, \yc+0.16);
+            \draw[thick, PoliBlue] (-0.09, \yc-0.16) -- (0.09, \yc-0.16);
+        }
+
+        % Coordinate dei centri delle fenditure
+        \node[left=3pt, font=\footnotesize] at (-0.08, -1.5) {$0$};
+        \node[left=3pt, font=\footnotesize] at (-0.08, -0.5) {$2d$};
+        \node[left=3pt, font=\footnotesize] at (-0.08, 0.5)  {$4d$};
+        \node[left=3pt, font=\footnotesize] at (-0.08, 1.8)  {$(N-1)2d$};
+
+        % Quota larghezza 2a sulla fenditura di riferimento (in 0)
+        \draw[thin, gray!65] (-0.42, -1.66) -- (-1.68, -1.66);
+        \draw[thin, gray!65] (-0.42, -1.34) -- (-1.68, -1.34);
+        \draw[<->, thick, black!80] (-1.52, -1.66) -- (-1.52, -1.34)
+            node[midway, left=2pt, font=\small] {$2a$};
+
+        % Quota passo 2d tra i centri di due fenditure adiacenti
+        \draw[thin, gray!65] (-0.56, -0.5) -- (-1.68, -0.5);
+        \draw[thin, gray!65] (-0.56, 0.5)  -- (-1.68, 0.5);
+        \draw[<->, thick, black!80] (-1.52, -0.5) -- (-1.52, 0.5)
+            node[midway, left=2pt, font=\small] {$2d$};
+
+        % Schermo di osservazione (asse y)
+        \draw[->, very thick, black!80] (5.4, -2.15) -- (5.4, 2.50) node[right=2pt] {$y$};
+        \node[below right=1pt, font=\small] at (C) {$0$};
+
+        % Asse di riferimento (distanza s) e raggi dalle fenditure verso P sullo schermo
+        \draw[dashed, black!75] (O) -- (C) node[midway, below=3pt] {$s$};
+        \draw[OpticRed, thick, ->] (O) -- (P);
+        \foreach \yc in {-0.5, 0.5, 1.8} {
+            \draw[OpticRed!65, thin, ->] (0, \yc) -- (P);
+        }
+        \fill[OpticRed] (P) circle (1.8pt);
+
+        % Angolo theta
+        \pic[draw, ->, angle radius=1.85cm, angle eccentricity=1.20, "$\theta$"] {angle = C--O--P};
+
+        % Quota altezza y = s tan(theta) sullo schermo
+        \draw[thin, gray!65] (5.52, -1.5) -- (5.95, -1.5);
+        \draw[thin, gray!65] (5.52, 0.35) -- (5.95, 0.35);
+        \draw[<->, thick, black!80] (5.75, -1.5) -- (5.75, 0.35)
+            node[midway, right=3pt] {$y = s\tan\theta$};
+    \end{tikzpicture}
+    \caption{Geometria di un reticolo di diffrazione costituito da $N$ fenditure di larghezza $2a$ spaziate di $2d$ tra i rispettivi centri.}
+\end{figure}
+
+Per calcolare il campo risultante sullo schermo, utilizziamo ancora l'approccio integrale scegliendo una fenditura come riferimento ($x = 0$, che si estende da $-a$ a $+a$). La fenditura $j$-esima (per $j = 0, 1, \dots, N-1$) si estenderà quindi da $2jd - a$ a $2jd + a$:
 \[
-I= I_0 \frac{\sin^2 \beta}{\beta^2}\left(\frac{\sin(\gamma N)}{N\sin(\gamma)}\right)^2
+    E_{\text{schermo}} = \int_{-a}^{+a} \frac{E_0}{2Na} e^{-i\Delta\phi(x)}\,\mathrm{d}x + \int_{2d-a}^{2d+a} \frac{E_0}{2Na} e^{-i\Delta\phi(x)}\,\mathrm{d}x + \dots + \int_{(N-1)2d-a}^{(N-1)2d+a} \frac{E_0}{2Na} e^{-i\Delta\phi(x)}\,\mathrm{d}x
 \]
-dove $\beta = \frac{kny}{s}$ e $\gamma = \frac{kdy}{s}$.
+ossia, scrivendo in forma compatta con la sommatoria e approssimando la fase come $\Delta\phi(x) \simeq -\frac{k x y}{s}$:
+\[
+    E_{\text{schermo}} \simeq \sum_{j=0}^{N-1} \int_{2jd-a}^{2jd+a} \frac{E_0}{2Na} e^{i\frac{k x y}{s}}\,\mathrm{d}x
+\]
 
-Avrò massimi principali quando il secondo termine vale uno, e dei massimi secondari. Se N è molto grande l'altezza dei massimi secondari è minuscola, dunque con un 
-numero abbastanza grande di fenditure il secondo termine è quasi irrilevante.
+Calcoliamo esplicitamente l'integrale sulla $j$-esima fenditura:
+\begin{align*}
+    \int_{2jd-a}^{2jd+a} \frac{E_0}{2Na} e^{i\frac{k x y}{s}}\,\mathrm{d}x
+    &= \frac{E_0}{2Na} \frac{s}{i k y} \left(e^{i\frac{k(2jd+a)y}{s}} - e^{i\frac{k(2jd-a)y}{s}}\right) \\
+    &= \frac{E_0}{2Na} \frac{s}{i k y} \, e^{i\frac{2jkdy}{s}} \left(e^{i\frac{kay}{s}} - e^{-i\frac{kay}{s}}\right)
+\end{align*}
+Sommando su tutte le $N$ fenditure, il fattore comune esce dalla sommatoria e resta una serie geometrica di ragione $q = e^{i\frac{2kdy}{s}}$:
+\begin{align*}
+    E_{\text{schermo}}
+    &= \frac{E_0}{2Na} \frac{s}{i k y} \left(e^{i\frac{kay}{s}} - e^{-i\frac{kay}{s}}\right) \sum_{j=0}^{N-1} \left(e^{i\frac{2kdy}{s}}\right)^j \\
+    &= \frac{E_0}{2Na} \frac{s}{i k y} \left(e^{i\frac{kay}{s}} - e^{-i\frac{kay}{s}}\right) \frac{1 - e^{i\frac{2Nkdy}{s}}}{1 - e^{i\frac{2kdy}{s}}}
+\end{align*}
+Definiamo ora le due variabili adimensionali:
+\[
+    \beta = \frac{k a y}{s}, \qquad \gamma = \frac{k d y}{s}
+\]
+Il primo fattore diventa:
+\[
+    \frac{E_0}{N} \frac{e^{i\beta} - e^{-i\beta}}{2 i \beta} = \frac{E_0}{N} \frac{\sin\beta}{\beta}
+\]
+mentre per la serie geometrica raccogliamo gli esponenziali a metà argomento al numeratore e al denominatore:
+\[
+    \frac{1 - e^{i 2 N \gamma}}{1 - e^{i 2 \gamma}} = \frac{e^{i N \gamma}\left(e^{-i N \gamma} - e^{i N \gamma}\right)}{e^{i \gamma}\left(e^{-i \gamma} - e^{i \gamma}\right)} = e^{i(N-1)\gamma} \frac{\sin(N\gamma)}{\sin\gamma}
+\]
+Mettendo tutto insieme otteniamo il campo sullo schermo:
+\[
+    E_{\text{schermo}} = E_0 \, e^{i(N-1)\gamma} \frac{\sin\beta}{\beta} \frac{\sin(N\gamma)}{N \sin\gamma}
+\]
+Calcolando il modulo quadro ($|e^{i(N-1)\gamma}|^2 = 1$), ricaviamo infine l'\textbf{irradianza}:
+\[
+    I = I_0 \frac{\sin^2\beta}{\beta^2} \left(\frac{\sin(N\gamma)}{N \sin\gamma}\right)^2
+\]
+con $\beta = \frac{k a y}{s}$ e $\gamma = \frac{k d y}{s}$.
 
-\subsection{Ulteriori complicazioni}
-Il laser viene allargato tramite le lenti, ogni sua imperfezione viene ingigantita. 
-Eventuali granelli di polvere possono disturbare la misura.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.84\textwidth,
+            height=6.4cm,
+            axis lines=middle,
+            xmin=-2.45, xmax=2.55,
+            ymin=-0.10, ymax=1.22,
+            xtick={-2, -1, 1, 2},
+            xticklabels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+            ytick=\empty,
+            xlabel={$\gamma$},
+            ylabel={$I/I_0$},
+            xlabel style={at={(ticklabel* cs:1.0)}, anchor=west},
+            ylabel style={at={(ticklabel* cs:1.0)}, anchor=south},
+            tick label style={font=\small},
+            clip=false
+        ]
+            \node[below left=1pt, font=\small] at (axis cs:0,0) {$0$};
+            \node[above left=1pt, font=\small] at (axis cs:0,1) {$1$};
 
-Inoltre, le doppie fenditure non sono meccaniche, ma sono diapositive, colorate di nero a parte dove vi è la fenditura.
+            % Inviluppo di diffrazione (singola fenditura, rapporto d/a = 3)
+            \addplot[PoliBlue, dashed, thick, domain=-2.315:2.315, samples=300]
+                {(sin(60*x) / (pi/3 * x))^2};
 
-Rispetto alla volta scorsa, abbiamo un intensità della luce più bassa, dunque non dobbiamo coprire totalemente il fotodiodo nel caso del colore verde.
-Questo è un vantaggio, perchè non ci interessa come cambia l'intensià lungo la direzione ortogonale, questo cambiamento è dato da delle imperfezioni,
-per considerare una media, integro su tutti questi.
+            % Curva completa del reticolo con N = 5 fenditure
+            % (dominio sfalsato di 0.005 per evitare la divisione 0/0 agli zeri interi)
+            \addplot[OpticRed, very thick, domain=-2.315:2.315, samples=464]
+                {(sin(60*x) / (pi/3 * x) * sin(900*x) / (5 * sin(180*x)))^2};
+
+            % Annotazioni chiare
+            \draw[->, >=Stealth, thin, black!80] (axis cs:1.55, 0.90) -- (axis cs:1.04, 0.69);
+            \node[above, align=center, font=\scriptsize] at (axis cs:1.60, 0.90) {massimi\\principali};
+
+            \draw[->, >=Stealth, thin, black!80] (axis cs:0.50, 0.34) -- (axis cs:0.50, 0.06);
+            \node[above, align=center, font=\scriptsize] at (axis cs:0.50, 0.34) {massimi\\secondari};
+
+            \draw[->, >=Stealth, thin, PoliBlue] (axis cs:-1.62, 0.72) -- (axis cs:-1.30, 0.49);
+            \node[above, PoliBlue, align=center, font=\scriptsize] at (axis cs:-1.68, 0.72) {inviluppo di\\diffrazione};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+Si osservano quindi dei \textbf{massimi principali} (quando il secondo fattore vale $1$, ossia per $\gamma = m\pi$) e una serie di \textbf{massimi secondari} compresi tra essi. Quando $N$ è molto grande, l'altezza dei massimi secondari diventa minuscola e i picchi principali diventano molto stretti e intensi: con un numero sufficientemente elevato di fenditure, i massimi secondari risultano quindi pressoché irrilevanti. Grazie all'estrema nitidezza dei massimi principali, questi dispositivi risultano particolarmente utili per la misura precisa della lunghezza d'onda $\lambda$.
 
 \section{Biprisma di Fresnel}
-Sia D la distanza fra la sorgente e il prisma, l'effetto del biprisma è quello di simulare una sorgente più alta rispetto a quella reale.
 
-Sia h la distanza verticale fra la sorgente reale e simulata, sia $\theta$ l'angolo spazzato fra la retta ortogonale al prisma passante per la sorgente e 
-il punto di arrivo del raggio sul prisma.
-Sia $\alpha/2$ l'angolo al lato del prisma. Il raggio rifratto inciderà sullo schermo con angolo: $\theta - \alpha/2$.
+Riprendiamo in dettaglio il funzionamento quantitativo del biprisma di Fresnel.
 
-Come si è fatto già in precedenza per Sellmeier, si ottiene:
-\[
-\alpha/2 = \arcsin(\frac{\sin \theta_1}{n}) + \arcsin(\frac{\sin \theta_2}{n}+)
-\]
-approssimando per piccoli angoli:
-\[
-\alpha/2 \simeq \frac{\theta_1}{n} + \frac{\theta_2}{n} \rightarrow \theta_2 = \frac{n \alpha}{2} - \theta
-\]
-mentre 
-\[
-h \simeq D \tan \theta + D \tan (\theta_2 - \alpha/2) = D \tan \theta + D \tan (\alpha/2 (n-1) - \theta) \simeq D \theta D (\alpha/2 (n-1) - \theta)
-\]
-da cui
-\[
-h \simeq D \frac{D \alpha (n-1) }{n}
-\]
-Allora considerando anche la sorgente simulata al di sotto: 
-\begin{align*}
-   H = 2h  \\
-   y H/ x= \frac{y2h}{D+D'}
-\end{align*}
-allora la distanza fra due massimi è 
-\[
-\Delta y = \frac{\lambda (D+D')}{D\alpha(n-1)}
-\]
-dove abbiamo utilizzato il calcolo precedente per D e dove D' è la distanza fra prisma e schermo.
+Indichiamo con $D$ la distanza tra la sorgente reale $S$ e il biprisma: l'effetto della rifrazione attraverso ciascuna delle due metà del prisma è quello di simulare una sorgente virtuale spostata verticalmente rispetto a quella reale (una più in alto e una più in basso).
+Indichiamo con $h$ la distanza verticale tra la sorgente reale e ciascuna sorgente virtuale simulata, con $\theta$ l'angolo formato tra la retta ortogonale alla faccia piana del prisma (passante per la sorgente) e il punto di incidenza del raggio sul prisma, e con $\alpha/2$ l'angolo al vertice di ciascuna metà del prisma. Il raggio rifratto emergerà verso lo schermo formando un angolo $\theta_2 - \alpha/2$ rispetto all'asse orizzontale (dove $\theta_2$ è l'angolo di uscita rispetto alla normale alla faccia inclinata).
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Coordinate principali (D = 4.0, alpha/2 = 25°, theta = 10°, n = 1.75)
+        \coordinate (S)    at (-4.0, 0);
+        \coordinate (Sv)   at (-4.0, 1.625);
+        \coordinate (O)    at (0, 0);
+        \coordinate (Top)  at (0, 2.2);
+        \coordinate (Bot)  at (0, -2.2);
+        \coordinate (Apex) at (1.026, 0);
 
-Quando si fa incidere sul biprisma un intero fascio di luce esso ristringerà tale fascio, creando interferenza al centro del fascio rifratto.
+        \coordinate (Pin)  at (0, 0.705);
+        \coordinate (Pout) at (0.666, 0.772);
+        \coordinate (Rout) at (3.4, 0.272);
+        \coordinate (Hout) at ($(Pout) + (2.5, 0)$);
+        \coordinate (Nout) at ($(Pout) + (25:1.6)$);
+
+        % Biprisma di Fresnel
+        \filldraw[fill=PoliBlue!10, draw=PoliBlue, thick]
+            (Top) -- (Apex) -- (Bot) -- cycle;
+
+        % Angolo al vertice alpha/2 della metà superiore
+        \pic[draw, angle radius=0.68cm, angle eccentricity=1.42, "$\frac{\alpha}{2}$" {font=\scriptsize}] {angle = O--Top--Apex};
+
+        % Asse ottico orizzontale
+        \draw[dashed, black!70] (-4.4, 0) -- (3.4, 0);
+
+        % Raggio reale (S -> Pin -> Pout -> Rout)
+        \draw[OpticRed, very thick, ->] (S) -- ($(S)!0.55!(Pin)$);
+        \draw[OpticRed, very thick] ($(S)!0.50!(Pin)$) -- (Pin) -- (Pout);
+        \draw[OpticRed, very thick, ->] (Pout) -- (Rout);
+
+        % Prolungamento virtuale all'indietro verso S'
+        \draw[dashed, OpticRed!75, thick] (Sv) -- (Pout);
+
+        % Normale e retta orizzontale al punto di uscita Pout
+        \draw[dashed, black!75] (Pout) -- (Nout) node[above right=-1pt, font=\scriptsize] {normale};
+        \draw[dashed, gray!80] (Pout) -- (Hout);
+
+        % Angolo di incidenza theta rispetto all'asse orizzontale
+        \pic[draw, angle radius=1.45cm, angle eccentricity=1.20, "$\theta$" {font=\small}] {angle = O--S--Pin};
+
+        % Angoli in uscita: theta_2 rispetto alla normale e (theta_2 - alpha/2) rispetto all'orizzontale
+        \pic[draw, angle radius=0.90cm, angle eccentricity=1.30, "$\theta_2$" {font=\small}] {angle = Rout--Pout--Nout};
+        \pic[draw, angle radius=1.85cm, angle eccentricity=1.32, "$\theta_2 - \frac{\alpha}{2}$" {font=\scriptsize}] {angle = Rout--Pout--Hout};
+
+        % Sorgente reale S e sorgente virtuale S'
+        \fill[PoliBlue] (S) circle (2pt) node[below=2pt] {$S$};
+        \fill[PoliBlue!70] (Sv) circle (2pt) node[above=2pt] {$S'$};
+
+        % Quota verticale h tra S e S'
+        \draw[thin, gray!65] (-4.12, 0) -- (-4.68, 0);
+        \draw[thin, gray!65] (-4.12, 1.625) -- (-4.68, 1.625);
+        \draw[<->, thick, black!80] (-4.52, 0) -- (-4.52, 1.625) node[midway, left=2pt] {$h$};
+
+        % Quota orizzontale D tra la sorgente e il prisma
+        \draw[thin, gray!65] (-4.0, -0.15) -- (-4.0, -2.55);
+        \draw[thin, gray!65] (0, -2.25) -- (0, -2.55);
+        \draw[<->, thick, black!80] (-4.0, -2.40) -- (0, -2.40) node[midway, below=2pt] {$D$};
+    \end{tikzpicture}
+    \caption{Geometria della rifrazione attraverso la metà superiore del biprisma di Fresnel per il calcolo dello spostamento verticale $h$ della sorgente virtuale $S'$.}
+\end{figure}
+
+Analogamente a quanto ricavato in precedenza per il prisma nell'esperienza di Sellmeier, l'angolo al vertice di una metà del biprisma è legato agli angoli di rifrazione dalla relazione:
+\[
+    \frac{\alpha}{2} = \arcsin\left(\frac{\sin\theta}{n}\right) + \arcsin\left(\frac{\sin\theta_2}{n}\right)
+\]
+Approssimando per piccoli angoli ($\sin\varphi \simeq \varphi$):
+\[
+    \frac{\alpha}{2} \simeq \frac{\theta}{n} + \frac{\theta_2}{n} \implies \theta_2 \simeq \frac{n\alpha}{2} - \theta
+\]
+La distanza verticale $h$ della sorgente virtuale simulata vale quindi:
+\[
+    h \simeq D\tan\theta + D\tan\left(\theta_2 - \frac{\alpha}{2}\right) = D\tan\theta + D\tan\left(\frac{\alpha}{2}(n-1) - \theta\right) \simeq D\theta + D\left(\frac{\alpha}{2}(n-1) - \theta\right)
+\]
+da cui, semplificando i termini in $D\theta$, si ottiene:
+\[
+    h \simeq \frac{D\alpha(n - 1)}{2}
+\]
+
+Considerando ora anche la sorgente virtuale simmetrica al di sotto dell'asse ottico, ci riconduciamo a un sistema equivalente all'esperimento di Young con due sorgenti separate da una distanza totale:
+\[
+    H = 2h \simeq D\alpha(n - 1)
+\]
+poste a distanza complessiva $x = D + D'$ dallo schermo (dove $D'$ è la distanza tra il biprisma e lo schermo).
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Coordinate principali
+        \coordinate (S)  at (-3.8, 0);
+        \coordinate (S1) at (-3.8, 1.2);
+        \coordinate (S2) at (-3.8, -1.2);
+        \coordinate (Q1) at (-1.494, 1.249);
+        \coordinate (Q2) at (-1.265, -0.277);
+        \coordinate (P)  at (3.2, 1.35);
+
+        % Biprisma di Fresnel (faccia piana in x = -1.6, vertice in x = -1.2)
+        \filldraw[fill=PoliBlue!10, draw=PoliBlue, thick]
+            (-1.6, 1.7) -- (-1.2, 0) -- (-1.6, -1.7) -- cycle;
+
+        % Asse ottico centrale
+        \draw[dashed, gray!70] (-4.1, 0) -- (3.2, 0);
+
+        % Schermo di osservazione (asse y)
+        \draw[->, very thick, black!80] (3.2, -1.8) -- (3.2, 2.2) node[right=2pt] {$y$};
+        \draw[thick] (3.12, 0) -- (3.28, 0) node[right=2pt] {$0$};
+
+        % Raggi reali dalla sorgente S attraverso il biprisma fino a P(y)
+        \draw[OpticRed, thick] (S) -- (Q1);
+        \draw[OpticRed, thick, ->] (Q1) -- (P);
+        \draw[OpticRed, thick] (S) -- (Q2);
+        \draw[OpticRed, thick, ->] (Q2) -- (P);
+
+        % Prolungamenti virtuali tratteggiati dalle sorgenti virtuali S1 e S2
+        \draw[dashed, gray] (S1) -- (Q1);
+        \draw[dashed, gray] (S2) -- (Q2);
+
+        % Sorgente reale e sorgenti virtuali
+        \fill[PoliBlue] (S)  circle (1.8pt) node[left=2pt, font=\small] {$S$};
+        \fill[PoliBlue!75] (S1) circle (2.0pt) node[above left=1pt, font=\small] {$S_1$};
+        \fill[PoliBlue!75] (S2) circle (2.0pt) node[below left=1pt, font=\small] {$S_2$};
+        \fill[OpticRed] (P) circle (1.8pt) node[right=3pt, text=black, font=\small] {$P(y)$};
+
+        % Quota verticale H = 2h tra le due sorgenti virtuali
+        \draw[thin, gray!65] (-3.95, 1.2) -- (-4.55, 1.2);
+        \draw[thin, gray!65] (-3.95, -1.2) -- (-4.55, -1.2);
+        \draw[<->, thick, black!80] (-4.40, -1.2) -- (-4.40, 1.2)
+            node[midway, left=2pt, font=\small] {$H = 2h$};
+
+        % Quote orizzontali D, D' e distanza totale x = D + D'
+        \draw[thin, gray!65] (-3.8, -1.35) -- (-3.8, -2.95);
+        \draw[thin, gray!65] (-1.6, -1.75) -- (-1.6, -2.30);
+        \draw[thin, gray!65] (3.2, -1.85)  -- (3.2, -2.95);
+
+        \draw[<->, thick, black!80] (-3.8, -2.15) -- (-1.6, -2.15)
+            node[midway, below=1pt, font=\small] {$D$};
+        \draw[<->, thick, black!80] (-1.6, -2.15) -- (3.2, -2.15)
+            node[midway, below=1pt, font=\small] {$D'$};
+        \draw[<->, thick, black!80] (-3.8, -2.80) -- (3.2, -2.80)
+            node[midway, below=2pt, font=\small] {$x = D + D'$};
+    \end{tikzpicture}
+\end{figure}
+
+La condizione di interferenza costruttiva $\frac{y H}{x} = \frac{y \cdot 2h}{D + D'} = m\lambda$ fornisce quindi la spaziatura $\Delta y$ tra due massimi consecutivi sullo schermo:
+\[
+    \Delta y = \frac{\lambda (D + D')}{D \alpha (n - 1)}
+\]
+
+Questo dispositivo produce quindi una figura di interferenza analoga a quella di Young; operativamente, quando si fa incidere sul biprisma un intero fascio di luce, le due metà deviano il fascio verso l'asse sovrapponendolo e restringendolo, creando le frange di interferenza nella regione centrale del fascio rifratto.
 
 \subsection{Specchio antiriflesso}
-Consideriamo una lente di spessore $h$ e supponiamo di far incidere su di essa un onda EM con angolo $\theta$.
-Una parte del raggio viene trasmessa, colpirà l'altra parte della lente, e verrà riflesso, insieme all'onda riflessa iniziale.
 
-Essendo la riflessione esterna, avremo: $E_0 \Delta \phi E_1$, ($E_0$ incidente, $E_1$ riflesso primario) mentre ciò non è vero per $E_2$ (rifratto) ed $E_3$ (riflesso secondario).
+Consideriamo una lente (o lamina) di spessore $h$ e indice di rifrazione $n$, e supponiamo di far incidere su di essa un'onda elettromagnetica a un piccolo angolo $\theta$. Una parte dell'onda incidente $E_0$ viene riflessa dalla prima superficie ($E_1$, onda riflessa primaria), mentre la parte trasmessa $E_2$ attraversa lo spessore $h$, si riflette sulla seconda superficie ($E_3$, onda riflessa secondaria) ed emerge interferendo con l'onda riflessa iniziale $E_1$.
 
-La differenza di fase totale (fra 1 e 2) sarà dato da:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+        % Lamina/rivestimento di spessore h = 2.0 e indice n
+        \fill[PoliBlue!10] (-3.2, -2.0) rectangle (3.5, 0);
+        \draw[very thick, PoliBlue] (-3.2, 0) -- (3.5, 0);
+        \draw[very thick, PoliBlue] (-3.2, -2.0) -- (3.5, -2.0);
+
+        % Etichette dei mezzi (aria e mezzo n) + quota spessore h
+        \node[font=\small] at (-2.6, 0.9) {aria};
+        \node[draw=PoliBlue, circle, inner sep=2pt, fill=white, font=\small] at (-2.9, -1.0) {$n$};
+        \draw[<->, thick, black!80] (-2.25, -2.0) -- (-2.25, 0) node[midway, right=2pt] {$h$};
+
+        % Coordinate dei raggi (theta = 30°, n = 1.5 -> theta_t = 19.47°)
+        \coordinate (O)    at (0, 0);
+        \coordinate (Ntop) at (0, 2.1);
+        \coordinate (Nbot) at (0, -2.4);
+        \coordinate (I)    at (120:2.2);
+        \coordinate (R1)   at (60:2.2);
+        \coordinate (B)    at (0.707, -2.0);
+        \coordinate (C)    at (1.414, 0);
+        \coordinate (R3)   at ($(C) + (60:2.2)$);
+
+        % Normale tratteggiata
+        \draw[dashed, black!70] (Nbot) -- (Ntop);
+
+        % Raggio incidente E0
+        \draw[OpticRed, very thick, ->] (I) -- ($(I)!0.55!(O)$) node[midway, left=3pt, text=black] {$\vec{E}_0$};
+        \draw[OpticRed, very thick] ($(I)!0.50!(O)$) -- (O);
+
+        % Raggio riflesso primario E1
+        \draw[OpticRed, very thick, ->] (O) -- ($(O)!0.55!(R1)$);
+        \draw[OpticRed, very thick] ($(O)!0.50!(R1)$) -- (R1) node[above=1pt, text=black] {$\vec{E}_1$};
+
+        % Raggio rifratto E2 all'interno dello spessore h e riflessione sul fondo
+        \draw[OpticRed, very thick, ->] (O) -- ($(O)!0.55!(B)$);
+        \draw[OpticRed, very thick] ($(O)!0.50!(B)$) -- (B);
+        \draw[OpticRed, very thick, ->] (B) -- ($(B)!0.55!(C)$) node[midway, right=3pt, text=black] {$\vec{E}_2$};
+        \draw[OpticRed, very thick] ($(B)!0.50!(C)$) -- (C);
+
+        % Raggio riflesso secondario emergente E3
+        \draw[OpticRed, very thick, ->] (C) -- ($(C)!0.55!(R3)$);
+        \draw[OpticRed, very thick] ($(C)!0.50!(R3)$) -- (R3) node[above=1pt, text=black] {$\vec{E}_3$};
+
+        % Angoli theta rispetto alla normale
+        \pic[draw, ->, angle radius=1.15cm, angle eccentricity=1.22, "$\theta$" {font=\small}] {angle = Ntop--O--I};
+        \pic[draw, <-, angle radius=1.15cm, angle eccentricity=1.22, "$\theta$" {font=\small}] {angle = R1--O--Ntop};
+    \end{tikzpicture}
+\end{figure}
+
+Analizziamo le fasi delle varie onde:
+\begin{itemize}
+    \item La prima riflessione ($E_1$) è una \textbf{riflessione esterna} (da mezzo meno denso a mezzo più denso): rispetto all'onda incidente $E_0$, il campo riflesso $E_1$ risulta ribaltato, subendo uno sfasamento di $\Delta\phi = \pi$.
+    \item L'onda rifratta $E_2$ non subisce sfasamento alla trasmissione ($\Delta\phi = 0$ rispetto a $E_0$).
+    \item La riflessione secondaria sulla faccia posteriore ($E_3$) avviene da un mezzo più denso a uno meno denso (riflessione interna), quindi $E_3$ non subisce sfasamento alla riflessione ($\Delta\phi = 0$ rispetto a $E_2$ ed $E_0$, ovvero uno sfasamento relativo di $\pi$ rispetto a $E_1$).
+\end{itemize}
+
+Oltre a questo sfasamento di $\pi$, l'onda $E_3$ percorre un cammino ottico aggiuntivo pari a $2h$ all'interno del mezzo di indice $n$ (andata e ritorno lungo lo spessore $h$), accumulando un'ulteriore differenza di fase:
 \[
-\Delta \Phi = \pi + \frac{2 \pi 2 h n}{\lambda}
+    \Delta\phi' = k_{\text{mezzo}} \cdot 2h = \frac{2\pi \cdot 2hn}{\lambda}
 \]
-dove l'ultimo fattore è dovuto dalla differenza di fase data dal maggiore spazio percorso. 
-
-Guardiamo il caso di interferenza distruttiva:
+La differenza di fase totale tra le due onde riflesse $E_1$ ed $E_3$ è pertanto:
 \[
-\pi(1 + \frac{4hn}{\lambda}) = (2m +1)\pi \rightarrow h = \frac{\lambda m}{2n}
+    \Delta\Phi = \pi + \frac{4\pi h n}{\lambda} = \pi \left(1 + \frac{4hn}{\lambda}\right)
 \]
-allora modificando l'indice $n$ posso avere sempre interferenza distruttiva. Questo funziona per una lunghezza d'onda,
-altre vengono riflesse, per questo in alcuni rivestimenti si possono osserve sfumature di varie colori.
 
-Questo 
-
-
+Imponiamo ora la condizione di \textbf{interferenza distruttiva} tra $E_1$ ed $E_3$ affinché la luce riflessa si annulli:
+\[
+    \pi\left(1 + \frac{4hn}{\lambda}\right) = (2m + 1)\pi \implies h = \frac{m\lambda}{2n} \qquad (m \in \mathbb{N})
+\]
+Scegliendo opportunamente l'indice di rifrazione $n$ (o lo spessore $h$) è quindi possibile ottenere interferenza distruttiva in riflessione. Tuttavia, questa condizione vale esattamente per una sola lunghezza d'onda $\lambda$: le altre lunghezze d'onda vengono in parte riflesse, ed è per questo motivo che su alcuni rivestimenti antiriflesso si osservano riflessi con sfumature di vari colori.
 
 
 
