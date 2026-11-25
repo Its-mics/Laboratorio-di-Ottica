@@ -1,0 +1,79 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=2cm, bottom=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{relsize}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{circuitikz}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz-3dplot}
+\usepackage{siunitx}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}              % Necessario per l'opzione >=Stealth
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}  %per rendere l'indice genrale "interattivo"
+\setlist[itemize]{itemsep=4pt, parsep=1pt}
+\newtcolorbox{nota}{
+  blanker,
+  before skip=1em,
+  after skip=1em,
+  left=1em,
+  borderline west={1pt}{0pt}{black},
+  fontupper=\itshape,
+  before upper={\noindent\textbf{Nota}:\quad}
+}
+
+% ---- Suggerimenti su cosa dire nella sezione Grafici ----
+% Metti \hintsfalse per nascondere tutti i riquadri \sugg{...}
+\newif\ifhints
+\hintstrue
+\newcommand{\sugg}[1]{%
+  \ifhints
+  \par\vspace{6pt}\noindent
+  \fcolorbox{orange!70!black}{yellow!12}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\footnotesize\justifying\noindent\textbf{Da dire:} #1}}%
+  \par\vspace{8pt}
+  \fi}
+
+\setlength{\intextsep}{8pt} % per regolare la distanza grafico tabelle
+\setlength{\columnsep}{60pt}
+\setlength{\tabcolsep}{4pt}
+
+\begin{document}
+
+    \justifying
+
+      \title{\textbf{Misura dell'angolo di Brewster}}
+      \author{Tedeschini Michele \hspace{0.7cm} Stroili Emanuele \hspace{0.7cm} Mirolo Manuele \hspace{0.7cm} Brusini Alessio}
+      \date{13 novembre 2026}
+      \maketitle
+      \newgeometry{left=3cm, right=3cm, top=4cm, bottom=4cm}
+      \onecolumn
+      \tableofcontents
+    \vspace{3cm}
+      \begin{abstract}
+        \centering
+        \large
+        L'esperimento consiste nel ricavare l'indice di rifrazione del vetro di un prisma tramite la misura dell'angolo di Brewster.
+
+      \end{abstract}
+
+      \newpage
+    \restoregeometry
+    \twocolumn
+\end{document}
