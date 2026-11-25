@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  25 NOV 2026 15:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.24)  25 NOV 2026 16:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,6 +855,9 @@ LaTeX Warning: Label `fig:hist_manu' multiply defined.
 
 LaTeX Warning: Label `fig:hist_manu' multiply defined.
 
+
+LaTeX Warning: Label `fig:hist_manu' multiply defined.
+
 )
 \openout1 = `esperienza6.aux'.
 
@@ -1074,107 +1077,122 @@ File: Immagini/rosso/menocode/rosso_fit._menopunti.png Graphic file (type png)
 <use Immagini/rosso/menocode/rosso_fit._menopunti.png>
 Package pdftex.def Info: Immagini/rosso/menocode/rosso_fit._menopunti.png  used on input line 178.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Immagini/rosso/menocode/rosso_residui_menopunti.png, id=127, 798.985pt x 574.145pt>
+<Immagini/rosso/chi2_slice_C_0.png, id=127, 798.985pt x 574.145pt>
+File: Immagini/rosso/chi2_slice_C_0.png Graphic file (type png)
+<use Immagini/rosso/chi2_slice_C_0.png>
+Package pdftex.def Info: Immagini/rosso/chi2_slice_C_0.png  used on input line 190.
+(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
+<Immagini/rosso/menocode/rosso_residui_menopunti.png, id=128, 798.985pt x 574.145pt>
 File: Immagini/rosso/menocode/rosso_residui_menopunti.png Graphic file (type png)
 <use Immagini/rosso/menocode/rosso_residui_menopunti.png>
-Package pdftex.def Info: Immagini/rosso/menocode/rosso_residui_menopunti.png  used on input line 185.
+Package pdftex.def Info: Immagini/rosso/menocode/rosso_residui_menopunti.png  used on input line 197.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Immagini/verde/menocode/verde_fit_menopunti.png, id=128, 798.985pt x 574.145pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[4 <./Immagini/rosso/raw/rosso_hist._nonmod.png> <./Immagini/rosso/raw/rosso_residui._nonmod.png> <./Immagini/rosso/shift_rosso.png> <./Immagini/rosso/menocode/rosso_fit._menopunti.png> <./Immagini/rosso/chi2_slice_C_0.png>]
+<Immagini/verde/menocode/verde_fit_menopunti.png, id=140, 798.985pt x 574.145pt>
 File: Immagini/verde/menocode/verde_fit_menopunti.png Graphic file (type png)
 <use Immagini/verde/menocode/verde_fit_menopunti.png>
-Package pdftex.def Info: Immagini/verde/menocode/verde_fit_menopunti.png  used on input line 194.
+Package pdftex.def Info: Immagini/verde/menocode/verde_fit_menopunti.png  used on input line 209.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Immagini/verde/menocode/verde_residui_menopunti.png, id=129, 798.985pt x 574.145pt>
+<Immagini/verde/menocode/verde_residui_menopunti.png, id=141, 798.985pt x 574.145pt>
 File: Immagini/verde/menocode/verde_residui_menopunti.png Graphic file (type png)
 <use Immagini/verde/menocode/verde_residui_menopunti.png>
-Package pdftex.def Info: Immagini/verde/menocode/verde_residui_menopunti.png  used on input line 201.
-(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-
-
-[4 <./Immagini/rosso/raw/rosso_hist._nonmod.png> <./Immagini/rosso/raw/rosso_residui._nonmod.png> <./Immagini/rosso/shift_rosso.png> <./Immagini/rosso/menocode/rosso_fit._menopunti.png> <./Immagini/rosso/menocode/rosso_residui_menopunti.png> <./Immagini/verde/menocode/verde_fit_menopunti.png>]
-<Immagini/rosso/fit_parziale_rosso_0.png, id=143, 798.985pt x 574.145pt>
-File: Immagini/rosso/fit_parziale_rosso_0.png Graphic file (type png)
-<use Immagini/rosso/fit_parziale_rosso_0.png>
-Package pdftex.def Info: Immagini/rosso/fit_parziale_rosso_0.png  used on input line 216.
-(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Immagini/rosso/fit_parziale_rosso_1.png, id=144, 798.985pt x 574.145pt>
-File: Immagini/rosso/fit_parziale_rosso_1.png Graphic file (type png)
-<use Immagini/rosso/fit_parziale_rosso_1.png>
-Package pdftex.def Info: Immagini/rosso/fit_parziale_rosso_1.png  used on input line 223.
+Package pdftex.def Info: Immagini/verde/menocode/verde_residui_menopunti.png  used on input line 216.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-<Immagini/verde/fit_parziale_verde_0.png, id=145, 798.985pt x 574.145pt>
+<Immagini/verde/fit_parziale_verde_0.png, id=142, 798.985pt x 574.145pt>
 File: Immagini/verde/fit_parziale_verde_0.png Graphic file (type png)
 <use Immagini/verde/fit_parziale_verde_0.png>
-Package pdftex.def Info: Immagini/verde/fit_parziale_verde_0.png  used on input line 232.
+Package pdftex.def Info: Immagini/verde/fit_parziale_verde_0.png  used on input line 234.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Immagini/verde/fit_parziale_verde_1.png, id=146, 798.985pt x 574.145pt>
+<Immagini/verde/fit_parziale_verde_1.png, id=143, 798.985pt x 574.145pt>
 File: Immagini/verde/fit_parziale_verde_1.png Graphic file (type png)
 <use Immagini/verde/fit_parziale_verde_1.png>
-Package pdftex.def Info: Immagini/verde/fit_parziale_verde_1.png  used on input line 239.
-(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png, id=147, 798.985pt x 574.145pt>
-File: Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png Graphic file (type png)
-<use Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png>
-Package pdftex.def Info: Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png  used on input line 248.
+Package pdftex.def Info: Immagini/verde/fit_parziale_verde_1.png  used on input line 241.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[5 <./Immagini/verde/menocode/verde_residui_menopunti.png> <./Immagini/rosso/fit_parziale_rosso_0.png> <./Immagini/rosso/fit_parziale_rosso_1.png> <./Immagini/verde/fit_parziale_verde_0.png> <./Immagini/verde/fit_parziale_verde_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 253--257
+[5 <./Immagini/rosso/menocode/rosso_residui_menopunti.png> <./Immagini/verde/menocode/verde_fit_menopunti.png> <./Immagini/verde/menocode/verde_residui_menopunti.png> <./Immagini/verde/fit_parziale_verde_0.png>]
+<Immagini/rosso/fit_parziale_rosso_0.png, id=154, 798.985pt x 574.145pt>
+File: Immagini/rosso/fit_parziale_rosso_0.png Graphic file (type png)
+<use Immagini/rosso/fit_parziale_rosso_0.png>
+Package pdftex.def Info: Immagini/rosso/fit_parziale_rosso_0.png  used on input line 252.
+(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
+<Immagini/rosso/fit_parziale_rosso_1.png, id=155, 798.985pt x 574.145pt>
+File: Immagini/rosso/fit_parziale_rosso_1.png Graphic file (type png)
+<use Immagini/rosso/fit_parziale_rosso_1.png>
+Package pdftex.def Info: Immagini/rosso/fit_parziale_rosso_1.png  used on input line 259.
+(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
+
+
+<Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png, id=156, 798.985pt x 574.145pt>
+File: Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png Graphic file (type png)
+<use Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png>
+Package pdftex.def Info: Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png  used on input line 274.
+(pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
 \T1/cmr/m/n/10 d ver-de = 0.22003686339291917 \TS1/cmr/m/n/10 ±
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--257
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
 \T1/cmr/m/n/10 0.0005543561988560995 mm d ros-so =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--257
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
 \T1/cmr/m/n/10 0.21892251178281713 \TS1/cmr/m/n/10 ± \T1/cmr/m/n/10 0.000552277336286421
  []
 
-<Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png, id=159, 798.985pt x 574.145pt>
+<Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png, id=157, 798.985pt x 574.145pt>
 File: Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png Graphic file (type png)
 <use Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png>
-Package pdftex.def Info: Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png  used on input line 260.
+Package pdftex.def Info: Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png  used on input line 286.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--269
+Underfull \hbox (badness 10000) in paragraph at lines 291--295
 []\T1/cmr/m/n/10 d ver-de = 0.22003686339291917 \TS1/cmr/m/n/10 ±
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--269
+Underfull \hbox (badness 10000) in paragraph at lines 291--295
 \T1/cmr/m/n/10 0.0005543561988560995 mm d ros-so =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--269
+Underfull \hbox (badness 10000) in paragraph at lines 291--295
 \T1/cmr/m/n/10 0.21254465869553069 \TS1/cmr/m/n/10 ± \T1/cmr/m/n/10 0.0005318222122972024
  []
 
-<Immagini/rosso/shift/shif_32_41/rosso_residui.png, id=160, 798.985pt x 574.145pt>
+<Immagini/rosso/shift/shif_32_41/rosso_residui.png, id=158, 798.985pt x 574.145pt>
 File: Immagini/rosso/shift/shif_32_41/rosso_residui.png Graphic file (type png)
 <use Immagini/rosso/shift/shif_32_41/rosso_residui.png>
-Package pdftex.def Info: Immagini/rosso/shift/shif_32_41/rosso_residui.png  used on input line 273.
+Package pdftex.def Info: Immagini/rosso/shift/shif_32_41/rosso_residui.png  used on input line 299.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 8094) has occurred while \output is active []
 
 
 
+[6 <./Immagini/verde/fit_parziale_verde_1.png> <./Immagini/rosso/fit_parziale_rosso_0.png> <./Immagini/rosso/fit_parziale_rosso_1.png> <./Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png> <./Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png>]
 
 
-[6 <./Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png> <./Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png> <./Immagini/rosso/shift/shif_32_41/rosso_residui.png>] (esperienza6.aux)
+
+[7
+
+ <./Immagini/rosso/shift/shif_32_41/rosso_residui.png>] (esperienza6.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -1187,17 +1205,17 @@ Package rerunfilecheck Info: File `esperienza6.out' has not changed.
 (rerunfilecheck)             Checksum: 62CB45F082501C15B7F264DC649E4035;1325.
  ) 
 Here is how much of TeX's memory you used:
- 54977 strings out of 469959
- 1329947 string characters out of 5469834
+ 54986 strings out of 469959
+ 1330249 string characters out of 5469834
  1949164 words of memory out of 5000000
- 81099 multiletter control sequences out of 15000+600000
+ 81106 multiletter control sequences out of 15000+600000
  641212 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,8n,106p,542b,1038s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,8n,106p,542b,1036s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0900.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\manue\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/manue/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on esperienza6.pdf (6 pages, 399848 bytes).
+Output written on esperienza6.pdf (7 pages, 412087 bytes).
 PDF statistics:
- 400 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 324 words of extra memory for PDF output out of 10000 (max. 10000000)
 
