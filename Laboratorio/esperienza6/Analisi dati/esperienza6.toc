@@ -5,13 +5,12 @@
 \contentsline {section}{\numberline {3}Analisi dati}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Grafici}{3}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Dati grezzi}{3}{subsubsection.3.1.1}%
-\contentsline {paragraph}{Dati del laser verde}{3}{paragraph*.1}%
-\contentsline {paragraph}{Dati del laser rosso}{3}{paragraph*.5}%
-\contentsline {subsubsection}{\numberline {3.1.2}Eliminazione delle code}{4}{subsubsection.3.1.2}%
-\contentsline {paragraph}{Dati del laser rosso}{4}{paragraph*.10}%
-\contentsline {paragraph}{Dati del laser verde}{5}{paragraph*.14}%
-\contentsline {subsubsection}{\numberline {3.1.3}Divisione del fit}{5}{subsubsection.3.1.3}%
-\contentsline {paragraph}{Laser verde}{5}{paragraph*.17}%
-\contentsline {paragraph}{Laser rosso}{6}{paragraph*.20}%
-\contentsline {subsubsection}{\numberline {3.1.4}Aggiunta di un offset ai dati del laser rosso}{6}{subsubsection.3.1.4}%
-\contentsline {section}{\numberline {4}Conclusioni}{7}{section.4}%
+\contentsline {paragraph}{Dati del laser rosso}{4}{paragraph*.8}%
+\contentsline {subsubsection}{\numberline {3.1.2}Eliminazione delle code}{5}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Dati del laser rosso}{5}{paragraph*.17}%
+\contentsline {paragraph}{Dati del laser verde}{6}{paragraph*.22}%
+\contentsline {subsubsection}{\numberline {3.1.3}Divisione del fit}{6}{subsubsection.3.1.3}%
+\contentsline {paragraph}{Laser verde}{6}{paragraph*.26}%
+\contentsline {paragraph}{Laser rosso}{7}{paragraph*.29}%
+\contentsline {subsubsection}{\numberline {3.1.4}Aggiunta di un offset ai dati del laser rosso}{7}{subsubsection.3.1.4}%
+\contentsline {section}{\numberline {4}Conclusioni}{8}{section.4}%
