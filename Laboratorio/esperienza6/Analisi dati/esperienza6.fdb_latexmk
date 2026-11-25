@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1795620135.95253 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" "esperienza6.pdf" "esperienza6" 1795620141.24759 0
+["pdflatex"] 1795623830.45903 "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" "esperienza6.pdf" "esperienza6" 1795623833.33247 0
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1792494984 81015 8f522890e5525b3cb752cee1c80a3b68 ""
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0900.pk" 1748538834 22504 42a3f95f43de46a13cbf653330dc2dd8 ""
   "C:/Users/manue/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1745730635 25420 85c9bd0d2c0285994386342aaede91c1 ""
@@ -258,7 +258,7 @@
   "Immagini/rosso/menocode/rosso_fit._menopunti.png" 1795613645 18900 545e7343711de252895d8fcdc5c3caa6 ""
   "Immagini/rosso/menocode/rosso_residui_menopunti.png" 1795613645 20314 835e4b9514ebcd05bfa46601c3d1d299 ""
   "Immagini/rosso/raw/rosso_fit_nonmod.png" 1795613645 22117 42e614a40992da8884c2841207759d32 ""
-  "Immagini/rosso/raw/rosso_hist._nonmod.png" 1795613645 24543 44e80718bf65a23d9fe5233e43a33af6 ""
+  "Immagini/rosso/raw/rosso_hist._nonmod.png" 1795623827 21452 46eb75cd9e976e3ca0d35c6c9fa3f4dc ""
   "Immagini/rosso/raw/rosso_residui._nonmod.png" 1795613645 21569 0e949a27233ac15c3af90dfb6f89217a ""
   "Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png" 1795613645 19565 bbd0dae0d73dff300b0c1efa67e975fa ""
   "Immagini/rosso/shift/shif_32_41/rosso_residui.png" 1795613645 18358 07cf0b21d6c3d09b1ab80d10c2c3fc52 ""
@@ -269,13 +269,13 @@
   "Immagini/verde/menocode/verde_fit_menopunti.png" 1795613645 20081 c57d292400f7fc2fa40f6f1fd0e72c76 ""
   "Immagini/verde/menocode/verde_residui_menopunti.png" 1795613645 18109 3463aa4765dfac4a8d22e9f334a5ce59 ""
   "Immagini/verde/raw/verde_fit.png" 1795613645 21087 20ff90fb397950474d1632f81462b3a9 ""
-  "Immagini/verde/raw/verde_hist.png" 1795613645 24284 6b59e08a937f11a10a06bfadc2397854 ""
+  "Immagini/verde/raw/verde_hist.png" 1795623827 20546 9305e50d234ee44f3af488890600b5d8 ""
   "Immagini/verde/raw/verde_residui.png" 1795613645 19435 e094ff4c37faaac3612046d14610d542 ""
-  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" 1795620129 11404 18da4acee3d25a8143ca100c589611a2 ""
-  "esperienza6.aux" 1795620140 8162 409c7ff18dd5fa7c444d702f5b392a4e "pdflatex"
-  "esperienza6.out" 1795620140 1325 62cb45f082501c15b7f264dc649e4035 "pdflatex"
-  "esperienza6.tex" 1795620129 11404 18da4acee3d25a8143ca100c589611a2 ""
-  "esperienza6.toc" 1795620140 1192 feed84ce7013f4f849035214d293c23a "pdflatex"
+  "c:/Users/manue/Documents/UNIVERSITA'/III ANNO/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" 1795623824 12718 4bf75ff676cf87396d89eda8a3546053 ""
+  "esperienza6.aux" 1795623832 8162 49143879e5e494311f120edabbb570f3 "pdflatex"
+  "esperienza6.out" 1795623832 1325 62cb45f082501c15b7f264dc649e4035 "pdflatex"
+  "esperienza6.tex" 1795623824 12718 4bf75ff676cf87396d89eda8a3546053 ""
+  "esperienza6.toc" 1795623832 1192 feed84ce7013f4f849035214d293c23a "pdflatex"
   (generated)
   "esperienza6.aux"
   "esperienza6.log"
