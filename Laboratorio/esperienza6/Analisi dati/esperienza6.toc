@@ -13,4 +13,5 @@
 \contentsline {paragraph}{Laser verde}{6}{paragraph*.26}%
 \contentsline {paragraph}{Laser rosso}{7}{paragraph*.29}%
 \contentsline {subsubsection}{\numberline {3.1.4}Aggiunta di un offset ai dati del laser rosso}{7}{subsubsection.3.1.4}%
-\contentsline {section}{\numberline {4}Conclusioni}{8}{section.4}%
+\contentsline {subsection}{\numberline {3.2}Confronto tra le lunghezze d'onda}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Conclusioni}{9}{section.4}%

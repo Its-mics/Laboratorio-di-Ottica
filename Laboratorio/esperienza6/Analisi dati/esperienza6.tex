@@ -549,6 +549,111 @@ Il $\chi^2_{red}$ migliora nettamente, ma i valori di $d$ non risultano più com
   \end{figure}
 
 
+\subsection{Confronto tra le lunghezze d'onda}
+
+Come ulteriore verifica si è controllato se la differenza tra le lunghezze d'onda dei due laser, ricavata
+dalle misure, coincide con quella attesa. La fenditura e la distanza $S$ sono le stesse per entrambe le prese dati,
+quindi dalla relazione $B = \frac{2\pi d}{\lambda S}$ segue che il prodotto $B\lambda$ deve essere uguale per i due laser.
+Di conseguenza il primo minimo della figura di diffrazione si trova in $x_1 = \pi/B = \lambda S/(2d)$ e il rapporto tra le
+posizioni dei minimi deve coincidere con il rapporto tra le lunghezze d'onda:
+\begin{equation}
+  \frac{x_{1,\mathrm{rosso}}}{x_{1,\mathrm{verde}}} = \frac{B_{\mathrm{verde}}}{B_{\mathrm{rosso}}}
+  = \frac{\lambda_{\mathrm{rosso}}}{\lambda_{\mathrm{verde}}}
+  \label{eq:rapporto_lambda}
+\end{equation}
+
+\noindent
+Per i valori di $B$ si sono usati i fit sui dati senza code per il laser verde e quello con offset applicato dalla misura n. 32
+per il laser rosso:
+$B_{\mathrm{verde}} = (6{,}433 \pm 0{,}003)\cdot 10^{-1}\ \text{mm}^{-1}$ e
+$B_{\mathrm{rosso}} = (5{,}238 \pm 0{,}003)\cdot 10^{-1}\ \text{mm}^{-1}$.
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{cc}
+    \toprule
+    Grandezza & Valore [mm] \\
+    \midrule
+    $x_{1,\mathrm{verde}}$ & $4{,}884 \pm 0{,}002$ \\
+    $x_{1,\mathrm{rosso}}$ & $5{,}998 \pm 0{,}003$ \\
+    $x_{1,\mathrm{rosso}} - x_{1,\mathrm{verde}}$ & $1{,}114 \pm 0{,}004$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Posizione del primo minimo per i due laser.}
+  \label{tab:minimi}
+\end{table}
+
+\noindent
+Lo spostamento tra i minimi dei due laser dipende dalla differenza delle lunghezze d'onda, ma non permette di ricavarla
+direttamente, perché è moltiplicata per il fattore $S/(2d)$, noto solo con una certa incertezza:
+\begin{equation}
+  x_{1,\mathrm{rosso}} - x_{1,\mathrm{verde}} = (\lambda_{\mathrm{rosso}} - \lambda_{\mathrm{verde}})\,\frac{S}{2d}
+\end{equation}
+Dividendo entrambi i membri per $x_{1,\mathrm{verde}} = \lambda_{\mathrm{verde}}\,\frac{S}{2d}$ questo fattore si elimina e si ottiene
+\begin{equation}
+  \frac{x_{1,\mathrm{rosso}} - x_{1,\mathrm{verde}}}{x_{1,\mathrm{verde}}}
+  = \frac{\lambda_{\mathrm{rosso}} - \lambda_{\mathrm{verde}}}{\lambda_{\mathrm{verde}}}
+\end{equation}
+da cui
+\begin{equation}
+  \Delta\lambda = \lambda_{\mathrm{rosso}} - \lambda_{\mathrm{verde}}
+  = \lambda_{\mathrm{verde}}\left(\frac{x_{1,\mathrm{rosso}}}{x_{1,\mathrm{verde}}} - 1\right)
+\end{equation}
+Si sono quindi ricavati il rapporto tra le lunghezze d'onda e la loro differenza, da confrontare con i valori nominali
+$\lambda_{\mathrm{verde}} = 532$ nm e $\lambda_{\mathrm{rosso}} = 650$ nm:
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{cccc}
+    \toprule
+    Grandezza & Misurato & Atteso & Compatibilità \\
+    \midrule
+    $\lambda_{\mathrm{rosso}}/\lambda_{\mathrm{verde}}$ & $1{,}2280 \pm 0{,}0008$ & $1{,}2218$ & [no] \\
+    $\Delta\lambda$ [nm] & $121{,}3 \pm 0{,}4$ & $118$ & [no] \\
+    \bottomrule
+  \end{tabular}
+  \caption{Confronto tra rapporto e differenza delle lunghezze d'onda misurati e attesi.}
+  \label{tab:confronto_lambda}
+\end{table}
+
+\noindent
+Per verificare che il disaccordo non dipenda dalla scelta del set di dati, lo stesso confronto è stato ripetuto
+per tutte le analisi riportate sopra:
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{cccc}
+    \toprule
+    Analisi & $\lambda_{\mathrm{r}}/\lambda_{\mathrm{v}}$ & $\Delta\lambda$ [nm] & Comp. \\
+    \midrule
+    Dati grezzi & $1{,}2627 \pm 0{,}0008$ & $139{,}8 \pm 0{,}4$ & [no] \\
+    Senza code & $1{,}2345 \pm 0{,}0008$ & $124{,}8 \pm 0{,}4$ & [no] \\
+    Offset da 32 & $1{,}2280 \pm 0{,}0008$ & $121{,}3 \pm 0{,}4$ & [no] \\
+    Offset 32--41 & $1{,}2638 \pm 0{,}0008$ & $140{,}3 \pm 0{,}4$ & [no] \\
+    \midrule
+    Atteso & $1{,}2218$ & $118$ & \\
+    \bottomrule
+  \end{tabular}
+  \caption{Rapporto e differenza delle lunghezze d'onda per le diverse analisi dei dati.}
+  \label{tab:robustezza_lambda}
+\end{table}
+
+\noindent
+In nessun caso il valore atteso viene riprodotto. Inoltre i valori ottenuti variano a seconda di come viene trattato
+lo shift del laser rosso, il che indica che il confronto è dominato da errori sistematici.
+
+Le possibili cause della discrepanza sono diverse. Innanzitutto gli errori sui parametri $B$ restituiti dal fit
+potrebbero essere sottostimati: il $\chi^2_{red}$ è molto maggiore di 1, quindi il modello non descrive perfettamente i dati.
+Inoltre i valori nominali delle lunghezze d'onda sono stati supposti esatti e senza errore, mentre in realtà sono noti
+solo con una certa tolleranza. Come visto in precedenza, i dati del laser rosso sono poi affetti da un errore sistematico
+(lo shift), la cui correzione dipende dalla scelta dell'offset. Si può anche supporre che tra le due prese dati sia cambiato
+qualcosa, ad esempio la distanza $S$: in tal caso gli errori comuni non si semplificano più nel rapporto.
+Infine, il modello assume un fascio perfettamente piano e uniforme sulla fenditura, ipotesi che nella pratica
+non è soddisfatta in modo perfetto.
+
 
 
 \section{Conclusioni}
