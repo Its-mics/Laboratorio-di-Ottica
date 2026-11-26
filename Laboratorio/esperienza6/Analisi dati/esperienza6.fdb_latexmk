@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1795709717.87855 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" "esperienza6.pdf" "esperienza6" 1795709720.57713 0
-  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" 1795709711.72215 26958 29e2ce60810fd7f3fc4b45513a6f6950 ""
+["pdflatex"] 1795709816.46238 "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" "esperienza6.pdf" "esperienza6" 1795709819.10312 0
+  "/Users/michele/Documents/Vscode/Laboratorio-di-Ottica/Laboratorio/esperienza6/Analisi dati/esperienza6.tex" 1795709817.00043 26890 c147c1e9ff9b631e0a93ba462f6f7751 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1136768653 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -285,10 +285,10 @@
   "Immagini/verde/raw/verde_fit.png" 1795685311.38216 21087 6a1986afcef006f772810e3e15f4ba62 ""
   "Immagini/verde/raw/verde_hist.png" 1795685311.3824 20546 317acae5277a69d01cf5c60be210e3fe ""
   "Immagini/verde/raw/verde_residui.png" 1795685311.38262 19435 bae480a3a3f61b32dd1dbd4d6f0f9f19 ""
-  "esperienza6.aux" 1795709720.39659 12203 113b9ec5d725466926d1a8883f2523a5 "pdflatex"
-  "esperienza6.out" 1795709720.39909 1560 b4857928fc475a692519b47e08612d14 "pdflatex"
-  "esperienza6.tex" 1795709711.72215 26958 29e2ce60810fd7f3fc4b45513a6f6950 ""
-  "esperienza6.toc" 1795709720.39941 909 a2c930a5bac71bd89890bfd5e99f5f21 "pdflatex"
+  "esperienza6.aux" 1795709818.94415 12203 113b9ec5d725466926d1a8883f2523a5 "pdflatex"
+  "esperienza6.out" 1795709818.94659 1560 b4857928fc475a692519b47e08612d14 "pdflatex"
+  "esperienza6.tex" 1795709817.00043 26890 c147c1e9ff9b631e0a93ba462f6f7751 ""
+  "esperienza6.toc" 1795709818.94688 909 a2c930a5bac71bd89890bfd5e99f5f21 "pdflatex"
   (generated)
   "esperienza6.aux"
   "esperienza6.log"

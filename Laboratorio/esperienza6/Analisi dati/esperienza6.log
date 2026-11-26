@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  26 NOV 2026 17:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.3)  26 NOV 2026 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1213,23 +1213,13 @@ File: Immagini/rosso/shift/shif_32_41/rosso_residui.png Graphic file (type png)
 Package pdftex.def Info: Immagini/rosso/shift/shif_32_41/rosso_residui.png  used on input line 578.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
 [8 <./Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png> <./Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png> <./Immagini/rosso/shift/shif_32_41/rosso_residui.png>]
-Underfull \hbox (badness 2894) in paragraph at lines 625--627
+Underfull \hbox (badness 2894) in paragraph at lines 629--631
 \T1/cmr/m/n/10 Dividendo en-tram-bi i mem-bri per $\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (0.53535pt too wide) in paragraph at lines 642--650
+Overfull \hbox (0.53535pt too wide) in paragraph at lines 646--654
  [][] 
- []
-
-
-Underfull \hbox (badness 1152) in paragraph at lines 690--694
-\T1/cmr/m/n/10 la-zio-ne pe-rio-di-ca fi-na-le dei re-si-dui ri-sul-ta at-te-
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 690--694
-\T1/cmr/m/n/10 non es-se-re ben de-scrit-ta dal mo-del-lo. >>>>>>>
  []
 
 [9] [10
@@ -1249,13 +1239,13 @@ Package rerunfilecheck Info: File `esperienza6.out' has not changed.
 Here is how much of TeX's memory you used:
  55664 strings out of 467525
  1343935 string characters out of 5418983
- 2023129 words of memory out of 5000000
+ 2022129 words of memory out of 5000000
  83889 multiletter control sequences out of 15000+600000
  645618 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,12n,118p,528b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,12n,118p,528b,1039s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on esperienza6.pdf (10 pages, 568535 bytes).
+Output written on esperienza6.pdf (10 pages, 567340 bytes).
 PDF statistics:
  329 PDF objects out of 1000 (max. 8388607)
  226 compressed objects within 3 object streams
