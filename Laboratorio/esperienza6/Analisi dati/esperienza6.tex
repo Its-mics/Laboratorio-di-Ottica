@@ -128,14 +128,19 @@ per questo motivo sono stati impostati dei valori massimi e minimi ai parametri 
 \end{table}
 
 
- Il $\chi^2_{red}$ del fit risulta molto elevato ($\simeq 18$), il che evidenzia la difficoltà 
-nel trovare un modello che descriva correttamente l'andamento dei dati. Un ulteriore prova di ciò è data
-dal parametro $D$, che risulta negativo (e non compatibile con 0). Cio evidenzia il fatto che il fit 
-preferisce minimizzare i dati alle code, in quanto questi hanno un errore efficace minore e contribuiscono maggiormente al $\chi^2$. 
+\noindent Il $\chi^2_{red}$ del fit risulta elevato, il che evidenzia la difficoltà 
+nel trovare un modello che descriva correttamente l'andamento dei dati. 
 
+\noindent Un ulteriore prova di ciò è data
+dal parametro $D$, che risulta negativo (e non compatibile con 0). 
+Cio è probabilmente dovuto al fatto che,
+per minimizzare il $\chi^2$, i parametri del fit si adatteranno per descrivere al meglio i dati alle code,
+in quanto questi hanno un errore efficace minore (sia per la maggiore sensibilità della scala del voltmetro 
+utilizzata in quegl' intervalli, sia perché la derivata prima della funzione assume valori più piccoli)
+ e, dunque, contribuiscono maggiormente al valore finale del $\chi^2$. 
 
-Inserendo nel codice il limite per il parametro $D$ che esso non dovesse superare lo 0, il fit converge proprio a $D=0 mm$,
-suggerendo che esso non sia converso ad un minimo, ma abbia inserito come valore il più vicino ad uno di essi.
+\noindent Inserendo nel codice un limite inferiore per il parametro $D$ ($D > 0$), il fit converge proprio a $D = 0\text{ mm}$,
+suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore consentito più vicino ad esso.
 
  \begin{figure}[H]
   \centering
@@ -184,11 +189,11 @@ suggerendo che esso non sia converso ad un minimo, ma abbia inserito come valore
   \label{tab:fit_lin}
 \end{table}
 
- Anche quest'ultimo grafico conferma quanto detto prima, i dati attorno a $x = 0 mm$ 
+\noindent Anche quest'ultimo grafico conferma quanto detto prima, i dati attorno a $x = 0 \text{mm}$ 
  vengono modellati peggio rispetto a quelli sulle code.
 
 
-\paragraph{Dati del laser rosso}[H]
+\noindent{\large\bfseries Dati del laser rosso}\par\nopagebreak\vspace{0.2em}
 
 
  \begin{figure}[H]
@@ -263,21 +268,20 @@ suggerendo che esso non sia converso ad un minimo, ma abbia inserito come valore
   \label{tab:fit_lin}
 \end{table}
 
-Anche per il laser rosso abbiamo le stesse problem+atiche riportate antecedentemente. Inoltre, 
-i residui successivi a $x=5mm$, riportano un andamento non casuale, dovuto probabilmente ad un errore
-sistematico nella lettura dei dati. Infatti questo andamento è compatibile con quello di uno shift negativo 
-delle misure, come visibile dalla figura sottostante.
-
- 
+\noindent Anche per il laser rosso si riscontrano le stesse problematiche riportate antecedentemente.
+Inoltre, i residui successivi a $x=5 \text{mm}$ riportano un andamento non casuale, dovuto probabilmente ad un errore
+sistematico nella lettura dei dati. Infatti, questo andamento è compatibile con uno shift negativo 
+delle $x$. Tale ipotesi viene anche suggerita dal fatto che i massimi e minimi misurati risultano
+a sinistra di quelli ricavati dal fit, come visibile dalla figura sottostante.
 
  \begin{figure}[H]
   \centering
   \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift_rosso.png}
   \caption{Zoom sulla parte presumibilmente traslata del dataset del laser rosso.}
-    \label{fig:hist_manu}
+    \label{fig:shift}
  \end{figure}
 
-Riportiamo ivi i valori di $d$ inizialmente trovati sulla base di questi dati.
+Riportiamo ivi i valori di $d$ ricavati sulla base di questi dati.
 \begin{table}[H]
   \centering
   \small
@@ -288,21 +292,25 @@ Riportiamo ivi i valori di $d$ inizialmente trovati sulla base di questi dati.
     $d_{\mathrm{verde}}$ & $(2{,}202 \pm 0{,}006)\cdot 10^{-1}$ & \\
     $d_{\mathrm{rosso}}$ & $(2{,}178 \pm 0{,}005)\cdot 10^{-1}$ &\\
     \midrule
-    $|d_{\mathrm{verde}} - d_{\mathrm{rosso}}|$  & $(2,4 \pm 0{,}000{,}8)\cdot 10^{-3}$ & [no] \\
+    $|d_{\mathrm{verde}} - d_{\mathrm{rosso}}|$  & $(2,4 \pm 0{,}8)\cdot 10^{-3}$ & [no] \\
     \bottomrule
   \end{tabular}
   \caption{Confronto tra i valori di $d$ ottenuti per il verde e per il rosso.}
   \label{tab:confronto_d}
 \end{table}
-dove la compatibilità è stata calcolata tramite $\sigma_{dif}= \sqrt{\sigma_{d,verde}^2 + \sigma_{d,rosso}^2} $
+dove la compatibilità è stata calcolata tramite: $\sigma_{dif}= \sqrt{\sigma_{d,verde}^2 + \sigma_{d,rosso}^2} $
+
+\noindent Nonostante le problematiche citate, i valori di $d_{verde}$ e $d_{rosso}$ distano di "sole" 
+$3 \sigma_{dif}$, proprio al limite del valore fissato per la compatibilità.
+
 
 \subsubsection{Eliminazione delle code}
-Per provare a migliorare il fit, si è provato dapprima ad eliminare 5 punti dalle code dei due dataset.
-Infatti, come detto prima, questi dati pesano molto nella costruzione della funzione di fit, ed essendo molto vicini 
-a voltaggi nulli, traslano tutta la funzione di fit.
+Per provare a migliorare il fit, si è provato inanzitutto ad eliminare 10 punti 
+in ognuno dei due dataset (5 per ogni coda).
+Come detto prima, queste misure pesano molto nella costruzione della funzione di fit, ed essendo molto vicini 
+a voltaggi nulli, traslano tutta la funzione di fit verso il basso.
 
-
-\paragraph{Dati del laser rosso}[H]
+\noindent{\large\bfseries Dati del laser rosso}\par\nopagebreak\vspace{0.2em}
 
  \begin{figure}[H]
   \centering
@@ -330,10 +338,11 @@ a voltaggi nulli, traslano tutta la funzione di fit.
   \label{tab:fit3}
 \end{table}
 
-Per il laser rosso, togliere 5 dati alle code, nonostante diminuisca il $\chi^2_{red}$ notevolmente,
-fa convergere il fit nuovamente a valori di $D$ negativi. Inoltre, il valore del parametro $A$ non risulta
-più compatibile con il massimo voltaggio misurato. Si è provato a verificare che il fit non fosse 
-converso in un minimo locale del $\chi^2$, ma non ce ne sono come evidente dalla figura sottoriportata.
+\noindent Per il laser rosso, l'eliminazione dei dati diminuisce il $\chi^2_{red}$ notevolmente
+(da 140 a 79), ma fa il fit converge nuovamente a valori di $D$ negativi.
+Inoltre, il valore del parametro $A$ risulta più distante dal massimo voltaggio misurato. Si è verificato che il fit non convergesse 
+in un minimo locale (e non assoluto) del $\chi^2$, ma l'andamento non presenta minimi locali, 
+come evidente dalla figura sottostante.
 
  \begin{figure}[H]
   \centering
@@ -349,12 +358,12 @@ converso in un minimo locale del $\chi^2$, ma non ce ne sono come evidente dalla
     \label{fig:hist_manu}
  \end{figure}
 
- Come prevedibile, i residui del fit rosso non riportano netti miglioramenti, i primi punti dopo $x=0mm$ ora risultano
- sovrastimanti (contrariamente a prima dove erano sottostimati), e l'andamento periodico persiste.
+ \noindent Come prevedibile, i residui del fit rosso non riportano miglioramenti, i primi punti dopo $x=0 \text{mm}$ ora risultano
+ sovrastimanti (contrariamente a prima dove erano sottostimati), e l'andamento periodico dopo $x = 5 \text{mm}$ persiste.
 
- Si è anche provato a togliere ulteriori punti alle code del dataset rosso, senza miglioramente nè sul fit nè sui residui.
+\noindent Anche eliminando 20 punti dalle code del dataset rosso, non si osservano miglioramenti né nel fit né nei residui.
 
- \paragraph{Dati del laser verde}[H]
+\noindent{\large\bfseries Dati del laser verde}\par\nopagebreak\vspace{0.2em}
 
  \begin{figure}[H]
   \centering
@@ -389,16 +398,46 @@ converso in un minimo locale del $\chi^2$, ma non ce ne sono come evidente dalla
     \label{fig:hist_manu}
  \end{figure}
 
- Da quest'ultimo grafico è evidente che il fit ha un andamento nettamente migliore rispetto a prima. 
+ \noindent Contrariamente al caso precedente, il fit per il laser verde
+ ha un andamento nettamente migliore rispetto all'analisi effetuata con 
+ l'intero set di dati. 
  Molti dei residui centrali risultano ora compatibili con la retta a pendenza nulla attesa.
+
+
+ \begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{ccc}
+    \toprule
+    d & Valore [mm] & Compatibilità \\
+    \midrule
+    $d_{\mathrm{verde}}$ & $(2{,}200 \pm 0{,}006)\cdot 10^{-1}$ & \\
+    $d_{\mathrm{rosso}}$ & $(2{,}111 \pm 0{,}005)\cdot 10^{-1}$ & \\
+    \midrule
+    $|d_{\mathrm{verde}} - d_{\mathrm{rosso}}|$ & $(8{,}5 \pm 0{,}8)\cdot 10^{-3}$ & [no] \\
+    \bottomrule
+  \end{tabular}
+  \caption{Confronto tra i valori di $d$ ottenuti per il verde e per il rosso.}
+  \label{tab:confronto_d}
+\end{table}
+
+\noindent La semilarghezza della fenditura $d$ ottenuta per i due laser risulta ora molto differente 
+(le due distano di $11 \sigma_{dif}$). Ciò è prevedibile, visto il netto
+miglioramento del fit per il laser verde rispetto a quello rosso;
+mentre $d_{\text{verde}}$ si avvicina, presumibilmente, al valore vero,
+$d_{\text{rosso}}$ resta falsato, o peggio, se ne discosta.
+
 
 
 \subsubsection{Divisione del fit}
 
 Per essere più sicuri dell'ipotesi di uno shift dei dati durante la misura, e dunque della presenza di un errore
-sistematico, si è compiuto un fit parziale dei dati, dividendo ogni dataset alla misura a $x=0mm$
+sistematico, si è compiuto un fit parziale dei dati, dividendo ogni dataset alla misura a $x=0 \text{mm}$.
+Ci si attende che i valori di $C$ siano simili fra loro.
 
-\paragraph{Laser verde}[H]
+\vspace{0.3em}
+
+\noindent{\large\bfseries Laser verde}\par\nopagebreak\vspace{0.2em}
 
   \begin{figure}[H]
     \centering
@@ -416,7 +455,7 @@ sistematico, si è compiuto un fit parziale dei dati, dividendo ogni dataset all
 
 
 
-\paragraph{Laser rosso}[H]
+\noindent{\large\bfseries Laser rosso}\par\nopagebreak\vspace{0.2em}
 
   \begin{figure}[H]
     \centering
@@ -432,47 +471,30 @@ sistematico, si è compiuto un fit parziale dei dati, dividendo ogni dataset all
       \label{fig:hist_manu}
   \end{figure}
 
-Si vede, guardando il valore del parametro C dei grafici riportati sopra, come nel caso del laser verde 
-i valori di C delle due parti di fit  si somiglino di più ($C_1,v = 0.158 mm$, $C_2,v =0.343$) rispetto a quanto accade per il laser rosso
-($C_1,r =-1.37 mm$, $C_2,r = -0.751 mm$).
+\noindent Si osserva, guardando il valore del parametro C dei grafici riportati sopra, come nel caso del laser verde 
+i due valori di C ricavati dalle due parti di fit si somiglino di più ($C_{1,v} = 0.158 \text{mm}$, $C_{2,v} =0.343 \text{mm}$) 
+rispetto a quanto accade per il laser rosso ($C_{1,r} =-1.37 mm$, $C_{2,r} = -0.751 mm$).
 Bisogna comunque sottolineare che non ci attende una compatibilità completa fra i due valori di $C$, poichè 
-di poter modellare solo una parte dei dati con la funzione di fit sopra.+
+non ci si attende di poter modellare solo una parte dei dati con la funzione di fit sopra.
 
-
-
-\begin{table}[H]
-  \centering
-  \small
-  \begin{tabular}{ccc}
-    \toprule
-    d & Valore [mm] & Compatibilità \\
-    \midrule
-    $d_{\mathrm{verde}}$ & $(2{,}200 \pm 0{,}006)\cdot 10^{-1}$ & \\
-    $d_{\mathrm{rosso}}$ & $(2{,}178 \pm 0{,}005)\cdot 10^{-1}$ & \\
-    \midrule
-    $|d_{\mathrm{verde}} - d_{\mathrm{rosso}}|$ & $(2{,}3 \pm 0{,}8)\cdot 10^{-3}$ & [sì] \\
-    \bottomrule
-  \end{tabular}
-  \caption{Confronto tra i valori di $d$ ottenuti per il verde e per il rosso.}
-  \label{tab:confronto_d}
-\end{table}
 
 \subsubsection{Aggiunta di un offset ai dati del laser rosso}
-Assunto che ci sia uno shift dei dati da un punto in poi della presa dati, si è provato 
+Assunta la presenza di uno shift dei dati da una misura in poi nelle $x$, si è provato 
 a compiere un ciclo per la minimizzazione del $\chi^2$: partendo da una certa misura in poi
 si aggiungono diversi valori di offset e si vede quale offset restituisce il fit col $\chi^2$ 
 migliore.
 
-Facendo questo procedimento per vari punti, si è trovato che il punto da cui far partire l'offset è
+\noindent Facendo questo procedimento per vari punti, si è trovato che il punto migliore da cui far partire l'offset è
 la misura n. 32.
 
-Nonostante questo, il primo fit restituisce un offset negativo, non compatibile con quanto si vede dai dati, 
-per cui ci si aspetta uno shift verso sinistra.
+\noindent Nonostante questo, il primo fit restituisce un offset negativo, non compatibile con
+lo shift osservato graficamente (figura \ref{fig:shift}), 
+per cui ci si aspetta un offset positivo.
 
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png}
-    \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset.}
+    \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset dal 31esimo dato.}
       \label{fig:hist_manu}
   \end{figure}
 
@@ -493,34 +515,25 @@ per cui ci si aspetta uno shift verso sinistra.
   \label{tab:confronto_d}
 \end{table}
 
-Per questo motivo si è cercato di limitare anche la misura superiore a cui applicare l'offset, 
-dopo varie prove, si è deciso di stoppare la somma dell'offset alla misura n.41
+\noindent Alla riprova di ciò, il $\chi^2_{red}$ aumenta ($\simeq 85$) e il valore di $A$ diminuisce ulteriormente.
+
+\noindent E' interessante osservare che, al discapito di quanto detto sopra, questo
+valore di offset rende compatibili i valori di $d$.
+
+\noindent Infine, ipotizzando che a un primo spostamento delle misure 
+verso sinistra sia seguito uno spostamento opposto verso destra,
+si è cercato di limitare anche la misura superiore a cui applicare l'offset, 
+dopo varie prove, si è deciso di stoppare la somma dell'offset alla misura n.41.
 
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png}
-    \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset.}
+    \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset dal 31esimo dato al 42esimo.}
       \label{fig:hist_manu}
   \end{figure}
 
-\begin{table}[H]
-  \centering
-  \small
-  \begin{tabular}{ccc}
-    \toprule
-    d & Valore [mm] & Compatibilità \\
-    \midrule
-    $d_{\mathrm{verde}}$ & $(2{,}200 \pm 0{,}006)\cdot 10^{-1}$ & \\
-    $d_{\mathrm{rosso}}$ & $(2{,}125 \pm 0{,}005)\cdot 10^{-1}$ & \\
-    \midrule
-    $|d_{\mathrm{verde}} - d_{\mathrm{rosso}}|$ & $(7{,}5 \pm 0{,}8)\cdot 10^{-3}$ & [no]  \\
-    \bottomrule
-  \end{tabular}
-  \caption{Confronto tra i valori di $d$ ottenuti per il verde e per il rosso.}
-  \label{tab:confronto_d}
-\end{table}
-
-Il $\chi^2_{red}$ migliora nettamente, ma i valori di $d$ non risultano più compatibili
+\noindent Il $\chi^2_{red}$ migliora nettamente e $A$ risulta nuovamente compatibile
+, ma i valori di $d$ non lo risultano più.
 
 \begin{table}[H]
   \centering
@@ -541,6 +554,25 @@ Il $\chi^2_{red}$ migliora nettamente, ma i valori di $d$ non risultano più com
   \label{tab:fit5}
 \end{table}
 
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabular}{ccc}
+    \toprule
+    d & Valore [mm] & Compatibilità \\
+    \midrule
+    $d_{\mathrm{verde}}$ & $(2{,}200 \pm 0{,}006)\cdot 10^{-1}$ & \\
+    $d_{\mathrm{rosso}}$ & $(2{,}125 \pm 0{,}005)\cdot 10^{-1}$ & \\
+    \midrule
+    $|d_{\mathrm{verde}} - d_{\mathrm{rosso}}|$ & $(7{,}5 \pm 0{,}8)\cdot 10^{-3}$ & [no]  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Confronto tra i valori di $d$ ottenuti per il verde e per il rosso.}
+  \label{tab:confronto_d}
+\end{table}
+
+
   \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift/shif_32_41/rosso_residui.png}
@@ -548,6 +580,7 @@ Il $\chi^2_{red}$ migliora nettamente, ma i valori di $d$ non risultano più com
       \label{fig:hist_manu}
   \end{figure}
 
+<<<<<<< HEAD
 
 \subsection{Confronto tra le lunghezze d'onda}
 
@@ -654,7 +687,29 @@ qualcosa, ad esempio la distanza $S$: in tal caso gli errori comuni non si sempl
 Infine, il modello assume un fascio perfettamente piano e uniforme sulla fenditura, ipotesi che nella pratica
 non è soddisfatta in modo perfetto.
 
+=======
+\noindent Con quest'ultima modifica, l'oscillazione periodica finale dei residui risulta attenuata, 
+ma la parte centrale del fit continua a non essere ben descritta dal modello.
+>>>>>>> 49b78674a3f883acbe851dc1b90a4f962995c083
 
 
 \section{Conclusioni}
+
+\noindent Lo scopo dell'esperimento era quello di ricavare la larghezza di una fenditura tramite il fit 
+della curva d'interfenza di due laser. Per il laser verde, dopo aver eliminato i dati alle code, si è
+ottenuto un modello adatto a descrivere l'andamento dei dati. Per il laser rosso, invece, i parametri 
+ricavati continuano a non descrivere bene i dati del picco centrale. 
+
+\noindent La larghezza della fenditura stimata per il laser verde è $2d_{verde} = (4.40 \pm 0,01) \cdot 10^{-1} \text{mm}$, per il laser 
+rosso, contrariamente, $2d_{rosso}$ risulta generalmente minore $\left((4.20 \divisionsymbol 4.50 ) \cdot 10^{-1}\text{mm}\right)$, a parte nel caso
+in cui si aggiunge un offset di $- 0.15 \text{mm}$ dalla misura n.31, in cui si ricava $2d_{rosso} = (4.40 \pm 0,01) \cdot 10^{-1} \text{mm}$,
+il quale però non risulta corrispondente con l'offset atteso.
+
+\noindent E' dunque ragionevole assumere come larghezza della fenditura corretta:
+\[
+2d = 2d_{verde} = (4.40 \pm 0,01) \cdot 10^{-1} \text{mm}
+\]
+
+
+
 \end{document}
