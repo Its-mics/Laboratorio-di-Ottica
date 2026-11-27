@@ -3,30 +3,46 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
-\usepackage{amsmath}
+
+% --- Colori: va caricato PRIMA di tikz, circuitikz e tcolorbox ---
+\usepackage[x11names, dvipsnames]{xcolor}
+\definecolor{PoliBlue}{RGB}{0, 45, 114}
+\definecolor{OpticRed}{RGB}{200, 10, 30}
+\definecolor{ForestGreen}{RGB}{34, 139, 34}
+\definecolor{CodeBack}{RGB}{245, 245, 245}
+\definecolor{BoxGray}{RGB}{248, 249, 250}
+
+% --- Matematica, Fisica e Unità di misura ---
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{mathtools, cancel, bm}
+\usepackage{siunitx}
+\sisetup{
+    output-decimal-marker={,},
+    separate-uncertainty=true,
+    per-mode=symbol,
+    inter-unit-product = \ensuremath{{}\cdot{}}
+}
+
+% --- Layout, Tabelle e Grafica ---
 \usepackage{titling}
-\usepackage{amssymb}
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{relsize}
 \usepackage{titlesec}
 \usepackage{ragged2e}
-\usepackage{circuitikz}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{makecell}
 \usepackage{pdflscape}
 \usepackage{enumitem}
 \usepackage{tikz}
-\usepackage{physics}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
+\usepackage{circuitikz}
 \usepackage{tikz-3dplot}
-\usepackage{siunitx}
-\usetikzlibrary{decorations.pathmorphing}
-\usetikzlibrary{arrows.meta}              % Necessario per l'opzione >=Stealth
-\usepackage[colorlinks=true, linkcolor=black]{hyperref}  %per rendere l'indice genrale "interattivo"
+\usepackage[most]{tcolorbox}
+
+\usetikzlibrary{decorations.pathmorphing, arrows.meta, calc}
+
 \setlist[itemize]{itemsep=4pt, parsep=1pt}
 \newtcolorbox{nota}{
   blanker,
@@ -39,7 +55,6 @@
 }
 
 % ---- Suggerimenti su cosa dire nella sezione Grafici ----
-% Metti \hintsfalse per nascondere tutti i riquadri \sugg{...}
 \newif\ifhints
 \hintstrue
 \newcommand{\sugg}[1]{%
@@ -50,9 +65,13 @@
   \par\vspace{8pt}
   \fi}
 
-\setlength{\intextsep}{8pt} % per regolare la distanza grafico tabelle
+\setlength{\intextsep}{8pt}
 \setlength{\columnsep}{60pt}
 \setlength{\tabcolsep}{4pt}
+
+% --- Hyperref sempre per ultimo ---
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+
 
 \begin{document}
 
@@ -77,7 +96,111 @@
     \restoregeometry
     \twocolumn
 \section{Introduzione}
+L'obbiettivo dell'esperimento è ricavare la figura di diffrazione utilizzando come sorgenti luminose due laser con lunghezza d'onda diffenerenti. Lo scopo è verificare se i valori ricavati dai due campioni risultano essere compatibili
+La curva da fittare sui dati raccolti è:
+\begin{equation*}
+    y = A \frac{\sin^2\bigl(B(x - C)\bigr)}{\bigl[B(x - C)\bigr]^2} + D
+\end{equation*}
+dove i parametri rappresentano:
+\begin{itemize}
+    \item $A$: il valore massimo di tensione $V_{\max}$ misurato dal fotodiodo sul picco centrale;
+    \item $B = \dfrac{2\pi}{\lambda} \dfrac{d}{s}$, dove $s$ è la distanza tra la fenditura e il fotodiodo e $d$ (semilarghezza della fenditura) è l'incognita da ricavare;
+    \item $C$: il centro della figura di diffrazione sulla scala del fotodiodo (parametro di allineamento, atteso intorno a $0$);
+    \item $D$: il livello residuo di fondo (atteso intorno a $0$ una volta sottratto il fondo).
+\end{itemize}
+
+Dal fit si ricava $B \pm \sigma_B$ e da esso $d \pm \sigma_d$.
 \section{Apparato di misura}
+ L'apparato sperimentale utizzato è stato sistemato su tavoli adiacenti  e gli strumenti utilizzati posti sopra un binario graduato: Sono stati posizionati nel primo tavolo:
+ \begin{itemize}
+  \item i laser, utilizzati come sorgente luminosa i cui diametri dei fasci sonoS di circa 1mm e con lunghezza d'onda associata di 532 mm e 650 mm rispettivamente
+  \item due lenti per amplifcare e collimare il fascio luminoso poste a una distanza pari alla somma delle distanze focali
+  \item la fenditura di cui vogliamo misurare l'ampiezza tramite la figura di diffrazione
+ \end{itemize} 
+ sul binario graduato del secondo tavolo è stato pposizionato un fotodiodo a cui è stato collegato un voltmetro.
+ 
+\begin{figure}[H]
+    \centering
+     \resizebox{\columnwidth}{!}{
+    \begin{tikzpicture}[>=Stealth, scale=0.92]
+        % ---------- Banco ottico sinistro (binario) ----------
+        \draw[very thick, black!70] (-6.8, -1.45) -- (0.0, -1.45);
+        \draw[thick, black!50] (-6.8, -1.55) -- (0.0, -1.55);
+        \node[below, font=\scriptsize] at (-3.4, -1.62) {binario ottico};
+
+        % Laser (rosso / verde, fascio ~ 1 mm)
+        \draw[thick, fill=gray!20, rounded corners=2pt] (-6.6, -0.25) rectangle (-5.1, 0.25);
+        \draw[thick] (-5.85, -0.25) -- (-5.85, -1.45);
+        \node[above, align=center, font=\scriptsize] at (-5.85, 0.35) {laser (rosso / verde)\\$\varnothing \simeq \SI{1}{\milli\meter}$};
+
+        % Sistema di due lenti (espansore di fascio) a distanza f1 + f2
+        % Lente 1 (f1)
+        \draw[thick, fill=cyan!20] (-3.8, 0) ellipse (0.10 and 0.60);
+        \draw[thick] (-3.8, -0.60) -- (-3.8, -1.45);
+        \node[above, font=\scriptsize] at (-3.8, 0.65) {$f_1$};
+
+        % Lente 2 (f2)
+        \draw[thick, fill=cyan!20] (-2.0, 0) ellipse (0.12 and 0.80);
+        \draw[thick] (-2.0, -0.80) -- (-2.0, -1.45);
+        \node[above, font=\scriptsize] at (-2.0, 0.85) {$f_2$};
+
+        % Quota distanza f1 + f2 tra le lenti
+        \draw[<->, thin, black!75] (-3.8, -1.15) -- (-2.0, -1.15)
+            node[midway, above=1pt, font=\scriptsize] {$f_1 + f_2$};
+
+        % Percorso del fascio laser (collimato -> fuoco -> espanso parallelo)
+        \fill[OpticRed!12] (-2.0, -0.45) rectangle (-0.6, 0.45);
+        \draw[OpticRed, thick] (-5.1, 0.05) -- (-3.8, 0.05) -- (-3.2, 0) -- (-2.0, -0.45) -- (-0.6, -0.45);
+        \draw[OpticRed, thick] (-5.1, -0.05) -- (-3.8, -0.05) -- (-3.2, 0) -- (-2.0, 0.45) -- (-0.6, 0.45);
+        \draw[OpticRed, thin, ->] (-2.0, 0) -- (-1.2, 0);
+
+        % Fenditura regolabile con vite micrometrica
+        \draw[very thick, PoliBlue] (-0.6, 0.14) -- (-0.6, 0.85);
+        \draw[very thick, PoliBlue] (-0.6, -0.85) -- (-0.6, -0.14);
+        \draw[thick] (-0.6, -0.85) -- (-0.6, -1.45);
+        \draw[thick, fill=gray!30] (-0.68, 0.85) rectangle (-0.52, 1.10);
+        \node[above, align=center, font=\scriptsize] at (-0.6, 1.15) {fenditura\\regolabile};
+
+        % ---------- Propagazione su grande distanza s ----------
+        \fill[OpticRed!7] (-0.6, 0.12) -- (3.25, 0.72) -- (3.25, -0.72) -- (-0.6, -0.12) -- cycle;
+        \draw[OpticRed, dashed, ->] (-0.6, 0) -- (3.2, 0);
+        \draw[OpticRed!60, thin] (-0.6, 0.12) -- (3.25, 0.70);
+        \draw[OpticRed!60, thin] (-0.6, -0.12) -- (3.25, -0.70);
+
+        % Quota distanza s (nella zona libera tra i due supporti)
+        \draw[<->, thick, black!80] (-0.55, -1.15) -- (3.45, -1.15)
+            node[midway, above=2pt, font=\scriptsize] {$s \simeq 2\text{--}\SI{3}{\meter}$};
+
+        % ---------- Binario ortogonale graduato con fotodiodo e manovella ----------
+        \draw[very thick, black!75] (2.6, -1.85) -- (4.3, -1.05);
+        \draw[thick, black!50] (2.6, -1.95) -- (4.3, -1.15);
+        \foreach \t in {0.1, 0.2, ..., 0.9} {
+            \coordinate (T) at ($(2.6,-1.85)!\t!(4.3,-1.05)$);
+            \draw[thin, black!70] (T) -- ($(T)+(0,-0.08)$);
+        }
+        % Manovella laterale
+        \draw[thick] (2.6, -1.90) -- (2.3, -2.04) -- (2.3, -1.82);
+        \node[left, font=\scriptsize] at (2.22, -1.95) {manovella};
+        \node[below, align=center, font=\scriptsize] at (3.6, -1.98) {binario ortogonale\\(scala millimetrica)};
+
+        % Supporto mobile e fotodiodo (con nastro adesivo e fessura verticale)
+        \draw[thick] (3.50, -1.45) -- (3.50, -0.35);
+        \draw[thick, fill=gray!15] (3.25, -0.35) rectangle (3.75, 0.35);
+        \fill[black!75] (3.25, -0.35) rectangle (3.42, 0.35);
+        \fill[black!75] (3.58, -0.35) rectangle (3.75, 0.35);
+        \draw[thick, PoliBlue] (3.42, -0.35) rectangle (3.58, 0.35);
+        \node[above, align=center, font=\scriptsize] at (3.5, 0.80) {fotodiodo\\(fessura verticale\\con nastro)};
+
+        % Voltmetro collegato al fotodiodo
+        \draw[thick] (3.75, 0) .. controls (4.65, 0) and (5.05, -0.25) .. (5.05, -0.55);
+        \draw[thick, fill=white] (5.05, -0.85) circle (0.30) node {\small $V$};
+        \node[below, font=\scriptsize] at (5.05, -1.20) {voltmetro};
+    \end{tikzpicture}
+     }
+    \caption{Schema completo dell'apparato sperimentale per la misura della diffrazione da una singola fenditura.}
+\end{figure}
+
+
 \section{Analisi dati}
 \subsection{Grafici}
 Di seguito vengono riportati grafici e commenti derivanti dall'analisi dati.
@@ -95,7 +218,7 @@ per questo motivo sono stati impostati dei valori massimi e minimi ai parametri 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/verde/raw/verde_fit.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_fit.png}
   \caption{Fit iniziale su tutti i dati presi con il laser verde.}
   \label{fig:hist_manu}
 \end{figure}
@@ -103,7 +226,7 @@ per questo motivo sono stati impostati dei valori massimi e minimi ai parametri 
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/verde/raw/verde_fit.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_fit.png}
   \caption{Fit iniziale su tutti dati presi con il laser verde.}
     \label{fig:hist_manu}
  \end{figure}
@@ -144,7 +267,7 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/verde/raw/verde_hist.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_hist.png}
   \caption{Istogramma dei residui normalizzati ricavati dalla misura con il laser verde.}
     \label{fig:hist_manu}
  \end{figure}
@@ -169,7 +292,7 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/verde/raw/verde_residui.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_residui.png}
   \caption{Andamento dei residui ricavati dalla misura con il laser verde.}
     \label{fig:hist_manu}
  \end{figure}
@@ -198,7 +321,7 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/rosso/raw/rosso_fit_nonmod.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/raw/rosso_fit_nonmod.png}
   \caption{Fit iniziale su tutti dati presi con il laser rosso.}
     \label{fig:hist_manu}
  \end{figure}
@@ -225,7 +348,7 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
   
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/rosso/raw/rosso_hist._nonmod.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/raw/rosso_hist._nonmod.png}
   \caption{Istogramma dei residui normalizzati ricavati dalla misura con il laser rosso.}
     \label{fig:hist_manu}
  \end{figure}
@@ -248,7 +371,7 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/rosso/raw/rosso_residui._nonmod.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/raw/rosso_residui._nonmod.png}
   \caption{Andamento dei residui ricavati dalla misura con il laser rosso.}
     \label{fig:hist_manu}
  \end{figure}
@@ -276,7 +399,7 @@ a sinistra di quelli ricavati dal fit, come visibile dalla figura sottostante.
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift_rosso.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift_rosso.png}
   \caption{Zoom sulla parte presumibilmente traslata del dataset del laser rosso.}
     \label{fig:shift}
  \end{figure}
@@ -314,7 +437,7 @@ a voltaggi nulli, traslano tutta la funzione di fit verso il basso.
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/rosso/menocode/rosso_fit._menopunti.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/menocode/rosso_fit._menopunti.png}
   \caption{Fit sui dati presi con il laser rosso togliendo 5 punti nelle code.}
     \label{fig:hist_manu}
  \end{figure}
@@ -346,14 +469,14 @@ come evidente dalla figura sottostante.
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/rosso/chi2_slice_C_0.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/chi2_slice_C_0.png}
   \caption{Andamento del $\chi^2$ in funzione di A, fissati gli altri parametri.}
     \label{fig:hist_manu}
  \end{figure}
  
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/rosso/menocode/rosso_residui_menopunti.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/menocode/rosso_residui_menopunti.png}
   \caption{Andamento dei residui dei dati del laser rosso togliendo 5 punti nelle code.}
     \label{fig:hist_manu}
  \end{figure}
@@ -367,7 +490,7 @@ come evidente dalla figura sottostante.
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/verde/menocode/verde_fit_menopunti.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/menocode/verde_fit_menopunti.png}
   \caption{Fit sui dati presi con il laser verde togliendo 5 punti nelle code.}
     \label{fig:hist_manu}
  \end{figure}
@@ -393,7 +516,7 @@ come evidente dalla figura sottostante.
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Immagini/verde/menocode/verde_residui_menopunti.png}
+  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/menocode/verde_residui_menopunti.png}
   \caption{Andamento dei residui dei dati del laser verde togliendo 5 punti nelle code.}
     \label{fig:hist_manu}
  \end{figure}
@@ -441,14 +564,14 @@ Ci si attende che i valori di $C$ siano simili fra loro.
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Immagini/verde/fit_parziale_verde_0.png}
+    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/fit_parziale_verde_0.png}
     \caption{Prima parte del fit sui dati del laser verde togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Immagini/verde/fit_parziale_verde_1.png}
+    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/fit_parziale_verde_1.png}
     \caption{Seconda parte del fit sui dati del laser verde togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
@@ -459,14 +582,14 @@ Ci si attende che i valori di $C$ siano simili fra loro.
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Immagini/rosso/fit_parziale_rosso_0.png}
+    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/fit_parziale_rosso_0.png}
     \caption{Prima parte del fit sui dati del laser rosso togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Immagini/rosso/fit_parziale_rosso_1.png}
+    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/fit_parziale_rosso_1.png}
     \caption{Seconda parte del fit sui dati del laser rosso togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
@@ -493,7 +616,7 @@ per cui ci si aspetta un offset positivo.
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png}
+    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png}
     \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset dal 31esimo dato.}
       \label{fig:hist_manu}
   \end{figure}
@@ -527,7 +650,7 @@ dopo varie prove, si è deciso di stoppare la somma dell'offset alla misura n.41
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png}
+    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png}
     \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset dal 31esimo dato al 42esimo.}
       \label{fig:hist_manu}
   \end{figure}
@@ -575,7 +698,7 @@ dopo varie prove, si è deciso di stoppare la somma dell'offset alla misura n.41
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Immagini/rosso/shift/shif_32_41/rosso_residui.png}
+    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_residui.png}
     \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset.}
       \label{fig:hist_manu}
   \end{figure}
@@ -700,7 +823,7 @@ ottenuto un modello adatto a descrivere l'andamento dei dati. Per il laser rosso
 ricavati continuano a non descrivere bene i dati del picco centrale. 
 
 \noindent La larghezza della fenditura stimata per il laser verde è $2d_{verde} = (4.40 \pm 0,01) \cdot 10^{-1} \text{mm}$, per il laser 
-rosso, contrariamente, $2d_{rosso}$ risulta generalmente minore $\left((4.20 \divisionsymbol 4.50 ) \cdot 10^{-1}\text{mm}\right)$, a parte nel caso
+rosso, contrariamente, $2d_{rosso}$ risulta generalmente minore $\left((4.20 \div 4.50 ) \cdot 10^{-1}\text{mm}\right)$, a parte nel caso
 in cui si aggiunge un offset di $- 0.15 \text{mm}$ dalla misura n.31, in cui si ricava $2d_{rosso} = (4.40 \pm 0,01) \cdot 10^{-1} \text{mm}$,
 il quale però non risulta corrispondente con l'offset atteso.
 
