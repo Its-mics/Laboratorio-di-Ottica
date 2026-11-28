@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  28 NOV 2026 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  28 NOV 2026 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1083,63 +1083,6 @@ LaTeX Warning: Label `fig:hist_manu' multiply defined.
 
 LaTeX Warning: Label `fig:hist_manu' multiply defined.
 
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `tab:fit_gauss' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `tab:fit_lin' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `tab:confronto_d' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `tab:confronto_d' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
-
-LaTeX Warning: Label `tab:confronto_d' multiply defined.
-
-
-LaTeX Warning: Label `fig:hist_manu' multiply defined.
-
 )
 \openout1 = `esperienza6.aux'.
 
@@ -1314,7 +1257,7 @@ Underfull \hbox (badness 3547) in paragraph at lines 145--226
 \T1/cmr/m/n/10 Riportiamo sche-ma-ti-ca-men-te l'ap-pa-ra-to ap-pe-na
  []
 
-<Analisi dati/Immagini/verde/raw/verde_fit.png, id=108, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/verde/raw/verde_fit.png, id=77, 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/verde/raw/verde_fit.png Graphic file (type png)
 <use Analisi dati/Immagini/verde/raw/verde_fit.png>
 Package pdftex.def Info: Analisi dati/Immagini/verde/raw/verde_fit.png  used on
@@ -1340,14 +1283,14 @@ Underfull \hbox (badness 1173) in paragraph at lines 281--283
 
 
 ]
-<Analisi dati/Immagini/verde/raw/verde_hist.png, id=133, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/verde/raw/verde_hist.png, id=103, 798.985pt x 574.145pt>
 
 File: Analisi dati/Immagini/verde/raw/verde_hist.png Graphic file (type png)
 <use Analisi dati/Immagini/verde/raw/verde_hist.png>
 Package pdftex.def Info: Analisi dati/Immagini/verde/raw/verde_hist.png  used o
 n input line 293.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/verde/raw/verde_residui.png, id=134, 798.985pt x 574.145
+<Analisi dati/Immagini/verde/raw/verde_residui.png, id=104, 798.985pt x 574.145
 pt>
 File: Analisi dati/Immagini/verde/raw/verde_residui.png Graphic file (type png)
 
@@ -1355,7 +1298,7 @@ File: Analisi dati/Immagini/verde/raw/verde_residui.png Graphic file (type png)
 Package pdftex.def Info: Analisi dati/Immagini/verde/raw/verde_residui.png  use
 d on input line 318.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/rosso/raw/rosso_fit_nonmod.png, id=135, 798.985pt x 574.
+<Analisi dati/Immagini/rosso/raw/rosso_fit_nonmod.png, id=105, 798.985pt x 574.
 145pt>
 File: Analisi dati/Immagini/rosso/raw/rosso_fit_nonmod.png Graphic file (type p
 ng)
@@ -1371,7 +1314,7 @@ Overfull \hbox (11.4368pt too wide) in paragraph at lines 355--367
 [4 <./Analisi dati/Immagini/verde/raw/verde_fit.png> <./Analisi dati/Immagini/v
 erde/raw/verde_hist.png> <./Analisi dati/Immagini/verde/raw/verde_residui.png> 
 <./Analisi dati/Immagini/rosso/raw/rosso_fit_nonmod.png>]
-<Analisi dati/Immagini/rosso/raw/rosso_hist._nonmod.png, id=147, 798.985pt x 57
+<Analisi dati/Immagini/rosso/raw/rosso_hist._nonmod.png, id=117, 798.985pt x 57
 4.145pt>
 File: Analisi dati/Immagini/rosso/raw/rosso_hist._nonmod.png Graphic file (type
  png)
@@ -1379,7 +1322,7 @@ File: Analisi dati/Immagini/rosso/raw/rosso_hist._nonmod.png Graphic file (type
 Package pdftex.def Info: Analisi dati/Immagini/rosso/raw/rosso_hist._nonmod.png
   used on input line 374.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/rosso/raw/rosso_residui._nonmod.png, id=148, 798.985pt x
+<Analisi dati/Immagini/rosso/raw/rosso_residui._nonmod.png, id=118, 798.985pt x
  574.145pt>
 File: Analisi dati/Immagini/rosso/raw/rosso_residui._nonmod.png Graphic file (t
 ype png)
@@ -1387,7 +1330,7 @@ ype png)
 Package pdftex.def Info: Analisi dati/Immagini/rosso/raw/rosso_residui._nonmod.
 png  used on input line 397.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/rosso/shift_rosso.png, id=149, 322.806pt x 84.91725pt>
+<Analisi dati/Immagini/rosso/shift_rosso.png, id=119, 322.806pt x 84.91725pt>
 File: Analisi dati/Immagini/rosso/shift_rosso.png Graphic file (type png)
 <use Analisi dati/Immagini/rosso/shift_rosso.png>
 Package pdftex.def Info: Analisi dati/Immagini/rosso/shift_rosso.png  used on i
@@ -1401,7 +1344,7 @@ Overfull \hbox (0.71239pt too wide) in paragraph at lines 434--444
 [5 <./Analisi dati/Immagini/rosso/raw/rosso_hist._nonmod.png> <./Analisi dati/I
 mmagini/rosso/raw/rosso_residui._nonmod.png> <./Analisi dati/Immagini/rosso/shi
 ft_rosso.png>]
-<Analisi dati/Immagini/rosso/menocode/rosso_fit._menopunti.png, id=163, 798.985
+<Analisi dati/Immagini/rosso/menocode/rosso_fit._menopunti.png, id=134, 798.985
 pt x 574.145pt>
 File: Analisi dati/Immagini/rosso/menocode/rosso_fit._menopunti.png Graphic fil
 e (type png)
@@ -1414,14 +1357,14 @@ Overfull \hbox (11.4368pt too wide) in paragraph at lines 477--489
  [][] 
  []
 
-<Analisi dati/Immagini/rosso/chi2_slice_C_0.png, id=164, 798.985pt x 574.145pt>
+<Analisi dati/Immagini/rosso/chi2_slice_C_0.png, id=135, 798.985pt x 574.145pt>
 
 File: Analisi dati/Immagini/rosso/chi2_slice_C_0.png Graphic file (type png)
 <use Analisi dati/Immagini/rosso/chi2_slice_C_0.png>
 Package pdftex.def Info: Analisi dati/Immagini/rosso/chi2_slice_C_0.png  used o
 n input line 501.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/rosso/menocode/rosso_residui_menopunti.png, id=165, 798.
+<Analisi dati/Immagini/rosso/menocode/rosso_residui_menopunti.png, id=136, 798.
 985pt x 574.145pt>
 File: Analisi dati/Immagini/rosso/menocode/rosso_residui_menopunti.png Graphic 
 file (type png)
@@ -1429,7 +1372,7 @@ file (type png)
 Package pdftex.def Info: Analisi dati/Immagini/rosso/menocode/rosso_residui_men
 opunti.png  used on input line 508.
 (pdftex.def)             Requested size: 226.07481pt x 162.45032pt.
-<Analisi dati/Immagini/verde/menocode/verde_fit_menopunti.png, id=166, 798.985p
+<Analisi dati/Immagini/verde/menocode/verde_fit_menopunti.png, id=137, 798.985p
 t x 574.145pt>
 File: Analisi dati/Immagini/verde/menocode/verde_fit_menopunti.png Graphic file
  (type png)
@@ -1442,7 +1385,7 @@ Overfull \hbox (11.4368pt too wide) in paragraph at lines 531--543
  [][] 
  []
 
-<Analisi dati/Immagini/verde/menocode/verde_residui_menopunti.png, id=167, 798.
+<Analisi dati/Immagini/verde/menocode/verde_residui_menopunti.png, id=138, 798.
 985pt x 574.145pt>
 File: Analisi dati/Immagini/verde/menocode/verde_residui_menopunti.png Graphic 
 file (type png)
@@ -1458,7 +1401,7 @@ Overfull \hbox (0.71239pt too wide) in paragraph at lines 563--573
  [][] 
  []
 
-<Analisi dati/Immagini/verde/fit_parziale_verde_0.png, id=178, 798.985pt x 574.
+<Analisi dati/Immagini/verde/fit_parziale_verde_0.png, id=149, 798.985pt x 574.
 145pt>
 File: Analisi dati/Immagini/verde/fit_parziale_verde_0.png Graphic file (type p
 ng)
@@ -1466,7 +1409,7 @@ ng)
 Package pdftex.def Info: Analisi dati/Immagini/verde/fit_parziale_verde_0.png  
 used on input line 599.
 (pdftex.def)             Requested size: 214.77037pt x 154.32912pt.
-<Analisi dati/Immagini/verde/fit_parziale_verde_1.png, id=179, 798.985pt x 574.
+<Analisi dati/Immagini/verde/fit_parziale_verde_1.png, id=150, 798.985pt x 574.
 145pt>
 File: Analisi dati/Immagini/verde/fit_parziale_verde_1.png Graphic file (type p
 ng)
@@ -1474,7 +1417,7 @@ ng)
 Package pdftex.def Info: Analisi dati/Immagini/verde/fit_parziale_verde_1.png  
 used on input line 606.
 (pdftex.def)             Requested size: 214.77037pt x 154.32912pt.
-<Analisi dati/Immagini/rosso/fit_parziale_rosso_0.png, id=180, 798.985pt x 574.
+<Analisi dati/Immagini/rosso/fit_parziale_rosso_0.png, id=151, 798.985pt x 574.
 145pt>
 File: Analisi dati/Immagini/rosso/fit_parziale_rosso_0.png Graphic file (type p
 ng)
@@ -1482,7 +1425,7 @@ ng)
 Package pdftex.def Info: Analisi dati/Immagini/rosso/fit_parziale_rosso_0.png  
 used on input line 617.
 (pdftex.def)             Requested size: 214.77037pt x 154.32912pt.
-<Analisi dati/Immagini/rosso/fit_parziale_rosso_1.png, id=181, 798.985pt x 574.
+<Analisi dati/Immagini/rosso/fit_parziale_rosso_1.png, id=152, 798.985pt x 574.
 145pt>
 File: Analisi dati/Immagini/rosso/fit_parziale_rosso_1.png Graphic file (type p
 ng)
@@ -1494,7 +1437,10 @@ used on input line 624.
 isi dati/Immagini/verde/fit_parziale_verde_0.png> <./Analisi dati/Immagini/verd
 e/fit_parziale_verde_1.png> <./Analisi dati/Immagini/rosso/fit_parziale_rosso_0
 .png>]
-<Analisi dati/Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png, id=193
+
+LaTeX Warning: Reference `fig:shift' on page 8 undefined on input line 646.
+
+<Analisi dati/Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png, id=164
 , 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png Gr
 aphic file (type png)
@@ -1507,7 +1453,7 @@ Overfull \hbox (0.71239pt too wide) in paragraph at lines 660--670
  [][] 
  []
 
-<Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png, id=194
+<Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png, id=165
 , 798.985pt x 574.145pt>
 File: Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png Gr
 aphic file (type png)
@@ -1527,7 +1473,7 @@ Overfull \hbox (0.71239pt too wide) in paragraph at lines 717--727
  [][] 
  []
 
-<Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_residui.png, id=204, 798.98
+<Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_residui.png, id=175, 798.98
 5pt x 574.145pt>
 File: Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_residui.png Graphic fi
 le (type png)
@@ -1551,16 +1497,25 @@ Overfull \hbox (0.53535pt too wide) in paragraph at lines 802--810
 ]
 (./esperienza6.aux)
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `esperienza6.out' has not changed.
-(rerunfilecheck)             Checksum: B4857928FC475A692519B47E08612D14;1560.
+
+Package rerunfilecheck Warning: File `esperienza6.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `esperienza6.out':
+(rerunfilecheck)             Before: A06D228DD71D968A1FAE57100A90E1FA;565
+(rerunfilecheck)             After:  B4857928FC475A692519B47E08612D14;1560.
  ) 
 Here is how much of TeX's memory you used:
- 51163 strings out of 478287
- 1202615 string characters out of 5849289
- 1755098 words of memory out of 5000000
- 68584 multiletter control sequences out of 15000+600000
+ 51158 strings out of 478287
+ 1202525 string characters out of 5849289
+ 1754320 words of memory out of 5000000
+ 68579 multiletter control sequences out of 15000+600000
  493938 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  88i,12n,96p,623b,1249s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1586,10 +1541,10 @@ super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on esperienza6.pdf (10 pages, 597091 bytes).
+Output written on esperienza6.pdf (10 pages, 592438 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
+ 318 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
  62 named destinations out of 1000 (max. 500000)
- 332 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 292 words of extra memory for PDF output out of 10000 (max. 10000000)
 
