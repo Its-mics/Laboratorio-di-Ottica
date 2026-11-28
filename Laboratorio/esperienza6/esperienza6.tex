@@ -41,6 +41,28 @@
 \usepackage{tikz-3dplot}
 \usepackage[most]{tcolorbox}
 
+
+
+
+
+%-----------------------------------
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{6}
+
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+
+\raggedbottom
+\usepackage{placeins}
+%-----------------------------------
+
 \usetikzlibrary{decorations.pathmorphing, arrows.meta, calc}
 
 \setlist[itemize]{itemsep=4pt, parsep=1pt}
@@ -96,7 +118,7 @@
     \restoregeometry
     \twocolumn
 \section{Introduzione}
-L'obbiettivo dell'esperimento è ricavare la figura di diffrazione utilizzando come sorgenti luminose due laser con lunghezza d'onda diffenerenti. Lo scopo è verificare se i valori ricavati dai due campioni risultano essere compatibili
+L'obbiettivo dell'esperimento è ricavare la figura di diffrazione utilizzando come sorgenti luminose due laser con lunghezza d'onda differenti. Il grafico che si ottiene, avrà in ascissa il valore dello spostamento del fotodiodo utlizzato e in ordinata il voltaggio registrato con un voltmetro collegato a quest'ultimo. Dal fit del campione otterremo dei paremtri e in particolare uno di essi ci permetterà di ricavare la semi-larghezza della fenditura, lo scopo è quello di verificare se i valori , di tale parametro, ottenuti con due laser differenti risultino essere compatibili.
 La curva da fittare sui dati raccolti è:
 \begin{equation*}
     y = A \frac{\sin^2\bigl(B(x - C)\bigr)}{\bigl[B(x - C)\bigr]^2} + D
@@ -105,21 +127,23 @@ dove i parametri rappresentano:
 \begin{itemize}
     \item $A$: il valore massimo di tensione $V_{\max}$ misurato dal fotodiodo sul picco centrale;
     \item $B = \dfrac{2\pi}{\lambda} \dfrac{d}{s}$, dove $s$ è la distanza tra la fenditura e il fotodiodo e $d$ (semilarghezza della fenditura) è l'incognita da ricavare;
-    \item $C$: il centro della figura di diffrazione sulla scala del fotodiodo (parametro di allineamento, atteso intorno a $0$);
+    \item $C$: il centro della figura di interfrenza sulla scala del fotodiodo (parametro di allineamento, atteso intorno a $0$);
     \item $D$: il livello residuo di fondo (atteso intorno a $0$ una volta sottratto il fondo).
 \end{itemize}
 
 Dal fit si ricava $B \pm \sigma_B$ e da esso $d \pm \sigma_d$.
 \section{Apparato di misura}
- L'apparato sperimentale utizzato è stato sistemato su tavoli adiacenti  e gli strumenti utilizzati posti sopra un binario graduato: Sono stati posizionati nel primo tavolo:
+ L'apparato sperimentale utizzato è stato sistemato su tavoli adiacenti  e gli strumenti utilizzati posti sopra binari graduati reciprocamente allineati e situati sui due tavoli: Sono stati posizionati nel binario graduato del primo tavolo:
  \begin{itemize}
-  \item i laser, utilizzati come sorgente luminosa i cui diametri dei fasci sonoS di circa 1mm e con lunghezza d'onda associata di 532 mm e 650 mm rispettivamente
-  \item due lenti per amplifcare e collimare il fascio luminoso poste a una distanza pari alla somma delle distanze focali
-  \item la fenditura di cui vogliamo misurare l'ampiezza tramite la figura di diffrazione
+  \item I laser, utilizzati come sorgente luminosa i cui diametri dei fasci sono di circa 1mm e con lunghezza d'onda associata di 532 mm e 650 mm rispettivamente.
+  \item Due lenti, per amplifcare e collimare il fascio luminoso e renderlo facilmente visibile,  poste a una distanza pari alla somma delle distanze focali delle due lenti
+  \item la fenditura di cui vogliamo misurare la semi-ampiezza tramite la figura di interfrenza
  \end{itemize} 
- sul binario graduato del secondo tavolo è stato pposizionato un fotodiodo a cui è stato collegato un voltmetro.
+ sul binario graduato del secondo tavolo è stato posizionato un fotodiodo  libero di muoversi a sua volta su un'ulteriore asta graduata posta ortogonalmente al bianrio.  Come già detto  al fotodiodo è stato collegato un voltmetro per rilevarne il voltaggio dovuto all'incidenza del raggio luminoso del laser.
  
-\begin{figure}[H]
+
+ \noindent Riportiamo schematicamente l'apparato appena descritto:
+\begin{figure}[tb]
     \centering
      \resizebox{\columnwidth}{!}{
     \begin{tikzpicture}[>=Stealth, scale=0.92]
@@ -197,26 +221,29 @@ Dal fit si ricava $B \pm \sigma_B$ e da esso $d \pm \sigma_d$.
         \node[below, font=\scriptsize] at (5.05, -1.20) {voltmetro};
     \end{tikzpicture}
      }
-    \caption{Schema completo dell'apparato sperimentale per la misura della diffrazione da una singola fenditura.}
+    \caption{Schema completo dell'apparato sperimentale per la misura della figura di diffrazione da una singola fenditura.}
 \end{figure}
 
+\noindent Il procediomento di misura quindi è consistito nel muovere il fotodiodo per ogni millimetro dell'asta graduata, e ad ogni miura per accertatrsi del disturbo dell'ambiente è stata presa anche la misura del voltaggio di fondo.
 
 \section{Analisi dati}
 \subsection{Grafici}
 Di seguito vengono riportati grafici e commenti derivanti dall'analisi dati.
 \subsubsection{Dati grezzi}
 Si riportano dapprima i grafici ottenuti dal set di dati completo e senza alcuna modifica apportata.
-
-\noindent Per ottenere un fit adeguato che rappresentasse la curva di interferenza,
+Per ottenere un fit adeguato che rappresentasse la curva di diffrazione,
 si è dapprima fatto un fit solo sulla parte centrale, per ricavare una stima sui parametri adatti a descrivere
 l'andamento dei dati, dopodichè si sono inserite anche le altre misure.
-
-\noindent In generale, l'esecuzione del fit riscontrava vari problemi per la convergenza dei parametri a valori sensati,
+In generale, l'esecuzione del fit riscontrava vari problemi per la convergenza dei parametri a valori sensati,
 per questo motivo sono stati impostati dei valori massimi e minimi ai parametri $A$ (che altrimenti risultava troppo elevato) e $D$.
+ 
+
+\vspace{5 mm}
+
 
 \noindent{\large\bfseries Dati del laser verde}\par\nopagebreak\vspace{0.2em}
-
-\begin{figure}[H]
+ \vspace{2 mm}
+\begin{figure}[tb]
   \centering
   \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_fit.png}
   \caption{Fit iniziale su tutti i dati presi con il laser verde.}
@@ -224,14 +251,14 @@ per questo motivo sono stati impostati dei valori massimi e minimi ai parametri 
 \end{figure}
 
 
- \begin{figure}[H]
+ \begin{figure}[tb]
   \centering
   \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_fit.png}
   \caption{Fit iniziale su tutti dati presi con il laser verde.}
     \label{fig:hist_manu}
  \end{figure}
 
-\begin{table}[H]
+\begin{table}[tb]
   \centering
   \small
   \begin{tabular}{ccc}
@@ -254,25 +281,21 @@ per questo motivo sono stati impostati dei valori massimi e minimi ai parametri 
 \noindent Il $\chi^2_{red}$ del fit risulta elevato, il che evidenzia la difficoltà 
 nel trovare un modello che descriva correttamente l'andamento dei dati. 
 
-\noindent Un ulteriore prova di ciò è data
-dal parametro $D$, che risulta negativo (e non compatibile con 0). 
-Cio è probabilmente dovuto al fatto che,
-per minimizzare il $\chi^2$, i parametri del fit si adatteranno per descrivere al meglio i dati alle code,
-in quanto questi hanno un errore efficace minore (sia per la maggiore sensibilità della scala del voltmetro 
+\noindent Un ulteriore prova di ciò è data dal parametro $D$, che risulta negativo (e non compatibile con 0). 
+Cio è probabilmente dovuto al fatto che, per minimizzare il $\chi^2$, i parametri del fit si adatteranno per descrivere al meglio i dati alle code, in quanto questi hanno un errore efficace minore (sia per la maggiore sensibilità della scala del voltmetro 
 utilizzata in quegl' intervalli, sia perché la derivata prima della funzione assume valori più piccoli)
  e, dunque, contribuiscono maggiormente al valore finale del $\chi^2$. 
-
 \noindent Inserendo nel codice un limite inferiore per il parametro $D$ ($D > 0$), il fit converge proprio a $D = 0\text{ mm}$,
 suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore consentito più vicino ad esso.
 
- \begin{figure}[H]
+ \begin{figure}[tb]
   \centering
   \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_hist.png}
   \caption{Istogramma dei residui normalizzati ricavati dalla misura con il laser verde.}
     \label{fig:hist_manu}
  \end{figure}
 
- \begin{table}[H]
+ \begin{table}[tb]
   \centering
   \small
   \begin{tabular}{ccc}
@@ -290,14 +313,14 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
 
  
 
- \begin{figure}[H]
+ \begin{figure}[tb]
   \centering
   \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/raw/verde_residui.png}
   \caption{Andamento dei residui ricavati dalla misura con il laser verde.}
     \label{fig:hist_manu}
  \end{figure}
 
- \begin{table}[H]
+ \begin{table}[tb]
   \centering
   \small
   \begin{tabular}{ccc}
@@ -315,13 +338,13 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
 \noindent Anche quest'ultimo grafico conferma quanto detto prima, i dati attorno a $x = 0 \text{mm}$ 
  vengono modellati peggio rispetto a quelli sulle code.
 
-
+\FloatBarrier
+ \vspace{5 mm}
 \noindent{\large\bfseries Dati del laser rosso}\par\nopagebreak\vspace{0.2em}
-
 
  \begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/raw/rosso_fit_nonmod.png}
+  \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/rosso/raw/rosso_fit_nonmod.png}
   \caption{Fit iniziale su tutti dati presi con il laser rosso.}
     \label{fig:hist_manu}
  \end{figure}
@@ -391,21 +414,21 @@ suggerendo che non abbia raggiunto un vero minimo, ma si sia fermato sul valore 
   \label{tab:fit_lin}
 \end{table}
 
-\noindent Anche per il laser rosso si riscontrano le stesse problematiche riportate antecedentemente.
+\noindent Anche per il laser rosso si riscontrano le stesse problematiche riportate precedentemente.
 Inoltre, i residui successivi a $x=5 \text{mm}$ riportano un andamento non casuale, dovuto probabilmente ad un errore
 sistematico nella lettura dei dati. Infatti, questo andamento è compatibile con uno shift negativo 
 delle $x$. Tale ipotesi viene anche suggerita dal fatto che i massimi e minimi misurati risultano
 a sinistra di quelli ricavati dal fit, come visibile dalla figura sottostante.
 
- \begin{figure}[H]
+ \begin{figure}[tb]
   \centering
   \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift_rosso.png}
   \caption{Zoom sulla parte presumibilmente traslata del dataset del laser rosso.}
     \label{fig:shift}
  \end{figure}
 
-Riportiamo ivi i valori di $d$ ricavati sulla base di questi dati.
-\begin{table}[H]
+\noindent Riportiamo ivi i valori di $d$ ricavati sulla base di questi dati.
+\begin{table}[tb]
   \centering
   \small
   \begin{tabular}{ccc}
@@ -421,8 +444,10 @@ Riportiamo ivi i valori di $d$ ricavati sulla base di questi dati.
   \caption{Confronto tra i valori di $d$ ottenuti per il verde e per il rosso.}
   \label{tab:confronto_d}
 \end{table}
-dove la compatibilità è stata calcolata tramite: $\sigma_{dif}= \sqrt{\sigma_{d,verde}^2 + \sigma_{d,rosso}^2} $
-
+dove la compatibilità è stata calcolata tramite: 
+\[
+\sigma_{dif}= \sqrt{\sigma_{d,verde}^2 + \sigma_{d,rosso}^2} 
+\]
 \noindent Nonostante le problematiche citate, i valori di $d_{verde}$ e $d_{rosso}$ distano di "sole" 
 $3 \sigma_{dif}$, proprio al limite del valore fissato per la compatibilità.
 
@@ -432,8 +457,12 @@ Per provare a migliorare il fit, si è provato inanzitutto ad eliminare 10 punti
 in ognuno dei due dataset (5 per ogni coda).
 Come detto prima, queste misure pesano molto nella costruzione della funzione di fit, ed essendo molto vicini 
 a voltaggi nulli, traslano tutta la funzione di fit verso il basso.
+ 
 
-\noindent{\large\bfseries Dati del laser rosso}\par\nopagebreak\vspace{0.2em}
+\newpage
+
+
+\noindent{\large\bfseries Dati del laser rosso}\par\nopagebreak\vspace{2mm}
 
  \begin{figure}[H]
   \centering
@@ -483,9 +512,10 @@ come evidente dalla figura sottostante.
 
  \noindent Come prevedibile, i residui del fit rosso non riportano miglioramenti, i primi punti dopo $x=0 \text{mm}$ ora risultano
  sovrastimanti (contrariamente a prima dove erano sottostimati), e l'andamento periodico dopo $x = 5 \text{mm}$ persiste.
-
 \noindent Anche eliminando 20 punti dalle code del dataset rosso, non si osservano miglioramenti né nel fit né nei residui.
+ 
 
+\vspace {5mm}
 \noindent{\large\bfseries Dati del laser verde}\par\nopagebreak\vspace{0.2em}
 
  \begin{figure}[H]
@@ -558,20 +588,22 @@ Per essere più sicuri dell'ipotesi di uno shift dei dati durante la misura, e d
 sistematico, si è compiuto un fit parziale dei dati, dividendo ogni dataset alla misura a $x=0 \text{mm}$.
 Ci si attende che i valori di $C$ siano simili fra loro.
 
-\vspace{0.3em}
+\vspace{5mm}
+ 
+\newpage
 
 \noindent{\large\bfseries Laser verde}\par\nopagebreak\vspace{0.2em}
 
-  \begin{figure}[H]
+  \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/fit_parziale_verde_0.png}
+    \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/verde/fit_parziale_verde_0.png}
     \caption{Prima parte del fit sui dati del laser verde togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
 
-  \begin{figure}[H]
+  \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/verde/fit_parziale_verde_1.png}
+    \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/verde/fit_parziale_verde_1.png}
     \caption{Seconda parte del fit sui dati del laser verde togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
@@ -582,14 +614,14 @@ Ci si attende che i valori di $C$ siano simili fra loro.
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/fit_parziale_rosso_0.png}
+    \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/rosso/fit_parziale_rosso_0.png}
     \caption{Prima parte del fit sui dati del laser rosso togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/fit_parziale_rosso_1.png}
+    \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/rosso/fit_parziale_rosso_1.png}
     \caption{Seconda parte del fit sui dati del laser rosso togleindo 5 punti delle code.}
       \label{fig:hist_manu}
   \end{figure}
@@ -616,11 +648,12 @@ per cui ci si aspetta un offset positivo.
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png}
+    \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/rosso/shift/shit_da_32/rosso_fit_best_offset.png}
     \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset dal 31esimo dato.}
       \label{fig:hist_manu}
   \end{figure}
 
+  
 \begin{table}[H]
   \centering
   \small
@@ -650,7 +683,7 @@ dopo varie prove, si è deciso di stoppare la somma dell'offset alla misura n.41
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png}
+    \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_fit_best_offset.png}
     \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset dal 31esimo dato al 42esimo.}
       \label{fig:hist_manu}
   \end{figure}
@@ -698,7 +731,7 @@ dopo varie prove, si è deciso di stoppare la somma dell'offset alla misura n.41
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\columnwidth]{Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_residui.png}
+    \includegraphics[width=0.95\columnwidth]{Analisi dati/Immagini/rosso/shift/shif_32_41/rosso_residui.png}
     \caption{Fit sui dati del laser rosso (togliendo i punti delle code), aggiungendo un offset.}
       \label{fig:hist_manu}
   \end{figure}
